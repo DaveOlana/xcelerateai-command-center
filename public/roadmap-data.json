@@ -1,0 +1,73 @@
+{
+  "_instructions": "This is your XcelerateAI bootcamp roadmap template. Edit this file with your real bootcamp content, then upload it in the Import Roadmap page of the app. Delete this _instructions field before importing.",
+  "bootcampTitle": "XcelerateAI 6-Month JavaScript Mobile Ops Bootcamp",
+  "learner": "Dave",
+  "duration": "6 months",
+  "weeklyHours": "15-20 hours",
+  "months": [
+    {
+      "monthNumber": 1,
+      "title": "JavaScript Foundations",
+      "objective": "Build core programming confidence from zero.",
+      "weeks": [
+        {
+          "weekNumber": 1,
+          "title": "Setup and First Lines of Code",
+          "briefing": "Prepare your development environment and write your first JavaScript programs.",
+          "minimumMission": [
+            "Install VS Code",
+            "Install Node.js",
+            "Write your first JavaScript file"
+          ],
+          "fullMission": [
+            "Install VS Code and configure it",
+            "Install Node.js and verify it works",
+            "Watch the MDN JavaScript intro video",
+            "Read the first steps docs",
+            "Complete 3 practice exercises",
+            "Push your first file to GitHub"
+          ],
+          "resources": [
+            {
+              "title": "MDN JavaScript First Steps",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps",
+              "type": "Docs",
+              "difficulty": "Beginner",
+              "whatToExpect": "A beginner-friendly introduction to JavaScript with clear explanations.",
+              "missionObjective": "Understand what JavaScript is and how to write your first lines of code."
+            }
+          ],
+          "tasks": [
+            "Download and install VS Code",
+            "Install Node.js (LTS version)",
+            "Create a GitHub account",
+            "Create hello.js file",
+            "Write: console.log('Hello, XcelerateAI!')",
+            "Run it: node hello.js"
+          ],
+          "checkpoint": "Can I run a JavaScript file on my laptop and see output in the terminal?",
+          "deliverable": "A working hello.js pushed to a GitHub repository called 'xcelerate-js-foundations'."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Your First Project",
+      "description": "A brief description of what this project is and what it demonstrates.",
+      "milestones": [
+        "Milestone 1",
+        "Milestone 2",
+        "Milestone 3",
+        "Deploy"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "skill": "JavaScript Basics",
+      "question": "Can I explain what a variable is and create one?",
+      "statusOptions": ["Not yet", "Learning", "Confident"]
+    }
+  ]
+}

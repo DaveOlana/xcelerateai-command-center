@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   BASE STYLES
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #020817; /* App background - navy-950 */
+  color: #F8FAFC;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =============================================
+   SCROLLBAR STYLES
+   ============================================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1220;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* =============================================
+   SELECTION
+   ============================================= */
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+  color: #38BDF8;
+}
+
+/* =============================================
+   CUSTOM COMPONENT CLASSES
+   ============================================= */
+@layer components {
+  /* Card base - Premium clean dark UI */
+  .card {
+    @apply bg-navy-800 border border-navy-600/50 rounded-2xl p-6 shadow-card transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:border-navy-500 hover:shadow-card-hover transition-all duration-300;
+  }
+
+  /* Glow button - Refined for premium feel */
+  .btn-primary {
+    @apply bg-accent-primary text-white font-medium px-6 py-3 rounded-xl 
+           hover:bg-accent-primary-dim active:scale-95 transition-all duration-200
+           shadow-sm flex items-center justify-center gap-2 text-[15px];
+  }
+
+  .btn-secondary {
+    @apply bg-navy-800 border border-navy-600 text-slate-300 font-medium px-6 py-3 rounded-xl 
+           hover:border-navy-400 hover:text-white active:scale-95 transition-all duration-200
+           flex items-center justify-center gap-2 text-[15px];
+  }
+
+  .btn-ghost {
+    @apply text-slate-400 font-medium px-4 py-2.5 rounded-xl 
+           hover:text-accent-primary hover:bg-accent-primary/10 active:scale-95 transition-all duration-200
+           text-[15px];
+  }
+
+  .btn-danger {
+    @apply bg-red-500/10 border border-red-500/20 text-red-400 font-medium px-6 py-3 rounded-xl 
+           hover:bg-red-500/20 hover:border-red-500/40 active:scale-95 transition-all duration-200
+           text-[15px];
+  }
+
+  /* Input base */
+  .input-base {
+    @apply bg-navy-800 border border-navy-600 text-slate-200 rounded-xl px-4 py-3
+           focus:outline-none focus:border-accent-primary/40 focus:ring-1 focus:ring-accent-primary/20
+           placeholder-slate-500 transition-all duration-200 text-[15px];
+  }
+
+  /* Badge variants */
+  .badge-green {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+           bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+  }
+
+  .badge-blue {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+           bg-accent-primary/10 text-accent-primary border border-accent-primary/20;
+  }
+
+  .badge-amber {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+           bg-amber-500/10 text-amber-400 border border-amber-500/20;
+  }
+
+  .badge-red {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+           bg-red-500/10 text-red-400 border border-red-500/20;
+  }
+
+  .badge-slate {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+           bg-navy-800 text-slate-400 border border-navy-600;
+  }
+
+  /* Section heading */
+  .section-label {
+    @apply text-sm font-semibold text-slate-400 tracking-wide;
+  }
+
+  /* Nav active state */
+  .nav-active {
+    @apply bg-white/5 text-white border-l-2 border-accent-primary pl-[14px];
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-r-xl text-slate-400 font-medium
+           hover:bg-white/5 hover:text-white transition-all duration-200 cursor-pointer text-[15px];
+  }
+
+  /* Glow text */
+  .text-glow {
+    text-shadow: none; /* Removed for clean UI */
+  }
+
+  /* Task checkbox */
+  .task-checkbox {
+    @apply w-5 h-5 rounded-md border border-white/10 flex items-center justify-center
+           cursor-pointer transition-all duration-200 bg-[#111111]
+           hover:border-accent-primary/50;
+  }
+
+  .task-checkbox-checked {
+    @apply border-accent-primary bg-accent-primary/10;
+  }
+
+  /* Progress bar */
+  .progress-track {
+    @apply h-2 bg-[#171717] rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-accent-primary to-accent-cyan rounded-full
+           transition-all duration-700 ease-out;
+  }
+
+  /* Status dots */
+  .status-dot-green {
+    @apply w-2 h-2 rounded-full bg-accent-primary shadow-primary-glow-sm;
+  }
+
+  .status-dot-amber {
+    @apply w-2 h-2 rounded-full bg-amber-400;
+  }
+
+  .status-dot-slate {
+    @apply w-2 h-2 rounded-full bg-slate-600;
+  }
+}
+
+/* =============================================
+   CHECKBOX ANIMATION
+   ============================================= */
+.check-complete {
+  animation: check-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes check-pop {
+  0% { transform: scale(0) rotate(-10deg); opacity: 0; }
+  70% { transform: scale(1.2) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* =============================================
+   CONFETTI / CELEBRATION
+   ============================================= */
+.celebrate-ring {
+  animation: celebrate-ring 0.6s ease-out forwards;
+}
+
+@keyframes celebrate-ring {
+  0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.6); }
+  100% { box-shadow: 0 0 0 20px rgba(59,130,246,0); }
+}
+
+/* =============================================
+   GRID BACKGROUND PATTERN
+   ============================================= */
+.bg-grid {
+  background-image: linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* =============================================
+   POMODORO RING
+   ============================================= */
+.pomodoro-ring {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.pomodoro-progress {
+  transition: stroke-dashoffset 1s linear;
+  stroke-linecap: round;
+}
+
+/* =============================================
+   PRINT STYLES
+   ============================================= */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .card {
+    border: 1px solid #ccc !important;
+    background: white !important;
+    box-shadow: none !important;
+  }
+  aside, nav {
+    display: none !important;
+  }
+}
+
+/* =============================================
+   MOBILE SAFE AREA
+   ============================================= */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .mobile-nav-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+  }
+}
+
+/* =============================================
+   ANIMATIONS
+   ============================================= */
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* =============================================
+   MORE MENU OVERLAY
+   ============================================= */
+.more-menu-overlay {
+  animation: slide-up-overlay 0.25s ease-out;
+}
+
+@keyframes slide-up-overlay {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* =============================================
+   TOOLTIP
+   ============================================= */
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.tooltip {
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
