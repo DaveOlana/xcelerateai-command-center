@@ -239,15 +239,15 @@ export default function TodaysFocus() {
       )}
 
       {/* ── Header and Controls ── */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b border-navy-600 pb-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 border-b border-navy-700 pb-6">
         <div>
-          <div className="flex items-center gap-3 mb-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-accent-primary animate-pulse" />
-            <span className="text-xs text-accent-primary font-bold tracking-wider uppercase">
-              {focusMode ? 'Focus Workspace' : 'Command Workspace'}
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
+            <span className="text-xs text-accent-primary font-bold tracking-widest uppercase">
+              {focusMode ? 'Focus Mode Active' : 'Detailed Command Mode'}
             </span>
           </div>
-          <h1 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">Daily Focus Cockpit</h1>
+          <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">Daily Focus Cockpit</h1>
           <p className="text-slate-400 text-[15px] mt-2 font-medium">
             Week {week.weekNumber} Operations · {week.title}
           </p>
@@ -256,7 +256,7 @@ export default function TodaysFocus() {
         {/* View Mode Toggle button */}
         <button
           onClick={() => setFocusMode(!focusMode)}
-          className="flex items-center gap-3 bg-navy-800 border border-navy-600 px-5 py-3 rounded-xl hover:border-navy-450 transition-all text-[13px] font-bold uppercase tracking-wider text-slate-300 shadow-sm"
+          className="flex items-center gap-3 bg-navy-850 border border-navy-700 px-5 py-3 rounded-xl hover:border-navy-600 transition-all text-xs font-bold uppercase tracking-wider text-slate-350 shadow-sm"
         >
           <span>{focusMode ? 'Switch to Command Mode' : 'Switch to Focus Mode'}</span>
           {focusMode ? <ToggleLeft className="w-5 h-5 text-slate-500" /> : <ToggleRight className="w-5 h-5 text-accent-primary" />}
@@ -265,215 +265,237 @@ export default function TodaysFocus() {
 
       {/* ── FOCUS MODE VIEW ── */}
       {focusMode && (
-        <div className="grid lg:grid-cols-2 gap-6">
-          {/* Left Column: Tasks + Resources */}
-          <div className="space-y-6">
-            {/* Key Focus Targets */}
-            <SectionCard title="Key Focus Targets" subtitle="Dave's priority study milestones for today.">
-              <div className="space-y-3 pt-2">
-                {focusTasks.map((task, idx) => {
-                  const done = isTaskComplete(month.monthNumber, week.weekNumber, idx);
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => toggleTask(month.monthNumber, week.weekNumber, idx)}
-                      className={`w-full flex items-center gap-4 p-4 rounded-xl border text-left transition-all ${
-                        done
-                          ? 'bg-accent-primary/5 border-accent-primary/20 text-slate-500'
-                          : 'bg-navy-800 border-navy-600 hover:border-navy-400 text-slate-200'
-                      }`}
-                    >
-                      <div className={`w-5 h-5 rounded flex items-center justify-center flex-shrink-0 transition-all border ${
-                        done ? 'border-accent-primary bg-accent-primary/20' : 'border-navy-400 bg-navy-900'
-                      }`}>
-                        {done && <CheckCircle2 className="w-3.5 h-3.5 text-accent-primary" />}
-                      </div>
-                      <span className={`text-[15px] font-medium flex-1 ${done ? 'line-through text-slate-500' : 'text-white'}`}>
-                        {getItemTitle(task)}
-                      </span>
-                      <span className="text-[14px] text-slate-500 font-bold bg-navy-900 px-2 py-1 rounded border border-navy-600 uppercase tracking-wider">
-                        Task {idx + 1}
-                      </span>
-                    </button>
-                  );
-                })}
+        <div className="space-y-8 max-w-4xl mx-auto">
+          {/* STEP 1: LEARN */}
+          <div className="relative pl-8 border-l border-navy-700/40 pb-4">
+            <div className="absolute left-[-12px] top-1 w-6 h-6 rounded-full bg-navy-900 border border-accent-cyan flex items-center justify-center text-accent-cyan text-xs font-bold">
+              1
+            </div>
+            <div className="space-y-4">
+              <div>
+                <span className="text-xs font-bold text-accent-cyan tracking-widest uppercase">Phase 1: Learn</span>
+                <h3 className="text-lg font-bold text-white mt-1">Study Daily Focus Materials</h3>
               </div>
-            </SectionCard>
 
-            {/* Main Resource */}
-            {mainResource && (
-              <SectionCard title="Daily Focus Resource" subtitle="Primary documentation/reference material.">
-                <div className="bg-navy-800 border border-navy-600 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 mt-2">
+              {mainResource ? (
+                <div className="bg-navy-850 border border-navy-700/20 rounded-3xl p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5">
                   <div className="space-y-1.5 flex-1 min-w-0">
-                    <InfoPill label={mainResource.type} variant="cyan" />
-                    <h4 className="text-[16px] font-bold text-white leading-snug mt-1 truncate">{mainResource.title}</h4>
+                    <span className="badge-slate text-xs">{mainResource.type}</span>
+                    <h4 className="text-[15px] font-bold text-white leading-snug mt-2 truncate">{mainResource.title}</h4>
                     {mainResource.timeEstimate && (
-                      <span className="text-[13px] text-slate-400 font-medium block">Estimated Time: {mainResource.timeEstimate}</span>
+                      <span className="text-xs text-slate-450 font-medium block">Estimated Time: {mainResource.timeEstimate}</span>
                     )}
                   </div>
-                  <a
-                    href={mainResource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary py-2.5 px-5 text-[13px] flex-shrink-0"
-                  >
-                    Open Resource
-                  </a>
-                </div>
-              </SectionCard>
-            )}
-
-            {/* Quick Actions Panel */}
-            <SectionCard title="Quick Commander Logs" subtitle="Capture context or blockages instantly.">
-              <div className="grid grid-cols-2 gap-4 pb-5 pt-2">
-                <button
-                  type="button"
-                  onClick={() => setShowBlockerModal(true)}
-                  className="btn-secondary py-3 text-[13px] font-bold border-red-500/30 text-red-400 hover:bg-red-500/10 flex items-center justify-center gap-2"
-                >
-                  <ShieldAlert className="w-4 h-4" /> I'm Blocked
-                </button>
-                <button
-                  type="button"
-                  onClick={copyLemontHelpPrompt}
-                  className="btn-secondary py-3 text-[13px] font-bold border-accent-cyan/30 text-accent-cyan hover:bg-accent-cyan/10 flex items-center justify-center gap-2"
-                >
-                  <Terminal className="w-4 h-4" /> Ask Lemont
-                </button>
-              </div>
-
-              {/* Fast Quick Note logging */}
-              <form onSubmit={handleSaveQuickNote} className="border-t border-navy-600 pt-5 space-y-4">
-                <div className="flex justify-between items-center text-[12px] text-slate-400 font-bold uppercase tracking-wider">
-                  <span>Quick Note Entry</span>
-                  {noteSaved && <span className="text-accent-primary font-semibold">Logged ✓</span>}
-                </div>
-                <textarea
-                  rows={2}
-                  value={quickNote}
-                  onChange={(e) => setQuickNote(e.target.value)}
-                  placeholder="Capture errors resolved, notes, or ideas..."
-                  className="input-base w-full text-[14px] resize-none"
-                  required
-                />
-                <SecondaryButton type="submit" disabled={!quickNote} className="w-full py-3 text-[14px]">
-                  Save Note to Journal
-                </SecondaryButton>
-              </form>
-            </SectionCard>
-          </div>
-
-          {/* Right Column: Focus Timer / Pomodoro Cockpit */}
-          <div className="space-y-6">
-            <SectionCard title="Focus Interval Controller" className="flex flex-col items-center py-8 text-center bg-navy-800 border-navy-600">
-              {!sessionTimer.activeSessionId ? (
-                <div className="w-full space-y-6 px-4">
-                  <p className="text-[14px] text-slate-400 font-medium">Select target operational session to launch timer:</p>
-                  <div className="grid gap-3 text-left">
-                    {(week.sessions || []).length > 0 ? (
-                      (week.sessions || []).map((s, idx) => (
-                        <button
-                          key={s.sessionId || idx}
-                          onClick={() => startTimer(s.sessionId || `w${week.weekNumber}-s${idx}`, s.type || 'Focus Session', s.title || `Session ${idx + 1}`, s.durationMinutes, s.maxContinuousMinutes || 75, s.recommendedBreakMinutes || 10)}
-                          className="p-4 bg-navy-900 border border-navy-600 rounded-xl text-[15px] font-bold text-white hover:border-accent-primary/40 hover:bg-navy-800 transition-all flex items-center justify-between group"
-                        >
-                          <div className="flex items-center gap-3">
-                            <span className="text-[14px] text-accent-primary uppercase tracking-wider font-bold bg-accent-primary/10 px-2.5 py-1 rounded border border-accent-primary/20">{s.type || 'Focus'}</span>
-                            <span className="group-hover:text-accent-primary transition-colors">{s.title}</span>
-                          </div>
-                          <span className="text-[14px] text-slate-400 font-medium">{s.durationMinutes} Min</span>
-                        </button>
-                      ))
-                    ) : (
-                      [
-                        { id: 'study-session', label: 'Study Focus Block', duration: 45, type: 'Study Session' },
-                        { id: 'build-session', label: 'Build Core Code', duration: 90, type: 'Build Session' },
-                        { id: 'quick-session', label: 'Warmup Focus', duration: 25, type: 'Warmup Focus' },
-                      ].map((s) => (
-                        <button
-                          key={s.id}
-                          onClick={() => startTimer(s.id, s.type, s.label, s.duration, 75, 10)}
-                          className="p-4 bg-navy-900 border border-navy-600 rounded-xl text-[15px] font-bold text-white hover:border-accent-primary/40 hover:bg-navy-800 transition-all flex items-center justify-between group"
-                        >
-                          <span className="group-hover:text-accent-primary transition-colors">{s.label}</span>
-                          <span className="text-[14px] text-slate-400 font-medium">{s.duration} Min</span>
-                        </button>
-                      ))
-                    )}
+                  <div className="flex gap-3 flex-shrink-0 w-full sm:w-auto">
+                    <a
+                      href={mainResource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary py-2.5 px-5 text-xs font-bold text-center flex-1 sm:flex-initial"
+                    >
+                      Open Resource
+                    </a>
                   </div>
                 </div>
               ) : (
-                <div className="w-full flex flex-col items-center gap-8">
-                  <div>
-                    <span className="badge-slate text-[14px] uppercase tracking-widest">{sessionTimer.type}</span>
-                    <h4 className="text-[18px] font-bold text-white mt-2 uppercase tracking-wide">{sessionTimer.title}</h4>
-                  </div>
+                <div className="bg-navy-900 border border-navy-750 p-6 rounded-2xl text-center text-slate-500 text-sm">
+                  No resources listed for today. Proceed to your builds.
+                </div>
+              )}
+            </div>
+          </div>
 
-                  {/* POMODORO COUNTDOWN RING */}
-                  <div className="relative w-56 h-56">
-                    <svg className="w-full h-full -rotate-90" viewBox="0 0 128 128">
-                      <circle cx="64" cy="64" r="56" fill="none" stroke="#0F172A" strokeWidth="6" />
-                      <circle
-                        cx="64" cy="64" r="56"
-                        fill="none"
-                        stroke={sessionTimer.isBreak ? '#22D3EE' : '#3B82F6'}
-                        strokeWidth="6"
-                        strokeDasharray={2 * Math.PI * 56}
-                        strokeDashoffset={2 * Math.PI * 56 - (timerProgress / 100) * 2 * Math.PI * 56}
-                        strokeLinecap="round"
-                        style={{ filter: `drop-shadow(0 0 6px ${sessionTimer.isBreak ? '#22D3EE' : '#3B82F6'}50)` }}
-                        className="transition-all duration-1000"
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <p className="text-5xl font-mono font-bold text-white tracking-tight tabular-nums">{minutes}:{seconds}</p>
-                      <p className="text-[14px] text-slate-400 uppercase tracking-widest mt-1 font-bold">
-                        {sessionTimer.isBreak ? 'Break Interval' : 'Focus Active'}
-                      </p>
-                    </div>
-                  </div>
+          {/* STEP 2: BUILD */}
+          <div className="relative pl-8 border-l border-navy-700/40 pb-4">
+            <div className="absolute left-[-12px] top-1 w-6 h-6 rounded-full bg-navy-900 border border-accent-primary flex items-center justify-center text-accent-primary text-xs font-bold">
+              2
+            </div>
+            <div className="space-y-4">
+              <div>
+                <span className="text-xs font-bold text-accent-primary tracking-widest uppercase">Phase 2: Build</span>
+                <h3 className="text-lg font-bold text-white mt-1">Milestone Checklist & Focus Timer</h3>
+              </div>
 
-                  {/* Timer Controls bar */}
-                  <div className="flex gap-3 items-center justify-center">
-                    <button
-                      onClick={resetTimer}
-                      className="w-10 h-10 rounded-xl bg-navy-900 border border-navy-500/80 flex items-center justify-center text-slate-500 hover:text-white transition-all"
-                      title="Reset Timer"
-                    >
-                      <RotateCcw className="w-4 h-4" />
-                    </button>
-
-                    {sessionTimer.isRunning ? (
+              <div className="grid md:grid-cols-5 gap-6">
+                {/* Checklist column */}
+                <div className="md:col-span-3 space-y-3">
+                  <span className="text-[11px] font-bold text-slate-450 tracking-widest uppercase block">Daily Priority Checklist</span>
+                  {focusTasks.map((task, idx) => {
+                    const done = isTaskComplete(month.monthNumber, week.weekNumber, idx);
+                    return (
                       <button
-                        onClick={pauseTimer}
-                        className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 hover:bg-amber-500/20 transition-all"
-                        title="Pause Timer"
+                        key={idx}
+                        onClick={() => toggleTask(month.monthNumber, week.weekNumber, idx)}
+                        className={`w-full flex items-center gap-4 p-4 rounded-2xl border text-left transition-all duration-200 ${
+                          done
+                            ? 'bg-emerald-500/5 border-emerald-500/10 text-slate-500'
+                            : 'bg-navy-850 border-navy-700/30 hover:border-navy-600 text-slate-200'
+                        }`}
                       >
-                        <Pause className="w-5 h-5 fill-amber-400/20" />
+                        <div className={`w-5.5 h-5.5 rounded-lg flex items-center justify-center flex-shrink-0 transition-all border ${
+                          done ? 'border-emerald-500 bg-emerald-500/20' : 'border-navy-600 bg-navy-900'
+                        }`}>
+                          {done && <CheckCircle2 className="w-4 h-4 text-emerald-450" />}
+                        </div>
+                        <span className={`text-[14px] font-medium flex-1 ${done ? 'line-through text-slate-500' : 'text-slate-200'}`}>
+                          {getItemTitle(task)}
+                        </span>
+                        <span className="text-[11px] font-bold text-slate-500 bg-navy-900 px-2 py-0.5 rounded border border-navy-750 uppercase tracking-wider">
+                          T{idx + 1}
+                        </span>
                       </button>
+                    );
+                  })}
+                </div>
+
+                {/* Focus Timer column */}
+                <div className="md:col-span-2">
+                  <div className="bg-navy-850 border border-navy-700/20 rounded-3xl p-6 flex flex-col items-center justify-center text-center space-y-4">
+                    {!sessionTimer.activeSessionId ? (
+                      <div className="w-full space-y-4">
+                        <span className="text-[11px] font-bold text-slate-450 uppercase tracking-widest block">Focus block</span>
+                        <button
+                          onClick={() => startTimer('daily-focus', 'Focus Session', 'Daily Focus Block', 45, 75, 10)}
+                          className="btn-primary w-full py-2.5 text-xs font-bold"
+                        >
+                          Start 45m Session
+                        </button>
+                      </div>
                     ) : (
-                      <button
-                        onClick={resumeTimer}
-                        className="w-12 h-12 rounded-xl bg-accent-primary/10 border border-accent-primary/30 flex items-center justify-center text-accent-primary hover:bg-accent-primary/20 transition-all"
-                        title="Resume Timer"
-                      >
-                        <Play className="w-5 h-5 fill-accent-primary" />
-                      </button>
-                    )}
+                      <div className="w-full flex flex-col items-center gap-4">
+                        <div className="relative w-40 h-40">
+                          <svg className="w-full h-full -rotate-90" viewBox="0 0 128 128">
+                            <circle cx="64" cy="64" r="54" fill="none" stroke="#0C0F1E" strokeWidth="5" />
+                            <circle
+                              cx="64" cy="64" r="54"
+                              fill="none"
+                              stroke={sessionTimer.isBreak ? '#22D3EE' : '#3B82F6'}
+                              strokeWidth="5"
+                              strokeDasharray={2 * Math.PI * 54}
+                              strokeDashoffset={2 * Math.PI * 54 - (timerProgress / 100) * 2 * Math.PI * 54}
+                              strokeLinecap="round"
+                              className="transition-all duration-1000"
+                            />
+                          </svg>
+                          <div className="absolute inset-0 flex flex-col items-center justify-center">
+                            <p className="text-3xl font-mono font-bold text-white tracking-tight tabular-nums">{minutes}:{seconds}</p>
+                            <p className="text-[10px] text-slate-450 uppercase tracking-widest mt-1 font-bold">
+                              {sessionTimer.isBreak ? 'Rest' : 'Active'}
+                            </p>
+                          </div>
+                        </div>
 
-                    {!sessionTimer.isBreak && (
-                      <button
-                        onClick={() => startBreakTimer(sessionTimer.recommendedBreakMinutes)}
-                        className="w-10 h-10 rounded-xl bg-navy-900 border border-navy-500/80 flex items-center justify-center text-slate-500 hover:text-accent-cyan transition-all"
-                        title="Start Break"
-                      >
-                        <Coffee className="w-4 h-4" />
-                      </button>
+                        {/* Controls */}
+                        <div className="flex gap-2.5 items-center justify-center">
+                          <button
+                            onClick={resetTimer}
+                            className="p-2 rounded-lg bg-navy-900 border border-navy-700 text-slate-400 hover:text-white"
+                            title="Reset Timer"
+                          >
+                            <RotateCcw className="w-3.5 h-3.5" />
+                          </button>
+                          {sessionTimer.isRunning ? (
+                            <button
+                              onClick={pauseTimer}
+                              className="px-3.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 hover:bg-amber-500/20 text-xs font-semibold"
+                            >
+                              Pause
+                            </button>
+                          ) : (
+                            <button
+                              onClick={resumeTimer}
+                              className="px-3.5 py-1.5 rounded-lg bg-accent-primary/10 border border-accent-primary/20 text-accent-primary hover:bg-accent-primary/20 text-xs font-semibold"
+                            >
+                              Resume
+                            </button>
+                          )}
+                        </div>
+                      </div>
                     )}
                   </div>
                 </div>
-              )}
-            </SectionCard>
+              </div>
+            </div>
+          </div>
+
+          {/* STEP 3: PROVE */}
+          <div className="relative pl-8 border-l border-navy-700/40 pb-4">
+            <div className="absolute left-[-12px] top-1 w-6 h-6 rounded-full bg-navy-900 border border-purple-500 flex items-center justify-center text-purple-400 text-xs font-bold">
+              3
+            </div>
+            <div className="space-y-4">
+              <div>
+                <span className="text-xs font-bold text-purple-400 tracking-widest uppercase">Phase 3: Prove</span>
+                <h3 className="text-lg font-bold text-white mt-1">Submit Proof of Work & Repository</h3>
+              </div>
+
+              <div className="bg-navy-850 border border-navy-700/20 rounded-3xl p-6 space-y-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <p className="text-[14px] text-slate-350 max-w-xl">
+                    Once you complete today's build tasks, document your code additions, screenshots, and push commitments to GitHub.
+                  </p>
+                  <Link to="/proof" className="btn-secondary py-2.5 px-5 text-xs font-bold whitespace-nowrap w-full sm:w-auto text-center">
+                    Submit Proof Page
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* STEP 4: REFLECT */}
+          <div className="relative pl-8 pb-4">
+            <div className="absolute left-[-12px] top-1 w-6 h-6 rounded-full bg-navy-900 border border-amber-500 flex items-center justify-center text-amber-400 text-xs font-bold">
+              4
+            </div>
+            <div className="space-y-4">
+              <div>
+                <span className="text-xs font-bold text-amber-400 tracking-widest uppercase">Phase 4: Reflect</span>
+                <h3 className="text-lg font-bold text-white mt-1">Capture Progress Context & Barriers</h3>
+              </div>
+
+              <div className="grid md:grid-cols-5 gap-6">
+                <div className="md:col-span-3 bg-navy-850 border border-navy-700/20 rounded-3xl p-6">
+                  <form onSubmit={handleSaveQuickNote} className="space-y-4">
+                    <div className="flex justify-between items-center text-[11px] text-slate-450 font-bold uppercase tracking-wider">
+                      <span>Quick Note Entry</span>
+                      {noteSaved && <span className="text-emerald-400 font-bold">Note Saved ✓</span>}
+                    </div>
+                    <textarea
+                      rows={2}
+                      value={quickNote}
+                      onChange={(e) => setQuickNote(e.target.value)}
+                      placeholder="Explain errors resolved, daily milestones achieved, or patterns learned..."
+                      className="input-base w-full text-xs"
+                      required
+                    />
+                    <SecondaryButton type="submit" disabled={!quickNote} className="w-full py-2.5 text-xs font-bold">
+                      Save Note to Journal
+                    </SecondaryButton>
+                  </form>
+                </div>
+
+                <div className="md:col-span-2 bg-navy-850 border border-navy-700/20 rounded-3xl p-6 flex flex-col justify-between gap-4">
+                  <div>
+                    <span className="text-[11px] font-bold text-slate-450 tracking-widest uppercase block">Barriers & Help</span>
+                    <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">Blocked on an issue? Log it as a blocker or generate debugging prompts.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <button
+                      onClick={() => setShowBlockerModal(true)}
+                      className="btn-secondary w-full py-2.5 text-xs font-bold text-red-400 border-red-500/20 hover:bg-red-500/5"
+                    >
+                      Log Blocker
+                    </button>
+                    <button
+                      onClick={copyLemontHelpPrompt}
+                      className="btn-secondary w-full py-2.5 text-xs font-bold text-accent-cyan border-accent-cyan/20 hover:bg-accent-cyan/5"
+                    >
+                      Ask Lemont Debug Prompt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -482,18 +504,18 @@ export default function TodaysFocus() {
       {!focusMode && (
         <div className="space-y-6">
           <SectionCard title="Week Operational Overview" subtitle="Objective metrics parsed from active JSON roadmap.">
-            <div className="bg-navy-900/50 border border-navy-500/50 rounded-xl p-4 space-y-3 text-xs text-slate-300">
-              <p className="leading-relaxed"><span className="font-bold text-white font-mono uppercase text-xs mr-2">Objective:</span> {week.objective}</p>
-              <p className="leading-relaxed"><span className="font-bold text-white font-mono uppercase text-xs mr-2">Elliot Link:</span> {week.elliotConnection || 'Guides logic blocks and UI rendering.'}</p>
+            <div className="bg-navy-900 border border-navy-700/20 rounded-2xl p-5 space-y-3 text-[14px] text-slate-350">
+              <p className="leading-relaxed"><span className="font-bold text-white uppercase text-[12px] tracking-wider mr-2">Objective:</span> {week.objective}</p>
+              <p className="leading-relaxed"><span className="font-bold text-white uppercase text-[12px] tracking-wider mr-2">Elliot Link:</span> {week.elliotConnection || 'Guides logic blocks and UI rendering.'}</p>
               
-              <div className="grid grid-cols-2 gap-4 pt-3 border-t border-navy-500/30">
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-navy-700/30">
                 <div>
-                  <span className="text-xs text-slate-500 font-bold uppercase tracking-wider font-mono">Time budget estimate</span>
-                  <p className="font-semibold text-white mt-0.5">{week.estimatedHours || '20-25 Hours'}</p>
+                  <span className="text-xs text-slate-450 font-bold uppercase tracking-wider">Time budget estimate</span>
+                  <p className="font-semibold text-white mt-1">{week.estimatedHours || '20-25 Hours'}</p>
                 </div>
                 <div>
-                  <span className="text-xs text-slate-500 font-bold uppercase tracking-wider font-mono">Data download estimate</span>
-                  <p className="font-semibold text-accent-cyan mt-0.5">{week.estimatedData || '1-3GB'}</p>
+                  <span className="text-xs text-slate-450 font-bold uppercase tracking-wider">Data download estimate</span>
+                  <p className="font-semibold text-accent-cyan mt-1">{week.estimatedData || '1-3GB'}</p>
                 </div>
               </div>
             </div>
@@ -502,23 +524,23 @@ export default function TodaysFocus() {
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Checklist of all tasks */}
             <SectionCard title="Complete Operational Checklist">
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 {(week.tasks || []).map((task, idx) => {
                   const done = isTaskComplete(month.monthNumber, week.weekNumber, idx);
                   return (
                     <button
                       key={idx}
                       onClick={() => toggleTask(month.monthNumber, week.weekNumber, idx)}
-                      className={`w-full flex items-center gap-3 p-3 rounded-xl border text-left transition-all ${
-                        done ? 'bg-accent-primary/5 border-accent-primary/10 text-slate-500' : 'bg-navy-900/40 border-navy-500/50 hover:border-navy-450 text-white'
+                      className={`w-full flex items-center gap-3.5 p-4 rounded-2xl border text-left transition-all ${
+                        done ? 'bg-emerald-500/5 border-emerald-500/10 text-slate-550' : 'bg-navy-900/40 border-navy-700/20 hover:border-navy-600 text-white'
                       }`}
                     >
-                      <div className={`w-4 h-4 rounded border flex items-center justify-center flex-shrink-0 ${
-                        done ? 'border-accent-primary bg-accent-primary/25' : 'border-navy-300'
+                      <div className={`w-5 h-5 rounded border flex items-center justify-center flex-shrink-0 ${
+                        done ? 'border-emerald-500 bg-emerald-500/25' : 'border-navy-650'
                       }`}>
-                        {done && <CheckCircle2 className="w-3.5 h-3.5 text-accent-primary" />}
+                        {done && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-450" />}
                       </div>
-                      <span className="text-xs">{getItemTitle(task)}</span>
+                      <span className="text-[14px]">{getItemTitle(task)}</span>
                     </button>
                   );
                 })}
@@ -528,18 +550,18 @@ export default function TodaysFocus() {
             {/* Active week blockers list */}
             <SectionCard title="Logged Operational Barriers">
               {activeWeekBlockers.length === 0 ? (
-                <div className="bg-navy-900/20 border border-navy-500/30 rounded-xl p-6 text-center text-xs text-slate-500">
+                <div className="bg-navy-900/20 border border-navy-700/20 rounded-2xl p-6 text-center text-[13px] text-slate-500">
                   No open progress blockers logged for this week.
                 </div>
               ) : (
-                <div className="space-y-2">
+                <div className="space-y-2.5">
                   {activeWeekBlockers.map((b) => (
-                    <div key={b.id} className="p-3 bg-red-500/5 border border-red-500/20 rounded-xl text-xs flex justify-between items-center gap-3">
+                    <div key={b.id} className="p-4 bg-red-500/5 border border-red-500/20 rounded-2xl text-xs flex justify-between items-center gap-3">
                       <div className="min-w-0">
-                        <p className="font-bold text-white truncate">{b.title}</p>
-                        <p className="text-[13px] text-slate-500 truncate mt-0.5">{b.errorMessage || 'No error log saved'}</p>
+                        <p className="font-bold text-white truncate text-[14px]">{b.title}</p>
+                        <p className="text-[13px] text-slate-450 truncate mt-1">{b.errorMessage || 'No error log saved'}</p>
                       </div>
-                      <Link to="/blockers" className="btn-secondary py-1 px-2.5 text-[13px] border-red-500/30 text-red-400 whitespace-nowrap">
+                      <Link to="/blockers" className="btn-secondary py-1 px-3 text-xs border-red-500/20 text-red-450 whitespace-nowrap">
                         Inspect
                       </Link>
                     </div>
@@ -554,9 +576,9 @@ export default function TodaysFocus() {
       {/* Log Blocker Modal overlay */}
       {showBlockerModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="card w-full max-w-md bg-navy-850 border border-navy-400 animate-scale-in">
-            <div className="flex items-center justify-between mb-4 border-b border-navy-500/30 pb-2">
-              <h2 className="text-xs font-bold text-white uppercase tracking-wider">Log active blocker</h2>
+          <div className="card w-full max-w-md bg-navy-850 border border-navy-700 animate-scale-in">
+            <div className="flex items-center justify-between mb-4 border-b border-navy-700 pb-2">
+              <h2 className="text-xs font-bold text-white uppercase tracking-widest">Log Active Blocker</h2>
               <button onClick={() => setShowBlockerModal(false)} className="text-slate-400 hover:text-white">
                 <X className="w-4 h-4" />
               </button>
@@ -564,7 +586,7 @@ export default function TodaysFocus() {
 
             <form onSubmit={handleAddBlockerSubmit} className="space-y-4">
               <div>
-                <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wide mb-1">Blocker Error Title *</label>
+                <label className="block text-[12px] font-bold text-slate-450 uppercase tracking-wider mb-1">Blocker Error Title *</label>
                 <input
                   type="text"
                   required
@@ -576,18 +598,18 @@ export default function TodaysFocus() {
               </div>
 
               <div>
-                <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wide mb-1">Console Error Stack logs</label>
+                <label className="block text-[12px] font-bold text-slate-450 uppercase tracking-wider mb-1">Console Error Stack Logs</label>
                 <textarea
                   rows={2}
                   placeholder="Paste terminal log stack traces here..."
                   value={blockerError}
                   onChange={(e) => setBlockerError(e.target.value)}
-                  className="input-base w-full text-xs font-mono text-red-300 resize-none"
+                  className="input-base w-full text-xs font-mono text-red-400 bg-navy-900 resize-none"
                 />
               </div>
 
               <div>
-                <label className="block text-[13px] font-bold text-slate-500 uppercase tracking-wide mb-1">What did you try already? *</label>
+                <label className="block text-[12px] font-bold text-slate-450 uppercase tracking-wider mb-1">What did you try already? *</label>
                 <textarea
                   rows={2}
                   required
@@ -598,13 +620,13 @@ export default function TodaysFocus() {
                 />
               </div>
 
-              <div className="flex gap-2 justify-end pt-2 border-t border-navy-500/20">
+              <div className="flex gap-2 justify-end pt-3 border-t border-navy-700">
                 <SecondaryButton onClick={() => setShowBlockerModal(false)}>
                   Cancel
                 </SecondaryButton>
-                <CommandButton type="submit">
+                <button type="submit" className="btn-primary py-2.5 px-5 text-xs font-bold">
                   Log Blocker
-                </CommandButton>
+                </button>
               </div>
             </form>
           </div>

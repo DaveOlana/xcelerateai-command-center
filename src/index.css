@@ -17,8 +17,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #020817; /* App background - navy-950 */
+  background-color: #080B16; /* App background - navy-950 */
   color: #F8FAFC;
+  font-size: 15px; /* Premium slightly larger default text size */
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -61,24 +62,30 @@ body {
 @layer components {
   /* Card base - Premium clean dark UI */
   .card {
-    @apply bg-navy-800 border border-navy-600/50 rounded-2xl p-6 shadow-card transition-all duration-300;
+    @apply bg-navy-850 border border-navy-700/25 rounded-3xl p-7 shadow-card transition-all duration-300;
   }
 
   .card-hover {
-    @apply hover:border-navy-500 hover:shadow-card-hover transition-all duration-300;
+    @apply hover:border-navy-600 hover:shadow-card-hover transition-all duration-300;
   }
 
   /* Glow button - Refined for premium feel */
   .btn-primary {
-    @apply bg-accent-primary text-white font-medium px-6 py-3 rounded-xl 
+    @apply bg-accent-primary text-white font-semibold px-6 py-3 rounded-xl 
            hover:bg-accent-primary-dim active:scale-95 transition-all duration-200
            shadow-sm flex items-center justify-center gap-2 text-[15px];
   }
 
   .btn-secondary {
-    @apply bg-navy-800 border border-navy-600 text-slate-300 font-medium px-6 py-3 rounded-xl 
-           hover:border-navy-400 hover:text-white active:scale-95 transition-all duration-200
+    @apply bg-navy-850 border border-navy-700 text-slate-300 font-medium px-6 py-3 rounded-xl 
+           hover:border-navy-600 hover:text-white active:scale-95 transition-all duration-200
            flex items-center justify-center gap-2 text-[15px];
+  }
+
+  .btn-success {
+    @apply bg-emerald-600 text-white font-semibold px-6 py-3 rounded-xl 
+           hover:bg-emerald-500 active:scale-95 transition-all duration-200
+           shadow-sm flex items-center justify-center gap-2 text-[15px];
   }
 
   .btn-ghost {
@@ -95,45 +102,45 @@ body {
 
   /* Input base */
   .input-base {
-    @apply bg-navy-800 border border-navy-600 text-slate-200 rounded-xl px-4 py-3
+    @apply bg-navy-900 border border-navy-700 text-slate-200 rounded-xl px-4 py-3
            focus:outline-none focus:border-accent-primary/40 focus:ring-1 focus:ring-accent-primary/20
            placeholder-slate-500 transition-all duration-200 text-[15px];
   }
 
   /* Badge variants */
   .badge-green {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold
            bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
   }
 
   .badge-blue {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold
            bg-accent-primary/10 text-accent-primary border border-accent-primary/20;
   }
 
   .badge-amber {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold
            bg-amber-500/10 text-amber-400 border border-amber-500/20;
   }
 
   .badge-red {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold
            bg-red-500/10 text-red-400 border border-red-500/20;
   }
 
   .badge-slate {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
-           bg-navy-800 text-slate-400 border border-navy-600;
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold
+           bg-navy-900 text-slate-400 border border-navy-700;
   }
 
   /* Section heading */
   .section-label {
-    @apply text-sm font-semibold text-slate-400 tracking-wide;
+    @apply text-xs font-bold text-slate-400 tracking-wider uppercase;
   }
 
   /* Nav active state */
   .nav-active {
-    @apply bg-white/5 text-white border-l-2 border-accent-primary pl-[14px];
+    @apply bg-accent-primary/10 text-accent-primary border-l-4 border-accent-primary pl-3 font-semibold;
   }
 
   .nav-item {
@@ -148,18 +155,18 @@ body {
 
   /* Task checkbox */
   .task-checkbox {
-    @apply w-5 h-5 rounded-md border border-white/10 flex items-center justify-center
-           cursor-pointer transition-all duration-200 bg-[#111111]
+    @apply w-5.5 h-5.5 rounded-lg border border-navy-600 flex items-center justify-center
+           cursor-pointer transition-all duration-200 bg-navy-900
            hover:border-accent-primary/50;
   }
 
   .task-checkbox-checked {
-    @apply border-accent-primary bg-accent-primary/10;
+    @apply border-accent-primary bg-accent-primary/15;
   }
 
   /* Progress bar */
   .progress-track {
-    @apply h-2 bg-[#171717] rounded-full overflow-hidden;
+    @apply h-2.5 bg-navy-900 rounded-full overflow-hidden;
   }
 
   .progress-fill {
@@ -169,7 +176,7 @@ body {
 
   /* Status dots */
   .status-dot-green {
-    @apply w-2 h-2 rounded-full bg-accent-primary shadow-primary-glow-sm;
+    @apply w-2 h-2 rounded-full bg-emerald-400;
   }
 
   .status-dot-amber {
@@ -177,7 +184,7 @@ body {
   }
 
   .status-dot-slate {
-    @apply w-2 h-2 rounded-full bg-slate-600;
+    @apply w-2 h-2 rounded-full bg-slate-500;
   }
 }
 

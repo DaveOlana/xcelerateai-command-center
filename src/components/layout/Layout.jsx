@@ -26,7 +26,7 @@ export default function Layout() {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-navy-900 bg-grid">
+    <div className="min-h-screen bg-navy-950 bg-grid">
       {/* Desktop Sidebar */}
       <Sidebar />
 

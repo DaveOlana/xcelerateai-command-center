@@ -31,12 +31,12 @@ const InlineLockCard = LockWarningCard;
 
 // Status badge styles for practical missions
 const STATUS_COLORS = {
-  Locked: 'badge-slate',
-  Available: 'bg-navy-600 text-slate-400 border border-navy-400',
-  'In Progress': 'bg-amber-500/10 text-amber-400 border border-amber-500/25',
-  Blocked: 'bg-red-500/10 text-red-400 border border-red-500/25',
-  Submitted: 'bg-blue-500/10 text-blue-400 border border-blue-500/25',
-  Completed: 'badge-blue',
+  Locked: 'bg-navy-900 text-slate-500 border border-navy-750',
+  Available: 'bg-navy-900 text-slate-400 border border-navy-750',
+  'In Progress': 'bg-accent-primary/10 text-accent-primary border border-accent-primary/20',
+  Blocked: 'bg-red-500/10 text-red-400 border border-red-500/20 animate-pulse',
+  Submitted: 'bg-blue-500/10 text-blue-400 border border-blue-500/20',
+  Completed: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20',
 };
 
 export default function WeeklyMissions() {
@@ -249,58 +249,7 @@ export default function WeeklyMissions() {
 
   return (
     <PageShell className="relative">
-      {/* ── LOCKED WEEK MODAL (Option A1) ── */}
-      {isWeekLocked && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-lg p-8 animate-scale-in text-center shadow-card">
-            <div className="w-16 h-16 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center mx-auto mb-4">
-              <ShieldAlert className="w-8 h-8 text-red-400" />
-            </div>
-            <h2 className="text-xl font-bold text-white"> Target Coordinates Locked</h2>
-            <p className="text-xs text-accent-primary font-bold uppercase tracking-wider font-mono mt-1">Prerequisite Missing</p>
-
-            <div className="bg-navy-950 border border-navy-500/30 rounded-xl p-4 my-5 text-left space-y-3">
-              <p className="text-sm font-semibold text-white">
-                {week.title}
-              </p>
-              <p className="text-xs text-slate-400 mt-1">
-                This week is not yet accessible. Complete Week {selectedWeekNum - 1} required missions and proof of work first.
-              </p>
-              <div className="border-t border-navy-800 pt-3 space-y-1.5">
-                <span className="text-[13px] text-slate-500 uppercase tracking-wider font-bold">To unlock this week:</span>
-                {[
-                  `Mark Week ${selectedWeekNum - 1} complete`,
-                  'Study all required resources',
-                  'Pass skill check',
-                  'Complete required practical missions',
-                  'Submit proof of work',
-                  'Write reflection',
-                ].map((req, i) => (
-                  <div key={i} className="flex items-center gap-2 text-xs text-amber-300">
-                    <div className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
-                    <span>{req}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => setSelectedWeekNum(settings.activeWeek)}
-                className="bg-accent-primary text-navy-900 font-bold px-5 py-3 rounded-xl hover:bg-accent-primary-dim active:scale-95 transition-all duration-200 flex-1 text-xs uppercase tracking-wider shadow-primary-glow"
-              >
-                Go to Current Week ({settings.activeWeek})
-              </button>
-              <button
-                onClick={() => navigate('/settings')}
-                className="bg-navy-700/80 border border-navy-450 text-slate-300 font-bold px-5 py-3 rounded-xl hover:text-white transition-all text-xs uppercase tracking-wider active:scale-95"
-              >
-                Override in Settings
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Locked status handled inline in page shell */}
 
       {/* ── BREAK REMINDER POPUP ── */}
       {showBreakPrompt && (
@@ -401,27 +350,53 @@ export default function WeeklyMissions() {
         </button>
       </div>
 
-      {/* ── WEEK TITLE CARD ── */}
-      <div className="card">
-        <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
-          <div>
-            <div className="flex items-center gap-2 flex-wrap mb-2">
-              {isComplete ? (
-                <span className="badge-blue">✓ Completed</span>
-              ) : isWeekLocked ? (
-                <span className="badge-slate"><Lock className="w-2.5 h-2.5 inline mr-0.5" />Locked</span>
-              ) : (
-                <span className="badge-slate animate-pulse">In Progress</span>
-              )}
-            </div>
-            <h2 className="text-xl font-bold text-white">{week.title}</h2>
-            <p className="text-[13px] text-slate-600 font-mono mt-0.5">Ref: W{String(week.weekNumber).padStart(2, '0')} · Month {month.monthNumber}</p>
+      {isWeekLocked ? (
+        <div className="bg-navy-850 border border-navy-700/20 rounded-3xl p-8 max-w-xl mx-auto my-8 text-center space-y-5 shadow-card">
+          <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto shadow-sm">
+            <Lock className="w-5 h-5 text-red-400" />
           </div>
-          <div className="text-right flex-shrink-0">
-            <p className="text-2xl font-bold text-accent-primary">{taskPercent}%</p>
-            <p className="text-xs text-slate-500">{doneTasksCount}/{totalTasksCount} tasks</p>
+          <div>
+            <h3 className="text-[16px] font-bold text-white tracking-tight">Bootcamp Week Locked</h3>
+            <p className="text-[14px] text-slate-400 mt-2 leading-relaxed">
+              Prerequisite missing. Please complete all tasks and submit proof for Week {selectedWeekNum - 1} before proceeding to these milestones.
+            </p>
+          </div>
+          <div className="flex gap-3 justify-center pt-4 border-t border-navy-700/30">
+            <button
+              onClick={() => setSelectedWeekNum(settings.activeWeek)}
+              className="btn-primary py-2.5 px-4 text-xs font-bold"
+            >
+              Go to Active Week ({settings.activeWeek})
+            </button>
+            <button
+              onClick={() => navigate('/settings')}
+              className="btn-secondary py-2.5 px-4 text-xs font-semibold"
+            >
+              Override in Settings
+            </button>
           </div>
         </div>
+      ) : (
+        <>
+          {/* ── WEEK TITLE CARD ── */}
+          <div className="card">
+            <div className="flex items-start justify-between gap-4 flex-wrap mb-4">
+              <div>
+                <div className="flex items-center gap-2 flex-wrap mb-2">
+                  {isComplete ? (
+                    <span className="badge-green">✓ Completed</span>
+                  ) : (
+                    <span className="badge-slate animate-pulse">In Progress</span>
+                  )}
+                </div>
+                <h2 className="text-xl font-bold text-white">{week.title}</h2>
+                <p className="text-[13px] text-slate-450 font-medium mt-1">Ref: W{String(week.weekNumber).padStart(2, '0')} · Month {month.monthNumber}</p>
+              </div>
+              <div className="text-right flex-shrink-0">
+                <p className="text-2xl font-bold text-accent-primary">{taskPercent}%</p>
+                <p className="text-xs text-slate-500">{doneTasksCount}/{totalTasksCount} tasks</p>
+              </div>
+            </div>
         <div className="progress-track">
           <div className="progress-fill" style={{ width: `${taskPercent}%` }} />
         </div>
@@ -559,7 +534,7 @@ export default function WeeklyMissions() {
       )}
 
       {/* ── TABS ── */}
-      <div className="flex border-b border-navy-400 no-print overflow-x-auto">
+      <div className="flex border-b border-navy-700/30 no-print overflow-x-auto gap-1">
         {STEPS.map((tab) => {
           const active = activeTab === tab.id;
           const locked = isStepLocked[tab.id];
@@ -579,17 +554,23 @@ export default function WeeklyMissions() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-shrink-0 flex items-center gap-1.5 py-3 px-3 text-[14px] font-semibold border-b-2 transition-all ${
+              className={`flex-shrink-0 flex items-center gap-2 py-3.5 px-4 text-[14px] font-semibold border-b-2 transition-all ${
                 active
-                  ? 'border-accent-primary text-accent-primary bg-accent-primary/5'
+                  ? 'border-accent-primary text-white bg-accent-primary/5'
                   : done
-                  ? 'border-blue-500/30 text-blue-400 hover:text-blue-300'
+                  ? 'border-emerald-500/20 text-emerald-450 hover:text-emerald-300'
                   : locked
-                  ? 'border-transparent text-slate-500 hover:text-slate-400'
+                  ? 'border-transparent text-slate-600'
                   : 'border-transparent text-slate-400 hover:text-slate-200'
               }`}
             >
-              {locked ? <Lock className="w-3 h-3 text-slate-500" /> : done ? <CheckCircle2 className="w-3 h-3 text-accent-primary" /> : <Icon className="w-3 h-3" />}
+              {locked ? (
+                <Lock className="w-3.5 h-3.5 text-slate-600" />
+              ) : done ? (
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-450" />
+              ) : (
+                <Icon className="w-3.5 h-3.5" />
+              )}
               {tab.label}
             </button>
           );
@@ -685,33 +666,33 @@ export default function WeeklyMissions() {
                   const isRequired = requiredResources.some(r => r.title === res.title);
 
                   return (
-                    <div key={idx} className={`card flex flex-col justify-between gap-4 transition-all ${
-                      status === 'Studied' ? 'border-accent-primary/20 bg-accent-primary/5' :
-                      status === 'Studying' ? 'border-amber-500/20 bg-amber-500/5' : 'border-navy-400'
+                    <div key={idx} className={`card flex flex-col justify-between gap-5 transition-all ${
+                      status === 'Studied' ? 'border-emerald-500/20 bg-emerald-500/5' :
+                      status === 'Studying' ? 'border-accent-primary/25 bg-accent-primary/5' : 'border-navy-700/25'
                     }`}>
-                      <div className="space-y-2">
+                      <div className="space-y-3">
                         <div className="flex items-center justify-between flex-wrap gap-2">
                           <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="badge-slate font-mono text-xs">{res.type}</span>
+                            <span className="badge-slate text-xs">{res.type}</span>
                             {res.difficulty && <span className="badge-slate text-xs">{res.difficulty}</span>}
                             {isRequired && <span className="badge-slate text-xs">Required</span>}
                           </div>
-                          <span className={`text-[13px] font-bold px-2 py-0.5 rounded-full border ${
-                            status === 'Studied' ? 'bg-accent-primary/10 text-accent-primary border-accent-primary/20' :
-                            status === 'Studying' ? 'bg-amber-500/10 text-amber-400 border-amber-500/20 animate-pulse' :
-                            'bg-navy-800 text-slate-500 border-navy-400'
+                          <span className={`text-[12px] font-bold px-2.5 py-0.5 rounded-full border ${
+                            status === 'Studied' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' :
+                            status === 'Studying' ? 'bg-accent-primary/10 text-accent-primary border-accent-primary/20 animate-pulse' :
+                            'bg-navy-900 text-slate-500 border-navy-700'
                           }`}>
                             {status}
                           </span>
                         </div>
 
-                        <h4 className="font-bold text-white text-sm">{res.title}</h4>
+                        <h4 className="font-bold text-white text-base leading-snug">{res.title}</h4>
 
                         {/* Time / Data estimates */}
                         {(res.timeEstimate || res.dataEstimate) && (
-                          <div className="flex items-center gap-3 text-[13px] text-slate-500">
-                            {res.timeEstimate && <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{res.timeEstimate}</span>}
-                            {res.dataEstimate && <span className="flex items-center gap-1"><Database className="w-3 h-3" />{res.dataEstimate}</span>}
+                          <div className="flex items-center gap-3 text-[13px] text-slate-450 font-medium">
+                            {res.timeEstimate && <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{res.timeEstimate}</span>}
+                            {res.dataEstimate && <span className="flex items-center gap-1"><Database className="w-3.5 h-3.5" />{res.dataEstimate}</span>}
                           </div>
                         )}
 
@@ -720,28 +701,28 @@ export default function WeeklyMissions() {
                         )}
 
                         {res.missionObjective && (
-                          <div className="bg-navy-950 border border-navy-400/50 rounded-lg p-2 text-[13px] text-slate-400">
-                            <span className="font-bold text-accent-primary"> Goal: </span>
+                          <div className="bg-navy-900 border border-navy-750 rounded-xl p-3 text-[13px] text-slate-400">
+                            <span className="font-bold text-accent-primary">Goal: </span>
                             {res.missionObjective}
                           </div>
                         )}
                       </div>
 
                       {/* Action buttons */}
-                      <div className="grid grid-cols-2 gap-2 pt-2 border-t border-navy-400/50">
+                      <div className="grid grid-cols-2 gap-3 pt-3 border-t border-navy-750">
                         <a
                           href={res.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn-secondary py-1.5 px-2 text-[14px] text-center flex items-center justify-center gap-1"
+                          className="btn-secondary py-2 px-2 text-[13px] text-center flex items-center justify-center gap-1"
                         >
-                          <ExternalLink className="w-3 h-3" /> Open Resource
+                          <ExternalLink className="w-3.5 h-3.5" /> Open Resource
                         </a>
 
                         {status === 'Not Started' && (
                           <button
                             onClick={() => updateResourceStatus(res.title, 'Studying')}
-                            className="btn-secondary py-1.5 text-[14px] text-amber-400 border-amber-500/20 hover:bg-amber-500/10"
+                            className="btn-secondary py-2 text-[13px] text-amber-500 border-amber-500/20 hover:bg-amber-500/10"
                           >
                             Start Studying
                           </button>
@@ -749,23 +730,23 @@ export default function WeeklyMissions() {
                         {status === 'Studying' && (
                           <button
                             onClick={() => updateResourceStatus(res.title, 'Studied')}
-                            className="btn-primary py-1.5 text-[14px]"
+                            className="btn-primary py-2 text-[13px]"
                           >
-                            ✓ Mark Studied
+                            Mark Studied
                           </button>
                         )}
                         {status === 'Studied' && (
-                          <div className="badge-blue py-1.5 text-[14px] text-center flex items-center justify-center gap-1">
-                            <CheckCircle2 className="w-3 h-3" /> Studied
+                          <div className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl py-2 text-[13px] text-center flex items-center justify-center gap-1 font-semibold">
+                            <CheckCircle2 className="w-3.5 h-3.5" /> Studied
                           </div>
                         )}
 
                         {/* Span full width — Open + Take Note */}
                         <button
                           onClick={() => handleTakeNote(res)}
-                          className="col-span-2 btn-secondary py-1.5 text-[14px] text-slate-400 flex items-center justify-center gap-1"
+                          className="col-span-2 btn-secondary py-2 text-[13px] text-slate-400 flex items-center justify-center gap-1"
                         >
-                          <FileText className="w-3 h-3" /> Open + Take Note
+                          <FileText className="w-3.5 h-3.5" /> Open & Take Note
                         </button>
                       </div>
                     </div>
@@ -1135,6 +1116,8 @@ export default function WeeklyMissions() {
           </div>
         )}
       </div>
+      </>
+      )}
     </PageShell>
   );
 }

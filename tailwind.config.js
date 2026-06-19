@@ -8,30 +8,30 @@ export default {
     extend: {
       colors: {
         navy: {
-          950: '#020817', // App background
-          900: '#050B18', // Deep navy
-          850: '#0B1220', // Main surface
-          800: '#0F172A', // Card surface
-          700: '#111827', // Elevated card
-          600: '#1E293B', // Borders / subtle fills
-          500: '#334155', // Muted borders
-          450: '#475569',
-          400: '#64748B',
-          300: '#94A3B8', // Muted text
+          950: '#080B16', // Deep charcoal/navy background
+          900: '#0C0F1E', // Sidebar/Deep navigation surface
+          850: '#121829', // Card surface
+          800: '#172033', // Elevated card
+          700: '#1E293B', // Subtle backgrounds
+          600: '#2E3E59', // High contrast borders
+          500: '#475569', // Muted borders
+          450: '#64748B',
+          400: '#94A3B8',
+          300: '#CBD5E1', // Muted text
         },
         accent: {
-          primary: '#2563EB', // Primary blue
-          'primary-dim': '#3B82F6', // Electric blue
-          'primary-glow': 'rgba(37,99,235,0.15)',
-          cyan: '#22D3EE',
-          'cyan-dim': '#38BDF8',
+          primary: '#2563EB', // Modern blue accent
+          'primary-dim': '#3B82F6', // Lighter hover state
+          'primary-glow': 'rgba(37,99,235,0.1)',
+          cyan: '#06B6D4',
+          'cyan-dim': '#22D3EE',
         },
         status: {
-          locked: '#374151',
-          active: '#3b82f6',
-          complete: '#3b82f6',
-          warning: '#f59e0b',
-          error: '#ef4444',
+          locked: '#475569',
+          active: '#2563EB',
+          complete: '#10B981', // Strictly Green for success/complete
+          warning: '#F59E0B',
+          error: '#EF4444',
         }
       },
       fontFamily: {

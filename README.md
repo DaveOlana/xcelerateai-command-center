@@ -1,46 +1,45 @@
-# XcelerateAI Bootcamp Command Center
+# XcelerateAI Command Center
 
-> Your personal ops mission-control dashboard for completing the 6-Month JavaScript Mobile Ops Bootcamp.
+Your personal learning and productivity mission control cockpit designed for completing the XcelerateAI JavaScript Mobile Ops Bootcamp and building Elliot V1.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Step 1 — Install Node.js (if not installed)
 
 Download and install Node.js from: https://nodejs.org/
-
-Choose the **LTS version**. After installing, close and reopen your terminal.
+Choose the LTS version. After installing, close and reopen your terminal.
 
 Verify it works:
-```
+```bash
 node --version
 npm --version
 ```
 
-### Step 2 — Install dependencies
+### Step 2 — Install Dependencies
 
 Open a terminal in the project folder and run:
-```
+```bash
 npm install
 ```
 
-### Step 3 — Start the app
+### Step 3 — Start the App
 
-```
+```bash
 npm run dev
 ```
 
-Then open your browser to: **http://localhost:5173**
+Then open your browser to: http://localhost:5173
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 xcelerate-command-center/
 ├── public/
-│   ├── roadmap-data.json        ← EDIT THIS with your real roadmap
+│   ├── roadmap-data.json        ← Edit this with your real roadmap
 │   └── favicon.svg
 ├── src/
 │   ├── components/
@@ -51,7 +50,7 @@ xcelerate-command-center/
 │   │   └── AppContext.jsx       ← Global state (roadmap, progress, notes)
 │   ├── data/
 │   │   └── sampleRoadmap.js     ← Built-in 6-month skeleton
-│   ├── pages/                   ← All 11 pages
+│   ├── pages/                   ← App pages
 │   ├── utils/                   ← Progress calc, JSON validator, date utils
 │   ├── App.jsx                  ← Routes
 │   └── main.jsx                 ← Entry point
@@ -62,65 +61,46 @@ xcelerate-command-center/
 
 ---
 
-## 📋 App Pages
+## App Pages
 
 | Page | Route | Purpose |
 |---|---|---|
-| Dashboard | `/` | Overview, stats, quick actions |
-| Today's Focus | `/today` | 3 tasks + Pomodoro timer |
-| Weekly Missions | `/missions` | Full week checklist |
-| Progress | `/progress` | Weighted progress breakdown |
-| Timeline | `/timeline` | All 6 months overview |
-| Resource Vault | `/resources` | Filtered resource library |
-| Project Tracker | `/projects` | Build milestones |
-| Notes Journal | `/notes` | Learning journal |
-| Checkpoints | `/checkpoints` | Skill confidence tracker |
-| Import Roadmap | `/import` | Upload roadmap-data.json |
-| Settings | `/settings` | Configure everything |
+| Dashboard | `/` | Overview, metrics, and progress tracking |
+| Today's Focus | `/today` | Four-stage guided flow (Learn, Build, Prove, Reflect) with Pomodoro timer |
+| Weekly Missions | `/missions` | Structured week-by-week curriculum module checklist |
+| Progress | `/progress` | Comprehensive analytics and weighted progress charts |
+| Timeline | `/timeline` | Complete 6-month roadmap timeline |
+| Resource Vault | `/resources` | Filtered directory of all reference materials |
+| Project Tracker | `/projects` | Milestone checklists and repository statuses |
+| Notes Journal | `/notes` | Learning journal and blocker log |
+| Checkpoints | `/checkpoints` | Skill-by-skill confidence level grids |
+| Import Roadmap | `/import` | Upload utility for custom roadmap JSONs |
+| Settings | `/settings` | Global configurations, data export/import, and theme reset |
 
 ---
 
-## 📂 roadmap-data.json — How It Works
+## Data Integration (roadmap-data.json)
 
 ### Where is the file?
 ```
 public/roadmap-data.json
 ```
+This file contains the structural definition of your bootcamp curriculum. You can edit it inside your editor and then import it into the app via the Import Roadmap interface.
 
-This file is a **starter template**. Edit it in VS Code, then import it into the app.
+### How to customize
+1. Open `public/roadmap-data.json` in your editor.
+2. Replace the sample data with your actual curriculum content.
+3. Remove the instructions fields before importing.
+4. Save the file.
 
-### How to edit it
+### How to import
+1. Navigate to the application in your browser.
+2. Go to the Import Roadmap page via the navigation sidebar.
+3. Upload your customized JSON file. The system will run schema validations.
+4. Click Confirm Import to activate your personalized dashboard.
 
-1. Open `public/roadmap-data.json` in VS Code
-2. Replace the placeholder content with your real bootcamp content
-3. Delete the `"_instructions"` field at the top before importing
-4. Save the file
-
-### How to import it into the app
-
-1. Open the app at `http://localhost:5173`
-2. Go to **Import Roadmap** (sidebar or More menu)
-3. Click the upload zone or drag your JSON file onto it
-4. The app will validate the file and show a summary:
-   - ✅ Found X months
-   - ✅ Found X weeks
-   - ✅ Found X resources
-   - etc.
-5. Click **Confirm Import** to activate it
-6. Your dashboard is now powered by your real roadmap
-
-### How it connects to the dashboard
-
-Once imported, every page reads from your roadmap:
-
-- **Dashboard** — shows current week, month, progress
-- **Weekly Missions** — shows tasks, resources, checkpoint from your JSON
-- **Resource Vault** — shows all resources from all weeks
-- **Project Tracker** — shows all projects and milestones
-- **Checkpoints** — shows all checkpoint questions
-
-### Required JSON structure
-
+### JSON Structure Requirements
+Your JSON file must conform to the following schema:
 ```json
 {
   "bootcampTitle": "string",
@@ -175,112 +155,36 @@ Once imported, every page reads from your roadmap:
 
 ---
 
-## 💾 Progress Storage
+## State Management and Persistence
 
-All progress is saved in your browser's **localStorage**. Nothing is sent to any server.
+All data is stored directly in the browser's localStorage. No external database or network request is used for tracking.
 
-| Key | What it stores |
+| Storage Key | Purpose |
 |---|---|
-| `xca_roadmap` | Your imported roadmap JSON |
-| `xca_progress` | Task completions, week completions, project milestones |
-| `xca_notes` | All journal notes |
-| `xca_checkpoints` | Checkpoint confidence levels |
-| `xca_settings` | Start date, mentor name, active week |
-| `xca_streak` | Study streak data |
+| `xca_roadmap` | Active curriculum roadmap structure |
+| `xca_progress` | Tracked tasks, completed weeks, and project milestones |
+| `xca_notes` | User-written journal entries and logs |
+| `xca_checkpoints` | Confidence rankings per checkpoint |
+| `xca_settings` | Profile info, custom targets, start date, and active week |
+| `xca_streak` | Consecutively logged study days |
 
-### Export progress
-
-Go to **Settings → Export Progress** to download a JSON backup of everything.
-
-### Import progress
-
-Go to **Settings → Import Progress** to restore from a backup file.
+To safeguard your progress, backup and recovery utilities are available in the Settings page.
 
 ---
 
-## 🚢 Deploy to Vercel
+## Verification and Deployment
 
-### Method 1 — Vercel CLI
-
-```
+### Vercel Deployment
+Deploy this cockpit configuration using Vercel CLI or via Git integration:
+```bash
 npm install -g vercel
 npm run build
 vercel --prod
 ```
 
-### Method 2 — GitHub + Vercel Dashboard
-
-1. Push your project to GitHub:
-```
-git init
-git add .
-git commit -m "Initial commit: XcelerateAI Command Center"
-git remote add origin https://github.com/yourusername/xcelerate-command-center.git
-git push -u origin main
-```
-
-2. Go to https://vercel.com and sign in
-3. Click **Add New Project**
-4. Import your GitHub repository
-5. Vercel will auto-detect Vite and configure the build
-6. Click **Deploy**
-7. Your app is live at a `.vercel.app` URL
-
-The `vercel.json` file is already included and configured for React Router.
+### Routing Support
+The `vercel.json` file is configured with routing rewrites to support smooth React Router single-page navigation.
 
 ---
 
-## 🎯 Progress Calculation
-
-Overall progress uses a weighted blend:
-
-| Component | Weight | How calculated |
-|---|---|---|
-| Tasks | 50% | Completed tasks ÷ total tasks |
-| Checkpoints | 30% | Confident = 1pt, Learning = 0.5pt |
-| Projects | 20% | Completed milestones ÷ total milestones |
-
----
-
-## ⏱️ Pomodoro Timer
-
-The Today's Focus page includes a built-in focus timer:
-
-- **25 minutes** — Focus session
-- **5 minutes** — Break
-- Auto-switches between modes
-- Browser notification when session ends (if permission granted)
-- Tracks sessions completed today
-
----
-
-## 🔥 Study Streak
-
-The streak counter tracks consecutive days of study. A day is counted when you:
-- Check off a task
-- Mark a week complete
-- Update a checkpoint
-- Write a note
-
----
-
-## 🗂️ Version 2 Plans
-
-The following features are planned for Version 2:
-
-1. **AI PDF Import** — Upload a PDF syllabus and use AI to auto-generate the roadmap JSON
-2. **Cloud sync** — Optional sync across devices
-3. **AI daily coach** — Personalized study recommendations
-4. **Calendar integration** — Block study time automatically
-5. **Progress sharing** — Share weekly reports with your mentor
-
----
-
-## 📞 Support
-
-This app was built as part of the XcelerateAI Bootcamp experience.
-Questions? Reach out to your mentor.
-
----
-
-*Built with React + Vite + Tailwind CSS v3 — No backend, no login, no subscription.*
+*Built with React, Vite, and Tailwind CSS.*

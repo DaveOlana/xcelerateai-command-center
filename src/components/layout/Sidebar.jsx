@@ -64,40 +64,40 @@ export default function Sidebar() {
   }, [roadmap, progress, checkpointStatuses]);
 
   return (
-    <aside className={`hidden lg:flex flex-col h-screen bg-navy-950 border-r border-navy-500/30 fixed left-0 top-0 z-40 transition-all duration-300 ${isCollapsed ? 'w-[80px]' : 'w-[280px]'}`}>
+    <aside className={`hidden lg:flex flex-col h-screen bg-navy-900 border-r border-navy-700/25 fixed left-0 top-0 z-40 transition-all duration-300 ${isCollapsed ? 'w-[80px]' : 'w-[280px]'}`}>
       
       {/* Collapse Toggle */}
       <button 
         onClick={toggleSidebar}
-        className="absolute -right-3 top-6 w-6 h-6 bg-navy-800 border border-navy-500/50 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-navy-700 z-50 transition-all"
+        className="absolute -right-3 top-6 w-6 h-6 bg-navy-850 border border-navy-700 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-navy-850 z-50 transition-all"
         title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
       >
         {isCollapsed ? <ChevronRight className="w-3.5 h-3.5" /> : <ChevronLeft className="w-3.5 h-3.5" />}
       </button>
 
       {/* Header / Brand */}
-      <div className={`py-6 border-b border-navy-500/20 flex flex-col ${isCollapsed ? 'px-3 items-center' : 'px-6'}`}>
+      <div className={`py-6 border-b border-navy-700/20 flex flex-col ${isCollapsed ? 'px-3 items-center' : 'px-6'}`}>
         <div className={`flex items-center gap-3 ${isCollapsed ? 'justify-center' : ''}`}>
           <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white/5 border border-white/10 flex-shrink-0" title="XcelerateAI Command Center">
             <img src="/xcelerate-icon.png" alt="Xcelerate" className="w-6 h-6 object-contain" />
           </div>
           {!isCollapsed && (
             <div className="min-w-0 transition-opacity duration-300">
-              <p className="text-[16px] font-bold text-accent-primary tracking-wide truncate">XcelerateAI</p>
-              <p className="text-[12px] text-slate-400 font-medium truncate">Mission Control</p>
+              <p className="text-[16px] font-extrabold text-white tracking-tight truncate">XcelerateAI</p>
+              <p className="text-[12px] text-slate-400 font-medium truncate">Bootcamp Cockpit</p>
             </div>
           )}
         </div>
 
         {/* Dave Operator Card */}
-        <div className={`mt-5 bg-navy-800/50 rounded-xl border border-navy-500/20 flex items-center gap-3 transition-all ${isCollapsed ? 'p-2 justify-center' : 'p-3.5'}`} title={`Operator: ${roadmap?.learner || 'Dave'}`}>
+        <div className={`mt-5 bg-navy-850 border border-navy-700/30 rounded-xl flex items-center gap-3 transition-all ${isCollapsed ? 'p-2 justify-center' : 'p-3.5'}`} title={`Operator: ${roadmap?.learner || 'Dave'}`}>
           <div className="w-10 h-10 rounded-full bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center text-accent-primary text-sm font-bold flex-shrink-0">
             D
           </div>
           {!isCollapsed && (
             <div className="min-w-0 transition-opacity duration-300">
-              <span className="text-[14px] font-medium text-slate-500 uppercase tracking-wider">Operator</span>
-              <p className="text-sm font-bold text-white truncate">{roadmap?.learner || 'Dave'}</p>
+              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Operator</span>
+              <p className="text-sm font-bold text-slate-200 truncate">{roadmap?.learner || 'Dave'}</p>
             </div>
           )}
         </div>
@@ -107,12 +107,12 @@ export default function Sidebar() {
           <div className="mt-4 transition-opacity duration-300">
             <NavLink
               to="/import"
-              className="flex flex-col gap-1 w-full text-left p-3 rounded-xl border border-accent-cyan/25 bg-accent-cyan/5 hover:bg-accent-cyan/10 transition-all group"
+              className="flex flex-col gap-1 w-full text-left p-3 rounded-xl border border-accent-cyan/20 bg-accent-cyan/5 hover:bg-accent-cyan/10 transition-all group"
             >
               <span className="text-[13px] font-bold text-accent-cyan flex items-center gap-2">
                  Load Roadmap
               </span>
-              <span className="text-[14px] text-slate-400">
+              <span className="text-[12px] text-slate-400">
                 Import bootcamp data JSON
               </span>
             </NavLink>
@@ -125,9 +125,9 @@ export default function Sidebar() {
         {navGroups.map((group) => (
           <div key={group.title} className="space-y-1">
             {!isCollapsed ? (
-              <p className="text-[14px] font-semibold uppercase tracking-wider text-slate-500 px-3 mb-2">{group.title}</p>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-500 px-3 mb-2">{group.title}</p>
             ) : (
-              <div className="w-full h-px bg-navy-500/20 my-4" />
+              <div className="w-full h-px bg-navy-700/20 my-4" />
             )}
             {group.items.map(({ to, label, icon: Icon, exact }) => (
               <NavLink
@@ -140,18 +140,18 @@ export default function Sidebar() {
                     isCollapsed ? 'justify-center p-3' : 'gap-3 px-3 py-2.5 text-[14px]'
                   } ${
                     isActive
-                      ? 'bg-accent-primary/10 text-accent-primary border-l-[3px] border-accent-primary font-semibold ' + (isCollapsed ? 'pl-[9px]' : 'pl-[9px]')
-                      : 'text-slate-400 hover:text-slate-200 hover:bg-navy-800/50 border-l-[3px] border-transparent ' + (isCollapsed ? 'pl-3' : 'pl-[9px]')
+                      ? 'bg-accent-primary/10 text-white border-l-[3px] border-accent-primary font-semibold ' + (isCollapsed ? 'pl-[9px]' : 'pl-[9px]')
+                      : 'text-slate-450 hover:text-slate-200 hover:bg-navy-850/50 border-l-[3px] border-transparent ' + (isCollapsed ? 'pl-3' : 'pl-[9px]')
                   }`
                 }
               >
                 {({ isActive }) => (
                   <>
-                    <Icon className={`w-[18px] h-[18px] flex-shrink-0 ${isActive ? 'text-accent-primary' : 'text-slate-500 group-hover:text-slate-400'}`} />
+                    <Icon className={`w-[18px] h-[18px] flex-shrink-0 ${isActive ? 'text-accent-primary' : 'text-slate-550 group-hover:text-slate-350'}`} />
                     {!isCollapsed && (
                       <>
                         <span className="flex-1 whitespace-nowrap">{label}</span>
-                        {isActive && <ChevronRight className="w-3.5 h-3.5 opacity-50 text-accent-primary" />}
+                        {isActive && <ChevronRight className="w-3.5 h-3.5 opacity-55 text-accent-primary" />}
                       </>
                     )}
                   </>
@@ -164,12 +164,12 @@ export default function Sidebar() {
 
       {/* System Status Foot Monitor */}
       {!isCollapsed && (
-        <div className="p-5 border-t border-navy-500/20 bg-navy-950 transition-opacity duration-300">
-          <div className="space-y-2.5 text-[12px] text-slate-400 font-medium">
+        <div className="p-5 border-t border-navy-700/25 bg-navy-900 transition-opacity duration-300">
+          <div className="space-y-2.5 text-[12px] text-slate-450 font-medium">
             <div className="flex justify-between items-center">
               <span>System</span>
-              <span className="text-emerald-400 flex items-center gap-1.5 text-[14px] font-bold tracking-wider uppercase">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span className="text-emerald-400 flex items-center gap-1.5 text-[13px] font-bold tracking-wider uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 Online
               </span>
             </div>
@@ -181,18 +181,18 @@ export default function Sidebar() {
             )}
             <div className="flex justify-between items-center">
               <span>Study Streak</span>
-              <span className="text-amber-400 font-semibold flex items-center gap-1">
-                <Flame className="w-3.5 h-3.5" />
+              <span className="text-amber-450 font-semibold flex items-center gap-1">
+                <Flame className="w-3.5 h-3.5 text-amber-400" />
                 {streak.currentStreak} Day{streak.currentStreak !== 1 ? 's' : ''}
               </span>
             </div>
             
-            <div className="pt-2 mt-2 border-t border-navy-500/20">
+            <div className="pt-2 mt-2 border-t border-navy-750">
               <div className="flex justify-between items-center text-[13px]">
                 <span className="text-slate-500">Progress</span>
                 <span className="text-accent-primary font-bold">{progScore}%</span>
               </div>
-              <div className="w-full h-1.5 bg-navy-800 rounded-full mt-1.5 overflow-hidden">
+              <div className="w-full h-1.5 bg-navy-850 rounded-full mt-1.5 overflow-hidden">
                 <div 
                   className="h-full bg-accent-primary transition-all duration-1000"
                   style={{ width: `${progScore}%` }}

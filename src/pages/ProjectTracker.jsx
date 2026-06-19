@@ -85,10 +85,10 @@ export default function ProjectTracker() {
           return (
             <div
               key={pi}
-              className={`rounded-2xl border backdrop-blur-sm transition-all duration-350 p-5 ${
+              className={`rounded-3xl border transition-all duration-350 p-6 lg:p-7 ${
                 isElliotBoss
-                  ? 'border-accent-cyan/35 bg-gradient-to-r from-navy-800 to-navy-750/70 shadow-primary-glow-sm relative overflow-hidden'
-                  : 'border-navy-500/20 bg-navy-800/80 hover:border-navy-500/40 hover:shadow-card-hover'
+                  ? 'border-accent-cyan/30 bg-gradient-to-r from-navy-850 to-navy-900 shadow-sm relative overflow-hidden'
+                  : 'border-navy-700/25 bg-navy-850 hover:border-navy-600 hover:shadow-card-hover'
               }`}
             >
               {isElliotBoss && (
@@ -102,59 +102,69 @@ export default function ProjectTracker() {
               >
                 <div className="flex items-start gap-4">
                   {/* Badge Index */}
-                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-sm font-mono
+                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-sm
                     ${percent === 100
-                      ? 'bg-blue-500/20 border border-blue-500/40 text-blue-400'
+                      ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-450'
                       : isElliotBoss
-                      ? 'bg-accent-cyan/15 border border-accent-cyan/30 text-accent-cyan shadow-primary-glow-sm'
+                      ? 'bg-accent-cyan/15 border border-accent-cyan/30 text-accent-cyan shadow-sm'
                       : percent > 0
                       ? 'bg-accent-primary/15 border border-accent-primary/30 text-accent-primary'
-                      : 'bg-navy-750 border border-navy-500/40 text-slate-500'
+                      : 'bg-navy-900 border border-navy-750 text-slate-500'
                     }`}
                   >
                     {percent === 100 ? '✓' : isElliotBoss ? <img src="/xcelerate-icon.png" alt="Xcelerate" className="w-5 h-5 object-contain opacity-80" /> : `${pi + 1}`}
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-bold text-white text-base leading-snug">{project.name}</h3>
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <h3 className="font-bold text-white text-[16px] leading-snug">{project.name}</h3>
                       {isElliotBoss && (
-                        <span className="bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 text-xs px-2 py-0.5 rounded font-mono font-bold uppercase tracking-wider flex items-center gap-1">
+                        <span className="bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider flex items-center gap-1">
                           <Star className="w-2.5 h-2.5 fill-accent-cyan" /> CAPSTONE BOSS
                         </span>
                       )}
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider
+                        ${percent === 100
+                          ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                          : percent > 0
+                          ? 'bg-accent-primary/10 text-accent-primary border-accent-primary/20 animate-pulse'
+                          : 'bg-navy-900 text-slate-500 border-navy-750'
+                        }`}
+                      >
+                        {percent === 100 ? 'Completed' : percent > 0 ? 'In Progress' : 'Not Started'}
+                      </span>
                     </div>
-                    <p className="text-xs text-slate-400 mt-1 line-clamp-1 leading-relaxed">{project.description}</p>
+                    <p className="text-[13px] text-slate-400 mt-1.5 line-clamp-1 leading-relaxed">{project.description}</p>
                     
-                    <div className="flex items-center gap-3 mt-3">
+                    <div className="flex items-center gap-4 mt-4">
                       <div className="flex-1">
                         <ProgressBar percent={percent} colorClass={isElliotBoss ? 'bg-gradient-to-r from-accent-cyan to-accent-primary' : 'bg-gradient-to-r from-accent-primary to-blue-500'} />
                       </div>
-                      <span className="text-[13px] text-slate-500 font-mono flex-shrink-0 font-bold">
+                      <span className="text-[13px] text-slate-450 font-bold">
                         {done.length}/{total} Milestones · {percent}%
                       </span>
                     </div>
                   </div>
 
-                  <div className="flex-shrink-0 mt-1">
-                    {isExpanded ? <ChevronUp className="w-4 h-4 text-slate-500" /> : <ChevronDown className="w-4 h-4 text-slate-500" />}
+                  <div className="flex-shrink-0 mt-1.5">
+                    {isExpanded ? <ChevronUp className="w-4 h-4 text-slate-450" /> : <ChevronDown className="w-4 h-4 text-slate-450" />}
                   </div>
                 </div>
               </button>
 
               {/* Expanded details */}
               {isExpanded && (
-                <div className="mt-5 pt-5 border-t border-navy-500/20 space-y-5 animate-slide-up">
+                <div className="mt-6 pt-6 border-t border-navy-700/30 space-y-6 animate-slide-up">
                   <div>
-                    <span className="text-[13px] font-bold text-slate-400 block mb-1.5">
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">
                       Project Brief
                     </span>
-                    <p className="text-xs text-slate-300 leading-relaxed font-sans">{project.description}</p>
+                    <p className="text-[14px] text-slate-300 leading-relaxed font-sans">{project.description}</p>
                   </div>
 
                   {/* Milestones list */}
                   <div>
-                    <span className="text-[13px] font-bold text-slate-400 block mb-3">
+                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-3">
                       Build Milestones
                     </span>
                     <div className="space-y-2.5">
@@ -164,20 +174,20 @@ export default function ProjectTracker() {
                           <button
                             key={mi}
                             onClick={() => toggleProjectMilestone(pi, mi)}
-                            className={`w-full flex items-center gap-3 p-3.5 rounded-xl border text-left transition-all duration-200 active:scale-95
+                            className={`w-full flex items-center gap-3.5 p-4 rounded-2xl border text-left transition-all duration-200 active:scale-98
                               ${mDone
-                                ? 'bg-blue-500/5 border-blue-500/20 text-slate-400 hover:border-blue-500/30'
-                                : 'bg-navy-800/40 border-navy-500/20 hover:border-navy-500/40 text-slate-200'
+                                ? 'bg-emerald-500/5 border-emerald-500/10 text-slate-450 hover:border-emerald-500/20'
+                                : 'bg-navy-900 border-navy-750 hover:border-navy-650 text-slate-200'
                               }`}
                           >
-                            <div className={`w-4 h-4 rounded border flex items-center justify-center flex-shrink-0 transition-all duration-200
-                              ${mDone ? 'border-blue-500 bg-blue-500/20' : 'border-navy-300 bg-navy-900'}`}
+                            <div className={`w-5 h-5 rounded-lg border flex items-center justify-center flex-shrink-0 transition-all duration-200
+                              ${mDone ? 'border-emerald-500 bg-emerald-500/20' : 'border-navy-600 bg-navy-850'}`}
                             >
                               {mDone && (
-                                <CheckCircle2 className="w-3.5 h-3.5 text-blue-400" />
+                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                               )}
                             </div>
-                            <span className={`text-xs ${mDone ? 'line-through text-slate-500 font-medium' : 'font-semibold text-slate-200'}`}>
+                            <span className={`text-[14px] ${mDone ? 'line-through text-slate-500 font-medium' : 'font-semibold text-slate-200'}`}>
                               {milestone}
                             </span>
                           </button>
@@ -186,10 +196,10 @@ export default function ProjectTracker() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid md:grid-cols-2 gap-5">
                     {/* Github Link */}
                     <div>
-                      <span className="text-[13px] font-bold text-slate-400 block mb-1.5">
+                      <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">
                         Repository Link
                       </span>
                       <div className="flex gap-2">
@@ -205,7 +215,7 @@ export default function ProjectTracker() {
                             setProjectGithubLink(pi, localGithub);
                             alert('GitHub link updated.');
                           }}
-                          className="bg-navy-700/60 border border-navy-500 hover:text-white font-bold px-4 py-2 rounded-xl text-xs active:scale-95 transition-all"
+                          className="bg-navy-900 border border-navy-700 hover:text-white font-bold px-4 py-2 rounded-xl text-xs active:scale-95 transition-all"
                         >
                           Save
                         </button>
@@ -224,9 +234,9 @@ export default function ProjectTracker() {
 
                     {/* Project Notes */}
                     <div>
-                      <span className="text-[13px] font-bold text-slate-400 block mb-1.5 flex items-center justify-between">
+                      <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2 flex items-center justify-between">
                         Project Notes
-                        {savedNote && <span className="text-accent-primary text-[10px] font-bold">Saved</span>}
+                        {savedNote && <span className="text-emerald-450 text-[10px] font-bold">Saved</span>}
                       </span>
                       <textarea
                         placeholder="Capture issues, design patterns, and package choices made during development."
@@ -240,7 +250,7 @@ export default function ProjectTracker() {
                           setProjectNote(pi, localNote);
                           alert('Project notes updated.');
                         }}
-                        className="bg-navy-700/60 border border-navy-500 hover:text-white font-bold px-4 py-2 rounded-xl text-xs active:scale-95 transition-all mt-2.5"
+                        className="bg-navy-900 border border-navy-700 hover:text-white font-bold px-4 py-2 rounded-xl text-xs active:scale-95 transition-all mt-2.5"
                       >
                         Save Notes
                       </button>
@@ -249,9 +259,9 @@ export default function ProjectTracker() {
 
                   {/* Status completion badges */}
                   {percent === 100 && (
-                    <div className="flex items-center gap-3 p-3.5 bg-blue-500/10 border border-blue-500/25 rounded-xl">
-                      <ShieldCheck className="w-5 h-5 text-blue-400 flex-shrink-0" />
-                      <p className="text-blue-400 font-bold text-xs">
+                    <div className="flex items-center gap-3.5 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl">
+                      <ShieldCheck className="w-5 h-5 text-emerald-450 flex-shrink-0" />
+                      <p className="text-emerald-450 font-bold text-xs">
                         {isElliotBoss ? 'Final Target Complete! Elliot V1 stands assembled. 🤖' : 'Project Complete!'}
                       </p>
                     </div>

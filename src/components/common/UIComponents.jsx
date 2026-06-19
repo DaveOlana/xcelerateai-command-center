@@ -32,14 +32,14 @@ export function PageHeader({ title, subtitle, actions, className = "" }) {
  */
 export function SectionCard({ title, subtitle, headerActions, children, className = "", hoverable = false }) {
   return (
-    <div className={`bg-navy-800/80 border border-navy-400/50 rounded-2xl p-5 lg:p-6 backdrop-blur-sm shadow-card transition-all duration-300 ${
-      hoverable ? 'hover:border-accent-primary/20 hover:shadow-card-hover' : ''
+    <div className={`bg-navy-850 border border-navy-700/25 rounded-3xl p-7 lg:p-8 backdrop-blur-sm shadow-card transition-all duration-300 ${
+      hoverable ? 'hover:border-navy-600 hover:shadow-card-hover' : ''
     } ${className}`}>
       {(title || subtitle || headerActions) && (
-        <div className="flex items-start justify-between gap-4 mb-4 border-b border-white/5 pb-3">
+        <div className="flex items-start justify-between gap-4 mb-5 border-b border-navy-700/30 pb-4">
           <div>
-            {title && <h3 className="text-sm font-semibold text-slate-200">{title}</h3>}
-            {subtitle && <p className="text-xs text-slate-500 mt-0.5">{subtitle}</p>}
+            {title && <h3 className="text-[16px] font-bold text-white tracking-tight">{title}</h3>}
+            {subtitle && <p className="text-[13px] text-slate-400 mt-1 leading-relaxed">{subtitle}</p>}
           </div>
           {headerActions && <div className="flex items-center gap-2">{headerActions}</div>}
         </div>
@@ -54,12 +54,12 @@ export function SectionCard({ title, subtitle, headerActions, children, classNam
  */
 export function StatCard({ label, value, icon: Icon, helperText, accentColor = "green", className = "" }) {
   const borderColors = {
-    green: "border-accent-primary/20 hover:border-accent-primary/40",
-    cyan: "border-accent-cyan/20 hover:border-accent-cyan/40",
-    orange: "border-orange-500/20 hover:border-orange-500/40",
-    purple: "border-purple-500/20 hover:border-purple-500/40",
-    amber: "border-amber-500/20 hover:border-amber-500/40",
-    red: "border-red-500/20 hover:border-red-500/40",
+    green: "border-navy-700/25 hover:border-accent-primary/30",
+    cyan: "border-navy-700/25 hover:border-accent-cyan/30",
+    orange: "border-navy-700/25 hover:border-orange-500/30",
+    purple: "border-navy-700/25 hover:border-purple-500/30",
+    amber: "border-navy-700/25 hover:border-amber-500/30",
+    red: "border-navy-700/25 hover:border-red-500/30",
   };
 
   const textColors = {
@@ -72,14 +72,14 @@ export function StatCard({ label, value, icon: Icon, helperText, accentColor = "
   };
 
   return (
-    <div className={`bg-[#111111]/80 border rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-md ${borderColors[accentColor] || "border-white/5"} ${className}`}>
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{label}</span>
-        {Icon && <Icon className={`w-4 h-4 ${textColors[accentColor] || "text-slate-400"}`} />}
+    <div className={`bg-navy-850 border rounded-3xl p-6 lg:p-7 flex flex-col justify-between transition-all duration-300 shadow-sm ${borderColors[accentColor] || "border-navy-700/25"} ${className}`}>
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider">{label}</span>
+        {Icon && <Icon className={`w-5 h-5 ${textColors[accentColor] || "text-slate-400"}`} />}
       </div>
       <div>
-        <p className={`text-3xl font-bold tracking-tight ${textColors[accentColor] || "text-white"}`}>{value}</p>
-        {helperText && <p className="text-xs text-slate-500 mt-1.5 font-medium">{helperText}</p>}
+        <p className="text-3xl font-extrabold tracking-tight text-white">{value}</p>
+        {helperText && <p className="text-[13px] text-slate-450 mt-2 font-medium leading-relaxed">{helperText}</p>}
       </div>
     </div>
   );
@@ -91,7 +91,7 @@ export function StatCard({ label, value, icon: Icon, helperText, accentColor = "
 export function ProgressBar({ percent, className = "", colorClass = "bg-gradient-to-r from-accent-primary to-accent-cyan" }) {
   const pct = Math.min(100, Math.max(0, Math.round(percent || 0)));
   return (
-    <div className={`h-2 bg-navy-950 rounded-full overflow-hidden w-full ${className}`}>
+    <div className={`h-2 bg-navy-900 rounded-full overflow-hidden w-full ${className}`}>
       <div
         className={`h-full rounded-full transition-all duration-700 ease-out ${colorClass}`}
         style={{ width: `${pct}%` }}
@@ -105,7 +105,7 @@ export function ProgressBar({ percent, className = "", colorClass = "bg-gradient
  */
 export function InfoPill({ label, icon: Icon, className = "", variant = "slate" }) {
   const variants = {
-    slate: "bg-navy-700 text-slate-400 border-navy-500/50",
+    slate: "bg-navy-900 text-slate-400 border-navy-700",
     green: "bg-accent-primary/10 text-accent-primary border-accent-primary/20",
     cyan: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/20",
     amber: "bg-amber-500/10 text-amber-400 border-amber-500/20",
@@ -114,7 +114,7 @@ export function InfoPill({ label, icon: Icon, className = "", variant = "slate" 
   };
 
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[13px] font-bold border ${variants[variant] || variants.slate} ${className}`}>
+    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold border ${variants[variant] || variants.slate} ${className}`}>
       {Icon && <Icon className="w-3 h-3 flex-shrink-0" />}
       <span>{label}</span>
     </span>
@@ -127,21 +127,21 @@ export function InfoPill({ label, icon: Icon, className = "", variant = "slate" 
 export function StatusBadge({ status, className = "" }) {
   const normalized = String(status || '').toLowerCase();
   
-  let styles = "bg-slate-700/40 text-slate-400 border-slate-600/50"; // default
+  let styles = "bg-navy-900 text-slate-400 border-navy-750"; // default
   if (normalized === 'completed' || normalized === 'complete' || normalized === 'studied') {
-    styles = "bg-accent-primary/10 text-accent-primary border-accent-primary/20";
+    styles = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
   } else if (normalized === 'in progress' || normalized === 'studying' || normalized === 'available') {
-    styles = "bg-amber-500/10 text-amber-400 border-amber-500/20";
+    styles = "bg-accent-primary/10 text-accent-primary border border-accent-primary/20";
   } else if (normalized === 'blocked') {
-    styles = "bg-red-500/10 text-red-400 border-red-500/20 animate-pulse";
+    styles = "bg-red-500/10 text-red-400 border border-red-500/20 animate-pulse";
   } else if (normalized === 'locked') {
-    styles = "bg-navy-950 text-slate-600 border-navy-500";
+    styles = "bg-navy-900 text-slate-500 border-navy-700";
   } else if (normalized === 'submitted') {
     styles = "bg-blue-500/10 text-blue-400 border-blue-500/20";
   }
 
   return (
-    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium tracking-wide border ${styles} ${className}`}>
+    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide border ${styles} ${className}`}>
       {normalized === 'locked' && <Lock className="w-3 h-3" />}
       <span>{status}</span>
     </span>
@@ -157,9 +157,9 @@ export function CommandButton({ children, onClick, type = "button", disabled = f
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`bg-accent-primary text-navy-900 font-bold px-5 py-2.5 rounded-xl
+      className={`bg-accent-primary text-white font-semibold px-6 py-3 rounded-xl
                  hover:bg-accent-primary-dim active:scale-95 transition-all duration-200
-                 shadow-primary-glow-sm hover:shadow-primary-glow disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-xs uppercase tracking-wider ${className}`}
+                 shadow-sm disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-[14px] ${className}`}
     >
       {children}
     </button>
@@ -175,9 +175,9 @@ export function SecondaryButton({ children, onClick, type = "button", disabled =
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`bg-navy-700/80 border border-navy-400 text-slate-300 font-bold px-5 py-2.5 rounded-xl
-                 hover:border-accent-primary/30 hover:text-white active:scale-95 transition-all duration-200
-                 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-xs uppercase tracking-wider ${className}`}
+      className={`bg-navy-850 border border-navy-700 text-slate-350 font-semibold px-6 py-3 rounded-xl
+                 hover:border-navy-600 hover:text-white active:scale-95 transition-all duration-200
+                 disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-[14px] ${className}`}
     >
       {children}
     </button>
