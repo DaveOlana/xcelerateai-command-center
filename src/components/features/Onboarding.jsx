@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
-import { Calendar, Clock, Upload, Shield, Check, Cpu, Sparkles } from 'lucide-react';
+import { Calendar, Clock, Upload, Shield, Check, Sparkles } from 'lucide-react';
 
 export default function Onboarding() {
   const { settings, updateSettings, resetToSampleRoadmap, roadmap } = useApp();
@@ -50,9 +50,9 @@ export default function Onboarding() {
       <div className="w-full max-w-5xl my-8 space-y-8 animate-fade-in">
         
         {/* Strong Welcome Hero Section */}
-        <div className="text-center max-w-2xl mx-auto space-y-3">
-          <div className="inline-flex p-3 rounded-2xl bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
-            <Cpu className="w-8 h-8" />
+        <div className="text-center max-w-2xl mx-auto space-y-4">
+          <div className="flex justify-center mb-1">
+            <img src="/xcelerate-logo.png" alt="XcelerateAI Logo" className="h-12 sm:h-16 object-contain" />
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Welcome to XcelerateAI Command Center

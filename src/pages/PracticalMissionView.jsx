@@ -4,7 +4,7 @@ import { useApp } from '../context/AppContext';
 import {
   ArrowLeft, CheckCircle2, AlertTriangle, Play, HelpCircle,
   FileText, Clipboard, Settings, ChevronRight, CheckSquare,
-  BookOpen, Terminal, Code, Cpu, ShieldAlert, Sparkles, MessageSquare,
+  BookOpen, Terminal, Code, ShieldAlert, Sparkles, MessageSquare,
   X, Coffee
 } from 'lucide-react';
 import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';

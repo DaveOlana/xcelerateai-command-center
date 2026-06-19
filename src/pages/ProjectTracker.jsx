@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Github, FileText, ChevronDown, ChevronUp, FolderKanban, Cpu, Star, ExternalLink, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, Github, FileText, ChevronDown, ChevronUp, FolderKanban, Star, ExternalLink, ShieldCheck } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { PageShell, PageHeader, StatCard, ProgressBar } from '../components/common/UIComponents';
 

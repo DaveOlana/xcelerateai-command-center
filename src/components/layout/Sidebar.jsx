@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard, Target, Calendar, BarChart2, Upload,
   Clock, BookOpen, FolderKanban, FileText, CheckSquare,
-  Settings, Flame, ChevronRight, ChevronLeft, AlertCircle, Award, Shield, Cpu
+  Settings, Flame, ChevronRight, ChevronLeft, AlertCircle, Award, Shield
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { getBootcampDay } from '../../utils/dateUtils';

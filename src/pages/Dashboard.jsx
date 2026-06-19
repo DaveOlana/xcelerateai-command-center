@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Target, Flame, TrendingUp, CheckCircle2, ChevronRight, Award, ShieldAlert, AlertTriangle, Cpu, Clock, Calendar, BarChart2
+  Target, Flame, TrendingUp, CheckCircle2, ChevronRight, Award, ShieldAlert, AlertTriangle, Clock, Calendar, BarChart2
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import {
