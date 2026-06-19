@@ -46,21 +46,26 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-3 sm:p-4 bg-navy-950/95 backdrop-blur-md overflow-y-auto md:overflow-y-hidden">
-      <div className="w-full max-w-4xl mx-auto space-y-3 sm:space-y-4 animate-fade-in">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 sm:p-6 bg-navy-950/95 backdrop-blur-md overflow-y-auto">
+      <div className="w-full max-w-5xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
         
         {/* Strong Welcome Hero Section */}
-        <div className="text-center max-w-xl mx-auto space-y-1">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="flex justify-center">
-            <img src="/xcelerate-logo.png" alt="XcelerateAI Logo" className="h-16 sm:h-20 md:h-22 max-w-full object-contain" />
+            <img src="/xcelerate-logo.png" alt="XcelerateAI Logo" className="h-24 sm:h-32 md:h-36 max-w-full object-contain" />
           </div>
-          <h2 className="text-[10px] sm:text-[11px] font-semibold text-slate-400 uppercase tracking-[0.3em] select-none mt-1">
-            Welcome to XcelerateAI Command Center
-          </h2>
+          <div className="space-y-2.5">
+            <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-white uppercase tracking-wider select-none">
+              Welcome to XcelerateAI Command Center
+            </h1>
+            <p className="text-[11px] sm:text-xs md:text-sm text-slate-400 font-medium leading-relaxed max-w-xl mx-auto">
+              Set up your cockpit, load your roadmap, and begin building Elliot V1.
+            </p>
+          </div>
         </div>
 
         {/* Setup Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-3 sm:gap-3.5">
+        <div className="grid md:grid-cols-3 gap-3.5 sm:gap-4.5">
           
           {/* Card 1: Set Your Mission Start */}
           <div className="bg-navy-850 border border-navy-700/25 rounded-2xl shadow-card transition-all duration-300 flex flex-col justify-between p-3.5 sm:p-4 space-y-2.5">
