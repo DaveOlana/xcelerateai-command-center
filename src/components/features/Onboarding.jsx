@@ -55,7 +55,7 @@ export default function Onboarding() {
             <img 
               src="/xcelerate-logo.png" 
               alt="XcelerateAI Logo" 
-              className="h-32 sm:h-44 md:h-48 max-w-full object-contain transition-all duration-300 hover:scale-[1.01]"
+              className="h-36 sm:h-52 md:h-56 max-w-full object-contain transition-all duration-300 hover:scale-[1.01]"
               style={{ filter: 'brightness(1.15) contrast(1.1) drop-shadow(0 2px 10px rgba(0,0,0,0.5))' }}
             />
           </div>
