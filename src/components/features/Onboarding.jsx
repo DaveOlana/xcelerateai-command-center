@@ -46,8 +46,8 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 bg-navy-950/95 backdrop-blur-md overflow-y-auto">
-      <div className="w-full max-w-6xl mx-auto space-y-8 sm:space-y-10 animate-fade-in">
+    <div className="fixed inset-0 z-50 flex flex-col items-center p-4 sm:p-6 md:p-8 bg-navy-950/95 backdrop-blur-md overflow-y-auto">
+      <div className="w-full max-w-6xl my-auto space-y-8 sm:space-y-10 animate-fade-in">
         
         {/* Strong Welcome Hero Section */}
         <div className="text-center max-w-4xl mx-auto space-y-5 relative z-10">
