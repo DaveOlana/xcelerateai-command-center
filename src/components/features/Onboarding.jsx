@@ -52,7 +52,7 @@ export default function Onboarding() {
         {/* Strong Welcome Hero Section */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
           <div className="flex justify-center mb-1">
-            <img src="/xcelerate-logo.png" alt="XcelerateAI Logo" className="h-12 sm:h-16 object-contain" />
+            <img src="/xcelerate-logo.png" alt="XcelerateAI Logo" className="h-20 sm:h-32 md:h-36 max-w-full object-contain" />
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Welcome to XcelerateAI Command Center
