@@ -106,7 +106,10 @@ export default function Dashboard() {
       )}
 
       {/* ── Hero Cockpit Status Card ── */}
-      <div className="relative overflow-hidden rounded-3xl border border-navy-700/25 bg-navy-850 p-8 lg:p-10 shadow-card">
+      <div 
+        data-tour="dashboard-hero"
+        className="relative overflow-hidden rounded-3xl border border-navy-700/25 bg-navy-850 p-8 lg:p-10 shadow-card"
+      >
         <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="flex flex-col lg:flex-row gap-8 justify-between items-start lg:items-center relative">

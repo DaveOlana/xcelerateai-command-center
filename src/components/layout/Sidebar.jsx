@@ -64,7 +64,10 @@ export default function Sidebar() {
   }, [roadmap, progress, checkpointStatuses]);
 
   return (
-    <aside className={`hidden lg:flex flex-col h-screen bg-navy-900 border-r border-navy-700/25 fixed left-0 top-0 z-40 transition-all duration-300 ${isCollapsed ? 'w-[80px]' : 'w-[280px]'}`}>
+    <aside 
+      data-tour="sidebar"
+      className={`hidden lg:flex flex-col h-screen bg-navy-900 border-r border-navy-700/25 fixed left-0 top-0 z-40 transition-all duration-300 ${isCollapsed ? 'w-[80px]' : 'w-[280px]'}`}
+    >
       
       {/* Collapse Toggle */}
       <button 
@@ -129,12 +132,23 @@ export default function Sidebar() {
             ) : (
               <div className="w-full h-px bg-navy-700/20 my-4" />
             )}
-            {group.items.map(({ to, label, icon: Icon, exact }) => (
-              <NavLink
-                key={to}
-                to={to}
-                end={exact}
-                title={isCollapsed ? label : undefined}
+            {group.items.map(({ to, label, icon: Icon, exact }) => {
+              let tourAttr = undefined;
+              if (to === '/') tourAttr = 'sidebar-dashboard';
+              else if (to === '/today') tourAttr = 'sidebar-today';
+              else if (to === '/missions') tourAttr = 'sidebar-missions';
+              else if (to === '/progress') tourAttr = 'sidebar-progress';
+              else if (to === '/import') tourAttr = 'sidebar-import';
+              else if (to === '/settings') tourAttr = 'sidebar-settings';
+              else if (to === '/projects') tourAttr = 'sidebar-projects';
+
+              return (
+                <NavLink
+                  key={to}
+                  to={to}
+                  end={exact}
+                  title={isCollapsed ? label : undefined}
+                  data-tour={tourAttr}
                 className={({ isActive }) =>
                   `flex items-center rounded-lg font-medium transition-all duration-200 group relative ${
                     isCollapsed ? 'justify-center p-3' : 'gap-3 px-3 py-2.5 text-[14px]'
@@ -157,7 +171,8 @@ export default function Sidebar() {
                   </>
                 )}
               </NavLink>
-            ))}
+              );
+            })}
           </div>
         ))}
       </nav>

@@ -18,6 +18,19 @@ const STATIC_COMMANDS = [
   { id: 'resources', title: 'Resource Vault', icon: BookOpen, route: '/resources' },
   { id: 'settings', title: 'Settings & Backup', icon: Settings, route: '/settings' },
   { id: 'import', title: 'Import JSON Roadmap', icon: Upload, route: '/import' },
+  { 
+    id: 'replay-tour', 
+    title: 'Replay Onboarding Tour', 
+    icon: Command, 
+    action: () => {
+      if (window.replayXaiOnboardingTour) {
+        window.replayXaiOnboardingTour();
+      } else {
+        localStorage.setItem('xai_onboarding_seen_v1', 'false');
+        window.location.href = '/';
+      }
+    } 
+  }
 ];
 
 export default function CommandPalette() {
@@ -70,7 +83,12 @@ export default function CommandPalette() {
       } else if (e.key === 'Enter') {
         e.preventDefault();
         if (filteredCommands[selectedIndex]) {
-          navigate(filteredCommands[selectedIndex].route);
+          const cmd = filteredCommands[selectedIndex];
+          if (cmd.action) {
+            cmd.action();
+          } else {
+            navigate(cmd.route);
+          }
           setIsOpen(false);
         }
       }
@@ -128,7 +146,11 @@ export default function CommandPalette() {
                   <button
                     key={cmd.id}
                     onClick={() => {
-                      navigate(cmd.route);
+                      if (cmd.action) {
+                        cmd.action();
+                      } else {
+                        navigate(cmd.route);
+                      }
                       setIsOpen(false);
                     }}
                     onMouseEnter={() => setSelectedIndex(index)}

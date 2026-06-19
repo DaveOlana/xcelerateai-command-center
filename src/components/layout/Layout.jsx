@@ -6,6 +6,7 @@ import BottomNav from './BottomNav';
 import MobileHeader from './MobileHeader';
 import MoreMenu from './MoreMenu';
 import Onboarding from '../features/Onboarding';
+import OnboardingTour from '../features/OnboardingTour';
 import ErrorBoundary from '../common/ErrorBoundary';
 import CommandPalette from '../common/CommandPalette';
 
@@ -57,6 +58,7 @@ export default function Layout() {
 
       {/* Onboarding Wizard */}
       <Onboarding />
+      <OnboardingTour />
     </div>
   );
 }

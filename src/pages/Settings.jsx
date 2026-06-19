@@ -286,6 +286,30 @@ export default function Settings() {
         )}
       </SectionCard>
 
+      {/* Interactive Onboarding Tour */}
+      <SectionCard className="space-y-4 border border-navy-700/25">
+        <h2 className="font-bold text-white flex items-center gap-2">
+          <SettingsIcon className="w-4 h-4 text-accent-primary" />
+          Interactive Onboarding
+        </h2>
+        <p className="text-xs text-slate-550 font-medium">
+          Replay the first-time guided tutorial of the XcelerateAI Command Center workspace overlay.
+        </p>
+        <button
+          onClick={() => {
+            if (window.replayXaiOnboardingTour) {
+              window.replayXaiOnboardingTour();
+            } else {
+              localStorage.setItem('xai_onboarding_seen_v1', 'false');
+              window.location.href = '/';
+            }
+          }}
+          className="btn-secondary text-sm border-accent-primary/20 text-accent-primary hover:text-white"
+        >
+          Replay Onboarding Tour
+        </button>
+      </SectionCard>
+
       {/* Danger Zone Resets */}
       <SectionCard className="border-red-500/25 space-y-5 bg-red-500/5 shadow-red-glow-sm">
         <h2 className="font-bold text-white flex items-center gap-2">
