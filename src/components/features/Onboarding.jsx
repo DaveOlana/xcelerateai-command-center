@@ -46,62 +46,62 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 sm:p-6 bg-navy-950/95 backdrop-blur-md overflow-y-auto">
-      <div className="w-full max-w-5xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 bg-navy-950/95 backdrop-blur-md overflow-y-auto">
+      <div className="w-full max-w-6xl mx-auto space-y-8 sm:space-y-10 animate-fade-in">
         
         {/* Strong Welcome Hero Section */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
+        <div className="text-center max-w-4xl mx-auto space-y-5">
           <div className="flex justify-center">
-            <img src="/xcelerate-logo.png" alt="XcelerateAI Logo" className="h-24 sm:h-32 md:h-36 max-w-full object-contain" />
+            <img src="/xcelerate-logo.png" alt="XcelerateAI Logo" className="h-28 sm:h-36 md:h-40 max-w-full object-contain" />
           </div>
-          <div className="space-y-2.5">
-            <h1 className="text-lg sm:text-2xl md:text-3xl font-extrabold text-white uppercase tracking-wider select-none">
+          <div className="space-y-3">
+            <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wider select-none">
               Welcome to XcelerateAI Command Center
             </h1>
-            <p className="text-[11px] sm:text-xs md:text-sm text-slate-400 font-medium leading-relaxed max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm md:text-base text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto">
               Set up your cockpit, load your roadmap, and begin building Elliot V1.
             </p>
           </div>
         </div>
 
         {/* Setup Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-3.5 sm:gap-4.5">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
           
           {/* Card 1: Set Your Mission Start */}
-          <div className="bg-navy-850 border border-navy-700/25 rounded-2xl shadow-card transition-all duration-300 flex flex-col justify-between p-3.5 sm:p-4 space-y-2.5">
-            <div className="space-y-2">
+          <div className="bg-navy-850 border border-navy-700/25 rounded-3xl shadow-card transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 md:p-7 space-y-4 min-h-[350px] sm:min-h-[380px]">
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <div className="p-1.5 rounded-lg bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
-                  <Calendar className="w-4 h-4" />
+                <div className="p-2 rounded-xl bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
+                  <Calendar className="w-5 h-5" />
                 </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border bg-emerald-500/10 text-emerald-450 border-emerald-500/20">
+                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border bg-emerald-500/10 text-emerald-450 border-emerald-500/20">
                   Configured
                 </span>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white leading-tight">Set Your Mission Start</h3>
-                <p className="text-slate-450 text-[10.5px] leading-relaxed mt-0.5">
+                <h3 className="text-base sm:text-lg font-bold text-white leading-tight">Set Your Mission Start</h3>
+                <p className="text-slate-400 text-xs sm:text-[13px] leading-relaxed mt-0.5">
                   Choose your bootcamp start date and weekly learning rhythm.
                 </p>
               </div>
 
               {/* Form Input fields */}
-              <div className="space-y-2 pt-0.5">
+              <div className="space-y-3 pt-0.5">
                 <div className="space-y-1">
-                  <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Start Date</label>
+                  <label className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Start Date</label>
                   <input
                     type="date"
                     value={startDate}
                     onChange={(e) => setStartDate(e.target.value)}
-                    className="w-full bg-navy-900 border border-navy-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-accent-primary/40 focus:ring-1 focus:ring-accent-primary/20 placeholder-slate-500 transition-all duration-200 text-[11px] font-medium"
+                    className="w-full bg-navy-900 border border-navy-700 text-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-accent-primary/40 focus:ring-1 focus:ring-accent-primary/20 placeholder-slate-500 transition-all duration-200 text-xs sm:text-sm font-medium"
                   />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Target Pace</label>
+                  <label className="text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">Target Pace</label>
                   <select
                     value={hours}
                     onChange={(e) => setHours(e.target.value)}
-                    className="w-full bg-navy-900 border border-navy-700 text-slate-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-accent-primary/40 focus:ring-1 focus:ring-accent-primary/20 transition-all duration-200 text-[11px] font-medium"
+                    className="w-full bg-navy-900 border border-navy-700 text-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-accent-primary/40 focus:ring-1 focus:ring-accent-primary/20 transition-all duration-200 text-xs sm:text-sm font-medium"
                   >
                     <option value="15-20">15-20 Hours / Week</option>
                     <option value="20-25">20-25 Hours / Week</option>
@@ -111,39 +111,39 @@ export default function Onboarding() {
               </div>
             </div>
             
-            <div className="pt-1.5 border-t border-navy-700/30">
-              <p className="text-[10px] text-slate-500 text-center font-medium">Auto-saves rhythm parameters</p>
+            <div className="pt-2 border-t border-navy-700/30">
+              <p className="text-[11px] text-slate-500 text-center font-medium">Auto-saves rhythm parameters</p>
             </div>
           </div>
 
           {/* Card 2: Load Your Roadmap */}
-          <div className="bg-navy-850 border border-navy-700/25 rounded-2xl shadow-card transition-all duration-300 flex flex-col justify-between p-3.5 sm:p-4 space-y-2.5">
-            <div className="space-y-2">
+          <div className="bg-navy-850 border border-navy-700/25 rounded-3xl shadow-card transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 md:p-7 space-y-4 min-h-[350px] sm:min-h-[380px]">
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <div className="p-1.5 rounded-lg bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan">
-                  <Upload className="w-4 h-4" />
+                <div className="p-2 rounded-xl bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan">
+                  <Upload className="w-5 h-5" />
                 </div>
                 {roadmapStatus === 'loaded' ? (
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border bg-emerald-500/10 text-emerald-450 border-emerald-500/20">
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border bg-emerald-500/10 text-emerald-450 border-emerald-500/20">
                     Roadmap Active
                   </span>
                 ) : (
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border bg-amber-500/10 text-amber-500 border-amber-500/20">
+                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border bg-amber-500/10 text-amber-500 border-amber-500/20">
                     No Roadmap
                   </span>
                 )}
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white leading-tight">Load Your Roadmap</h3>
-                <p className="text-slate-450 text-[10.5px] leading-relaxed mt-0.5">
+                <h3 className="text-base sm:text-lg font-bold text-white leading-tight">Load Your Roadmap</h3>
+                <p className="text-slate-400 text-xs sm:text-[13px] leading-relaxed mt-0.5">
                   Import a structured JSON roadmap or use the default XcelerateAI bootcamp path.
                 </p>
               </div>
 
-              <div className="space-y-2 pt-0.5">
+              <div className="space-y-2.5 pt-0.5">
                 <button
                   onClick={handleUseSample}
-                  className={`w-full py-1.5 px-3 rounded-lg border text-[11px] font-bold transition-all ${
+                  className={`w-full py-2.5 px-4 rounded-xl border text-xs sm:text-sm font-bold transition-all ${
                     roadmapStatus === 'loaded' && !settings.usingCustomRoadmap
                       ? 'bg-emerald-500/5 border-emerald-500/20 text-emerald-450'
                       : 'bg-navy-900 border-navy-700 hover:border-navy-600 text-white'
@@ -153,40 +153,40 @@ export default function Onboarding() {
                 </button>
                 <button
                   onClick={handleUploadCustom}
-                  className="w-full bg-navy-850 border border-navy-700/60 text-accent-cyan rounded-lg py-1.5 px-3 hover:border-navy-600 hover:text-white hover:bg-accent-cyan/5 transition-all duration-200 text-[11px] font-bold text-center"
+                  className="w-full bg-navy-850 border border-navy-700/60 text-accent-cyan rounded-xl py-2.5 px-4 hover:border-navy-600 hover:text-white hover:bg-accent-cyan/5 transition-all duration-200 text-xs sm:text-sm font-bold text-center"
                 >
                   Upload Custom JSON
                 </button>
               </div>
             </div>
             
-            <div className="pt-1.5 border-t border-navy-700/30">
-              <p className="text-[10px] text-slate-500 text-center font-medium">
+            <div className="pt-2 border-t border-navy-700/30">
+              <p className="text-[11px] text-slate-500 text-center font-medium">
                 {settings.usingCustomRoadmap ? 'Custom roadmap active' : 'Sample roadmap initialized'}
               </p>
             </div>
           </div>
 
           {/* Card 3: Prepare Your Cockpit */}
-          <div className="bg-navy-850 border border-navy-700/25 rounded-2xl shadow-card transition-all duration-300 flex flex-col justify-between p-3.5 sm:p-4 space-y-2.5">
-            <div className="space-y-2">
+          <div className="bg-navy-850 border border-navy-700/25 rounded-3xl shadow-card transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 md:p-7 space-y-4 min-h-[350px] sm:min-h-[380px]">
+            <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <div className="p-1.5 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400">
-                  <Shield className="w-4 h-4" />
+                <div className="p-2 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
+                  <Shield className="w-5 h-5" />
                 </div>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full border bg-navy-900 text-slate-400 border-navy-700">
+                <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full border bg-navy-900 text-slate-400 border-navy-700">
                   Ready to Boot
                 </span>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white leading-tight">Prepare Your Cockpit</h3>
-                <p className="text-slate-450 text-[10.5px] leading-relaxed mt-0.5">
+                <h3 className="text-base sm:text-lg font-bold text-white leading-tight">Prepare Your Cockpit</h3>
+                <p className="text-slate-400 text-xs sm:text-[13px] leading-relaxed mt-0.5">
                   Confirm your setup, backup options, and daily execution flow.
                 </p>
               </div>
 
               {/* Status summary list */}
-              <div className="bg-navy-900 border border-navy-750/30 rounded-xl p-2 space-y-1 text-[10px] text-slate-450 font-medium">
+              <div className="bg-navy-900 border border-navy-750/30 rounded-xl p-3 sm:p-4 space-y-1.5 text-xs sm:text-[13px] text-slate-400 font-medium">
                 <div className="flex justify-between">
                   <span>Start Date:</span>
                   <span className="text-white font-semibold">{startDate}</span>
@@ -197,7 +197,7 @@ export default function Onboarding() {
                 </div>
                 <div className="flex justify-between">
                   <span>Roadmap:</span>
-                  <span className="text-accent-primary font-bold truncate max-w-[110px]">
+                  <span className="text-accent-primary font-bold truncate max-w-[140px]">
                     {roadmap?.bootcampTitle || 'Sample Path'}
                   </span>
                 </div>
@@ -206,7 +206,7 @@ export default function Onboarding() {
             
             <button
               onClick={handleInitializeCockpit}
-              className="w-full bg-accent-primary text-white rounded-lg py-1.5 px-3 hover:bg-accent-primary-dim active:scale-95 transition-all duration-200 text-[11px] font-bold text-center shadow-primary-glow flex items-center justify-center gap-2"
+              className="w-full bg-accent-primary text-white rounded-xl py-2.5 px-4 hover:bg-accent-primary-dim active:scale-95 transition-all duration-200 text-xs sm:text-sm font-bold text-center shadow-primary-glow flex items-center justify-center gap-2"
             >
               Initialize Cockpit
             </button>
