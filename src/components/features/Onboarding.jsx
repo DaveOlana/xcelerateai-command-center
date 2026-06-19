@@ -50,11 +50,19 @@ export default function Onboarding() {
       <div className="w-full max-w-6xl mx-auto space-y-8 sm:space-y-10 animate-fade-in">
         
         {/* Strong Welcome Hero Section */}
-        <div className="text-center max-w-4xl mx-auto space-y-5">
-          <div className="flex justify-center">
-            <img src="/xcelerate-logo.png" alt="XcelerateAI Logo" className="h-28 sm:h-36 md:h-40 max-w-full object-contain" />
+        <div className="text-center max-w-4xl mx-auto space-y-6 relative z-10">
+          {/* Subtle radial background bloom behind the logo/hero */}
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-accent-cyan/15 rounded-full blur-[110px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '6s' }} />
+
+          <div className="flex justify-center mb-1">
+            <img 
+              src="/xcelerate-logo.png" 
+              alt="XcelerateAI Logo" 
+              className="h-32 sm:h-44 md:h-48 max-w-full object-contain transition-all duration-300 hover:scale-[1.02]"
+              style={{ filter: 'drop-shadow(0 0 25px rgba(56, 189, 248, 0.25)) drop-shadow(0 0 4px rgba(56, 189, 248, 0.15)) contrast(1.15) brightness(1.2)' }}
+            />
           </div>
-          <div className="space-y-3">
+          <div className="space-y-3.5">
             <h1 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white uppercase tracking-wider select-none">
               Welcome to XcelerateAI Command Center
             </h1>
