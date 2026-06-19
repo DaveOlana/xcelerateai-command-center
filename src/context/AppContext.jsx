@@ -755,6 +755,8 @@ export function AppProvider({ children }) {
     setBlockers([]);
     setWeekProofs({});
     setWeekReflections({});
+    localStorage.removeItem('xai_setup_completed_v1');
+    localStorage.removeItem('xai_onboarding_seen_v1');
   }, []);
 
   // =============================================

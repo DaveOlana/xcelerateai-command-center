@@ -86,19 +86,21 @@ export default function OnboardingTour() {
   const [rect, setRect] = useState({ x: 0, y: 0, width: 0, height: 0 });
   const [windowSize, setWindowSize] = useState({ w: window.innerWidth, h: window.innerHeight });
   const tooltipRef = useRef(null);
-
   // Read localStorage checks on load/render
   useEffect(() => {
-    const setupDone = localStorage.getItem('xai_setup_completed_v1') === 'true' || settings.onboardingCompleted;
+    // Only run tour if setup wizard is fully completed in active settings
+    if (!settings.onboardingCompleted) {
+      setActive(false);
+      return;
+    }
     const tourSeen = localStorage.getItem('xai_onboarding_seen_v1') === 'true';
 
     // Start tour only on Dashboard path '/'
-    if (setupDone && !tourSeen && location.pathname === '/') {
+    if (!tourSeen && location.pathname === '/') {
       setActive(true);
       setStepIndex(0);
     }
   }, [settings.onboardingCompleted, location.pathname]);
-
   // Handle global page listen window resize
   useEffect(() => {
     const handleResize = () => {
