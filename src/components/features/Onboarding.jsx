@@ -50,30 +50,24 @@ export default function Onboarding() {
       <div className="w-full max-w-6xl my-auto space-y-8 sm:space-y-10 animate-fade-in">
         
         {/* Strong Welcome Hero Section */}
-        <div className="text-center max-w-4xl mx-auto space-y-5 relative z-10">
-          <div className="flex justify-center select-none">
-            <div className="flex items-center gap-3 sm:gap-4.5 hover:scale-[1.01] transition-transform duration-300">
-              <img 
-                src="/xcelerate-icon.png" 
-                alt="XcelerateAI Logo Icon" 
-                className="h-16 sm:h-24 md:h-28 object-contain" 
-              />
-              <div className="flex items-baseline font-sans font-black tracking-tight text-3xl sm:text-5xl md:text-6xl">
-                <span className="bg-gradient-to-b from-white via-slate-300 to-slate-700 bg-clip-text text-transparent">
-                  celerate
-                </span>
-                <span className="text-accent-cyan ml-2 text-2xl sm:text-4xl md:text-5xl">
-                  AI
-                </span>
+        <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6 relative z-10">
+          <div className="space-y-3">
+            <div className="flex justify-center select-none">
+              <div className="flex items-center gap-1.5 sm:gap-2 hover:scale-[1.01] transition-transform duration-300">
+                <img 
+                  src="/xcelerate-icon.png" 
+                  alt="X" 
+                  className="h-16 sm:h-24 md:h-28 object-contain" 
+                />
+                <div className="flex items-baseline font-sans font-black tracking-tight text-3xl sm:text-5xl md:text-6xl">
+                  <span className="bg-gradient-to-b from-white via-slate-300 to-slate-700 bg-clip-text text-transparent">
+                    celerateAI
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="space-y-2">
-            <span className="block text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-[0.3em] select-none">
-              Welcome to
-            </span>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight select-none">
-              XcelerateAI Command Center
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight select-none leading-none">
+              Command Center
             </h1>
           </div>
           <div className="pt-2">
