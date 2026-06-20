@@ -51,13 +51,22 @@ export default function Onboarding() {
         
         {/* Strong Welcome Hero Section */}
         <div className="text-center max-w-4xl mx-auto space-y-5 relative z-10">
-          <div className="flex justify-center">
-            <img 
-              src="/xcelerate-logo.png" 
-              alt="XcelerateAI Logo" 
-              className="h-36 sm:h-52 md:h-56 max-w-full object-contain transition-all duration-300 hover:scale-[1.01]"
-              style={{ filter: 'brightness(1.15) contrast(1.1) drop-shadow(0 2px 10px rgba(0,0,0,0.5))' }}
-            />
+          <div className="flex justify-center select-none">
+            <div className="flex items-center gap-3 sm:gap-4.5 hover:scale-[1.01] transition-transform duration-300">
+              <img 
+                src="/xcelerate-icon.png" 
+                alt="XcelerateAI Logo Icon" 
+                className="h-16 sm:h-24 md:h-28 object-contain" 
+              />
+              <div className="flex items-baseline font-sans font-black tracking-tight text-3xl sm:text-5xl md:text-6xl">
+                <span className="bg-gradient-to-b from-white via-slate-300 to-slate-700 bg-clip-text text-transparent">
+                  celerate
+                </span>
+                <span className="text-accent-cyan ml-2 text-2xl sm:text-4xl md:text-5xl">
+                  AI
+                </span>
+              </div>
+            </div>
           </div>
           <div className="space-y-2">
             <span className="block text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-[0.3em] select-none">
