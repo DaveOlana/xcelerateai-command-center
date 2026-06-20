@@ -57,7 +57,7 @@ export default function Onboarding() {
                 <img 
                   src="/xcelerate-icon.png" 
                   alt="X" 
-                  className="h-16 sm:h-24 md:h-28 object-contain mr-[-3px] sm:mr-[-5px]" 
+                  className="h-16 sm:h-24 md:h-28 object-contain mr-[-12px] sm:mr-[-20px] md:mr-[-26px]" 
                 />
                 <div className="flex items-baseline font-sans font-black tracking-tight text-3xl sm:text-5xl md:text-6xl">
                   <span className="bg-gradient-to-b from-white via-slate-300 to-slate-700 bg-clip-text text-transparent">
