@@ -50,8 +50,8 @@ export default function Onboarding() {
       <div className="w-full max-w-7xl my-auto space-y-8 sm:space-y-10 animate-fade-in">
         
         {/* Strong Welcome Hero Section */}
-        <div className="text-center max-w-4xl mx-auto space-y-5 sm:space-y-6 relative z-10">
-          <div className="space-y-3">
+        <div className="text-center max-w-4xl mx-auto relative z-10">
+          <div className="space-y-1 sm:space-y-1.5">
             <div className="flex justify-center select-none">
               <div className="flex items-center gap-0 hover:scale-[1.01] transition-transform duration-300">
                 <img 
@@ -70,8 +70,8 @@ export default function Onboarding() {
               Command Center
             </h1>
           </div>
-          <div className="pt-2">
-            <p className="text-xs sm:text-sm md:text-base text-slate-300 font-medium max-w-2xl mx-auto text-center">
+          <div className="mt-8 sm:mt-10">
+            <p className="text-xs sm:text-sm md:text-base text-slate-300 font-medium max-w-2xl mx-auto text-center leading-relaxed">
               Set up your cockpit, load your roadmap, and begin building Elliot V1.
             </p>
           </div>
