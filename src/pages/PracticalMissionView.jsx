@@ -47,20 +47,24 @@ export default function PracticalMissionView() {
     return null;
   }, [roadmap, missionId]);
 
-  const progressRecord = practicalMissions[missionId] || {
-    status: 'Available',
-    proof: {
-      githubRepoLink: '',
-      githubCommitLink: '',
-      screenshotNote: '',
-      readmeCompleted: false,
-      testCasesPassed: false,
-      reflectionWritten: '',
-      demoVideoLink: '',
-    },
-    reflections: {},
-    completedSteps: [],
-  };
+  const progressRecord = useMemo(() => {
+    const existing = practicalMissions[missionId] || {};
+    return {
+      status: existing.status || 'Available',
+      proof: {
+        githubRepoLink: '',
+        githubCommitLink: '',
+        screenshotNote: '',
+        readmeCompleted: false,
+        testCasesPassed: false,
+        reflectionWritten: '',
+        demoVideoLink: '',
+        ...(existing.proof || {}),
+      },
+      reflections: existing.reflections || {},
+      completedSteps: existing.completedSteps || [],
+    };
+  }, [practicalMissions, missionId]);
 
   if (!missionData) {
     return (
