@@ -788,21 +788,51 @@ export default function WeeklyMissions() {
                   </div>
                 ) : (
                   <form onSubmit={handleSaveSkillCheck} className="space-y-4">
-                    {(week.skillCheck?.questions || (checkpointText ? [checkpointText] : [])).filter(Boolean).map((q, qi) => (
-                      <div key={qi} className="space-y-2 p-3 bg-navy-800 border border-navy-450 rounded-xl">
-                        <label className="text-xs font-bold text-white block">Q{qi + 1}: "{q}"</label>
-                        {qi === 0 && (
-                          <textarea
-                            rows={4}
-                            value={skillAns}
-                            onChange={(e) => setSkillAns(e.target.value)}
-                            placeholder="Explain your understanding in your own words, or log the files you created to prove mastery."
-                            className="input-base w-full text-xs"
-                            required
-                          />
-                        )}
-                      </div>
-                    ))}
+                    {(week.skillCheck?.questions || (checkpointText ? [checkpointText] : [])).filter(Boolean).map((q, qi) => {
+                      // q may be a plain string OR a rich object: { questionId, prompt, answerType, options, required }
+                      const questionText = typeof q === 'string' ? q : (q?.prompt || q?.text || q?.question || '');
+                      const answerType = typeof q === 'object' ? (q?.answerType || 'text') : 'text';
+                      const qOptions = typeof q === 'object' && Array.isArray(q?.options) ? q.options : [];
+                      const isFirstQ = qi === 0;
+
+                      return (
+                        <div key={qi} className="space-y-2 p-3 bg-navy-800 border border-navy-450 rounded-xl">
+                          <label className="text-xs font-bold text-white block">Q{qi + 1}: "{questionText}"</label>
+
+                          {/* Only collect answer for the first question to keep state simple */}
+                          {isFirstQ && answerType === 'multiple_choice' && qOptions.length > 0 ? (
+                            <div className="space-y-2 pt-1">
+                              {qOptions.map((opt, oi) => {
+                                const optLabel = typeof opt === 'string' ? opt : (opt?.label || opt?.text || opt?.value || String(oi));
+                                const optValue = typeof opt === 'string' ? opt : (opt?.value || opt?.label || String(oi));
+                                return (
+                                  <label key={oi} className="flex items-center gap-2.5 text-xs text-slate-300 cursor-pointer hover:text-white transition-colors">
+                                    <input
+                                      type="radio"
+                                      name={`skill-q-${qi}`}
+                                      value={optValue}
+                                      checked={skillAns === optValue}
+                                      onChange={(e) => setSkillAns(e.target.value)}
+                                      className="accent-accent-primary flex-shrink-0"
+                                    />
+                                    {optLabel}
+                                  </label>
+                                );
+                              })}
+                            </div>
+                          ) : isFirstQ ? (
+                            <textarea
+                              rows={4}
+                              value={skillAns}
+                              onChange={(e) => setSkillAns(e.target.value)}
+                              placeholder="Explain your understanding in your own words, or log the files you created to prove mastery."
+                              className="input-base w-full text-xs"
+                              required
+                            />
+                          ) : null}
+                        </div>
+                      );
+                    })}
 
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-1">
