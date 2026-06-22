@@ -150,6 +150,14 @@ export default function WeeklyMissions() {
   const requiredResources = getRequiredResources(week);
   const sessions = week.sessions || [];
 
+  // Safely extract checkpoint text — checkpoint may be a plain string OR a rich object
+  // with keys like { prompt, statusOptions, evidenceRequiredForConfident }
+  const checkpointText = !week.checkpoint
+    ? null
+    : typeof week.checkpoint === 'string'
+    ? week.checkpoint
+    : (week.checkpoint?.prompt || week.checkpoint?.question || null);
+
   // --- Handlers ---
   const handleMarkWeekComplete = () => {
     if (!settings.manualOverrideEnabled) {
@@ -605,10 +613,10 @@ export default function WeeklyMissions() {
                   <p className="text-xs text-white leading-relaxed italic mt-1.5">"{week.deliverable}"</p>
                 </div>
               )}
-              {week.checkpoint && (
+              {checkpointText && (
                 <div className="card border-accent-primary/20 bg-accent-primary/5">
                   <span className="text-xs text-accent-primary font-bold uppercase tracking-wider">Confidence Checkpoint</span>
-                  <p className="text-xs text-white leading-relaxed italic mt-1.5">"{week.checkpoint}"</p>
+                  <p className="text-xs text-white leading-relaxed italic mt-1.5">"{checkpointText}"</p>
                 </div>
               )}
             </div>
@@ -780,7 +788,7 @@ export default function WeeklyMissions() {
                   </div>
                 ) : (
                   <form onSubmit={handleSaveSkillCheck} className="space-y-4">
-                    {(week.skillCheck?.questions || [week.checkpoint]).filter(Boolean).map((q, qi) => (
+                    {(week.skillCheck?.questions || (checkpointText ? [checkpointText] : [])).filter(Boolean).map((q, qi) => (
                       <div key={qi} className="space-y-2 p-3 bg-navy-800 border border-navy-450 rounded-xl">
                         <label className="text-xs font-bold text-white block">Q{qi + 1}: "{q}"</label>
                         {qi === 0 && (
