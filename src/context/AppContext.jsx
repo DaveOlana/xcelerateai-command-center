@@ -254,12 +254,13 @@ export function AppProvider({ children }) {
   // WEEK ACTIONS
   // =============================================
   const markWeekComplete = useCallback((weekNumber) => {
-    setProgress((prev) => ({
-      ...prev,
-      completedWeeks: prev.completedWeeks.includes(weekNumber)
-        ? prev.completedWeeks
-        : [...prev.completedWeeks, weekNumber],
-    }));
+    setProgress((prev) => {
+      const weeks = Array.isArray(prev.completedWeeks) ? prev.completedWeeks : [];
+      return {
+        ...prev,
+        completedWeeks: weeks.includes(weekNumber) ? weeks : [...weeks, weekNumber],
+      };
+    });
     // Auto-advance to next week
     setSettingsState((prev) => {
       const nextWeek = weekNumber + 1;
@@ -287,7 +288,7 @@ export function AppProvider({ children }) {
   }, [roadmap, markStudyToday]);
 
   const isWeekComplete = useCallback((weekNumber) => {
-    return progress.completedWeeks.includes(weekNumber);
+    return (Array.isArray(progress.completedWeeks) ? progress.completedWeeks : []).includes(weekNumber);
   }, [progress]);
 
   // =============================================

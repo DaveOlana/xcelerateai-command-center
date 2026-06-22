@@ -6,7 +6,7 @@ import ImportRequiredCard from '../components/common/ImportRequiredCard';
 import { PageShell, PageHeader, StatusBadge, ProgressBar } from '../components/common/UIComponents';
 
 function getMonthStatus(month, progress, settings) {
-  const { completedWeeks } = progress;
+  const completedWeeks = Array.isArray(progress?.completedWeeks) ? progress.completedWeeks : [];
   const allWeekNums = month.weeks?.map((w) => w.weekNumber) || [];
   const allComplete = allWeekNums.length > 0 && allWeekNums.every((wn) => completedWeeks.includes(wn));
   if (allComplete) return 'completed';

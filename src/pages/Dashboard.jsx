@@ -44,7 +44,7 @@ export default function Dashboard() {
   const showBackupReminder = React.useMemo(() => {
     const needsBackup = !settings.lastBackupDate || (Date.now() - new Date(settings.lastBackupDate).getTime() > 7 * 24 * 60 * 60 * 1000);
     if (!needsBackup) return false;
-    return bootcampDay >= 7 || prog.tasks.completed > 3 || progress.completedWeeks.length >= 1;
+    return bootcampDay >= 7 || prog.tasks.completed > 3 || (Array.isArray(progress.completedWeeks) ? progress.completedWeeks : []).length >= 1;
   }, [settings.lastBackupDate, bootcampDay, prog.tasks.completed, progress.completedWeeks]);
 
   // Calculate missing proofs for active week
