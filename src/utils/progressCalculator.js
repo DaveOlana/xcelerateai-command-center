@@ -187,7 +187,7 @@ export function calculateReadinessScores(roadmap, progress, checkpointStatuses, 
             week: w,
             month: m,
             weight: 1,
-            completed: doneList.includes(idx)
+            completed: (Array.isArray(doneList) ? doneList : []).includes(idx)
           });
         });
 
@@ -233,7 +233,7 @@ export function calculateReadinessScores(roadmap, progress, checkpointStatuses, 
           type: 'project_milestone',
           item: ms,
           weight: 2,
-          completed: completedMilestones.includes(mi)
+          completed: (Array.isArray(completedMilestones) ? completedMilestones : []).includes(mi)
         });
       });
     });

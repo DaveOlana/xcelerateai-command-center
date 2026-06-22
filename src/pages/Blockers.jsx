@@ -76,8 +76,8 @@ Please help me debug this without giving me the full answer immediately.`;
   };
 
   const filteredBlockers = blockers.filter((b) => {
-    const matchesSearch = b.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          b.errorMessage?.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = String(b.title || '').toLowerCase().includes(String(searchQuery || '').toLowerCase()) || 
+                          String(b.errorMessage || '').toLowerCase().includes(String(searchQuery || '').toLowerCase());
     const matchesStatus = !statusFilter || b.status === statusFilter;
     return matchesSearch && matchesStatus;
   });

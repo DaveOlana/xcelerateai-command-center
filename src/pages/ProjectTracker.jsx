@@ -80,7 +80,7 @@ export default function ProjectTracker() {
           const localGithub = githubInputs[pi] ?? savedGithub;
           const localNote = noteInputs[pi] ?? savedNote;
 
-          const isElliotBoss = project.name.toLowerCase().includes('elliot');
+          const isElliotBoss = String(project.name || '').toLowerCase().includes('elliot');
 
           return (
             <div
@@ -169,7 +169,7 @@ export default function ProjectTracker() {
                     </span>
                     <div className="space-y-2.5">
                       {project.milestones?.map((milestone, mi) => {
-                        const mDone = done.includes(mi);
+                        const mDone = (Array.isArray(done) ? done : []).includes(mi);
                         return (
                           <button
                             key={mi}

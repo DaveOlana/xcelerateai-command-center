@@ -155,7 +155,7 @@ export function areRequiredTasksComplete(weekNum, monthNum, week, progress) {
     .map(({ index }) => index);
 
   if (requiredIndices.length === 0) return true;
-  return requiredIndices.every(i => completed.includes(i));
+  return requiredIndices.every(i => (Array.isArray(completed) ? completed : []).includes(i));
 }
 
 /**

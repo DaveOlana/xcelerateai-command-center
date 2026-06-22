@@ -410,7 +410,7 @@ Please help me debug this without giving me the full answer immediately.`;
                   ? mission.stepByStepInstructions
                   : ['Review the tasks inside TodaysFocus page.', 'Create directory structures and test files.', 'Verify inputs and logs in terminal.']
                 ).map((step, idx) => {
-                  const checked = progressRecord.completedSteps.includes(idx);
+                  const checked = (Array.isArray(progressRecord.completedSteps) ? progressRecord.completedSteps : []).includes(idx);
                   return (
                     <button
                       key={idx}
