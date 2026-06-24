@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Play, Pause, Coffee, Square, Clock, ChevronDown, ChevronUp } from 'lucide-react';
+import { Play, Pause, Coffee, Square, Clock, ChevronDown, ChevronUp, GripHorizontal } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export default function FloatingTimer() {
   const { sessionTimer, pauseTimer, resumeTimer, startBreakTimer, endSessionTimer } = useApp();
   const [collapsed, setCollapsed] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
   // If no session is active, don't show the floating pill
   if (!sessionTimer || !sessionTimer.activeSessionId) return null;
@@ -25,8 +28,38 @@ export default function FloatingTimer() {
     ? 'text-accent-primary border-accent-primary/20 bg-accent-primary/5'
     : 'text-amber-500 border-amber-500/20 bg-amber-500/5';
 
+  const handlePointerDown = (e) => {
+    if (e.target.closest('button') || e.target.closest('a')) return;
+    setIsDragging(true);
+    setDragStart({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y
+    });
+    e.currentTarget.setPointerCapture(e.pointerId);
+  };
+
+  const handlePointerMove = (e) => {
+    if (!isDragging) return;
+    const newX = e.clientX - dragStart.x;
+    const newY = e.clientY - dragStart.y;
+    setPosition({ x: newX, y: newY });
+  };
+
+  const handlePointerUp = (e) => {
+    setIsDragging(false);
+  };
+
   return (
-    <div className="fixed top-[72px] left-4 right-4 sm:left-auto sm:right-6 sm:top-6 sm:w-80 z-50 select-none animate-fade-in no-print">
+    <div 
+      className="fixed top-[72px] left-4 right-4 sm:left-auto sm:right-6 sm:top-6 sm:w-80 z-50 select-none animate-fade-in no-print cursor-grab active:cursor-grabbing"
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        touchAction: 'none'
+      }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+    >
       {/* Sleek Glassmorphic Pill Banner */}
       <div className="relative overflow-hidden bg-navy-900/80 backdrop-blur-xl border border-navy-450/60 rounded-2xl sm:rounded-3xl shadow-amber-glow transition-all duration-300">
         {/* Glow effect lines */}
@@ -35,7 +68,8 @@ export default function FloatingTimer() {
         <div className="p-3 sm:p-4">
           <div className="flex items-center justify-between gap-3">
             {/* Session Info */}
-            <div className="flex items-center gap-2.5 min-w-0">
+            <div className="flex items-center gap-2 min-w-0">
+              <GripHorizontal className="w-3.5 h-3.5 text-slate-500 hover:text-slate-350 cursor-grab active:cursor-grabbing flex-shrink-0" />
               <div className={`p-2 rounded-xl border ${modeColor} flex-shrink-0`}>
                 {sessionTimer.isBreak ? (
                   <Coffee className="w-4 h-4" />
