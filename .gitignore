@@ -1,8 +1,11 @@
-node_modules
-dist
+node_modules/
+dist/
 .env
 .env.local
 .env.*.local
+*.local
 *.log
 .DS_Store
 Thumbs.db
+.system_generated/
+scratch/
