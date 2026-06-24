@@ -9,6 +9,8 @@ import Onboarding from '../features/Onboarding';
 import OnboardingTour from '../features/OnboardingTour';
 import ErrorBoundary from '../common/ErrorBoundary';
 import CommandPalette from '../common/CommandPalette';
+import FloatingTimer from '../features/FloatingTimer';
+import SessionSwitchConfirmation from '../features/SessionSwitchConfirmation';
 
 export default function Layout() {
   const [showMore, setShowMore] = useState(false);
@@ -45,6 +47,12 @@ export default function Layout() {
           </div>
         </div>
       </main>
+
+      {/* Global Floating Timer UI */}
+      <FloatingTimer />
+
+      {/* Interruption confirmation overlay */}
+      <SessionSwitchConfirmation />
 
       {/* Global Command Palette */}
       <CommandPalette />

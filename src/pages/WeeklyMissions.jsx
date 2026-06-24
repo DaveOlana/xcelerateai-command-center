@@ -46,6 +46,7 @@ export default function WeeklyMissions() {
     resourcesStatus, updateResourceStatus, skillChecks, submitSkillCheck,
     practicalMissions, weekProofs, submitWeekProof, saveWeekReflection, weekReflections,
     addNote, startTimer, sessionTimer, pauseTimer, resumeTimer, startBreakTimer,
+    timerHistory,
   } = useApp();
 
   const navigate = useNavigate();
@@ -484,7 +485,22 @@ export default function WeeklyMissions() {
           <p className="text-[13px] text-slate-500 font-bold uppercase tracking-wider">SCHEDULED SESSIONS</p>
           <div className="grid sm:grid-cols-2 gap-3">
             {sessions.map((session, si) => {
-              const isActive = sessionTimer.activeSessionId === (session.sessionId || `w${week.weekNumber}-s${si}`);
+              const sId = session.sessionId || `w${week.weekNumber}-s${si}`;
+              const isActive = sessionTimer.activeSessionId === sId;
+              
+              // Calculate completion status from week stepStatus dynamically
+              const isWorkComplete = (() => {
+                const type = (session.type || '').toLowerCase();
+                if (type.includes('study')) return stepStatus.resourcesDone;
+                if (type.includes('skill')) return stepStatus.skillCheckDone;
+                if (type.includes('build')) return stepStatus.practicalsDone;
+                if (type.includes('proof')) return stepStatus.proofDone;
+                if (type.includes('reflection')) return stepStatus.reflectionDone;
+                return false;
+              })();
+
+              const isTimerCompleted = timerHistory.some(h => h.sessionId === sId && h.completedTimeBlock);
+
               return (
                 <div key={si} className={`card border transition-all ${isActive ? 'border-accent-primary/40 bg-accent-primary/5' : 'border-navy-400'}`}>
                   <div className="flex items-start justify-between gap-3 mb-3">
@@ -494,10 +510,22 @@ export default function WeeklyMissions() {
                       {session.sessionId && (
                         <p className="text-xs text-slate-600 font-mono">Ref: {session.sessionId}</p>
                       )}
+                      {!isWorkComplete && isTimerCompleted && (
+                        <p className="text-xs text-amber-400 mt-1 font-medium leading-relaxed">
+                          Timer complete, awaiting verification.
+                        </p>
+                      )}
                     </div>
-                    {isActive && (
-                      <span className="badge-blue animate-pulse text-xs">Active</span>
-                    )}
+                    <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                      {isActive && (
+                        <span className="badge-blue animate-pulse text-xs">Active</span>
+                      )}
+                      {isWorkComplete ? (
+                        <span className="bg-emerald-500/10 text-emerald-450 border border-emerald-500/20 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Completed</span>
+                      ) : isTimerCompleted ? (
+                        <span className="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Time Ended</span>
+                      ) : null}
+                    </div>
                   </div>
                   <div className="flex items-center gap-4 text-xs text-slate-400 mb-3">
                     <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{session.durationMinutes}min</span>
@@ -509,29 +537,37 @@ export default function WeeklyMissions() {
                     )}
                   </div>
                   <div className="flex gap-2">
-                    {!isActive ? (
-                      <button
-                        onClick={() => handleStartSession(session)}
-                        className="btn-primary py-2 text-xs flex items-center gap-1.5 flex-1 justify-center"
-                      >
-                        <Play className="w-3.5 h-3.5 fill-navy-900" /> Start Session
-                      </button>
-                    ) : sessionTimer.isRunning ? (
-                      <button onClick={pauseTimer} className="btn-secondary py-2 text-xs flex items-center gap-1.5 flex-1 justify-center">
-                        <Pause className="w-3.5 h-3.5" /> Pause
-                      </button>
+                    {isWorkComplete ? (
+                      <div className="bg-emerald-500/10 text-emerald-450 border border-emerald-500/20 rounded-xl py-2 text-xs text-center flex items-center justify-center gap-1 font-bold flex-1">
+                        <CheckCircle2 className="w-3.5 h-3.5" /> Work Completed
+                      </div>
                     ) : (
-                      <button onClick={resumeTimer} className="btn-primary py-2 text-xs flex items-center gap-1.5 flex-1 justify-center">
-                        <Play className="w-3.5 h-3.5 fill-navy-900" /> Resume
-                      </button>
-                    )}
-                    {isActive && (
-                      <button
-                        onClick={() => startBreakTimer(session.recommendedBreakMinutes || 10)}
-                        className="btn-secondary py-2 text-xs flex items-center gap-1.5 px-3"
-                      >
-                        <Coffee className="w-3.5 h-3.5" /> Break
-                      </button>
+                      <>
+                        {!isActive ? (
+                          <button
+                            onClick={() => handleStartSession(session)}
+                            className="btn-primary py-2 text-xs flex items-center gap-1.5 flex-1 justify-center"
+                          >
+                            <Play className="w-3.5 h-3.5 fill-navy-900" /> Start Session
+                          </button>
+                        ) : sessionTimer.isRunning ? (
+                          <button onClick={pauseTimer} className="btn-secondary py-2 text-xs flex items-center gap-1.5 flex-1 justify-center">
+                            <Pause className="w-3.5 h-3.5" /> Pause
+                          </button>
+                        ) : (
+                          <button onClick={resumeTimer} className="btn-primary py-2 text-xs flex items-center gap-1.5 flex-1 justify-center">
+                            <Play className="w-3.5 h-3.5 fill-navy-900" /> Resume
+                          </button>
+                        )}
+                        {isActive && (
+                          <button
+                            onClick={() => startBreakTimer(session.recommendedBreakMinutes || 10)}
+                            className="btn-secondary py-2 text-xs flex items-center gap-1.5 px-3"
+                          >
+                            <Coffee className="w-3.5 h-3.5" /> Break
+                          </button>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>

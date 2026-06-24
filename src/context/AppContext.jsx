@@ -147,8 +147,14 @@ export function AppProvider({ children }) {
   const [weekReflections, setWeekReflections] = useState(() =>
     loadFromStorage('xca_week_reflections', {})
   );
+  const [timerHistory, setTimerHistory] = useState(() =>
+    loadFromStorage('xca_timer_history', [])
+  );
+  const [pendingTimerParams, setPendingTimerParams] = useState(null);
+  const [showSwitchConfirmation, setShowSwitchConfirmation] = useState(false);
 
   // ── Persist all state to localStorage on change ──
+  useEffect(() => { saveToStorage('xca_timer_history', timerHistory); }, [timerHistory]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.ROADMAP, roadmap); }, [roadmap]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.PROGRESS, progress); }, [progress]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.NOTES, notes); }, [notes]);
@@ -365,6 +371,7 @@ export function AppProvider({ children }) {
               isRunning: false,
               showExpiredPrompt: true,
               accumulatedActiveSeconds: prev.accumulatedActiveSeconds + prev.timeLeftSeconds,
+              hasJustCompleted: true,
             };
           }
           const nextTimeLeft = prev.timeLeftSeconds - 1;
@@ -391,6 +398,7 @@ export function AppProvider({ children }) {
           isRunning: false,
           showExpiredPrompt: true,
           accumulatedActiveSeconds: prev.accumulatedActiveSeconds + Math.min(secondsPassed, prev.durationMinutes * 60),
+          hasJustCompleted: true,
         }));
       } else {
         const remaining = Math.max(0, Math.floor((sessionTimer.endTime - now) / 1000));
@@ -401,6 +409,29 @@ export function AppProvider({ children }) {
       }
     }
   }, []);
+
+  // ── Session Timer Completion History recorder ──
+  useEffect(() => {
+    if (sessionTimer.hasJustCompleted && sessionTimer.activeSessionId) {
+      const endedAt = Date.now();
+      const newHistoryItem = {
+        sessionId: sessionTimer.activeSessionId,
+        startedAt: new Date(sessionTimer.startedAt || Date.now()).toISOString(),
+        endedAt: new Date(endedAt).toISOString(),
+        mode: sessionTimer.isBreak ? 'Break' : 'Focus',
+        durationSeconds: sessionTimer.durationMinutes * 60,
+        completedTimeBlock: true,
+        status: 'completed',
+      };
+      setTimerHistory((prev) => [newHistoryItem, ...prev]);
+      
+      // Reset the flag
+      setSessionTimer((prev) => ({
+        ...prev,
+        hasJustCompleted: false
+      }));
+    }
+  }, [sessionTimer.hasJustCompleted, sessionTimer.activeSessionId, sessionTimer.startedAt, sessionTimer.isBreak, sessionTimer.durationMinutes]);
 
   // =============================================
   // RESOURCE STATUS ACTIONS
@@ -525,6 +556,11 @@ export function AppProvider({ children }) {
   // TIMER ACTIONS
   // =============================================
   const startTimer = useCallback((sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes) => {
+    if (sessionTimer.activeSessionId && sessionTimer.timeLeftSeconds > 0) {
+      setPendingTimerParams({ sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes });
+      setShowSwitchConfirmation(true);
+      return;
+    }
     const now = Date.now();
     const durSeconds = durationMinutes * 60;
     setSessionTimer({
@@ -545,7 +581,68 @@ export function AppProvider({ children }) {
       showExpiredPrompt: false,
     });
     markStudyToday();
-  }, [markStudyToday]);
+  }, [sessionTimer.activeSessionId, sessionTimer.timeLeftSeconds, markStudyToday]);
+
+  const confirmSwitchTimer = useCallback(() => {
+    if (!pendingTimerParams) return;
+    if (sessionTimer.activeSessionId && sessionTimer.timeLeftSeconds > 0) {
+      const endedAt = Date.now();
+      const newHistoryItem = {
+        sessionId: sessionTimer.activeSessionId,
+        startedAt: new Date(sessionTimer.startedAt || Date.now()).toISOString(),
+        endedAt: new Date(endedAt).toISOString(),
+        mode: sessionTimer.isBreak ? 'Break' : 'Focus',
+        durationSeconds: sessionTimer.durationMinutes * 60,
+        completedTimeBlock: false,
+        status: 'interrupted',
+      };
+      setTimerHistory((prev) => [newHistoryItem, ...prev]);
+    }
+    const { sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes } = pendingTimerParams;
+    const now = Date.now();
+    const durSeconds = durationMinutes * 60;
+    setSessionTimer({
+      activeSessionId: sessionId,
+      type,
+      title,
+      durationMinutes,
+      timeLeftSeconds: durSeconds,
+      isRunning: true,
+      isBreak: false,
+      startedAt: now,
+      endTime: now + durSeconds * 1000,
+      pausedAt: null,
+      remainingSeconds: durSeconds,
+      accumulatedActiveSeconds: 0,
+      maxContinuousMinutes: maxContinuousMinutes || 75,
+      recommendedBreakMinutes: recommendedBreakMinutes || 10,
+      showExpiredPrompt: false,
+    });
+    setPendingTimerParams(null);
+    setShowSwitchConfirmation(false);
+    markStudyToday();
+  }, [pendingTimerParams, sessionTimer, markStudyToday]);
+
+  const cancelSwitchTimer = useCallback(() => {
+    setPendingTimerParams(null);
+    setShowSwitchConfirmation(false);
+  }, []);
+
+  const endSessionTimer = useCallback((status = 'ended') => {
+    if (!sessionTimer.activeSessionId) return;
+    const endedAt = Date.now();
+    const newHistoryItem = {
+      sessionId: sessionTimer.activeSessionId,
+      startedAt: new Date(sessionTimer.startedAt || Date.now()).toISOString(),
+      endedAt: new Date(endedAt).toISOString(),
+      mode: sessionTimer.isBreak ? 'Break' : 'Focus',
+      durationSeconds: sessionTimer.durationMinutes * 60,
+      completedTimeBlock: false,
+      status: status,
+    };
+    setTimerHistory((prev) => [newHistoryItem, ...prev]);
+    setSessionTimer(DEFAULT_SESSION_TIMER);
+  }, [sessionTimer]);
 
   const pauseTimer = useCallback(() => {
     setSessionTimer((prev) => {
@@ -575,18 +672,19 @@ export function AppProvider({ children }) {
 
   const startBreakTimer = useCallback((breakMinutes) => {
     const now = Date.now();
-    const durSeconds = breakMinutes * 60;
+    const min = breakMinutes || sessionTimer.recommendedBreakMinutes || 10;
+    const durSeconds = min * 60;
     setSessionTimer((prev) => ({
       ...prev,
       isBreak: true,
-      durationMinutes: breakMinutes,
+      durationMinutes: min,
       timeLeftSeconds: durSeconds,
       isRunning: true,
       startedAt: now,
       endTime: now + durSeconds * 1000,
       pausedAt: null,
     }));
-  }, []);
+  }, [sessionTimer.recommendedBreakMinutes]);
 
   const resetTimer = useCallback(() => {
     setSessionTimer(DEFAULT_SESSION_TIMER);
@@ -716,7 +814,8 @@ export function AppProvider({ children }) {
       practicalMissions,
       blockers,
       weekProofs,
-      weekReflections
+      weekReflections,
+      timerHistory
     };
     setSettingsState(prev => ({ ...prev, lastBackupDate: new Date().toISOString() }));
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -726,7 +825,7 @@ export function AppProvider({ children }) {
     a.download = `xca-progress-v2-${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [roadmap, progress, notes, checkpointStatuses, settings, streak, resourcesStatus, skillChecks, practicalMissions, blockers, weekProofs, weekReflections]);
+  }, [roadmap, progress, notes, checkpointStatuses, settings, streak, resourcesStatus, skillChecks, practicalMissions, blockers, weekProofs, weekReflections, timerHistory]);
 
   const importProgress = useCallback((data) => {
     if (data.roadmap) setRoadmap(data.roadmap);
@@ -741,6 +840,7 @@ export function AppProvider({ children }) {
     if (data.blockers) setBlockers(data.blockers);
     if (data.weekProofs) setWeekProofs(data.weekProofs);
     if (data.weekReflections) setWeekReflections(data.weekReflections);
+    if (data.timerHistory) setTimerHistory(data.timerHistory);
   }, []);
 
   const resetAllProgress = useCallback(() => {
@@ -753,6 +853,7 @@ export function AppProvider({ children }) {
     setSkillChecks({});
     setPracticalMissions({});
     setSessionTimer(DEFAULT_SESSION_TIMER);
+    setTimerHistory([]);
     setBlockers([]);
     setWeekProofs({});
     setWeekReflections({});
@@ -783,6 +884,9 @@ export function AppProvider({ children }) {
     blockers,
     weekProofs,
     weekReflections,
+    timerHistory,
+    pendingTimerParams,
+    showSwitchConfirmation,
 
     // Roadmap
     importRoadmap,
@@ -828,6 +932,9 @@ export function AppProvider({ children }) {
     startBreakTimer,
     resetTimer,
     acknowledgeExpiredPrompt,
+    confirmSwitchTimer,
+    cancelSwitchTimer,
+    endSessionTimer,
 
     // Blockers
     addBlocker,
