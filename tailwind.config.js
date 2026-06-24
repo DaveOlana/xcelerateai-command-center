@@ -88,6 +88,8 @@ export default {
       boxShadow: {
         'primary-glow': '0 0 20px rgba(59,130,246,0.2), 0 0 40px rgba(59,130,246,0.05)',
         'primary-glow-sm': '0 0 10px rgba(59,130,246,0.15)',
+        'amber-glow': '0 0 20px rgba(245, 158, 11, 0.2), 0 0 40px rgba(245, 158, 11, 0.05)',
+        'cyan-glow': '0 0 20px rgba(6, 182, 212, 0.2), 0 0 40px rgba(6, 182, 212, 0.05)',
         'card': '0 4px 24px rgba(0,0,0,0.4)',
         'card-hover': '0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(59,130,246,0.15)',
       },
