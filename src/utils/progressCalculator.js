@@ -115,14 +115,48 @@ export function getMonthProgress(month, progress) {
  * Get the current active week data from the roadmap
  */
 export function getActiveWeekData(roadmap, activeWeek) {
-  if (!roadmap?.months) return null;
-  for (const month of roadmap.months) {
-    for (const week of month.weeks || []) {
-      if (week.weekNumber === activeWeek) {
+  if (!roadmap) return null;
+
+  const targetNum = Number(activeWeek);
+  if (isNaN(targetNum)) return null;
+
+  // 1. Search months[].weeks first (works for Elliot, One Piece, Cloud Engineering after normalization)
+  if (Array.isArray(roadmap.months)) {
+    for (const month of roadmap.months) {
+      for (const week of month.weeks || []) {
+        if (Number(week.weekNumber) === targetNum) {
+          return { week, month };
+        }
+      }
+    }
+  }
+
+  // 2. Fallback: search the top-level weeks[] array (flat schemas)
+  if (Array.isArray(roadmap.weeks)) {
+    for (const week of roadmap.weeks) {
+      if (Number(week.weekNumber) === targetNum) {
+        // Try to find the matching month for context
+        const monthNum = week.monthNumber || (typeof week.month === 'number' ? week.month : null);
+        const month = monthNum && Array.isArray(roadmap.months)
+          ? (roadmap.months.find(m => m.monthNumber === monthNum) || { monthNumber: monthNum, title: `Month ${monthNum}`, weeks: [] })
+          : { monthNumber: 1, title: 'Month 1', weeks: [] };
         return { week, month };
       }
     }
   }
+
+  // 3. If activeWeek is 1 and no match found, return the very first week
+  if (targetNum === 1) {
+    const firstWeek = roadmap.weeks?.[0] || roadmap.months?.[0]?.weeks?.[0];
+    if (firstWeek) {
+      const monthNum = firstWeek.monthNumber || 1;
+      const month = Array.isArray(roadmap.months)
+        ? (roadmap.months.find(m => m.monthNumber === monthNum) || roadmap.months[0])
+        : { monthNumber: 1, title: 'Month 1', weeks: [] };
+      return { week: firstWeek, month: month || { monthNumber: 1, title: 'Month 1', weeks: [] } };
+    }
+  }
+
   return null;
 }
 

@@ -7,11 +7,11 @@
 //   Raw JSON → validateRoadmapJSON() → normalizeRoadmap() → importRoadmap()
 //
 // Supports:
-//   - Elliot JSON (months[].weeks)
-//   - Mobile Dev JSON (months[].weeks)
-//   - Backend Dev JSON (months[].weeks)
-//   - One Piece Backend Sprint (months[].weeks + programStats)
-//   - Future JSON with flat weeks[] array
+//   - Elliot / Mobile / Backend JSON  (months[].weeks with embedded week objects)
+//   - One Piece Backend Sprint         (months[].weeks + programStats)
+//   - Cloud Engineering JSON           (flat weeks[] with month: number + weekIds in months)
+//   - Future: months[].modules, months[].topics, months[].sessions, etc.
+//   - Month-level roadmaps             (no week children → generate 4 synthetic weeks per month)
 // =============================================
 
 // ─── Slug helper ─────────────────────────────────────────────────────────────
@@ -27,9 +27,6 @@ function slugify(str) {
 /**
  * Generate a deterministic, stable roadmap ID from identifying fields.
  * Used to namespace all per-roadmap progress keys in localStorage.
- *
- * @param {object} raw - Raw or partially normalised roadmap JSON
- * @returns {string} e.g. "one-piece-figure-vending-backend-sprint-1-0-0"
  */
 export function getRoadmapId(raw) {
   if (!raw) return 'default-roadmap';
@@ -39,30 +36,22 @@ export function getRoadmapId(raw) {
     raw.bootcamp?.title ||
     raw.bootcampTitle ||
     raw.title ||
+    raw.id ||
     'roadmap';
 
   const version = raw.version || raw.schemaVersion || '1.0';
-  const date = raw.generatedOn || '';
+  const date = raw.generatedOn || raw.createdAt || '';
 
-  return slugify(`${title}-${version}${date ? '-' + date : ''}`);
+  return slugify(`${title}-${version}${date ? '-' + date.slice(0, 10) : ''}`);
 }
 
 // ─── getDerivedDuration ──────────────────────────────────────────────────────
 /**
  * Derive duration metadata from any roadmap JSON.
- * Priority:
- *   1. programStats.totalWeeks / programStats.totalMonths
- *   2. Length of normalized weeks array
- *   3. Count weeks inside months[].weeks
- *   4. durationDays if explicit
- *   5. totalDays = totalWeeks * 7 as fallback
- *
- * @param {object} raw - Raw roadmap JSON
- * @param {Array}  normalizedWeeks - Already-merged weeks array (optional)
- * @returns {{ totalWeeks, totalMonths, totalDays, durationLabel, weeklyHours }}
  */
 export function getDerivedDuration(raw, normalizedWeeks) {
   const stats = raw?.programStats || {};
+  const opProfile = raw?.operatorProfile || {};
 
   // Total weeks
   let totalWeeks = null;
@@ -75,12 +64,14 @@ export function getDerivedDuration(raw, normalizedWeeks) {
   } else if (Array.isArray(raw?.weeks)) {
     totalWeeks = raw.weeks.length;
   }
-  if (!totalWeeks || totalWeeks < 1) totalWeeks = 24; // final fallback
+  if (!totalWeeks || totalWeeks < 1) totalWeeks = 24;
 
   // Total months
   let totalMonths = null;
   if (typeof stats.totalMonths === 'number') {
     totalMonths = stats.totalMonths;
+  } else if (typeof opProfile.expectedDurationMonths === 'number') {
+    totalMonths = opProfile.expectedDurationMonths;
   } else if (Array.isArray(raw?.months)) {
     totalMonths = raw.months.length;
   } else {
@@ -99,12 +90,13 @@ export function getDerivedDuration(raw, normalizedWeeks) {
   const rawLabel =
     raw?.bootcamp?.duration ||
     raw?.duration ||
-    `${totalWeeks} week${totalWeeks !== 1 ? 's' : ''}`;
+    (totalMonths > 1 ? `${totalMonths} months` : `${totalWeeks} weeks`);
   const durationLabel = rawLabel;
 
   const weeklyHours =
     raw?.bootcamp?.weeklyHours ||
     raw?.weeklyHours ||
+    opProfile.recommendedWeeklyHours ||
     (stats.weeklyHoursMin && stats.weeklyHoursMax
       ? `${stats.weeklyHoursMin}-${stats.weeklyHoursMax} hours`
       : '15-20 hours');
@@ -112,197 +104,397 @@ export function getDerivedDuration(raw, normalizedWeeks) {
   return { totalWeeks, totalMonths, totalDays, durationLabel, weeklyHours };
 }
 
-// ─── normalizeWeek ───────────────────────────────────────────────────────────
+// ─── Resource resolution helpers ─────────────────────────────────────────────
 /**
- * Normalize a single raw week object into the canonical internal shape.
- * Supports any field name variation across different JSON schemas.
- *
- * Canonical output fields:
- *   studyResources, skillCheck, practicalMissions, proofOfWork,
- *   reflectionPrompts, unlockCriteria, scheduledSessions, tasks
- *
- * Also sets backward-compatible aliases:
- *   resources = studyResources
- *   sessions  = scheduledSessions
- *
- * @param {object} rawWeek - Raw week object from JSON
- * @param {object} parentMonth - The month this week belongs to
- * @returns {object} Normalized week
+ * Resolve a study resources array from any raw week/item.
+ * Handles:
+ *   - Array of resource objects  (One Piece / Elliot style)
+ *   - Array of resource ID strings (Cloud Engineering style — resolved via catalogue)
+ *   - Various field name aliases
  */
-export function normalizeWeek(rawWeek, parentMonth) {
-  if (!rawWeek || typeof rawWeek !== 'object') return rawWeek;
-
-  // ── Study Resources ───────────────────────────────────────────────────────
-  const studyResources =
-    Array.isArray(rawWeek.studyResources) ? rawWeek.studyResources :
-    Array.isArray(rawWeek.resources)       ? rawWeek.resources :
-    Array.isArray(rawWeek.resourcesBeforeTask) ? rawWeek.resourcesBeforeTask :
-    Array.isArray(rawWeek.study)           ? rawWeek.study :
+function resolveStudyResources(item, resourceCatalogue) {
+  const raw =
+    Array.isArray(item.studyResources)       ? item.studyResources :
+    Array.isArray(item.resources)            ? item.resources :
+    Array.isArray(item.resourcesBeforeTask)  ? item.resourcesBeforeTask :
+    Array.isArray(item.learningResources)    ? item.learningResources :
+    Array.isArray(item.materials)            ? item.materials :
+    Array.isArray(item.links)               ? item.links :
+    Array.isArray(item.readings)             ? item.readings :
+    Array.isArray(item.videos)              ? item.videos :
+    Array.isArray(item.recommendedResources) ? item.recommendedResources :
+    Array.isArray(item.study)               ? item.study :
     [];
 
-  // ── Skill Check ───────────────────────────────────────────────────────────
-  // May be: an array of {question, ...} or a single object or a plain string
-  const skillCheck =
-    Array.isArray(rawWeek.skillCheck)  ? rawWeek.skillCheck :
-    rawWeek.skillCheck                 ? [rawWeek.skillCheck] :
-    Array.isArray(rawWeek.checkpoint)  ? rawWeek.checkpoint :
-    rawWeek.checkpoint                 ? [{ question: rawWeek.checkpoint }] :
+  if (raw.length === 0) return [];
+
+  // If items are strings, try to resolve them from the resource catalogue
+  return raw.map((r, idx) => {
+    if (typeof r === 'string') {
+      // It's a resource ID — look it up in catalogue
+      const found = resourceCatalogue[r];
+      if (found) return { ...found, id: r, title: found.title || found.name || r };
+      // No match — create a stub
+      return { id: r, title: r, type: 'Reference', url: '#' };
+    }
+    if (typeof r === 'object' && r !== null) {
+      return {
+        ...r,
+        title: r.title || r.name || r.label || `Resource ${idx + 1}`,
+        type: r.type || r.resourceType || r.kind || 'Resource',
+        url: r.url || r.link || r.href || '#',
+      };
+    }
+    return { title: String(r), type: 'Reference', url: '#' };
+  });
+}
+
+/**
+ * Resolve a skill check array from any raw week/item.
+ */
+function resolveSkillCheck(item) {
+  const raw =
+    Array.isArray(item.skillCheck)    ? item.skillCheck :
+    item.skillCheck                   ? [item.skillCheck] :
+    Array.isArray(item.skillChecks)   ? item.skillChecks :
+    Array.isArray(item.quiz)          ? item.quiz :
+    item.quiz                         ? [item.quiz] :
+    Array.isArray(item.quizzes)       ? item.quizzes :
+    Array.isArray(item.questions)     ? item.questions :
+    Array.isArray(item.checkQuestions) ? item.checkQuestions :
+    Array.isArray(item.checkpoint)    ? item.checkpoint :
+    item.checkpoint                   ? [{ question: typeof item.checkpoint === 'string' ? item.checkpoint : (item.checkpoint?.prompt || '') }] :
+    // Cloud Engineering uses outcomes as skill check prompts
+    Array.isArray(item.outcomes)      ? item.outcomes.map(o => ({ question: o })) :
     [];
 
-  // ── Practical Missions ────────────────────────────────────────────────────
-  const practicalMissions =
-    Array.isArray(rawWeek.practicalMissions) ? rawWeek.practicalMissions :
-    Array.isArray(rawWeek.missions)          ? rawWeek.missions :
-    Array.isArray(rawWeek.buildTasks)        ? rawWeek.buildTasks :
-    Array.isArray(rawWeek.practicalTasks)    ? rawWeek.practicalTasks :
+  return raw.map(q => {
+    if (typeof q === 'string') return { question: q };
+    if (typeof q === 'object' && q !== null) return q;
+    return { question: String(q) };
+  });
+}
+
+/**
+ * Resolve a practical missions array from any raw week/item.
+ */
+function resolvePracticalMissions(item, weekId) {
+  const raw =
+    Array.isArray(item.practicalMissions) ? item.practicalMissions :
+    Array.isArray(item.missions)          ? item.missions :
+    Array.isArray(item.buildTasks)        ? item.buildTasks :
+    Array.isArray(item.practicalTasks)    ? item.practicalTasks :
+    Array.isArray(item.assignments)       ? item.assignments :
+    Array.isArray(item.exercises)         ? item.exercises :
+    Array.isArray(item.labs)              ? item.labs :
+    Array.isArray(item.builds)            ? item.builds :
+    // Cloud Engineering: synthesize from proofOfWork string + outcomes
     [];
 
-  // Ensure each mission has a stable missionId
-  const normalizedMissions = practicalMissions.map((m, idx) => {
-    if (!m || typeof m !== 'object') return m;
+  // If still empty and we have a proofOfWork string, create a synthetic mission
+  if (raw.length === 0 && item.proofOfWork && typeof item.proofOfWork === 'string') {
+    return [{
+      missionId: `${weekId}-pm-0`,
+      title: 'Weekly Proof Mission',
+      objective: item.proofOfWork,
+      difficulty: 'Main Build',
+      required: true,
+      evidenceRequired: true,
+    }];
+  }
+
+  return raw.map((m, idx) => {
+    if (typeof m === 'string') {
+      return {
+        missionId: `${weekId}-pm-${idx}`,
+        title: m,
+        objective: m,
+        difficulty: 'Standard',
+      };
+    }
     return {
       ...m,
-      missionId: m.missionId || m.id || `${rawWeek.weekId || rawWeek.weekNumber}-pm-${idx}`,
+      missionId: m.missionId || m.id || `${weekId}-pm-${idx}`,
     };
   });
+}
 
-  // ── Proof of Work ─────────────────────────────────────────────────────────
-  const proofOfWork =
-    Array.isArray(rawWeek.proofOfWork)     ? rawWeek.proofOfWork :
-    Array.isArray(rawWeek.proof)           ? rawWeek.proof :
-    Array.isArray(rawWeek.deliverables)    ? rawWeek.deliverables :
-    [];
+/**
+ * Resolve proof of work array from any raw week/item.
+ * Normalises both string and array variants.
+ */
+function resolveProofOfWork(item) {
+  if (Array.isArray(item.proofOfWork))   return item.proofOfWork;
+  if (typeof item.proofOfWork === 'string' && item.proofOfWork.trim()) {
+    return [item.proofOfWork];
+  }
+  if (Array.isArray(item.proof))         return item.proof;
+  if (typeof item.proof === 'string' && item.proof.trim()) return [item.proof];
+  if (Array.isArray(item.deliverables))  return item.deliverables;
+  if (Array.isArray(item.submission))    return item.submission;
+  if (Array.isArray(item.evidence))      return item.evidence;
+  return [];
+}
 
-  // ── Reflection Prompts ────────────────────────────────────────────────────
-  const reflectionPrompts =
-    Array.isArray(rawWeek.reflectionPrompts) ? rawWeek.reflectionPrompts :
-    Array.isArray(rawWeek.reflection)        ? rawWeek.reflection :
-    Array.isArray(rawWeek.reflections)       ? rawWeek.reflections :
-    rawWeek.reflectionPrompt                 ? [rawWeek.reflectionPrompt] :
-    [];
+/**
+ * Resolve reflection prompts from any raw week/item.
+ */
+function resolveReflectionPrompts(item) {
+  if (Array.isArray(item.reflectionPrompts)) return item.reflectionPrompts;
+  if (Array.isArray(item.reflection))        return item.reflection;
+  if (Array.isArray(item.reflections))       return item.reflections;
+  if (item.reflectionPrompt)                 return [item.reflectionPrompt];
+  if (Array.isArray(item.reviewQuestions))   return item.reviewQuestions;
+  return [];
+}
 
-  // ── Unlock Criteria ───────────────────────────────────────────────────────
-  const unlockCriteria =
-    Array.isArray(rawWeek.unlockCriteria)      ? rawWeek.unlockCriteria :
-    Array.isArray(rawWeek.unlock)              ? rawWeek.unlock :
-    Array.isArray(rawWeek.completionCriteria)  ? rawWeek.completionCriteria :
-    [];
+/**
+ * Resolve scheduled sessions from any raw week/item.
+ */
+function resolveScheduledSessions(item) {
+  if (Array.isArray(item.scheduledSessions)) return item.scheduledSessions;
+  if (Array.isArray(item.sessions))          return item.sessions;
+  if (Array.isArray(item.studySessions))     return item.studySessions;
+  if (Array.isArray(item.timeBlocks))        return item.timeBlocks;
+  if (Array.isArray(item.focusBlocks))       return item.focusBlocks;
+  return [];
+}
 
-  // ── Scheduled Sessions ────────────────────────────────────────────────────
-  const scheduledSessions =
-    Array.isArray(rawWeek.scheduledSessions) ? rawWeek.scheduledSessions :
-    Array.isArray(rawWeek.sessions)          ? rawWeek.sessions :
-    [];
+/**
+ * Resolve unlock criteria (object or array).
+ */
+function resolveUnlockCriteria(item) {
+  if (Array.isArray(item.unlockCriteria))     return item.unlockCriteria;
+  if (item.unlockCriteria && typeof item.unlockCriteria === 'object') {
+    return [item.unlockCriteria];
+  }
+  if (Array.isArray(item.unlock))             return item.unlock;
+  if (Array.isArray(item.completionCriteria)) return item.completionCriteria;
+  return [];
+}
 
-  // ── Frontend Integration ──────────────────────────────────────────────────
+// ─── normalizeWeek ───────────────────────────────────────────────────────────
+/**
+ * Normalize a single raw week/module/topic/session object into the canonical
+ * internal shape, resolving field name variations across JSON schemas.
+ *
+ * @param {object} rawWeek        - Raw week/item from JSON
+ * @param {object} parentMonth    - The parent month context (optional)
+ * @param {object} resourceCatalogue - Map of resourceId → resource object (optional)
+ * @returns {object} Normalized week
+ */
+export function normalizeWeek(rawWeek, parentMonth, resourceCatalogue = {}) {
+  if (!rawWeek || typeof rawWeek !== 'object') return null;
+
+  const weekIdRaw = rawWeek.weekId || rawWeek.id || null;
+  const weekNumRaw = rawWeek.weekNumber || rawWeek.weekNum || rawWeek.number || null;
+  const weekId = weekIdRaw || `w${weekNumRaw}`;
+
+  // ── Month association ─────────────────────────────────────────────────────
+  // Cloud Engineering uses `month` (number), not monthId/monthNumber
+  const monthNumber =
+    parentMonth?.monthNumber ||
+    rawWeek.monthNumber ||
+    (typeof rawWeek.month === 'number' ? rawWeek.month : null) ||
+    (typeof rawWeek.monthNum === 'number' ? rawWeek.monthNum : null) ||
+    null;
+  const monthId = parentMonth?.id || parentMonth?.monthId || rawWeek.monthId || null;
+
+  // ── Title / goal ──────────────────────────────────────────────────────────
+  const title =
+    rawWeek.title ||
+    rawWeek.name ||
+    rawWeek.topic ||
+    rawWeek.moduleTitle ||
+    rawWeek.weekTitle ||
+    `Week ${weekNumRaw || '?'}`;
+
+  const goal =
+    rawWeek.goal ||
+    rawWeek.objective ||
+    rawWeek.description ||
+    rawWeek.summary ||
+    rawWeek.outcome ||
+    rawWeek.briefing ||
+    rawWeek.minimumMission ||
+    '';
+
+  // ── Canonical learning data ───────────────────────────────────────────────
+  const studyResources = resolveStudyResources(rawWeek, resourceCatalogue);
+  const skillCheck     = resolveSkillCheck(rawWeek);
+  const proofOfWork    = resolveProofOfWork(rawWeek);
+  const reflectionPrompts = resolveReflectionPrompts(rawWeek);
+  const scheduledSessions = resolveScheduledSessions(rawWeek);
+  const unlockCriteria = resolveUnlockCriteria(rawWeek);
+  const practicalMissions = resolvePracticalMissions(rawWeek, weekId);
+
+  // ── Unified tasks for backward-compat progress tracking ───────────────────
+  const existingTasks = Array.isArray(rawWeek.tasks) ? rawWeek.tasks : [];
+  const missionAsTasks = practicalMissions.map((m) => ({
+    text: m.title || m.objective || `Mission ${m.missionId}`,
+    missionId: m.missionId,
+    type: 'practicalMission',
+  }));
+  const existingTexts = new Set(existingTasks.map(t =>
+    typeof t === 'string' ? t : (t?.text || t?.title || '')
+  ));
+  const uniqueMissionTasks = missionAsTasks.filter(m => !existingTexts.has(m.text));
+  const unifiedTasks = [...existingTasks, ...uniqueMissionTasks];
+
+  // ── Frontend integration (Elliot-specific pass-through) ───────────────────
   const frontendIntegration =
     Array.isArray(rawWeek.frontendIntegration) ? rawWeek.frontendIntegration :
     rawWeek.frontendIntegration                ? [rawWeek.frontendIntegration] :
     [];
 
-  // ── Unified tasks array for backward-compatible progress tracking ─────────
-  // Generates week.tasks by merging existing tasks + practical missions.
-  // This fixes the 0/0 task count for JSON files that use practicalMissions
-  // instead of a flat tasks[] array.
-  const existingTasks = Array.isArray(rawWeek.tasks) ? rawWeek.tasks : [];
-
-  // Represent each practical mission as a "task" stub for legacy progress tracking
-  const missionAsTasks = normalizedMissions.map((m) => ({
-    text: m.title || m.objective || `Mission ${m.missionId}`,
-    missionId: m.missionId,
-    type: 'practicalMission',
-  }));
-
-  // Deduplicate: if a task text already matches a mission title, skip
-  const existingTaskTexts = new Set(existingTasks.map((t) =>
-    typeof t === 'string' ? t : (t?.text || t?.title || '')
-  ));
-  const uniqueMissionTasks = missionAsTasks.filter(
-    (m) => !existingTaskTexts.has(m.text)
-  );
-
-  const unifiedTasks = [...existingTasks, ...uniqueMissionTasks];
-
-  // ── Preserved display fields ───────────────────────────────────────────────
-  const goal =
-    rawWeek.goal ||
-    rawWeek.objective ||
-    rawWeek.briefing ||
-    rawWeek.minimumMission ||
-    '';
-
-  const displayLabel =
-    rawWeek.displayLabel ||
-    (rawWeek.weekNumber ? `Week ${rawWeek.weekNumber}` : '');
-
-  const monthId = parentMonth?.monthId || rawWeek.monthId || null;
-  const monthNumber = parentMonth?.monthNumber || rawWeek.monthNumber || null;
-
   return {
     // Identity
-    id: rawWeek.weekId || rawWeek.id || `w${rawWeek.weekNumber}`,
-    weekId: rawWeek.weekId || rawWeek.id || `w${rawWeek.weekNumber}`,
-    weekNumber: rawWeek.weekNumber,
+    id: weekId,
+    weekId,
+    weekNumber: weekNumRaw,
     monthId,
     monthNumber,
 
     // Display
-    title: rawWeek.title || `Week ${rawWeek.weekNumber}`,
-    displayLabel,
+    title,
+    displayLabel: rawWeek.displayLabel || `Week ${weekNumRaw || '?'}`,
     goal,
-    objective: rawWeek.objective || rawWeek.goal || rawWeek.briefing || '',
+    objective: rawWeek.objective || rawWeek.goal || rawWeek.description || goal,
+    summary: rawWeek.summary || goal,
 
     // Time metadata
     timeEstimate: rawWeek.timeEstimate || rawWeek.estimatedHours || rawWeek.hours || null,
     estimatedHours: rawWeek.estimatedHours || rawWeek.timeEstimate || null,
     estimatedData: rawWeek.estimatedData || rawWeek.dataEstimate || rawWeek.data || null,
 
-    // ── Canonical fields (new JSON format) ───────────────────────────────────
+    // Skills (Cloud Engineering specific, passes through for display)
+    skills: Array.isArray(rawWeek.skills) ? rawWeek.skills : [],
+
+    // ── Canonical fields ────────────────────────────────────────────────────
     studyResources,
     skillCheck,
-    practicalMissions: normalizedMissions,
+    practicalMissions,
     proofOfWork,
     reflectionPrompts,
     unlockCriteria,
     scheduledSessions,
     frontendIntegration,
 
-    // ── Backward-compatible aliases ──────────────────────────────────────────
-    resources: studyResources,       // old components read week.resources
-    sessions: scheduledSessions,     // old components read week.sessions
-    tasks: unifiedTasks,             // old progress tracking reads week.tasks
-    checkpoint: skillCheck[0] || rawWeek.checkpoint || null, // old single-check readers
+    // ── Backward-compatible aliases ─────────────────────────────────────────
+    resources: studyResources,
+    sessions: scheduledSessions,
+    tasks: unifiedTasks,
+    checkpoint: skillCheck[0] || rawWeek.checkpoint || null,
 
-    // ── Preserved original fields (pass-through for unknown field display) ───
+    // ── Pass-through display fields ─────────────────────────────────────────
     briefing: rawWeek.briefing || goal,
     deliverable: rawWeek.deliverable || null,
     elliotConnection: rawWeek.elliotConnection || null,
     required: rawWeek.required,
+    status: rawWeek.status || 'active',
 
-    // Keep any extra fields for the "Additional Week Data" accordion
+    // Raw reference (for "Additional Week Data" accordion)
     _raw: rawWeek,
   };
+}
+
+// ─── extractMonthChildren ────────────────────────────────────────────────────
+/**
+ * Extract week-like children from a month using all supported field names.
+ * Returns { items, fieldUsed, conversionType }
+ *
+ * conversionType values:
+ *   'embedded-weeks'  - month.weeks had embedded week objects
+ *   'id-references'   - month.weekIds references flat weeks (resolved externally)
+ *   'alternate-field' - month.modules / .topics / .sessions / etc.
+ *   'generated'       - month had no week children; synthetic weeks were generated
+ *   'none'            - month had no usable learning data
+ */
+function extractMonthChildren(month) {
+  // 1. Standard embedded weeks
+  if (Array.isArray(month.weeks) && month.weeks.length > 0) {
+    return { items: month.weeks, fieldUsed: 'weeks', conversionType: 'embedded-weeks' };
+  }
+  // 2. ID references (Cloud Engineering: weekIds) — signal to resolve from flat weeks[]
+  if (Array.isArray(month.weekIds) && month.weekIds.length > 0) {
+    return { items: [], fieldUsed: 'weekIds', conversionType: 'id-references', weekIds: month.weekIds };
+  }
+  // 3. Alternate week-like child arrays
+  const alternates = [
+    'weeklyPlan', 'weeklySchedule', 'curriculumWeeks', 'learningWeeks',
+    'modules', 'units', 'lessons', 'topics', 'sessions', 'milestones',
+  ];
+  for (const field of alternates) {
+    if (Array.isArray(month[field]) && month[field].length > 0) {
+      return { items: month[field], fieldUsed: field, conversionType: 'alternate-field' };
+    }
+  }
+  return { items: [], fieldUsed: null, conversionType: 'none' };
+}
+
+/**
+ * Generate synthetic weeks from a month's top-level learning data
+ * when the month has no week-like children.
+ * Creates 4 canonical phase-based weeks.
+ */
+function generateSyntheticWeeks(month, monthNumber, baseWeekNumber, resourceCatalogue) {
+  const phases = [
+    { label: 'Foundation',      goal: 'Learn and explore foundational concepts.' },
+    { label: 'Core Practice',   goal: 'Practice core skills with hands-on exercises.' },
+    { label: 'Build / Apply',   goal: 'Build and apply knowledge through projects.' },
+    { label: 'Proof / Review',  goal: 'Produce proof of work and review progress.' },
+  ];
+
+  // Gather all resources / tasks at the month level
+  const allResources = resolveStudyResources(month, resourceCatalogue);
+  const allProof = resolveProofOfWork(month);
+  const allReflections = resolveReflectionPrompts(month);
+
+  const chunked = (arr, n) => {
+    if (!arr.length) return Array(n).fill([]);
+    const size = Math.ceil(arr.length / n);
+    return Array.from({ length: n }, (_, i) => arr.slice(i * size, (i + 1) * size));
+  };
+
+  const resourceChunks = chunked(allResources, 4);
+  const proofChunks    = chunked(allProof, 4);
+
+  return phases.map((phase, pi) => {
+    const weekNumber = baseWeekNumber + pi;
+    const weekId = `${month.id || `m${monthNumber}`}-gen-w${pi + 1}`;
+    const proofItems = proofChunks[pi].length > 0
+      ? proofChunks[pi]
+      : (pi === 3 ? allProof : []);
+
+    const practicalMissions = proofItems.length > 0 ? [{
+      missionId: `${weekId}-pm-0`,
+      title: `${phase.label} Mission`,
+      objective: typeof proofItems[0] === 'string' ? proofItems[0] : (month.summary || phase.goal),
+      difficulty: pi === 3 ? 'Main Build' : 'Standard',
+      required: pi >= 2,
+      evidenceRequired: pi === 3,
+    }] : [];
+
+    return normalizeWeek({
+      id: weekId,
+      weekNumber,
+      month: monthNumber,
+      title: `${month.title} — ${phase.label}`,
+      summary: month.summary || '',
+      goal: phase.goal,
+      studyResources: resourceChunks[pi],
+      proofOfWork: proofItems,
+      reflectionPrompts: pi === 3 ? allReflections : [],
+      practicalMissions,
+      unlockCriteria: pi > 0 ? [{ requiresPreviousWeekComplete: true }] : [],
+    }, { monthNumber, id: month.id, monthId: month.id }, resourceCatalogue);
+  });
 }
 
 // ─── normalizeRoadmap ────────────────────────────────────────────────────────
 /**
  * Transform any valid raw roadmap JSON into the canonical internal format.
  * This is the single entry point used after validateRoadmapJSON() passes.
- *
- * Resulting shape:
- *   activeRoadmap = {
- *     id, schemaVersion, fileRole, version, title, shortTitle, track,
- *     learner, mentorLabel, durationLabel, weeklyHours, difficulty,
- *     coreMission, finalProductDefinition,
- *     totalWeeks, totalMonths, totalDays,
- *     months, weeks, projects, readinessCategories,
- *     defaultWeekFlow, localStorageKeys, sourceType,
- *     // backward-compat
- *     bootcampTitle, checkpoints, sideQuestLocks, uiHints
- *   }
- *
- * @param {object} raw - Raw imported JSON (already parsed)
- * @returns {object} Normalized roadmap object
  */
 export function normalizeRoadmap(raw) {
   if (!raw || typeof raw !== 'object') {
@@ -311,7 +503,7 @@ export function normalizeRoadmap(raw) {
 
   const bootcamp = raw.bootcamp || {};
 
-  // ── Title resolution (priority order per spec) ────────────────────────────
+  // ── Title resolution ──────────────────────────────────────────────────────
   const title =
     bootcamp.bootcampTitle ||
     bootcamp.title ||
@@ -327,7 +519,6 @@ export function normalizeRoadmap(raw) {
     title ||
     'Command Center';
 
-  // Final product / card title
   const finalProductDefinition =
     bootcamp.finalProductDefinition ||
     bootcamp.coreMission ||
@@ -341,104 +532,206 @@ export function normalizeRoadmap(raw) {
     bootcamp.finalProductDefinition ||
     finalProductDefinition;
 
-  // ── Learner / mentor fields ───────────────────────────────────────────────
-  const learner =
-    bootcamp.learner ||
-    raw.learner ||
-    'Student';
+  const learner  = bootcamp.learner  || raw.learner  || 'Student';
+  const mentorLabel = bootcamp.mentorLabel || raw.mentorLabel || 'Mentor';
+  const track    = bootcamp.track    || raw.track    || raw.roadmapType || 'General';
+  const difficulty = bootcamp.difficulty || raw.difficulty || null;
 
-  const mentorLabel =
-    bootcamp.mentorLabel ||
-    raw.mentorLabel ||
-    'Mentor';
-
-  // ── Track / difficulty ────────────────────────────────────────────────────
-  const track =
-    bootcamp.track ||
-    raw.track ||
-    'General';
-
-  const difficulty =
-    bootcamp.difficulty ||
-    raw.difficulty ||
-    null;
-
-  // ── Schema / version fields ───────────────────────────────────────────────
   const schemaVersion = raw.schemaVersion || 'xcelerate-bootcamp-schema-v1';
-  const fileRole = raw.fileRole || 'main-importable-bootcamp-data';
-  const version = raw.version || '1.0';
-  const generatedOn = raw.generatedOn || null;
+  const fileRole      = raw.fileRole || 'main-importable-bootcamp-data';
+  const version       = raw.version || '1.0';
+  const generatedOn   = raw.generatedOn || raw.createdAt || null;
 
-  // ── Roadmap ID (deterministic slug) ──────────────────────────────────────
   const id = getRoadmapId(raw);
 
-  // ── defaultWeekFlow ───────────────────────────────────────────────────────
   const defaultWeekFlow = Array.isArray(raw.defaultWeekFlow)
     ? raw.defaultWeekFlow
-    : [
-        'Study Resources',
-        'Skill Check',
-        'Practical Missions',
-        'Proof of Work',
-        'Reflection',
-        'Unlock Next Week',
-      ];
+    : ['Study Resources', 'Skill Check', 'Practical Missions', 'Proof of Work', 'Reflection', 'Unlock Next Week'];
 
-  // ── localStorageKeys ──────────────────────────────────────────────────────
   const localStorageKeys = raw.localStorageKeys || {};
 
-  // ── Flatten and merge weeks ───────────────────────────────────────────────
-  // Priority: months[].weeks first, then flat weeks[], deduplicate by weekId
-  const weekMap = new Map(); // keyed by weekId or weekNumber
+  // ── Build resource catalogue from top-level or nested sources ────────────
+  // Cloud Engineering uses a top-level resource catalogue referenced by ID.
+  // Keys: resourceId → resource object
+  const resourceCatalogue = {};
 
-  // 1. From months[].weeks
-  const rawMonths = Array.isArray(raw.months) ? raw.months : [];
-  rawMonths.forEach((month, mi) => {
-    const m = {
-      ...month,
-      monthNumber: month.monthNumber || (mi + 1),
-    };
-    if (Array.isArray(month.weeks)) {
-      month.weeks.forEach((rawWeek, wi) => {
-        const w = normalizeWeek(
-          { ...rawWeek, weekNumber: rawWeek.weekNumber || (wi + 1) },
-          m
-        );
-        const key = w.weekId || `w${w.weekNumber}`;
-        if (!weekMap.has(key)) {
-          weekMap.set(key, w);
-        }
-      });
-    }
-  });
+  // Try various catalogue field names
+  const rawCatalogue =
+    raw.resourceCatalogue ||
+    raw.resources ||
+    raw.resourceLibrary ||
+    raw.resourceDatabase ||
+    null;
 
-  // 2. From flat weeks[] (add only if not already present)
+  if (Array.isArray(rawCatalogue)) {
+    rawCatalogue.forEach(r => {
+      if (r && (r.id || r.resourceId)) {
+        resourceCatalogue[r.id || r.resourceId] = r;
+      }
+    });
+  } else if (rawCatalogue && typeof rawCatalogue === 'object') {
+    Object.assign(resourceCatalogue, rawCatalogue);
+  }
+
+  // ── Build flat weeks map from top-level weeks[] (e.g., Cloud Engineering) ─
+  // Key: week.id or week.weekId → raw week
+  const flatWeekById = new Map();
   if (Array.isArray(raw.weeks)) {
-    raw.weeks.forEach((rawWeek, wi) => {
-      const w = normalizeWeek(
-        { ...rawWeek, weekNumber: rawWeek.weekNumber || (wi + 1) },
-        null
-      );
-      const key = w.weekId || `w${w.weekNumber}`;
-      if (!weekMap.has(key)) {
-        weekMap.set(key, w);
+    raw.weeks.forEach(w => {
+      if (w && (w.id || w.weekId)) {
+        flatWeekById.set(w.id || w.weekId, w);
       }
     });
   }
 
-  // 3. Sort by weekNumber
+  // ── Process months and extract / assign weeks ─────────────────────────────
+  let rawMonths = Array.isArray(raw.months) ? [...raw.months] : [];
+  if (rawMonths.length === 0 && flatWeekById.size > 0) {
+    const monthCount = Math.ceil(flatWeekById.size / 4);
+    for (let m = 1; m <= monthCount; m++) {
+      rawMonths.push({
+        id: `m${m}`,
+        monthNumber: m,
+        title: `Month ${m}`,
+        summary: `Month ${m} study plans and objectives.`,
+        weekIds: Array.from(flatWeekById.keys()).slice((m - 1) * 4, m * 4),
+      });
+    }
+  }
+  const weekMap = new Map(); // keyed by weekId for deduplication
+  let generatedWeekOffset = 0; // track base week number for generated weeks
+  const monthConversionLog = []; // for diagnostics
+
+  rawMonths.forEach((month, mi) => {
+    const monthNumber = month.monthNumber || (mi + 1);
+    const m = { ...month, monthNumber };
+
+    const { items, fieldUsed, conversionType, weekIds } = extractMonthChildren(month);
+
+    if (conversionType === 'id-references') {
+      // Cloud Engineering: month has weekIds[] that reference flat weeks[]
+      const baseWeekNum = (mi * 4) + 1;
+      let resolved = 0;
+      weekIds.forEach((wid, wi) => {
+        const rawWeek = flatWeekById.get(wid);
+        if (rawWeek) {
+          flatWeekById.delete(wid); // mark as "claimed by a month"
+          const weekNumber = rawWeek.weekNumber || (baseWeekNum + wi);
+          const w = normalizeWeek(
+            { ...rawWeek, weekNumber },
+            m,
+            resourceCatalogue
+          );
+          if (w && !weekMap.has(w.weekId)) {
+            weekMap.set(w.weekId, w);
+            resolved++;
+          }
+        }
+      });
+      monthConversionLog.push({
+        monthNumber,
+        title: month.title,
+        conversionType,
+        weeksFound: resolved,
+        fieldUsed: 'weekIds',
+        note: `Resolved ${resolved}/${weekIds.length} weeks from flat weeks[] by ID.`,
+      });
+
+    } else if (conversionType === 'embedded-weeks') {
+      items.forEach((rawWeek, wi) => {
+        const weekNumber = rawWeek.weekNumber || ((mi * 4) + wi + 1);
+        const w = normalizeWeek({ ...rawWeek, weekNumber }, m, resourceCatalogue);
+        if (w && !weekMap.has(w.weekId)) {
+          weekMap.set(w.weekId, w);
+        }
+      });
+      monthConversionLog.push({
+        monthNumber, title: month.title, conversionType,
+        weeksFound: items.length, fieldUsed,
+        note: `${items.length} embedded weeks extracted from month.${fieldUsed}.`,
+      });
+
+    } else if (conversionType === 'alternate-field') {
+      items.forEach((item, wi) => {
+        const weekNumber = item.weekNumber || item.number || ((mi * 4) + wi + 1);
+        const w = normalizeWeek({ ...item, weekNumber }, m, resourceCatalogue);
+        if (w && !weekMap.has(w.weekId)) {
+          weekMap.set(w.weekId, w);
+        }
+      });
+      monthConversionLog.push({
+        monthNumber, title: month.title,
+        conversionType: 'alternate-field',
+        weeksFound: items.length, fieldUsed,
+        note: `Month ${monthNumber} converted from month.${fieldUsed} into ${items.length} weeks.`,
+      });
+
+    } else {
+      // No week-like children — generate 4 synthetic weeks from month-level data
+      const baseWeekNum = (mi * 4) + 1 + generatedWeekOffset;
+      const hasLearningData = (
+        resolveStudyResources(month, resourceCatalogue).length > 0 ||
+        resolveProofOfWork(month).length > 0 ||
+        month.summary || month.description || month.objective
+      );
+
+      if (hasLearningData) {
+        const syntheticWeeks = generateSyntheticWeeks(month, monthNumber, baseWeekNum, resourceCatalogue);
+        syntheticWeeks.forEach(w => {
+          if (w && !weekMap.has(w.weekId)) weekMap.set(w.weekId, w);
+        });
+        monthConversionLog.push({
+          monthNumber, title: month.title,
+          conversionType: 'generated',
+          weeksFound: syntheticWeeks.length, fieldUsed: null,
+          note: `Month ${monthNumber} had no week children. Generated ${syntheticWeeks.length} synthetic weeks from month-level data.`,
+        });
+      } else {
+        monthConversionLog.push({
+          monthNumber, title: month.title,
+          conversionType: 'none',
+          weeksFound: 0, fieldUsed: null,
+          note: `Month ${monthNumber} has no weeks/modules/topics/sessions that can be converted into weeks.`,
+        });
+      }
+    }
+  });
+
+  // ── Add any remaining flat weeks not claimed by a month ───────────────────
+  flatWeekById.forEach((rawWeek, wid) => {
+    const weekNumber = rawWeek.weekNumber || weekMap.size + 1;
+
+    // Find the matching month by the `month` field (Cloud Engineering uses this)
+    const monthNum =
+      rawWeek.monthNumber ||
+      (typeof rawWeek.month === 'number' ? rawWeek.month : null) ||
+      null;
+    const parentM = monthNum
+      ? rawMonths.find(m => (m.monthNumber || 0) === monthNum) || null
+      : null;
+    const parentMonthCtx = parentM
+      ? { ...parentM, monthNumber: parentM.monthNumber || monthNum }
+      : null;
+
+    const w = normalizeWeek({ ...rawWeek, weekNumber }, parentMonthCtx, resourceCatalogue);
+    if (w && !weekMap.has(w.weekId)) {
+      weekMap.set(w.weekId, w);
+    }
+  });
+
+  // ── Sort weeks by weekNumber ──────────────────────────────────────────────
   const weeks = Array.from(weekMap.values()).sort(
     (a, b) => (a.weekNumber || 0) - (b.weekNumber || 0)
   );
 
-  // ── Normalize months (attach normalized weeks back) ───────────────────────
+  // ── Rebuild months with normalized weeks attached ─────────────────────────
   const months = rawMonths.map((month, mi) => {
     const monthNumber = month.monthNumber || (mi + 1);
-    const monthWeeks = weeks.filter((w) => w.monthNumber === monthNumber);
+    const monthWeeks = weeks.filter(w => w.monthNumber === monthNumber);
     return {
       ...month,
       monthNumber,
-      weeks: monthWeeks.length > 0 ? monthWeeks : (month.weeks || []),
+      weeks: monthWeeks.length > 0 ? monthWeeks : [],
     };
   });
 
@@ -451,16 +744,18 @@ export function normalizeRoadmap(raw) {
     : [];
 
   // ── Projects ──────────────────────────────────────────────────────────────
-  const projects = Array.isArray(raw.projects) ? raw.projects : [];
+  const projects = Array.isArray(raw.projects) ? raw.projects :
+    Array.isArray(raw.certificationTargets) ? raw.certificationTargets :
+    [];
 
-  // ── Checkpoints (old schema compat) ──────────────────────────────────────
-  const checkpoints = Array.isArray(raw.checkpoints) ? raw.checkpoints : [];
+  // ── Checkpoints ───────────────────────────────────────────────────────────
+  const checkpoints = Array.isArray(raw.checkpoints) ? raw.checkpoints :
+    Array.isArray(raw.certificationTargets) ? raw.certificationTargets :
+    [];
 
-  // ── Final backend scope / additional top-level data ───────────────────────
   const finalScope = raw.finalBackendScope || raw.finalScope || null;
   const programStats = raw.programStats || {};
 
-  // ── Assembled normalized roadmap ──────────────────────────────────────────
   return {
     // Identity
     id,
@@ -469,7 +764,7 @@ export function normalizeRoadmap(raw) {
     version,
     generatedOn,
 
-    // Human-readable labels
+    // Labels
     title,
     shortTitle,
     track,
@@ -479,8 +774,8 @@ export function normalizeRoadmap(raw) {
     coreMission,
     finalProductDefinition,
 
-    // Duration (dynamic, not hardcoded)
-    ...duration,  // totalWeeks, totalMonths, totalDays, durationLabel, weeklyHours
+    // Duration
+    ...duration,
 
     // Data
     months,
@@ -495,19 +790,17 @@ export function normalizeRoadmap(raw) {
     programStats,
     finalScope,
 
-    // Source type for debugging
+    // Diagnostics
+    _conversionLog: monthConversionLog,
+
+    // Source type
     sourceType: raw.schemaVersion ? 'xcelerate-schema' : 'custom',
 
-    // ── Backward-compat aliases ──────────────────────────────────────────────
-    // Old components read roadmap.bootcampTitle directly
+    // Backward-compat aliases
     bootcampTitle: title,
-    // Old components read roadmap.learner directly
-    // (learner already set above)
     duration: duration.durationLabel,
     sideQuestLocks: raw.sideQuestLocks || {},
     uiHints: raw.uiHints || {},
-
-    // Expose the raw bootcamp sub-object for components that may need it
     bootcamp: raw.bootcamp || null,
   };
 }

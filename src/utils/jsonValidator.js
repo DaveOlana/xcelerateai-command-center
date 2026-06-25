@@ -2,85 +2,164 @@
 // JSON VALIDATOR
 // Validates that an imported JSON file matches
 // the expected XcelerateAI roadmap structure.
-// Produces validation summary and warnings.
+// Produces validation summary and per-week/month warnings.
 // Normalization is handled by normalizeRoadmap.js
 // =============================================
 
+// ── Resource resolvers (mirrored from normalizeRoadmap for validation) ───────
+function resolveStudyResources(week) {
+  const raw =
+    Array.isArray(week.studyResources)        ? week.studyResources :
+    Array.isArray(week.resources)             ? week.resources :
+    Array.isArray(week.resourcesBeforeTask)   ? week.resourcesBeforeTask :
+    Array.isArray(week.learningResources)     ? week.learningResources :
+    Array.isArray(week.materials)             ? week.materials :
+    Array.isArray(week.links)                ? week.links :
+    Array.isArray(week.readings)              ? week.readings :
+    Array.isArray(week.videos)               ? week.videos :
+    Array.isArray(week.recommendedResources)  ? week.recommendedResources :
+    Array.isArray(week.study)                ? week.study :
+    [];
+  return raw;
+}
+
+function resolveSkillCheck(week) {
+  if (Array.isArray(week.skillCheck) && week.skillCheck.length)   return week.skillCheck;
+  if (week.skillCheck)                                              return [week.skillCheck];
+  if (Array.isArray(week.skillChecks) && week.skillChecks.length) return week.skillChecks;
+  if (Array.isArray(week.quiz) && week.quiz.length)               return week.quiz;
+  if (week.quiz)                                                    return [week.quiz];
+  if (Array.isArray(week.quizzes) && week.quizzes.length)         return week.quizzes;
+  if (Array.isArray(week.questions) && week.questions.length)     return week.questions;
+  if (Array.isArray(week.checkQuestions) && week.checkQuestions.length) return week.checkQuestions;
+  if (Array.isArray(week.outcomes) && week.outcomes.length)       return week.outcomes; // Cloud Engineering
+  if (week.checkpoint)                                              return [week.checkpoint];
+  return [];
+}
+
+function resolvePracticalMissions(week) {
+  if (Array.isArray(week.practicalMissions) && week.practicalMissions.length) return week.practicalMissions;
+  if (Array.isArray(week.missions) && week.missions.length)        return week.missions;
+  if (Array.isArray(week.buildTasks) && week.buildTasks.length)    return week.buildTasks;
+  if (Array.isArray(week.practicalTasks) && week.practicalTasks.length) return week.practicalTasks;
+  if (Array.isArray(week.assignments) && week.assignments.length)  return week.assignments;
+  if (Array.isArray(week.exercises) && week.exercises.length)      return week.exercises;
+  if (Array.isArray(week.labs) && week.labs.length)                return week.labs;
+  if (Array.isArray(week.builds) && week.builds.length)            return week.builds;
+  // Cloud Engineering: proofOfWork string → synthetic mission
+  if (typeof week.proofOfWork === 'string' && week.proofOfWork.trim()) return [week.proofOfWork];
+  return [];
+}
+
+function resolveProofOfWork(week) {
+  if (Array.isArray(week.proofOfWork) && week.proofOfWork.length) return week.proofOfWork;
+  if (typeof week.proofOfWork === 'string' && week.proofOfWork.trim()) return [week.proofOfWork];
+  if (Array.isArray(week.proof) && week.proof.length)              return week.proof;
+  if (typeof week.proof === 'string' && week.proof.trim())         return [week.proof];
+  if (Array.isArray(week.deliverables) && week.deliverables.length) return week.deliverables;
+  if (Array.isArray(week.submission) && week.submission.length)    return week.submission;
+  if (Array.isArray(week.evidence) && week.evidence.length)        return week.evidence;
+  return [];
+}
+
+function resolveReflectionPrompts(week) {
+  if (Array.isArray(week.reflectionPrompts) && week.reflectionPrompts.length) return week.reflectionPrompts;
+  if (Array.isArray(week.reflection) && week.reflection.length)    return week.reflection;
+  if (Array.isArray(week.reflections) && week.reflections.length)  return week.reflections;
+  if (week.reflectionPrompt)                                        return [week.reflectionPrompt];
+  if (Array.isArray(week.reviewQuestions) && week.reviewQuestions.length) return week.reviewQuestions;
+  return [];
+}
+
+function resolveScheduledSessions(week) {
+  if (Array.isArray(week.scheduledSessions) && week.scheduledSessions.length) return week.scheduledSessions;
+  if (Array.isArray(week.sessions) && week.sessions.length)        return week.sessions;
+  if (Array.isArray(week.studySessions) && week.studySessions.length) return week.studySessions;
+  if (Array.isArray(week.timeBlocks) && week.timeBlocks.length)    return week.timeBlocks;
+  if (Array.isArray(week.focusBlocks) && week.focusBlocks.length)  return week.focusBlocks;
+  return [];
+}
+
+// ── Month children detection (mirrors normalizeRoadmap logic) ─────────────────
+function detectMonthChildType(month) {
+  if (Array.isArray(month.weeks) && month.weeks.length > 0)
+    return { type: 'embedded-weeks', count: month.weeks.length, field: 'weeks' };
+  if (Array.isArray(month.weekIds) && month.weekIds.length > 0)
+    return { type: 'id-references', count: month.weekIds.length, field: 'weekIds' };
+
+  const alternates = ['weeklyPlan','weeklySchedule','curriculumWeeks','learningWeeks',
+    'modules','units','lessons','topics','sessions','milestones'];
+  for (const f of alternates) {
+    if (Array.isArray(month[f]) && month[f].length > 0)
+      return { type: 'alternate-field', count: month[f].length, field: f };
+  }
+  return { type: 'none', count: 0, field: null };
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 /**
  * Validate the imported roadmap JSON.
  * Returns { valid, errors, warnings, summary }
- *
- * NOTE: normalizedData is no longer produced here.
- *   Call normalizeRoadmap(raw) separately for the normalized shape.
  */
 export function validateRoadmapJSON(data) {
   if (!data || typeof data !== 'object') {
     return {
       valid: false,
       errors: ['Imported file is not a valid JSON object.'],
-      warnings: [],
-      summary: null,
-      normalizedData: null,
+      warnings: [], summary: null, normalizedData: null,
     };
   }
 
   const errors = [];
   const warnings = [];
 
-  // ── Schema Version Check ──────────────────────────────────────────────────
+  // ── Schema Version ─────────────────────────────────────────────────────────
   if (!data.schemaVersion || data.schemaVersion !== 'xcelerate-bootcamp-schema-v1') {
     warnings.push('Schema version missing or unexpected. Attempting compatibility import.');
   }
 
-  // ── Bootcamp Title Extraction ─────────────────────────────────────────────
+  // ── Title / Learner ────────────────────────────────────────────────────────
   let bootcampTitle =
     data.bootcamp?.bootcampTitle ||
     data.bootcamp?.title ||
     data.bootcampTitle ||
     data.title ||
+    data.id ||
     '';
-
   let learner =
     data.bootcamp?.learner ||
     data.learner ||
+    data.createdFor ||
     '';
 
-  if (data.metadata && typeof data.metadata === 'object') {
-    bootcampTitle = data.metadata.bootcampTitle || data.metadata.title || bootcampTitle;
-    learner = data.metadata.learner || data.metadata.learnerName || learner;
-  }
-
-  if (!bootcampTitle || bootcampTitle.trim() === '') {
+  if (!bootcampTitle.trim()) {
     bootcampTitle = 'XcelerateAI Bootcamp';
-    warnings.push('Bootcamp title missing. Using default: XcelerateAI Bootcamp.');
+    warnings.push('Bootcamp title missing. Using default.');
   }
-  if (!learner || learner.trim() === '') {
+  if (!learner.trim()) {
     learner = 'Student';
-    warnings.push('Learner name missing. Using default: Student.');
+    warnings.push('Learner name missing. Using default.');
   }
 
-  // ── Core Structure Check ──────────────────────────────────────────────────
-  const months = Array.isArray(data.months) ? data.months : [];
-  const flatWeeks = Array.isArray(data.weeks) ? data.weeks : [];
+  // ── Core Structure ─────────────────────────────────────────────────────────
+  const months    = Array.isArray(data.months) ? data.months : [];
+  const flatWeeks = Array.isArray(data.weeks)  ? data.weeks  : [];
 
   if (months.length === 0 && flatWeeks.length === 0) {
     errors.push('Missing both "months" array and "weeks" array. The file has no usable bootcamp structure.');
     return {
-      valid: false,
-      errors,
-      warnings,
+      valid: false, errors, warnings,
       summary: {
-        bootcampTitle, learner,
-        months: 0, weeks: 0,
-        studyResources: 0, skillCheckQuestions: 0,
-        practicalMissions: 0, proofItems: 0, reflectionPrompts: 0,
-        scheduledSessions: 0, projects: 0, checkpoints: 0, readinessCategories: 0,
+        bootcampTitle, learner, months: 0, weeks: 0,
+        studyResources: 0, skillCheckQuestions: 0, practicalMissions: 0,
+        proofItems: 0, reflectionPrompts: 0, scheduledSessions: 0,
+        projects: 0, checkpoints: 0, readinessCategories: 0,
       },
       normalizedData: null,
     };
   }
 
-  // ── Counters ──────────────────────────────────────────────────────────────
+  // ── Count resources from flat weeks (for reference-based schemas) ──────────
   let totalWeeks = 0;
   let totalStudyResources = 0;
   let totalSkillCheckQuestions = 0;
@@ -89,140 +168,133 @@ export function validateRoadmapJSON(data) {
   let totalReflectionPrompts = 0;
   let totalScheduledSessions = 0;
   const perWeekWarnings = [];
+  const monthDiagnostics = [];
 
-  // Helper to resolve study resources from any field name
-  const resolveStudyResources = (week) => {
-    if (Array.isArray(week.studyResources)) return week.studyResources;
-    if (Array.isArray(week.resources)) return week.resources;
-    if (Array.isArray(week.resourcesBeforeTask)) return week.resourcesBeforeTask;
-    if (Array.isArray(week.study)) return week.study;
-    return [];
-  };
-
-  const resolveSkillCheck = (week) => {
-    if (Array.isArray(week.skillCheck)) return week.skillCheck;
-    if (week.skillCheck) return [week.skillCheck];
-    if (Array.isArray(week.checkpoint)) return week.checkpoint;
-    if (week.checkpoint) return [week.checkpoint];
-    return [];
-  };
-
-  const resolvePracticalMissions = (week) => {
-    if (Array.isArray(week.practicalMissions)) return week.practicalMissions;
-    if (Array.isArray(week.missions)) return week.missions;
-    if (Array.isArray(week.buildTasks)) return week.buildTasks;
-    if (Array.isArray(week.practicalTasks)) return week.practicalTasks;
-    return [];
-  };
-
-  const resolveProofOfWork = (week) => {
-    if (Array.isArray(week.proofOfWork)) return week.proofOfWork;
-    if (Array.isArray(week.proof)) return week.proof;
-    if (Array.isArray(week.deliverables)) return week.deliverables;
-    return [];
-  };
-
-  const resolveReflectionPrompts = (week) => {
-    if (Array.isArray(week.reflectionPrompts)) return week.reflectionPrompts;
-    if (Array.isArray(week.reflection)) return week.reflection;
-    if (Array.isArray(week.reflections)) return week.reflections;
-    if (week.reflectionPrompt) return [week.reflectionPrompt];
-    return [];
-  };
-
-  const resolveScheduledSessions = (week) => {
-    if (Array.isArray(week.scheduledSessions)) return week.scheduledSessions;
-    if (Array.isArray(week.sessions)) return week.sessions;
-    return [];
-  };
-
-  // ── Validate weeks from months ────────────────────────────────────────────
+  // ── Process months ─────────────────────────────────────────────────────────
   months.forEach((month, mi) => {
     const mNum = month.monthNumber || (mi + 1);
-    if (!month.monthNumber) {
-      warnings.push(`Month ${mi + 1}: Missing "monthNumber". Assigned: ${mNum}`);
-    }
-    if (!month.title) {
-      warnings.push(`Month ${mi + 1}: Missing "title".`);
-    }
-    if (!Array.isArray(month.weeks) || month.weeks.length === 0) {
-      warnings.push(`Month ${mNum} ("${month.title || 'Unnamed'}"): No weeks found.`);
-      return;
+    if (!month.title) warnings.push(`Month ${mNum}: Missing "title".`);
+
+    const { type, count, field } = detectMonthChildType(month);
+    let monthWeeksToCount = [];
+
+    if (type === 'id-references') {
+      // Resolve from flat weeks by ID
+      const weekIds = month.weekIds || [];
+      weekIds.forEach(wid => {
+        const fw = flatWeeks.find(w => w.id === wid || w.weekId === wid);
+        if (fw) monthWeeksToCount.push(fw);
+      });
+      if (monthWeeksToCount.length > 0) {
+        monthDiagnostics.push(
+          `Month ${mNum} ("${month.title}"): Resolved ${monthWeeksToCount.length}/${weekIds.length} weeks from flat weeks[] by ID reference.`
+        );
+      } else {
+        monthDiagnostics.push(
+          `Month ${mNum} ("${month.title}"): Contains weekId references but no matching weeks found in flat weeks[].`
+        );
+      }
+    } else if (type === 'embedded-weeks' || type === 'alternate-field') {
+      monthWeeksToCount = month[field] || [];
+      if (type === 'alternate-field') {
+        monthDiagnostics.push(
+          `Month ${mNum} ("${month.title}"): Converted from month.${field} into ${count} weeks.`
+        );
+      }
+    } else {
+      // No week-like children detected
+      // Check if month has top-level learning data (can generate weeks)
+      const hasTopLevelData = (
+        resolveStudyResources(month).length > 0 ||
+        resolveProofOfWork(month).length > 0 ||
+        month.summary || month.description || month.objective
+      );
+      if (hasTopLevelData) {
+        monthDiagnostics.push(
+          `Month ${mNum} ("${month.title}"): Contains learning data but no week children. The adapter will generate 4 synthetic weeks from month-level data.`
+        );
+        // Count month-level as 4 weeks for summary purposes
+        totalWeeks += 4;
+      } else {
+        perWeekWarnings.push(
+          `Month ${mNum} ("${month.title}"): Has no weeks/modules/topics/sessions that can be converted into weeks.`
+        );
+      }
+      return; // skip per-week counting for this month
     }
 
-    month.weeks.forEach((week, wi) => {
+    // Count per-week field completeness
+    monthWeeksToCount.forEach((week, wi) => {
       totalWeeks++;
-      const wNum = week.weekNumber || totalWeeks;
+      const wNum = week.weekNumber || (wi + 1);
       const wLabel = `Week ${wNum} (Month ${mNum})`;
 
-      if (!week.weekNumber) {
-        warnings.push(`${wLabel}: Missing "weekNumber". Assigned: ${wNum}`);
-      }
-      if (!week.title) {
-        warnings.push(`${wLabel}: Missing "title".`);
-      }
-
-      const sr = resolveStudyResources(week);
-      const sc = resolveSkillCheck(week);
-      const pm = resolvePracticalMissions(week);
+      const sr  = resolveStudyResources(week);
+      const sc  = resolveSkillCheck(week);
+      const pm  = resolvePracticalMissions(week);
       const pow = resolveProofOfWork(week);
-      const rp = resolveReflectionPrompts(week);
-      const ss = resolveScheduledSessions(week);
+      const rp  = resolveReflectionPrompts(week);
+      const ss  = resolveScheduledSessions(week);
 
-      totalStudyResources += sr.length;
+      totalStudyResources      += sr.length;
       totalSkillCheckQuestions += sc.length;
-      totalPracticalMissions += pm.length;
-      totalProofItems += pow.length;
-      totalReflectionPrompts += rp.length;
-      totalScheduledSessions += ss.length;
+      totalPracticalMissions   += pm.length;
+      totalProofItems          += pow.length;
+      totalReflectionPrompts   += rp.length;
+      totalScheduledSessions   += ss.length;
 
-      // Per-week warnings
-      if (sr.length === 0) perWeekWarnings.push(`${wLabel}: No study resources found.`);
-      if (sc.length === 0) perWeekWarnings.push(`${wLabel}: No skill check questions found.`);
-      if (pm.length === 0) perWeekWarnings.push(`${wLabel}: No practical missions found.`);
+      if (sr.length  === 0) perWeekWarnings.push(`${wLabel}: No study resources found.`);
+      if (sc.length  === 0) perWeekWarnings.push(`${wLabel}: No skill check questions found.`);
+      if (pm.length  === 0) perWeekWarnings.push(`${wLabel}: No practical missions found.`);
       if (pow.length === 0) perWeekWarnings.push(`${wLabel}: No proof of work requirements found.`);
-      if (rp.length === 0) perWeekWarnings.push(`${wLabel}: No reflection prompts found.`);
-      if (ss.length === 0) perWeekWarnings.push(`${wLabel}: No scheduled sessions found.`);
+      if (rp.length  === 0) perWeekWarnings.push(`${wLabel}: No reflection prompts found.`);
+      if (ss.length  === 0) perWeekWarnings.push(`${wLabel}: No scheduled sessions found.`);
     });
   });
 
-  // ── Validate flat weeks (if no months) ────────────────────────────────────
-  if (months.length === 0 && flatWeeks.length > 0) {
-    flatWeeks.forEach((week, wi) => {
-      totalWeeks++;
-      const wNum = week.weekNumber || (wi + 1);
-      const wLabel = `Week ${wNum}`;
+  // ── Also count from any unclaimed flat weeks ───────────────────────────────
+  // (flat weeks not referenced by any month's weekIds)
+  const claimedWeekIds = new Set();
+  months.forEach(m => (m.weekIds || []).forEach(id => claimedWeekIds.add(id)));
 
-      const sr = resolveStudyResources(week);
-      const sc = resolveSkillCheck(week);
-      const pm = resolvePracticalMissions(week);
-      const pow = resolveProofOfWork(week);
-      const rp = resolveReflectionPrompts(week);
-      const ss = resolveScheduledSessions(week);
+  flatWeeks.forEach((week, wi) => {
+    const wid = week.id || week.weekId;
+    // Skip if already counted via month weekIds
+    if (wid && claimedWeekIds.has(wid)) return;
+    // Only count if not from months[] either
+    if (months.length > 0) return; // already counted above via id-references
 
-      totalStudyResources += sr.length;
-      totalSkillCheckQuestions += sc.length;
-      totalPracticalMissions += pm.length;
-      totalProofItems += pow.length;
-      totalReflectionPrompts += rp.length;
-      totalScheduledSessions += ss.length;
-    });
-  }
+    totalWeeks++;
+    const sr  = resolveStudyResources(week);
+    const sc  = resolveSkillCheck(week);
+    const pm  = resolvePracticalMissions(week);
+    const pow = resolveProofOfWork(week);
+    const rp  = resolveReflectionPrompts(week);
+    const ss  = resolveScheduledSessions(week);
 
-  // Push per-week warnings into main warnings (they're optional info)
-  perWeekWarnings.forEach((w) => warnings.push(w));
+    totalStudyResources      += sr.length;
+    totalSkillCheckQuestions += sc.length;
+    totalPracticalMissions   += pm.length;
+    totalProofItems          += pow.length;
+    totalReflectionPrompts   += rp.length;
+    totalScheduledSessions   += ss.length;
+  });
 
-  // ── Projects / Checkpoints / Readiness ───────────────────────────────────
-  const projects = Array.isArray(data.projects) ? data.projects : [];
-  const checkpoints = Array.isArray(data.checkpoints) ? data.checkpoints : [];
+  // Add month diagnostics as informational warnings
+  monthDiagnostics.forEach(d => warnings.push(d));
+  perWeekWarnings.forEach(w => warnings.push(w));
+
+  // ── Supplementary counts ──────────────────────────────────────────────────
+  const projects = Array.isArray(data.projects) ? data.projects :
+    Array.isArray(data.certificationTargets) ? data.certificationTargets : [];
+  const checkpoints = Array.isArray(data.checkpoints) ? data.checkpoints :
+    Array.isArray(data.certificationTargets) ? data.certificationTargets : [];
   const readinessCategories = Array.isArray(data.readinessCategories)
-    ? data.readinessCategories
-    : [];
+    ? data.readinessCategories : [];
 
   if (projects.length === 0) warnings.push('No projects defined in this roadmap.');
   if (readinessCategories.length === 0) warnings.push('No readinessCategories defined. Dashboard readiness will show empty tracks.');
 
-  // ── Summary ───────────────────────────────────────────────────────────────
   const summary = {
     bootcampTitle,
     learner,
@@ -237,22 +309,16 @@ export function validateRoadmapJSON(data) {
     projects: projects.length,
     checkpoints: checkpoints.length,
     readinessCategories: readinessCategories.length,
-    // Legacy field kept for backward compat with old ImportRoadmap summary grid
+    // Legacy aliases
     resources: totalStudyResources,
     sessions: totalScheduledSessions,
   };
-
-  // ── Legacy normalizedData for backward compat ─────────────────────────────
-  // ImportRoadmap.jsx previously used result.normalizedData directly.
-  // We now set it to the raw data so the caller can pass it to normalizeRoadmap().
-  // This prevents breaking the import flow during migration.
-  const normalizedData = data;
 
   return {
     valid: errors.length === 0,
     errors,
     warnings,
     summary,
-    normalizedData, // raw data; call normalizeRoadmap(normalizedData) next
+    normalizedData: data, // raw JSON; call normalizeRoadmap(normalizedData) next
   };
 }
