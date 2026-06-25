@@ -250,28 +250,68 @@ export default function ImportRoadmap() {
               )}
 
               {/* Errors */}
-              {validationResult.errors.length > 0 && (
-                <div className="space-y-1.5">
-                  <p className="section-label text-red-400">Errors (must fix)</p>
-                  {validationResult.errors.map((err, i) => (
-                    <div key={i} className="flex items-start gap-2 text-sm text-red-300">
-                      <span className="text-red-500 mt-0.5">✗</span>
-                      {err}
+              {validationResult.errors && validationResult.errors.length > 0 && (
+                <div className="border border-red-500/25 bg-red-500/5 rounded-xl p-3.5">
+                  <details className="group" open={true}>
+                    <summary className="flex items-center justify-between text-xs font-bold text-red-400 cursor-pointer select-none">
+                      <span className="flex items-center gap-1.5 uppercase tracking-wider">
+                        Errors (Must Fix) ({validationResult.errors.length})
+                      </span>
+                      <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
+                    </summary>
+                    <div className="mt-3 border-t border-navy-400/50 pt-2.5 space-y-2">
+                      {validationResult.errors.map((err, i) => (
+                        <div key={i} className="flex items-start gap-2 text-xs text-red-300">
+                          <span className="text-red-500 mt-0.5">✗</span>
+                          <span>{err}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </details>
                 </div>
               )}
 
               {/* Warnings */}
-              {validationResult.warnings.length > 0 && (
-                <div className="space-y-1.5">
-                  <p className="section-label text-amber-400">Warnings (optional)</p>
-                  {validationResult.warnings.map((w, i) => (
-                    <div key={i} className="flex items-start gap-2 text-sm text-amber-300/80">
-                      <span className="text-amber-500 mt-0.5">⚠</span>
-                      {w}
+              {validationResult.warnings && validationResult.warnings.length > 0 && (
+                <div className="border border-amber-500/20 bg-amber-500/5 rounded-xl p-3.5">
+                  <details className="group" open={validationResult.warnings.length < 3}>
+                    <summary className="flex items-center justify-between text-xs font-bold text-amber-400 cursor-pointer select-none">
+                      <span className="flex items-center gap-1.5 uppercase tracking-wider">
+                        Warnings (Optional) ({validationResult.warnings.length})
+                      </span>
+                      <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
+                    </summary>
+                    <div className="mt-3 border-t border-navy-400/50 pt-2.5 space-y-2">
+                      {validationResult.warnings.map((w, i) => (
+                        <div key={i} className="flex items-start gap-2 text-xs text-amber-300/80">
+                          <span className="text-amber-500 mt-0.5">⚠</span>
+                          <span>{w}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </details>
+                </div>
+              )}
+
+              {/* Auto-fixed / Info */}
+              {validationResult.info && validationResult.info.length > 0 && (
+                <div className="border border-blue-500/20 bg-blue-500/5 rounded-xl p-3.5">
+                  <details className="group" open={validationResult.info.length < 3}>
+                    <summary className="flex items-center justify-between text-xs font-bold text-blue-450 cursor-pointer select-none">
+                      <span className="flex items-center gap-1.5 uppercase tracking-wider">
+                        Auto-Fixed / Info ({validationResult.info.length})
+                      </span>
+                      <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
+                    </summary>
+                    <div className="mt-3 border-t border-navy-400/50 pt-2.5 space-y-2">
+                      {validationResult.info.map((inf, i) => (
+                        <div key={i} className="flex items-start gap-2 text-xs text-blue-300/80">
+                          <span className="text-blue-500 mt-0.5">✓</span>
+                          <span>{inf}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
                 </div>
               )}
             </div>

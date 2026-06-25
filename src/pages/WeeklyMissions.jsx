@@ -1138,9 +1138,20 @@ export default function WeeklyMissions() {
                 onNextAction={() => setActiveTab('proof')}
               />
             ) : (
-              <div className="card border-navy-400">
+              <div className="card border-navy-450">
                 <h3 className="font-bold text-white text-sm mb-1 uppercase tracking-wide">Step 5: Operational Reflection</h3>
                 <p className="text-xs text-slate-500 mb-4">Cement your understanding by articulating what you built and learned.</p>
+
+                {week.reflectionPrompts && week.reflectionPrompts.length > 0 && (
+                  <div className="mb-4 bg-navy-850 p-4 rounded-xl border border-navy-450/40">
+                    <h4 className="text-xs font-bold text-accent-cyan uppercase tracking-wider mb-2">Prompt Questions:</h4>
+                    <ul className="list-disc list-inside space-y-1.5 text-xs text-slate-300">
+                      {week.reflectionPrompts.map((p, idx) => (
+                        <li key={idx}>{p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 <form onSubmit={handleSaveReflection} className="space-y-4">
                   <textarea

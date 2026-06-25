@@ -104,6 +104,23 @@ export function getDerivedDuration(raw, normalizedWeeks) {
   return { totalWeeks, totalMonths, totalDays, durationLabel, weeklyHours };
 }
 
+// ─── Learner fallback helper ─────────────────────────────────────────────────
+export function getLearnerFallback() {
+  if (typeof localStorage !== 'undefined') {
+    try {
+      const profile = JSON.parse(localStorage.getItem('xca_profile') || localStorage.getItem('profile') || '{}');
+      if (profile.displayName) return profile.displayName;
+      if (profile.name) return profile.name;
+    } catch (e) {}
+    try {
+      const settings = JSON.parse(localStorage.getItem('xca_settings') || '{}');
+      if (settings.learnerName) return settings.learnerName;
+      if (settings.name) return settings.name;
+    } catch (e) {}
+  }
+  return 'Student';
+}
+
 // ─── Resource resolution helpers ─────────────────────────────────────────────
 /**
  * Resolve a study resources array from any raw week/item.
@@ -323,10 +340,54 @@ export function normalizeWeek(rawWeek, parentMonth, resourceCatalogue = {}) {
   const studyResources = resolveStudyResources(rawWeek, resourceCatalogue);
   const skillCheck     = resolveSkillCheck(rawWeek);
   const proofOfWork    = resolveProofOfWork(rawWeek);
-  const reflectionPrompts = resolveReflectionPrompts(rawWeek);
-  const scheduledSessions = resolveScheduledSessions(rawWeek);
+  const rawReflectionPrompts = resolveReflectionPrompts(rawWeek);
+  const rawScheduledSessions = resolveScheduledSessions(rawWeek);
   const unlockCriteria = resolveUnlockCriteria(rawWeek);
   const practicalMissions = resolvePracticalMissions(rawWeek, weekId);
+
+  let reflectionPrompts = rawReflectionPrompts;
+  let generatedReflectionPrompts = false;
+  if (reflectionPrompts.length === 0) {
+    reflectionPrompts = [
+      "What did you study this week?",
+      "What did you build or practice this week?",
+      "What confused you or slowed you down?",
+      "What proof of work did you produce?",
+      "What should you improve next week?"
+    ];
+    generatedReflectionPrompts = true;
+  }
+
+  let scheduledSessions = rawScheduledSessions;
+  let generatedScheduledSessions = false;
+  if (scheduledSessions.length === 0) {
+    let studyMin = 120;
+    if (studyResources.length > 4) {
+      studyMin += (studyResources.length - 4) * 20;
+    }
+    const sessions = [
+      {
+        title: "Study Resources",
+        durationMinutes: studyMin
+      },
+      {
+        title: "Skill Check",
+        durationMinutes: 45
+      }
+    ];
+    if (practicalMissions.length > 0) {
+      sessions.push({
+        title: "Practical Mission",
+        durationMinutes: 180
+      });
+    }
+    sessions.push({
+      title: "Proof of Work and Reflection",
+      durationMinutes: 90
+    });
+    scheduledSessions = sessions;
+    generatedScheduledSessions = true;
+  }
 
   // ── Unified tasks for backward-compat progress tracking ───────────────────
   const existingTasks = Array.isArray(rawWeek.tasks) ? rawWeek.tasks : [];
@@ -376,8 +437,10 @@ export function normalizeWeek(rawWeek, parentMonth, resourceCatalogue = {}) {
     practicalMissions,
     proofOfWork,
     reflectionPrompts,
+    generatedReflectionPrompts,
     unlockCriteria,
     scheduledSessions,
+    generatedScheduledSessions,
     frontendIntegration,
 
     // ── Backward-compatible aliases ─────────────────────────────────────────
@@ -532,7 +595,7 @@ export function normalizeRoadmap(raw) {
     bootcamp.finalProductDefinition ||
     finalProductDefinition;
 
-  const learner  = bootcamp.learner  || raw.learner  || 'Student';
+  const learner  = bootcamp.learner  || raw.learner  || getLearnerFallback();
   const mentorLabel = bootcamp.mentorLabel || raw.mentorLabel || 'Mentor';
   const track    = bootcamp.track    || raw.track    || raw.roadmapType || 'General';
   const difficulty = bootcamp.difficulty || raw.difficulty || null;

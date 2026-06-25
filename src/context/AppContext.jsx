@@ -223,13 +223,17 @@ export function AppProvider({ children }) {
   // ROADMAP ACTIONS
   // =============================================
   const importRoadmap = useCallback((rawData) => {
-    // Normalize the raw JSON before storing
+    // Normalize the raw JSON before storing if not already normalized
     let normalized;
-    try {
-      normalized = normalizeRoadmap(rawData);
-    } catch (e) {
-      console.error('normalizeRoadmap failed, storing raw data:', e);
+    if (rawData && rawData.id && Array.isArray(rawData.weeks)) {
       normalized = rawData;
+    } else {
+      try {
+        normalized = normalizeRoadmap(rawData);
+      } catch (e) {
+        console.error('normalizeRoadmap failed, storing raw data:', e);
+        normalized = rawData;
+      }
     }
     setRoadmap(normalized);
     setSettingsState((prev) => ({

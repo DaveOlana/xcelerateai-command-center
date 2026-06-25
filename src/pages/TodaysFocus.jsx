@@ -352,14 +352,41 @@ export default function TodaysFocus() {
                 <div className="md:col-span-2">
                   <div className="bg-navy-850 border border-navy-700/20 rounded-3xl p-6 flex flex-col items-center justify-center text-center space-y-4">
                     {!sessionTimer.activeSessionId ? (
-                      <div className="w-full space-y-4">
-                        <span className="text-[11px] font-bold text-slate-450 uppercase tracking-widest block">Focus block</span>
-                        <button
-                          onClick={() => startTimer('daily-focus', 'Focus Session', 'Daily Focus Block', 45, 75, 10)}
-                          className="btn-primary w-full py-2.5 text-xs font-bold"
-                        >
-                          Start 45m Session
-                        </button>
+                      <div className="w-full space-y-3">
+                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-widest block">Start Focus Block</span>
+                        
+                        {week.scheduledSessions && week.scheduledSessions.length > 0 ? (
+                          <div className="space-y-2">
+                            {week.scheduledSessions.map((session, sidx) => {
+                              const title = session.title || session.name || `Session ${sidx + 1}`;
+                              const mins = session.durationMinutes || session.duration || 45;
+                              return (
+                                <button
+                                  key={sidx}
+                                  onClick={() => startTimer(
+                                    `session-${sidx}`,
+                                    'Focus Session',
+                                    title,
+                                    mins,
+                                    75,
+                                    10
+                                  )}
+                                  className="btn-secondary w-full py-2 text-xs font-bold text-left px-3.5 flex justify-between items-center hover:border-accent-primary/50 group"
+                                >
+                                  <span className="group-hover:text-white transition-colors truncate pr-2">{title}</span>
+                                  <span className="text-slate-500 font-mono flex-shrink-0">{mins}m</span>
+                                </button>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          <button
+                            onClick={() => startTimer('daily-focus', 'Focus Session', 'Daily Focus Block', 45, 75, 10)}
+                            className="btn-primary w-full py-2.5 text-xs font-bold"
+                          >
+                            Start 45m Session
+                          </button>
+                        )}
                       </div>
                     ) : (
                       <div className="w-full flex flex-col items-center gap-4">
