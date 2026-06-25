@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Upload, CheckCircle2, AlertCircle, FileJson, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight } from 'lucide-react';
+import { Upload, CheckCircle2, AlertCircle, FileJson, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock, BookOpen, CheckSquare, Target, FileText, Zap, Coffee, BarChart2, Award, Shield } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { validateRoadmapJSON } from '../utils/jsonValidator';
 import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
@@ -190,21 +190,24 @@ export default function ImportRoadmap() {
               {validationResult.valid && (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {[
-                    { label: 'Months', value: validationResult.summary.months, color: 'text-accent-primary' },
-                    { label: 'Weeks', value: validationResult.summary.weeks, color: 'text-blue-400' },
-                    { label: 'Study Resources', value: validationResult.summary.studyResources ?? validationResult.summary.resources, color: 'text-amber-400' },
-                    { label: 'Skill Check Qs', value: validationResult.summary.skillCheckQuestions ?? 0, color: 'text-cyan-400' },
-                    { label: 'Practical Missions', value: validationResult.summary.practicalMissions, color: 'text-pink-400' },
-                    { label: 'Proof Items', value: validationResult.summary.proofItems ?? 0, color: 'text-purple-400' },
-                    { label: 'Reflection Prompts', value: validationResult.summary.reflectionPrompts ?? 0, color: 'text-teal-400' },
-                    { label: 'Scheduled Sessions', value: validationResult.summary.scheduledSessions ?? validationResult.summary.sessions, color: 'text-orange-400' },
-                    { label: 'Readiness Categories', value: validationResult.summary.readinessCategories, color: 'text-rose-400' },
-                    { label: 'Projects', value: validationResult.summary.projects, color: 'text-emerald-400' },
-                    { label: 'Checkpoints', value: validationResult.summary.checkpoints, color: 'text-blue-400' },
-                  ].map(({ label, value, color }) => (
-                    <div key={label} className="bg-navy-800 rounded-lg p-3 text-center border border-navy-400">
-                      <p className={`text-xl font-bold ${color}`}>{value ?? '—'}</p>
-                      <p className="text-xs text-slate-500 mt-0.5">{label}</p>
+                    { label: 'Months', value: validationResult.summary.months, color: 'text-accent-primary', icon: Calendar },
+                    { label: 'Weeks', value: validationResult.summary.weeks, color: 'text-blue-400', icon: Clock },
+                    { label: 'Study Resources', value: validationResult.summary.studyResources ?? validationResult.summary.resources, color: 'text-amber-400', icon: BookOpen },
+                    { label: 'Skill Check Qs', value: validationResult.summary.skillCheckQuestions ?? 0, color: 'text-cyan-400', icon: CheckSquare },
+                    { label: 'Practical Missions', value: validationResult.summary.practicalMissions, color: 'text-pink-400', icon: Target },
+                    { label: 'Proof Items', value: validationResult.summary.proofItems ?? 0, color: 'text-purple-400', icon: FileText },
+                    { label: 'Reflection Prompts', value: validationResult.summary.reflectionPrompts ?? 0, color: 'text-teal-400', icon: Zap },
+                    { label: 'Scheduled Sessions', value: validationResult.summary.scheduledSessions ?? validationResult.summary.sessions, color: 'text-orange-400', icon: Coffee },
+                    { label: 'Readiness Categories', value: validationResult.summary.readinessCategories, color: 'text-rose-400', icon: BarChart2 },
+                    { label: 'Projects', value: validationResult.summary.projects, color: 'text-emerald-400', icon: Award },
+                    { label: 'Checkpoints', value: validationResult.summary.checkpoints, color: 'text-blue-400', icon: Shield },
+                  ].map(({ label, value, color, icon: Icon }) => (
+                    <div key={label} className="bg-navy-850/60 border border-navy-750/30 rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm hover:border-navy-450 transition-colors">
+                      <div className="w-8 h-8 rounded-lg bg-navy-900 border border-navy-750/50 flex items-center justify-center mb-1.5">
+                        <Icon className={`w-4 h-4 ${color}`} />
+                      </div>
+                      <p className={`text-lg font-mono font-bold text-white`}>{value ?? '—'}</p>
+                      <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-0.5">{label}</p>
                     </div>
                   ))}
                 </div>

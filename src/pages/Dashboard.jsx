@@ -19,7 +19,7 @@ import {
 import { PageShell, StatCard, ProgressBar, SectionCard } from '../components/common/UIComponents';
 
 export default function Dashboard() {
-  const { roadmap, progress, checkpointStatuses, settings, streak, blockers, weekProofs, sessionTimer, resourcesStatus, practicalMissions } = useApp();
+  const { roadmap, progress, checkpointStatuses, settings, streak, blockers, weekProofs, sessionTimer, resourcesStatus, practicalMissions, userProfile } = useApp();
 
   const prog = calculateOverallProgress(roadmap, progress, checkpointStatuses);
   const activeWeekData = getActiveWeekData(roadmap, settings.activeWeek);
@@ -130,50 +130,67 @@ export default function Dashboard() {
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
               <span className="text-xs text-accent-primary font-bold tracking-widest uppercase">
-                Bootcamp Cockpit
+                {roadmap && roadmap.weeks && roadmap.weeks.length > 0 ? 'Mission Cockpit Active' : 'Initialization Mode'}
               </span>
             </div>
 
-            <div>
-              {/* ── Dynamic roadmap title — NOT hardcoded ── */}
-              <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                {roadmap?.finalProductDefinition
-                  ? `Building ${roadmap.finalProductDefinition.length > 40
-                      ? roadmapTitle
-                      : roadmap.finalProductDefinition}`
-                  : roadmapTitle}
-              </h1>
-              <p className="text-slate-400 mt-2 text-[15px] leading-relaxed max-w-xl">
-                Currently working on Week {settings.activeWeek}:{' '}
-                <span className="text-white font-medium">
-                  {activeWeekData?.week?.title || 'No active week set'}
-                </span>. Restoring system readiness triggers.
-              </p>
-              <p className="text-[13px] text-slate-550 mt-2 italic">
-                {motivational}
-              </p>
-            </div>
+            {roadmap && roadmap.weeks && roadmap.weeks.length > 0 ? (
+              <div>
+                <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+                  Welcome back, {userProfile?.displayName || userProfile?.name || 'Operator'}.
+                </h1>
+                <p className="text-slate-350 mt-2.5 text-[15px] leading-relaxed max-w-xl">
+                  You are currently working on <span className="text-white font-semibold">Week {settings.activeWeek}: {activeWeekData?.week?.title || 'No active week set'}</span>. Today's focus is waiting.
+                </p>
+                <p className="text-[13px] text-slate-500 mt-2.5 italic">
+                  {motivational}
+                </p>
+              </div>
+            ) : (
+              <div>
+                <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+                  Welcome to XcelerateAI Command Center.
+                </h1>
+                <p className="text-slate-350 mt-2 text-[15px] leading-relaxed max-w-xl">
+                  Import a learning roadmap JSON to initialize your personalized mission cockpit.
+                </p>
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <Link to="/today" className="btn-primary py-3 px-6 text-[15px] font-semibold">
-                Continue Today's Focus
-              </Link>
-              <Link to="/progress" className="btn-secondary py-3 px-6 text-[15px] font-medium">
-                View Progress
-              </Link>
+              {roadmap && roadmap.weeks && roadmap.weeks.length > 0 ? (
+                <>
+                  <Link to="/today" className="btn-primary py-3 px-6 text-[15px] font-semibold">
+                    Continue Today's Focus
+                  </Link>
+                  <Link to="/missions" className="btn-secondary py-3 px-6 text-[15px] font-medium">
+                    View Weekly Missions
+                  </Link>
+                </>
+              ) : (
+                <Link to="/import" className="btn-primary py-3 px-6 text-[15px] font-semibold">
+                  Import Roadmap
+                </Link>
+              )}
             </div>
           </div>
 
-          {/* ── Dynamic duration indicator — NOT hardcoded to 180 ── */}
-          <div className="lg:border-l border-navy-700/50 lg:pl-10 flex flex-col justify-center w-full lg:w-auto flex-shrink-0 pt-6 lg:pt-0 border-t lg:border-t-0">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Bootcamp Duration</span>
-            <p className="text-5xl font-extrabold text-white mt-2 tabular-nums tracking-tight">
-              Day {bootcampDay || 1}{' '}
-              <span className="text-[20px] text-slate-500 font-medium">/ {totalDays}</span>
-            </p>
-            <p className="text-[13px] text-slate-450 mt-2">{daysRemaining} days left after today</p>
-            <ProgressBar percent={durationPercent} className="w-56 mt-4 h-2" />
-          </div>
+          {roadmap && roadmap.weeks && roadmap.weeks.length > 0 ? (
+            /* ── Dynamic duration indicator ── */
+            <div className="lg:border-l border-navy-700/50 lg:pl-10 flex flex-col justify-center w-full lg:w-auto flex-shrink-0 pt-6 lg:pt-0 border-t lg:border-t-0">
+              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Duration</span>
+              <p className="text-5xl font-extrabold text-white mt-2 tabular-nums tracking-tight">
+                Day {bootcampDay || 1}{' '}
+                <span className="text-[20px] text-slate-500 font-medium">/ {totalDays}</span>
+              </p>
+              <p className="text-[13px] text-slate-450 mt-2">{daysRemaining} days left after today</p>
+              <ProgressBar percent={durationPercent} className="w-56 mt-4 h-2" />
+            </div>
+          ) : (
+            <div className="lg:border-l border-navy-700/50 lg:pl-10 flex flex-col justify-center w-full lg:w-auto flex-shrink-0 pt-6 lg:pt-0 border-t lg:border-t-0 text-slate-500 text-sm italic">
+              System offline. Waiting for roadmap upload.
+            </div>
+          )}
         </div>
       </div>
 

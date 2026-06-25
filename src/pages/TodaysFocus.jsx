@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { getActiveWeekData } from '../utils/progressCalculator';
 import {
@@ -8,9 +8,10 @@ import {
   ChevronRight, ToggleLeft, ToggleRight, X, Terminal
 } from 'lucide-react';
 import { getItemTitle } from '../utils/safeRender';
-import { PageShell, SectionCard, InfoPill, StatusBadge, CommandButton, SecondaryButton } from '../components/common/UIComponents';
+import { PageShell, SectionCard, InfoPill, StatusBadge, CommandButton, SecondaryButton, EmptyState } from '../components/common/UIComponents';
 
 export default function TodaysFocus() {
+  const navigate = useNavigate();
   const {
     roadmap,
     settings,
@@ -27,7 +28,8 @@ export default function TodaysFocus() {
     addNote,
     blockers,
     practicalMissions,
-    notes
+    notes,
+    userProfile
   } = useApp();
 
   // Cockpit view modes: Focus Mode (minimal) vs Command Mode (detailed)
@@ -74,14 +76,15 @@ export default function TodaysFocus() {
 
   if (!activeData) {
     return (
-      <div className="card text-center py-16 max-w-xl mx-auto my-12">
-        <AlertCircle className="w-12 h-12 text-slate-500 mx-auto mb-3" />
-        <h2 className="text-lg font-bold text-white uppercase tracking-wider">No Active Operations Found</h2>
-        <p className="text-xs text-slate-400 mt-2">Please go to the roadmap loader to import your mission timeline.</p>
-        <Link to="/import" className="btn-primary mt-6 inline-flex py-2.5 px-6">
-           Load Custom JSON
-        </Link>
-      </div>
+      <PageShell>
+        <EmptyState
+          message="No Active Operations Found"
+          submessage="Please go to the roadmap loader to import your mission timeline."
+          icon={AlertCircle}
+          actionText="Load Custom JSON"
+          onActionClick={() => navigate('/import')}
+        />
+      </PageShell>
     );
   }
 
@@ -248,8 +251,8 @@ export default function TodaysFocus() {
             </span>
           </div>
           <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">Daily Focus Cockpit</h1>
-          <p className="text-slate-400 text-[15px] mt-2 font-medium">
-            Week {week.weekNumber} Operations · {week.title}
+          <p className="text-slate-350 text-[15px] mt-2 font-medium">
+            {userProfile?.displayName || userProfile?.name || 'Operator'}, today's focus is waiting. Week {week.weekNumber} Operations · {week.title}
           </p>
         </div>
 

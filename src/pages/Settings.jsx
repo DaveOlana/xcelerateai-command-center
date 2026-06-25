@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Settings as SettingsIcon, Trash2, RefreshCw, Download,
   Upload, Calendar, User, MessageSquare, AlertTriangle, CheckCircle2, ShieldAlert
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { getTodayISO } from '../utils/dateUtils';
+import { calculateOverallProgress } from '../utils/progressCalculator';
 import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
 
 const DEFAULT_PROGRESS = {
@@ -27,11 +28,35 @@ export default function Settings() {
     settings, updateSettings, setActiveWeek,
     resetAllProgress, exportProgress, importProgress,
     resetToSampleRoadmap, roadmap,
+    userProfile, updateUserProfile, replayOnboarding,
+    resetProgressForActiveRoadmap, checkpointStatuses, progress,
   } = useApp();
 
   const [saved, setSaved] = useState(false);
   const [activeResetType, setActiveResetType] = useState(null);
   const [importMsg, setImportMsg] = useState('');
+
+  // Profile states
+  const [profileName, setProfileName] = useState(userProfile?.name || '');
+  const [profileDisplayName, setProfileDisplayName] = useState(userProfile?.displayName || '');
+  const [profileSaved, setProfileSaved] = useState(false);
+
+  // Sync profile state if context updates
+  useEffect(() => {
+    if (userProfile) {
+      setProfileName(userProfile.name || '');
+      setProfileDisplayName(userProfile.displayName || '');
+    }
+  }, [userProfile]);
+
+  const handleSaveProfile = (e) => {
+    e.preventDefault();
+    updateUserProfile({ name: profileName, displayName: profileDisplayName });
+    setProfileSaved(true);
+    setTimeout(() => setProfileSaved(false), 2000);
+  };
+
+  const prog = calculateOverallProgress(roadmap, progress, checkpointStatuses);
 
   const totalWeeks = roadmap?.months?.reduce((a, m) => a + (m.weeks?.length || 0), 0) || 24;
 
@@ -108,6 +133,50 @@ export default function Settings() {
         title="Settings"
         subtitle="Configure your personal learning operating system."
       />
+
+      {/* User Profile Settings */}
+      <SectionCard className="space-y-4 border border-navy-400">
+        <h2 className="font-bold text-white flex items-center gap-2">
+          <User className="w-4 h-4 text-accent-primary" />
+          User Profile Settings
+        </h2>
+        <p className="text-xs text-slate-500">
+          Personalize your cockpit settings and dashboard greetings.
+        </p>
+
+        <form onSubmit={handleSaveProfile} className="space-y-4">
+          <div>
+            <label className="section-label mb-1.5 block">Full Name</label>
+            <input
+              type="text"
+              value={profileName}
+              onChange={(e) => setProfileName(e.target.value)}
+              className="input-base w-full text-sm"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="section-label mb-1.5 block">Display Name / Call Sign</label>
+            <input
+              type="text"
+              value={profileDisplayName}
+              onChange={(e) => setProfileDisplayName(e.target.value)}
+              className="input-base w-full text-sm"
+              placeholder="e.g. Commander, Rookie, Rogue"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="btn-primary py-2.5 px-6 text-xs font-bold w-full sm:w-auto"
+          >
+            {profileSaved ? 'Profile Updated ✓' : 'Save Profile Changes'}
+          </button>
+        </form>
+      </SectionCard>
 
       {/* Bootcamp Configuration */}
       <SectionCard className="space-y-5 border border-navy-400">
@@ -186,6 +255,66 @@ export default function Settings() {
         <CommandButton onClick={handleSave}>
           {saved ? <><CheckCircle2 className="w-4 h-4" /> Changes Applied!</> : 'Apply Configurations'}
         </CommandButton>
+      </SectionCard>
+
+      {/* Active Roadmap Management */}
+      <SectionCard className="space-y-4 border border-navy-400">
+        <h2 className="font-bold text-white flex items-center gap-2">
+          <SettingsIcon className="w-4 h-4 text-accent-cyan" />
+          Active Roadmap Management
+        </h2>
+        <p className="text-xs text-slate-500">
+          Manage and track the metadata and progress of your currently active curriculum.
+        </p>
+
+        {roadmap ? (
+          <div className="bg-navy-950 p-4 rounded-xl border border-navy-750/30 space-y-4">
+            <div className="flex justify-between items-start flex-wrap gap-2">
+              <div>
+                <span className="badge-blue text-xs uppercase tracking-wider font-bold">ACTIVE TIMELINE</span>
+                <h3 className="text-base font-bold text-white mt-1">{roadmap.bootcampTitle || roadmap.title}</h3>
+                <p className="text-xs text-slate-400 mt-0.5">
+                  Version: <span className="font-mono text-slate-300 font-semibold">{roadmap.version || '1.0.0'}</span>
+                </p>
+              </div>
+              <div className="text-right">
+                <span className="text-sm font-bold text-accent-primary">{prog.overall}%</span>
+                <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Completions</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-navy-700/30">
+              <div className="text-center bg-navy-900 border border-navy-800 p-2.5 rounded-lg">
+                <span className="text-slate-500 text-[10px] uppercase font-bold block">Duration</span>
+                <span className="text-white text-xs font-semibold mt-1 block">{roadmap.duration || 'Not specified'}</span>
+              </div>
+              <div className="text-center bg-navy-900 border border-navy-800 p-2.5 rounded-lg">
+                <span className="text-slate-500 text-[10px] uppercase font-bold block">Total Weeks</span>
+                <span className="text-white text-xs font-semibold mt-1 block">{totalWeeks} weeks</span>
+              </div>
+              <div className="text-center bg-navy-900 border border-navy-800 p-2.5 rounded-lg col-span-2 sm:col-span-1">
+                <span className="text-slate-500 text-[10px] uppercase font-bold block">Weekly Hours</span>
+                <span className="text-white text-xs font-semibold mt-1 block">{roadmap.weeklyHours || 'Not specified'}</span>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <button
+                onClick={() => {
+                  if (window.confirm('Are you sure you want to reset all progress for the active roadmap? This will clear tasks, checks, and proofs for this roadmap and cannot be undone.')) {
+                    resetProgressForActiveRoadmap();
+                    alert('Progress has been reset for the active roadmap.');
+                  }
+                }}
+                className="btn-danger w-full py-2.5 text-xs font-bold"
+              >
+                Reset Progress For Active Roadmap
+              </button>
+            </div>
+          </div>
+        ) : (
+          <p className="text-xs text-slate-550 font-medium">No custom roadmap loaded. Please import one.</p>
+        )}
       </SectionCard>
 
       {/* Advanced Controls Override */}
@@ -286,28 +415,39 @@ export default function Settings() {
         )}
       </SectionCard>
 
-      {/* Interactive Onboarding Tour */}
+      {/* Interactive Onboarding & Guide */}
       <SectionCard className="space-y-4 border border-navy-700/25">
         <h2 className="font-bold text-white flex items-center gap-2">
           <SettingsIcon className="w-4 h-4 text-accent-primary" />
-          Interactive Onboarding
+          Interactive Guides
         </h2>
         <p className="text-xs text-slate-550 font-medium">
-          Replay the first-time guided tutorial of the XcelerateAI Command Center workspace overlay.
+          Replay the guided setups and workspace tours.
         </p>
-        <button
-          onClick={() => {
-            if (window.replayXaiOnboardingTour) {
-              window.replayXaiOnboardingTour();
-            } else {
-              localStorage.setItem('xai_onboarding_seen_v1', 'false');
-              window.location.href = '/';
-            }
-          }}
-          className="btn-secondary text-sm border-accent-primary/20 text-accent-primary hover:text-white"
-        >
-          Replay Onboarding Tour
-        </button>
+        <div className="flex gap-3 flex-wrap">
+          <button
+            onClick={() => {
+              replayOnboarding();
+              alert('Onboarding guide reset. You will see it next time you visit the Dashboard.');
+            }}
+            className="btn-secondary text-sm border-accent-primary/20 text-accent-primary hover:text-white"
+          >
+            Replay Onboarding Guide
+          </button>
+          <button
+            onClick={() => {
+              if (window.replayXaiOnboardingTour) {
+                window.replayXaiOnboardingTour();
+              } else {
+                localStorage.setItem('xai_onboarding_seen_v1', 'false');
+                window.location.href = '/';
+              }
+            }}
+            className="btn-secondary text-sm border-navy-300 text-slate-400 hover:text-white"
+          >
+            Replay Workspace Tour
+          </button>
+        </div>
       </SectionCard>
 
       {/* Danger Zone Resets */}

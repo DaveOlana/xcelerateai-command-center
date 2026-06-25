@@ -185,16 +185,48 @@ export function SecondaryButton({ children, onClick, type = "button", disabled =
 }
 
 /**
- * EmptyState - Clean styled empty panel placeholder.
+ * EmptyState - Clean styled empty panel placeholder with support for action buttons.
  */
-export function EmptyState({ message, submessage, icon: Icon = AlertCircle, className = "" }) {
+export function EmptyState({ 
+  message, 
+  submessage, 
+  icon: Icon = AlertCircle, 
+  actionText, 
+  onActionClick, 
+  secondaryActionText,
+  onSecondaryActionClick,
+  className = "" 
+}) {
   return (
-    <div className={`card bg-[#111111]/40 border-white/5 text-center py-10 px-5 space-y-3 rounded-2xl max-w-md mx-auto ${className}`}>
-      <div className="w-12 h-12 rounded-full bg-[#171717] border border-white/5 flex items-center justify-center mx-auto">
-        <Icon className="w-5 h-5 text-slate-500" />
+    <div className={`bg-navy-850/60 border border-navy-700/20 text-center py-10 px-6 space-y-4 rounded-3xl max-w-md mx-auto backdrop-blur-sm shadow-sm ${className}`}>
+      <div className="w-12 h-12 rounded-2xl bg-navy-900 border border-navy-700/50 flex items-center justify-center mx-auto">
+        <Icon className="w-5 h-5 text-slate-400" />
       </div>
-      <h4 className="text-sm font-semibold text-slate-300">{message || "No Data Found"}</h4>
-      {submessage && <p className="text-xs text-slate-500 max-w-xs mx-auto leading-relaxed">{submessage}</p>}
+      <div className="space-y-1.5">
+        <h4 className="text-sm font-bold text-white uppercase tracking-wider">{message || "No Data Found"}</h4>
+        {submessage && <p className="text-xs text-slate-400 max-w-xs mx-auto leading-relaxed">{submessage}</p>}
+      </div>
+      
+      {(actionText || secondaryActionText) && (
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-2 pt-2">
+          {actionText && onActionClick && (
+            <button
+              onClick={onActionClick}
+              className="btn-primary py-2 px-4 text-xs font-bold w-full sm:w-auto"
+            >
+              {actionText}
+            </button>
+          )}
+          {secondaryActionText && onSecondaryActionClick && (
+            <button
+              onClick={onSecondaryActionClick}
+              className="btn-secondary py-2.5 px-4 text-xs font-bold w-full sm:w-auto"
+            >
+              {secondaryActionText}
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

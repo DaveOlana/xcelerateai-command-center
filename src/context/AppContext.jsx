@@ -134,6 +134,80 @@ export function AppProvider({ children }) {
     loadFromStorage(STORAGE_KEYS.STREAK, DEFAULT_STREAK)
   );
 
+  // ── User Profile state ──
+  const [userProfile, setUserProfileState] = useState(() => {
+    const loaded = loadFromStorage('xcelerate.userProfile', null);
+    if (loaded) return loaded;
+    return {
+      name: '',
+      displayName: '',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+  });
+
+  const updateUserProfile = useCallback((profileData) => {
+    setUserProfileState((prev) => ({
+      ...prev,
+      ...profileData,
+      updatedAt: new Date().toISOString()
+    }));
+  }, []);
+
+  // ── Onboarding state ──
+  const [onboardingCompleted, setOnboardingCompletedState] = useState(() => {
+    if (typeof localStorage !== 'undefined') {
+      const completed = localStorage.getItem('xcelerate.onboarding.completed');
+      if (completed === 'true') return true;
+    }
+    const settingsLoaded = loadFromStorage(STORAGE_KEYS.SETTINGS, {});
+    return settingsLoaded.onboardingCompleted || false;
+  });
+
+  const completeOnboarding = useCallback((nameVal, displayNameVal) => {
+    if (nameVal !== undefined) {
+      setUserProfileState((prev) => ({
+        ...prev,
+        name: nameVal,
+        displayName: displayNameVal || nameVal,
+        updatedAt: new Date().toISOString()
+      }));
+    }
+    setOnboardingCompletedState(true);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('xcelerate.onboarding.completed', 'true');
+    }
+    setSettingsState((prev) => ({ ...prev, onboardingCompleted: true }));
+  }, []);
+
+  const replayOnboarding = useCallback(() => {
+    setOnboardingCompletedState(false);
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('xcelerate.onboarding.completed', 'false');
+    }
+    setSettingsState((prev) => ({ ...prev, onboardingCompleted: false }));
+  }, []);
+
+  // ── Active roadmap progress reset ──
+  const resetProgressForActiveRoadmap = useCallback(() => {
+    setProgress(DEFAULT_PROGRESS);
+    setCheckpointStatusesState({});
+    setResourcesStatus({});
+    setSkillChecks({});
+    setPracticalMissions({});
+    setWeekProofs({});
+    setWeekReflections({});
+    setSettingsState((prev) => ({
+      ...prev,
+      activeWeek: 1,
+      activeMonth: 1,
+    }));
+  }, []);
+
+  useEffect(() => {
+    saveToStorage('xcelerate.userProfile', userProfile);
+  }, [userProfile]);
+
   // New States for rich schema & new features
   const [resourcesStatus, setResourcesStatus] = useState(() =>
     loadFromStorage(STORAGE_KEYS.RESOURCES_STATUS, {})
@@ -1002,6 +1076,14 @@ export function AppProvider({ children }) {
     exportProgress,
     importProgress,
     resetAllProgress,
+
+    // Onboarding & Profile
+    userProfile,
+    updateUserProfile,
+    onboardingCompleted,
+    completeOnboarding,
+    replayOnboarding,
+    resetProgressForActiveRoadmap,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

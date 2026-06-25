@@ -12,7 +12,7 @@ import {
   getRequiredResources, missionRequiresEvidence
 } from '../utils/unlockChecker';
 
-import { PageShell, PageHeader, SectionCard, StatCard, ProgressBar, StatusBadge, LockWarningCard } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard, StatCard, ProgressBar, StatusBadge, LockWarningCard, EmptyState } from '../components/common/UIComponents';
 
 // ── Step config for the guided stepper ──
 const STEPS = [
@@ -725,10 +725,13 @@ export default function WeeklyMissions() {
 
               if (weekResources.length === 0) {
                 return (
-                  <div className="card text-center py-8">
-                    <BookOpen className="w-8 h-8 text-slate-600 mx-auto mb-2" />
-                    <p className="text-xs text-slate-500">No resources listed for this week.</p>
-                  </div>
+                  <EmptyState
+                    message="No Study Resources Detected"
+                    submessage="This week does not define any study materials. You can continue or customize learning in settings."
+                    icon={BookOpen}
+                    actionText="Open Import Report"
+                    onActionClick={() => navigate('/import')}
+                  />
                 );
               }
 
@@ -865,10 +868,18 @@ export default function WeeklyMissions() {
                 <p className="text-xs text-slate-400 mb-4">Complete required resources to activate this skill checkpoint.</p>
 
                 {/* Skill check questions — supports both new array format and legacy single string */}
-                {!stepStatus.skillCheckDone && skillCheckQuestions.length === 0 && (
-                  <p className="text-xs text-slate-500 italic">No skill check questions defined for this week.</p>
-                )}
-                {stepStatus.skillCheckDone ? (
+                {skillCheckQuestions.length === 0 && !stepStatus.skillCheckDone ? (
+                  <EmptyState
+                    message="No Skill Check Required"
+                    submessage="No specific skill questions are defined for this week. You can confirm your readiness to proceed directly."
+                    icon={CheckSquare}
+                    actionText="Confirm Readiness"
+                    onActionClick={() => {
+                      submitSkillCheck(week.weekNumber, { explanation: 'Auto-confirmed' }, 5, true);
+                      setSkillCheckSaved(true);
+                    }}
+                  />
+                ) : stepStatus.skillCheckDone ? (
                   <div className="bg-accent-primary/5 border border-accent-primary/25 rounded-xl p-4 text-xs text-accent-primary flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
                     <span>Skill check confirmed. Confidence level: {skillChecks[week.weekNumber]?.confidence || 3}/5. Practicals are now unlocked.</span>
@@ -984,10 +995,13 @@ export default function WeeklyMissions() {
                 </div>
 
                 {!Array.isArray(week.practicalMissions) || week.practicalMissions.length === 0 ? (
-                  <div className="card text-center py-8">
-                    <Target className="w-8 h-8 text-slate-600 mx-auto mb-2" />
-                    <p className="text-xs text-slate-500">No standalone practical missions for this week. Use the Tasks checklist.</p>
-                  </div>
+                  <EmptyState
+                    message="No Practical Missions Listed"
+                    submessage="This week has no standalone practical building missions. Use the general checklist to track your tasks."
+                    icon={Target}
+                    actionText="View Tasks Checklist"
+                    onActionClick={() => setActiveTab('tasks')}
+                  />
                 ) : (
                   <div className="grid sm:grid-cols-2 gap-4">
                     {week.practicalMissions.map((m) => {
