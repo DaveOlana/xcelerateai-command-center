@@ -165,24 +165,24 @@ export function getActiveWeekData(roadmap, activeWeek) {
  */
 export function getMotivationalMessage(overallPercent, streak) {
   if (overallPercent === 0) {
-    return "Every expert was once a beginner. Your mission starts now. 🚀";
+    return "Every expert was once a beginner. Your mission starts now.";
   }
   if (overallPercent < 10) {
-    return "You've taken the first step. That's harder than it sounds. Keep going. 💪";
+    return "You've taken the first step. That's harder than it sounds. Keep going.";
   }
   if (overallPercent < 25) {
-    return "You're building momentum. The compound effect of daily learning is real. 📈";
+    return "You're building momentum. The compound effect of daily learning is real.";
   }
   if (overallPercent < 50) {
-    return "You're past the beginner's wall. This is where real developers are made. 🔥";
+    return "You're past the beginner's wall. This is where real developers are made.";
   }
   if (overallPercent < 75) {
-    return "Over halfway. You've already learned what most people never start. 🏆";
+    return "Over halfway. You've already learned what most people never start.";
   }
   if (overallPercent < 90) {
-    return "Almost there. The final stretch is where champions separate themselves. ⚡";
+    return "Almost there. The final stretch is where champions separate themselves.";
   }
-  return "You are the mission. Launch is imminent. 🌟";
+  return "You are the mission. Launch is imminent.";
 }
 
 /**

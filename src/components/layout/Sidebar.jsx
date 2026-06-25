@@ -47,10 +47,10 @@ const navGroups = [
 ];
 
 export default function Sidebar() {
-  const { roadmap, streak, settings, checkpointStatuses, progress, updateSettings } = useApp();
-  const bootcampDay = getBootcampDay(settings.startDate);
+  const { roadmap, streak, settings, checkpointStatuses, progress, updateSettings, userProfile } = useApp();
+  const bootcampDay = getBootcampDay(settings?.startDate);
   
-  const isCollapsed = settings.sidebarCollapsed || false;
+  const isCollapsed = settings?.sidebarCollapsed || false;
 
   const toggleSidebar = () => {
     updateSettings({ sidebarCollapsed: !isCollapsed });
@@ -93,17 +93,23 @@ export default function Sidebar() {
         </div>
 
         {/* Dave Operator Card */}
-        <div className={`mt-5 bg-navy-850 border border-navy-700/30 rounded-xl flex items-center gap-3 transition-all ${isCollapsed ? 'p-2 justify-center' : 'p-3.5'}`} title={`Operator: ${roadmap?.learner || 'Dave'}`}>
-          <div className="w-10 h-10 rounded-full bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center text-accent-primary text-sm font-bold flex-shrink-0">
-            D
-          </div>
-          {!isCollapsed && (
-            <div className="min-w-0 transition-opacity duration-300">
-              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Operator</span>
-              <p className="text-sm font-bold text-slate-200 truncate">{roadmap?.learner || 'Dave'}</p>
+        {(() => {
+          const operatorName = userProfile?.displayName || userProfile?.name || roadmap?.learner || 'Dave';
+          const initial = operatorName.charAt(0).toUpperCase();
+          return (
+            <div className={`mt-5 bg-navy-850 border border-navy-700/30 rounded-xl flex items-center gap-3 transition-all ${isCollapsed ? 'p-2 justify-center' : 'p-3.5'}`} title={`Operator: ${operatorName}`}>
+              <div className="w-10 h-10 rounded-full bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center text-accent-primary text-sm font-bold flex-shrink-0">
+                {initial}
+              </div>
+              {!isCollapsed && (
+                <div className="min-w-0 transition-opacity duration-300">
+                  <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Operator</span>
+                  <p className="text-sm font-bold text-slate-200 truncate">{operatorName}</p>
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          );
+        })()}
 
         {/* Load Custom JSON Button */}
         {!isCollapsed && (
@@ -188,7 +194,7 @@ export default function Sidebar() {
                 Online
               </span>
             </div>
-            {settings.startDate && (
+            {settings?.startDate && (
               <div className="flex justify-between items-center">
                 <span>Day Index</span>
                 <span className="text-white font-semibold">Day {bootcampDay || 1}</span>

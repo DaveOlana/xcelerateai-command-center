@@ -177,7 +177,7 @@ export function AppProvider({ children }) {
     if (typeof localStorage !== 'undefined') {
       localStorage.setItem('xcelerate.onboarding.completed', 'true');
     }
-    setSettingsState((prev) => ({ ...prev, onboardingCompleted: true }));
+    setSettingsState((prev) => ({ ...(prev || DEFAULT_SETTINGS), onboardingCompleted: true }));
   }, []);
 
   const replayOnboarding = useCallback(() => {
@@ -338,7 +338,12 @@ export function AppProvider({ children }) {
     setPracticalMissions({});
     setWeekProofs({});
     setWeekReflections({});
-    setSettingsState({ ...DEFAULT_SETTINGS, activeRoadmapId: normalizedSample.id || null });
+    setSettingsState((prev) => ({
+      ...DEFAULT_SETTINGS,
+      onboardingCompleted: prev?.onboardingCompleted || false,
+      sidebarCollapsed: prev?.sidebarCollapsed || false,
+      activeRoadmapId: normalizedSample.id || null
+    }));
   }, []);
 
   // =============================================

@@ -5,7 +5,7 @@ import { validateRoadmapJSON } from '../../utils/jsonValidator';
 import { 
   Calendar, Clock, Upload, Shield, Check, Sparkles, User, FileJson, 
   ArrowLeft, ArrowRight, X, Layout, Target, BookOpen, Coffee, Award, 
-  FileText, CheckSquare, Zap, BarChart2, CheckCircle2, ChevronRight
+  FileText, CheckSquare, Zap, BarChart2, CheckCircle2, ChevronRight, Play
 } from 'lucide-react';
 import { PageHeader, SectionCard, ProgressBar } from '../common/UIComponents';
 
@@ -21,8 +21,7 @@ export default function Onboarding() {
   } = useApp();
   const navigate = useNavigate();
 
-  // If already onboardingCompleted in context, don't show the wizard
-  if (onboardingCompleted) return null;
+
 
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = 10;
@@ -146,7 +145,11 @@ export default function Onboarding() {
 
     localStorage.setItem('xai_setup_completed_v1', 'true');
     localStorage.setItem('xai_onboarding_seen_v1', 'false'); // Tour is ready
+    navigate('/');
   };
+
+  // If already onboardingCompleted in context, don't show the wizard
+  if (onboardingCompleted) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-navy-950/98 backdrop-blur-md overflow-y-auto">
@@ -163,42 +166,47 @@ export default function Onboarding() {
               </div>
             </div>
 
-            {/* Stepper indicator */}
-            <div className="hidden md:block space-y-3.5">
-              {[
-                { s: 1, label: 'Welcome' },
-                { s: 2, label: 'Your Identity' },
-                { s: 3, label: 'Select Roadmap' },
-                { s: 4, label: 'Confirm Summary' },
-                { s: 5, label: 'The Dashboard' },
-                { s: 6, label: 'Weekly Missions' },
-                { s: 7, label: "Today's Focus" },
-                { s: 8, label: 'Timer & Rhythm' },
-                { s: 9, label: 'Proof of Work' },
-                { s: 10, label: 'Launch' }
-              ].map(({ s, label }) => (
-                <div 
-                  key={s} 
-                  className={`flex items-center gap-3 transition-colors ${
-                    currentStep === s 
-                      ? 'text-accent-primary' 
-                      : currentStep > s 
-                      ? 'text-emerald-450' 
-                      : 'text-slate-650'
-                  }`}
-                >
-                  <div className={`w-5 h-5 rounded-full border flex items-center justify-center text-[10px] font-mono font-bold transition-all ${
-                    currentStep === s 
-                      ? 'border-accent-primary bg-accent-primary/10 shadow-primary-glow-sm' 
-                      : currentStep > s 
-                      ? 'border-emerald-500 bg-emerald-500/10 text-emerald-450' 
-                      : 'border-navy-700 bg-navy-900'
-                  }`}>
-                    {currentStep > s ? '✓' : s}
+            {/* Stepper indicator with vertical timeline track */}
+            <div className="hidden md:block relative pl-1">
+              {/* Vertical line connector track */}
+              <div className="absolute left-[9px] top-2 bottom-2 w-0.5 bg-navy-800/40" />
+              
+              <div className="space-y-4 relative z-10">
+                {[
+                  { s: 1, label: 'Welcome' },
+                  { s: 2, label: 'Your Identity' },
+                  { s: 3, label: 'Select Roadmap' },
+                  { s: 4, label: 'Confirm Summary' },
+                  { s: 5, label: 'The Dashboard' },
+                  { s: 6, label: 'Weekly Missions' },
+                  { s: 7, label: "Today's Focus" },
+                  { s: 8, label: 'Timer & Rhythm' },
+                  { s: 9, label: 'Proof of Work' },
+                  { s: 10, label: 'Launch' }
+                ].map(({ s, label }) => (
+                  <div 
+                    key={s} 
+                    className={`flex items-center gap-3 transition-colors ${
+                      currentStep === s 
+                        ? 'text-accent-cyan' 
+                        : currentStep > s 
+                        ? 'text-emerald-450' 
+                        : 'text-slate-500'
+                    }`}
+                  >
+                    <div className={`w-5 h-5 rounded-full border flex items-center justify-center text-[9px] font-mono font-bold transition-all duration-300 ${
+                      currentStep === s 
+                        ? 'border-accent-cyan bg-navy-950 text-accent-cyan shadow-cyan-glow scale-110' 
+                        : currentStep > s 
+                        ? 'border-emerald-500 bg-emerald-550/20 text-emerald-450' 
+                        : 'border-navy-750 bg-navy-900 text-slate-600'
+                    }`}>
+                      {currentStep > s ? '✓' : s}
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider">{label}</span>
                   </div>
-                  <span className="text-xs font-semibold tracking-wide">{label}</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
@@ -228,19 +236,18 @@ export default function Onboarding() {
           )}
 
           <div className="flex-1 flex flex-col justify-center max-w-xl mx-auto w-full my-auto space-y-6">
-            
-            {/* STEP 1: WELCOME */}
+                       {/* STEP 1: WELCOME */}
             {currentStep === 1 && (
               <div className="space-y-4 animate-slide-up text-center md:text-left">
-                <div className="w-14 h-14 rounded-2xl bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center mx-auto md:mx-0">
-                  <Sparkles className="w-7 h-7 text-accent-primary" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto md:mx-0 shadow-lg">
+                  <img src="/xcelerate-icon.png" alt="XcelerateAI" className="w-6 h-6 object-contain" />
                 </div>
                 <div className="space-y-2">
                   <h2 className="text-2xl font-extrabold text-white tracking-tight">Welcome to XcelerateAI</h2>
-                  <p className="text-sm text-slate-400 leading-relaxed">
+                  <p className="text-[14px] text-slate-400 leading-relaxed">
                     XcelerateAI Command Center is a personalized dashboard designed to turn static roadmaps (JSON profiles) into interactive, mission-based learn-by-doing cockpits.
                   </p>
-                  <p className="text-xs text-slate-550 leading-relaxed italic">
+                  <p className="text-[12px] text-slate-500 leading-relaxed italic">
                     Let's configure your console parameters, callsign, and initial study rhythm.
                   </p>
                 </div>
@@ -250,18 +257,18 @@ export default function Onboarding() {
             {/* STEP 2: SET IDENTITY */}
             {currentStep === 2 && (
               <div className="space-y-4 animate-slide-up">
-                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
-                  <User className="w-6 h-6 text-cyan-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <User className="w-5 h-5 text-slate-350" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <h2 className="text-xl font-bold text-white tracking-tight">Set Your Callsign Identity</h2>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 leading-relaxed">
                     How should the Command Center greet you during operational sessions?
                   </p>
                 </div>
-                <div className="space-y-3 pt-2">
+                <div className="space-y-4 pt-2">
                   <div>
-                    <label className="text-[10px] font-bold text-slate-450 uppercase tracking-wider block mb-1">Full Callsign / Name *</label>
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1.5">Full Callsign / Name *</label>
                     <input 
                       type="text"
                       placeholder="e.g. Dave, Marvelous, Tolu"
@@ -270,18 +277,18 @@ export default function Onboarding() {
                         setUserName(e.target.value);
                         if (!userDisplayName) setUserDisplayName(e.target.value);
                       }}
-                      className="input-base w-full text-sm font-semibold text-white"
+                      className="input-base w-full text-[14px] font-semibold text-white bg-navy-950 border-navy-800 focus:border-accent-primary"
                       autoFocus
                     />
                   </div>
                   <div>
-                    <label className="text-[10px] font-bold text-slate-450 uppercase tracking-wider block mb-1">Display Title Callsign (Optional)</label>
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1.5">Display Title Callsign (Optional)</label>
                     <input 
                       type="text"
                       placeholder="e.g. Commander Dave, Explorer Dave"
                       value={userDisplayName}
                       onChange={(e) => setUserDisplayName(e.target.value)}
-                      className="input-base w-full text-sm font-semibold text-white"
+                      className="input-base w-full text-[14px] font-semibold text-white bg-navy-950 border-navy-800 focus:border-accent-primary"
                     />
                   </div>
                 </div>
@@ -291,27 +298,27 @@ export default function Onboarding() {
             {/* STEP 3: ROADMAP SELECT */}
             {currentStep === 3 && (
               <div className="space-y-4 animate-slide-up">
-                <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
-                  <FileJson className="w-6 h-6 text-pink-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <FileJson className="w-5 h-5 text-slate-350" />
                 </div>
-                <div>
+                <div className="space-y-1">
                   <h2 className="text-xl font-bold text-white tracking-tight">Load Your Learning Roadmap</h2>
-                  <p className="text-xs text-slate-400 leading-relaxed mt-0.5">
+                  <p className="text-[13px] text-slate-400 leading-relaxed">
                     Select a built-in curriculum roadmap or upload your custom course file.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3.5 pt-2">
+                <div className="grid grid-cols-2 gap-4 pt-2">
                   <button 
                     onClick={handleSelectSample}
-                    className={`p-4 rounded-xl border-2 flex flex-col justify-between text-left transition-all ${
+                    className={`p-5 rounded-xl border flex flex-col justify-between text-left transition-all ${
                       roadmapSource === 'sample' 
-                        ? 'border-accent-primary bg-navy-850/60' 
-                        : 'border-navy-700/50 hover:border-navy-600 bg-navy-900/40'
+                        ? 'border-accent-primary bg-navy-850/80 ring-1 ring-accent-primary/20 shadow-md' 
+                        : 'border-navy-800 hover:border-navy-700 bg-navy-900/30 hover:bg-navy-850/20'
                     }`}
                   >
-                    <span className="text-xs font-bold text-white uppercase tracking-wider">Default Sample</span>
-                    <span className="text-[10px] text-slate-500 leading-relaxed mt-4">Load Dave's 6-Month JS Mobile Ops Bootcamp.</span>
+                    <span className="text-[11px] font-bold text-white uppercase tracking-widest">Default Sample</span>
+                    <span className="text-[12px] text-slate-400 leading-relaxed mt-4">Load Dave's 6-Month JS Mobile Ops Bootcamp.</span>
                   </button>
 
                   <div 
@@ -319,12 +326,12 @@ export default function Onboarding() {
                     onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
                     onDragLeave={() => setDragOver(false)}
                     onClick={() => document.getElementById('onboard-upload').click()}
-                    className={`p-4 rounded-xl border-2 border-dashed flex flex-col justify-between text-left cursor-pointer transition-all ${
+                    className={`p-5 rounded-xl border border-dashed flex flex-col justify-between text-left cursor-pointer transition-all ${
                       dragOver 
                         ? 'border-accent-primary bg-accent-primary/5' 
                         : roadmapSource === 'custom'
-                        ? 'border-cyan-400 bg-navy-850/60'
-                        : 'border-navy-700/50 hover:border-navy-600 bg-navy-900/40'
+                        ? 'border-accent-primary bg-navy-850/80 ring-1 ring-accent-primary/20 shadow-md'
+                        : 'border-navy-800 hover:border-navy-700 bg-navy-900/30 hover:bg-navy-850/20'
                     }`}
                   >
                     <input 
@@ -335,12 +342,12 @@ export default function Onboarding() {
                       className="hidden"
                     />
                     <div className="flex justify-between items-center w-full">
-                      <span className="text-xs font-bold text-white uppercase tracking-wider">
+                      <span className="text-[11px] font-bold text-white uppercase tracking-widest">
                         {roadmapSource === 'custom' ? 'Custom JSON ✓' : 'Upload custom'}
                       </span>
                       <Upload className="w-3.5 h-3.5 text-slate-500" />
                     </div>
-                    <span className="text-[10px] text-slate-500 leading-relaxed mt-4">
+                    <span className="text-[12px] text-slate-400 leading-relaxed mt-4">
                       {roadmapSource === 'custom' && pendingRoadmap
                         ? `Loaded: ${pendingRoadmap.title || 'Roadmap'}`
                         : 'Drag & drop your custom roadmap-data.json here.'}
@@ -349,8 +356,8 @@ export default function Onboarding() {
                 </div>
 
                 {uploadError && (
-                  <p className="text-red-400 text-[11px] font-semibold bg-red-500/5 border border-red-500/10 rounded-lg p-2.5">
-                    ✗ {uploadError}
+                  <p className="text-red-400 text-[11px] font-semibold bg-red-950/20 border border-red-900/30 rounded-lg p-3">
+                    {uploadError}
                   </p>
                 )}
               </div>
@@ -359,41 +366,41 @@ export default function Onboarding() {
             {/* STEP 4: ROADMAP SUMMARY */}
             {currentStep === 4 && (
               <div className="space-y-4 animate-slide-up">
-                <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5 text-slate-350" />
                 </div>
-                <div>
+                <div className="space-y-1">
                   <h2 className="text-xl font-bold text-white tracking-tight">Verify Active Curriculum</h2>
-                  <p className="text-xs text-slate-400 leading-relaxed mt-0.5">
+                  <p className="text-[13px] text-slate-400 leading-relaxed">
                     We parsed the following metrics from your roadmap configuration:
                   </p>
                 </div>
 
                 {pendingRoadmap ? (
-                  <div className="space-y-3 pt-2">
-                    <div className="bg-navy-950 p-4 border border-navy-800 rounded-xl">
-                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Active Bootcamp</p>
-                      <h4 className="text-sm font-bold text-white leading-snug mt-1">{pendingRoadmap.title || pendingRoadmap.bootcampTitle || 'Imported Roadmap'}</h4>
+                  <div className="space-y-4 pt-2">
+                    <div className="bg-navy-950 p-4 border border-navy-850 rounded-xl">
+                      <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Active Bootcamp</p>
+                      <h4 className="text-sm font-bold text-slate-200 leading-snug mt-1">{pendingRoadmap.title || pendingRoadmap.bootcampTitle || 'Imported Roadmap'}</h4>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-3 gap-3">
                       {[
-                        { label: 'Months', val: pendingRoadmap.months?.length || 0, color: 'text-accent-primary' },
-                        { label: 'Weeks', val: pendingRoadmap.weeks?.length || 0, color: 'text-blue-400' },
-                        { label: 'Resources', val: pendingRoadmap.studyResources?.length || pendingRoadmap.weeks?.reduce((acc, w) => acc + (w.studyResources?.length || 0), 0) || 0, color: 'text-amber-400' },
-                        { label: 'Missions', val: pendingRoadmap.weeks?.reduce((acc, w) => acc + (w.practicalMissions?.length || 0), 0) || 0, color: 'text-pink-400' },
-                        { label: 'Projects', val: pendingRoadmap.projects?.length || 0, color: 'text-emerald-450' },
-                        { label: 'Readiness', val: pendingRoadmap.readinessCategories?.length || 0, color: 'text-cyan-455' }
-                      ].map(({ label, val, color }) => (
-                        <div key={label} className="bg-navy-950/50 rounded-lg p-2.5 text-center border border-navy-800">
-                          <p className={`text-base font-black ${color}`}>{val}</p>
-                          <p className="text-[9px] font-bold text-slate-550 mt-0.5 uppercase tracking-wide leading-none">{label}</p>
+                        { label: 'Months', val: pendingRoadmap.months?.length || 0 },
+                        { label: 'Weeks', val: pendingRoadmap.weeks?.length || 0 },
+                        { label: 'Resources', val: pendingRoadmap.studyResources?.length || pendingRoadmap.weeks?.reduce((acc, w) => acc + (w.studyResources?.length || 0), 0) || 0 },
+                        { label: 'Missions', val: pendingRoadmap.weeks?.reduce((acc, w) => acc + (w.practicalMissions?.length || 0), 0) || 0 },
+                        { label: 'Projects', val: pendingRoadmap.projects?.length || 0 },
+                        { label: 'Readiness', val: pendingRoadmap.readinessCategories?.length || 0 }
+                      ].map(({ label, val }) => (
+                        <div key={label} className="bg-navy-950/40 rounded-xl p-3 text-center border border-navy-850">
+                          <p className="text-xl font-mono font-medium text-slate-100">{val}</p>
+                          <p className="text-[9px] font-semibold text-slate-500 mt-1 uppercase tracking-widest leading-none">{label}</p>
                         </div>
                       ))}
                     </div>
                   </div>
                 ) : (
-                  <p className="text-xs text-slate-550 italic py-4 text-center">No roadmap statistics parsed.</p>
+                  <p className="text-[13px] text-slate-500 italic py-4 text-center">No roadmap statistics parsed.</p>
                 )}
               </div>
             )}
@@ -401,34 +408,34 @@ export default function Onboarding() {
             {/* STEP 5: THE DASHBOARD */}
             {currentStep === 5 && (
               <div className="space-y-4 animate-slide-up">
-                <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                  <Layout className="w-6 h-6 text-blue-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <Layout className="w-5 h-5 text-slate-350" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <h2 className="text-xl font-bold text-white tracking-tight">The Console Dashboard</h2>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 leading-relaxed">
                     Your command deck provides live telemetry on your learning milestones, streaks, active weeks, and dynamic readiness tracks.
                   </p>
                 </div>
 
                 {/* Dashboard mock diagram */}
-                <div className="bg-navy-950 p-4 border border-navy-800 rounded-xl space-y-3 font-mono text-[10px] text-slate-500 select-none">
+                <div className="bg-navy-950 p-4 border border-navy-850 rounded-xl space-y-3 font-mono text-[10px] text-slate-500 select-none">
                   <div className="flex justify-between items-center border-b border-navy-850 pb-2">
-                    <span className="text-white font-bold">COCKPIT CONSOLE</span>
-                    <span className="badge-slate font-bold">LIVE TELEMETRY</span>
+                    <span className="text-slate-350 font-semibold tracking-wider">COCKPIT CONSOLE</span>
+                    <span className="text-[9px] text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/20 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">LIVE TELEMETRY</span>
                   </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="border border-navy-800 p-2 rounded bg-navy-900">
-                      <p className="text-slate-400 font-bold">STREAK</p>
-                      <p className="text-amber-400 text-xs font-bold mt-1">🔥 3 DAYS</p>
+                  <div className="grid grid-cols-3 gap-2.5">
+                    <div className="border border-navy-850 p-2.5 rounded-lg bg-navy-900/60">
+                      <p className="text-slate-500 font-semibold tracking-wider text-[9px]">STREAK</p>
+                      <p className="text-slate-100 text-xs font-semibold mt-1">3 DAYS</p>
                     </div>
-                    <div className="border border-navy-800 p-2 rounded bg-navy-900">
-                      <p className="text-slate-400 font-bold">PROGRESS</p>
-                      <p className="text-blue-400 text-xs font-bold mt-1">📈 18%</p>
+                    <div className="border border-navy-850 p-2.5 rounded-lg bg-navy-900/60">
+                      <p className="text-slate-500 font-semibold tracking-wider text-[9px]">PROGRESS</p>
+                      <p className="text-slate-100 text-xs font-semibold mt-1">18%</p>
                     </div>
-                    <div className="border border-navy-800 p-2 rounded bg-navy-900">
-                      <p className="text-slate-400 font-bold">READINESS</p>
-                      <p className="text-cyan-400 text-xs font-bold mt-1">⚡ READY</p>
+                    <div className="border border-navy-850 p-2.5 rounded-lg bg-navy-900/60">
+                      <p className="text-slate-500 font-semibold tracking-wider text-[9px]">READINESS</p>
+                      <p className="text-accent-cyan text-xs font-semibold mt-1">READY</p>
                     </div>
                   </div>
                 </div>
@@ -438,17 +445,17 @@ export default function Onboarding() {
             {/* STEP 6: WEEKLY MISSIONS */}
             {currentStep === 6 && (
               <div className="space-y-4 animate-slide-up">
-                <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
-                  <BookOpen className="w-6 h-6 text-purple-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <BookOpen className="w-5 h-5 text-slate-350" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <h2 className="text-xl font-bold text-white tracking-tight">Structured Weekly Missions</h2>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 leading-relaxed">
                     Each week progresses through a 6-stage operational pipeline designed for cognitive retention and proof:
                   </p>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 text-[10px] font-semibold text-slate-400">
+                <div className="grid grid-cols-3 gap-2.5 text-[10px] font-semibold text-slate-400">
                   {[
                     { title: '1. Study', desc: 'Resources & slides' },
                     { title: '2. Quiz', desc: 'Confidence checkpoint' },
@@ -457,9 +464,9 @@ export default function Onboarding() {
                     { title: '5. Reflect', desc: 'Consolidate learnings' },
                     { title: '6. Unlock', desc: 'Advance to next week' }
                   ].map(({ title, desc }) => (
-                    <div key={title} className="bg-navy-950 p-2.5 rounded-lg border border-navy-800">
-                      <span className="text-accent-primary font-bold block">{title}</span>
-                      <span className="text-[9px] text-slate-500 block mt-0.5 leading-tight">{desc}</span>
+                    <div key={title} className="bg-navy-950 p-3 rounded-xl border border-navy-850">
+                      <span className="text-slate-200 font-semibold block">{title}</span>
+                      <span className="text-[9px] text-slate-500 block mt-1 leading-tight font-normal">{desc}</span>
                     </div>
                   ))}
                 </div>
@@ -469,23 +476,23 @@ export default function Onboarding() {
             {/* STEP 7: TODAY'S FOCUS */}
             {currentStep === 7 && (
               <div className="space-y-4 animate-slide-up">
-                <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center">
-                  <Target className="w-6 h-6 text-pink-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <Target className="w-5 h-5 text-slate-350" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <h2 className="text-xl font-bold text-white tracking-tight">Today's Focus Cockpit</h2>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 leading-relaxed">
                     A distraction-free interface built to keep you centered. Focus Mode displays only the immediate next study resources, top priority checklist items, and the session timer.
                   </p>
                 </div>
 
-                <div className="bg-navy-950 border border-navy-800 rounded-xl p-3 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full border-2 border-accent-primary flex items-center justify-center text-[10px] font-bold text-white font-mono shrink-0">
+                <div className="bg-navy-950 border border-navy-850 rounded-xl p-4 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full border border-slate-700 bg-navy-900 flex items-center justify-center text-[11px] font-bold text-white font-mono shrink-0">
                     25:00
                   </div>
                   <div>
-                    <span className="badge-blue text-[9px]">ACTIVE BLOCK</span>
-                    <h4 className="text-xs font-bold text-white mt-1">Study Core Architecture Modules</h4>
+                    <span className="text-[9px] text-accent-primary bg-accent-primary/10 border border-accent-primary/20 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">ACTIVE BLOCK</span>
+                    <h4 className="text-xs font-semibold text-slate-250 mt-1.5">Study Core Architecture Modules</h4>
                   </div>
                 </div>
               </div>
@@ -494,27 +501,27 @@ export default function Onboarding() {
             {/* STEP 8: THE TIMER */}
             {currentStep === 8 && (
               <div className="space-y-4 animate-slide-up">
-                <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-orange-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-slate-350" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <h2 className="text-xl font-bold text-white tracking-tight">Rhythm & Timeboxing</h2>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 leading-relaxed">
                     Set focus blocks and break periods to track study sessions. The console integrates dynamic scheduled sessions configured by your roadmap to manage your day.
                   </p>
                 </div>
 
-                <div className="bg-navy-950 p-4 border border-navy-800 rounded-xl space-y-2 text-xs text-slate-400">
+                <div className="bg-navy-950 p-4 border border-navy-850 rounded-xl space-y-2 text-xs text-slate-400">
                   <div className="flex justify-between border-b border-navy-850 pb-2">
-                    <span className="font-semibold text-white">Dynamic Session Rhythm</span>
-                    <span className="text-accent-primary font-bold">Estimated</span>
+                    <span className="font-semibold text-slate-350">Dynamic Session Rhythm</span>
+                    <span className="text-slate-400 font-bold uppercase tracking-wider text-[10px]">Estimated</span>
                   </div>
-                  <div className="flex justify-between text-[11px]">
-                    <span>📖 Study Resources block</span>
+                  <div className="flex justify-between text-[11px] pt-1">
+                    <span className="text-slate-300">Study Resources block</span>
                     <span className="font-mono text-slate-500">120 Minutes</span>
                   </div>
                   <div className="flex justify-between text-[11px]">
-                    <span>🛠 Practical Build Tasks</span>
+                    <span className="text-slate-300">Practical Build Tasks</span>
                     <span className="font-mono text-slate-500">180 Minutes</span>
                   </div>
                 </div>
@@ -524,24 +531,24 @@ export default function Onboarding() {
             {/* STEP 9: PROOF OF WORK */}
             {currentStep === 9 && (
               <div className="space-y-4 animate-slide-up">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                  <Award className="w-6 h-6 text-amber-400" />
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-slate-350" />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <h2 className="text-xl font-bold text-white tracking-tight">Operational Proof of Work</h2>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <p className="text-[13px] text-slate-400 leading-relaxed">
                     Prove your weekly outcomes. To unlock the next week's timeline, you must document and save:
                   </p>
                 </div>
 
-                <div className="space-y-2 pt-1.5 text-xs text-slate-400">
-                  <div className="flex items-center gap-2 bg-navy-950/60 p-2.5 rounded-lg border border-navy-800">
-                    <span className="text-accent-cyan font-bold">✓</span>
-                    <span>Github repository connection and commit links.</span>
+                <div className="space-y-2.5 pt-1.5 text-xs text-slate-400">
+                  <div className="flex items-center gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-850">
+                    <span className="text-emerald-450 font-bold">✓</span>
+                    <span className="text-slate-300">Github repository connection and commit links.</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-navy-950/60 p-2.5 rounded-lg border border-navy-800">
-                    <span className="text-accent-cyan font-bold">✓</span>
-                    <span>Screenshots or notes validating structural deliverables.</span>
+                  <div className="flex items-center gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-850">
+                    <span className="text-emerald-450 font-bold">✓</span>
+                    <span className="text-slate-300">Screenshots or notes validating structural deliverables.</span>
                   </div>
                 </div>
               </div>
@@ -550,19 +557,19 @@ export default function Onboarding() {
             {/* STEP 10: LAUNCH */}
             {currentStep === 10 && (
               <div className="space-y-5 animate-slide-up text-center">
-                <div className="w-16 h-16 rounded-2xl bg-accent-primary/15 border-2 border-accent-primary/30 flex items-center justify-center mx-auto shadow-primary-glow">
-                  <Zap className="w-8 h-8 text-accent-primary animate-pulse" />
+                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto shadow-sm">
+                  <Zap className="w-8 h-8 text-slate-200" />
                 </div>
                 <div className="space-y-2">
                   <h2 className="text-2xl font-black text-white tracking-tight">System Ready to Boot</h2>
                   <p className="text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-                    Onboarding setup complete. Welcome back, <span className="text-accent-cyan font-bold">{userName || 'Operator'}</span>. Your mission cockpit is online.
+                    Onboarding setup complete. Welcome back, <span className="text-slate-200 font-bold">{userName || 'Operator'}</span>. Your mission cockpit is online.
                   </p>
                 </div>
                 <div className="pt-2">
                   <button 
                     onClick={handleFinish} 
-                    className="btn-primary w-full py-3.5 text-sm font-bold shadow-primary-glow flex items-center justify-center gap-2 max-w-sm mx-auto"
+                    className="btn-primary w-full py-3.5 text-sm font-bold flex items-center justify-center gap-2 max-w-sm mx-auto shadow-lg"
                   >
                     <Play className="w-4 h-4 fill-white" />
                     Enter Command Center

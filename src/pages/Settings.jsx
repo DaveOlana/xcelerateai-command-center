@@ -61,7 +61,7 @@ export default function Settings() {
   const totalWeeks = roadmap?.months?.reduce((a, m) => a + (m.weeks?.length || 0), 0) || 24;
 
   const handleSave = () => {
-    if (settings.manualOverrideEnabled && !settings.overrideReason?.trim()) {
+    if (settings?.manualOverrideEnabled && !settings?.overrideReason?.trim()) {
       alert('Please provide a reason for overriding prerequisites locking in Advanced Controls.');
       return;
     }
@@ -190,7 +190,7 @@ export default function Settings() {
           <label className="section-label mb-1.5 block">Bootcamp Start Date</label>
           <input
             type="date"
-            value={settings.startDate || ''}
+            value={settings?.startDate || ''}
             max={getTodayISO()}
             onChange={(e) => updateSettings({ startDate: e.target.value || null })}
             className="input-base w-full text-sm"
@@ -221,7 +221,7 @@ export default function Settings() {
           <input
             type="text"
             placeholder="e.g. Lemont"
-            value={settings.mentorName || ''}
+            value={settings?.mentorName || ''}
             onChange={(e) => updateSettings({ mentorName: e.target.value })}
             className="input-base w-full text-sm"
           />
@@ -238,7 +238,7 @@ export default function Settings() {
               type="number"
               min={1}
               max={totalWeeks}
-              value={settings.activeWeek}
+              value={settings?.activeWeek || 1}
               onChange={(e) => {
                 const v = Math.min(Math.max(1, Number(e.target.value)), totalWeeks);
                 setActiveWeek(v);
@@ -331,12 +331,12 @@ export default function Settings() {
           <label className="flex items-start gap-3 cursor-pointer">
             <input
               type="checkbox"
-              checked={settings.manualOverrideEnabled || false}
+              checked={settings?.manualOverrideEnabled || false}
               onChange={(e) => {
                 const checked = e.target.checked;
                 updateSettings({
                   manualOverrideEnabled: checked,
-                  overrideReason: checked ? settings.overrideReason : ''
+                  overrideReason: checked ? (settings?.overrideReason || '') : ''
                 });
               }}
               className="mt-1 h-4 w-4 rounded border-navy-400 bg-navy-900 text-accent-cyan focus:ring-accent-cyan"
@@ -349,7 +349,7 @@ export default function Settings() {
             </div>
           </label>
 
-          {settings.manualOverrideEnabled && (
+          {settings?.manualOverrideEnabled && (
             <div className="space-y-2.5 animate-scale-in bg-navy-950 p-4 border border-navy-400 rounded-xl">
               <label className="text-[13px] text-amber-400 font-bold block uppercase tracking-wider">
                 Reason for Lock Override *
@@ -358,7 +358,7 @@ export default function Settings() {
                 rows={2}
                 required
                 placeholder="Log your reasoning (e.g., 'Inspecting Week 6 database structures to plan Backend schema')"
-                value={settings.overrideReason || ''}
+                value={settings?.overrideReason || ''}
                 onChange={(e) => updateSettings({ overrideReason: e.target.value })}
                 className="input-base w-full text-xs resize-none"
               />
@@ -380,7 +380,7 @@ export default function Settings() {
           Save your database as a portable JSON file. Dave recommends backing up before importing new roadmaps.
         </p>
 
-        {settings.lastBackupDate && (
+        {settings?.lastBackupDate && (
           <div className="text-xs text-slate-400 bg-navy-950 border border-navy-400/50 rounded-lg p-2.5 flex justify-between items-center">
             <span>Last local backup created:</span>
             <span className="font-mono text-accent-primary font-bold">
@@ -554,7 +554,7 @@ export default function Settings() {
           <div className="flex justify-between">
             <span>Active Roadmap configuration</span>
             <span className="text-accent-primary font-medium">
-              {settings.usingCustomRoadmap ? 'Custom JSON Roadmap' : 'Sample JavaScript Mobile Ops'}
+              {settings?.usingCustomRoadmap ? 'Custom JSON Roadmap' : 'Sample JavaScript Mobile Ops'}
             </span>
           </div>
         </div>

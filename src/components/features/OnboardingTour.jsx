@@ -89,7 +89,7 @@ export default function OnboardingTour() {
   // Read localStorage checks on load/render
   useEffect(() => {
     // Only run tour if setup wizard is fully completed in active settings
-    if (!settings.onboardingCompleted) {
+    if (!settings?.onboardingCompleted) {
       setActive(false);
       return;
     }
@@ -100,7 +100,7 @@ export default function OnboardingTour() {
       setActive(true);
       setStepIndex(0);
     }
-  }, [settings.onboardingCompleted, location.pathname]);
+  }, [settings?.onboardingCompleted, location.pathname]);
   // Handle global page listen window resize
   useEffect(() => {
     const handleResize = () => {
@@ -120,25 +120,45 @@ export default function OnboardingTour() {
       return;
     }
 
-    // Short timeout to let transition/render happen
-    const timer = setTimeout(() => {
+    // Scroll element into view once when step changes
+    const initialElement = document.querySelector(currentStep.target);
+    if (initialElement) {
+      initialElement.scrollIntoView({ behavior: 'auto', block: 'nearest', inline: 'nearest' });
+    }
+
+    const updateRect = () => {
       const element = document.querySelector(currentStep.target);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
         const domRect = element.getBoundingClientRect();
-        setRect({
-          x: domRect.x,
-          y: domRect.y,
-          width: domRect.width,
-          height: domRect.height
+        setRect((prev) => {
+          // Guard against infinite rendering loop by checking if rect values changed
+          if (
+            prev.x === domRect.x &&
+            prev.y === domRect.y &&
+            prev.width === domRect.width &&
+            prev.height === domRect.height
+          ) {
+            return prev;
+          }
+          return {
+            x: domRect.x,
+            y: domRect.y,
+            width: domRect.width,
+            height: domRect.height
+          };
         });
       } else {
-        // Fallback to center if element is hidden/missing (e.g. collapsed sidebar item)
         setRect({ x: 0, y: 0, width: 0, height: 0 });
       }
-    }, 150);
+    };
 
-    return () => clearTimeout(timer);
+    // Run immediately
+    updateRect();
+
+    // Poll every 100ms to adapt to layout transitions, sidebar scrolls, animations, etc.
+    const pollInterval = setInterval(updateRect, 100);
+
+    return () => clearInterval(pollInterval);
   }, [stepIndex, active, windowSize]);
 
   // Keyboard navigation listeners
@@ -165,6 +185,8 @@ export default function OnboardingTour() {
   if (!active) return null;
 
   const currentStep = TOUR_STEPS[stepIndex];
+  if (!currentStep) return null;
+
   const isCenter = currentStep.target === 'center' || (rect.width === 0 && rect.height === 0);
 
   const handleNext = () => {

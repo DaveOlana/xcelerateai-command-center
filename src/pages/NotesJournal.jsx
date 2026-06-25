@@ -5,13 +5,13 @@ import { formatNoteDate, getTodayISO } from '../utils/dateUtils';
 import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
 
 const NOTE_TYPES = [
-  { value: 'session_note', label: 'Session Note ' },
-  { value: 'daily_reflection', label: 'Daily Reflection ' },
-  { value: 'bug_note', label: 'Bug Note 🐛' },
-  { value: 'concept_note', label: 'Concept Note ' },
-  { value: 'project_note', label: 'Project Note ' },
-  { value: 'question_for_lemont', label: 'Question for Lemont 💬' },
-  { value: 'resource_summary', label: 'Resource Summary 📖' }
+  { value: 'session_note', label: 'Session Note' },
+  { value: 'daily_reflection', label: 'Daily Reflection' },
+  { value: 'bug_note', label: 'Bug Note' },
+  { value: 'concept_note', label: 'Concept Note' },
+  { value: 'project_note', label: 'Project Note' },
+  { value: 'question_for_lemont', label: 'Question for Lemont' },
+  { value: 'resource_summary', label: 'Resource Summary' }
 ];
 
 const NOTE_TYPE_STYLES = {
@@ -484,7 +484,7 @@ export default function NotesJournal() {
                       )}
                       {note.linkedResource && (
                         <span className="badge-slate text-xs max-w-[120px] truncate" title={note.linkedResource}>
-                          📖 {note.linkedResource}
+                          Resource: {note.linkedResource}
                         </span>
                       )}
                       {linkedBlockerObj && (
