@@ -137,6 +137,7 @@ export default function WeeklyMissions() {
   const taskKey = `m${month.monthNumber}_w${week.weekNumber}`;
   const doneTasks = progress?.completedTasks?.[taskKey];
   const doneTasksCount = Array.isArray(doneTasks) ? doneTasks.length : 0;
+  // Use the unified tasks array (includes practicalMissions merged in by normalizeWeek)
   const totalTasksCount = Array.isArray(week?.tasks) ? week.tasks.length : 0;
   const taskPercent = totalTasksCount > 0 ? Math.round((doneTasksCount / totalTasksCount) * 100) : 0;
 
@@ -149,15 +150,30 @@ export default function WeeklyMissions() {
 
   const unknownFields = getUnknownWeekFields(week);
   const requiredResources = getRequiredResources(week);
-  const sessions = week.sessions || [];
+  // Support both scheduledSessions (new) and sessions (legacy)
+  const sessions = week.scheduledSessions || week.sessions || [];
 
-  // Safely extract checkpoint text — checkpoint may be a plain string OR a rich object
-  // with keys like { prompt, statusOptions, evidenceRequiredForConfident }
-  const checkpointText = !week.checkpoint
-    ? null
-    : typeof week.checkpoint === 'string'
+  // Safely extract skill check questions — may be:
+  //   - An array of { id, question, expectedConcepts } (new schema)
+  //   - An array of plain strings
+  //   - A single string (old checkpoint)
+  //   - An object with { prompt } (old schema)
+  const skillCheckQuestions = Array.isArray(week.skillCheck)
+    ? week.skillCheck
+    : week.skillCheck
+    ? [week.skillCheck]
+    : Array.isArray(week.checkpoint)
     ? week.checkpoint
-    : (week.checkpoint?.prompt || week.checkpoint?.question || null);
+    : week.checkpoint
+    ? [{ question: typeof week.checkpoint === 'string' ? week.checkpoint : (week.checkpoint?.prompt || '') }]
+    : [];
+
+  // Legacy single checkpoint text (for old overview card)
+  const checkpointText = skillCheckQuestions.length > 0
+    ? (typeof skillCheckQuestions[0] === 'string'
+        ? skillCheckQuestions[0]
+        : skillCheckQuestions[0]?.question || skillCheckQuestions[0]?.prompt || null)
+    : null;
 
   // --- Handlers ---
   const handleMarkWeekComplete = () => {
@@ -698,106 +714,137 @@ export default function WeeklyMissions() {
               </span>
             </div>
 
-            {!Array.isArray(week.resources) || week.resources.length === 0 ? (
-              <div className="card text-center py-8">
-                <BookOpen className="w-8 h-8 text-slate-600 mx-auto mb-2" />
-                <p className="text-xs text-slate-500">No resources listed for this week.</p>
-              </div>
-            ) : (
-              <div className="grid md:grid-cols-2 gap-4">
-                {week.resources.map((res, idx) => {
-                  const status = resourcesStatus[res.title] || 'Not Started';
-                  const isRequired = requiredResources.some(r => r.title === res.title);
+            {/* Resources Tab: read week.studyResources (canonical) or week.resources (legacy) */}
+            {(() => {
+              const weekResources =
+                Array.isArray(week.studyResources) && week.studyResources.length > 0
+                  ? week.studyResources
+                  : Array.isArray(week.resources) && week.resources.length > 0
+                  ? week.resources
+                  : [];
 
-                  return (
-                    <div key={idx} className={`card flex flex-col justify-between gap-5 transition-all ${
-                      status === 'Studied' ? 'border-emerald-500/20 bg-emerald-500/5' :
-                      status === 'Studying' ? 'border-accent-primary/25 bg-accent-primary/5' : 'border-navy-700/25'
-                    }`}>
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between flex-wrap gap-2">
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="badge-slate text-xs">{res.type}</span>
-                            {res.difficulty && <span className="badge-slate text-xs">{res.difficulty}</span>}
-                            {isRequired && <span className="badge-slate text-xs">Required</span>}
+              if (weekResources.length === 0) {
+                return (
+                  <div className="card text-center py-8">
+                    <BookOpen className="w-8 h-8 text-slate-600 mx-auto mb-2" />
+                    <p className="text-xs text-slate-500">No resources listed for this week.</p>
+                  </div>
+                );
+              }
+
+              return (
+                <div className="grid md:grid-cols-2 gap-4">
+                  {weekResources.map((res, idx) => {
+                    const status = resourcesStatus[res.title] || 'Not Started';
+                    const isRequired = requiredResources.some(r => r.title === res.title);
+                    // Support both res.teaches (new schema array) and res tags
+                    const teachesTags = Array.isArray(res.teaches) ? res.teaches : [];
+                    // Support both res.estimatedTime (new) and res.timeEstimate (legacy)
+                    const timeLabel = res.estimatedTime || res.timeEstimate || null;
+                    // Support both res.purpose (new) and res.whatToExpect (legacy)
+                    const purposeText = res.purpose || res.whatToExpect || null;
+
+                    return (
+                      <div key={idx} className={`card flex flex-col justify-between gap-5 transition-all ${
+                        status === 'Studied' ? 'border-emerald-500/20 bg-emerald-500/5' :
+                        status === 'Studying' ? 'border-accent-primary/25 bg-accent-primary/5' : 'border-navy-700/25'
+                      }`}>
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between flex-wrap gap-2">
+                            <div className="flex items-center gap-1.5 flex-wrap">
+                              <span className="badge-slate text-xs">{res.type}</span>
+                              {res.difficulty && <span className="badge-slate text-xs">{res.difficulty}</span>}
+                              {isRequired && <span className="badge-slate text-xs">Required</span>}
+                            </div>
+                            <span className={`text-[12px] font-bold px-2.5 py-0.5 rounded-full border ${
+                              status === 'Studied' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' :
+                              status === 'Studying' ? 'bg-accent-primary/10 text-accent-primary border-accent-primary/20 animate-pulse' :
+                              'bg-navy-900 text-slate-500 border-navy-700'
+                            }`}>
+                              {status}
+                            </span>
                           </div>
-                          <span className={`text-[12px] font-bold px-2.5 py-0.5 rounded-full border ${
-                            status === 'Studied' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' :
-                            status === 'Studying' ? 'bg-accent-primary/10 text-accent-primary border-accent-primary/20 animate-pulse' :
-                            'bg-navy-900 text-slate-500 border-navy-700'
-                          }`}>
-                            {status}
-                          </span>
+
+                          <h4 className="font-bold text-white text-base leading-snug">{res.title}</h4>
+
+                          {/* Time estimate — supports both new (estimatedTime) and legacy (timeEstimate) */}
+                          {timeLabel && (
+                            <div className="flex items-center gap-3 text-[13px] text-slate-450 font-medium">
+                              <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{timeLabel}</span>
+                            </div>
+                          )}
+
+                          {/* Purpose — supports both new (purpose) and legacy (whatToExpect) */}
+                          {purposeText && (
+                            <p className="text-[14px] text-slate-400 leading-relaxed line-clamp-2">{purposeText}</p>
+                          )}
+
+                          {/* Mission objective (legacy field) */}
+                          {res.missionObjective && (
+                            <div className="bg-navy-900 border border-navy-750 rounded-xl p-3 text-[13px] text-slate-400">
+                              <span className="font-bold text-accent-primary">Goal: </span>
+                              {res.missionObjective}
+                            </div>
+                          )}
+
+                          {/* Teaches tags — new schema */}
+                          {teachesTags.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5">
+                              {teachesTags.map((tag, ti) => (
+                                <span key={ti} className="text-[11px] font-medium px-2 py-0.5 bg-accent-primary/10 text-accent-primary border border-accent-primary/20 rounded-full">
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
                         </div>
 
-                        <h4 className="font-bold text-white text-base leading-snug">{res.title}</h4>
-
-                        {/* Time / Data estimates */}
-                        {(res.timeEstimate || res.dataEstimate) && (
-                          <div className="flex items-center gap-3 text-[13px] text-slate-450 font-medium">
-                            {res.timeEstimate && <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" />{res.timeEstimate}</span>}
-                            {res.dataEstimate && <span className="flex items-center gap-1"><Database className="w-3.5 h-3.5" />{res.dataEstimate}</span>}
-                          </div>
-                        )}
-
-                        {res.whatToExpect && (
-                          <p className="text-[14px] text-slate-400 leading-relaxed line-clamp-2">{res.whatToExpect}</p>
-                        )}
-
-                        {res.missionObjective && (
-                          <div className="bg-navy-900 border border-navy-750 rounded-xl p-3 text-[13px] text-slate-400">
-                            <span className="font-bold text-accent-primary">Goal: </span>
-                            {res.missionObjective}
-                          </div>
-                        )}
-                      </div>
-
-                      {/* Action buttons */}
-                      <div className="grid grid-cols-2 gap-3 pt-3 border-t border-navy-750">
-                        <a
-                          href={res.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="btn-secondary py-2 px-2 text-[13px] text-center flex items-center justify-center gap-1"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" /> Open Resource
-                        </a>
-
-                        {status === 'Not Started' && (
-                          <button
-                            onClick={() => updateResourceStatus(res.title, 'Studying')}
-                            className="btn-secondary py-2 text-[13px] text-amber-500 border-amber-500/20 hover:bg-amber-500/10"
+                        {/* Action buttons */}
+                        <div className="grid grid-cols-2 gap-3 pt-3 border-t border-navy-750">
+                          <a
+                            href={res.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-secondary py-2 px-2 text-[13px] text-center flex items-center justify-center gap-1"
                           >
-                            Start Studying
-                          </button>
-                        )}
-                        {status === 'Studying' && (
-                          <button
-                            onClick={() => updateResourceStatus(res.title, 'Studied')}
-                            className="btn-primary py-2 text-[13px]"
-                          >
-                            Mark Studied
-                          </button>
-                        )}
-                        {status === 'Studied' && (
-                          <div className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl py-2 text-[13px] text-center flex items-center justify-center gap-1 font-semibold">
-                            <CheckCircle2 className="w-3.5 h-3.5" /> Studied
-                          </div>
-                        )}
+                            <ExternalLink className="w-3.5 h-3.5" /> Open Resource
+                          </a>
 
-                        {/* Span full width — Open + Take Note */}
-                        <button
-                          onClick={() => handleTakeNote(res)}
-                          className="col-span-2 btn-secondary py-2 text-[13px] text-slate-400 flex items-center justify-center gap-1"
-                        >
-                          <FileText className="w-3.5 h-3.5" /> Open & Take Note
-                        </button>
+                          {status === 'Not Started' && (
+                            <button
+                              onClick={() => updateResourceStatus(res.title, 'Studying')}
+                              className="btn-secondary py-2 text-[13px] text-amber-500 border-amber-500/20 hover:bg-amber-500/10"
+                            >
+                              Start Studying
+                            </button>
+                          )}
+                          {status === 'Studying' && (
+                            <button
+                              onClick={() => updateResourceStatus(res.title, 'Studied')}
+                              className="btn-primary py-2 text-[13px]"
+                            >
+                              Mark Studied
+                            </button>
+                          )}
+                          {status === 'Studied' && (
+                            <div className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl py-2 text-[13px] text-center flex items-center justify-center gap-1 font-semibold">
+                              <CheckCircle2 className="w-3.5 h-3.5" /> Studied
+                            </div>
+                          )}
+
+                          <button
+                            onClick={() => handleTakeNote(res)}
+                            className="col-span-2 btn-secondary py-2 text-[13px] text-slate-400 flex items-center justify-center gap-1"
+                          >
+                            <FileText className="w-3.5 h-3.5" /> Open & Take Note
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+                    );
+                  })}
+                </div>
+              );
+            })()}
           </div>
         )}
 
@@ -817,6 +864,10 @@ export default function WeeklyMissions() {
                 <h3 className="font-bold text-white text-sm mb-1 uppercase tracking-wide">Step 2: Readiness Skill Check</h3>
                 <p className="text-xs text-slate-400 mb-4">Complete required resources to activate this skill checkpoint.</p>
 
+                {/* Skill check questions — supports both new array format and legacy single string */}
+                {!stepStatus.skillCheckDone && skillCheckQuestions.length === 0 && (
+                  <p className="text-xs text-slate-500 italic">No skill check questions defined for this week.</p>
+                )}
                 {stepStatus.skillCheckDone ? (
                   <div className="bg-accent-primary/5 border border-accent-primary/25 rounded-xl p-4 text-xs text-accent-primary flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
@@ -824,9 +875,11 @@ export default function WeeklyMissions() {
                   </div>
                 ) : (
                   <form onSubmit={handleSaveSkillCheck} className="space-y-4">
-                    {(week.skillCheck?.questions || (checkpointText ? [checkpointText] : [])).filter(Boolean).map((q, qi) => {
-                      // q may be a plain string OR a rich object: { questionId, prompt, answerType, options, required }
-                      const questionText = typeof q === 'string' ? q : (q?.prompt || q?.text || q?.question || '');
+                    {skillCheckQuestions.filter(Boolean).map((q, qi) => {
+                      // q may be: plain string | { question, expectedConcepts } | { prompt, answerType, options }
+                      const questionText = typeof q === 'string'
+                        ? q
+                        : (q?.question || q?.prompt || q?.text || '');
                       const answerType = typeof q === 'object' ? (q?.answerType || 'text') : 'text';
                       const qOptions = typeof q === 'object' && Array.isArray(q?.options) ? q.options : [];
                       const isFirstQ = qi === 0;
@@ -834,6 +887,16 @@ export default function WeeklyMissions() {
                       return (
                         <div key={qi} className="space-y-2 p-3 bg-navy-800 border border-navy-450 rounded-xl">
                           <label className="text-xs font-bold text-white block">Q{qi + 1}: "{questionText}"</label>
+
+                          {/* Expected concepts (new schema: { expectedConcepts: [...] }) */}
+                          {typeof q === 'object' && Array.isArray(q?.expectedConcepts) && q.expectedConcepts.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5 pt-1">
+                              <span className="text-[11px] text-slate-500 mr-1">Covers:</span>
+                              {q.expectedConcepts.map((c, ci) => (
+                                <span key={ci} className="text-[11px] px-2 py-0.5 bg-navy-700 border border-navy-500 text-slate-400 rounded-full">{c}</span>
+                              ))}
+                            </div>
+                          )}
 
                           {/* Only collect answer for the first question to keep state simple */}
                           {isFirstQ && answerType === 'multiple_choice' && qOptions.length > 0 ? (

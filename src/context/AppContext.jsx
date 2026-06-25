@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { sampleRoadmap } from '../data/sampleRoadmap';
 import { getTodayString, getYesterdayString } from '../utils/dateUtils';
+import { normalizeRoadmap, getRoadmapId } from '../utils/normalizeRoadmap';
 
 // =============================================
 // STORAGE KEYS
@@ -35,6 +36,7 @@ const DEFAULT_SETTINGS = {
   overrideReason: '',
   lastBackupDate: null,
   sidebarCollapsed: false,
+  activeRoadmapId: null, // tracks which roadmap is currently active
 };
 
 const DEFAULT_PROGRESS = {
@@ -102,8 +104,15 @@ export function AppProvider({ children }) {
   const [isDataReady, setIsDataReady] = useState(false);
 
   const [roadmap, setRoadmap] = useState(() => {
-    const loaded = loadFromStorage(STORAGE_KEYS.ROADMAP, sampleRoadmap);
-    return Array.isArray(loaded) ? { months: loaded, checkpoints: [], projects: [] } : loaded || sampleRoadmap;
+    const loaded = loadFromStorage(STORAGE_KEYS.ROADMAP, null);
+    if (!loaded) {
+      // First boot: normalize the sampleRoadmap
+      try { return normalizeRoadmap(sampleRoadmap); } catch { return sampleRoadmap; }
+    }
+    // If already a normalized roadmap (has .id), return as-is
+    if (loaded.id && loaded.weeks) return loaded;
+    // Otherwise normalize it
+    try { return normalizeRoadmap(loaded); } catch { return loaded; }
   });
   const [progress, setProgress] = useState(() => {
     const loaded = loadFromStorage(STORAGE_KEYS.PROGRESS, DEFAULT_PROGRESS);
@@ -213,19 +222,45 @@ export function AppProvider({ children }) {
   // =============================================
   // ROADMAP ACTIONS
   // =============================================
-  const importRoadmap = useCallback((data) => {
-    setRoadmap(data);
-    setSettingsState((prev) => ({ ...prev, usingCustomRoadmap: true, activeWeek: 1, activeMonth: 1 }));
+  const importRoadmap = useCallback((rawData) => {
+    // Normalize the raw JSON before storing
+    let normalized;
+    try {
+      normalized = normalizeRoadmap(rawData);
+    } catch (e) {
+      console.error('normalizeRoadmap failed, storing raw data:', e);
+      normalized = rawData;
+    }
+    setRoadmap(normalized);
+    setSettingsState((prev) => ({
+      ...prev,
+      usingCustomRoadmap: true,
+      activeWeek: 1,
+      activeMonth: 1,
+      activeRoadmapId: normalized.id || getRoadmapId(rawData),
+    }));
     // Reset progress when importing new roadmap
     setProgress(DEFAULT_PROGRESS);
     setCheckpointStatusesState({});
+    setResourcesStatus({});
+    setSkillChecks({});
+    setPracticalMissions({});
+    setWeekProofs({});
+    setWeekReflections({});
   }, []);
 
   const resetToSampleRoadmap = useCallback(() => {
-    setRoadmap(sampleRoadmap);
+    let normalizedSample;
+    try { normalizedSample = normalizeRoadmap(sampleRoadmap); } catch { normalizedSample = sampleRoadmap; }
+    setRoadmap(normalizedSample);
     setProgress(DEFAULT_PROGRESS);
     setCheckpointStatusesState({});
-    setSettingsState({ ...DEFAULT_SETTINGS });
+    setResourcesStatus({});
+    setSkillChecks({});
+    setPracticalMissions({});
+    setWeekProofs({});
+    setWeekReflections({});
+    setSettingsState({ ...DEFAULT_SETTINGS, activeRoadmapId: normalizedSample.id || null });
   }, []);
 
   // =============================================
@@ -887,6 +922,9 @@ export function AppProvider({ children }) {
     timerHistory,
     pendingTimerParams,
     showSwitchConfirmation,
+
+    // Active roadmap ID (for namespaced progress / filtering notes+blockers)
+    activeRoadmapId: settings.activeRoadmapId || roadmap?.id || null,
 
     // Roadmap
     importRoadmap,

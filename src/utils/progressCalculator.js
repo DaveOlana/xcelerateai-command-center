@@ -164,8 +164,13 @@ export function calculateReadinessScores(roadmap, progress, checkpointStatuses, 
   if (roadmap?.months) {
     roadmap.months.forEach((m) => {
       m.weeks?.forEach((w) => {
-        // Resources
-        (w.resources || []).forEach((res) => {
+        // Study Resources — support both studyResources (new) and resources (legacy)
+        const weekResources =
+          Array.isArray(w.studyResources) ? w.studyResources :
+          Array.isArray(w.resources)      ? w.resources :
+          [];
+
+        weekResources.forEach((res) => {
           const status = resourcesStatus?.[res.title] || 'Not Started';
           items.push({
             type: 'resource',
@@ -193,7 +198,7 @@ export function calculateReadinessScores(roadmap, progress, checkpointStatuses, 
 
         // Practical Missions
         (w.practicalMissions || []).forEach((pm) => {
-          const pmRecord = practicalMissions?.[pm.missionId];
+          const pmRecord = practicalMissions?.[pm.missionId || pm.id];
           items.push({
             type: 'practical',
             item: pm,
@@ -371,5 +376,149 @@ export function calculateReadinessScores(roadmap, progress, checkpointStatuses, 
     elliot: elliotPercent,
     consistency: consistencyPercent,
   };
+}
+
+// ─── Color palette for dynamic readiness categories ──────────────────────────
+const CATEGORY_COLORS = [
+  'from-blue-500 to-accent-primary',
+  'from-purple-500 to-pink-500',
+  'from-amber-500 to-orange-500',
+  'from-emerald-500 to-teal-500',
+  'from-cyan-500 to-blue-500',
+  'from-rose-500 to-red-500',
+  'from-indigo-500 to-purple-500',
+  'from-yellow-500 to-amber-500',
+  'from-teal-500 to-emerald-500',
+  'from-fuchsia-500 to-pink-500',
+];
+
+/**
+ * Calculate dynamic readiness scores driven by activeRoadmap.readinessCategories.
+ * Works with any imported JSON — not hardcoded to Elliot tracks.
+ *
+ * Priority for each category:
+ *  1. If category has relatedWeeks, calculate from those specific weeks.
+ *  2. If items have matching tags/IDs/readinessImpact, use them.
+ *  3. Keyword match on category title/id vs item text.
+ *  4. Fallback: return 0% (not invented progress).
+ *
+ * @param {object} roadmap        - Normalized roadmap object
+ * @param {object} progress       - Progress state
+ * @param {object} resourcesStatus
+ * @param {object} practicalMissions
+ * @returns {Array<{id, title, description, percent, color, weekCount}>}
+ */
+export function calculateDynamicReadiness(roadmap, progress, resourcesStatus, practicalMissions) {
+  const categories = Array.isArray(roadmap?.readinessCategories)
+    ? roadmap.readinessCategories
+    : [];
+
+  if (categories.length === 0) return [];
+
+  // Flatten all weeks from the roadmap
+  const allWeeks = [];
+  if (Array.isArray(roadmap?.weeks) && roadmap.weeks.length > 0) {
+    allWeeks.push(...roadmap.weeks);
+  } else if (Array.isArray(roadmap?.months)) {
+    roadmap.months.forEach((m) => {
+      (m.weeks || []).forEach((w) => allWeeks.push({ ...w, monthNumber: m.monthNumber }));
+    });
+  }
+
+  const norm = (s) => String(s || '').toLowerCase();
+
+  // Score a single week's completion
+  const scoreWeek = (week) => {
+    let total = 0;
+    let done = 0;
+
+    const monthNum = week.monthNumber || 1;
+    const taskKey = `m${monthNum}_w${week.weekNumber}`;
+
+    // Study resources
+    const resources =
+      Array.isArray(week.studyResources) ? week.studyResources :
+      Array.isArray(week.resources)      ? week.resources : [];
+    resources.forEach((r) => {
+      total++;
+      if (resourcesStatus?.[r.title] === 'Studied') done++;
+    });
+
+    // Tasks
+    const tasks = Array.isArray(week.tasks) ? week.tasks : [];
+    const doneTasks = progress?.completedTasks?.[taskKey] || [];
+    tasks.forEach((_, idx) => {
+      total++;
+      if ((Array.isArray(doneTasks) ? doneTasks : []).includes(idx)) done++;
+    });
+
+    // Practical missions
+    const missions = Array.isArray(week.practicalMissions) ? week.practicalMissions : [];
+    missions.forEach((pm) => {
+      total += 3; // weight 3
+      const pmId = pm.missionId || pm.id;
+      const record = practicalMissions?.[pmId];
+      if (record?.status === 'Completed') done += 3;
+    });
+
+    return { total, done };
+  };
+
+  return categories.map((cat, idx) => {
+    const catId = cat.id || `cat-${idx}`;
+    const catTitle = cat.title || `Category ${idx + 1}`;
+    const catDescription = cat.description || '';
+    const color = CATEGORY_COLORS[idx % CATEGORY_COLORS.length];
+
+    // 1. If category specifies relatedWeeks
+    let relatedWeeks = [];
+    if (Array.isArray(cat.relatedWeeks) && cat.relatedWeeks.length > 0) {
+      relatedWeeks = allWeeks.filter((w) =>
+        cat.relatedWeeks.includes(w.weekNumber) ||
+        cat.relatedWeeks.includes(w.weekId)
+      );
+    }
+
+    // 2. Keyword / ID match if no explicit relatedWeeks
+    if (relatedWeeks.length === 0) {
+      const keywords = [
+        norm(catId),
+        norm(catTitle),
+        ...(Array.isArray(cat.tags) ? cat.tags.map(norm) : []),
+      ].filter(Boolean);
+
+      relatedWeeks = allWeeks.filter((w) => {
+        const weekText = [
+          norm(w.title), norm(w.goal), norm(w.objective), norm(w.briefing),
+          norm(w.weekId), norm(w.track),
+        ].join(' ');
+        return keywords.some((kw) => weekText.includes(kw));
+      });
+    }
+
+    if (relatedWeeks.length === 0) {
+      // No match — show 0% but still render the category
+      return { id: catId, title: catTitle, description: catDescription, percent: 0, color, weekCount: 0 };
+    }
+
+    let total = 0;
+    let done = 0;
+    relatedWeeks.forEach((w) => {
+      const s = scoreWeek(w);
+      total += s.total;
+      done += s.done;
+    });
+
+    const percent = total > 0 ? Math.min(100, Math.round((done / total) * 100)) : 0;
+
+    return {
+      id: catId,
+      title: catTitle,
+      description: catDescription,
+      percent,
+      color,
+      weekCount: relatedWeeks.length,
+    };
+  });
 }
 

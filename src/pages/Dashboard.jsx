@@ -8,7 +8,7 @@ import {
   calculateOverallProgress,
   getActiveWeekData,
   getMotivationalMessage,
-  calculateReadinessScores
+  calculateDynamicReadiness,
 } from '../utils/progressCalculator';
 import {
   getGreeting,
@@ -16,7 +16,6 @@ import {
   getDaysRemaining,
   getBootcampDurationPercent,
 } from '../utils/dateUtils';
-import { getItemTitle } from '../utils/safeRender';
 import { PageShell, StatCard, ProgressBar, SectionCard } from '../components/common/UIComponents';
 
 export default function Dashboard() {
@@ -25,13 +24,27 @@ export default function Dashboard() {
   const prog = calculateOverallProgress(roadmap, progress, checkpointStatuses);
   const activeWeekData = getActiveWeekData(roadmap, settings.activeWeek);
   const greeting = getGreeting();
+
+  // ── Dynamic duration from normalized roadmap ──────────────────────────────
+  // roadmap.totalDays is set by normalizeRoadmap → getDerivedDuration
+  const totalDays = roadmap?.totalDays || 180;
   const bootcampDay = getBootcampDay(settings.startDate);
-  const daysRemaining = getDaysRemaining(settings.startDate);
-  const durationPercent = getBootcampDurationPercent(settings.startDate);
+  const daysRemaining = getDaysRemaining(settings.startDate, totalDays);
+  const durationPercent = getBootcampDurationPercent(settings.startDate, totalDays);
   const motivational = getMotivationalMessage(prog.overall, streak.currentStreak);
 
-  // Compute readiness scores
-  const readiness = calculateReadinessScores(roadmap, progress, checkpointStatuses, streak, resourcesStatus, practicalMissions);
+  // ── Dynamic readiness from activeRoadmap.readinessCategories ─────────────
+  const dynamicReadiness = calculateDynamicReadiness(roadmap, progress, resourcesStatus, practicalMissions);
+
+  // ── Overall readiness score (average of dynamic categories) ───────────────
+  const overallReadinessScore = dynamicReadiness.length > 0
+    ? Math.round(dynamicReadiness.reduce((acc, c) => acc + c.percent, 0) / dynamicReadiness.length)
+    : 0;
+
+  // ── Dynamic title fields from normalized roadmap ──────────────────────────
+  const roadmapTitle = roadmap?.title || roadmap?.bootcampTitle || 'Active Roadmap';
+  const roadmapShortTitle = roadmap?.shortTitle || roadmapTitle;
+  const readinessSectionTitle = `${roadmapShortTitle} Readiness`;
 
   const currentMonth = roadmap?.months?.find(
     (m) => m.monthNumber === settings.activeMonth
@@ -68,8 +81,8 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="text-right hidden sm:block">
-          <p className="text-xs font-bold text-slate-450 tracking-widest uppercase">Reference Schema</p>
-          <p className="text-[14px] font-semibold text-slate-300">{roadmap?.bootcampTitle || '6-Month Command Board'}</p>
+          <p className="text-xs font-bold text-slate-450 tracking-widest uppercase">Active Roadmap</p>
+          <p className="text-[14px] font-semibold text-slate-300">{roadmapTitle}</p>
         </div>
       </div>
 
@@ -106,7 +119,7 @@ export default function Dashboard() {
       )}
 
       {/* ── Hero Cockpit Status Card ── */}
-      <div 
+      <div
         data-tour="dashboard-hero"
         className="relative overflow-hidden rounded-3xl border border-navy-700/25 bg-navy-850 p-8 lg:p-10 shadow-card"
       >
@@ -122,11 +135,19 @@ export default function Dashboard() {
             </div>
 
             <div>
+              {/* ── Dynamic roadmap title — NOT hardcoded ── */}
               <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                Building Elliot V1
+                {roadmap?.finalProductDefinition
+                  ? `Building ${roadmap.finalProductDefinition.length > 40
+                      ? roadmapTitle
+                      : roadmap.finalProductDefinition}`
+                  : roadmapTitle}
               </h1>
               <p className="text-slate-400 mt-2 text-[15px] leading-relaxed max-w-xl">
-                Currently working on Week {settings.activeWeek}: <span className="text-white font-medium">{activeWeekData?.week?.title || 'No active week'}</span>. Restoring system readiness triggers.
+                Currently working on Week {settings.activeWeek}:{' '}
+                <span className="text-white font-medium">
+                  {activeWeekData?.week?.title || 'No active week set'}
+                </span>. Restoring system readiness triggers.
               </p>
               <p className="text-[13px] text-slate-550 mt-2 italic">
                 {motivational}
@@ -143,10 +164,13 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Time timeline indicator */}
+          {/* ── Dynamic duration indicator — NOT hardcoded to 180 ── */}
           <div className="lg:border-l border-navy-700/50 lg:pl-10 flex flex-col justify-center w-full lg:w-auto flex-shrink-0 pt-6 lg:pt-0 border-t lg:border-t-0">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Bootcamp Duration</span>
-            <p className="text-5xl font-extrabold text-white mt-2 tabular-nums tracking-tight">Day {bootcampDay || 1} <span className="text-[20px] text-slate-500 font-medium">/ 180</span></p>
+            <p className="text-5xl font-extrabold text-white mt-2 tabular-nums tracking-tight">
+              Day {bootcampDay || 1}{' '}
+              <span className="text-[20px] text-slate-500 font-medium">/ {totalDays}</span>
+            </p>
             <p className="text-[13px] text-slate-450 mt-2">{daysRemaining} days left after today</p>
             <ProgressBar percent={durationPercent} className="w-56 mt-4 h-2" />
           </div>
@@ -155,9 +179,10 @@ export default function Dashboard() {
 
       {/* ── Metric Indicators Deck ── */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* ── Dynamic readiness score — label from roadmap shortTitle ── */}
         <StatCard
-          label="Elliot Readiness"
-          value={`${readiness.elliot}%`}
+          label={readinessSectionTitle}
+          value={`${overallReadinessScore}%`}
           icon={({ className }) => <img src="/xcelerate-icon.png" alt="Xcelerate" className={`object-contain ${className}`} />}
           accentColor="cyan"
           helperText="Based on missions, proof, projects, and checkpoints."
@@ -185,38 +210,49 @@ export default function Dashboard() {
         />
       </div>
 
-      {/* ── Elliot Build Path progression map ── */}
-      <SectionCard title="Elliot Build Path Tracks" subtitle="Calculated based on readiness tags and weekly milestones completed.">
-        <div className="grid md:grid-cols-2 gap-6 pt-2">
-          {[
-            { label: 'JavaScript variables & core loops', value: readiness.javascript, desc: 'Weeks 1-8 Foundations', color: 'from-blue-500 to-accent-primary' },
-            { label: 'React interactive state components', value: readiness.react, desc: 'Weeks 9-12 User Interface', color: 'from-blue-600 to-accent-cyan' },
-            { label: 'Mobile Native framework layouts', value: readiness.mobile, desc: 'Weeks 13-16 Phone Interface', color: 'from-purple-600 to-pink-500' },
-            { label: 'Backend Database and Firebase Auth', value: readiness.backend, desc: 'Weeks 17-20 Storage & Server', color: 'from-amber-600 to-orange-500' },
-            { label: 'Product Builder & Capstone launch', value: readiness.product, desc: 'Weeks 21-24 Operational Release', color: 'from-pink-600 to-red-500' },
-            { label: 'Elliot Assembly Threshold integration', value: readiness.elliot, desc: 'Emotional Target Threshold', color: 'from-accent-cyan to-accent-primary' },
-          ].map((track) => (
-            <div key={track.label} className="bg-navy-900 p-5 rounded-2xl border border-navy-700/20 space-y-3">
-              <div className="flex justify-between items-start text-xs">
-                <div>
-                  <h4 className="font-bold text-white text-[14px]">{track.label}</h4>
-                  <p className="text-[12px] text-slate-450 mt-1 font-medium">{track.desc}</p>
+      {/* ── Dynamic Roadmap Build Tracks ── */}
+      {/* Rendered from readinessCategories in the active JSON — not hardcoded */}
+      {dynamicReadiness.length > 0 ? (
+        <SectionCard
+          title="Roadmap Tracks"
+          subtitle={`${roadmapShortTitle} readiness · Calculated from weekly missions and resource progress.`}
+        >
+          <div className="grid md:grid-cols-2 gap-6 pt-2">
+            {dynamicReadiness.map((cat) => (
+              <div key={cat.id} className="bg-navy-900 p-5 rounded-2xl border border-navy-700/20 space-y-3">
+                <div className="flex justify-between items-start text-xs">
+                  <div>
+                    <h4 className="font-bold text-white text-[14px]">{cat.title}</h4>
+                    {cat.description && (
+                      <p className="text-[12px] text-slate-450 mt-1 font-medium leading-snug">{cat.description}</p>
+                    )}
+                  </div>
+                  <span className="font-mono font-bold text-slate-350 bg-navy-850 px-2 py-0.5 rounded border border-navy-700/40 text-[12px]">
+                    {cat.percent}%
+                  </span>
                 </div>
-                <span className="font-mono font-bold text-slate-350 bg-navy-850 px-2 py-0.5 rounded border border-navy-700/40 text-[12px]">
-                  {track.value}%
-                </span>
+                <ProgressBar percent={cat.percent} colorClass={`bg-gradient-to-r ${cat.color}`} />
               </div>
-              <ProgressBar percent={track.value} colorClass={`bg-gradient-to-r ${track.color}`} />
-            </div>
-          ))}
-        </div>
-      </SectionCard>
+            ))}
+          </div>
+        </SectionCard>
+      ) : (
+        // Fallback if the roadmap has no readinessCategories
+        <SectionCard
+          title="Roadmap Tracks"
+          subtitle="No readiness categories defined in the active roadmap."
+        >
+          <p className="text-sm text-slate-500 py-4 text-center">
+            Import a roadmap JSON that includes <code className="text-accent-primary bg-navy-700 px-1.5 py-0.5 rounded font-mono text-xs">readinessCategories</code> to see dynamic progress tracks here.
+          </p>
+        </SectionCard>
+      )}
 
       {/* ── Current Month Timeline select grid ── */}
       {currentMonth && (
         <SectionCard
           title={`Active Month Index — ${currentMonth.monthNumber}`}
-          subtitle={`${currentMonth.title} · ${currentMonth.objective}`}
+          subtitle={`${currentMonth.title} · ${currentMonth.objective || currentMonth.theme || ''}`}
           headerActions={
             <Link to="/timeline" className="text-[13px] text-accent-primary font-bold uppercase tracking-wider hover:underline flex items-center gap-1">
               Timeline view <ChevronRight className="w-3.5 h-3.5" />

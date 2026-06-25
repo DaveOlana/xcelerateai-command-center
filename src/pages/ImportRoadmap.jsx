@@ -32,6 +32,7 @@ export default function ImportRoadmap() {
         const result = validateRoadmapJSON(data);
         setValidationResult(result);
         if (result.valid) {
+          // Store the raw JSON; AppContext.importRoadmap will normalize it
           setPendingData(result.normalizedData);
         }
         setShowSummary(true);
@@ -187,19 +188,22 @@ export default function ImportRoadmap() {
             <div className="space-y-4">
               {/* Summary Grid */}
               {validationResult.valid && (
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {[
                     { label: 'Months', value: validationResult.summary.months, color: 'text-accent-primary' },
                     { label: 'Weeks', value: validationResult.summary.weeks, color: 'text-blue-400' },
-                    { label: 'Curated Resources', value: validationResult.summary.resources, color: 'text-amber-400' },
-                    { label: 'Scheduled Sessions', value: validationResult.summary.sessions, color: 'text-purple-400' },
-                    { label: 'Practical Missions', value: validationResult.summary.practicalMissions, color: 'text-cyan-400' },
-                    { label: 'Tracker Projects', value: validationResult.summary.projects, color: 'text-pink-400' },
-                    { label: 'Checkpoints', value: validationResult.summary.checkpoints, color: 'text-blue-400' },
+                    { label: 'Study Resources', value: validationResult.summary.studyResources ?? validationResult.summary.resources, color: 'text-amber-400' },
+                    { label: 'Skill Check Qs', value: validationResult.summary.skillCheckQuestions ?? 0, color: 'text-cyan-400' },
+                    { label: 'Practical Missions', value: validationResult.summary.practicalMissions, color: 'text-pink-400' },
+                    { label: 'Proof Items', value: validationResult.summary.proofItems ?? 0, color: 'text-purple-400' },
+                    { label: 'Reflection Prompts', value: validationResult.summary.reflectionPrompts ?? 0, color: 'text-teal-400' },
+                    { label: 'Scheduled Sessions', value: validationResult.summary.scheduledSessions ?? validationResult.summary.sessions, color: 'text-orange-400' },
                     { label: 'Readiness Categories', value: validationResult.summary.readinessCategories, color: 'text-rose-400' },
+                    { label: 'Projects', value: validationResult.summary.projects, color: 'text-emerald-400' },
+                    { label: 'Checkpoints', value: validationResult.summary.checkpoints, color: 'text-blue-400' },
                   ].map(({ label, value, color }) => (
                     <div key={label} className="bg-navy-800 rounded-lg p-3 text-center border border-navy-400">
-                      <p className={`text-xl font-bold ${color}`}>{value}</p>
+                      <p className={`text-xl font-bold ${color}`}>{value ?? '—'}</p>
                       <p className="text-xs text-slate-500 mt-0.5">{label}</p>
                     </div>
                   ))}

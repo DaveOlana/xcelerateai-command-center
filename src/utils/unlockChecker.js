@@ -9,17 +9,34 @@
  * Known week-level fields (used to detect unknown/extra JSON fields)
  */
 export const KNOWN_WEEK_FIELDS = [
-  'weekNumber', 'title', 'briefing', 'minimumMission', 'fullMission',
-  'resources', 'tasks', 'checkpoint', 'deliverable', 'practicalMissions',
-  'sessions', 'skillCheck', 'unlockCriteria', 'required'
+  // Identity
+  'weekNumber', 'weekId', 'id', 'monthId', 'monthNumber',
+  // Display
+  'title', 'displayLabel', 'goal', 'objective', 'briefing',
+  'minimumMission', 'fullMission', 'deliverable', 'elliotConnection',
+  // Time
+  'timeEstimate', 'estimatedHours', 'estimatedData', 'hours', 'dataEstimate',
+  // Canonical fields (new schema)
+  'studyResources', 'skillCheck', 'practicalMissions', 'proofOfWork',
+  'reflectionPrompts', 'reflectionPrompt', 'unlockCriteria', 'scheduledSessions',
+  'frontendIntegration',
+  // Backward-compat aliases
+  'resources', 'tasks', 'checkpoint', 'sessions',
+  // Old schema
+  'missions', 'buildTasks', 'practicalTasks', 'proof', 'deliverables',
+  'reflection', 'reflections', 'unlock', 'completionCriteria',
+  'resourcesBeforeTask', 'study',
+  // Misc
+  'required', '_raw',
 ];
 
 /**
- * Known resource-level fields
+ * Known resource-level fields (supports both old and new schemas)
  */
 export const KNOWN_RESOURCE_FIELDS = [
-  'title', 'url', 'type', 'difficulty', 'whatToExpect', 'missionObjective',
-  'required', 'timeEstimate', 'dataEstimate', 'lowData'
+  'id', 'title', 'url', 'type', 'difficulty', 'whatToExpect', 'missionObjective',
+  'required', 'timeEstimate', 'estimatedTime', 'dataEstimate', 'lowData',
+  'purpose', 'teaches',
 ];
 
 /**
@@ -30,7 +47,13 @@ export const KNOWN_RESOURCE_FIELDS = [
  */
 export function getRequiredResources(week) {
   if (!week) return [];
-  const resources = Array.isArray(week.resources) ? week.resources : [];
+  // Support both canonical studyResources and legacy resources alias
+  const resources =
+    Array.isArray(week.studyResources) ? week.studyResources :
+    Array.isArray(week.resources)      ? week.resources :
+    Array.isArray(week.resourcesBeforeTask) ? week.resourcesBeforeTask :
+    Array.isArray(week.study)          ? week.study :
+    [];
   const hasAnyExplicit = resources.some(r => r && r.required === true);
   if (hasAnyExplicit) {
     return resources.filter(r => r && r.required === true);
@@ -213,7 +236,12 @@ export function getWeekStepStatus({
   const proofDone = isWeekProofSubmitted(weekNum, weekProofs);
   const reflectionDone = isWeekReflectionWritten(weekNum, weekReflections);
 
-  const hasResources = Array.isArray(week.resources) && week.resources.length > 0;
+  // Support both canonical studyResources and legacy resources alias
+  const resolvedResources =
+    Array.isArray(week.studyResources) ? week.studyResources :
+    Array.isArray(week.resources)      ? week.resources :
+    [];
+  const hasResources = resolvedResources.length > 0;
   const hasSkillCheck = !!(week.skillCheck || week.checkpoint);
   const hasPracticals = Array.isArray(week.practicalMissions) && week.practicalMissions.length > 0;
 
