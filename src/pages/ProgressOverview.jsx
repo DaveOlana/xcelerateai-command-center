@@ -90,7 +90,7 @@ export default function ProgressOverview() {
               value={bootcampDay || 1} 
               icon={Calendar} 
               helperText={`of ${totalDays} total days`}
-              accentColor="green"
+              accentColor="blue"
             />
             <StatCard 
               label="Days Remaining" 

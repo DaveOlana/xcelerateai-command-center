@@ -477,10 +477,10 @@ export default function NotesJournal() {
 
                       {/* Display linked items tags */}
                       {note.linkedWeek && (
-                        <span className="badge-slate font-mono text-xs">Week {note.linkedWeek}</span>
+                        <span className="badge-slate text-xs">Week {note.linkedWeek}</span>
                       )}
                       {note.linkedMission && (
-                        <span className="badge-slate font-mono text-xs">Mission {note.linkedMission}</span>
+                        <span className="badge-slate text-xs">Mission {note.linkedMission}</span>
                       )}
                       {note.linkedResource && (
                         <span className="badge-slate text-xs max-w-[120px] truncate" title={note.linkedResource}>
@@ -488,12 +488,12 @@ export default function NotesJournal() {
                         </span>
                       )}
                       {linkedBlockerObj && (
-                        <span className="bg-red-500/10 text-red-400 border border-red-500/20 text-xs px-1.5 py-0.5 rounded font-mono truncate max-w-[120px]" title={linkedBlockerObj.title}>
+                        <span className="bg-red-500/10 text-red-400 border border-red-500/20 text-xs px-1.5 py-0.5 rounded truncate max-w-[120px]" title={linkedBlockerObj.title}>
                           Blocker: {linkedBlockerObj.title}
                         </span>
                       )}
                       {linkedProjectObj && (
-                        <span className="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs px-1.5 py-0.5 rounded font-mono truncate max-w-[120px]" title={linkedProjectObj.name}>
+                        <span className="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs px-1.5 py-0.5 rounded truncate max-w-[120px]" title={linkedProjectObj.name}>
                           Project: {linkedProjectObj.name}
                         </span>
                       )}

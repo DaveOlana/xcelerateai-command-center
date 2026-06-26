@@ -200,7 +200,7 @@ export default function ResourceVault() {
               Low Data Assets Only
             </button>
 
-            <div className="flex items-center gap-3 font-mono">
+            <div className="flex items-center gap-3">
               <p className="text-[13px] text-slate-500">
                 Found <span className="text-white font-bold">{filtered.length}</span> / {allResources.length} items
               </p>
@@ -242,10 +242,10 @@ export default function ResourceVault() {
                 <div>
                   {/* Top meta badges */}
                   <div className="flex items-center gap-2 flex-wrap mb-3">
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-bold uppercase tracking-wider ${TYPE_COLORS[res.type] || 'bg-navy-700 text-slate-400 border-navy-500/50'}`}>
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider ${TYPE_COLORS[res.type] || 'bg-navy-700 text-slate-400 border-navy-500/50'}`}>
                       {res.type}
                     </span>
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-bold uppercase tracking-wider border ${DIFFICULTY_COLORS[res.difficulty] || 'bg-navy-700 text-slate-400 border-navy-500/50'}`}>
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider border ${DIFFICULTY_COLORS[res.difficulty] || 'bg-navy-700 text-slate-400 border-navy-500/50'}`}>
                       {res.difficulty}
                     </span>
                     {(res.timeEstimate || res.estimatedTime) && (
@@ -263,7 +263,7 @@ export default function ResourceVault() {
                   <h3 className="font-bold text-white text-sm mb-1 group-hover:text-accent-primary transition-colors">
                     {res.title}
                   </h3>
-                  <p className="text-xs text-slate-500 font-mono mb-2">{res.weekTitle}</p>
+                  <p className="text-xs text-slate-500 mb-2">{res.weekTitle}</p>
 
                   {/* Expectation info */}
                   {res.whatToExpect && (
