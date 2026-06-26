@@ -35,7 +35,20 @@ export default function Dashboard() {
     notes,
     weekReflections,
     skillChecks,
+    exportProgress,
   } = useApp();
+
+  const [hideBackupBannerLocal, setHideBackupBannerLocal] = React.useState(false);
+
+  // Synchronously ensure session ID exists
+  const sessionId = React.useMemo(() => {
+    let sId = sessionStorage.getItem('xai_session_id');
+    if (!sId) {
+      sId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('xai_session_id', sId);
+    }
+    return sId;
+  }, []);
 
   const prog = calculateOverallProgress(roadmap, progress, checkpointStatuses);
   const activeWeekData = getActiveWeekData(roadmap, settings.activeWeek);
@@ -64,10 +77,20 @@ export default function Dashboard() {
 
   // ── Backup Reminder ────────────────────────────────────────────────────────
   const showBackupReminder = React.useMemo(() => {
+    if (hideBackupBannerLocal) return false;
+
+    // Check snooze
+    const snoozedUntil = localStorage.getItem('xai_backup_banner_snoozed_until');
+    if (snoozedUntil && Date.now() < Number(snoozedUntil)) return false;
+
+    // Check session dismissal
+    const dismissedSession = localStorage.getItem('xai_backup_banner_dismissed_session');
+    if (dismissedSession && dismissedSession === sessionId) return false;
+
     const needsBackup = !settings.lastBackupDate || (Date.now() - new Date(settings.lastBackupDate).getTime() > 7 * 24 * 60 * 60 * 1000);
     if (!needsBackup) return false;
     return bootcampDay >= 7 || prog.tasks.completed > 3 || (Array.isArray(progress.completedWeeks) ? progress.completedWeeks : []).length >= 1;
-  }, [settings.lastBackupDate, bootcampDay, prog.tasks.completed, progress.completedWeeks]);
+  }, [settings.lastBackupDate, bootcampDay, prog.tasks.completed, progress.completedWeeks, hideBackupBannerLocal, sessionId]);
 
   // ── Proof status checks ────────────────────────────────────────────────────
   const isProofMissingForActiveWeek = React.useMemo(() => {
@@ -154,17 +177,43 @@ export default function Dashboard() {
     <PageShell>
       {/* ── Backup Export Reminder Banner ── */}
       {showBackupReminder && (
-        <div className="flex items-center justify-between gap-4 p-5 bg-brand-amber/5 border border-brand-amber/20 rounded-radius-xxl animate-fade-in">
-          <div className="flex items-center gap-3">
-            <AlertTriangle className="w-5 h-5 text-brand-amber flex-shrink-0" />
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-5 bg-brand-amber/5 border border-brand-amber/20 rounded-radius-xxl animate-fade-in">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-brand-amber flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-xs font-bold text-white uppercase tracking-wider">Backup Export Required</p>
-              <p className="text-[14px] text-text-secondary mt-1">Please export your database progress backup under settings to prevent data loss.</p>
+              <p className="text-xs font-bold text-white uppercase tracking-wider">Backup Export Recommended</p>
+              <p className="text-[14px] text-text-secondary mt-1">Safeguard your progress. Export your database backup file now to prevent accidental data loss.</p>
             </div>
           </div>
-          <Link to="/settings" className="btn-secondary py-2 px-4 text-xs font-bold bg-brand-amber/10 border-brand-amber/25 text-brand-amber whitespace-nowrap hover:bg-brand-amber/20">
-            Backup Now
-          </Link>
+          <div className="flex items-center gap-2 w-full md:w-auto justify-end flex-wrap sm:flex-nowrap">
+            <button
+              onClick={() => {
+                exportProgress();
+                setHideBackupBannerLocal(true);
+              }}
+              className="px-4 py-2 rounded-xl text-xs font-bold bg-brand-amber text-navy-900 hover:bg-brand-amber/90 transition-all whitespace-nowrap active:scale-95"
+            >
+              Backup Now
+            </button>
+            <button
+              onClick={() => {
+                localStorage.setItem('xai_backup_banner_snoozed_until', (Date.now() + 24 * 60 * 60 * 1000).toString());
+                setHideBackupBannerLocal(true);
+              }}
+              className="px-4 py-2 rounded-xl text-xs font-bold bg-navy-800 border border-navy-700 text-slate-350 hover:bg-navy-750 hover:text-white transition-all whitespace-nowrap active:scale-95"
+            >
+              Remind Me Later
+            </button>
+            <button
+              onClick={() => {
+                localStorage.setItem('xai_backup_banner_dismissed_session', sessionId);
+                setHideBackupBannerLocal(true);
+              }}
+              className="px-3 py-2 rounded-xl text-xs font-semibold text-slate-500 hover:text-slate-350 transition-all whitespace-nowrap"
+            >
+              Dismiss
+            </button>
+          </div>
         </div>
       )}
 
