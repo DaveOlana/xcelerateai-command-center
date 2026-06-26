@@ -199,7 +199,7 @@ export default function ImportRoadmap() {
                     { label: 'Reflection Prompts', value: validationResult.summary.reflectionPrompts ?? 0, color: 'text-teal-400', icon: Zap },
                     { label: 'Scheduled Sessions', value: validationResult.summary.scheduledSessions ?? validationResult.summary.sessions, color: 'text-orange-400', icon: Coffee },
                     { label: 'Readiness Categories', value: validationResult.summary.readinessCategories, color: 'text-rose-400', icon: BarChart2 },
-                    { label: 'Projects', value: validationResult.summary.projects, color: 'text-emerald-400', icon: Award },
+                    { label: 'Projects', value: validationResult.summary.projects, color: 'text-violet-400', icon: Award },
                     { label: 'Checkpoints', value: validationResult.summary.checkpoints, color: 'text-blue-400', icon: Shield },
                   ].map(({ label, value, color, icon: Icon }) => (
                     <div key={label} className="bg-navy-850/60 border border-navy-750/30 rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm hover:border-navy-450 transition-colors">

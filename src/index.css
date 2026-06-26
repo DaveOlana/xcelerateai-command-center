@@ -3,10 +3,82 @@
 @tailwind utilities;
 
 /* =============================================
+   DESIGN TOKENS & VARIABLES
+   ============================================= */
+:root {
+  /* Backgrounds */
+  --bg-app: #080B16;            /* Deep navy base */
+  --bg-page: #0C0F1E;           /* Slightly lighter page background */
+  --bg-surface: #121829;        /* Standard card surface */
+  --bg-elevated: #172033;       /* Elevated card / popover */
+  --bg-soft: #1C263B;           /* Softer inset panels */
+  --bg-overlay: rgba(8, 11, 22, 0.85); /* Modal overlay backdrops */
+
+  /* Text Colors */
+  --text-primary: #F8FAFC;       /* Off-white */
+  --text-secondary: #CBD5E1;     /* Soft slate text */
+  --text-muted: #94A3B8;         /* Muted grey */
+  --text-disabled: #475569;      /* Disabled text color */
+  --text-inverse: #080B16;       /* Reverse/contrasting color */
+
+  /* Borders */
+  --border-default: rgba(148, 163, 184, 0.12); /* Default card/component border */
+  --border-strong: rgba(148, 163, 184, 0.25);  /* Hover/focus border strength */
+  --border-focus: #2563EB;                     /* Focus accent */
+  --border-divider: rgba(148, 163, 184, 0.08); /* Divider/lines */
+
+  /* Brand / Status */
+  --color-brand: #2563EB;       /* Brand Blue primary */
+  --color-focus: #06B6D4;       /* Active Learning Focus Cyan */
+  --color-project: #8B5CF6;     /* Project Violet */
+  --color-success: #10B981;     /* Success Green */
+  --color-warning: #F59E0B;     /* Warning Amber */
+  --color-danger: #EF4444;      /* Danger/Error Red */
+  --color-neutral: #64748B;     /* Neutral Slate */
+
+  /* Spacing system variables */
+  --spacing-page-padding: 1.5rem;
+  --spacing-section-gap: 2rem;
+  --spacing-card-gap: 1.5rem;
+  --spacing-card-padding: 2rem;
+  --spacing-card-padding-compact: 1.25rem;
+  --spacing-modal-padding: 2.25rem;
+  --spacing-sidebar-gap: 0.75rem;
+
+  /* Heights */
+  --height-input: 3rem;
+  --height-button: 3rem;
+
+  /* Radius System */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-xxl: 1.5rem;         /* For premium card components */
+}
+
+/* =============================================
    BASE STYLES
    ============================================= */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }
 
 html {
@@ -17,13 +89,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #080B16; /* App background - navy-950 */
-  color: #F8FAFC;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
   font-size: 15px; /* Premium slightly larger default text size */
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', 'Plus Jakarta Sans', 'Inter', sans-serif;
 }
 
 #root {

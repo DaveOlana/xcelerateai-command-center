@@ -32,11 +32,50 @@ export default {
           complete: '#10B981', // Strictly Green for success/complete
           warning: '#F59E0B',
           error: '#EF4444',
+        },
+        // Semantic design tokens
+        bg: {
+          app: 'var(--bg-app)',
+          page: 'var(--bg-page)',
+          surface: 'var(--bg-surface)',
+          elevated: 'var(--bg-elevated)',
+          soft: 'var(--bg-soft)',
+          overlay: 'var(--bg-overlay)',
+        },
+        text: {
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          muted: 'var(--text-muted)',
+          disabled: 'var(--text-disabled)',
+          inverse: 'var(--text-inverse)',
+        },
+        border: {
+          default: 'var(--border-default)',
+          strong: 'var(--border-strong)',
+          focus: 'var(--border-focus)',
+          divider: 'var(--border-divider)',
+        },
+        brand: {
+          blue: 'var(--color-brand)',
+          cyan: 'var(--color-focus)',
+          violet: 'var(--color-project)',
+          green: 'var(--color-success)',
+          amber: 'var(--color-warning)',
+          red: 'var(--color-danger)',
+          slate: 'var(--color-neutral)',
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Manrope', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+      },
+      borderRadius: {
+        'radius-sm': 'var(--radius-sm)',
+        'radius-md': 'var(--radius-md)',
+        'radius-lg': 'var(--radius-lg)',
+        'radius-xl': 'var(--radius-xl)',
+        'radius-xxl': 'var(--radius-xxl)',
       },
       backgroundImage: {
         'grid-pattern': "linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px)",
