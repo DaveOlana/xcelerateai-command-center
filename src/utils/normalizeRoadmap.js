@@ -290,6 +290,155 @@ function resolveUnlockCriteria(item) {
   return [];
 }
 
+// ─── normalizeMilestone ──────────────────────────────────────────────────────
+/**
+ * Normalize a single milestone into a canonical object.
+ * Supports string milestones and rich milestone objects with various field names.
+ */
+export function normalizeMilestone(raw, index) {
+  if (!raw && raw !== 0) {
+    return { id: `milestone-${index}`, title: 'Untitled milestone', description: '', status: 'not-started' };
+  }
+  if (typeof raw === 'string') {
+    return { id: `milestone-${index}`, title: raw, description: '', status: 'not-started' };
+  }
+  if (typeof raw === 'number') {
+    return { id: `milestone-${index}`, title: String(raw), description: '', status: 'not-started' };
+  }
+  if (typeof raw === 'object' && raw !== null) {
+    const title =
+      raw.title || raw.name || raw.label || raw.milestone || raw.deliverable || raw.step || `Milestone ${index + 1}`;
+    const description =
+      raw.description || raw.brief || raw.summary || raw.details || raw.objective || '';
+    const status =
+      raw.status || raw.state || 'not-started';
+    return {
+      id: raw.id || raw.milestoneId || `milestone-${index}`,
+      title: typeof title === 'string' ? title : String(title),
+      description: typeof description === 'string' ? description : String(description),
+      status: typeof status === 'string' ? status : 'not-started',
+      // Pass through any extra fields the roadmap author provided
+      ...(raw.dueDate ? { dueDate: raw.dueDate } : {}),
+      ...(raw.proof ? { proof: raw.proof } : {}),
+      ...(raw.evidence ? { evidence: raw.evidence } : {}),
+      ...(raw.repositoryLink || raw.repoLink ? { repositoryLink: raw.repositoryLink || raw.repoLink } : {}),
+    };
+  }
+  return { id: `milestone-${index}`, title: String(raw), description: '', status: 'not-started' };
+}
+
+// ─── normalizeProject ────────────────────────────────────────────────────────
+/**
+ * Normalize a single project into the canonical internal structure.
+ * Resolves milestone aliases: milestones, buildMilestones, deliverables, steps, tasks, phases
+ */
+export function normalizeProject(raw, index) {
+  if (!raw || typeof raw !== 'object') {
+    return {
+      id: `project-${index}`,
+      name: `Project ${index + 1}`,
+      title: `Project ${index + 1}`,
+      description: '',
+      milestones: [],
+      _milestonesSupplied: false,
+    };
+  }
+
+  const name =
+    raw.name || raw.title || raw.projectName || raw.label || `Project ${index + 1}`;
+  const description =
+    raw.description || raw.brief || raw.summary || raw.objective || '';
+
+  // Resolve milestones from aliases
+  const rawMilestones =
+    Array.isArray(raw.milestones)       ? raw.milestones :
+    Array.isArray(raw.buildMilestones)  ? raw.buildMilestones :
+    Array.isArray(raw.deliverables)     ? raw.deliverables :
+    Array.isArray(raw.steps)            ? raw.steps :
+    Array.isArray(raw.tasks)            ? raw.tasks :
+    Array.isArray(raw.phases)           ? raw.phases :
+    Array.isArray(raw.outcomes)         ? raw.outcomes :
+    Array.isArray(raw.goals)            ? raw.goals :
+    null;
+
+  const milestonesSupplied = rawMilestones !== null;
+  const milestones = (rawMilestones || []).map((m, mi) => normalizeMilestone(m, mi));
+
+  return {
+    id: raw.id || raw.projectId || `project-${index}`,
+    name: typeof name === 'string' ? name : String(name),
+    title: typeof name === 'string' ? name : String(name),
+    description: typeof description === 'string' ? description : String(description),
+    milestones,
+    _milestonesSupplied: milestonesSupplied,
+    // Pass-through fields
+    ...(raw.repositoryUrl || raw.githubUrl ? { repositoryUrl: raw.repositoryUrl || raw.githubUrl } : {}),
+    ...(raw.featured !== undefined ? { featured: raw.featured } : {}),
+    ...(raw.capstone !== undefined ? { capstone: raw.capstone } : {}),
+    ...(raw.category ? { category: raw.category } : {}),
+    ...(raw.track ? { track: raw.track } : {}),
+    ...(raw.weekRange ? { weekRange: raw.weekRange } : {}),
+    ...(raw.relatedWeeks ? { relatedWeeks: raw.relatedWeeks } : {}),
+  };
+}
+
+// ─── normalizeCheckpoint ─────────────────────────────────────────────────────
+/**
+ * Normalize a single checkpoint into the canonical internal structure.
+ * Supports various field names for skill, question, and related metadata.
+ */
+export function normalizeCheckpoint(raw, index) {
+  if (!raw || typeof raw !== 'object') {
+    return {
+      id: `checkpoint-${index}`,
+      skill: `Untitled skill checkpoint`,
+      question: '',
+      statusOptions: ['Not yet', 'Learning', 'Confident'],
+      _titleMissing: true,
+    };
+  }
+
+  // Resolve skill/title
+  const skill =
+    raw.skill || raw.skillName || raw.title || raw.name ||
+    raw.label || raw.checkpointTitle || raw.competency || null;
+  const titleMissing = !skill;
+  const finalSkill = skill || `Untitled skill checkpoint`;
+
+  // Resolve question/prompt
+  const question =
+    raw.question || raw.prompt || raw.description ||
+    raw.assessment || raw.criteria || raw.benchmark || '';
+
+  // Resolve related weeks
+  const relatedWeeks =
+    Array.isArray(raw.relatedWeeks) ? raw.relatedWeeks :
+    Array.isArray(raw.weeks) ? raw.weeks :
+    Array.isArray(raw.weekIds) ? raw.weekIds :
+    [];
+
+  const statusOptions =
+    Array.isArray(raw.statusOptions) ? raw.statusOptions :
+    ['Not yet', 'Learning', 'Confident'];
+
+  return {
+    id: raw.id || raw.checkpointId || `checkpoint-${index}`,
+    skill: typeof finalSkill === 'string' ? finalSkill : String(finalSkill),
+    question: typeof question === 'string' ? question : String(question),
+    statusOptions,
+    relatedWeeks,
+    _titleMissing: titleMissing,
+    // Pass-through
+    ...(raw.category ? { category: raw.category } : {}),
+    ...(raw.track ? { track: raw.track } : {}),
+    ...(raw.month ? { month: raw.month } : {}),
+    ...(raw.weekNumber ? { weekNumber: raw.weekNumber } : {}),
+    ...(raw.proof ? { proof: raw.proof } : {}),
+    ...(raw.evidence ? { evidence: raw.evidence } : {}),
+    ...(raw.confidence ? { confidence: raw.confidence } : {}),
+  };
+}
+
 // ─── normalizeWeek ───────────────────────────────────────────────────────────
 /**
  * Normalize a single raw week/module/topic/session object into the canonical
@@ -806,15 +955,18 @@ export function normalizeRoadmap(raw) {
     ? raw.readinessCategories
     : [];
 
-  // ── Projects ──────────────────────────────────────────────────────────────
-  const projects = Array.isArray(raw.projects) ? raw.projects :
+  // ── Projects (deep normalization) ──────────────────────────────────────────
+  const rawProjects = Array.isArray(raw.projects) ? raw.projects :
     Array.isArray(raw.certificationTargets) ? raw.certificationTargets :
     [];
+  const projects = rawProjects.map((p, pi) => normalizeProject(p, pi));
 
-  // ── Checkpoints ───────────────────────────────────────────────────────────
-  const checkpoints = Array.isArray(raw.checkpoints) ? raw.checkpoints :
+  // ── Checkpoints (deep normalization) ───────────────────────────────────────
+  const rawCheckpoints = Array.isArray(raw.checkpoints) ? raw.checkpoints :
+    Array.isArray(raw.skillCheckpoints) ? raw.skillCheckpoints :
     Array.isArray(raw.certificationTargets) ? raw.certificationTargets :
     [];
+  const checkpoints = rawCheckpoints.map((cp, ci) => normalizeCheckpoint(cp, ci));
 
   const finalScope = raw.finalBackendScope || raw.finalScope || null;
   const programStats = raw.programStats || {};
@@ -858,6 +1010,9 @@ export function normalizeRoadmap(raw) {
 
     // Source type
     sourceType: raw.schemaVersion ? 'xcelerate-schema' : 'custom',
+
+    // Internal schema version (separate from author's schemaVersion)
+    _normalizedSchemaVersion: 1,
 
     // Backward-compat aliases
     bootcampTitle: title,

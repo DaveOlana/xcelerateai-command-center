@@ -220,7 +220,7 @@ export default function Settings() {
           </label>
           <input
             type="text"
-            placeholder="e.g. Lemont"
+            placeholder="e.g. Coach, Mentor, Tolu"
             value={settings?.mentorName || ''}
             onChange={(e) => updateSettings({ mentorName: e.target.value })}
             className="input-base w-full text-sm"
@@ -377,7 +377,7 @@ export default function Settings() {
           Data Backups & Recovery
         </h2>
         <p className="text-xs text-slate-500">
-          Save your database as a portable JSON file. Dave recommends backing up before importing new roadmaps.
+          Save your database as a portable JSON file. It is highly recommended to backup before importing new roadmaps.
         </p>
 
         {settings?.lastBackupDate && (
@@ -479,7 +479,7 @@ export default function Settings() {
             <div className="space-y-1">
               <p className="text-sm font-semibold text-white">Reset Custom Roadmap Schema</p>
               <p className="text-xs text-slate-500">
-                Restore the baseline 6-Month JavaScript Mobile Ops sample. Wipes custom roadmap configurations.
+                Restore the baseline sample roadmap. Wipes custom roadmap configurations.
               </p>
             </div>
             <button

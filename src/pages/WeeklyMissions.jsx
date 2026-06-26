@@ -51,6 +51,9 @@ export default function WeeklyMissions() {
 
   const navigate = useNavigate();
 
+  const roadmapTitle = roadmap?.title || roadmap?.bootcampTitle || 'Active Roadmap';
+  const roadmapShortTitle = roadmap?.shortTitle || roadmapTitle;
+
   const allWeeks = useMemo(() => {
     const list = [];
     roadmap?.months?.forEach((m) => {
@@ -452,7 +455,7 @@ export default function WeeklyMissions() {
         {week.elliotConnection && (
           <div className="mt-4 pt-4 border-t border-navy-400/50 bg-accent-cyan/5 -mx-4 px-4 py-3 border-b border-accent-cyan/10">
             <p className="text-xs text-accent-cyan font-bold uppercase tracking-wider flex items-center gap-1">
-               Elliot Connection
+               {roadmapShortTitle} Connection
             </p>
             <p className="text-xs text-slate-300 mt-1 leading-relaxed">{week.elliotConnection}</p>
           </div>
@@ -653,7 +656,7 @@ export default function WeeklyMissions() {
 
             {week.elliotConnection && (
               <div className="card border-accent-cyan/20 bg-accent-cyan/5">
-                <h3 className="text-xs font-bold text-accent-cyan mb-2 uppercase tracking-wide"> Elliot Product Connection</h3>
+                <h3 className="text-xs font-bold text-accent-cyan mb-2 uppercase tracking-wide"> {roadmapShortTitle} Product Connection</h3>
                 <p className="text-xs text-slate-300 leading-relaxed">{week.elliotConnection}</p>
               </div>
             )}
@@ -1172,7 +1175,7 @@ export default function WeeklyMissions() {
                     rows={5}
                     value={refAns}
                     onChange={(e) => setRefAns(e.target.value)}
-                    placeholder="What was the most important concept you learned this week? How does this skill push you closer to building Elliot V1?"
+                    placeholder={`What was the most important concept you learned this week? How does this skill push you closer to building ${roadmapShortTitle}?`}
                     className="input-base w-full text-sm"
                     required
                   />

@@ -9,8 +9,9 @@ export default function ProgressOverview() {
   const { roadmap, progress, checkpointStatuses, settings, streak } = useApp();
 
   const prog = calculateOverallProgress(roadmap, progress, checkpointStatuses);
+  const totalDays = roadmap?.totalDays || 180;
   const bootcampDay = getBootcampDay(settings.startDate);
-  const daysRemaining = getDaysRemaining(settings.startDate);
+  const daysRemaining = getDaysRemaining(settings.startDate, totalDays);
 
   return (
     <PageShell>
@@ -62,7 +63,7 @@ export default function ProgressOverview() {
             {[
               { label: 'Study & Practical Tasks', percent: prog.tasks.percent, detail: `${prog.tasks.completed} of ${prog.tasks.total} checklist items resolved`, weight: '50% weight', color: 'bg-gradient-to-r from-accent-primary to-blue-500' },
               { label: 'Skill Checkpoints', percent: prog.checkpoints.percent, detail: `${prog.checkpoints.confident} confident targets, ${prog.checkpoints.learning} active reviews`, weight: '30% weight', color: 'bg-gradient-to-r from-amber-500 to-orange-500' },
-              { label: 'Project Milestones', percent: prog.projects.percent, detail: `${prog.projects.completed} of ${prog.projects.total} critical portfolio completions`, weight: '20% weight', color: 'bg-gradient-to-r from-accent-cyan to-blue-500' },
+              { label: 'Project Milestones', percent: prog.projects.percent, detail: `${prog.projects.completed} of ${prog.projects.total} critical portfolio portfolio completions`, weight: '20% weight', color: 'bg-gradient-to-r from-accent-cyan to-blue-500' },
             ].map(({ label, percent, detail, weight, color }) => (
               <div key={label} className="group">
                 <div className="flex items-center justify-between mb-2">
@@ -88,7 +89,7 @@ export default function ProgressOverview() {
               label="Days in Bootcamp" 
               value={bootcampDay || 1} 
               icon={Calendar} 
-              helperText="of 180 total days"
+              helperText={`of ${totalDays} total days`}
               accentColor="green"
             />
             <StatCard 
@@ -119,63 +120,75 @@ export default function ProgressOverview() {
       {/* ── Month-by-Month Progress Track ── */}
       <SectionCard title="Month-by-Month Progress Overview" subtitle="Tracks showing completed syllabus segments.">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {roadmap?.months?.map((month) => {
-            const { taskPercent, completedTasks, totalTasks, completedWeeks: cw, totalWeeks: tw } = getMonthProgress(month, progress);
-            const isActive = month.monthNumber === settings.activeMonth;
+          {!roadmap?.months || roadmap.months.length === 0 ? (
+            <div className="col-span-full text-center py-8 text-slate-500 italic">
+              No syllabus segments defined in this roadmap.
+            </div>
+          ) : (
+            roadmap.months.map((month) => {
+              const { taskPercent, completedTasks, totalTasks, completedWeeks: cw, totalWeeks: tw } = getMonthProgress(month, progress);
+              const isActive = month.monthNumber === settings.activeMonth;
 
-            return (
-              <div key={month.monthNumber} className={`p-5 rounded-2xl border transition-all ${isActive ? 'bg-navy-800 border-accent-primary/25' : 'bg-navy-900 border-navy-700/25'}`}>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-                      M{month.monthNumber}: {month.title}
-                    </span>
-                    {isActive && <span className="bg-accent-primary/10 text-accent-primary border border-accent-primary/25 text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider">Active</span>}
+              return (
+                <div key={month.monthNumber} className={`p-5 rounded-2xl border transition-all ${isActive ? 'bg-navy-800 border-accent-primary/25' : 'bg-navy-900 border-navy-700/25'}`}>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        M{month.monthNumber}: {month.title}
+                      </span>
+                      {isActive && <span className="bg-accent-primary/10 text-accent-primary border border-accent-primary/25 text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider">Active</span>}
+                    </div>
+                    <span className="text-sm font-mono font-bold text-slate-350">{taskPercent}%</span>
                   </div>
-                  <span className="text-sm font-mono font-bold text-slate-350">{taskPercent}%</span>
+                  <ProgressBar percent={taskPercent} />
+                  <p className="text-[13px] text-slate-450 mt-3">
+                    {completedTasks}/{totalTasks} Tasks Completed · {cw}/{tw} Weeks Complete
+                  </p>
                 </div>
-                <ProgressBar percent={taskPercent} />
-                <p className="text-[13px] text-slate-450 mt-3">
-                  {completedTasks}/{totalTasks} Tasks Completed · {cw}/{tw} Weeks Complete
-                </p>
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
       </SectionCard>
 
       {/* ── Confidence Grid ── */}
-      <SectionCard title="Syllabus Skills Confidence Tracker" subtitle="Self-assessed status tags for core JavaScript, Native UI, and Firebase concepts.">
+      <SectionCard title="Syllabus Skills Confidence Tracker" subtitle="Self-assessed status tags for core skill concepts.">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {roadmap?.checkpoints?.map((cp, i) => {
-            const status = checkpointStatuses[cp.skill]?.status || 'Not yet';
-            
-            let statusStyles = "";
-            let dotStyles = "";
-            if (status === 'Confident') {
-              statusStyles = "bg-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/30";
-              dotStyles = "bg-emerald-400";
-            } else if (status === 'Learning') {
-              statusStyles = "bg-amber-500/5 border-amber-500/20 hover:border-amber-500/30";
-              dotStyles = "bg-amber-450";
-            } else {
-              statusStyles = "bg-navy-900 border-navy-700/20";
-              dotStyles = "bg-slate-600";
-            }
+          {!roadmap?.checkpoints || roadmap.checkpoints.length === 0 ? (
+            <div className="col-span-full text-center py-8 text-slate-500 italic">
+              No self-assessment checkpoints defined in this roadmap.
+            </div>
+          ) : (
+            roadmap.checkpoints.map((cp, i) => {
+              const status = checkpointStatuses[cp.skill]?.status || 'Not yet';
+              
+              let statusStyles = "";
+              let dotStyles = "";
+              if (status === 'Confident') {
+                statusStyles = "bg-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/30";
+                dotStyles = "bg-emerald-400";
+              } else if (status === 'Learning') {
+                statusStyles = "bg-amber-500/5 border-amber-500/20 hover:border-amber-500/30";
+                dotStyles = "bg-amber-450";
+              } else {
+                statusStyles = "bg-navy-900 border-navy-700/20";
+                dotStyles = "bg-slate-600";
+              }
 
-            return (
-              <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl border transition-all duration-200 ${statusStyles}`}>
-                <div className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${dotStyles}`} />
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-bold text-white truncate">{cp.skill}</p>
-                  <p className={`text-[11px] font-bold mt-1 uppercase tracking-widest
-                    ${status === 'Confident' ? 'text-emerald-450' : status === 'Learning' ? 'text-amber-450' : 'text-slate-500'}`}>
-                    {status}
-                  </p>
+              return (
+                <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl border transition-all duration-200 ${statusStyles}`}>
+                  <div className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${dotStyles}`} />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold text-white truncate">{cp.skill}</p>
+                    <p className={`text-[11px] font-bold mt-1 uppercase tracking-widest
+                      ${status === 'Confident' ? 'text-emerald-450' : status === 'Learning' ? 'text-amber-450' : 'text-slate-500'}`}>
+                      {status}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
       </SectionCard>
     </PageShell>

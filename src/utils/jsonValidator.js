@@ -85,7 +85,7 @@ export function validateRoadmapJSON(data) {
   let weeksWithGeneratedReflection = 0;
   let weeksWithGeneratedSessions = 0;
 
-  normalized.weeks.forEach(w => {
+  normalized.weeks.forEach((w, wi) => {
     totalStudyResources += w.studyResources?.length || 0;
     totalSkillCheckQuestions += w.skillCheck?.length || 0;
     totalPracticalMissions += w.practicalMissions?.length || 0;
@@ -104,6 +104,16 @@ export function validateRoadmapJSON(data) {
     }
     if (w.generatedScheduledSessions) {
       weeksWithGeneratedSessions++;
+    }
+
+    // Skill Check ↔ Resource structural alignment warnings
+    const hasSkillCheck = w.skillCheck && w.skillCheck.length > 0;
+    const hasResources = w.studyResources && w.studyResources.length > 0;
+    if (hasSkillCheck && !hasResources) {
+      warnings.push(`Week ${w.weekNumber || wi + 1} ("${w.title}"): Skill Check exists but no Study Resources are provided. This Skill Check may reference material not covered by the supplied Study Resources.`);
+    }
+    if (hasResources && !hasSkillCheck) {
+      info.push(`Week ${w.weekNumber || wi + 1} ("${w.title}"): Study Resources exist but no Skill Check is defined. This is acceptable if no assessment is intended.`);
     }
   });
 
@@ -144,26 +154,43 @@ export function validateRoadmapJSON(data) {
     info.push(`Generated default scheduled sessions for ${weeksWithGeneratedSessions} week(s).`);
   }
 
-  // Project deliverables warning
+  // Project deliverables warning (using normalized project structure)
   const projects = normalized.projects || [];
-  let projectsWithNoDeliverables = 0;
-  projects.forEach(p => {
-    const deliverables = p.deliverables || p.milestones || [];
-    if (deliverables.length === 0) {
-      projectsWithNoDeliverables++;
+  let projectsWithNoMilestones = 0;
+  let projectsWithMilestonesNotSupplied = 0;
+  projects.forEach((p, pi) => {
+    if (p._milestonesSupplied === false) {
+      projectsWithMilestonesNotSupplied++;
+    } else if (p.milestones.length === 0) {
+      projectsWithNoMilestones++;
     }
   });
-  if (projectsWithNoDeliverables > 0) {
-    warnings.push(`${projectsWithNoDeliverables} project(s) have no milestones/deliverables configured.`);
+  if (projectsWithMilestonesNotSupplied > 0) {
+    warnings.push(`${projectsWithMilestonesNotSupplied} project(s) have no milestones/deliverables configured in the imported roadmap.`);
+  }
+  if (projectsWithNoMilestones > 0) {
+    warnings.push(`${projectsWithNoMilestones} project(s) have an empty milestones array.`);
   }
 
   if (projects.length === 0) {
     warnings.push('No projects defined in this roadmap.');
   }
 
+  // Checkpoint title warnings (using normalized checkpoint structure)
+  const allCheckpoints = normalized.checkpoints || [];
+  let checkpointsWithMissingTitles = 0;
+  allCheckpoints.forEach((cp) => {
+    if (cp._titleMissing) {
+      checkpointsWithMissingTitles++;
+    }
+  });
+  if (checkpointsWithMissingTitles > 0) {
+    warnings.push(`${checkpointsWithMissingTitles} checkpoint(s) are missing a skill title in the imported roadmap.`);
+  }
+
   const readinessCategories = normalized.readinessCategories || [];
   if (readinessCategories.length === 0) {
-    warnings.push('No readinessCategories defined. Dashboard readiness will show empty tracks.');
+    info.push('No readinessCategories defined. Dashboard readiness tracks will not appear until categories are included in the roadmap.');
   }
 
   // Summary

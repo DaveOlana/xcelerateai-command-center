@@ -169,7 +169,7 @@ export default function ProofOfWork() {
                 </label>
                 <input
                   type="url"
-                  placeholder="https://github.com/dave/xcelerate-js-foundations"
+                  placeholder="https://github.com/your-username/your-project"
                   value={repo}
                   onChange={(e) => setRepo(e.target.value)}
                   className="input-base w-full text-xs font-mono"
@@ -189,7 +189,7 @@ export default function ProofOfWork() {
                 </label>
                 <input
                   type="url"
-                  placeholder="https://github.com/dave/xcelerate-js-foundations/commit/..."
+                  placeholder="https://github.com/your-username/your-project/commit/..."
                   value={commit}
                   onChange={(e) => setCommit(e.target.value)}
                   className="input-base w-full text-xs font-mono"

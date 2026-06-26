@@ -29,6 +29,7 @@ export default function Checkpoints() {
   const { roadmap, checkpointStatuses, setCheckpointStatus } = useApp();
 
   const checkpoints = roadmap?.checkpoints || [];
+  const projects = roadmap?.projects || [];
   const [activeEvidenceSkill, setActiveEvidenceSkill] = useState(null);
 
   // Evidence Form States
@@ -63,7 +64,16 @@ export default function Checkpoints() {
   };
 
   if (checkpoints.length === 0) {
-    return <ImportRequiredCard pageName="Skill Checkpoints" />;
+    return (
+      <PageShell>
+        <PageHeader title="Skill Checkpoints" subtitle="Honest self-assessment of your current skills." />
+        <div className="bg-navy-800/40 border border-dashed border-navy-500/30 text-center py-16 px-6 rounded-2xl max-w-md mx-auto">
+          <ShieldCheck className="w-12 h-12 text-slate-600 mx-auto mb-3" />
+          <h4 className="text-sm font-bold text-white uppercase tracking-wider">No Checkpoints Defined</h4>
+          <p className="text-[14px] text-slate-500 mt-1">This roadmap has no skill checkpoints configured. Import a roadmap with a checkpoints array to begin self-assessment.</p>
+        </div>
+      </PageShell>
+    );
   }
 
   const overallPercent = checkpoints.length > 0 ? Math.round((stats.confident / checkpoints.length) * 100) : 0;
@@ -155,10 +165,10 @@ export default function Checkpoints() {
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1.5">
                     <div className={`w-2 h-2 rounded-full flex-shrink-0 ${config.dot}`} />
-                    <span className="text-[13px] font-bold text-slate-500 uppercase tracking-widest font-mono">{checkpoint.skill}</span>
+                    <span className="text-[13px] font-bold text-slate-500 uppercase tracking-widest font-mono" title={checkpoint.skill}>{checkpoint.skill}</span>
                   </div>
                   <p className="text-sm font-medium text-white italic leading-relaxed">
-                    "{checkpoint.question}"
+                    {checkpoint.question ? `"${checkpoint.question}"` : <span className="text-slate-500 not-italic">No assessment question provided in the roadmap</span>}
                   </p>
                 </div>
 
@@ -279,12 +289,13 @@ export default function Checkpoints() {
                           className="input-base w-full text-xs"
                         >
                           <option value="">Select Project...</option>
-                          <option value="JS Foundations Collection">JS Foundations Collection</option>
-                          <option value="Portfolio PWA">Portfolio PWA</option>
-                          <option value="Portfolio Mobile App">Portfolio Mobile App</option>
-                          <option value="TheScoreboard Mobile Experience">TheScoreboard Mobile Experience</option>
-                          <option value="Bootcamp Command Center">Bootcamp Command Center</option>
-                          <option value="Elliot V1 Working Product">Elliot V1 Working Product</option>
+                          {projects.length > 0 ? (
+                            projects.map((p, pi) => (
+                              <option key={p.id || pi} value={p.name || p.title}>{p.name || p.title}</option>
+                            ))
+                          ) : (
+                            <option value="" disabled>No projects defined in roadmap</option>
+                          )}
                         </select>
                       </div>
 
