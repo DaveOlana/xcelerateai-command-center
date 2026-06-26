@@ -24,6 +24,10 @@ export default function PracticalMissionView() {
     settings
   } = useApp();
 
+  const roadmapTitle = roadmap?.title || roadmap?.bootcampTitle || 'Active Roadmap';
+  const roadmapShortTitle = roadmap?.shortTitle || roadmapTitle;
+  const mentorName = settings?.mentorName || roadmap?.mentorLabel || 'Mentor';
+
   const [activeTab, setActiveTab] = useState('brief');
   const [showBlockerModal, setShowBlockerModal] = useState(false);
   const [blockerTitle, setBlockerTitle] = useState('');
@@ -160,8 +164,8 @@ export default function PracticalMissionView() {
     alert('Blocker logged successfully! You can find it on the Dashboard and Blockers page.');
   };
 
-  // Ask Lemont helper prompt prefill
-  const copyLemontPrompt = () => {
+  // Ask Mentor helper prompt prefill
+  const copyMentorPrompt = () => {
     const p = `I am on Week ${week.weekNumber}, Mission "${mission.title}" (Difficulty: ${mission.difficulty}).
 I am trying to build: ${mission.title}.
 The scenario is: ${mission.scenario}
@@ -170,7 +174,7 @@ The error I got is: [Insert stack trace or behavior error here]
 I have tried: [Insert steps tried here]
 Please help me debug this without giving me the full answer immediately.`;
     navigator.clipboard.writeText(p);
-    alert('Ask Lemont debug prompt copied to clipboard!');
+    alert(`Ask ${mentorName} debug prompt copied to clipboard!`);
   };
 
   // Helper to get unknown JSON fields
@@ -350,9 +354,9 @@ Please help me debug this without giving me the full answer immediately.`;
 
             <div className="grid md:grid-cols-2 gap-4">
               <div className="card">
-                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wide">Elliot Relevance</h3>
+                <h3 className="text-sm font-bold text-white mb-3 uppercase tracking-wide">{roadmapShortTitle} Relevance</h3>
                 <p className="text-xs text-slate-400 leading-relaxed italic">
-                  "{mission.elliotRelevance || 'This milestone introduces skills that form core foundations of Elliot\'s logic layers.'}"
+                  "{mission.elliotRelevance || `This milestone introduces skills that form core foundations of ${roadmapShortTitle}'s logic layers.`}"
                 </p>
               </div>
 
@@ -539,13 +543,13 @@ Please help me debug this without giving me the full answer immediately.`;
             <div className="card border-dashed">
               <h3 className="text-sm font-bold text-white mb-2">Stuck in code?</h3>
               <p className="text-xs text-slate-500 mb-4">
-                Ask Lemont using our prompt generator. He will guide you logically without spoiling solutions.
+                Ask {mentorName} using our prompt generator. They will guide you logically without spoiling solutions.
               </p>
               <button
-                onClick={copyLemontPrompt}
+                onClick={copyMentorPrompt}
                 className="btn-secondary text-xs flex items-center gap-1.5 border-accent-primary/20 text-accent-primary bg-accent-primary/5"
               >
-                <Clipboard className="w-3.5 h-3.5" /> Copy Lemont Debug Request
+                <Clipboard className="w-3.5 h-3.5" /> Copy {mentorName} Debug Request
               </button>
             </div>
           </div>
@@ -673,7 +677,7 @@ Please help me debug this without giving me the full answer immediately.`;
 
               {(mission.reflectionQuestions?.length > 0
                 ? mission.reflectionQuestions
-                : ['What was the most challenging part of this mission?', 'How does this structure help build Elliot?']
+                : ['What was the most challenging part of this mission?', `How does this structure help build ${roadmapShortTitle}?`]
               ).map((q, qIdx) => (
                 <div key={qIdx} className="space-y-2 p-3 bg-navy-800 border border-navy-400 rounded-xl">
                   <label className="text-xs font-bold text-white block">Q{qIdx + 1}: {q}</label>

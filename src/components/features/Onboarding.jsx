@@ -271,7 +271,7 @@ export default function Onboarding() {
                     <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1.5">Full Callsign / Name *</label>
                     <input 
                       type="text"
-                      placeholder="e.g. Dave, Marvelous, Tolu"
+                      placeholder="e.g. Tolu, Jane, Marvelous"
                       value={userName}
                       onChange={(e) => {
                         setUserName(e.target.value);
@@ -285,7 +285,7 @@ export default function Onboarding() {
                     <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1.5">Display Title Callsign (Optional)</label>
                     <input 
                       type="text"
-                      placeholder="e.g. Commander Dave, Explorer Dave"
+                      placeholder="e.g. Commander Jane, Explorer Jane"
                       value={userDisplayName}
                       onChange={(e) => setUserDisplayName(e.target.value)}
                       className="input-base w-full text-[14px] font-semibold text-white bg-navy-950 border-navy-800 focus:border-accent-primary"
@@ -318,7 +318,7 @@ export default function Onboarding() {
                     }`}
                   >
                     <span className="text-[11px] font-bold text-white uppercase tracking-widest">Default Sample</span>
-                    <span className="text-[12px] text-slate-400 leading-relaxed mt-4">Load Dave's 6-Month JS Mobile Ops Bootcamp.</span>
+                    <span className="text-[12px] text-slate-400 leading-relaxed mt-4">Load the default JavaScript Mobile Ops Bootcamp.</span>
                   </button>
 
                   <div 

@@ -5,6 +5,7 @@ import { PageShell, PageHeader, SectionCard, StatCard } from '../components/comm
 
 export default function Blockers() {
   const { blockers, addBlocker, solveBlocker, deleteBlocker, roadmap, settings } = useApp();
+  const mentorName = settings?.mentorName || roadmap?.mentorLabel || 'Mentor';
   const [showAddModal, setShowAddModal] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
@@ -59,9 +60,9 @@ export default function Blockers() {
     setSolutionNotes('');
   };
 
-  // Ask Lemont Helper Generator
-  const generateLemontPrompt = (b) => {
-    return `I am on Week ${b.weekNumber}${b.missionTitle ? `, Mission "${b.missionTitle}"` : ''} of the XcelerateAI Bootcamp.
+  // Ask Mentor Helper Generator
+  const generateMentorPrompt = (b) => {
+    return `I am on Week ${b.weekNumber}${b.missionTitle ? `, Mission "${b.missionTitle}"` : ''} of the ${roadmap?.title || 'bootcamp'}.
 I am trying to build: ${b.whatTryingToDo || b.title}.
 The skill focus is: ${b.skillArea || 'General Development'}.
 What went wrong: ${b.whatWentWrong || 'I am stuck.'}
@@ -72,7 +73,7 @@ Please help me debug this without giving me the full answer immediately.`;
 
   const copyPromptToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    alert('Prompt copied to clipboard! Share it with Lemont.');
+    alert(`Prompt copied to clipboard! Share it with ${mentorName}.`);
   };
 
   const filteredBlockers = blockers.filter((b) => {
@@ -232,7 +233,7 @@ Please help me debug this without giving me the full answer immediately.`;
                     onClick={() => setActivePromptBlocker(b)}
                     className="bg-accent-primary/10 border border-accent-primary/20 text-accent-primary text-[13px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-xl hover:bg-accent-primary/20 transition-all active:scale-95 flex items-center gap-1"
                   >
-                    <HelpCircle className="w-3.5 h-3.5" /> Ask Lemont
+                    <HelpCircle className="w-3.5 h-3.5" /> Ask {mentorName}
                   </button>
                   <button
                     onClick={() => deleteBlocker(b.id)}
@@ -316,13 +317,13 @@ Please help me debug this without giving me the full answer immediately.`;
         </div>
       )}
 
-      {/* Ask Lemont Modal */}
+      {/* Ask Mentor Modal */}
       {activePromptBlocker && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-2xl p-6 animate-scale-in text-left shadow-card">
             <div className="flex items-center justify-between mb-4 border-b border-navy-500/40 pb-3">
               <div>
-                <h2 className="text-sm font-bold text-white uppercase tracking-wider">Ask Lemont Help Prompt</h2>
+                <h2 className="text-sm font-bold text-white uppercase tracking-wider">Ask {mentorName} Help Prompt</h2>
                 <p className="text-[13px] text-slate-500 mt-0.5">Copy this request structure to ask your mentor for help.</p>
               </div>
               <button onClick={() => setActivePromptBlocker(null)} className="text-slate-400 hover:text-white transition-colors">
@@ -333,7 +334,7 @@ Please help me debug this without giving me the full answer immediately.`;
             <div className="space-y-4">
               <div className="bg-navy-950 rounded-xl p-4 border border-navy-500/30 max-h-[300px] overflow-y-auto">
                 <p className="text-[14px] font-mono text-slate-300 whitespace-pre-wrap leading-relaxed">
-                  {generateLemontPrompt(activePromptBlocker)}
+                  {generateMentorPrompt(activePromptBlocker)}
                 </p>
               </div>
 
@@ -347,7 +348,7 @@ Please help me debug this without giving me the full answer immediately.`;
                 </button>
                 <button
                   type="button"
-                  onClick={() => copyPromptToClipboard(generateLemontPrompt(activePromptBlocker))}
+                  onClick={() => copyPromptToClipboard(generateMentorPrompt(activePromptBlocker))}
                   className="bg-accent-primary text-navy-900 font-bold px-4 py-2 rounded-xl hover:bg-accent-primary-dim active:scale-95 transition-all text-xs uppercase tracking-wider shadow-primary-glow flex items-center gap-1.5"
                 >
                   <Copy className="w-4 h-4" /> Copy Prompt
