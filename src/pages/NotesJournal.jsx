@@ -10,7 +10,7 @@ const NOTE_TYPES = [
   { value: 'bug_note', label: 'Bug Note' },
   { value: 'concept_note', label: 'Concept Note' },
   { value: 'project_note', label: 'Project Note' },
-  { value: 'question_for_lemont', label: 'Question for Lemont' },
+  { value: 'question_for_mentor', label: 'Question for Mentor' },
   { value: 'resource_summary', label: 'Resource Summary' }
 ];
 
@@ -19,7 +19,7 @@ const NOTE_TYPE_STYLES = {
   bug_note: "bg-red-500/10 text-red-400 border border-red-500/25 font-mono",
   concept_note: "bg-purple-500/10 text-purple-400 border border-purple-500/25",
   project_note: "bg-amber-500/10 text-amber-400 border border-amber-500/25",
-  question_for_lemont: "bg-blue-500/10 text-blue-400 border border-blue-500/25",
+  question_for_mentor: "bg-blue-500/10 text-blue-400 border border-blue-500/25",
   resource_summary: "bg-cyan-500/10 text-cyan-400 border border-cyan-500/25",
   session_note: "bg-slate-500/10 text-slate-400 border border-slate-500/25"
 };
@@ -53,7 +53,7 @@ export default function NotesJournal() {
   const [filterLinkType, setFilterLinkType] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const mentorName = settings.mentorName || 'Lemont';
+  const mentorName = settings.mentorName || roadmap?.mentorLabel || 'Mentor';
 
   // ── EXTRACT DATA FROM ROADMAP FOR SELECTS ──
   const allWeeks = useMemo(() => {

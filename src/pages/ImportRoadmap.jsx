@@ -353,7 +353,7 @@ export default function ImportRoadmap() {
           <div className="flex-1">
             <h3 className="font-semibold text-white text-sm">Reset to Sample Roadmap</h3>
             <p className="text-xs text-slate-500 mt-1">
-              Wipe custom configurations and restore Dave's default 6-Month JavaScript Mobile Ops Bootcamp.
+              Wipe custom configurations and restore the built-in sample roadmap.
             </p>
             <button
               onClick={handleReset}

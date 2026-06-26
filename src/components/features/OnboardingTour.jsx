@@ -7,7 +7,7 @@ const TOUR_STEPS = [
   {
     id: 'welcome',
     title: "Welcome to XcelerateAI Command Center",
-    description: "This is your mission-control dashboard for building Elliot V1. Track your learning, follow today’s focus, complete missions, prove your work, and monitor your progress.",
+    description: "This is your mission-control dashboard for tracking your learning, following today's focus, completing missions, proving your work, and monitoring your progress.",
     target: 'center'
   },
   {
@@ -48,7 +48,7 @@ const TOUR_STEPS = [
   {
     id: 'progress',
     title: "Progress Analytics",
-    description: "Monitor your overall Elliot readiness index, skill group confidence charts, and completed checklists.",
+    description: "Monitor your overall roadmap readiness index, skill group confidence charts, and completed checklists.",
     target: '[data-tour="sidebar-progress"]',
     position: 'right'
   },

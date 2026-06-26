@@ -26,7 +26,7 @@ export const STORAGE_KEYS = {
 // =============================================
 const DEFAULT_SETTINGS = {
   startDate: new Date().toISOString().split('T')[0], // Default start date to today
-  mentorName: 'Lemont',
+  mentorName: 'Mentor',
   activeWeek: 1,
   activeMonth: 1,
   usingCustomRoadmap: false,
@@ -109,8 +109,22 @@ export function AppProvider({ children }) {
       // First boot: normalize the sampleRoadmap
       try { return normalizeRoadmap(sampleRoadmap); } catch { return sampleRoadmap; }
     }
-    // If already a normalized roadmap (has .id), return as-is
-    if (loaded.id && loaded.weeks) return loaded;
+    // If already a normalized roadmap (has .id), check if it needs re-normalization
+    if (loaded.id && loaded.weeks) {
+      // Migration: if _normalizedSchemaVersion is missing or outdated, re-normalize
+      if (!loaded._normalizedSchemaVersion || loaded._normalizedSchemaVersion < 1) {
+        try {
+          // Back up current data before migration
+          saveToStorage('xca_pre_migration_backup', loaded);
+          // Re-normalize from the raw bootcamp source if available, otherwise from stored data
+          const rawSource = loaded.bootcamp ? { ...loaded, bootcamp: loaded.bootcamp } : loaded;
+          return normalizeRoadmap(rawSource);
+        } catch {
+          return loaded; // Migration failed, use as-is
+        }
+      }
+      return loaded;
+    }
     // Otherwise normalize it
     try { return normalizeRoadmap(loaded); } catch { return loaded; }
   });
@@ -309,6 +323,34 @@ export function AppProvider({ children }) {
         normalized = rawData;
       }
     }
+
+    // Create a backup of current roadmap + progress before replacing
+    // (only if we currently have a valid roadmap)
+    try {
+      const currentRoadmap = loadFromStorage(STORAGE_KEYS.ROADMAP, null);
+      if (currentRoadmap && currentRoadmap.id) {
+        const backup = {
+          backupDate: new Date().toISOString(),
+          roadmap: currentRoadmap,
+          progress: loadFromStorage(STORAGE_KEYS.PROGRESS, DEFAULT_PROGRESS),
+          checkpointStatuses: loadFromStorage(STORAGE_KEYS.CHECKPOINTS, {}),
+          resourcesStatus: loadFromStorage(STORAGE_KEYS.RESOURCES_STATUS, {}),
+          skillChecks: loadFromStorage(STORAGE_KEYS.SKILL_CHECKS, {}),
+          practicalMissions: loadFromStorage(STORAGE_KEYS.PRACTICAL_MISSIONS, {}),
+          weekProofs: loadFromStorage(STORAGE_KEYS.WEEK_PROOFS, {}),
+          weekReflections: loadFromStorage('xca_week_reflections', {}),
+        };
+        // Rotate: move current backup to slot 2, save new to slot 1
+        const existingBackup1 = loadFromStorage('xca_import_backup_1', null);
+        if (existingBackup1) {
+          saveToStorage('xca_import_backup_2', existingBackup1);
+        }
+        saveToStorage('xca_import_backup_1', backup);
+      }
+    } catch (e) {
+      console.warn('Pre-import backup failed (non-blocking):', e);
+    }
+
     setRoadmap(normalized);
     setSettingsState((prev) => ({
       ...prev,

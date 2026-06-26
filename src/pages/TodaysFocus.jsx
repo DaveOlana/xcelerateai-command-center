@@ -32,6 +32,10 @@ export default function TodaysFocus() {
     userProfile
   } = useApp();
 
+  const mentorName = settings?.mentorName || roadmap?.mentorLabel || 'Mentor';
+  const roadmapTitle = roadmap?.title || roadmap?.bootcampTitle || 'Active Roadmap';
+  const roadmapShortTitle = roadmap?.shortTitle || roadmapTitle;
+
   // Cockpit view modes: Focus Mode (minimal) vs Command Mode (detailed)
   const [focusMode, setFocusMode] = useState(true);
 
@@ -129,8 +133,8 @@ export default function TodaysFocus() {
     alert('Blocker logged. Your progress status indicator is now flagged as blocked.');
   };
 
-  // Ask Lemont Helper Generator
-  const copyLemontHelpPrompt = () => {
+  // Ask Mentor Helper Generator
+  const copyMentorHelpPrompt = () => {
     const activeBlocker = activeWeekBlockers[0] || blockers[0];
     const recentNote = notes?.[0]?.content || notes?.[0]?.whatLearned || "None recorded yet";
     const currentMission = week.practicalMissions?.[0];
@@ -143,10 +147,10 @@ export default function TodaysFocus() {
     const triedStr = activeBlocker?.whatAlreadyTried || activeBlocker?.whatWentWrong || "Reviewed documentation and code logs";
     const noteText = recentNote !== "None recorded yet" ? `Recent note: "${recentNote}"` : "";
 
-    const promptText = `I am on Week ${week.weekNumber}, Mission "${missionTitle}" of the XcelerateAI Bootcamp. I am trying to build "${week.deliverable || "this week's milestones"}". I created these files: ${filesStr}. The error I got is: ${errorStr}. I have tried: ${triedStr}. ${noteText} Please help me debug this without giving me the full answer immediately.`;
+    const promptText = `I am on Week ${week.weekNumber}, Mission "${missionTitle}" of the ${roadmapTitle}. I am trying to build "${week.deliverable || "this week's milestones"}". I created these files: ${filesStr}. The error I got is: ${errorStr}. I have tried: ${triedStr}. ${noteText} Please help me debug this without giving me the full answer immediately.`;
     
     navigator.clipboard.writeText(promptText);
-    alert('Ask Lemont debug prompt copied to clipboard!');
+    alert(`Ask ${mentorName} debug prompt copied to clipboard!`);
   };
 
   // Timer format helpers
@@ -517,10 +521,10 @@ export default function TodaysFocus() {
                       Log Blocker
                     </button>
                     <button
-                      onClick={copyLemontHelpPrompt}
+                      onClick={copyMentorHelpPrompt}
                       className="btn-secondary w-full py-2.5 text-xs font-bold text-accent-cyan border-accent-cyan/20 hover:bg-accent-cyan/5"
                     >
-                      Ask Lemont Debug Prompt
+                      Ask {mentorName} Debug Prompt
                     </button>
                   </div>
                 </div>
@@ -536,7 +540,7 @@ export default function TodaysFocus() {
           <SectionCard title="Week Operational Overview" subtitle="Objective metrics parsed from active JSON roadmap.">
             <div className="bg-navy-900 border border-navy-700/20 rounded-2xl p-5 space-y-3 text-[14px] text-slate-350">
               <p className="leading-relaxed"><span className="font-bold text-white uppercase text-[12px] tracking-wider mr-2">Objective:</span> {week.objective}</p>
-              <p className="leading-relaxed"><span className="font-bold text-white uppercase text-[12px] tracking-wider mr-2">Elliot Link:</span> {week.elliotConnection || 'Guides logic blocks and UI rendering.'}</p>
+              <p className="leading-relaxed"><span className="font-bold text-white uppercase text-[12px] tracking-wider mr-2">{roadmapShortTitle} Link:</span> {week.elliotConnection || 'Guides logic blocks and UI rendering.'}</p>
               
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-navy-700/30">
                 <div>

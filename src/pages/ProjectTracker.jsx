@@ -33,7 +33,7 @@ export default function ProjectTracker() {
 
   const completedMilestonesCount = Object.values(progress.completedProjectMilestones || {})
     .reduce((a, arr) => a + arr.length, 0);
-  const totalMilestonesCount = projects.reduce((a, p) => a + (p.milestones?.length || 0), 0);
+  const totalMilestonesCount = projects.reduce((a, p) => a + (Array.isArray(p.milestones) ? p.milestones.length : 0), 0);
 
   return (
     <PageShell>
@@ -61,9 +61,9 @@ export default function ProjectTracker() {
         />
         <StatCard 
           label="Completed Milestones" 
-          value={`${completedMilestonesCount}/${totalMilestonesCount}`} 
+          value={totalMilestonesCount > 0 ? `${completedMilestonesCount}/${totalMilestonesCount}` : 'None defined'} 
           icon={CheckCircle2} 
-          helperText="Overall project status"
+          helperText={totalMilestonesCount > 0 ? 'Overall project status' : 'No milestones supplied in this roadmap'}
           accentColor="purple"
         />
       </div>
@@ -80,18 +80,18 @@ export default function ProjectTracker() {
           const localGithub = githubInputs[pi] ?? savedGithub;
           const localNote = noteInputs[pi] ?? savedNote;
 
-          const isElliotBoss = String(project.name || '').toLowerCase().includes('elliot');
+          const isCapstone = project.capstone === true || project.featured === true;
 
           return (
             <div
               key={pi}
               className={`rounded-3xl border transition-all duration-350 p-6 lg:p-7 ${
-                isElliotBoss
+                isCapstone
                   ? 'border-accent-cyan/30 bg-gradient-to-r from-navy-850 to-navy-900 shadow-sm relative overflow-hidden'
                   : 'border-navy-700/25 bg-navy-850 hover:border-navy-600 hover:shadow-card-hover'
               }`}
             >
-              {isElliotBoss && (
+              {isCapstone && (
                 <div className="absolute top-0 right-0 w-24 h-24 bg-accent-cyan/5 rounded-full blur-2xl pointer-events-none" />
               )}
 
@@ -105,22 +105,22 @@ export default function ProjectTracker() {
                   <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-sm
                     ${percent === 100
                       ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-450'
-                      : isElliotBoss
+                      : isCapstone
                       ? 'bg-accent-cyan/15 border border-accent-cyan/30 text-accent-cyan shadow-sm'
                       : percent > 0
                       ? 'bg-accent-primary/15 border border-accent-primary/30 text-accent-primary'
                       : 'bg-navy-900 border border-navy-750 text-slate-500'
                     }`}
                   >
-                    {percent === 100 ? '✓' : isElliotBoss ? <img src="/xcelerate-icon.png" alt="Xcelerate" className="w-5 h-5 object-contain opacity-80" /> : `${pi + 1}`}
+                    {percent === 100 ? '✓' : isCapstone ? <img src="/xcelerate-icon.png" alt="Xcelerate" className="w-5 h-5 object-contain opacity-80" /> : `${pi + 1}`}
                   </div>
 
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 flex-wrap">
-                      <h3 className="font-bold text-white text-[16px] leading-snug">{project.name}</h3>
-                      {isElliotBoss && (
+                      <h3 className="font-bold text-white text-[16px] leading-snug" title={project.name}>{project.name}</h3>
+                      {isCapstone && (
                         <span className="bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider flex items-center gap-1">
-                          <Star className="w-2.5 h-2.5 fill-accent-cyan" /> CAPSTONE BOSS
+                          <Star className="w-2.5 h-2.5 fill-accent-cyan" /> CAPSTONE
                         </span>
                       )}
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider
@@ -138,10 +138,10 @@ export default function ProjectTracker() {
                     
                     <div className="flex items-center gap-4 mt-4">
                       <div className="flex-1">
-                        <ProgressBar percent={percent} colorClass={isElliotBoss ? 'bg-gradient-to-r from-accent-cyan to-accent-primary' : 'bg-gradient-to-r from-accent-primary to-blue-500'} />
+                        <ProgressBar percent={percent} colorClass={isCapstone ? 'bg-gradient-to-r from-accent-cyan to-accent-primary' : 'bg-gradient-to-r from-accent-primary to-blue-500'} />
                       </div>
                       <span className="text-[13px] text-slate-450 font-bold">
-                        {done.length}/{total} Milestones · {percent}%
+                        {total > 0 ? `${done.length}/${total} Milestones · ${percent}%` : 'No milestones supplied'}
                       </span>
                     </div>
                   </div>
@@ -167,33 +167,40 @@ export default function ProjectTracker() {
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-3">
                       Build Milestones
                     </span>
-                    <div className="space-y-2.5">
-                      {project.milestones?.map((milestone, mi) => {
-                        const mDone = (Array.isArray(done) ? done : []).includes(mi);
-                        return (
-                          <button
-                            key={mi}
-                            onClick={() => toggleProjectMilestone(pi, mi)}
-                            className={`w-full flex items-center gap-3.5 p-4 rounded-2xl border text-left transition-all duration-200 active:scale-98
-                              ${mDone
-                                ? 'bg-emerald-500/5 border-emerald-500/10 text-slate-450 hover:border-emerald-500/20'
-                                : 'bg-navy-900 border-navy-750 hover:border-navy-650 text-slate-200'
-                              }`}
-                          >
-                            <div className={`w-5 h-5 rounded-lg border flex items-center justify-center flex-shrink-0 transition-all duration-200
-                              ${mDone ? 'border-emerald-500 bg-emerald-500/20' : 'border-navy-600 bg-navy-850'}`}
+                    {total > 0 ? (
+                      <div className="space-y-2.5">
+                        {project.milestones.map((milestone, mi) => {
+                          const mDone = (Array.isArray(done) ? done : []).includes(mi);
+                          const milestoneTitle = typeof milestone === 'string' ? milestone : (milestone?.title || `Milestone ${mi + 1}`);
+                          return (
+                            <button
+                              key={mi}
+                              onClick={() => toggleProjectMilestone(pi, mi)}
+                              className={`w-full flex items-center gap-3.5 p-4 rounded-2xl border text-left transition-all duration-200 active:scale-98
+                                ${mDone
+                                  ? 'bg-emerald-500/5 border-emerald-500/10 text-slate-450 hover:border-emerald-500/20'
+                                  : 'bg-navy-900 border-navy-750 hover:border-navy-650 text-slate-200'
+                                }`}
                             >
-                              {mDone && (
-                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                              )}
-                            </div>
-                            <span className={`text-[14px] ${mDone ? 'line-through text-slate-500 font-medium' : 'font-semibold text-slate-200'}`}>
-                              {milestone}
-                            </span>
-                          </button>
-                        );
-                      })}
-                    </div>
+                              <div className={`w-5 h-5 rounded-lg border flex items-center justify-center flex-shrink-0 transition-all duration-200
+                                ${mDone ? 'border-emerald-500 bg-emerald-500/20' : 'border-navy-600 bg-navy-850'}`}
+                              >
+                                {mDone && (
+                                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                                )}
+                              </div>
+                              <span className={`text-[14px] ${mDone ? 'line-through text-slate-500 font-medium' : 'font-semibold text-slate-200'}`} title={milestoneTitle}>
+                                {milestoneTitle}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="bg-navy-900/60 border border-dashed border-navy-600/30 rounded-xl p-4 text-center">
+                        <p className="text-sm text-slate-500">No milestones supplied in this roadmap for this project.</p>
+                      </div>
+                    )}
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-5">
@@ -205,7 +212,7 @@ export default function ProjectTracker() {
                       <div className="flex gap-2">
                         <input
                           type="url"
-                          placeholder="https://github.com/dave/ellio-v1"
+                          placeholder="https://github.com/your-username/project-repo"
                           value={localGithub}
                           onChange={(e) => setGithubInputs((prev) => ({ ...prev, [pi]: e.target.value }))}
                           className="input-base flex-1 text-xs"
@@ -262,7 +269,7 @@ export default function ProjectTracker() {
                     <div className="flex items-center gap-3.5 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl">
                       <ShieldCheck className="w-5 h-5 text-emerald-450 flex-shrink-0" />
                       <p className="text-emerald-450 font-bold text-xs">
-                        {isElliotBoss ? 'Final Target Complete! Elliot V1 stands assembled. 🤖' : 'Project Complete!'}
+                        {isCapstone ? 'Final Capstone Project Complete! All milestones verified. 🚀' : 'Project Complete!'}
                       </p>
                     </div>
                   )}

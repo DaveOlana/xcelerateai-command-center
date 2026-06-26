@@ -92,9 +92,9 @@ export default function Sidebar() {
           )}
         </div>
 
-        {/* Dave Operator Card */}
+        {/* Operator Card */}
         {(() => {
-          const operatorName = userProfile?.displayName || userProfile?.name || roadmap?.learner || 'Dave';
+          const operatorName = userProfile?.displayName || userProfile?.name || roadmap?.learner || 'Operator';
           const initial = operatorName.charAt(0).toUpperCase();
           return (
             <div className={`mt-5 bg-navy-850 border border-navy-700/30 rounded-xl flex items-center gap-3 transition-all ${isCollapsed ? 'p-2 justify-center' : 'p-3.5'}`} title={`Operator: ${operatorName}`}>

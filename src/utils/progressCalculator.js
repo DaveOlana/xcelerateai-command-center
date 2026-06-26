@@ -186,10 +186,12 @@ export function getMotivationalMessage(overallPercent, streak) {
 }
 
 /**
- * Calculate readiness scores for the Command Center dashboard and Progress overview
- */
-/**
- * Calculate readiness scores for the Command Center dashboard and Progress overview
+ * Calculate readiness scores for the Command Center dashboard and Progress overview.
+ *
+ * DEPRECATION NOTICE: This function contains hardcoded Elliot-specific track keys
+ * (javascript, react, mobile, backend, product, elliot) and week-range fallbacks.
+ * It is preserved ONLY as a legacy fallback for roadmaps without readinessCategories.
+ * New roadmaps should use readinessCategories + calculateDynamicReadiness() instead.
  */
 export function calculateReadinessScores(roadmap, progress, checkpointStatuses, streak, resourcesStatus, practicalMissions) {
   let items = [];
