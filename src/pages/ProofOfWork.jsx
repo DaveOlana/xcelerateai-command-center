@@ -86,7 +86,7 @@ export default function ProofOfWork() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Week Selector Sidebar */}
         <div className="bg-navy-800/80 border border-navy-500/30 rounded-2xl p-4 flex flex-col h-[calc(100vh-220px)] backdrop-blur-sm">
-          <span className="text-[13px] font-bold text-slate-500 uppercase tracking-widest font-mono mb-3 px-1">
+          <span className="text-[13px] font-bold text-slate-500 uppercase tracking-widest mb-3 px-1">
             Timeline Weeks
           </span>
           <div className="flex-1 overflow-y-auto space-y-2 pr-1 custom-scrollbar">
@@ -111,7 +111,7 @@ export default function ProofOfWork() {
                   }`}
                 >
                   <div className="min-w-0 pr-2 font-sans">
-                    <p className={`text-xs font-bold uppercase tracking-wider font-mono ${active ? 'text-accent-primary' : 'text-slate-500'}`}>
+                    <p className={`text-xs font-bold uppercase tracking-wider ${active ? 'text-accent-primary' : 'text-slate-500'}`}>
                       Week {w.weekNumber}
                     </p>
                     <p className="text-xs font-bold truncate mt-0.5">{w.title}</p>
@@ -139,7 +139,7 @@ export default function ProofOfWork() {
           <div className="lg:col-span-2 space-y-5">
             {/* Week Context */}
             <div className="bg-navy-800/80 border border-navy-500/30 rounded-2xl p-5 backdrop-blur-sm">
-              <div className="flex items-center gap-2 mb-2 font-mono text-xs font-bold uppercase tracking-widest text-slate-500">
+              <div className="flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-widest text-slate-500">
                 <span>Week {activeWeekInfo.weekNumber} Deliverable</span>
                 <span>·</span>
                 <span>Month {activeWeekInfo.monthNumber}</span>
@@ -154,7 +154,7 @@ export default function ProofOfWork() {
             <form onSubmit={handleSubmit} className="bg-navy-800/80 border border-navy-500/30 rounded-2xl p-5 backdrop-blur-sm space-y-4">
               <div className="flex items-center gap-2 border-b border-navy-500/30 pb-3">
                 <Github className="w-4 h-4 text-accent-primary" />
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Evidence Submission Deck</h3>
+                <h3 className="text-xs font-bold text-white uppercase tracking-wider">Evidence Submission Deck</h3>
               </div>
 
               {/* GitHub Repo */}
@@ -264,7 +264,7 @@ export default function ProofOfWork() {
               {/* Form buttons */}
               <div className="flex gap-3 justify-end pt-3 border-t border-navy-500/20 items-center">
                 {saved && (
-                  <span className="text-[13px] font-mono font-bold text-accent-primary uppercase tracking-wider animate-fade-in">
+                  <span className="text-[13px] font-bold text-accent-primary uppercase tracking-wider animate-fade-in">
                     ✓ Evidence Saved Successfully
                   </span>
                 )}
@@ -287,7 +287,7 @@ export default function ProofOfWork() {
                 <>
                   <ShieldCheck className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono">Verification Complete</h4>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">Verification Complete</h4>
                     <p className="text-[14px] text-slate-400 mt-1 leading-relaxed">
                       All minimum proof requirements (GitHub Repo, Commit, and README checkbox) are active. This week's core deliverable stands approved.
                     </p>
@@ -297,7 +297,7 @@ export default function ProofOfWork() {
                 <>
                   <ShieldAlert className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-white uppercase tracking-wider font-mono font-semibold">Missing Proof Metrics</h4>
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider font-semibold">Missing Proof Metrics</h4>
                     <p className="text-[14px] text-slate-400 mt-1 leading-relaxed">
                       To complete Week {selectedWeekNum}, you must submit the GitHub repository link, the commit link, and check the README completion checkbox.
                     </p>

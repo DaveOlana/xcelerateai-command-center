@@ -524,7 +524,7 @@ export default function WeeklyMissions() {
                 <div key={si} className={`card border transition-all ${isActive ? 'border-accent-primary/40 bg-accent-primary/5' : 'border-navy-400'}`}>
                   <div className="flex items-start justify-between gap-3 mb-3">
                     <div>
-                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider font-mono">{session.type || 'Focus Session'}</span>
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">{session.type || 'Focus Session'}</span>
                       <p className="text-sm font-bold text-white mt-0.5">{session.title}</p>
                       {session.sessionId && (
                         <p className="text-xs text-slate-600 font-mono">Ref: {session.sessionId}</p>
@@ -955,7 +955,7 @@ export default function WeeklyMissions() {
                           onChange={(e) => setSkillConf(Number(e.target.value))}
                           className="w-full accent-accent-primary"
                         />
-                        <div className="flex justify-between text-[13px] text-slate-500 font-mono mt-0.5">
+                        <div className="flex justify-between text-[13px] text-slate-500 mt-0.5">
                           <span>1: Guessing</span><span>3: Decent</span><span>5: Confident</span>
                         </div>
                       </div>

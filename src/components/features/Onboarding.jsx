@@ -211,7 +211,7 @@ export default function Onboarding() {
           </div>
 
           {/* Simple step string */}
-          <div className="flex justify-between items-center text-xs font-mono font-semibold text-slate-550 border-t border-navy-850 pt-4">
+          <div className="flex justify-between items-center text-xs font-semibold text-slate-550 border-t border-navy-850 pt-4">
             <span>Step {currentStep} of {totalSteps}</span>
             <div className="w-24 h-1.5 bg-navy-800 rounded-full overflow-hidden">
               <div 

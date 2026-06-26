@@ -215,8 +215,8 @@ Please help me debug this without giving me the full answer immediately.`;
               <ShieldAlert className="w-8 h-8 text-red-400" />
             </div>
 
-            <h2 className="text-xl font-bold text-white uppercase tracking-wider font-mono"> Coordinates Locked</h2>
-            <p className="text-xs text-accent-primary font-bold uppercase tracking-wider font-mono mt-1">
+            <h2 className="text-xl font-bold text-white uppercase tracking-wider"> Coordinates Locked</h2>
+            <p className="text-xs text-accent-primary font-bold uppercase tracking-wider mt-1">
               Prerequisite Missing
             </p>
 
@@ -253,7 +253,7 @@ Please help me debug this without giving me the full answer immediately.`;
 
       {/* Back button */}
       <div className="flex items-center gap-2 no-print">
-        <Link to="/missions" className="text-slate-400 hover:text-accent-primary transition-colors flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider font-mono">
+        <Link to="/missions" className="text-slate-400 hover:text-accent-primary transition-colors flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider">
           <ArrowLeft className="w-4 h-4" /> BACK TO WEEKLY MISSIONS
         </Link>
       </div>
@@ -491,7 +491,7 @@ Please help me debug this without giving me the full answer immediately.`;
                   {mission.testCases.map((tc, idx) => (
                     <div key={idx} className="p-4 bg-navy-800 border border-navy-400 rounded-xl space-y-2">
                       <div className="flex items-center justify-between flex-wrap gap-2">
-                        <span className="text-[13px] font-mono font-semibold uppercase bg-navy-600 px-2 py-0.5 rounded text-accent-cyan">
+                        <span className="text-[13px] font-semibold uppercase bg-navy-600 px-2 py-0.5 rounded text-accent-cyan">
                           Case {idx + 1}
                         </span>
                         <div className="flex items-center gap-1.5 text-xs text-slate-400">
