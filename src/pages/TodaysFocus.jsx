@@ -31,17 +31,9 @@ export default function TodaysFocus() {
     practicalMissions,
     notes,
     userProfile,
-    resourcesStatus,
-<<<<<<< HEAD
     weekProofs,
     weekReflections,
     skillChecks,
-    progress
-=======
-    skillChecks,
-    weekReflections,
-    weekProofs
->>>>>>> origin/ui/human-learning-studio
   } = useApp();
 
   const mentorName = settings?.mentorName || roadmap?.mentorLabel || 'Mentor';
@@ -684,17 +676,13 @@ export default function TodaysFocus() {
             </p>
           )}
         </div>
-<<<<<<< HEAD
         {/* Segmented Cockpit Switch Control */}
         {sessionState === 'before' && (
           <div className="flex items-center bg-navy-900 border border-navy-800 p-1 rounded-2xl self-stretch sm:self-auto justify-center">
             <button
-              onClick={() => {
-                setMode('command');
-                localStorage.setItem('xai_today_focus_mode', 'command');
-              }}
+              onClick={() => handleToggleMode('command')}
               className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all ${
-                mode === 'command'
+                focusMode === 'command'
                   ? 'bg-brand-blue text-white shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
               }`}
@@ -702,12 +690,9 @@ export default function TodaysFocus() {
               Command Mode
             </button>
             <button
-              onClick={() => {
-                setMode('focus');
-                localStorage.setItem('xai_today_focus_mode', 'focus');
-              }}
+              onClick={() => handleToggleMode('focus')}
               className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all ${
-                mode === 'focus'
+                focusMode === 'focus'
                   ? 'bg-brand-blue text-white shadow-sm'
                   : 'text-slate-400 hover:text-slate-200'
               }`}
@@ -720,6 +705,8 @@ export default function TodaysFocus() {
 
       {/* ── STATE 1: BEFORE SESSION ── */}
       {sessionState === 'before' && (
+        focusMode === 'command' ? (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         mode === 'command' ? (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Main Configuration Card (2/3 width on desktop) */}
@@ -1133,24 +1120,9 @@ export default function TodaysFocus() {
               </div>
             </div>
           </div>
-        )
-=======
-
-        {/* Custom Segmented Switch Pill Button Toggle from Screenshot */}
-        {sessionState === 'before' && (
-          <button
-            onClick={() => handleToggleMode(focusMode === 'focus' ? 'command' : 'focus')}
-            className="flex items-center gap-3.5 bg-navy-950/40 border border-navy-800 hover:border-navy-700 px-5 py-3 rounded-xl transition-all duration-200 text-[10px] font-bold uppercase tracking-wider text-slate-350 hover:text-white"
-          >
-            {focusMode === 'focus' ? 'Switch to Command Mode' : 'Switch to Focus Mode'}
-            <svg className={`w-8 h-4 ${focusMode === 'focus' ? 'text-brand-blue' : 'text-slate-500'} select-none`} viewBox="0 0 32 16" fill="none">
-              <rect x="1" y="1" width="30" height="14" rx="7" stroke="currentColor" strokeWidth="1.5" />
-              <circle cx={focusMode === 'focus' ? 24 : 8} cy="8" r="4.5" fill="currentColor" />
-            </svg>
-          </button>
-        )}
-      </div>
-
+          </div>
+        ) : (
+          <div className="max-w-4xl mx-auto space-y-12">
       {/* ── STATE 1: BEFORE SESSION (Focus Mode View) ── */}
       {sessionState === 'before' && focusMode === 'focus' && (
         <div className="max-w-4xl mx-auto space-y-12">
@@ -1599,8 +1571,9 @@ export default function TodaysFocus() {
               </div>
             </div>
           </div>
-        </div>
->>>>>>> origin/ui/human-learning-studio
+          </div>
+        )
+      )}
       )}
 
       {/* ── STATE 2: DURING SESSION ── */}
