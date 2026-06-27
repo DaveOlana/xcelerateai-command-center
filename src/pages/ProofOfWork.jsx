@@ -311,7 +311,6 @@ export default function ProofOfWork() {
             </div>
           </div>
         </div>
-
         {/* Right Column (2/3 width) - Current Requirement, Form, and Gallery */}
         <div className="lg:col-span-2 space-y-6">
           
@@ -321,201 +320,6 @@ export default function ProofOfWork() {
               title={`Week ${activeWeekInfo.weekNumber} Deliverable`} 
               subtitle={`Month ${activeWeekInfo.monthNumber} Course Specification`}
             >
-              <div className="space-y-4">
-                <h3 className="font-extrabold text-white text-[15px]">{activeWeekInfo.title}</h3>
-                
-                {activeWeekInfo.deliverable ? (
-                  <div className="bg-bg-soft border border-border-default rounded-xl p-4 text-xs text-text-secondary leading-relaxed italic">
-                    " {activeWeekInfo.deliverable} "
-                  </div>
-                ) : (
-                  <div className="p-4 bg-navy-850 border border-navy-750 rounded-xl text-xs text-slate-550 italic">
-                    No active deliverable specified for this module. Verify your study resources to confirm next step tasks.
-                  </div>
-                )}
-              </div>
-            </SectionCard>
-          )}
-
-          {/* Submission Area Form */}
-          <div ref={submissionFormRef}>
-            <SectionCard 
-              title="Submission Cockpit" 
-              subtitle={`Submit verification records for Week ${selectedWeekNum}`}
-              headerActions={
-                <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${
-                  isProofComplete(currentProof)
-                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                    : 'bg-navy-900 text-slate-500 border-navy-750'
-                }`}>
-                  {isProofComplete(currentProof) ? 'Verified ✓' : 'Awaiting Proof'}
-                           <form onSubmit={handleSubmit} className="space-y-6">
-                {/* ── REQUIRED SECTION ── */}
-                <div className="space-y-4">
-                  <div className="border-l-2 border-brand-blue pl-3 py-1">
-                    <h4 className="text-xs font-extrabold text-white uppercase tracking-wider">Required Deliverables</h4>
-                    <p className="text-[11px] text-slate-500 mt-0.5">These metrics are mandatory to verify and unlock progress.</p>
-                  </div>
-
-                  {/* GitHub Repo */}
-                  <div className="space-y-1">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                      GitHub Repository Link *
-                      {repo && !errors.repo && (
-                        <a href={repo} target="_blank" rel="noopener noreferrer" className="text-accent-cyan hover:underline flex items-center gap-0.5">
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      )}
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="https://github.com/your-username/your-project"
-                      value={repo}
-                      onChange={(e) => setRepo(e.target.value)}
-                      className={`input-base w-full text-xs font-mono ${errors.repo ? 'border-brand-red/50 focus:border-brand-red' : ''}`}
-                    />
-                    {errors.repo && <p className="text-[11px] text-brand-red font-bold mt-1">{errors.repo}</p>}
-                  </div>
-
-                  {/* GitHub Commit Link */}
-                  <div className="space-y-1">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                      GitHub Commit Link *
-                      {commit && !errors.commit && (
-                        <a href={commit} target="_blank" rel="noopener noreferrer" className="text-accent-cyan hover:underline flex items-center gap-0.5">
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      )}
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="https://github.com/your-username/your-project/commit/..."
-                      value={commit}
-                      onChange={(e) => setCommit(e.target.value)}
-                      className={`input-base w-full text-xs font-mono ${errors.commit ? 'border-brand-red/50 focus:border-brand-red' : ''}`}
-                    />
-                    {errors.commit && <p className="text-[11px] text-brand-red font-bold mt-1">{errors.commit}</p>}
-                  </div>
-
-                  {/* README Checkbox */}
-                  <div className="pt-1">
-                    <button
-                      type="button"
-                      onClick={() => setReadme(!readme)}
-                      className={`w-full flex items-center gap-2.5 p-3 rounded-xl border text-left text-xs font-bold transition-all duration-200 active:scale-98 ${
-                        readme
-                          ? 'bg-accent-primary/10 border-accent-primary/25 text-white'
-                          : errors.readme
-                          ? 'bg-brand-red/5 border-brand-red/20 text-slate-400'
-                          : 'bg-navy-800/40 border-navy-500/20 text-slate-400 hover:text-slate-200'
-                      }`}
-                    >
-                      <div className={`w-4 h-4 rounded border flex items-center justify-center ${readme ? 'border-accent-primary bg-accent-primary/20' : 'border-navy-300'}`}>
-                        {readme && <CheckCircle2 className="w-3 h-3 text-accent-primary" />}
-                      </div>
-                      <span>Confirm README is completed and customized *</span>
-                    </button>
-                    {errors.readme && <p className="text-[11px] text-brand-red font-bold mt-1">{errors.readme}</p>}
-                  </div>
-                </div>
-
-                {/* ── OPTIONAL SECTION ── */}
-                <div className="space-y-4 pt-2 border-t border-navy-700/20">
-                  <div className="border-l-2 border-slate-500 pl-3 py-1">
-                    <h4 className="text-xs font-extrabold text-white uppercase tracking-wider">Optional Metadata additions</h4>
-                    <p className="text-[11px] text-slate-500 mt-0.5">Provide optional context to build your portfolio credibility.</p>
-                  </div>
-
-                  {/* Demo Video Link */}
-                  <div className="space-y-1">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                      Demo Video Link
-                      {video && !errors.video && (
-                        <a href={video} target="_blank" rel="noopener noreferrer" className="text-accent-cyan hover:underline flex items-center gap-0.5">
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      )}
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="https://youtube.com/watch?v=... or Loom URL"
-                      value={video}
-                      onChange={(e) => setVideo(e.target.value)}
-                      className={`input-base w-full text-xs font-mono ${errors.video ? 'border-brand-red/50 focus:border-brand-red' : ''}`}
-                    />
-                    {errors.video && <p className="text-[11px] text-brand-red font-bold mt-1">{errors.video}</p>}
-                  </div>
-
-                  {/* Screenshot Notes */}
-                  <div className="space-y-1">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider">Screenshot Note / Local File Path</label>
-                    <input
-                      type="text"
-                      placeholder="e.g. C:/Users/HP/Screenshots/status-board.png or relative description"
-                      value={screenshot}
-                      onChange={(e) => setScreenshot(e.target.value)}
-                      className="input-base w-full text-xs"
-                    />
-                  </div>
-
-                  {/* Reflection Checkbox */}
-                  <div>
-                    <button
-                      type="button"
-                      onClick={() => setReflection(!reflection)}
-                      className={`w-full flex items-center gap-2.5 p-3 rounded-xl border text-left text-xs font-bold transition-all duration-200 active:scale-[0.99] ${
-                        reflection
-                          ? 'bg-accent-primary/10 border-accent-primary/25 text-white'
-                          : 'bg-navy-800/40 border-navy-500/20 text-slate-400 hover:text-slate-200'
-                      }`}
-                    >
-                      <div className={`w-4 h-4 rounded border flex items-center justify-center ${reflection ? 'border-accent-primary bg-accent-primary/20' : 'border-navy-300'}`}>
-                        {reflection && <CheckCircle2 className="w-3 h-3 text-accent-primary" />}
-                      </div>
-                      <span>Mark Reflection Journal complete</span>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Validation alert banner inside cockpit form */}
-                <div className={`rounded-xl p-4 border flex items-start gap-3 transition-all ${
-                  isProofComplete({ githubRepoLink: repo, githubCommitLink: commit, readmeCompleted: readme }) 
-                    ? 'border-blue-500/20 bg-blue-500/5' 
-                    : 'border-brand-amber/20 bg-brand-amber/5'
-                }`}>
-                  {isProofComplete({ githubRepoLink: repo, githubCommitLink: commit, readmeCompleted: readme }) ? (
-                    <>
-                      <ShieldCheck className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h4 className="text-xs font-bold text-white uppercase tracking-wider">Verification Complete</h4>
-                        <p className="text-[11px] text-slate-400 mt-1 leading-normal">
-                          All minimum proof requirements (GitHub Repo, Commit, and README checkbox) are active. Save this record to submit proof.
-                        </p>
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <ShieldAlert className="w-5 h-5 text-brand-amber flex-shrink-0 mt-0.5" />
-                      <div>
-                        <h4 className="text-xs font-bold text-white uppercase tracking-wider font-semibold">Verification Pending</h4>
-                        <p className="text-[11px] text-slate-400 mt-1 leading-normal">
-                          Repository URL, commit hash link, and README check are required to verify completions.
-                        </p>
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                {/* Form buttons */}
-                <div className="flex gap-3 justify-end pt-3 border-t border-navy-800/40 items-center">
-                  {saved && (
-                    <span className="text-[11px] font-bold text-accent-primary uppercase tracking-widest animate-fade-in">
-                      ✓ Evidence Saved Successfully
-                    </span>
-                  )}
-                  <button
-                    type="submit"
-                    className="btn-primary py-2.5 px-6 text-xs font-bold uppercase tracking-wider"
               <div className="space-y-4">
                 <h3 className="font-extrabold text-white text-[15px]">{activeWeekInfo.title}</h3>
                 
@@ -696,7 +500,7 @@ export default function ProofOfWork() {
                       <ShieldAlert className="w-5 h-5 text-brand-amber flex-shrink-0 mt-0.5" />
                       <div>
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider font-semibold">Verification Pending</h4>
-                        <p className="text-[11px] text-slate-400 mt-1 leading-normal">
+                        <p className="text-[11px] text-slate-455 mt-1 leading-normal">
                           Repository URL, commit hash link, and README check are required to verify completions.
                         </p>
                       </div>
@@ -717,16 +521,17 @@ export default function ProofOfWork() {
                   >
                     Save Proof & Verify
                   </button>
-                </div>
               </form>
+            </SectionCard>
+          </div>
+
+          {/* Evidence Gallery */}
+          <SectionCard 
+            title="Evidence Gallery" 
+            subtitle="Archive of submitted bootcamp build repositories"
           >
-            {galleryItems.length === 0 ? (
-              <div className="text-center py-10 text-slate-500 italic bg-navy-850/20 border border-navy-800/40 rounded-xl">
-                No proof submitted yet. Your first submission will appear here.
-              </div>
-            ) : (
-              <div className="grid md:grid-cols-2 gap-4 pt-1">
-                {galleryItems.map(({ week: w, proof }) => {
+            <div className="grid md:grid-cols-2 gap-4 pt-1">
+              {galleryItems.map(({ week: w, proof }) => {
                   const isVerified = isProofComplete(proof);
                   
                   return (
