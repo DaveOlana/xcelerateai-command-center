@@ -15,9 +15,10 @@ import SessionSwitchConfirmation from '../features/SessionSwitchConfirmation';
 export default function Layout() {
   const [showMore, setShowMore] = useState(false);
   const location = useLocation();
-  const { settings } = useApp();
+  const { settings, sessionTimer } = useApp();
   
   const isCollapsed = settings?.sidebarCollapsed || false;
+  const isFocusMode = sessionTimer?.activeSessionId && location.pathname === '/today';
 
   // Toggle more menu when /more route is active on mobile
   React.useEffect(() => {
@@ -31,16 +32,16 @@ export default function Layout() {
   return (
     <div className="min-h-screen bg-navy-950 bg-grid">
       {/* Desktop Sidebar */}
-      <Sidebar />
+      {!isFocusMode && <Sidebar />}
 
       {/* Mobile Header */}
-      <MobileHeader />
+      {!isFocusMode && <MobileHeader />}
 
       {/* Main Content */}
-      <main className={`min-h-screen transition-all duration-300 ${isCollapsed ? 'lg:ml-[80px]' : 'lg:ml-[280px]'}`}>
+      <main className={`min-h-screen transition-all duration-300 ${isFocusMode ? 'ml-0' : isCollapsed ? 'lg:ml-[80px]' : 'lg:ml-[280px]'}`}>
         {/* Top padding for mobile header */}
-        <div className="pt-[60px] lg:pt-0 pb-24 lg:pb-0">
-          <div className="p-4 lg:p-8 max-w-7xl mx-auto animate-fade-in">
+        <div className={isFocusMode ? 'p-4 lg:p-8' : 'pt-[60px] lg:pt-0 pb-24 lg:pb-0'}>
+          <div className={`${isFocusMode ? '' : 'p-4 lg:p-8'} max-w-7xl mx-auto animate-fade-in`}>
             <ErrorBoundary>
               <Outlet />
             </ErrorBoundary>
@@ -49,7 +50,7 @@ export default function Layout() {
       </main>
 
       {/* Global Floating Timer UI */}
-      <FloatingTimer />
+      {location.pathname !== '/' && <FloatingTimer />}
 
       {/* Interruption confirmation overlay */}
       <SessionSwitchConfirmation />
@@ -59,7 +60,7 @@ export default function Layout() {
 
 
       {/* Mobile Bottom Nav */}
-      <BottomNav />
+      {!isFocusMode && <BottomNav />}
 
       {/* Mobile More Menu */}
       {showMore && <MoreMenu onClose={() => window.history.back()} />}

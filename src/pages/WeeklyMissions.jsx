@@ -11,6 +11,7 @@ import {
   getWeekStepStatus, getUnknownWeekFields, isWeekAccessible,
   getRequiredResources, missionRequiresEvidence
 } from '../utils/unlockChecker';
+import { cleanDifficultyLabel } from '../utils/safeRender';
 
 import { PageShell, PageHeader, SectionCard, StatCard, ProgressBar, StatusBadge, LockWarningCard, EmptyState } from '../components/common/UIComponents';
 
@@ -18,17 +19,17 @@ import { PageShell, PageHeader, SectionCard, StatCard, ProgressBar, StatusBadge,
 function CollapsibleSection({ title, children, defaultOpen = true }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
   return (
-    <div className="card p-0 border border-navy-700/20 bg-navy-850/40 rounded-2xl overflow-hidden transition-all duration-200">
+    <div className="card p-0 bg-transparent border-none shadow-none rounded-none overflow-hidden transition-all duration-200 border-b border-navy-700/30">
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
-        className="w-full flex items-center justify-between px-5 py-4 text-xs font-bold text-slate-400 uppercase tracking-widest hover:bg-navy-800/10 text-left transition-colors"
+        className="w-full flex items-center justify-between py-4 text-[11px] font-bold text-slate-400 uppercase tracking-widest hover:text-white text-left transition-colors"
       >
         <span>{title}</span>
         <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${isOpen ? '' : '-rotate-90'}`} />
       </button>
       {isOpen && (
-        <div className="px-5 pb-5 pt-1 border-t border-navy-700/10 bg-navy-900/10 space-y-4">
+        <div className="pb-5 pt-1 space-y-4">
           {children}
         </div>
       )}
@@ -631,7 +632,7 @@ export default function WeeklyMissions() {
                                     <div className="flex items-center justify-between gap-2 flex-wrap">
                                       <div className="flex items-center gap-1.5 flex-wrap">
                                         <span className="bg-navy-900 text-[10px] text-slate-400 font-bold border border-navy-750 px-2 py-0.5 rounded uppercase tracking-wider">{res.type || 'Resource'}</span>
-                                        {res.difficulty && <span className="bg-navy-900 text-[10px] text-slate-450 font-bold border border-navy-750 px-2 py-0.5 rounded capitalize">{res.difficulty}</span>}
+                                        {res.difficulty && <span className="bg-navy-900 text-[10px] text-slate-450 font-bold border border-navy-750 px-2 py-0.5 rounded capitalize">{cleanDifficultyLabel(res.difficulty)}</span>}
                                         {isRequired && <span className="bg-accent-primary/10 text-[10px] text-accent-primary font-bold border border-accent-primary/25 px-2 py-0.5 rounded">Required</span>}
                                       </div>
                                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${
@@ -905,7 +906,7 @@ export default function WeeklyMissions() {
                                   <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-400 font-medium pt-1">
                                     {m.skillFocus && <span>📍 {m.skillFocus}</span>}
                                     {m.timeEstimate && <span>⏱ {m.timeEstimate}</span>}
-                                    {m.difficulty && <span className="capitalize">难度: {m.difficulty}</span>}
+                                    {m.difficulty && <span className="capitalize">{cleanDifficultyLabel(m.difficulty)}</span>}
                                   </div>
 
                                   {m.elliotRelevance && (
