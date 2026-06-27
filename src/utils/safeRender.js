@@ -48,3 +48,32 @@ export const getMissionLabel = (mission) => {
   return 'Unknown Mission';
 };
 
+export const cleanDifficultyLabel = (difficulty) => {
+  if (!difficulty) return 'Unknown';
+  let str = String(difficulty);
+  str = str.replace(/难度/g, '').trim();
+  if (str === '1' || str.toLowerCase() === 'easy') return 'Beginner';
+  if (str === '2' || str.toLowerCase() === 'medium') return 'Intermediate';
+  if (str === '3' || str.toLowerCase() === 'hard') return 'Advanced';
+  return str || 'Unknown';
+};
+
+export const formatDuration = (duration) => {
+  if (!duration) return '';
+  if (typeof duration === 'number') {
+    const hrs = Math.floor(duration / 60);
+    const mins = duration % 60;
+    if (hrs > 0) return mins > 0 ? `${hrs}h ${mins}m` : `${hrs}h`;
+    return `${mins}m`;
+  }
+  return String(duration).replace(/分钟/g, 'm').replace(/小时/g, 'h').trim();
+};
+
+export const formatMissionType = (type) => {
+  if (!type) return 'Mission';
+  const str = String(type).toLowerCase();
+  if (str.includes('core')) return 'Core Mission';
+  if (str.includes('side') || str.includes('quest')) return 'Side Quest';
+  if (str.includes('checkpoint')) return 'Checkpoint';
+  return String(type);
+};

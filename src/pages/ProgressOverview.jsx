@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { TrendingUp, CheckCircle2, Flame, BarChart2, Calendar, Award, Zap, BookOpen, Github, FileText, AlertTriangle, ChevronRight, Lock } from 'lucide-react';
+=======
+import React, { useState, useMemo } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { 
+  TrendingUp, CheckCircle2, Flame, BarChart2, Calendar, Award, Zap, 
+  AlertTriangle, Lock, FolderKanban, BookOpen, ChevronDown, 
+  ChevronRight, ExternalLink, ShieldAlert, Sparkles, ArrowRight 
+} from 'lucide-react';
+>>>>>>> origin/ui/human-learning-studio
 import { useApp } from '../context/AppContext';
 import { calculateOverallProgress, getMonthProgress, calculateDynamicReadiness } from '../utils/progressCalculator';
 import { getBootcampDay, getDaysRemaining } from '../utils/dateUtils';
+<<<<<<< HEAD
 import { PageShell, PageHeader, SectionCard, StatCard, ProgressBar, StatusBadge, InfoPill, ActionCard } from '../components/common/UIComponents';
 
 export default function ProgressOverview() {
@@ -20,6 +31,17 @@ export default function ProgressOverview() {
     weekReflections,
     skillChecks
   } = useApp();
+=======
+import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
+
+export default function ProgressOverview() {
+  const { 
+    roadmap, progress, checkpointStatuses, settings, streak, 
+    blockers, notes, weekProofs, weekReflections, skillChecks 
+  } = useApp();
+  
+  const navigate = useNavigate();
+>>>>>>> origin/ui/human-learning-studio
 
   const prog = calculateOverallProgress(roadmap, progress, checkpointStatuses);
   const totalDays = roadmap?.totalDays || 180;
@@ -27,6 +49,7 @@ export default function ProgressOverview() {
   const daysRemaining = getDaysRemaining(settings.startDate, totalDays);
 
   const roadmapTitle = roadmap?.title || roadmap?.bootcampTitle || 'Active Roadmap';
+<<<<<<< HEAD
 
   // 1. Flatten all weeks
   const weeks = React.useMemo(() => {
@@ -210,6 +233,229 @@ export default function ProgressOverview() {
         {/* Progress Ring Card */}
         <SectionCard className="flex flex-col items-center justify-center text-center py-8">
           <div className="relative w-40 h-40 flex-shrink-0">
+=======
+  const roadmapShortTitle = roadmap?.shortTitle || roadmapTitle;
+
+  // Grouped weeks list for timeline calculations
+  const allWeeks = useMemo(() => {
+    const list = [];
+    roadmap?.months?.forEach((m) => {
+      m.weeks?.forEach((w) => list.push({ week: w, month: m }));
+    });
+    return list;
+  }, [roadmap]);
+
+  // Collapsible Month Timelines
+  const [expandedMonths, setExpandedMonths] = useState({ [settings.activeMonth]: true });
+  
+  const toggleMonth = (mNum) => {
+    setExpandedMonths(prev => ({ ...prev, [mNum]: !prev[mNum] }));
+  };
+
+  const isWeekComplete = (wNum) => {
+    return Array.isArray(progress.completedWeeks) && progress.completedWeeks.includes(wNum);
+  };
+
+  const isWeekLocked = (wNum) => {
+    if (settings.manualOverrideEnabled) return false;
+    return wNum > settings.activeWeek;
+  };
+
+  // ── 1. Calculate Custom Stats ──
+  const totalWeeks = roadmap?.weeks?.length || allWeeks.length || 0;
+  const completedWeeks = progress?.completedWeeks?.length || 0;
+  const weekPercent = totalWeeks > 0 ? Math.round((completedWeeks / totalWeeks) * 100) : 0;
+
+  // Proof submissions count (fully complete proofs)
+  const submittedProofsCount = Object.keys(weekProofs || {}).filter(wNum => {
+    const proof = weekProofs[wNum];
+    return proof && proof.githubRepoLink && proof.githubCommitLink && proof.readmeCompleted;
+  }).length;
+
+  const projects = roadmap?.projects || [];
+  const completedProjectsCount = projects.filter((proj, idx) => {
+    const doneMilestones = progress?.completedProjectMilestones?.[idx] || [];
+    return doneMilestones.length > 0 && doneMilestones.length === proj.milestones?.length;
+  }).length;
+
+  // ── 2. Compile Recent Wins ──
+  const recentWins = useMemo(() => {
+    const wins = [];
+
+    // Completed Weeks
+    (progress?.completedWeeks || []).forEach(wNum => {
+      const wk = allWeeks.find(item => item.week.weekNumber === wNum);
+      wins.push({
+        type: 'week',
+        title: `Completed Week ${wNum}`,
+        detail: wk ? wk.week.title : 'Milestone Module',
+        timestamp: settings.startDate ? new Date(new Date(settings.startDate).getTime() + (wNum - 1) * 7 * 24 * 60 * 60 * 1000) : null
+      });
+    });
+
+    // Submitted Proofs
+    Object.keys(weekProofs || {}).forEach(wNum => {
+      const p = weekProofs[wNum];
+      if (p?.githubRepoLink && p?.githubCommitLink && p?.readmeCompleted) {
+        wins.push({
+          type: 'proof',
+          title: `Submitted Week ${wNum} Proof`,
+          detail: 'GitHub commit references verified',
+          timestamp: null
+        });
+      }
+    });
+
+    // Project Milestones
+    Object.keys(progress?.completedProjectMilestones || {}).forEach(projIdx => {
+      const milestones = progress.completedProjectMilestones[projIdx] || [];
+      const proj = projects[projIdx];
+      if (proj && milestones.length > 0) {
+        wins.push({
+          type: 'project',
+          title: `Milestone Completed`,
+          detail: `Built milestone on ${proj.name}`,
+          timestamp: null
+        });
+      }
+    });
+
+    // Notes
+    (notes || []).slice(0, 3).forEach(n => {
+      wins.push({
+        type: 'note',
+        title: 'Logged Learning Note',
+        detail: n.title || 'Studio thoughts',
+        timestamp: n.createdAt || n.date ? new Date(n.createdAt || n.date) : null
+      });
+    });
+
+    // Sort by timestamp if available, fallback to list order
+    return wins.slice(0, 4);
+  }, [progress, weekProofs, notes, projects, allWeeks, settings.startDate]);
+
+  // ── 3. Compile Attention Areas ──
+  const attentionAreas = useMemo(() => {
+    const areas = [];
+
+    // 1. Active Blocker open
+    const activeBlockers = blockers.filter(b => b.status !== 'Solved');
+    if (activeBlockers.length > 0) {
+      areas.push({
+        type: 'blocker',
+        title: `${activeBlockers.length} Active Blocker${activeBlockers.length > 1 ? 's' : ''} Open`,
+        detail: 'Log answers or get debugging advice to resolve logged stack errors.',
+        actionText: 'Solve Blockers',
+        actionPath: '/blockers',
+        accentColor: 'red'
+      });
+    }
+
+    // 2. Proof pending for current/past weeks
+    const missingProofs = allWeeks
+      .filter(item => item.week.weekNumber <= settings.activeWeek)
+      .filter(item => item.week.proofOfWork !== false && (item.week.deliverable || item.week.proofOfWork))
+      .filter(item => {
+        const p = weekProofs[item.week.weekNumber];
+        return !p || !p.githubRepoLink || !p.githubCommitLink || !p.readmeCompleted;
+      });
+
+    if (missingProofs.length > 0) {
+      areas.push({
+        type: 'proof',
+        title: `${missingProofs.length} Proof Submission${missingProofs.length > 1 ? 's' : ''} Pending`,
+        detail: `Evidence required for Week ${missingProofs.map(item => item.week.weekNumber).join(', ')}.`,
+        actionText: 'Open Proof Console',
+        actionPath: '/proof',
+        accentColor: 'amber'
+      });
+    }
+
+    // 3. Backup outdated or missing
+    const needsBackup = !settings.lastBackupDate || (Date.now() - new Date(settings.lastBackupDate).getTime() > 7 * 24 * 60 * 60 * 1000);
+    if (needsBackup) {
+      areas.push({
+        type: 'backup',
+        title: 'Export Recommended',
+        detail: 'No backup saved in the last 7 days. Backup your local storage database now.',
+        actionText: 'Go to Settings',
+        actionPath: '/settings',
+        accentColor: 'amber'
+      });
+    }
+
+    // 4. Project tracker not initialized
+    const hasProjects = projects.length > 0;
+    const completedMilestonesCount = Object.values(progress.completedProjectMilestones || {})
+      .reduce((a, arr) => a + arr.length, 0);
+    if (hasProjects && completedMilestonesCount === 0) {
+      areas.push({
+        type: 'project',
+        title: 'Project Track Not Started',
+        detail: 'Initialize your portfolio-ready projects and log milestones inside the build studio.',
+        actionText: 'Track Projects',
+        actionPath: '/projects',
+        accentColor: 'blue'
+      });
+    }
+
+    return areas;
+  }, [blockers, weekProofs, settings, projects, progress.completedProjectMilestones, allWeeks]);
+
+  return (
+    <PageShell>
+      {/* ── 1. Progress Hero ── */}
+      <div className="relative overflow-hidden rounded-radius-xxl border border-border-default bg-bg-surface p-8 lg:p-10 shadow-card flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="absolute -left-20 -top-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="space-y-6 flex-1 text-left w-full z-10">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-brand-blue animate-pulse" />
+            <span className="text-xs text-brand-blue font-bold tracking-widest uppercase">
+              Operational Momentum Tracker
+            </span>
+          </div>
+
+          {roadmap ? (
+            <div>
+              <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-heading">
+                Progress Overview
+              </h1>
+              <p className="text-text-secondary mt-3 text-[15px] leading-relaxed max-w-xl">
+                You are building steady proof, one focused session at a time on the <span className="text-white font-bold">{roadmapShortTitle}</span> tracks. 
+                Week {settings.activeWeek} coordinates are active.
+              </p>
+            </div>
+          ) : (
+            <div>
+              <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-heading">
+                No active roadmap loaded.
+              </h1>
+              <p className="text-text-secondary mt-2 text-[15px] leading-relaxed max-w-xl">
+                Import a bootcamp roadmap JSON file to configure progress charts and track learning wins.
+              </p>
+            </div>
+          )}
+
+          <div className="flex flex-wrap gap-4 pt-2 no-print">
+            {roadmap && (
+              <>
+                <Link to="/today" className="btn-primary py-3 px-6 text-[14px] font-bold">
+                  Continue Today's Focus
+                </Link>
+                <Link to="/missions" className="btn-secondary py-3 px-6 text-[14px] font-semibold">
+                  View Weekly Missions
+                </Link>
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* Circular Overall Progress indicator */}
+        {roadmap && (
+          <div className="relative w-40 h-40 flex-shrink-0 z-10">
+>>>>>>> origin/ui/human-learning-studio
             <svg className="w-full h-full -rotate-90" viewBox="0 0 128 128">
               <circle cx="64" cy="64" r="52" fill="none" stroke="#0C0F1E" strokeWidth="8" />
               <circle
@@ -217,7 +463,7 @@ export default function ProgressOverview() {
                 cy="64"
                 r="52"
                 fill="none"
-                stroke="url(#progressGrad)"
+                stroke="url(#progressGradOverview)"
                 strokeWidth="8"
                 strokeDasharray={`${2 * Math.PI * 52}`}
                 strokeDashoffset={`${2 * Math.PI * 52 * (1 - (prog.overall || 0) / 100)}`}
@@ -225,14 +471,15 @@ export default function ProgressOverview() {
                 className="transition-all duration-1000 ease-out"
               />
               <defs>
-                <linearGradient id="progressGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#2563EB" />
+                <linearGradient id="progressGradOverview" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#3B82F6" />
                   <stop offset="100%" stopColor="#06B6D4" />
                 </linearGradient>
               </defs>
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <span className="text-4xl font-extrabold text-white tracking-tight">{prog.overall}%</span>
+<<<<<<< HEAD
               <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">Roadmap Complete</span>
             </div>
           </div>
@@ -285,23 +532,15 @@ export default function ProgressOverview() {
               accentColor="cyan"
             />
           </>
+=======
+              <span className="text-[9px] text-slate-500 uppercase tracking-widest font-bold mt-1">Overall Complete</span>
+            </div>
+          </div>
+>>>>>>> origin/ui/human-learning-studio
         )}
-        <StatCard 
-          label="Day Streak" 
-          value={`${streak.currentStreak}D`} 
-          icon={Flame} 
-          helperText={`Longest: ${streak.longestStreak} days`}
-          accentColor="orange"
-        />
-        <StatCard 
-          label="Total Study Days" 
-          value={streak.totalStudyDays || 0} 
-          icon={Award} 
-          helperText="Active login/commit days"
-          accentColor="purple"
-        />
       </div>
 
+<<<<<<< HEAD
       {/* ── Dynamic Category Progress ── */}
       {dynamicReadiness.length > 0 && (
         <SectionCard title="Topic Readiness Map" subtitle="Progress overview mapped dynamically by syllabus category.">
@@ -416,49 +655,306 @@ export default function ProgressOverview() {
               })}
             </tbody>
           </table>
+=======
+      {/* ── 2. Momentum Metrics Grid ── */}
+      {roadmap && (
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <MetricCard
+            label="Syllabus Mastery"
+            value={`${prog.overall}%`}
+            icon={TrendingUp}
+            accentColor="blue"
+            helperText={`${prog.tasks.completed}/${prog.tasks.total} checkpoints complete`}
+          />
+          <MetricCard
+            label="Completed Weeks"
+            value={`${completedWeeks}/${totalWeeks}`}
+            icon={Calendar}
+            accentColor="cyan"
+            helperText={`${weekPercent}% of modules completed`}
+          />
+          <MetricCard
+            label="Evidence Submitted"
+            value={`${submittedProofsCount}`}
+            icon={Award}
+            accentColor={submittedProofsCount > 0 ? "green" : "amber"}
+            helperText={`${submittedProofsCount} verified GitHub proofs`}
+          />
+          <MetricCard
+            label="Portfolio Projects"
+            value={`${completedProjectsCount}/${projects.length}`}
+            icon={FolderKanban}
+            accentColor="violet"
+            helperText={`${completedProjectsCount} completed application builds`}
+          />
         </div>
-      </SectionCard>
+      )}
 
+      {/* ── 3. Learning Journey & Side Panels ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        {/* Left Column (2/3 width) - Learning Journey Timeline */}
+        <div className="lg:col-span-2 space-y-6">
+          <SectionCard 
+            title="Learning Journey path" 
+            subtitle="Compact, interactive roadmap timeline showing weeks and months."
+          >
+            {!roadmap?.months || roadmap.months.length === 0 ? (
+              <div className="text-center py-12 text-slate-500 italic bg-navy-850/20 border border-navy-800/40 rounded-xl">
+                No syllabus timeline segments defined in this roadmap.
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {roadmap.months.map((month) => {
+                  const isActiveMonth = month.monthNumber === settings.activeMonth;
+                  const isExpanded = expandedMonths[month.monthNumber];
+                  
+                  const monthProgress = getMonthProgress(month, progress);
+                  
+                  return (
+                    <div key={month.monthNumber} className="border border-navy-800/40 rounded-2xl bg-bg-soft/20 overflow-hidden">
+                      {/* Month Accordion Header */}
+                      <button
+                        onClick={() => toggleMonth(month.monthNumber)}
+                        className={`w-full flex items-center justify-between p-4 hover:bg-navy-800/25 transition-all text-left border-b border-navy-800/20`}
+                      >
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-extrabold text-white uppercase tracking-wider">
+                              Month {month.monthNumber}: {month.title}
+                            </span>
+                            {isActiveMonth && (
+                              <span className="bg-accent-primary/10 text-accent-primary border border-accent-primary/20 text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-wider">
+                                Active Coordinates
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-xs text-text-muted">
+                            {monthProgress.completedTasks}/{monthProgress.totalTasks} Tasks · {monthProgress.completedWeeks}/{monthProgress.totalWeeks} Weeks complete
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-xs font-mono font-bold text-slate-400 bg-bg-surface px-2.5 py-1 rounded-lg border border-border-divider">
+                            {monthProgress.taskPercent}%
+                          </span>
+                          {isExpanded ? <ChevronDown className="w-4 h-4 text-slate-500" /> : <ChevronRight className="w-4 h-4 text-slate-500" />}
+                        </div>
+                      </button>
+
+                      {/* Month Weeks Timeline Details */}
+                      {isExpanded && (
+                        <div className="p-5 bg-navy-900/10 space-y-4 relative border-t border-navy-800/10">
+                          {/* Central vertical connecting line */}
+                          <div className="absolute top-6 bottom-6 left-7 w-[1px] bg-navy-800/40" />
+
+                          {month.weeks?.map((w) => {
+                            const completed = isWeekComplete(w.weekNumber);
+                            const active = w.weekNumber === settings.activeWeek;
+                            const locked = isWeekLocked(w.weekNumber);
+
+                            let dotStyle = "bg-navy-900 border-navy-700 text-slate-500";
+                            let cardStyle = "border-border-default bg-bg-surface/50 opacity-70";
+                            let iconNode = <Lock className="w-3 h-3 text-slate-650" />;
+
+                            if (completed) {
+                              dotStyle = "bg-emerald-500/10 border-emerald-500/30 text-emerald-400";
+                              cardStyle = "border-emerald-500/10 bg-emerald-500/5 hover:border-emerald-500/20";
+                              iconNode = <CheckCircle2 className="w-3.5 h-3.5 text-emerald-450" />;
+                            } else if (active) {
+                              dotStyle = "bg-brand-amber/15 border-brand-amber text-brand-amber shadow-primary-glow-sm animate-pulse";
+                              cardStyle = "border-brand-amber/35 bg-brand-amber/5 hover:border-brand-amber";
+                              iconNode = <Sparkles className="w-3.5 h-3.5 text-brand-amber" />;
+                            } else if (!locked) {
+                              dotStyle = "bg-navy-800 border-navy-600 text-slate-350";
+                              cardStyle = "border-border-default bg-bg-surface hover:border-border-strong";
+                              iconNode = <BookOpen className="w-3.5 h-3.5 text-slate-400" />;
+                            }
+
+                            return (
+                              <div key={w.weekNumber} className="flex gap-4 items-start relative z-10">
+                                {/* Timeline Node Pin */}
+                                <div className={`w-6 h-6 rounded-full border flex items-center justify-center flex-shrink-0 mt-2 text-[10px] font-bold ${dotStyle}`}>
+                                  {completed ? iconNode : locked ? iconNode : w.weekNumber}
+                                </div>
+
+                                {/* Week Details Card */}
+                                <div className={`flex-1 p-4 rounded-xl border transition-all ${cardStyle}`}>
+                                  <div className="flex justify-between items-start gap-4 flex-wrap">
+                                    <div>
+                                      <div className="flex items-center gap-2">
+                                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-550">Week {w.weekNumber}</span>
+                                        {active && <span className="bg-brand-amber/15 text-brand-amber text-[9px] font-bold px-1.5 py-0.5 rounded border border-brand-amber/25">Active</span>}
+                                      </div>
+                                      <h4 className="font-bold text-white text-sm leading-snug mt-1">{w.title}</h4>
+                                    </div>
+                                    <Link 
+                                      to="/missions" 
+                                      onClick={() => {
+                                        // Save the week clicked to session if required or navigate to missions page
+                                      }}
+                                      className="text-[11px] font-bold text-brand-blue uppercase tracking-widest hover:underline whitespace-nowrap"
+                                    >
+                                      Open Missions
+                                    </Link>
+                                  </div>
+                                  
+                                  {w.deliverable && (
+                                    <p className="text-xs text-text-muted mt-2 border-t border-navy-850/50 pt-2 leading-relaxed">
+                                      🎯 <span className="italic">"{w.deliverable}"</span>
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </SectionCard>
+>>>>>>> origin/ui/human-learning-studio
+        </div>
+
+<<<<<<< HEAD
       {/* ── Confidence Grid ── */}
       <SectionCard title="Syllabus Skills Confidence Tracker" subtitle="Self-assessed confidence levels for core skill concepts.">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {!roadmap?.checkpoints || roadmap.checkpoints.length === 0 ? (
             <div className="col-span-full text-center py-8 text-slate-500 italic">
               No self-assessment checkpoints defined in this roadmap.
-            </div>
-          ) : (
-            roadmap.checkpoints.map((cp, i) => {
-              const status = checkpointStatuses[cp.skill]?.status || 'Not yet';
-              
-              let statusStyles = "";
-              let dotStyles = "";
-              if (status === 'Confident') {
-                statusStyles = "bg-emerald-500/5 border-emerald-500/20 hover:border-emerald-500/30";
-                dotStyles = "bg-emerald-400";
-              } else if (status === 'Learning') {
-                statusStyles = "bg-amber-500/5 border-amber-500/20 hover:border-amber-500/30";
-                dotStyles = "bg-amber-450";
-              } else {
-                statusStyles = "bg-navy-900 border-navy-700/20";
-                dotStyles = "bg-slate-600";
-              }
+=======
+        {/* Right Column (1/3 width) - Recent Wins, Attention Areas, Linked Evidence */}
+        <div className="space-y-6">
+          
+          {/* Latest Wins */}
+          <SectionCard 
+            title="Latest wins" 
+            subtitle="Evidence of your learning outcomes and milestones."
+          >
+            {recentWins.length === 0 ? (
+              <div className="text-center py-6 text-text-muted italic bg-bg-soft/40 border border-dashed border-border-default rounded-radius-xl p-4">
+                Your first win will appear here after you complete a mission, submit proof, or finish a project step.
+              </div>
+            ) : (
+              <div className="space-y-3 pt-1">
+                {recentWins.map((win, idx) => {
+                  let badgeColor = "bg-navy-800 border-navy-700 text-slate-400";
+                  if (win.type === 'week') badgeColor = "bg-emerald-500/10 border-emerald-500/20 text-emerald-450";
+                  if (win.type === 'proof') badgeColor = "bg-blue-500/10 border-blue-500/20 text-blue-450";
+                  if (win.type === 'project') badgeColor = "bg-brand-violet/10 border-brand-violet/20 text-brand-violet";
 
-              return (
-                <div key={i} className={`flex items-center gap-4 p-4 rounded-2xl border transition-all duration-200 ${statusStyles}`}>
-                  <div className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${dotStyles}`} />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-white truncate">{cp.skill}</p>
-                    <p className={`text-[11px] font-bold mt-1 uppercase tracking-widest
-                      ${status === 'Confident' ? 'text-emerald-450' : status === 'Learning' ? 'text-amber-450' : 'text-slate-500'}`}>
-                      {status}
-                    </p>
-                  </div>
+                  return (
+                    <div key={idx} className="bg-bg-soft border border-border-default p-3.5 rounded-xl text-left flex gap-3 items-start">
+                      <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${
+                        win.type === 'week' ? 'bg-emerald-400' : win.type === 'proof' ? 'bg-blue-400' : 'bg-brand-violet'
+                      }`} />
+                      <div className="min-w-0 flex-1">
+                        <div className="flex justify-between items-center gap-2">
+                          <span className={`text-[9px] font-bold uppercase tracking-wider border px-1.5 py-0.5 rounded ${badgeColor}`}>
+                            {win.type}
+                          </span>
+                          {win.timestamp && (
+                            <span className="text-[10px] text-text-muted">
+                              {win.timestamp.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}
+                            </span>
+                          )}
+                        </div>
+                        <h4 className="font-bold text-white text-xs mt-1 truncate">{win.title}</h4>
+                        <p className="text-[11px] text-text-secondary mt-0.5 truncate">{win.detail}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </SectionCard>
+
+          {/* Attention Areas */}
+          <SectionCard 
+            title="Attention Areas" 
+            subtitle="Actions suggested to clear obstacles or secure progress."
+          >
+            {attentionAreas.length === 0 ? (
+              <div className="text-center py-6 text-emerald-450 italic bg-emerald-500/5 border border-emerald-500/20 rounded-radius-xl p-4">
+                ✓ No attention areas right now. All deliverables are complete!
+              </div>
+            ) : (
+              <div className="space-y-3 pt-1">
+                {attentionAreas.map((area, idx) => {
+                  let alertStyle = "border-brand-amber/20 bg-brand-amber/5 text-brand-amber";
+                  let Icon = AlertTriangle;
+
+                  if (area.accentColor === 'red') {
+                    alertStyle = "border-brand-red/25 bg-brand-red/5 text-brand-red";
+                    Icon = ShieldAlert;
+                  } else if (area.accentColor === 'blue') {
+                    alertStyle = "border-brand-blue/20 bg-brand-blue/5 text-brand-blue";
+                    Icon = FolderKanban;
+                  }
+
+                  return (
+                    <div key={idx} className={`border p-4 rounded-xl flex flex-col justify-between gap-3 ${alertStyle}`}>
+                      <div className="flex gap-2.5 items-start">
+                        <Icon className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <h4 className="text-xs font-bold text-white uppercase tracking-wider">{area.title}</h4>
+                          <p className="text-[11px] text-text-secondary mt-1 leading-normal">{area.detail}</p>
+                        </div>
+                      </div>
+                      <Link 
+                        to={area.actionPath}
+                        className="btn-secondary py-1.5 px-3 text-[10px] font-bold text-center border-navy-700/40 text-slate-350 hover:text-white"
+                      >
+                        {area.actionText}
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </SectionCard>
+
+          {/* Linked Evidence Summary */}
+          <SectionCard 
+            title="Linked Evidence Summary" 
+            subtitle="Bridges to details pages for submission references."
+          >
+            <div className="space-y-4 pt-1">
+              <div className="p-3.5 bg-bg-soft/40 border border-border-default rounded-xl space-y-2">
+                <div className="flex justify-between items-center text-xs font-bold text-white">
+                  <span>Proof Submissions</span>
+                  <span className="text-brand-blue font-mono">{submittedProofsCount} Complete</span>
                 </div>
-              );
-            })
-          )}
+                <p className="text-[11px] text-text-secondary leading-relaxed">
+                  Submit specific GitHub commit URLs to verify weekly task completions.
+                </p>
+                <Link to="/proof" className="btn-secondary py-2 text-xs font-bold text-center w-full mt-2 flex items-center justify-center gap-1.5">
+                  Open Proof of Work <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+
+              <div className="p-3.5 bg-bg-soft/40 border border-border-default rounded-xl space-y-2">
+                <div className="flex justify-between items-center text-xs font-bold text-white">
+                  <span>Capstone Projects</span>
+                  <span className="text-brand-violet font-mono">{completedProjectsCount} / {projects.length} Done</span>
+                </div>
+                <p className="text-[11px] text-text-secondary leading-relaxed">
+                  Turn syllabus criteria into production-grade portfolio project builds.
+                </p>
+                <Link to="/projects" className="btn-secondary py-2 text-xs font-bold text-center w-full mt-2 flex items-center justify-center gap-1.5">
+                  Open Project Tracker <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+>>>>>>> origin/ui/human-learning-studio
+            </div>
+          </SectionCard>
+
         </div>
-      </SectionCard>
+      </div>
     </PageShell>
   );
 }
+
