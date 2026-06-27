@@ -39,6 +39,11 @@ export default function Dashboard() {
   } = useApp();
 
   const [hideBackupBannerLocal, setHideBackupBannerLocal] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Synchronously ensure session ID exists
   const sessionId = React.useMemo(() => {
@@ -54,11 +59,18 @@ export default function Dashboard() {
   const activeWeekData = getActiveWeekData(roadmap, settings.activeWeek);
   const greeting = getGreeting();
 
-  // ── Dynamic duration calculations ─────────────�  const totalDays = roadmap?.totalDays || 168;
+  const totalDays = roadmap?.totalDays || 180;
   const bootcampDay = getBootcampDay(settings.startDate) || 1;
   const daysRemaining = getDaysRemaining(settings.startDate, totalDays) || totalDays;
   const durationPercent = getBootcampDurationPercent(settings.startDate, totalDays) || 0;
   const motivational = getMotivationalMessage(prog.overall, streak.currentStreak);
+
+  const hasTotalDays = roadmap && roadmap.totalDays !== undefined && roadmap.totalDays !== null && roadmap.totalDays > 0;
+  const hasStartDate = settings.startDate !== undefined && settings.startDate !== null && settings.startDate !== "";
+  const calculatedBootcampDay = hasStartDate ? (getBootcampDay(settings.startDate) || 1) : null;
+  const calculatedDaysRemaining = hasStartDate ? getDaysRemaining(settings.startDate, totalDays) : null;
+  const showDaysRemaining = hasTotalDays && hasStartDate && calculatedDaysRemaining !== null && calculatedDaysRemaining !== undefined;
+  const showStreak = streak && streak.currentStreak !== undefined && streak.currentStreak !== null;
 
   // ── Dynamic readiness score ────────────────────────────────────────────────
   const dynamicReadiness = calculateDynamicReadiness(roadmap, progress, resourcesStatus, practicalMissions);
@@ -174,6 +186,46 @@ export default function Dashboard() {
 
   return (
     <PageShell>
+      <style>{`
+        @keyframes scan-pulse {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(500%); }
+        }
+        .animate-scan {
+          animation: scan-pulse 6s ease-in-out infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .animate-scan {
+            animation: none !important;
+            background: linear-gradient(to right, transparent, rgba(6, 182, 212, 0.25), transparent) !important;
+            transform: none !important;
+            left: 0 !important;
+            width: 100% !important;
+          }
+        }
+      `}</style>
+
+      {/* ── Mission Console Top Header ── */}
+      {roadmap && (
+        <div className="bg-bg-surface border border-border-default rounded-radius-xxl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-navy-800/80 border border-navy-700 flex items-center justify-center flex-shrink-0">
+              <img src="/xcelerate-icon.png" alt="X" className="w-5 h-5 object-contain" />
+            </div>
+            <div>
+              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none">Mission Console</p>
+              <h2 className="text-lg font-extrabold text-white mt-1.5 leading-none">XcelerateAI Command Center</h2>
+            </div>
+          </div>
+          <div className="text-left sm:text-right">
+            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none">Active Roadmap</p>
+            <p className="text-xs font-semibold text-slate-400 mt-1.5 max-w-md truncate">
+              {roadmapTitle}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* ── Backup Export Reminder Banner ── */}
       {showBackupReminder && (
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 p-5 bg-brand-amber/5 border border-brand-amber/20 rounded-radius-xxl animate-fade-in">
@@ -237,16 +289,16 @@ export default function Dashboard() {
         {/* ── 1. Command Hero with Journey Tracker ── */}
         <div
           data-tour="dashboard-hero"
-          className="col-span-1 lg:col-span-3 order-1 lg:order-1 relative overflow-hidden rounded-radius-xxl border border-border-default bg-bg-surface p-8 lg:p-10 shadow-card animate-fade-in"
+          className="col-span-1 lg:col-span-3 order-1 lg:order-1 relative overflow-hidden rounded-radius-xxl border border-border-default bg-bg-surface p-10 lg:p-12 shadow-card animate-fade-in"
         >
           <div className="absolute -left-20 -top-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-8 items-stretch relative z-10 w-full">
+          <div className="flex flex-col md:grid md:grid-cols-4 gap-8 lg:gap-12 items-stretch relative z-10 w-full">
             {/* Left Column: Command Briefing */}
-            <div className="flex flex-col justify-between md:col-span-2 order-1 md:order-1 text-left w-full space-y-4">
+            <div className="flex flex-col justify-between md:col-span-3 order-1 md:order-1 text-left w-full space-y-6">
               <div>
-                <div className="flex items-center gap-2 mb-3">
+                <div className="flex items-center gap-2 mb-3.5">
                   <span className="w-2 h-2 rounded-full bg-brand-blue animate-pulse" />
                   <span className="text-xs text-brand-blue font-bold tracking-widest uppercase">
                     Mission Cockpit Active
@@ -254,35 +306,45 @@ export default function Dashboard() {
                 </div>
 
                 {roadmap && roadmap.weeks && roadmap.weeks.length > 0 ? (
-                  <div className="space-y-3">
-                    <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-heading">
+                  <div className="space-y-4">
+                    <h1 className="text-4xl lg:text-5xl font-black text-white tracking-tight font-heading leading-tight">
                       {learnerDisplayName ? `Welcome back, ${learnerDisplayName}.` : 'Welcome back, Operator.'}
                     </h1>
-                    <div className="text-text-secondary text-[15px] leading-relaxed max-w-xl space-y-1">
-                      <p>You’re operating inside the <span className="text-white font-semibold">{roadmapShortTitle}</span>.</p>
-                      <p>You’re currently working on <span className="text-white font-semibold">Week {settings.activeWeek}: {activeWeekData?.week?.title || 'Active Session'}</span>.</p>
-                      
+                    
+                    <p className="text-slate-300 font-semibold text-[16px] lg:text-[18px]">
+                      You’re currently working on Week {settings.activeWeek}: <span className="text-white font-bold">{activeWeekData?.week?.title || 'Active Session'}</span>
+                    </p>
+
+                    <div className="relative w-full h-[1px] bg-navy-800/60 my-4 overflow-hidden">
+                      <span className="absolute top-0 left-0 h-full w-28 bg-gradient-to-r from-transparent via-brand-cyan/20 to-transparent animate-scan blur-[0.5px]" />
+                    </div>
+
+                    <div className="text-text-secondary text-[14px] leading-relaxed max-w-2xl">
                       {activeWeekData?.week?.briefing ? (
-                        <p className="mt-2 text-xs text-slate-400 font-normal">
-                          <span className="text-brand-cyan font-bold uppercase tracking-wider block text-[10px] mb-0.5">Current Objective</span>
+                        <p className="text-slate-400 font-medium">
                           {activeWeekData.week.briefing}
                         </p>
                       ) : activeWeekData?.month?.objective ? (
-                        <p className="mt-2 text-xs text-slate-400 font-normal">
-                          <span className="text-brand-cyan font-bold uppercase tracking-wider block text-[10px] mb-0.5">Current Objective</span>
+                        <p className="text-slate-400 font-medium">
                           {activeWeekData.month.objective}
                         </p>
                       ) : (
-                        <p className="mt-2 text-xs text-slate-400 font-normal">Today’s focus is ready.</p>
+                        <p className="text-slate-400 font-medium">Today’s focus is waiting.</p>
+                      )}
+
+                      {motivational && (
+                        <p className="text-xs text-text-muted italic mt-4 block">
+                          "{motivational}"
+                        </p>
                       )}
                     </div>
                   </div>
                 ) : (
                   <div>
-                    <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-heading">
+                    <h1 className="text-4xl lg:text-5xl font-black text-white tracking-tight font-heading leading-tight">
                       Initialize Learning Workspace.
                     </h1>
-                    <p className="text-text-secondary mt-2 text-[15px] leading-relaxed max-w-xl">
+                    <p className="text-text-secondary mt-3 text-[15px] leading-relaxed max-w-xl">
                       Import a structured learning roadmap JSON to activate your personalized mission dashboard.
                     </p>
                   </div>
@@ -310,29 +372,56 @@ export default function Dashboard() {
 
             {/* Right Column: Journey Tracker */}
             {roadmap && roadmap.weeks && roadmap.weeks.length > 0 && (
-              <div className="order-2 md:order-2 bg-navy-900/60 border border-navy-750 p-5 rounded-2xl space-y-4 flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-1">Journey Progress</span>
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-3xl font-extrabold text-white font-mono">Day {bootcampDay}</span>
-                    <span className="text-xs text-slate-500 font-mono">/ {totalDays}</span>
+              <div className="order-2 md:order-2 md:col-span-1 flex flex-col justify-center relative">
+                {/* Visual Card wrapping Day Tracker */}
+                <div className="bg-navy-900/60 border border-navy-800 hover:border-brand-blue/20 transition-all duration-300 p-4 rounded-xl relative z-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_0_20px_rgba(0,0,0,0.3)] space-y-3 w-full max-w-[260px] mx-auto md:ml-auto md:mr-0">
+                  <div>
+                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Campaign Progress</span>
+                    <div className="flex items-baseline gap-1.5 mt-1">
+                      {hasStartDate ? (
+                        <>
+                          <span className={`text-3xl font-black text-white tracking-tight font-heading transition-all duration-500 transform ${
+                            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'
+                          }`}>
+                            Day {calculatedBootcampDay}
+                          </span>
+                          {hasTotalDays && (
+                            <span className="text-xs text-slate-500 font-bold">/ {totalDays}</span>
+                          )}
+                        </>
+                      ) : (
+                        <span className="text-xs font-bold text-slate-400">Day tracking unavailable</span>
+                      )}
+                    </div>
+                    {hasStartDate && !hasTotalDays && (
+                      <p className="text-[11px] text-slate-450 mt-1 font-medium">Campaign duration unavailable</p>
+                    )}
+                    {showDaysRemaining && (
+                      <p className="text-[11px] text-slate-455 mt-1 font-medium">
+                        {calculatedDaysRemaining} days left after today
+                      </p>
+                    )}
                   </div>
-                </div>
 
-                <div className="space-y-1.5">
-                  <ProgressBar percent={durationPercent} colorClass="bg-gradient-to-r from-brand-blue to-brand-cyan" />
-                  <span className="text-[10px] text-text-muted font-mono block text-right">{durationPercent}% Completed</span>
-                </div>
+                  <div className="w-full pt-0.5">
+                    <ProgressBar percent={mounted ? durationPercent : 0} colorClass="bg-gradient-to-r from-brand-blue to-brand-cyan" />
+                  </div>
 
-                <div className="flex flex-col gap-1.5 pt-1 text-[11px]">
-                  <div className="flex justify-between items-center text-slate-400 bg-navy-800/30 px-3 py-1.5 rounded-lg border border-navy-750/30">
-                    <span>Campaign remaining</span>
-                    <span className="font-semibold text-white font-mono">{daysRemaining} days left</span>
-                  </div>
-                  <div className="flex justify-between items-center text-slate-400 bg-navy-800/30 px-3 py-1.5 rounded-lg border border-navy-750/30">
-                    <span>Streak count</span>
-                    <span className="font-semibold text-brand-amber font-mono">🔥 {streak.currentStreak || 0} Days</span>
-                  </div>
+                  {/* Footer metadata pills */}
+                  {((settings.activeWeek !== undefined && settings.activeWeek !== null && settings.activeWeek !== '') || showStreak) && (
+                    <div className="flex flex-wrap gap-1.5 pt-2.5 border-t border-navy-800/40">
+                      {settings.activeWeek !== undefined && settings.activeWeek !== null && settings.activeWeek !== '' && (
+                        <span className="text-[9px] font-bold text-slate-400 bg-navy-950/40 border border-navy-850 px-2 py-0.5 rounded">
+                          Week {settings.activeWeek}
+                        </span>
+                      )}
+                      {showStreak && (
+                        <span className="text-[9px] font-bold text-slate-400 bg-navy-950/40 border border-navy-850 px-2 py-0.5 rounded">
+                          {streak.currentStreak}-day streak
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -383,7 +472,7 @@ export default function Dashboard() {
                       {nextSession.durationMinutes && (
                         <span className="flex items-center gap-1.5 text-text-secondary">
                           <Clock className="w-3.5 h-3.5 text-brand-blue" />
-                          <span>⏱ {nextSession.durationMinutes} Minutes</span>
+                          <span>{nextSession.durationMinutes} Minutes</span>
                         </span>
                       )}
 
@@ -423,28 +512,28 @@ export default function Dashboard() {
         <div className="col-span-1 lg:col-span-3 order-3 lg:order-2">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             <MetricCard
-              label="Overall Progress"
+              label={readinessSectionTitle}
+              value={`${overallReadinessScore}%`}
+              icon={ShieldCheck}
+              accentColor="blue"
+              helperText="Based on missions, proof, projects, and checkpoints."
+            />
+            <MetricCard
+              label="ACTIVE PROGRESS"
               value={`${prog.overall}%`}
               icon={TrendingUp}
               accentColor="blue"
-              helperText={`${prog.tasks.completed}/${prog.tasks.total} tasks resolved`}
+              helperText={`${prog.tasks.completed}/${prog.tasks.total} roadmap tasks resolved`}
             />
             <MetricCard
-              label="Current Week"
-              value={`Week ${settings.activeWeek}`}
-              icon={Calendar}
-              accentColor="cyan"
-              helperText={`Month ${settings.activeMonth} · Phase ${Math.ceil(settings.activeWeek / 4)}`}
-            />
-            <MetricCard
-              label="Study Streak"
+              label="STUDY STREAK"
               value={`${streak.currentStreak} Day${streak.currentStreak !== 1 ? 's' : ''}`}
               icon={Flame}
               accentColor="amber"
-              helperText={`Longest: ${streak.longestStreak} days`}
+              helperText={`Longest recorded streak: ${streak.longestStreak} days`}
             />
             <MetricCard
-              label="Proof Status"
+              label="PROOF STATUS"
               value={isProofMissingForActiveWeek ? 'Action Due' : 'Verified'}
               icon={Award}
               accentColor={isProofMissingForActiveWeek ? 'amber' : 'green'}
@@ -471,7 +560,7 @@ export default function Dashboard() {
               const nextMilestone = nextMilestoneIdx !== -1 && project.milestones ? project.milestones[nextMilestoneIdx] : null;
               const nextMilestoneTitle = nextMilestone
                 ? (typeof nextMilestone === 'string' ? nextMilestone : nextMilestone.title || nextMilestone.name || '')
-                : 'All milestones completed!';
+                : (total === 0 ? 'No active milestone supplied' : (done.length >= total ? 'All milestones completed!' : 'Next milestone unavailable'));
 
               const githubLink = progress.projectGithubLinks?.[index] || '';
 
@@ -569,10 +658,10 @@ export default function Dashboard() {
                     {/* Summary Chips */}
                     <div className="flex flex-wrap gap-2">
                       <span className="bg-navy-900/60 border border-navy-750/30 text-slate-350 text-[11px] px-2.5 py-1 rounded-lg font-semibold">
-                        📊 {totalCompetencies} Competencies Tracked
+                        {totalCompetencies} Competencies Tracked
                       </span>
                       <span className="bg-navy-900/60 border border-navy-750/30 text-slate-350 text-[11px] px-2.5 py-1 rounded-lg font-semibold">
-                        🚀 {movingCount} Moving · {waitingCount} Waiting
+                        {movingCount} Moving · {waitingCount} Waiting
                       </span>
                     </div>
 
@@ -693,27 +782,6 @@ export default function Dashboard() {
           </SectionCard>
         </div>
 
-      </div>
-    </PageShell>
-  );
-}e="text-[10px] text-text-muted">
-                            {new Date(latestNote.createdAt || latestNote.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}
-                          </span>
-                        </div>
-                        <h4 className="text-xs font-bold text-white truncate">{latestNote.title || 'Untitled Note'}</h4>
-                        <p className="text-xs text-text-secondary mt-1 line-clamp-2 leading-relaxed">
-                          {latestNote.content || latestNote.whatLearned || latestNote.whatILearned || 'No content provided.'}
-                        </p>
-                      </ReflectionCard>
-                    ) : (
-                      <p className="text-xs text-text-muted italic">No journal entries yet.</p>
-                    )}
-                  </div>
-                );
-              })()}
-            </div>
-          </SectionCard>
-        </div>
       </div>
     </PageShell>
   );
