@@ -491,6 +491,13 @@ export function AppProvider({ children }) {
     }));
   }, []);
 
+  const setProjectLiveDemoLink = useCallback((projectIndex, url) => {
+    setProgress((prev) => ({
+      ...prev,
+      projectLiveDemoLinks: { ...(prev.projectLiveDemoLinks || {}), [projectIndex]: url },
+    }));
+  }, []);
+
   // =============================================
   // NOTES ACTIONS
   // =============================================
@@ -1068,6 +1075,7 @@ export function AppProvider({ children }) {
     toggleProjectMilestone,
     setProjectGithubLink,
     setProjectNote,
+    setProjectLiveDemoLink,
 
     // Notes
     addNote,
