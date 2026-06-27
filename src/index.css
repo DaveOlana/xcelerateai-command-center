@@ -7,19 +7,19 @@
    ============================================= */
 :root {
   /* Backgrounds */
-  --bg-app: #080B16;            /* Deep navy base */
-  --bg-page: #0C0F1E;           /* Slightly lighter page background */
-  --bg-surface: #121829;        /* Standard card surface */
-  --bg-elevated: #172033;       /* Elevated card / popover */
-  --bg-soft: #1C263B;           /* Softer inset panels */
-  --bg-overlay: rgba(8, 11, 22, 0.85); /* Modal overlay backdrops */
+  --bg-app: #050811;            /* Deep navy base (darker) */
+  --bg-page: #080B16;           /* Slightly lighter page background */
+  --bg-surface: #0C101E;        /* Standard card surface */
+  --bg-elevated: #111729;       /* Elevated card / popover */
+  --bg-soft: #172033;           /* Softer inset panels */
+  --bg-overlay: rgba(5, 8, 17, 0.90); /* Modal overlay backdrops */
 
   /* Text Colors */
   --text-primary: #F8FAFC;       /* Off-white */
   --text-secondary: #CBD5E1;     /* Soft slate text */
-  --text-muted: #94A3B8;         /* Muted grey */
+  --text-muted: #64748B;         /* Muted grey */
   --text-disabled: #475569;      /* Disabled text color */
-  --text-inverse: #080B16;       /* Reverse/contrasting color */
+  --text-inverse: #050811;       /* Reverse/contrasting color */
 
   /* Borders */
   --border-default: rgba(148, 163, 184, 0.12); /* Default card/component border */
@@ -54,7 +54,7 @@
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
-  --radius-xxl: 1.5rem;         /* For premium card components */
+  --radius-xxl: 1.5rem;         /* For premium card components (24px) */
 }
 
 /* =============================================
@@ -138,11 +138,11 @@ h1, h2, h3, h4, h5, h6 {
 @layer components {
   /* Card base - Premium clean dark UI */
   .card {
-    @apply bg-navy-850 border border-navy-700/25 rounded-3xl p-7 shadow-card transition-all duration-300;
+    @apply bg-navy-900 border border-navy-700/40 rounded-2xl p-7 shadow-card transition-all duration-300;
   }
 
   .card-hover {
-    @apply hover:border-navy-600 hover:shadow-card-hover transition-all duration-300;
+    @apply hover:border-navy-500 hover:shadow-card-hover transition-all duration-300;
   }
 
   /* Glow button - Refined for premium feel */
@@ -242,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Progress bar */
   .progress-track {
-    @apply h-2.5 bg-navy-900 rounded-full overflow-hidden;
+    @apply h-1.5 bg-navy-800 rounded-full overflow-hidden;
   }
 
   .progress-fill {
