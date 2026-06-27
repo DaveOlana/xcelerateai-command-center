@@ -5,7 +5,7 @@ import Layout from './components/layout/Layout';
 import DataGuard from './components/layout/DataGuard';
 
 // Pages
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/DashboardNew';
 import ImportRoadmap from './pages/ImportRoadmap';
 import BootcampTimeline from './pages/BootcampTimeline';
 import WeeklyMissions from './pages/WeeklyMissions';

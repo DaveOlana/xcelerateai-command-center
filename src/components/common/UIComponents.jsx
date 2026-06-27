@@ -110,7 +110,7 @@ export function MetricCard({ label, value, icon: Icon, helperText, accentColor =
         {Icon && <Icon className={`w-4 h-4 ${textColors[accentColor] || "text-text-muted"}`} />}
       </div>
       <div>
-        <p className="text-2xl font-extrabold tracking-tight text-white font-mono">{value}</p>
+        <p className="text-2xl font-extrabold tracking-tight text-white font-heading">{value}</p>
         {helperText && <p className="text-[12px] text-text-muted mt-1.5 font-medium leading-relaxed">{helperText}</p>}
       </div>
     </div>
@@ -150,7 +150,7 @@ export function StatCard({ label, value, icon: Icon, helperText, accentColor = "
 export function ProgressBar({ percent, className = "", colorClass = "bg-gradient-to-r from-brand-blue to-brand-cyan" }) {
   const pct = Math.min(100, Math.max(0, Math.round(percent || 0)));
   return (
-    <div className={`h-2.5 bg-bg-soft border border-border-divider rounded-full overflow-hidden w-full ${className}`}>
+    <div className={`h-1.5 bg-bg-soft border border-border-divider rounded-full overflow-hidden w-full ${className}`}>
       <div
         className={`h-full rounded-full transition-all duration-700 ease-out ${colorClass}`}
         style={{ width: `${pct}%` }}
