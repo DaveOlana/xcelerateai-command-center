@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Upload, CheckCircle2, AlertCircle, FileJson, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock, BookOpen, CheckSquare, Target, FileText, Zap, Coffee, BarChart2, Award, Shield } from 'lucide-react';
+import { Upload, CheckCircle2, AlertCircle, FileJson, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock, BookOpen, CheckSquare, Target, FileText, Zap, Coffee, BarChart2, Award, Shield, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { validateRoadmapJSON } from '../utils/jsonValidator';
 import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
@@ -173,7 +173,7 @@ export default function ImportRoadmap() {
                 : <AlertCircle className="w-5 h-5 text-red-400" />
               }
               <h3 className="font-semibold text-white">
-                {validationResult.valid ? 'Validation Passed ✓' : 'Validation Failed ✗'}
+                {validationResult.valid ? 'Validation Passed' : 'Validation Failed'}
               </h3>
             </div>
             <button
@@ -309,7 +309,7 @@ export default function ImportRoadmap() {
                     <div className="mt-3 border-t border-navy-400/50 pt-2.5 space-y-2">
                       {validationResult.info.map((inf, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs text-blue-300/80">
-                          <span className="text-blue-500 mt-0.5">✓</span>
+                          <Check className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
                           <span>{inf}</span>
                         </div>
                       ))}

@@ -484,7 +484,7 @@ export default function WeeklyMissions() {
               <div>
                 <div className="flex items-center gap-2 flex-wrap mb-2">
                   {isComplete ? (
-                    <span className="badge-green">✓ Completed</span>
+                    <span className="badge-green">Completed</span>
                   ) : (
                     <span className="badge-slate">In Progress</span>
                   )}
@@ -583,9 +583,9 @@ export default function WeeklyMissions() {
                       <p className="text-xs text-slate-400 mt-1">Review the following reference materials to prepare for the skill checks and practical builds.</p>
                     </div>
                     <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${
-                      stepStatus.resourcesDone ? 'bg-emerald-500/10 text-emerald-450 border-emerald-500/25' : 'bg-brand-amber/10 text-brand-amber border-brand-amber/20 animate-pulse'
+                      stepStatus.resourcesDone ? 'bg-emerald-500/10 text-emerald-455 border-emerald-500/25' : 'bg-brand-amber/10 text-brand-amber border-brand-amber/20 animate-pulse'
                     }`}>
-                      {stepStatus.resourcesDone ? '✓ All Studied' : 'Study Pending'}
+                      {stepStatus.resourcesDone ? 'All Studied' : 'Study Pending'}
                     </span>
                   </div>
 
@@ -833,7 +833,7 @@ export default function WeeklyMissions() {
                             </div>
 
                             <div className="flex gap-3 items-center justify-end">
-                              {skillCheckSaved && <span className="text-xs text-accent-primary font-bold">Progress Saved ✓</span>}
+                              {skillCheckSaved && <span className="text-xs text-accent-primary font-bold">Progress Saved</span>}
                               <button type="submit" className="btn-primary py-2.5 px-6 text-xs font-bold">
                                 Save readiness
                               </button>
@@ -858,7 +858,7 @@ export default function WeeklyMissions() {
                     <span className={`text-[11px] font-bold px-3 py-1 rounded-full border ${
                       stepStatus.practicalsDone ? 'bg-emerald-500/10 text-emerald-450 border-emerald-500/25' : 'bg-brand-amber/10 text-brand-amber border-brand-amber/20 animate-pulse'
                     }`}>
-                      {stepStatus.practicalsDone ? '✓ Builds Complete' : 'Builds Pending'}
+                      {stepStatus.practicalsDone ? 'Builds Complete' : 'Builds Pending'}
                     </span>
                   </div>
 
@@ -904,8 +904,16 @@ export default function WeeklyMissions() {
                                   <p className="text-[10px] text-slate-500 font-mono">ID: {m.missionId}</p>
 
                                   <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-400 font-medium pt-1">
-                                    {m.skillFocus && <span>📍 {m.skillFocus}</span>}
-                                    {m.timeEstimate && <span>⏱ {m.timeEstimate}</span>}
+                                    {m.skillFocus && (
+                                      <span className="flex items-center gap-1">
+                                        <Target className="w-3.5 h-3.5 text-slate-500" /> {m.skillFocus}
+                                      </span>
+                                    )}
+                                    {m.timeEstimate && (
+                                      <span className="flex items-center gap-1">
+                                        <Clock className="w-3.5 h-3.5 text-slate-500" /> {m.timeEstimate}
+                                      </span>
+                                    )}
                                     {m.difficulty && <span className="capitalize">{cleanDifficultyLabel(m.difficulty)}</span>}
                                   </div>
 
@@ -918,7 +926,7 @@ export default function WeeklyMissions() {
                                   onClick={() => navigate(`/mission/${m.missionId}`)}
                                   className="w-full btn-primary py-2.5 text-xs text-center font-bold"
                                 >
-                                  {missionStatus === 'Completed' ? '✓ View Workspace Details' : 'Open Workspace →'}
+                                  {missionStatus === 'Completed' ? 'View Workspace Details' : 'Open Workspace'}
                                 </button>
                               </div>
                             );
@@ -1018,7 +1026,7 @@ export default function WeeklyMissions() {
                             </div>
 
                             <div className="flex justify-end gap-3 items-center pt-4 border-t border-navy-750">
-                              {proofSaved && <span className="text-xs text-accent-primary font-bold">Proof Submitted ✓</span>}
+                              {proofSaved && <span className="text-xs text-accent-primary font-bold">Proof Submitted</span>}
                               <button
                                 type="submit"
                                 className="btn-primary py-2.5 px-6 text-xs font-bold"
@@ -1075,7 +1083,7 @@ export default function WeeklyMissions() {
                         />
 
                         <div className="flex justify-end gap-3 items-center pt-2">
-                          {reflectionSaved && <span className="text-xs text-accent-primary font-bold">Reflection Saved ✓</span>}
+                          {reflectionSaved && <span className="text-xs text-accent-primary font-bold">Reflection Saved</span>}
                           <button
                             type="submit"
                             className="btn-primary py-2.5 px-6 text-xs font-bold"

@@ -173,7 +173,7 @@ export default function Settings() {
             type="submit"
             className="btn-primary py-2.5 px-6 text-xs font-bold w-full sm:w-auto"
           >
-            {profileSaved ? 'Profile Updated ✓' : 'Save Profile Changes'}
+            {profileSaved ? 'Profile Updated' : 'Save Profile Changes'}
           </button>
         </form>
       </SectionCard>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Circle, TrendingUp, ChevronDown, ChevronUp, Link as LinkIcon, ExternalLink, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, Circle, TrendingUp, ChevronDown, ChevronUp, Link as LinkIcon, ExternalLink, ShieldCheck, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import ImportRequiredCard from '../components/common/ImportRequiredCard';
 import { PageShell, PageHeader, SectionCard, StatusBadge, ProgressBar } from '../components/common/UIComponents';
@@ -202,7 +202,7 @@ export default function Checkpoints() {
                       className={`py-2 px-2 rounded-xl border text-[13px] font-bold uppercase tracking-wider transition-all duration-200 active:scale-95
                         ${isActive ? sCfg.active : `${sCfg.bg} ${sCfg.color} hover:opacity-85`}`}
                     >
-                      {status === 'Confident' && isActive && '✓ '}
+                      {status === 'Confident' && isActive && <Check className="w-3.5 h-3.5 inline mr-1" />}
                       {status === 'Confident' ? 'Verify Proof' : status}
                     </button>
                   );
