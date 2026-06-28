@@ -347,7 +347,7 @@ export default function ProofOfWork() {
                     ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
                     : 'bg-navy-900 text-slate-500 border-navy-750'
                 }`}>
-                  {isProofComplete(currentProof) ? 'Verified ✓' : 'Awaiting Proof'}
+                  {isProofComplete(currentProof) ? 'Verified' : 'Awaiting Proof'}
                 </span>
               }
             >
@@ -511,8 +511,8 @@ export default function ProofOfWork() {
                 {/* Form buttons */}
                 <div className="flex gap-3 justify-end pt-3 border-t border-navy-800/40 items-center">
                   {saved && (
-                    <span className="text-[11px] font-bold text-accent-primary uppercase tracking-widest animate-fade-in">
-                      ✓ Evidence Saved Successfully
+                    <span className="text-[11px] font-bold text-accent-primary uppercase tracking-widest animate-fade-in flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-accent-primary" /> Evidence Saved Successfully
                     </span>
                   )}
                   <button
@@ -551,8 +551,8 @@ export default function ProofOfWork() {
                         <h4 className="font-bold text-white text-sm leading-snug">{w.title}</h4>
                         
                         {proof.screenshotNote && (
-                          <div className="text-[11px] text-slate-450 bg-bg-surface px-2.5 py-1.5 rounded-lg border border-border-divider font-mono truncate">
-                            📂 {proof.screenshotNote}
+                          <div className="text-[11px] text-slate-450 bg-bg-surface px-2.5 py-1.5 rounded-lg border border-border-divider font-mono truncate flex items-center gap-1.5">
+                            <FileText className="w-3.5 h-3.5 text-slate-500" /> {proof.screenshotNote}
                           </div>
                         )}
                       </div>

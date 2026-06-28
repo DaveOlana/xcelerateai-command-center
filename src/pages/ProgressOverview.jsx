@@ -4,7 +4,7 @@ import {
   TrendingUp, CheckCircle2, Flame, BarChart2, Calendar, Award, Zap, 
   AlertTriangle, Lock, FolderKanban, BookOpen, ChevronDown, 
   ChevronRight, ExternalLink, ShieldAlert, Sparkles, ArrowRight,
-  FileText
+  FileText, Target
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { calculateOverallProgress, getMonthProgress, calculateDynamicReadiness } from '../utils/progressCalculator';
@@ -180,7 +180,7 @@ export default function ProgressOverview() {
     }
 
     return {
-      text: 'Congratulations! You have completed all weekly tracks and capstone projects in this roadmap. Ready for deployment! 🚀',
+      text: 'Congratulations! You have completed all weekly tracks and capstone projects in this roadmap. Ready for deployment!',
       link: '/',
       label: 'Go to Dashboard'
     };
@@ -352,9 +352,9 @@ export default function ProgressOverview() {
         <SectionCard title="Mastery Breakdown" className="lg:col-span-2 flex flex-col justify-between" subtitle="Weighted progress tracks mapped to operational domains.">
           <div className="space-y-5 py-2">
             {[
-              { label: 'Checklist Tasks & Materials', percent: prog.tasks.percent, detail: `\${prog.tasks.completed} of \${prog.tasks.total} tasks completed`, weight: '50% weight', color: 'bg-gradient-to-r from-accent-primary to-blue-500' },
-              { label: 'Skill Checkpoints', percent: prog.checkpoints.percent, detail: `\${prog.checkpoints.confident} confident targets, \${prog.checkpoints.learning} learning concepts`, weight: '30% weight', color: 'bg-gradient-to-r from-amber-500 to-orange-500' },
-              { label: 'Capstone Projects', percent: prog.projects.percent, detail: `\${prog.projects.completed} of \${prog.projects.total} milestones complete`, weight: '20% weight', color: 'bg-gradient-to-r from-accent-cyan to-blue-500' },
+              { label: 'Checklist Tasks & Materials', percent: prog.tasks.percent, detail: `${prog.tasks.completed} of ${prog.tasks.total} tasks completed`, weight: '50% weight', color: 'bg-gradient-to-r from-accent-primary to-blue-500' },
+              { label: 'Skill Checkpoints', percent: prog.checkpoints.percent, detail: `${prog.checkpoints.confident} confident targets, ${prog.checkpoints.learning} learning concepts`, weight: '30% weight', color: 'bg-gradient-to-r from-amber-500 to-orange-500' },
+              { label: 'Capstone Projects', percent: prog.projects.percent, detail: `${prog.projects.completed} of ${prog.projects.total} milestones complete`, weight: '20% weight', color: 'bg-gradient-to-r from-accent-cyan to-blue-500' },
             ].map(({ label, percent, detail, weight, color }) => (
               <div key={label} className="group">
                 <div className="flex items-center justify-between mb-2">
@@ -377,31 +377,31 @@ export default function ProgressOverview() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           <MetricCard
             label="Syllabus Mastery"
-            value={`\${prog.overall}%`}
+            value={`${prog.overall}%`}
             icon={TrendingUp}
             accentColor="blue"
-            helperText={`\${prog.tasks.completed}/\${prog.tasks.total} checkpoints complete`}
+            helperText={`${prog.tasks.completed}/${prog.tasks.total} checkpoints complete`}
           />
           <MetricCard
             label="Completed Weeks"
-            value={`\${completedWeeksCount}/\${totalWeeks}`}
+            value={`${completedWeeksCount}/${totalWeeks}`}
             icon={Calendar}
             accentColor="cyan"
-            helperText={`\${weekPercent}% of modules completed`}
+            helperText={`${weekPercent}% of modules completed`}
           />
           <MetricCard
             label="Evidence Submitted"
-            value={`\${submittedProofsCount}`}
+            value={`${submittedProofsCount}`}
             icon={Award}
             accentColor={submittedProofsCount > 0 ? "green" : "amber"}
-            helperText={`\${submittedProofsCount} verified GitHub proofs`}
+            helperText={`${submittedProofsCount} verified GitHub proofs`}
           />
           <MetricCard
             label="Portfolio Projects"
-            value={`\${completedProjectsCount}/\${projects.length}`}
+            value={`${completedProjectsCount}/${projects.length}`}
             icon={FolderKanban}
             accentColor="violet"
-            helperText={`\${completedProjectsCount} completed application builds`}
+            helperText={`${completedProjectsCount} completed application builds`}
           />
         </div>
       )}
@@ -512,7 +512,9 @@ export default function ProgressOverview() {
                                   
                                   {w.deliverable && (
                                     <p className="text-xs text-text-secondary mt-2 border-t border-navy-850/50 pt-2 leading-relaxed">
-                                      🎯 <span className="italic">"{w.deliverable}"</span>
+                                      <span className="italic inline-flex items-center gap-1.5">
+                                        <Target className="w-3.5 h-3.5 text-accent-cyan flex-shrink-0" /> "{w.deliverable}"
+                                      </span>
                                     </p>
                                   )}
                                 </div>
@@ -668,8 +670,8 @@ export default function ProgressOverview() {
             subtitle="Actions suggested to clear obstacles or secure progress."
           >
             {attentionAreas.length === 0 ? (
-              <div className="text-center py-6 text-emerald-450 italic bg-emerald-500/5 border border-emerald-500/20 rounded-radius-xl p-4 font-sans text-xs">
-                ✓ No attention areas right now. All deliverables are complete!
+              <div className="text-center py-6 text-emerald-450 italic bg-emerald-500/5 border border-emerald-500/20 rounded-radius-xl p-4 font-sans text-xs flex items-center justify-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> No attention areas right now. All deliverables are complete!
               </div>
             ) : (
               <div className="space-y-3 pt-1 font-sans">
