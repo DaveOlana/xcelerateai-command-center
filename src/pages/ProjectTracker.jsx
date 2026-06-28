@@ -3,21 +3,22 @@ import { useNavigate, Link } from 'react-router-dom';
 import { 
   CheckCircle2, Github, FileText, ChevronDown, ChevronUp, 
   FolderKanban, Star, ExternalLink, ShieldCheck, Award, 
-  Sparkles, ArrowRight, BookOpen, AlertTriangle 
+  Sparkles, ArrowRight, BookOpen, AlertTriangle, AlertCircle 
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { PageShell, PageHeader, MetricCard, ProgressBar, SectionCard, StatusBadge } from '../components/common/UIComponents';
 
 export default function ProjectTracker() {
   const {
-    roadmap, progress,
-    toggleProjectMilestone, setProjectGithubLink, setProjectNote,
+    roadmap, progress, blockers,
+    toggleProjectMilestone, setProjectGithubLink, setProjectNote, setProjectLiveDemoLink,
   } = useApp();
   const navigate = useNavigate();
   const workspaceRef = useRef(null);
 
   const [activeProjIdx, setActiveProjIdx] = useState(0);
   const [githubInputs, setGithubInputs] = useState({});
+  const [liveDemoInputs, setLiveDemoInputs] = useState({});
   const [noteInputs, setNoteInputs] = useState({});
 
   const projects = useMemo(() => roadmap?.projects || [], [roadmap]);
@@ -50,6 +51,18 @@ export default function ProjectTracker() {
       </PageShell>
     );
   }
+
+  const getProjectBlockers = (project) => {
+    if (!Array.isArray(blockers)) return [];
+    const projectNameLower = String(project.name || '').toLowerCase();
+    return blockers.filter(b => {
+      if (b.status === 'Solved') return false;
+      const titleMatch = String(b.title || '').toLowerCase().includes(projectNameLower);
+      const skillMatch = String(b.skillArea || '').toLowerCase().includes(projectNameLower);
+      const missionMatch = String(b.missionTitle || '').toLowerCase().includes(projectNameLower);
+      return titleMatch || skillMatch || missionMatch;
+    });
+  };
 
   // overall calculations
   const completedMilestonesCount = Object.values(progress.completedProjectMilestones || {})
@@ -158,7 +171,6 @@ export default function ProjectTracker() {
           helperText="Total builds completion"
         />
       </div>
-
       {/* ── 3. Active Project Selector Tabs ── */}
       <div className="bg-bg-surface border border-border-default rounded-radius-xxl p-5 shadow-sm">
         <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-4 block">
@@ -182,7 +194,7 @@ export default function ProjectTracker() {
                     : 'border-border-default bg-bg-surface/50 text-slate-400 hover:border-border-strong hover:bg-bg-soft'
                 }`}
               >
-                <div className="space-y-1.5 min-w-0 w-full">
+                <div className="space-y-1.5 min-w-0 w-full font-sans">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[10px] font-bold text-slate-550 uppercase tracking-wider">Project {idx + 1}</span>
                     {isCapstoneProj && (
