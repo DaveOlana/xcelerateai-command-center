@@ -42,7 +42,7 @@ export default function MoreMenu({ onClose }) {
           </button>
         </div>
 
-        <div className="p-4 grid grid-cols-2 gap-3 max-h-[60vh] overflow-y-auto">
+        <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[60vh] overflow-y-auto">
           {moreItems.map(({ to, label, icon: Icon, desc }) => (
             <Link
               key={to}
