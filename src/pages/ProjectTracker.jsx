@@ -169,6 +169,8 @@ export default function ProjectTracker() {
           icon={Sparkles}
           accentColor="violet"
           helperText="Total builds completion"
+        />
+      </div>
       {/* ── 3. Active Project Selector Tabs ── */}
       <div className="bg-bg-surface border border-border-default rounded-radius-xxl p-5 shadow-sm">
         <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-4 block">
@@ -190,7 +192,9 @@ export default function ProjectTracker() {
                   isSelected
                     ? 'border-brand-violet bg-brand-violet/5 text-white shadow-primary-glow-sm'
                     : 'border-border-default bg-bg-surface/50 text-slate-400 hover:border-border-strong hover:bg-bg-soft'
-                              <div className="space-y-1.5 min-w-0 w-full font-sans">
+                }`}
+              >
+                <div className="space-y-1.5 min-w-0 w-full font-sans">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-[10px] font-bold text-slate-550 uppercase tracking-wider">Project {idx + 1}</span>
                     {isCapstoneProj && (

@@ -704,11 +704,10 @@ export default function TodaysFocus() {
       </div>
 
       {/* ── STATE 1: BEFORE SESSION ── */}
-      {sessionState === 'before' && (
-        focusMode === 'command' ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        mode === 'command' ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {sessionState === 'before' && focusMode === 'command' && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {mode === 'command' ? (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Main Configuration Card (2/3 width on desktop) */}
             <div className="lg:col-span-2 space-y-6">
               
@@ -1120,9 +1119,10 @@ export default function TodaysFocus() {
               </div>
             </div>
           </div>
-          </div>
-        ) : (
-          <div className="max-w-4xl mx-auto space-y-12">
+        )}
+      </div>
+    )}
+
       {/* ── STATE 1: BEFORE SESSION (Focus Mode View) ── */}
       {sessionState === 'before' && focusMode === 'focus' && (
         <div className="max-w-4xl mx-auto space-y-12">
@@ -1572,9 +1572,7 @@ export default function TodaysFocus() {
             </div>
           </div>
           </div>
-        )
-      )}
-      )}
+        )}
 
       {/* ── STATE 2: DURING SESSION ── */}
       {sessionState === 'during' && (
