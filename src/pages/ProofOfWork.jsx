@@ -521,6 +521,7 @@ export default function ProofOfWork() {
                   >
                     Save Proof & Verify
                   </button>
+                </div>
               </form>
             </SectionCard>
           </div>
@@ -594,7 +595,6 @@ export default function ProofOfWork() {
                   );
                 })}
               </div>
-            )}
           </SectionCard>
 
           {/* Missing / Pending Proof Section */}
