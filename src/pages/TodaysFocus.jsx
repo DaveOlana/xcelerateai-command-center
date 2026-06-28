@@ -5,7 +5,7 @@ import { getActiveWeekData } from '../utils/progressCalculator';
 import {
   CheckCircle2, Target, BookOpen, AlertCircle, Copy, HelpCircle,
   FileText, Clock, Play, Pause, RotateCcw, Coffee, ShieldAlert,
-  ChevronRight, ToggleLeft, ToggleRight, X, Terminal, ExternalLink
+  ChevronRight, ToggleLeft, ToggleRight, X, Terminal, ExternalLink, Check
 } from 'lucide-react';
 import { getItemTitle } from '../utils/safeRender';
 import { PageShell, SectionCard, InfoPill, StatusBadge, CommandButton, SecondaryButton, EmptyState } from '../components/common/UIComponents';
@@ -932,7 +932,7 @@ export default function TodaysFocus() {
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
                         stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
                       }`}>
-                        {stepDone ? '✓' : '1'}
+                        {stepDone ? <Check className="w-3.5 h-3.5 text-emerald-450" /> : '1'}
                       </div>
                       <div className="space-y-2 flex-1 pt-0.5 min-w-0">
                         <div className="flex justify-between items-center gap-2">
@@ -977,7 +977,7 @@ export default function TodaysFocus() {
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
                         stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
                       }`}>
-                        {stepDone ? '✓' : '2'}
+                        {stepDone ? <Check className="w-3.5 h-3.5 text-emerald-450" /> : '2'}
                       </div>
                       <div className="space-y-2 flex-1 pt-0.5 min-w-0">
                         <div className="flex justify-between items-center gap-2">
@@ -1012,7 +1012,7 @@ export default function TodaysFocus() {
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
                         stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
                       }`}>
-                        {stepDone ? '✓' : '3'}
+                        {stepDone ? <Check className="w-3.5 h-3.5 text-emerald-450" /> : '3'}
                       </div>
                       <div className="space-y-2 flex-1 pt-0.5 min-w-0">
                         <div className="flex justify-between items-center gap-2">
@@ -1057,7 +1057,7 @@ export default function TodaysFocus() {
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
                         stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
                       }`}>
-                        {stepDone ? '✓' : '4'}
+                        {stepDone ? <Check className="w-3.5 h-3.5 text-emerald-450" /> : '4'}
                       </div>
                       <div className="space-y-2 flex-1 pt-0.5 min-w-0">
                         <div className="flex justify-between items-center gap-2">
@@ -1088,7 +1088,7 @@ export default function TodaysFocus() {
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
                         stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
                       }`}>
-                        {stepDone ? '✓' : '5'}
+                        {stepDone ? <Check className="w-3.5 h-3.5 text-emerald-450" /> : '5'}
                       </div>
                       <div className="space-y-2 flex-1 pt-0.5 min-w-0">
                         <div className="flex justify-between items-center gap-2">
@@ -1889,7 +1889,7 @@ export default function TodaysFocus() {
               </button>
 
               <div className="flex gap-2 items-center">
-                {sessionRefSaved && <span className="text-xs text-accent-primary font-bold">Reflection Saved ✓</span>}
+                {sessionRefSaved && <span className="text-xs text-accent-primary font-bold">Reflection Saved</span>}
                 <button
                   type="submit"
                   className="btn-primary py-2 px-6 text-xs font-bold"

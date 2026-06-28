@@ -5,7 +5,7 @@ import {
   ArrowLeft, CheckCircle2, AlertTriangle, Play, HelpCircle,
   FileText, Clipboard, Settings, ChevronRight, CheckSquare,
   BookOpen, Terminal, Code, ShieldAlert, Sparkles, MessageSquare,
-  X, Coffee
+  X, Coffee, Check
 } from 'lucide-react';
 import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
 
@@ -389,7 +389,9 @@ Please help me debug this without giving me the full answer immediately.`;
             {/* Done Means Done (Requirement 7) */}
             {mission.doneMeansDone && (Array.isArray(mission.doneMeansDone) ? mission.doneMeansDone.length > 0 : !!mission.doneMeansDone) && (
               <div className="card border-blue-500/20 bg-blue-500/5">
-                <h3 className="text-sm font-bold text-blue-400 mb-2 uppercase tracking-wide">✓ Done Means Done Checklist</h3>
+                <h3 className="text-sm font-bold text-blue-400 mb-2 uppercase tracking-wide flex items-center gap-1.5">
+                  <Check className="w-4 h-4 text-blue-450" /> Done Means Done Checklist
+                </h3>
                 <div className="space-y-2">
                   {Array.isArray(mission.doneMeansDone) ? (
                     mission.doneMeansDone.map((item, idx) => (
@@ -695,7 +697,7 @@ Please help me debug this without giving me the full answer immediately.`;
                       onClick={() => handleReflectionSave(qIdx)}
                       className="text-[13px] font-semibold text-accent-primary hover:underline"
                     >
-                      {savedReflectionIdx === qIdx ? 'Saved ✓' : 'Save Answer'}
+                      {savedReflectionIdx === qIdx ? 'Saved' : 'Save Answer'}
                     </button>
                   </div>
                 </div>

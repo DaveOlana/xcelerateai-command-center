@@ -345,7 +345,7 @@ export default function ProjectTracker() {
                   Project Complete
                 </h4>
                 <p className="text-xs text-emerald-450 mt-1 leading-normal">
-                  {isCapstone ? 'Final Capstone Project Complete! All milestones verified and logged. 🚀' : 'All project milestones resolved successfully.'}
+                  {isCapstone ? 'Final Capstone Project Complete! All milestones verified and logged.' : 'All project milestones resolved successfully.'}
                 </p>
               </div>
             </div>
