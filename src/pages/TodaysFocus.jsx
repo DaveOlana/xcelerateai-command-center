@@ -31,16 +31,19 @@ export default function TodaysFocus() {
     practicalMissions,
     notes,
     userProfile,
-    resourcesStatus,
-    skillChecks,
+    weekProofs,
     weekReflections,
-    weekProofs
+    skillChecks,
+    resourcesStatus,
   } = useApp();
 
   const mentorName = settings?.mentorName || roadmap?.mentorLabel || 'Mentor';
 
   // Three session states: 'before' | 'during' | 'after'
   const [sessionState, setSessionState] = useState('before');
+  const [mode, setMode] = useState(() => {
+    return localStorage.getItem('xai_today_focus_mode') || 'command';
+  });
   const [sessionCompletedSummary, setSessionCompletedSummary] = useState(null);
   const [sessionRefText, setSessionRefText] = useState('');
   const [sessionRefSaved, setSessionRefSaved] = useState(false);
@@ -674,21 +677,452 @@ export default function TodaysFocus() {
             </p>
           )}
         </div>
-
-        {/* Custom Segmented Switch Pill Button Toggle from Screenshot */}
+        {/* Segmented Cockpit Switch Control */}
         {sessionState === 'before' && (
-          <button
-            onClick={() => handleToggleMode(focusMode === 'focus' ? 'command' : 'focus')}
-            className="flex items-center gap-3.5 bg-navy-950/40 border border-navy-800 hover:border-navy-700 px-5 py-3 rounded-xl transition-all duration-200 text-[10px] font-bold uppercase tracking-wider text-slate-350 hover:text-white"
-          >
-            {focusMode === 'focus' ? 'Switch to Command Mode' : 'Switch to Focus Mode'}
-            <svg className={`w-8 h-4 ${focusMode === 'focus' ? 'text-brand-blue' : 'text-slate-500'} select-none`} viewBox="0 0 32 16" fill="none">
-              <rect x="1" y="1" width="30" height="14" rx="7" stroke="currentColor" strokeWidth="1.5" />
-              <circle cx={focusMode === 'focus' ? 24 : 8} cy="8" r="4.5" fill="currentColor" />
-            </svg>
-          </button>
+          <div className="flex items-center bg-navy-900 border border-navy-800 p-1 rounded-2xl self-stretch sm:self-auto justify-center">
+            <button
+              onClick={() => handleToggleMode('command')}
+              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all ${
+                focusMode === 'command'
+                  ? 'bg-brand-blue text-white shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              Command Mode
+            </button>
+            <button
+              onClick={() => handleToggleMode('focus')}
+              className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all ${
+                focusMode === 'focus'
+                  ? 'bg-brand-blue text-white shadow-sm'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              Focus Mode
+            </button>
+          </div>
         )}
       </div>
+
+      {/* ── STATE 1: BEFORE SESSION ── */}
+      {sessionState === 'before' && focusMode === 'command' && (
+        <>
+          {mode === 'command' ? (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {/* Main Configuration Card (2/3 width on desktop) */}
+            <div className="lg:col-span-2 space-y-6">
+              
+              {/* Objective briefing */}
+              <div className="card">
+                <span className="text-[10px] text-accent-cyan font-bold uppercase tracking-widest block mb-1">Today's Objective</span>
+                <p className="text-sm text-slate-350 leading-relaxed font-medium">
+                  {week.briefing || "Complete this week's lesson resources and test your readiness."}
+                </p>
+                {week.deliverable && (
+                  <div className="bg-navy-900 border border-navy-750 p-4 rounded-xl mt-4">
+                    <span className="text-[10px] text-brand-amber font-bold uppercase tracking-widest block mb-1">Proof Requirement</span>
+                    <p className="text-xs text-slate-400 italic">"{week.deliverable}"</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Target item / Focus resource */}
+              <div className="card space-y-4">
+                <div>
+                  <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest block">Current Task Target</span>
+                  <h3 className="text-base font-bold text-white mt-1">Focus Study Materials</h3>
+                </div>
+
+                {mainResource ? (
+                  <div className="bg-navy-800/50 border border-navy-700/30 p-5 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div className="space-y-1">
+                      <span className="bg-navy-900 text-[10px] text-slate-450 border border-navy-750 px-2 py-0.5 rounded font-bold uppercase tracking-wider">{mainResource.type}</span>
+                      <h4 className="font-bold text-white text-[15px] pt-1.5 leading-snug">{mainResource.title}</h4>
+                      {mainResource.timeEstimate && (
+                        <span className="text-xs text-slate-450 font-medium block mt-1">Estimated duration: {mainResource.timeEstimate}</span>
+                      )}
+                    </div>
+                    <a
+                      href={mainResource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary py-2 px-4 text-xs font-bold whitespace-nowrap w-full sm:w-auto text-center"
+                    >
+                      Preview Resource
+                    </a>
+                  </div>
+                ) : (
+                  <div className="p-6 bg-navy-800/30 rounded-xl text-center border border-navy-700/10">
+                    <BookOpen className="w-7 h-7 text-slate-650 mx-auto mb-1.5" />
+                    <p className="text-xs text-slate-500">No resource was supplied for this focus session.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Focus Session Trigger and Scheduled Sessions list */}
+              <div className="card space-y-4">
+                <div>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest block">Select Focus Block</span>
+                  <h3 className="text-base font-bold text-white mt-1">Start Focus Session</h3>
+                </div>
+
+                {week.scheduledSessions && week.scheduledSessions.length > 0 ? (
+                  <div className="space-y-3">
+                    <div className="grid sm:grid-cols-2 gap-3">
+                      {week.scheduledSessions.map((session, sidx) => {
+                        const title = session.title || session.name || `Focus Block ${sidx + 1}`;
+                        const mins = session.durationMinutes || 45;
+                        const isSelected = selectedSessionIndex === sidx;
+
+                        return (
+                          <button
+                            key={sidx}
+                            onClick={() => setSelectedSessionIndex(sidx)}
+                            className={`p-4 rounded-xl border text-left flex flex-col justify-between gap-3 transition-all ${
+                              isSelected
+                                ? 'border-accent-primary bg-accent-primary/5 text-white'
+                                : 'border-navy-700/30 bg-navy-850/30 text-slate-455 hover:border-navy-600'
+                            }`}
+                          >
+                            <div>
+                              <span className="text-[9px] font-bold uppercase tracking-wider block opacity-75">{session.type || 'Focus Session'}</span>
+                              <span className="font-bold text-xs mt-1 block leading-snug truncate pr-2">{title}</span>
+                            </div>
+                            <span className="text-[10px] font-mono font-bold text-slate-500">{mins} minutes</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {(() => {
+                      const sel = week.scheduledSessions[selectedSessionIndex] || week.scheduledSessions[0];
+                      return (
+                        <button
+                          onClick={() => startTimer(
+                            sel.sessionId || `session-${selectedSessionIndex}`,
+                            sel.type || 'Focus Session',
+                            sel.title || 'Focus Session',
+                            sel.durationMinutes || 45,
+                            75,
+                            10
+                          )}
+                          className="w-full btn-primary py-3.5 text-xs font-bold text-center tracking-wider uppercase flex items-center justify-center gap-2 mt-4"
+                        >
+                          <Play className="w-3.5 h-3.5 fill-navy-900" /> Begin Focus Session ({sel.durationMinutes || 45}m)
+                        </button>
+                      );
+                    })()}
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => startTimer('daily-focus', 'Focus Session', 'Daily Focus Block', 45, 75, 10)}
+                    className="w-full btn-primary py-3.5 text-xs font-bold text-center tracking-wider uppercase flex items-center justify-center gap-2 mt-2"
+                  >
+                    <Play className="w-3.5 h-3.5 fill-navy-900" /> Begin 45m Focus Session
+                  </button>
+                )}
+              </div>
+
+            </div>
+
+            {/* Side Actions Panel (1/3 width on desktop) */}
+            <div className="space-y-6">
+              
+              {/* Targets / Checklist */}
+              <div className="card space-y-3">
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest block">Priority checklist</span>
+                {focusTasks.length === 0 ? (
+                  <p className="text-xs text-slate-500 italic">No tasks defined for this week.</p>
+                ) : (
+                  <div className="space-y-2">
+                    {focusTasks.map((task, idx) => {
+                      const done = isTaskComplete(month.monthNumber, week.weekNumber, idx);
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => toggleTask(month.monthNumber, week.weekNumber, idx)}
+                          className={`w-full flex items-center gap-3 p-3 rounded-xl border text-left text-xs transition-all ${
+                            done
+                              ? 'bg-emerald-500/5 border-emerald-500/10 text-slate-500'
+                              : 'bg-navy-800 border-navy-700/40 text-white hover:border-navy-600'
+                          }`}
+                        >
+                          <div className={`w-3.5 h-3.5 rounded border flex items-center justify-center flex-shrink-0 ${done ? 'border-emerald-500 bg-emerald-500/20' : 'border-navy-500'}`}>
+                            {done && <CheckCircle2 className="w-2.5 h-2.5 text-emerald-450" />}
+                          </div>
+                          <span className={`truncate flex-1 font-medium ${done ? 'line-through text-slate-500' : 'text-slate-300'}`}>{getItemTitle(task)}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* Quick Note capture */}
+              <div className="card space-y-3">
+                <div className="flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+                  <span>Quick Note Capture</span>
+                  {noteSaved && <span className="text-emerald-400 font-bold">Saved!</span>}
+                </div>
+                <form onSubmit={handleSaveQuickNote} className="space-y-3">
+                  <textarea
+                    rows={3}
+                    value={quickNote}
+                    onChange={(e) => setQuickNote(e.target.value)}
+                    placeholder="Record ideas, code configurations, or resolved errors..."
+                    className="input-base w-full text-xs resize-none"
+                    required
+                  />
+                  <SecondaryButton type="submit" disabled={!quickNote} className="w-full py-2 text-xs font-bold">
+                    Save Note to Journal
+                  </SecondaryButton>
+                </form>
+              </div>
+
+              {/* Quick blocker logging */}
+              <div className="card space-y-3">
+                <div>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest block">Barriers & Help</span>
+                  <p className="text-xs text-slate-400 mt-1 leading-normal">Encountering errors? Log a blocker or generate debugging prompts.</p>
+                </div>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setShowBlockerModal(true)}
+                    className="w-full btn-secondary py-2 text-xs font-bold text-red-400 border-red-500/20 hover:bg-red-500/5 text-center"
+                  >
+                    Log Blocker
+                  </button>
+                  <button
+                    onClick={copyMentorHelpPrompt}
+                    className="w-full btn-secondary py-2 text-xs font-bold text-accent-cyan border-accent-cyan/20 hover:bg-accent-cyan/5 text-center"
+                  >
+                    Ask {mentorName} Debug Prompt
+                  </button>
+                  <button
+                    onClick={() => navigate('/missions')}
+                    className="w-full btn-secondary py-2 text-xs font-semibold text-slate-450 hover:text-white text-center"
+                  >
+                    View Weekly Missions
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        ) : (
+          // Refined Focus Mode sequential flow
+          <div className="max-w-2xl mx-auto space-y-6 py-4">
+            <div className="bg-navy-850 border border-navy-700/20 rounded-3xl p-6 lg:p-7 space-y-6">
+              <div className="border-b border-navy-750 pb-4">
+                <span className="text-[10px] text-accent-cyan font-bold uppercase tracking-widest block mb-1">Active Journey Path</span>
+                <h2 className="text-base font-extrabold text-white">Focus Mode Sequence</h2>
+                <p className="text-[12px] text-slate-450 mt-1">Complete your learning flow in order. Keep consistent.</p>
+              </div>
+
+              {/* Sequential Steps */}
+              <div className="space-y-6 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-[1px] before:bg-navy-750">
+                {/* Step 1: Study Resources */}
+                {(() => {
+                  const rawResources = week.resources ?? week.studyResources ?? [];
+                  const studyResources = Array.isArray(rawResources) ? rawResources : [rawResources];
+                  const incompleteResource = studyResources.find(res => res && res.title && resourcesStatus?.[res.title] !== 'Studied');
+                  const stepDone = !incompleteResource;
+                  return (
+                    <div className="flex gap-4 items-start relative">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
+                        stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
+                      }`}>
+                        {stepDone ? '✓' : '1'}
+                      </div>
+                      <div className="space-y-2 flex-1 pt-0.5 min-w-0">
+                        <div className="flex justify-between items-center gap-2">
+                          <h4 className="text-xs font-bold text-white uppercase tracking-wider font-semibold">Learn: Study Resources</h4>
+                          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                            stepDone ? 'bg-emerald-500/10 text-emerald-455 border border-emerald-500/20' : 'bg-navy-900 text-slate-500'
+                          }`}>
+                            {stepDone ? 'Completed' : 'Pending'}
+                          </span>
+                        </div>
+                        <p className="text-[13px] text-slate-400 leading-normal">
+                          Read, digest, and complete the curriculum study materials for this week.
+                        </p>
+                        {studyResources.length > 0 && (
+                          <div className="bg-navy-900/60 border border-navy-805 rounded-xl p-3 space-y-2 mt-2">
+                            {studyResources.map((res, ri) => {
+                              const done = res && res.title && resourcesStatus?.[res.title] === 'Studied';
+                              return (
+                                <div key={ri} className="flex justify-between items-center text-xs">
+                                  <span className={`truncate flex-1 pr-2 ${done ? 'line-through text-slate-500' : 'text-slate-300'}`}>{res.title}</span>
+                                  <span className={`text-[10px] font-bold ${done ? 'text-emerald-455' : 'text-slate-500'}`}>{done ? 'Studied' : 'Pending'}</span>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+                        <button onClick={() => navigate('/missions')} className="text-xs text-brand-blue hover:text-white font-bold hover:underline transition-all block pt-1">
+                          Open Curriculum Library →
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* Step 2: Skill Checkpoints */}
+                {(() => {
+                  const hasQuiz = !!(week.skillCheck ?? week.skillChecks ?? week.quiz);
+                  const quizDone = !!skillChecks?.[week.weekNumber];
+                  const stepDone = !hasQuiz || quizDone;
+                  return (
+                    <div className="flex gap-4 items-start relative">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
+                        stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
+                      }`}>
+                        {stepDone ? '✓' : '2'}
+                      </div>
+                      <div className="space-y-2 flex-1 pt-0.5 min-w-0">
+                        <div className="flex justify-between items-center gap-2">
+                          <h4 className="text-xs font-bold text-white uppercase tracking-wider font-semibold">Validate: Skill Check</h4>
+                          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                            stepDone ? 'bg-emerald-500/10 text-emerald-455 border border-emerald-500/20' : 'bg-navy-900 text-slate-500'
+                          }`}>
+                            {stepDone ? 'Completed' : 'Pending'}
+                          </span>
+                        </div>
+                        <p className="text-[13px] text-slate-400 leading-normal">
+                          Take the self-assessment Skill Check quiz to test your concept comprehension.
+                        </p>
+                        <button onClick={() => navigate('/missions')} className="text-xs text-brand-blue hover:text-white font-bold hover:underline transition-all block pt-1">
+                          Take Skill Check Assessment →
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* Step 3: Practical Missions */}
+                {(() => {
+                  const pmList = Array.isArray(week.practicalMissions) ? week.practicalMissions : [];
+                  const incompletePM = pmList.find(pm => {
+                    const pmId = pm.missionId || pm.id;
+                    return practicalMissions?.[pmId]?.status !== 'Completed';
+                  });
+                  const stepDone = !incompletePM;
+                  return (
+                    <div className="flex gap-4 items-start relative">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
+                        stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
+                      }`}>
+                        {stepDone ? '✓' : '3'}
+                      </div>
+                      <div className="space-y-2 flex-1 pt-0.5 min-w-0">
+                        <div className="flex justify-between items-center gap-2">
+                          <h4 className="text-xs font-bold text-white uppercase tracking-wider font-semibold">Build: Practical Mission</h4>
+                          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                            stepDone ? 'bg-emerald-500/10 text-emerald-455 border border-emerald-500/20' : 'bg-navy-900 text-slate-500'
+                          }`}>
+                            {stepDone ? 'Completed' : 'Pending'}
+                          </span>
+                        </div>
+                        <p className="text-[13px] text-slate-400 leading-normal">
+                          Build the core milestones and complete the practical programming tasks.
+                        </p>
+                        {pmList.length > 0 && (
+                          <div className="bg-navy-900/60 border border-navy-805 rounded-xl p-3 space-y-2 mt-2">
+                            {pmList.map((pm, pi) => {
+                              const pmId = pm.missionId || pm.id;
+                              const done = practicalMissions?.[pmId]?.status === 'Completed';
+                              return (
+                                <div key={pi} className="flex justify-between items-center text-xs">
+                                  <span className={`truncate flex-1 pr-2 ${done ? 'line-through text-slate-500' : 'text-slate-300'}`}>{pm.title || pm.name}</span>
+                                  <button onClick={() => navigate(pm.missionId ? `/mission/${pm.missionId}` : '/missions')} className="text-[10px] font-bold text-brand-blue hover:underline">
+                                    {done ? 'Review' : 'Build'}
+                                  </button>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* Step 4: Proof of Work */}
+                {(() => {
+                  const hasProof = !!(week.proof ?? week.proofRequirement ?? week.deliverable);
+                  const proofSubmitted = !!(weekProofs?.[week.weekNumber]?.githubRepoLink && weekProofs?.[week.weekNumber]?.githubCommitLink && weekProofs?.[week.weekNumber]?.readmeCompleted);
+                  const stepDone = !hasProof || proofSubmitted;
+                  return (
+                    <div className="flex gap-4 items-start relative">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
+                        stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
+                      }`}>
+                        {stepDone ? '✓' : '4'}
+                      </div>
+                      <div className="space-y-2 flex-1 pt-0.5 min-w-0">
+                        <div className="flex justify-between items-center gap-2">
+                          <h4 className="text-xs font-bold text-white uppercase tracking-wider font-semibold">Prove: Proof of Work</h4>
+                          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                            stepDone ? 'bg-emerald-500/10 text-emerald-455 border border-emerald-500/20' : 'bg-navy-900 text-slate-500'
+                          }`}>
+                            {stepDone ? 'Completed' : 'Pending'}
+                          </span>
+                        </div>
+                        <p className="text-[13px] text-slate-400 leading-normal">
+                          Submit your GitHub repository and commit URL to verify your week deliverables.
+                        </p>
+                        <button onClick={() => navigate('/proof')} className="text-xs text-brand-blue hover:text-white font-bold hover:underline transition-all block pt-1">
+                          Open Submission Deck →
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* Step 5: Reflection */}
+                {(() => {
+                  const reflectionDone = !!weekReflections?.[week.weekNumber];
+                  const stepDone = reflectionDone;
+                  return (
+                    <div className="flex gap-4 items-start relative">
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs border flex-shrink-0 z-10 ${
+                        stepDone ? 'bg-emerald-500/10 border-emerald-500/35 text-emerald-455' : 'bg-navy-900 border-navy-700 text-slate-455'
+                      }`}>
+                        {stepDone ? '✓' : '5'}
+                      </div>
+                      <div className="space-y-2 flex-1 pt-0.5 min-w-0">
+                        <div className="flex justify-between items-center gap-2">
+                          <h4 className="text-xs font-bold text-white uppercase tracking-wider font-semibold">Reflect: Learning Journal</h4>
+                          <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
+                            stepDone ? 'bg-emerald-500/10 text-emerald-455 border border-emerald-500/20' : 'bg-navy-900 text-slate-500'
+                          }`}>
+                            {stepDone ? 'Completed' : 'Pending'}
+                          </span>
+                        </div>
+                        <p className="text-[13px] text-slate-400 leading-normal">
+                          Document key take-aways and log a journal entry of what you built.
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+
+              {/* Start Timer anyway section */}
+              <div className="pt-6 border-t border-navy-750 text-center">
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest block mb-2">Need a Focus Block?</span>
+                <button
+                  onClick={() => startTimer('daily-focus', 'Focus Session', 'Daily Focus Block', 45, 75, 10)}
+                  className="w-full btn-primary py-3.5 text-xs font-bold text-center tracking-wider uppercase flex items-center justify-center gap-2"
+                >
+                  <Play className="w-3.5 h-3.5 fill-navy-900" /> Begin 45m Focus Session
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    )}
 
       {/* ── STATE 1: BEFORE SESSION (Focus Mode View) ── */}
       {sessionState === 'before' && focusMode === 'focus' && (
@@ -1138,8 +1572,8 @@ export default function TodaysFocus() {
               </div>
             </div>
           </div>
-        </div>
-      )}
+          </div>
+        )}
 
       {/* ── STATE 2: DURING SESSION ── */}
       {sessionState === 'during' && (
