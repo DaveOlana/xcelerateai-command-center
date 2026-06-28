@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { PageShell, PageHeader, MetricCard, ProgressBar, SectionCard, StatusBadge } from '../components/common/UIComponents';
+import { ProjectForgeVisual } from '../components/visuals';
 
 export default function ProjectTracker() {
   const {
@@ -43,8 +44,8 @@ export default function ProjectTracker() {
           title="Project Tracker" 
           subtitle="Track your builds and milestones across all capstone projects."
         />
-        <div className="bg-bg-surface border border-dashed border-border-default text-center py-16 px-6 rounded-radius-xxl max-w-md mx-auto">
-          <FolderKanban className="w-12 h-12 text-text-muted mx-auto mb-3" />
+        <div className="bg-bg-surface border border-dashed border-border-default text-center py-16 px-6 rounded-radius-xxl max-w-md mx-auto select-none">
+          <ProjectForgeVisual status="empty" size="md" className="mx-auto mb-3" />
           <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">No Projects Found</h4>
           <p className="text-[13px] text-text-secondary mt-1">Import a rich roadmap configuration with a projects array to start tracking.</p>
         </div>
@@ -338,13 +339,13 @@ export default function ProjectTracker() {
           
           {/* Capstone Celebration Card */}
           {activePercent === 100 && (
-            <div className="p-5 bg-emerald-500/5 border border-emerald-500/25 rounded-radius-xxl space-y-3 shadow-emerald-glow text-center">
-              <ShieldCheck className="w-10 h-10 text-emerald-450 mx-auto animate-pulse" />
+            <div className="p-5 bg-emerald-500/5 border border-emerald-500/25 rounded-radius-xxl space-y-3 shadow-emerald-glow text-center select-none">
+              <ProjectForgeVisual status="completed" size="md" className="mx-auto" />
               <div>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">
                   Project Complete
                 </h4>
-                <p className="text-xs text-emerald-450 mt-1 leading-normal">
+                <p className="text-xs text-emerald-455 mt-1 leading-normal font-medium">
                   {isCapstone ? 'Final Capstone Project Complete! All milestones verified and logged.' : 'All project milestones resolved successfully.'}
                 </p>
               </div>

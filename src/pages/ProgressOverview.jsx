@@ -10,6 +10,7 @@ import { useApp } from '../context/AppContext';
 import { calculateOverallProgress, getMonthProgress, calculateDynamicReadiness } from '../utils/progressCalculator';
 import { getBootcampDay, getDaysRemaining } from '../utils/dateUtils';
 import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
+import { ProgressOrbit } from '../components/visuals';
 
 export default function ProgressOverview() {
   const { 
@@ -315,33 +316,13 @@ export default function ProgressOverview() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         {/* Progress Ring Card */}
         <SectionCard className="flex flex-col items-center justify-center text-center py-8">
-          <div className="relative w-40 h-40 flex-shrink-0">
-            <svg className="w-full h-full -rotate-90" viewBox="0 0 128 128">
-              <circle cx="64" cy="64" r="52" fill="none" stroke="#0C0F1E" strokeWidth="8" />
-              <circle
-                cx="64"
-                cy="64"
-                r="52"
-                fill="none"
-                stroke="url(#progressGradOverview)"
-                strokeWidth="8"
-                strokeDasharray={`\${2 * Math.PI * 52}`}
-                strokeDashoffset={`\${2 * Math.PI * 52 * (1 - (prog.overall || 0) / 100)}`}
-                strokeLinecap="round"
-                className="transition-all duration-1000 ease-out"
-              />
-              <defs>
-                <linearGradient id="progressGradOverview" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3B82F6" />
-                  <stop offset="100%" stopColor="#06B6D4" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-4xl font-extrabold text-white tracking-tight">{prog.overall}%</span>
-              <span className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">Roadmap Complete</span>
-            </div>
-          </div>
+          <ProgressOrbit
+            value={prog.overall}
+            size="md"
+            label="Mastery Progress"
+            sublabel="Weighted Progress"
+            showNodes={true}
+          />
           <div className="mt-5 space-y-1">
             <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Mastery progress</h3>
             <p className="text-[13px] text-slate-455 leading-relaxed max-w-[200px] mx-auto">Weighted progress score across tasks, projects, and self-assessments.</p>
