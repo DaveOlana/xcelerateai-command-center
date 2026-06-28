@@ -715,13 +715,13 @@ export default function TodaysFocus() {
               {/* Objective briefing */}
               <div className="card">
                 <span className="text-[10px] text-accent-cyan font-bold uppercase tracking-widest block mb-1">Today's Objective</span>
-                <p className="text-sm text-slate-350 leading-relaxed font-medium">
+                <p className="text-sm text-slate-350 leading-relaxed font-medium break-words whitespace-normal">
                   {week.briefing || "Complete this week's lesson resources and test your readiness."}
                 </p>
                 {week.deliverable && (
                   <div className="bg-navy-900 border border-navy-750 p-4 rounded-xl mt-4">
                     <span className="text-[10px] text-brand-amber font-bold uppercase tracking-widest block mb-1">Proof Requirement</span>
-                    <p className="text-xs text-slate-400 italic">"{week.deliverable}"</p>
+                    <p className="text-xs text-slate-400 italic break-words whitespace-normal">"{week.deliverable}"</p>
                   </div>
                 )}
               </div>
@@ -1128,19 +1128,14 @@ export default function TodaysFocus() {
       {sessionState === 'before' && focusMode === 'focus' && (
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Phase 1: Learn */}
-          <div className="space-y-5">
-            <div className="flex items-center gap-4.5">
-              <div className="w-9 h-9 rounded-full border-2 border-brand-cyan/50 text-brand-cyan text-sm font-black flex items-center justify-center flex-shrink-0 font-mono shadow-[0_0_15px_rgba(34,211,238,0.12)]">
-                1
-              </div>
-              <div className="space-y-0.5">
-                <span className="text-xs lg:text-[13px] text-brand-cyan font-extrabold uppercase tracking-wider block">Phase 1: Learn</span>
-                <h3 className="text-xl lg:text-2xl font-black text-white mt-1 leading-tight">Study Daily Focus Materials</h3>
-              </div>
+          <div className="space-y-5 animate-fade-in">
+            <div className="space-y-0.5">
+              <span className="text-xs lg:text-[13px] text-brand-cyan font-extrabold uppercase tracking-wider block">Phase 1: Learn</span>
+              <h3 className="text-xl lg:text-2xl font-black text-white mt-1 leading-tight">Study Daily Focus Materials</h3>
             </div>
 
             {mainResource ? (
-              <div className="bg-navy-900/30 border border-navy-800/80 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 ml-12 lg:ml-[3.25rem]">
+              <div className="bg-navy-900/30 border border-navy-800/80 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                 <div className="space-y-2.5">
                   <span className="bg-navy-800 text-[11px] text-slate-350 border border-navy-700/50 px-3.5 py-1.5 rounded font-extrabold uppercase tracking-wider">
                     {mainResource.type || 'Official Docs'}
@@ -1159,23 +1154,21 @@ export default function TodaysFocus() {
                 )}
               </div>
             ) : (
-              <p className="text-xs text-slate-550 italic ml-12 lg:ml-[3.25rem]">No study resource supplied for this week.</p>
+              <p className="text-xs text-slate-555 italic">No study resource supplied for this week.</p>
             )}
           </div>
 
+          {/* Divider */}
+          <div className="border-t border-navy-800/50 mt-10 pt-8" />
+
           {/* Phase 2: Build */}
-          <div className="space-y-5">
-            <div className="flex items-center gap-4.5">
-              <div className="w-9 h-9 rounded-full border-2 border-brand-cyan/50 text-brand-cyan text-sm font-black flex items-center justify-center flex-shrink-0 font-mono shadow-[0_0_15px_rgba(34,211,238,0.12)]">
-                2
-              </div>
-              <div className="space-y-0.5">
-                <span className="text-xs lg:text-[13px] text-brand-cyan font-extrabold uppercase tracking-wider block">Phase 2: Build</span>
-                <h3 className="text-xl lg:text-2xl font-black text-white mt-1 leading-tight">Milestone Checklist & Focus Timer</h3>
-              </div>
+          <div className="space-y-5 animate-fade-in">
+            <div className="space-y-0.5">
+              <span className="text-xs lg:text-[13px] text-brand-cyan font-extrabold uppercase tracking-wider block">Phase 2: Build</span>
+              <h3 className="text-xl lg:text-2xl font-black text-white mt-1 leading-tight">Milestone Checklist & Focus Timer</h3>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ml-12 lg:ml-[3.25rem]">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Left side: Checklist and Build Tasks */}
               <div className="lg:col-span-2 space-y-6">
                 <div>
@@ -1208,18 +1201,32 @@ export default function TodaysFocus() {
                     <span className="text-xs text-slate-555 font-extrabold uppercase tracking-wider block mb-2.5">Build Task Details</span>
                     <div className="space-y-3">
                       {vm.buildTasks.map((bt, btIdx) => (
-                        <div key={btIdx} className="bg-navy-950/20 border border-navy-850 p-4 rounded-xl space-y-2">
-                          <h5 className="text-sm font-bold text-white">{bt.title}</h5>
-                          {bt.description && (
-                            <p className="text-xs text-slate-400 font-medium leading-relaxed">{bt.description}</p>
-                          )}
-                          {bt.filesToCreate && bt.filesToCreate.length > 0 && (
-                            <div className="flex flex-wrap gap-1.5 pt-1">
-                              {bt.filesToCreate.map((f, fIdx) => (
-                                <span key={fIdx} className="text-[10px] font-mono bg-navy-900 border border-navy-800 text-brand-cyan px-2 py-0.5 rounded">
-                                  {f}
-                                </span>
-                              ))}
+                        <div key={btIdx} className="p-5 bg-navy-900/10 border border-navy-850 rounded-2xl space-y-3">
+                          <div className="flex items-start justify-between gap-4">
+                            <div className="min-w-0 flex-1">
+                              <span className="bg-navy-800 text-[10px] text-slate-450 border border-navy-750 px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+                                {bt.type || 'Mission Build'}
+                              </span>
+                              <h4 className="font-extrabold text-white text-base mt-2 leading-tight">{bt.title || bt.name}</h4>
+                            </div>
+                            <span className="text-[10px] text-slate-500 font-mono flex-shrink-0 font-bold uppercase tracking-wider">
+                              Task {btIdx + 1}
+                            </span>
+                          </div>
+                          
+                          <p className="text-xs text-slate-350 leading-relaxed font-sans">{bt.description}</p>
+                          
+                          {Array.isArray(bt.deliverables) && bt.deliverables.length > 0 && (
+                            <div className="pt-2">
+                              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block mb-1.5">Deliverables Checklist</span>
+                              <div className="space-y-1.5">
+                                {bt.deliverables.map((d, di) => (
+                                  <div key={di} className="flex items-start gap-2 text-xs text-slate-400">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan mt-1.5 flex-shrink-0" />
+                                    <span className="leading-relaxed">{d}</span>
+                                  </div>
+                                ))}
+                              </div>
                             </div>
                           )}
                         </div>
@@ -1287,20 +1294,18 @@ export default function TodaysFocus() {
             </div>
           </div>
 
+          {/* Divider */}
+          <div className="border-t border-navy-800/50 mt-10 pt-8" />
+
           {/* Phase 3: Prove */}
-          <div className="space-y-5">
-            <div className="flex items-center gap-4.5">
-              <div className="w-9 h-9 rounded-full border-2 border-brand-cyan/50 text-brand-cyan text-sm font-black flex items-center justify-center flex-shrink-0 font-mono shadow-[0_0_15px_rgba(34,211,238,0.12)]">
-                3
-              </div>
-              <div className="space-y-0.5">
-                <span className="text-xs lg:text-[13px] text-brand-cyan font-extrabold uppercase tracking-wider block">Phase 3: Prove</span>
-                <h3 className="text-xl lg:text-2xl font-black text-white mt-1 leading-tight">Validate Learning Results</h3>
-              </div>
+          <div className="space-y-5 animate-fade-in">
+            <div className="space-y-0.5">
+              <span className="text-xs lg:text-[13px] text-brand-cyan font-extrabold uppercase tracking-wider block">Phase 3: Prove</span>
+              <h3 className="text-xl lg:text-2xl font-black text-white mt-1 leading-tight">Validate Learning Results</h3>
             </div>
 
             {vm.proofRequirement ? (
-              <div className="bg-navy-900/30 border border-navy-800/80 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 ml-12 lg:ml-[3.25rem]">
+              <div className="bg-navy-900/30 border border-navy-800/80 p-6 rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
                 <div className="space-y-2.5 max-w-xl">
                   <span className="text-xs text-brand-amber font-extrabold uppercase tracking-wider block">Deliverable Instructions</span>
                   <p className="text-slate-200 text-sm lg:text-[15px] font-bold leading-relaxed font-mono">"{vm.proofRequirement.description}"</p>
@@ -1327,8 +1332,8 @@ export default function TodaysFocus() {
                 </button>
               </div>
             ) : (
-              <div className="ml-12 lg:ml-[3.25rem] space-y-3 bg-navy-900/10 border border-navy-850 p-6 rounded-2xl">
-                <p className="text-xs text-slate-500 italic">No proof requirement supplied for this stage.</p>
+              <div className="space-y-3 bg-navy-900/10 border border-navy-850 p-6 rounded-2xl">
+                <p className="text-xs text-slate-550 italic">No proof requirement supplied for this stage.</p>
                 <button
                   onClick={() => navigate('/proof')}
                   className="px-4 py-2 rounded-lg text-xs font-bold bg-navy-800 border border-navy-700 text-slate-400 hover:text-white"
@@ -1339,19 +1344,17 @@ export default function TodaysFocus() {
             )}
           </div>
 
+          {/* Divider */}
+          <div className="border-t border-navy-800/50 mt-10 pt-8" />
+
           {/* Phase 4: Reflect */}
-          <div className="space-y-5">
-            <div className="flex items-center gap-4.5">
-              <div className="w-9 h-9 rounded-full border-2 border-brand-cyan/50 text-brand-cyan text-sm font-black flex items-center justify-center flex-shrink-0 font-mono shadow-[0_0_15px_rgba(34,211,238,0.12)]">
-                4
-              </div>
-              <div className="space-y-0.5">
-                <span className="text-xs lg:text-[13px] text-brand-cyan font-extrabold uppercase tracking-wider block">Phase 4: Reflect</span>
-                <h3 className="text-xl lg:text-2xl font-black text-white mt-1 leading-tight">Document Experience & Capture Notes</h3>
-              </div>
+          <div className="space-y-5 animate-fade-in">
+            <div className="space-y-0.5">
+              <span className="text-xs lg:text-[13px] text-brand-cyan font-extrabold uppercase tracking-wider block">Phase 4: Reflect</span>
+              <h3 className="text-xl lg:text-2xl font-black text-white mt-1 leading-tight">Document Experience & Capture Notes</h3>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ml-12 lg:ml-[3.25rem]">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Note capture */}
               <div className="lg:col-span-2 card space-y-4 bg-navy-900/30 border border-navy-800/80 p-6">
                 <div className="flex justify-between items-center text-xs text-slate-555 font-bold uppercase tracking-wider">

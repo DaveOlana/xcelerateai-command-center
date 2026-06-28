@@ -40,7 +40,7 @@ export default function Layout() {
       {/* Main Content */}
       <main className={`min-h-screen transition-all duration-300 ${isFocusMode ? 'ml-0' : isCollapsed ? 'lg:ml-[80px]' : 'lg:ml-[280px]'}`}>
         {/* Top padding for mobile header */}
-        <div className={isFocusMode ? 'p-4 lg:p-8' : 'pt-[60px] lg:pt-0 pb-24 lg:pb-0'}>
+        <div className={isFocusMode ? 'p-4 lg:p-8' : 'pt-[60px] lg:pt-0 pb-32 lg:pb-0'}>
           <div className={`${isFocusMode ? '' : 'p-4 lg:p-8'} max-w-7xl mx-auto animate-fade-in`}>
             <ErrorBoundary>
               <Outlet />

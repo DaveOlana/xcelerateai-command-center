@@ -308,7 +308,7 @@ export default function Onboarding() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2">
                   <button 
                     onClick={handleSelectSample}
                     className={`p-5 rounded-xl border flex flex-col justify-between text-left transition-all ${
@@ -383,7 +383,7 @@ export default function Onboarding() {
                       <h4 className="text-sm font-bold text-slate-200 leading-snug mt-1">{pendingRoadmap.title || pendingRoadmap.bootcampTitle || 'Imported Roadmap'}</h4>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3">
                       {[
                         { label: 'Months', val: pendingRoadmap.months?.length || 0 },
                         { label: 'Weeks', val: pendingRoadmap.weeks?.length || 0 },
