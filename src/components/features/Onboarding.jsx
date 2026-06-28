@@ -201,7 +201,7 @@ export default function Onboarding() {
                         ? 'border-emerald-500 bg-emerald-550/20 text-emerald-450' 
                         : 'border-navy-750 bg-navy-900 text-slate-600'
                     }`}>
-                      {currentStep > s ? '✓' : s}
+                      {currentStep > s ? <Check className="w-3 h-3 text-emerald-450" /> : s}
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-wider">{label}</span>
                   </div>
@@ -343,7 +343,7 @@ export default function Onboarding() {
                     />
                     <div className="flex justify-between items-center w-full">
                       <span className="text-[11px] font-bold text-white uppercase tracking-widest">
-                        {roadmapSource === 'custom' ? 'Custom JSON ✓' : 'Upload custom'}
+                        {roadmapSource === 'custom' ? 'Custom JSON Loaded' : 'Upload custom'}
                       </span>
                       <Upload className="w-3.5 h-3.5 text-slate-500" />
                     </div>
@@ -543,11 +543,11 @@ export default function Onboarding() {
 
                 <div className="space-y-2.5 pt-1.5 text-xs text-slate-400">
                   <div className="flex items-center gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-850">
-                    <span className="text-emerald-450 font-bold">✓</span>
+                    <Check className="w-4 h-4 text-emerald-450 flex-shrink-0" />
                     <span className="text-slate-300">Github repository connection and commit links.</span>
                   </div>
                   <div className="flex items-center gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-850">
-                    <span className="text-emerald-450 font-bold">✓</span>
+                    <Check className="w-4 h-4 text-emerald-450 flex-shrink-0" />
                     <span className="text-slate-300">Screenshots or notes validating structural deliverables.</span>
                   </div>
                 </div>

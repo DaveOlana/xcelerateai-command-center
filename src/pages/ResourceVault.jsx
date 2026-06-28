@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ExternalLink, Search, Filter, BookOpen, X, CheckCircle2, Circle, FileText } from 'lucide-react';
+import { ExternalLink, Search, Filter, BookOpen, X, CheckCircle2, Circle, FileText, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import ImportRequiredCard from '../components/common/ImportRequiredCard';
 import { PageShell, PageHeader, SectionCard, StatusBadge } from '../components/common/UIComponents';
@@ -290,7 +290,13 @@ export default function ResourceVault() {
                           : 'bg-navy-700/60 border-navy-500/80 text-slate-400 hover:text-white'
                       }`}
                     >
-                      {status === 'Studied' ? '✓ Studied' : 'Mark Studied'}
+                      {status === 'Studied' ? (
+                        <span className="flex items-center justify-center gap-1">
+                          <Check className="w-3.5 h-3.5 text-blue-400" /> Studied
+                        </span>
+                      ) : (
+                        'Mark Studied'
+                      )}
                     </button>
                     
                     {status !== 'Studied' && (

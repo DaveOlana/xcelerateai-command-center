@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { AlertCircle, CheckCircle2, Trash2, Copy, FileText, Plus, X, Search, HelpCircle, ShieldAlert } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Trash2, Copy, FileText, Plus, X, Search, HelpCircle, ShieldAlert, Check } from 'lucide-react';
 import { PageShell, PageHeader, SectionCard, StatCard } from '../components/common/UIComponents';
 
 export default function Blockers() {
@@ -262,7 +262,9 @@ Please help me debug this without giving me the full answer immediately.`;
 
               {b.status === 'Solved' && b.solutionNotes && (
                 <div className="bg-blue-950/20 border border-blue-500/10 rounded-xl p-3.5 mt-3.5">
-                  <span className="text-[13px] font-bold text-blue-400 block mb-1 uppercase tracking-wider">✓ Solution Notes:</span>
+                  <span className="text-[13px] font-bold text-blue-400 mb-1 uppercase tracking-wider flex items-center gap-1">
+                    <Check className="w-3.5 h-3.5" /> Solution Notes:
+                  </span>
                   <p className="text-xs text-slate-300 leading-relaxed">{b.solutionNotes}</p>
                   <p className="text-xs text-slate-500 font-mono mt-2">Solved: {new Date(b.dateSolved).toLocaleString()}</p>
                 </div>
