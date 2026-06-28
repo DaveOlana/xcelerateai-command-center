@@ -389,7 +389,7 @@ export default function Settings() {
           </div>
         )}
 
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex gap-3 flex-wrap font-sans">
           <button
             onClick={exportProgress}
             className="btn-secondary flex items-center gap-2 text-sm border-blue-500/20 text-blue-400 hover:text-white"
