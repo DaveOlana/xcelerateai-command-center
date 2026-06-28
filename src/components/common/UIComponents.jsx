@@ -6,7 +6,7 @@ import { Lock, AlertCircle, Loader2, CheckCircle2, AlertTriangle, ShieldAlert } 
  */
 export function PageShell({ children, className = "" }) {
   return (
-    <div className={`max-w-6xl mx-auto px-4 sm:px-6 py-4 lg:py-6 space-y-6 animate-slide-up ${className}`}>
+    <div className={`w-full max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 py-4 lg:py-6 space-y-6 animate-slide-up ${className}`}>
       {children}
     </div>
   );

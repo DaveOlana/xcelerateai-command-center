@@ -99,7 +99,7 @@ export default function ProjectTracker() {
   return (
     <PageShell>
       {/* ── 1. Project Studio Hero ── */}
-      <div className="relative overflow-hidden rounded-radius-xxl border border-border-default bg-bg-surface p-8 lg:p-10 shadow-card flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="relative overflow-hidden rounded-radius-xxl border border-border-default bg-bg-surface p-6 sm:p-8 lg:p-10 shadow-card flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="absolute -left-20 -top-20 w-96 h-96 bg-brand-violet/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -112,7 +112,7 @@ export default function ProjectTracker() {
           </div>
 
           <div>
-            <h1 className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-heading">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-heading">
               Project Tracker
             </h1>
             <p className="text-text-secondary mt-3 text-[15px] leading-relaxed max-w-xl">
@@ -142,7 +142,7 @@ export default function ProjectTracker() {
       </div>
 
       {/* ── 2. Project Status Overview Grid ── */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <MetricCard
           label="Active Projects"
           value={`${projects.length}`}
