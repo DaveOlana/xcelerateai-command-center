@@ -86,20 +86,20 @@ export default function Checkpoints() {
       />
 
       {/* Stats row */}
-      <div className="grid grid-cols-3 gap-4">
-        <div className="bg-navy-800/60 border border-accent-primary/25 rounded-2xl p-4 text-center">
-          <p className="text-2xl font-extrabold text-accent-primary text-glow">{stats.confident}</p>
-          <p className="text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Confident</p>
+      <div className="grid grid-cols-3 gap-3 sm:gap-4">
+        <div className="bg-navy-800/60 border border-accent-primary/25 rounded-2xl p-2.5 sm:p-4 text-center">
+          <p className="text-xl sm:text-2xl font-extrabold text-accent-primary text-glow">{stats.confident}</p>
+          <p className="text-[11px] sm:text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Confident</p>
           <div className="w-1.5 h-1.5 rounded-full bg-accent-primary mx-auto mt-2" />
         </div>
-        <div className="bg-navy-800/60 border border-amber-500/20 rounded-2xl p-4 text-center">
-          <p className="text-2xl font-extrabold text-amber-400">{stats.learning}</p>
-          <p className="text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Learning</p>
+        <div className="bg-navy-800/60 border border-amber-500/20 rounded-2xl p-2.5 sm:p-4 text-center">
+          <p className="text-xl sm:text-2xl font-extrabold text-amber-400">{stats.learning}</p>
+          <p className="text-[11px] sm:text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Learning</p>
           <div className="w-1.5 h-1.5 rounded-full bg-amber-400 mx-auto mt-2" />
         </div>
-        <div className="bg-navy-800/60 border border-navy-500/30 rounded-2xl p-4 text-center">
-          <p className="text-2xl font-extrabold text-slate-400">{stats.notYet}</p>
-          <p className="text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Not Yet</p>
+        <div className="bg-navy-800/60 border border-navy-500/30 rounded-2xl p-2.5 sm:p-4 text-center">
+          <p className="text-xl sm:text-2xl font-extrabold text-slate-400">{stats.notYet}</p>
+          <p className="text-[11px] sm:text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Not Yet</p>
           <div className="w-1.5 h-1.5 rounded-full bg-slate-500 mx-auto mt-2" />
         </div>
       </div>
@@ -184,7 +184,7 @@ export default function Checkpoints() {
               </div>
 
               {/* Status buttons */}
-              <div className="grid grid-cols-3 gap-2 mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
                 {['Not yet', 'Learning', 'Confident'].map((status) => {
                   const sCfg = STATUS_CONFIG[status];
                   const isActive = statusVal === status;

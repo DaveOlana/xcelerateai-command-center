@@ -12,6 +12,18 @@ import { getBootcampDay, getDaysRemaining } from '../utils/dateUtils';
 import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
 import { ProgressOrbit } from '../components/visuals';
 
+const getTaskText = (task) => {
+  if (!task) return '';
+  if (typeof task === 'string') return task;
+  return task.text || task.title || task.name || task.label || task.task || task.description || task.objective || 'Complete the next required task';
+};
+
+const getMilestoneText = (m) => {
+  if (!m) return '';
+  if (typeof m === 'string') return m;
+  return m.title || m.name || m.label || m.text || 'next milestone';
+};
+
 export default function ProgressOverview() {
   const { 
     roadmap, progress, checkpointStatuses, settings, streak, 
@@ -105,7 +117,7 @@ export default function ProgressOverview() {
       const firstIncompleteTaskIdx = tasks.findIndex((_, idx) => !doneTasks.includes(idx));
       if (firstIncompleteTaskIdx !== -1) {
         return {
-          text: `Complete task: "${tasks[firstIncompleteTaskIdx]}" in Week ${weekNum}.`,
+          text: `Complete task: "${getTaskText(tasks[firstIncompleteTaskIdx])}" in Week ${weekNum}.`,
           link: '/today',
           label: "Open Today's Focus"
         };
@@ -165,7 +177,7 @@ export default function ProgressOverview() {
       const totalMilestones = p.milestones?.length || 0;
       if (doneMilestones.length < totalMilestones) {
         return {
-          text: `Continue project build: Complete milestone "${p.milestones[doneMilestones.length]}" for project "${p.name}".`,
+          text: `Continue project build: Complete milestone "${getMilestoneText(p.milestones[doneMilestones.length])}" for project "${p.name}".`,
           link: '/projects',
           label: 'Open Project Tracker'
         };
@@ -355,7 +367,7 @@ export default function ProgressOverview() {
 
       {/* ── Momentum Metrics Grid ── */}
       {roadmap && (
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6">
           <MetricCard
             label="Syllabus Mastery"
             value={`${prog.overall}%`}

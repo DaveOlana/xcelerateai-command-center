@@ -208,18 +208,18 @@ export default function Dashboard() {
       {/* ── Mission Console Top Header ── */}
       {roadmap && (
         <div className="bg-bg-surface border border-border-default rounded-radius-xxl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 min-w-0 w-full sm:w-auto">
             <div className="w-10 h-10 rounded-xl bg-navy-800/80 border border-navy-700 flex items-center justify-center flex-shrink-0">
               <img src="/xcelerate-icon.png" alt="X" className="w-5 h-5 object-contain" />
             </div>
-            <div>
+            <div className="min-w-0 flex-1">
               <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none">Mission Console</p>
-              <h2 className="text-lg font-extrabold text-white mt-1.5 leading-none">XcelerateAI Command Center</h2>
+              <h2 className="text-lg font-extrabold text-white mt-1.5 leading-none truncate">XcelerateAI Command Center</h2>
             </div>
           </div>
-          <div className="text-left sm:text-right">
+          <div className="text-left sm:text-right min-w-0 w-full sm:w-auto">
             <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none">Active Roadmap</p>
-            <p className="text-xs font-semibold text-slate-400 mt-1.5 max-w-md truncate">
+            <p className="text-xs font-semibold text-slate-400 mt-1.5 break-words line-clamp-2 sm:truncate max-w-md">
               {roadmapTitle}
             </p>
           </div>
@@ -289,7 +289,7 @@ export default function Dashboard() {
         {/* ── 1. Command Hero with Journey Tracker ── */}
         <div
           data-tour="dashboard-hero"
-          className="col-span-1 lg:col-span-3 order-1 lg:order-1 relative overflow-hidden rounded-radius-xxl border border-border-default bg-bg-surface p-10 lg:p-12 shadow-card animate-fade-in"
+          className="col-span-1 lg:col-span-3 order-1 lg:order-1 relative overflow-hidden rounded-radius-xxl border border-border-default bg-bg-surface p-6 sm:p-8 lg:p-12 shadow-card animate-fade-in"
         >
           <div className="absolute -left-20 -top-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
@@ -309,7 +309,7 @@ export default function Dashboard() {
 
                 {roadmap && roadmap.weeks && roadmap.weeks.length > 0 ? (
                   <div className="space-y-4">
-                    <h1 className="text-4xl lg:text-5xl font-black text-white tracking-tight font-heading leading-tight">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-heading leading-tight">
                       {learnerDisplayName ? `Welcome back, ${learnerDisplayName}.` : 'Welcome back, Operator.'}
                     </h1>
                     
@@ -343,7 +343,7 @@ export default function Dashboard() {
                   </div>
                 ) : (
                   <div>
-                    <h1 className="text-4xl lg:text-5xl font-black text-white tracking-tight font-heading leading-tight">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-heading leading-tight">
                       Initialize Learning Workspace.
                     </h1>
                     <p className="text-text-secondary mt-3 text-[15px] leading-relaxed max-w-xl">
@@ -508,7 +508,7 @@ export default function Dashboard() {
 
         {/* ── 3. Momentum Strip (Order 3 on Mobile, 2 on Desktop) ── */}
         <div className="col-span-1 lg:col-span-3 order-3 lg:order-2">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <MetricCard
               label={readinessSectionTitle}
               value={`${overallReadinessScore}%`}
