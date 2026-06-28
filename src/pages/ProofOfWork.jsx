@@ -7,6 +7,7 @@ import {
   Sparkles, FileText, ArrowRight, Clipboard, Award
 } from 'lucide-react';
 import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
+import { ProofVaultVisual } from '../components/visuals';
 
 export default function ProofOfWork() {
   const { roadmap, weekProofs, submitWeekProof, settings } = useApp();
@@ -532,7 +533,13 @@ export default function ProofOfWork() {
             subtitle="Archive of submitted bootcamp build repositories"
           >
             <div className="grid md:grid-cols-2 gap-4 pt-1">
-              {galleryItems.map(({ week: w, proof }) => {
+              {galleryItems.length === 0 ? (
+                <div className="col-span-2 py-8 flex flex-col items-center justify-center text-center select-none">
+                  <ProofVaultVisual status="empty" size="sm" className="mb-3" />
+                  <p className="text-xs text-slate-550 italic font-medium">No verified evidence artifacts archived yet.</p>
+                </div>
+              ) : (
+                galleryItems.map(({ week: w, proof }) => {
                   const isVerified = isProofComplete(proof);
                   
                   return (
@@ -593,8 +600,9 @@ export default function ProofOfWork() {
                       </div>
                     </div>
                   );
-                })}
-              </div>
+                })
+              )}
+            </div>
           </SectionCard>
 
           {/* Missing / Pending Proof Section */}

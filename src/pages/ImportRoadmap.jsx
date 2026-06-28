@@ -111,15 +111,14 @@ export default function ImportRoadmap() {
         </div>
       </div>
 
-      {/* Upload Zone */}
       <div
         onDrop={handleDrop}
         onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
         onDragLeave={() => setDragOver(false)}
-        className={`relative border-2 border-dashed rounded-2xl p-10 text-center transition-all duration-300 cursor-pointer
+        className={`relative border border-dashed rounded-2xl p-7 text-center transition-all duration-300 cursor-pointer
           ${dragOver
             ? 'border-accent-primary bg-accent-primary/10'
-            : 'border-navy-400 hover:border-accent-primary/50 hover:bg-navy-700/50'
+            : 'border-navy-500/40 hover:border-accent-primary/50 hover:bg-navy-700/50'
           }`}
         onClick={() => document.getElementById('json-upload').click()}
       >
@@ -132,12 +131,6 @@ export default function ImportRoadmap() {
         />
 
         <div className="flex flex-col items-center gap-3">
-          <div className={`w-16 h-16 rounded-2xl border-2 flex items-center justify-center transition-all duration-300
-            ${dragOver ? 'border-accent-primary bg-accent-primary/20' : 'border-navy-300 bg-navy-700'}`}
-          >
-            <FileJson className={`w-8 h-8 ${dragOver ? 'text-accent-primary' : 'text-slate-400'}`} />
-          </div>
-
           <div>
             <p className="text-white font-semibold text-lg">
               {dragOver ? 'Drop your JSON file here' : 'Drop roadmap-data.json here'}
