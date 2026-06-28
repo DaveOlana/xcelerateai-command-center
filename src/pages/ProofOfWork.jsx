@@ -4,9 +4,9 @@ import { useApp } from '../context/AppContext';
 import { 
   Github, Image, CheckSquare, Film, Calendar, CheckCircle2, 
   AlertTriangle, ExternalLink, ShieldAlert, ShieldCheck, 
-  Sparkles, FileText, ArrowRight, Clipboard 
+  Sparkles, FileText, ArrowRight, Clipboard, Award
 } from 'lucide-react';
-import { PageShell, PageHeader, SectionCard, MetricCard, StatusBadge } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
 
 export default function ProofOfWork() {
   const { roadmap, weekProofs, submitWeekProof, settings } = useApp();

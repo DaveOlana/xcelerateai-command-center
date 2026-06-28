@@ -34,6 +34,7 @@ export default function TodaysFocus() {
     weekProofs,
     weekReflections,
     skillChecks,
+    resourcesStatus,
   } = useApp();
 
   const mentorName = settings?.mentorName || roadmap?.mentorLabel || 'Mentor';
@@ -705,7 +706,7 @@ export default function TodaysFocus() {
 
       {/* ── STATE 1: BEFORE SESSION ── */}
       {sessionState === 'before' && focusMode === 'command' && (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <>
           {mode === 'command' ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {/* Main Configuration Card (2/3 width on desktop) */}
@@ -1120,7 +1121,7 @@ export default function TodaysFocus() {
             </div>
           </div>
         )}
-      </div>
+      </>
     )}
 
       {/* ── STATE 1: BEFORE SESSION (Focus Mode View) ── */}

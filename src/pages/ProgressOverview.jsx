@@ -84,7 +84,7 @@ export default function ProgressOverview() {
     for (const week of weeks) {
       const monthNum = week.monthNumber || 1;
       const weekNum = week.weekNumber;
-      const key = `m\${monthNum}_w\${weekNum}`;
+      const key = `m${monthNum}_w${weekNum}`;
 
       // Check A: Study Resources
       const rawResources = week.resources ?? week.studyResources ?? [];
@@ -92,7 +92,7 @@ export default function ProgressOverview() {
       const incompleteResource = studyResources.find(res => res && res.title && resourcesStatus?.[res.title] !== 'Studied');
       if (incompleteResource) {
         return {
-          text: `Study resource: "\${incompleteResource.title}" for Week \${weekNum}.`,
+          text: `Study resource: "${incompleteResource.title}" for Week ${weekNum}.`,
           link: '/missions',
           label: 'Open Weekly Missions'
         };
@@ -104,9 +104,9 @@ export default function ProgressOverview() {
       const firstIncompleteTaskIdx = tasks.findIndex((_, idx) => !doneTasks.includes(idx));
       if (firstIncompleteTaskIdx !== -1) {
         return {
-          text: `Complete task: "\${tasks[firstIncompleteTaskIdx]}" in Week \${weekNum}.`,
+          text: `Complete task: "${tasks[firstIncompleteTaskIdx]}" in Week ${weekNum}.`,
           link: '/today',
-          label: 'Open Today\\\'s Focus'
+          label: "Open Today's Focus"
         };
       }
 
@@ -118,8 +118,8 @@ export default function ProgressOverview() {
       });
       if (incompletePM) {
         return {
-          text: `Build milestone: "\${incompletePM.title || incompletePM.name}" for Week \${weekNum}.`,
-          link: incompletePM.missionId ? `/mission/\${incompletePM.missionId}` : '/missions',
+          text: `Build milestone: "${incompletePM.title || incompletePM.name}" for Week ${weekNum}.`,
+          link: incompletePM.missionId ? `/mission/${incompletePM.missionId}` : '/missions',
           label: 'Start Build Task'
         };
       }
@@ -129,7 +129,7 @@ export default function ProgressOverview() {
       const quizDone = !!skillChecks?.[weekNum];
       if (hasQuiz && !quizDone) {
         return {
-          text: `Take the Skill Check Assessment for Week \${weekNum} to validate your learning.`,
+          text: `Take the Skill Check Assessment for Week ${weekNum} to validate your learning.`,
           link: '/missions',
           label: 'Take Assessment'
         };
@@ -140,7 +140,7 @@ export default function ProgressOverview() {
       const proofSubmitted = !!(weekProofs?.[weekNum]?.githubRepoLink && weekProofs?.[weekNum]?.githubCommitLink && weekProofs?.[weekNum]?.readmeCompleted);
       if (hasProof && !proofSubmitted) {
         return {
-          text: `Submit your Proof of Work for Week \${weekNum}.`,
+          text: `Submit your Proof of Work for Week ${weekNum}.`,
           link: '/proof',
           label: 'Submit Proof'
         };
@@ -150,7 +150,7 @@ export default function ProgressOverview() {
       const reflectionDone = !!weekReflections?.[weekNum];
       if (!reflectionDone) {
         return {
-          text: `Log your weekly experience and reflection for Week \${weekNum} in the journal.`,
+          text: `Log your weekly experience and reflection for Week ${weekNum} in the journal.`,
           link: '/today',
           label: 'Write Reflection'
         };
@@ -164,7 +164,7 @@ export default function ProgressOverview() {
       const totalMilestones = p.milestones?.length || 0;
       if (doneMilestones.length < totalMilestones) {
         return {
-          text: `Continue project build: Complete milestone "\${p.milestones[doneMilestones.length]}" for project "\${p.name}".`,
+          text: `Continue project build: Complete milestone "${p.milestones[doneMilestones.length]}" for project "${p.name}".`,
           link: '/projects',
           label: 'Open Project Tracker'
         };
@@ -172,7 +172,7 @@ export default function ProgressOverview() {
       const savedRepo = progress.projectGithubLinks?.[pi];
       if (!savedRepo) {
         return {
-          text: `Add repository link for completed project "\${p.name}".`,
+          text: `Add repository link for completed project "${p.name}".`,
           link: '/projects',
           label: 'Open Project Tracker'
         };
@@ -200,7 +200,7 @@ export default function ProgressOverview() {
       const wk = weeks.find(w => w.weekNumber === wNum);
       wins.push({
         type: 'week',
-        title: `Completed Week \${wNum}`,
+        title: `Completed Week ${wNum}`,
         detail: wk ? wk.title : 'Milestone Module',
         timestamp: settings.startDate ? new Date(new Date(settings.startDate).getTime() + (wNum - 1) * 7 * 24 * 60 * 60 * 1000) : null
       });
@@ -212,7 +212,7 @@ export default function ProgressOverview() {
       if (p?.githubRepoLink && p?.githubCommitLink && p?.readmeCompleted) {
         wins.push({
           type: 'proof',
-          title: `Submitted Week \${wNum} Proof`,
+          title: `Submitted Week ${wNum} Proof`,
           detail: 'GitHub commit references verified',
           timestamp: null
         });
@@ -227,7 +227,7 @@ export default function ProgressOverview() {
         wins.push({
           type: 'project',
           title: `Milestone Completed`,
-          detail: `Built milestone on \${proj.name}`,
+          detail: `Built milestone on ${proj.name}`,
           timestamp: null
         });
       }
@@ -255,7 +255,7 @@ export default function ProgressOverview() {
     if (activeBlockers.length > 0) {
       areas.push({
         type: 'blocker',
-        title: `\${activeBlockers.length} Active Blocker\${activeBlockers.length > 1 ? 's' : ''} Open`,
+        title: `${activeBlockers.length} Active Blocker${activeBlockers.length > 1 ? 's' : ''} Open`,
         detail: 'Log answers or get debugging advice to resolve logged stack errors.',
         actionText: 'Solve Blockers',
         actionPath: '/blockers',
@@ -275,8 +275,8 @@ export default function ProgressOverview() {
     if (missingProofs.length > 0) {
       areas.push({
         type: 'proof',
-        title: `\${missingProofs.length} Pending Verification\${missingProofs.length > 1 ? 's' : ''}`,
-        detail: `Week \${missingProofs.map(w => w.weekNumber).join(', ')} proof of work requires submission.`,
+        title: `${missingProofs.length} Pending Verification${missingProofs.length > 1 ? 's' : ''}`,
+        detail: `Week ${missingProofs.map(w => w.weekNumber).join(', ')} proof of work requires submission.`,
         actionText: 'Submit Proof',
         actionPath: '/proof',
         accentColor: 'amber'
@@ -290,7 +290,7 @@ export default function ProgressOverview() {
     <PageShell>
       <PageHeader 
         title="Roadmap Progress Center" 
-        subtitle={`Your complete learning progress across \${roadmapTitle}.`}
+        subtitle={`Your complete learning progress across ${roadmapTitle}.`}
       />
 
       {/* ── Next Recommended Action Card ── */}
@@ -512,7 +512,7 @@ export default function ProgressOverview() {
                                   
                                   {w.deliverable && (
                                     <p className="text-xs text-text-secondary mt-2 border-t border-navy-850/50 pt-2 leading-relaxed">
-                                      🎯 <span className="italic">"\${w.deliverable}"</span>
+                                      🎯 <span className="italic">"{w.deliverable}"</span>
                                     </p>
                                   )}
                                 </div>
