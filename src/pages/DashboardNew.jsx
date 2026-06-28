@@ -294,6 +294,8 @@ export default function Dashboard() {
           <div className="absolute -left-20 -top-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-cyan/5 rounded-full blur-3xl pointer-events-none" />
 
+
+
           <div className="flex flex-col md:grid md:grid-cols-4 gap-8 lg:gap-12 items-stretch relative z-10 w-full">
             {/* Left Column: Command Briefing */}
             <div className="flex flex-col justify-between md:col-span-3 order-1 md:order-1 text-left w-full space-y-6">
@@ -372,15 +374,14 @@ export default function Dashboard() {
 
             {/* Right Column: Journey Tracker */}
             {roadmap && roadmap.weeks && roadmap.weeks.length > 0 && (
-              <div className="order-2 md:order-2 md:col-span-1 flex flex-col justify-center relative">
-                {/* Visual Card wrapping Day Tracker */}
-                <div className="bg-navy-900/60 border border-navy-800 hover:border-brand-blue/20 transition-all duration-300 p-4 rounded-xl relative z-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.03),0_0_20px_rgba(0,0,0,0.3)] space-y-3 w-full max-w-[260px] mx-auto md:ml-auto md:mr-0">
+              <div className="order-2 md:order-2 md:col-span-1 flex flex-col justify-center md:border-l md:border-navy-800/50 md:pl-8 pt-6 md:pt-0 border-t md:border-t-0 border-navy-800/40">
+                <div className="space-y-4 w-full max-w-[240px] mx-auto md:ml-auto md:mr-0">
                   <div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Campaign Progress</span>
+                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-0.5">Duration</span>
                     <div className="flex items-baseline gap-1.5 mt-1">
                       {hasStartDate ? (
                         <>
-                          <span className={`text-3xl font-black text-white tracking-tight font-heading transition-all duration-500 transform ${
+                          <span className={`text-4xl font-black text-white tracking-tight font-heading transition-all duration-500 transform ${
                             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'
                           }`}>
                             Day {calculatedBootcampDay}
@@ -393,11 +394,8 @@ export default function Dashboard() {
                         <span className="text-xs font-bold text-slate-400">Day tracking unavailable</span>
                       )}
                     </div>
-                    {hasStartDate && !hasTotalDays && (
-                      <p className="text-[11px] text-slate-450 mt-1 font-medium">Campaign duration unavailable</p>
-                    )}
                     {showDaysRemaining && (
-                      <p className="text-[11px] text-slate-455 mt-1 font-medium">
+                      <p className="text-[11px] text-slate-400 mt-1 font-medium">
                         {calculatedDaysRemaining} days left after today
                       </p>
                     )}
@@ -409,7 +407,7 @@ export default function Dashboard() {
 
                   {/* Footer metadata pills */}
                   {((settings.activeWeek !== undefined && settings.activeWeek !== null && settings.activeWeek !== '') || showStreak) && (
-                    <div className="flex flex-wrap gap-1.5 pt-2.5 border-t border-navy-800/40">
+                    <div className="flex flex-wrap gap-1.5 pt-2.5">
                       {settings.activeWeek !== undefined && settings.activeWeek !== null && settings.activeWeek !== '' && (
                         <span className="text-[9px] font-bold text-slate-400 bg-navy-950/40 border border-navy-850 px-2 py-0.5 rounded">
                           Week {settings.activeWeek}
