@@ -9,6 +9,9 @@ import {
 } from 'lucide-react';
 import { getItemTitle } from '../utils/safeRender';
 import { PageShell, SectionCard, InfoPill, StatusBadge, CommandButton, SecondaryButton, EmptyState } from '../components/common/UIComponents';
+import StatusBanner from '../components/ui/StatusBanner';
+import InlineStatus from '../components/ui/InlineStatus';
+import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 export default function TodaysFocus() {
   const navigate = useNavigate();
@@ -58,6 +61,10 @@ export default function TodaysFocus() {
   const [blockerTitle, setBlockerTitle] = useState('');
   const [blockerError, setBlockerError] = useState('');
   const [blockerTried, setBlockerTried] = useState('');
+
+  // Loading & Feedback States
+  const [focusFeedback, setFocusFeedback] = useState(null); // { type, text }
+  const [copiedText, setCopiedText] = useState(false);
 
   // Mode Selection State
   const [focusMode, setFocusMode] = useState(() => {
@@ -529,7 +536,8 @@ export default function TodaysFocus() {
     setBlockerError('');
     setBlockerTried('');
     setShowBlockerModal(false);
-    alert('Blocker logged. Your progress status indicator is now flagged as blocked.');
+    setFocusFeedback({ type: 'warning', text: 'Blocker logged. Your progress status indicator is now flagged as blocked.' });
+    setTimeout(() => setFocusFeedback(null), 4000);
   };
 
   // Ask Mentor Helper Generator
@@ -549,7 +557,8 @@ export default function TodaysFocus() {
     const promptText = `I am on Week ${vm.activeWeekNumber}, Mission "${missionTitle}" of the ${vm.roadmapTitle}. I am trying to build "${vm.proofRequirement?.description || "this week's milestones"}". I created these files: ${filesStr}. The error I got is: ${errorStr}. I have tried: ${triedStr}. ${noteText} Please help me debug this without giving me the full answer immediately.`;
     
     navigator.clipboard.writeText(promptText);
-    alert(`Ask ${mentorName} debug prompt copied to clipboard!`);
+    setCopiedText(true);
+    setTimeout(() => setCopiedText(false), 3000);
   };
 
   // Timer format helpers
@@ -896,7 +905,7 @@ export default function TodaysFocus() {
                     onClick={copyMentorHelpPrompt}
                     className="w-full btn-secondary py-2 text-xs font-bold text-accent-cyan border-accent-cyan/20 hover:bg-accent-cyan/5 text-center"
                   >
-                    Ask {mentorName} Debug Prompt
+                    {copiedText ? 'Copied to Clipboard!' : `Ask ${mentorName} Debug Prompt`}
                   </button>
                   <button
                     onClick={() => navigate('/missions')}
@@ -1127,6 +1136,9 @@ export default function TodaysFocus() {
       {/* ── STATE 1: BEFORE SESSION (Focus Mode View) ── */}
       {sessionState === 'before' && focusMode === 'focus' && (
         <div className="max-w-4xl mx-auto space-y-12">
+          {focusFeedback && (
+            <StatusBanner type={focusFeedback.type} message={focusFeedback.text} onClose={() => setFocusFeedback(null)} />
+          )}
           {/* Phase 1: Learn */}
           <div className="space-y-5 animate-fade-in">
             <div className="space-y-0.5">
@@ -1401,7 +1413,7 @@ export default function TodaysFocus() {
                       onClick={copyMentorHelpPrompt}
                       className="w-full btn-secondary py-3 text-xs lg:text-sm font-extrabold text-accent-cyan border-accent-cyan/20 hover:bg-accent-cyan/5 text-center"
                     >
-                      Ask {mentorName} Prompt
+                      {copiedText ? 'Copied to Clipboard!' : `Ask ${mentorName} Prompt`}
                     </button>
                   </div>
                 </div>
@@ -1810,7 +1822,7 @@ export default function TodaysFocus() {
                 onClick={copyMentorHelpPrompt}
                 className="w-full btn-secondary py-2 text-xs font-bold text-accent-cyan border-accent-cyan/20 hover:bg-accent-cyan/5 text-center"
               >
-                Ask {mentorName} Prompt
+                {copiedText ? 'Copied to Clipboard!' : `Ask ${mentorName} Prompt`}
               </button>
             </div>
           </div>

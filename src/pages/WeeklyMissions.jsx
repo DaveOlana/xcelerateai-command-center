@@ -14,6 +14,9 @@ import {
 import { cleanDifficultyLabel } from '../utils/safeRender';
 
 import { PageShell, PageHeader, SectionCard, StatCard, ProgressBar, StatusBadge, LockWarningCard, EmptyState } from '../components/common/UIComponents';
+import StatusBanner from '../components/ui/StatusBanner';
+import InlineStatus from '../components/ui/InlineStatus';
+import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 // Collapsible helper component for supporting details sidebar
 function CollapsibleSection({ title, children, defaultOpen = true }) {
@@ -103,6 +106,10 @@ export default function WeeklyMissions() {
   // Skill check local states
   const [skillAns, setSkillAns] = useState('');
   const [skillConf, setSkillConf] = useState(3);
+
+  // Loading & Feedback States
+  const [completeError, setCompleteError] = useState('');
+  const [isMarking, setIsMarking] = useState(false);
   const [skillCheckSaved, setSkillCheckSaved] = useState(false);
 
   // Reflection local state
@@ -222,29 +229,34 @@ export default function WeeklyMissions() {
 
   // --- Handlers ---
   const handleMarkWeekComplete = () => {
+    setCompleteError('');
     if (!settings.manualOverrideEnabled) {
       if (!stepStatus.resourcesDone && Array.isArray(requiredResources) && requiredResources.length > 0) {
-        alert('Study all required resources before completing this week.');
+        setCompleteError('Study all required resources before completing this week.');
         return;
       }
       if (week.checkpoint && !stepStatus.skillCheckDone) {
-        alert('Complete the Skill Check before marking this week complete.');
+        setCompleteError('Complete the Skill Check before marking this week complete.');
         return;
       }
       if (!stepStatus.practicalsDone && Array.isArray(week.practicalMissions) && week.practicalMissions.length > 0) {
-        alert('Complete all required practical missions before completing this week.');
+        setCompleteError('Complete all required practical missions before completing this week.');
         return;
       }
       if (!stepStatus.proofDone) {
-        alert('Submit proof of work (GitHub links + checklist) before completing this week.');
+        setCompleteError('Submit proof of work (GitHub links + checklist) before completing this week.');
         return;
       }
       if (!stepStatus.reflectionDone) {
-        alert('Write your weekly reflection before completing this week.');
+        setCompleteError('Write your weekly reflection before completing this week.');
         return;
       }
     }
-    markWeekComplete(week.weekNumber);
+    setIsMarking(true);
+    setTimeout(() => {
+      markWeekComplete(week.weekNumber);
+      setIsMarking(false);
+    }, 600);
   };
 
   const handleSaveSkillCheck = (e) => {
@@ -1129,10 +1141,20 @@ export default function WeeklyMissions() {
                           </div>
                           <button
                             onClick={handleMarkWeekComplete}
-                            className="btn-primary py-3 px-8 text-xs font-bold max-w-xs mx-auto flex items-center justify-center gap-1.5"
+                            disabled={isMarking}
+                            className="btn-primary py-3 px-8 text-xs font-bold max-w-xs mx-auto flex items-center justify-center gap-1.5 disabled:opacity-50"
                           >
-                            <CheckCircle2 className="w-4 h-4" /> Complete Week {week.weekNumber}
+                            {isMarking ? (
+                              <LoadingIndicator label="Marking complete..." size="sm" />
+                            ) : (
+                              <>
+                                <CheckCircle2 className="w-4 h-4" /> Complete Week {week.weekNumber}
+                              </>
+                            )}
                           </button>
+                          {completeError && (
+                            <StatusBanner type="error" message={completeError} onClose={() => setCompleteError('')} className="max-w-md mx-auto" />
+                          )}
                         </>
                       ) : (
                         <>
