@@ -3,7 +3,7 @@ import React from 'react';
 export default class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false, error: null, errorInfo: null };
+    this.state = { hasError: false, error: null, errorInfo: null, copied: false };
   }
 
   static getDerivedStateFromError(error) {
@@ -19,7 +19,10 @@ export default class ErrorBoundary extends React.Component {
     const { error, errorInfo } = this.state;
     const details = `Error: ${error?.toString()}\nComponent Stack: ${errorInfo?.componentStack}`;
     navigator.clipboard.writeText(details)
-      .then(() => alert("Error details copied to clipboard!"))
+      .then(() => {
+        this.setState({ copied: true });
+        setTimeout(() => this.setState({ copied: false }), 3000);
+      })
       .catch((err) => console.error("Failed to copy error details", err));
   };
 
@@ -61,7 +64,7 @@ export default class ErrorBoundary extends React.Component {
                 onClick={this.handleCopyDetails}
                 className="btn-secondary py-2 px-4 text-xs font-bold text-slate-400 hover:text-white"
               >
-                Copy Error Details
+                {this.state.copied ? 'Copied to Clipboard!' : 'Copy Error Details'}
               </button>
             </div>
           </div>
