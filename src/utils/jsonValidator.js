@@ -28,10 +28,17 @@ export function validateRoadmapJSON(data) {
   const warnings = [];
   const info = [];
 
+  // Detect and handle full progress backups uploaded as roadmaps
+  let dataToNormalize = data;
+  if (data.roadmap && typeof data.roadmap === 'object' && (data.roadmap.weeks || data.roadmap.months || data.roadmap.bootcamp)) {
+    dataToNormalize = data.roadmap;
+    info.push('Full progress backup file detected: We have successfully extracted the roadmap layout from this backup. If you wish to restore your completed weeks, checklist tasks, notes, and study streak as well, please import this file on the Settings page under Data Backups & Recovery.');
+  }
+
   // ── 1. Normalize the roadmap ──────────────────────────────────────────────
   let normalized = null;
   try {
-    normalized = normalizeRoadmap(data);
+    normalized = normalizeRoadmap(dataToNormalize);
   } catch (err) {
     errors.push(`Failed to normalize roadmap schema: ${err.message}`);
     return {

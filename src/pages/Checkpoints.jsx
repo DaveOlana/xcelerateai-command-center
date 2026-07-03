@@ -245,8 +245,8 @@ export default function Checkpoints() {
 
               {/* Evidence Modal overlay */}
               {activeEvidenceSkill === checkpoint.skill && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-                  <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-md p-6 animate-scale-in text-left shadow-card">
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+                  <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-md p-6 animate-scale-in text-left shadow-card max-h-[90vh] overflow-y-auto">
                     <div className="flex items-center justify-between mb-4 border-b border-navy-500/40 pb-3">
                       <div>
                         <h3 className="font-bold text-white text-sm uppercase tracking-wider">Save Skill Evidence</h3>

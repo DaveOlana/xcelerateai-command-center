@@ -708,9 +708,15 @@ function generateSyntheticWeeks(month, monthNumber, baseWeekNumber, resourceCata
  * Transform any valid raw roadmap JSON into the canonical internal format.
  * This is the single entry point used after validateRoadmapJSON() passes.
  */
-export function normalizeRoadmap(raw) {
-  if (!raw || typeof raw !== 'object') {
+export function normalizeRoadmap(rawInput) {
+  if (!rawInput || typeof rawInput !== 'object') {
     throw new Error('normalizeRoadmap: input must be a non-null object');
+  }
+
+  // Detect and extract roadmap from a full progress backup file
+  let raw = rawInput;
+  if (rawInput.roadmap && typeof rawInput.roadmap === 'object' && (rawInput.roadmap.weeks || rawInput.roadmap.months || rawInput.roadmap.bootcamp)) {
+    raw = rawInput.roadmap;
   }
 
   const bootcamp = raw.bootcamp || {};

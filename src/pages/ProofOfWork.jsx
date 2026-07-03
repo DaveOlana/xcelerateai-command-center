@@ -8,6 +8,9 @@ import {
 } from 'lucide-react';
 import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
 import { ProofVaultVisual } from '../components/visuals';
+import StatusBanner from '../components/ui/StatusBanner';
+import InlineStatus from '../components/ui/InlineStatus';
+import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 export default function ProofOfWork() {
   const { roadmap, weekProofs, submitWeekProof, settings } = useApp();
@@ -56,6 +59,8 @@ export default function ProofOfWork() {
 
   // Validation States
   const [errors, setErrors] = useState({ repo: '', commit: '', video: '', readme: '' });
+  const [isSaving, setIsSaving] = useState(false);
+  const [feedback, setFeedback] = useState(null);
 
   // Sync state when week changes
   useEffect(() => {
@@ -126,16 +131,27 @@ export default function ProofOfWork() {
     setErrors(newErrors);
     if (hasError) return;
 
-    submitWeekProof(selectedWeekNum, {
-      githubRepoLink: repo,
-      githubCommitLink: commit,
-      screenshotNote: screenshot,
-      readmeCompleted: readme,
-      reflectionCompleted: reflection,
-      demoVideoLink: video,
-    });
-    setSaved(true);
-    setTimeout(() => setSaved(false), 3000);
+    setIsSaving(true);
+    setFeedback(null);
+    setSaved(false);
+
+    setTimeout(() => {
+      submitWeekProof(selectedWeekNum, {
+        githubRepoLink: repo,
+        githubCommitLink: commit,
+        screenshotNote: screenshot,
+        readmeCompleted: readme,
+        reflectionCompleted: reflection,
+        demoVideoLink: video,
+      });
+      setIsSaving(false);
+      setSaved(true);
+      setFeedback({ type: 'success', text: 'Proof saved.' });
+      setTimeout(() => {
+        setSaved(false);
+        setFeedback(null);
+      }, 3000);
+    }, 750);
   };
   const isProofComplete = (proof) => {
     return proof && proof.githubRepoLink && proof.githubCommitLink && proof.readmeCompleted;
@@ -511,16 +527,18 @@ export default function ProofOfWork() {
 
                 {/* Form buttons */}
                 <div className="flex gap-3 justify-end pt-3 border-t border-navy-800/40 items-center">
-                  {saved && (
-                    <span className="text-[11px] font-bold text-accent-primary uppercase tracking-widest animate-fade-in flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-accent-primary" /> Evidence Saved Successfully
-                    </span>
+                  {isSaving && (
+                    <LoadingIndicator label="Verifying..." size="sm" />
+                  )}
+                  {!isSaving && feedback && (
+                    <InlineStatus status={feedback.type} label={feedback.text} />
                   )}
                   <button
                     type="submit"
-                    className="btn-primary py-2.5 px-6 text-xs font-bold uppercase tracking-wider"
+                    disabled={isSaving}
+                    className="btn-primary py-2.5 px-6 text-xs font-bold uppercase tracking-wider disabled:opacity-50"
                   >
-                    Save Proof & Verify
+                    {isSaving ? 'Verifying...' : 'Save Proof & Verify'}
                   </button>
                 </div>
               </form>
