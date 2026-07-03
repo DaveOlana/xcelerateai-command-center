@@ -8,6 +8,7 @@ import {
   FileText, CheckSquare, Zap, BarChart2, CheckCircle2, ChevronRight, Play
 } from 'lucide-react';
 import { PageHeader, SectionCard, ProgressBar } from '../common/UIComponents';
+import StatusBanner from '../ui/StatusBanner';
 
 export default function Onboarding() {
   const { 
@@ -17,7 +18,8 @@ export default function Onboarding() {
     roadmap, 
     importRoadmap,
     onboardingCompleted,
-    completeOnboarding
+    completeOnboarding,
+    userProfile
   } = useApp();
   const navigate = useNavigate();
 
@@ -27,8 +29,9 @@ export default function Onboarding() {
   const totalSteps = 10;
 
   // Step 2 form states
-  const [userName, setUserName] = useState('');
-  const [userDisplayName, setUserDisplayName] = useState('');
+  const [userName, setUserName] = useState(userProfile?.name || '');
+  const [userDisplayName, setUserDisplayName] = useState(userProfile?.displayName || '');
+  const [step2Error, setStep2Error] = useState('');
 
   // Step 3 roadmap upload / selection states
   const [dragOver, setDragOver] = useState(false);
@@ -44,11 +47,22 @@ export default function Onboarding() {
     }
   }, [roadmap, pendingRoadmap]);
 
+  // Sync profile details if previously completed
+  useEffect(() => {
+    if (userProfile?.name && !userName) {
+      setUserName(userProfile.name);
+    }
+    if (userProfile?.displayName && !userDisplayName) {
+      setUserDisplayName(userProfile.displayName);
+    }
+  }, [userProfile, userName, userDisplayName]);
+
   const handleNext = () => {
     if (currentStep === 2 && !userName.trim()) {
-      alert('Please enter your name to personalize your mission cockpit.');
+      setStep2Error('Please enter your name to personalize your mission cockpit.');
       return;
     }
+    setStep2Error('');
     if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
     }
@@ -131,17 +145,23 @@ export default function Onboarding() {
   };
 
   const handleFinish = () => {
-    // 1. Confirm and save the roadmap selection
-    if (roadmapSource === 'custom' && pendingRoadmap) {
-      importRoadmap(pendingRoadmap);
-    } else {
-      resetToSampleRoadmap();
-    }
+    const isReplay = localStorage.getItem('xai_setup_completed_v1') === 'true';
+    if (!isReplay) {
+      // 1. Confirm and save the roadmap selection
+      if (roadmapSource === 'custom' && pendingRoadmap) {
+        importRoadmap(pendingRoadmap);
+      } else {
+        resetToSampleRoadmap();
+      }
 
-    // 2. Complete onboarding with the identity
-    const finalName = userName.trim() || 'Operator';
-    const finalDisplay = userDisplayName.trim() || finalName;
-    completeOnboarding(finalName, finalDisplay);
+      // 2. Complete onboarding with the identity
+      const finalName = userName.trim() || 'Operator';
+      const finalDisplay = userDisplayName.trim() || finalName;
+      completeOnboarding(finalName, finalDisplay);
+    } else {
+      // Replay mode: just mark completed, never touch profile or reset roadmap
+      completeOnboarding(undefined, undefined);
+    }
 
     localStorage.setItem('xai_setup_completed_v1', 'true');
     localStorage.setItem('xai_onboarding_seen_v1', 'false'); // Tour is ready
@@ -291,6 +311,9 @@ export default function Onboarding() {
                       className="input-base w-full text-[14px] font-semibold text-white bg-navy-950 border-navy-800 focus:border-accent-primary"
                     />
                   </div>
+                  {step2Error && (
+                    <StatusBanner type="error" message={step2Error} onClose={() => setStep2Error('')} />
+                  )}
                 </div>
               </div>
             )}
@@ -356,9 +379,7 @@ export default function Onboarding() {
                 </div>
 
                 {uploadError && (
-                  <p className="text-red-400 text-[11px] font-semibold bg-red-950/20 border border-red-900/30 rounded-lg p-3">
-                    {uploadError}
-                  </p>
+                  <StatusBanner type="error" message={uploadError} onClose={() => setUploadError('')} />
                 )}
               </div>
             )}

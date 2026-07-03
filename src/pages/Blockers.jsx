@@ -71,9 +71,12 @@ I have tried: ${b.whatAlreadyTried || 'Reviewing resources.'}
 Please help me debug this without giving me the full answer immediately.`;
   };
 
+  const [copiedBlocker, setCopiedBlocker] = useState(false);
+
   const copyPromptToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    alert(`Prompt copied to clipboard! Share it with ${mentorName}.`);
+    setCopiedBlocker(true);
+    setTimeout(() => setCopiedBlocker(false), 3000);
   };
 
   const filteredBlockers = blockers.filter((b) => {
@@ -353,7 +356,7 @@ Please help me debug this without giving me the full answer immediately.`;
                   onClick={() => copyPromptToClipboard(generateMentorPrompt(activePromptBlocker))}
                   className="bg-accent-primary text-navy-900 font-bold px-4 py-2 rounded-xl hover:bg-accent-primary-dim active:scale-95 transition-all text-xs uppercase tracking-wider shadow-primary-glow flex items-center gap-1.5"
                 >
-                  <Copy className="w-4 h-4" /> Copy Prompt
+                  <Copy className="w-4 h-4" /> {copiedBlocker ? 'Copied!' : 'Copy Prompt'}
                 </button>
               </div>
             </div>

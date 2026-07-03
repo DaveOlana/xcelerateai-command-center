@@ -8,6 +8,9 @@ import {
 import { useApp } from '../context/AppContext';
 import { PageShell, PageHeader, MetricCard, ProgressBar, SectionCard, StatusBadge } from '../components/common/UIComponents';
 import { ProjectForgeVisual } from '../components/visuals';
+import StatusBanner from '../components/ui/StatusBanner';
+import InlineStatus from '../components/ui/InlineStatus';
+import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 export default function ProjectTracker() {
   const {
@@ -21,6 +24,18 @@ export default function ProjectTracker() {
   const [githubInputs, setGithubInputs] = useState({});
   const [liveDemoInputs, setLiveDemoInputs] = useState({});
   const [noteInputs, setNoteInputs] = useState({});
+
+  // Loading & Feedback States
+  const [savingGithub, setSavingGithub] = useState(false);
+  const [githubError, setGithubError] = useState('');
+  const [githubSuccess, setGithubSuccess] = useState('');
+
+  const [savingLiveDemo, setSavingLiveDemo] = useState(false);
+  const [liveDemoError, setLiveDemoError] = useState('');
+  const [liveDemoSuccess, setLiveDemoSuccess] = useState('');
+
+  const [savingNote, setSavingNote] = useState(false);
+  const [noteSuccess, setNoteSuccess] = useState('');
 
   const projects = useMemo(() => roadmap?.projects || [], [roadmap]);
 
@@ -82,9 +97,11 @@ export default function ProjectTracker() {
   const activePercent = activeTotalMilestones > 0 ? Math.round((activeDoneMilestones.length / activeTotalMilestones) * 100) : 0;
 
   const savedGithub = progress.projectGithubLinks?.[activeProjIdx] || '';
+  const savedLiveDemo = progress.projectLiveDemoLinks?.[activeProjIdx] || '';
   const savedNote = progress.projectNotes?.[activeProjIdx] || '';
   
   const localGithub = githubInputs[activeProjIdx] ?? savedGithub;
+  const localLiveDemo = liveDemoInputs[activeProjIdx] ?? savedLiveDemo;
   const localNote = noteInputs[activeProjIdx] ?? savedNote;
 
   const isCapstone = activeProject?.capstone === true || activeProject?.featured === true;
@@ -94,6 +111,58 @@ export default function ProjectTracker() {
 
   const scrollToWorkspace = () => {
     workspaceRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSaveGithub = () => {
+    setGithubError('');
+    setGithubSuccess('');
+
+    if (!localGithub.trim()) {
+      setGithubError('Repository link is required.');
+      return;
+    }
+
+    if (!localGithub.startsWith('https://github.com/')) {
+      setGithubError('Repository link must start with https://github.com/');
+      return;
+    }
+
+    setSavingGithub(true);
+    setTimeout(() => {
+      setProjectGithubLink(activeProjIdx, localGithub);
+      setSavingGithub(false);
+      setGithubSuccess('Repository link saved.');
+      setTimeout(() => setGithubSuccess(''), 3000);
+    }, 600);
+  };
+
+  const handleSaveLiveDemo = () => {
+    setLiveDemoError('');
+    setLiveDemoSuccess('');
+
+    if (localLiveDemo.trim() && !localLiveDemo.startsWith('http://') && !localLiveDemo.startsWith('https://')) {
+      setLiveDemoError('Live Demo URL must start with http:// or https://');
+      return;
+    }
+
+    setSavingLiveDemo(true);
+    setTimeout(() => {
+      setProjectLiveDemoLink(activeProjIdx, localLiveDemo);
+      setSavingLiveDemo(false);
+      setLiveDemoSuccess('Live Demo link saved.');
+      setTimeout(() => setLiveDemoSuccess(''), 3000);
+    }, 600);
+  };
+
+  const handleSaveNote = () => {
+    setNoteSuccess('');
+    setSavingNote(true);
+    setTimeout(() => {
+      setProjectNote(activeProjIdx, localNote);
+      setSavingNote(false);
+      setNoteSuccess('Project notes saved.');
+      setTimeout(() => setNoteSuccess(''), 3000);
+    }, 600);
   };
 
   return (
@@ -306,16 +375,15 @@ export default function ProjectTracker() {
                     value={localGithub}
                     onChange={(e) => setGithubInputs((prev) => ({ ...prev, [activeProjIdx]: e.target.value }))}
                     className="input-base flex-1 text-xs font-mono"
+                    disabled={savingGithub}
                   />
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 items-center">
                     <button
-                      onClick={() => {
-                        setProjectGithubLink(activeProjIdx, localGithub);
-                        alert('GitHub repository link configured.');
-                      }}
-                      className="btn-primary py-2 px-5 text-xs font-bold active:scale-95 transition-all whitespace-nowrap"
+                      onClick={handleSaveGithub}
+                      disabled={savingGithub}
+                      className="btn-primary py-2 px-5 text-xs font-bold active:scale-95 transition-all whitespace-nowrap disabled:opacity-50"
                     >
-                      Save Link
+                      {savingGithub ? 'Saving...' : 'Save Link'}
                     </button>
                     {savedGithub && (
                       <a
@@ -329,6 +397,58 @@ export default function ProjectTracker() {
                     )}
                   </div>
                 </div>
+                {githubError && (
+                  <StatusBanner type="error" message={githubError} />
+                )}
+                {savingGithub && (
+                  <LoadingIndicator label="Configuring repository link..." size="sm" />
+                )}
+                {githubSuccess && (
+                  <InlineStatus status="success" label={githubSuccess} />
+                )}
+              </div>
+
+              {/* Live Demo Link Entry */}
+              <div className="pt-4 border-t border-navy-800/40 space-y-3">
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block">Live Demo Configuration</span>
+                <div className="flex gap-2 flex-col sm:flex-row">
+                  <input
+                    type="url"
+                    placeholder="https://example.com/live-demo"
+                    value={localLiveDemo}
+                    onChange={(e) => setLiveDemoInputs((prev) => ({ ...prev, [activeProjIdx]: e.target.value }))}
+                    className="input-base flex-1 text-xs font-mono"
+                    disabled={savingLiveDemo}
+                  />
+                  <div className="flex gap-2 items-center">
+                    <button
+                      onClick={handleSaveLiveDemo}
+                      disabled={savingLiveDemo}
+                      className="btn-primary py-2 px-5 text-xs font-bold active:scale-95 transition-all whitespace-nowrap disabled:opacity-50"
+                    >
+                      {savingLiveDemo ? 'Saving...' : 'Save Link'}
+                    </button>
+                    {savedLiveDemo && (
+                      <a
+                        href={savedLiveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-secondary py-2 px-3 text-xs font-bold flex items-center justify-center gap-1.5 transition-all whitespace-nowrap text-brand-cyan border-brand-cyan/25"
+                      >
+                        Open <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+                {liveDemoError && (
+                  <StatusBanner type="error" message={liveDemoError} />
+                )}
+                {savingLiveDemo && (
+                  <LoadingIndicator label="Configuring live demo link..." size="sm" />
+                )}
+                {liveDemoSuccess && (
+                  <InlineStatus status="success" label={liveDemoSuccess} />
+                )}
               </div>
             </div>
           </SectionCard>
@@ -352,7 +472,6 @@ export default function ProjectTracker() {
             </div>
           )}
 
-          {/* Project Notes form */}
           <SectionCard
             title="Project Notes"
             subtitle="Capture choices, configurations, or packages during build"
@@ -364,16 +483,23 @@ export default function ProjectTracker() {
                 onChange={(e) => setNoteInputs((prev) => ({ ...prev, [activeProjIdx]: e.target.value }))}
                 rows={5}
                 className="input-base w-full text-xs resize-none"
+                disabled={savingNote}
               />
-              <button
-                onClick={() => {
-                  setProjectNote(activeProjIdx, localNote);
-                  alert('Project notes updated.');
-                }}
-                className="btn-primary py-2 px-5 text-xs font-bold w-full active:scale-95 transition-all text-center"
-              >
-                Save Project Notes
-              </button>
+              <div className="flex flex-col gap-2">
+                <button
+                  onClick={handleSaveNote}
+                  disabled={savingNote}
+                  className="btn-primary py-2 px-5 text-xs font-bold w-full active:scale-95 transition-all text-center disabled:opacity-50"
+                >
+                  {savingNote ? 'Updating...' : 'Save Project Notes'}
+                </button>
+                {savingNote && (
+                  <LoadingIndicator label="Logging project notes..." size="sm" />
+                )}
+                {noteSuccess && (
+                  <InlineStatus status="success" label={noteSuccess} />
+                )}
+              </div>
             </div>
           </SectionCard>
 
