@@ -1,22 +1,39 @@
 import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  ChevronLeft, ChevronRight, CheckCircle2, Circle, ExternalLink,
-  Printer, BookOpen, Target, Lock, ShieldAlert, Play, Pause,
-  Coffee, ChevronRight as ChevronRightIcon, AlertTriangle, FileText,
-  Zap, Clock, Database, Clipboard, CheckSquare, ChevronDown
+  ChevronLeft, ChevronRight, CheckCircle2,
+  Printer, BookOpen, Target, Lock, ShieldAlert,
+  Coffee, AlertTriangle, FileText,
+  Zap, Clock, CheckSquare, ChevronDown
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import {
-  getWeekStepStatus, getUnknownWeekFields, isWeekAccessible,
+  getWeekStepStatus, isWeekAccessible,
   getRequiredResources, missionRequiresEvidence
 } from '../utils/unlockChecker';
 import { cleanDifficultyLabel } from '../utils/safeRender';
+import { buildMissionObject } from '../utils/missionAdapter';
 
-import { PageShell, PageHeader, SectionCard, StatCard, ProgressBar, StatusBadge, LockWarningCard, EmptyState } from '../components/common/UIComponents';
+import { PageShell, PageHeader, LockWarningCard } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
-import InlineStatus from '../components/ui/InlineStatus';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
+import MissionBrief from '../components/education/mission-context/MissionBrief';
+import MissionScenario from '../components/education/mission-context/MissionScenario';
+import LearningObjectives from '../components/education/mission-context/LearningObjectives';
+import ExpectedOutcome from '../components/education/mission-context/ExpectedOutcome';
+import LearningKit from '../components/education/learning-kit/LearningKit';
+import HintsPanel from '../components/education/guided-learning/HintsPanel';
+import LearningBottlenecks from '../components/education/guided-learning/LearningBottlenecks';
+import DebugChecklist from '../components/education/guided-learning/DebugChecklist';
+import ThinkingPrompt from '../components/education/guided-learning/ThinkingPrompt';
+import ReflectionPrompt from '../components/education/reflection/ReflectionPrompt';
+import KnowledgeCheck from '../components/education/reflection/KnowledgeCheck';
+import MissionReview from '../components/education/reflection/MissionReview';
+import ProgressReflection from '../components/education/reflection/ProgressReflection';
+import MissionSummary from '../components/education/mission-transition/MissionSummary';
+import CommanderNotes from '../components/education/mission-transition/CommanderNotes';
+import NextMissionPreview from '../components/education/mission-transition/NextMissionPreview';
+import ContinueJourney from '../components/education/mission-transition/ContinueJourney';
 
 // Collapsible helper component for supporting details sidebar
 function CollapsibleSection({ title, children, defaultOpen = true }) {
@@ -71,14 +88,11 @@ export default function WeeklyMissions() {
     toggleTask, isTaskComplete, markWeekComplete, isWeekComplete,
     resourcesStatus, updateResourceStatus, skillChecks, submitSkillCheck,
     practicalMissions, weekProofs, submitWeekProof, saveWeekReflection, weekReflections,
-    addNote, startTimer, sessionTimer, pauseTimer, resumeTimer, startBreakTimer,
-    timerHistory, blockers, notes,
+    sessionTimer, startBreakTimer,
+    blockers, notes,
   } = useApp();
 
   const navigate = useNavigate();
-
-  const roadmapTitle = roadmap?.title || roadmap?.bootcampTitle || 'Active Roadmap';
-  const roadmapShortTitle = roadmap?.shortTitle || roadmapTitle;
 
   const allWeeks = useMemo(() => {
     const list = [];
@@ -186,6 +200,18 @@ export default function WeeklyMissions() {
 
   const { week, month } = currentEntry;
   const isComplete = isWeekComplete(week.weekNumber);
+  // Phase 8C Milestone 2: standardized mission object, now consumed by all
+  // five Educational Experience Engine layers (Milestones 2-6). Milestone 7
+  // memoizes this: WeeklyMissions.jsx re-renders every second while a
+  // session timer is running (sessionTimer lives in the same AppContext
+  // this component consumes — a known, pre-existing re-render characteristic,
+  // not something this milestone changes), and rebuilding the full mission
+  // object graph (resources, tasks, etc.) on every one of those ticks was
+  // unnecessary work introduced by the EEE extraction. `week`/`month` are
+  // stable references across those ticks (allWeeks is itself memoized on
+  // [roadmap] and only changes when the roadmap actually does), so this
+  // keeps `mission`'s reference stable too.
+  const mission = useMemo(() => buildMissionObject(week, month), [week, month]);
   const taskKey = `m${month.monthNumber}_w${week.weekNumber}`;
   const doneTasks = progress?.completedTasks?.[taskKey];
   const doneTasksCount = Array.isArray(doneTasks) ? doneTasks.length : 0;
@@ -200,10 +226,7 @@ export default function WeeklyMissions() {
     weekProofs, weekReflections, settings,
   });
 
-  const unknownFields = getUnknownWeekFields(week);
   const requiredResources = getRequiredResources(week);
-  // Support both scheduledSessions (new) and sessions (legacy)
-  const sessions = week.scheduledSessions || week.sessions || [];
 
   // Safely extract skill check questions — may be:
   //   - An array of { id, question, expectedConcepts } (new schema)
@@ -219,13 +242,6 @@ export default function WeeklyMissions() {
     : week.checkpoint
     ? [{ question: typeof week.checkpoint === 'string' ? week.checkpoint : (week.checkpoint?.prompt || '') }]
     : [];
-
-  // Legacy single checkpoint text (for old overview card)
-  const checkpointText = skillCheckQuestions.length > 0
-    ? (typeof skillCheckQuestions[0] === 'string'
-        ? skillCheckQuestions[0]
-        : skillCheckQuestions[0]?.question || skillCheckQuestions[0]?.prompt || null)
-    : null;
 
   // --- Handlers ---
   const handleMarkWeekComplete = () => {
@@ -275,31 +291,6 @@ export default function WeeklyMissions() {
     e.preventDefault();
     submitWeekProof(week.weekNumber, proofLocal);
     setProofSaved(true);
-  };
-
-  const handleStartSession = (session) => {
-    startTimer(
-      session.sessionId || `w${week.weekNumber}-manual`,
-      session.type || 'Build Session',
-      session.title || `Week ${week.weekNumber} Focus`,
-      session.durationMinutes || 90,
-      session.maxContinuousMinutes || 75,
-      session.recommendedBreakMinutes || 10,
-    );
-  };
-
-  const handleTakeNote = (res) => {
-    addNote({
-      title: `Resource Note — ${res.title}`,
-      noteType: 'resource_summary',
-      linkedWeek: week.weekNumber,
-      linkedResource: res.title,
-      whatLearned: '',
-      whatConfused: '',
-      whatBuilt: '',
-      date: new Date().toISOString().split('T')[0],
-    });
-    navigate('/notes');
   };
 
   const goToPrev = () => { if (selectedWeekNum > 1) setSelectedWeekNum((n) => n - 1); };
@@ -514,13 +505,8 @@ export default function WeeklyMissions() {
               <div className="progress-fill" style={{ width: `${taskPercent}%` }} />
             </div>
 
-            {/* Briefing Outcome of the Week */}
-            {week.briefing && (
-              <div className="mt-4 pt-4 border-t border-navy-700/40">
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest block mb-1">Week Briefing</span>
-                <p className="text-xs text-slate-300 leading-relaxed">{week.briefing}</p>
-              </div>
-            )}
+            {/* Briefing Outcome of the Week — Phase 8C Milestone 2: extracted into MissionBrief */}
+            <MissionBrief mission={mission} bare />
           </div>
 
           {/* ── STAGE PROGRESS STEPPER ── */}
@@ -602,15 +588,8 @@ export default function WeeklyMissions() {
                   </div>
 
                   {(() => {
-                    const weekResources =
-                      Array.isArray(week.studyResources) && week.studyResources.length > 0
-                        ? week.studyResources
-                        : Array.isArray(week.resources) && week.resources.length > 0
-                        ? week.resources
-                        : [];
-
                     const hasSkillCheck = skillCheckQuestions.length > 0;
-                    const hasStudyResources = weekResources.length > 0;
+                    const hasStudyResources = mission.resources.length > 0;
 
                     return (
                       <div className="space-y-4">
@@ -621,108 +600,77 @@ export default function WeeklyMissions() {
                           </div>
                         )}
 
-                        {weekResources.length === 0 ? (
-                          <div className="p-6 bg-navy-850 rounded-2xl border border-navy-700/20 text-center">
-                            <BookOpen className="w-8 h-8 text-slate-600 mx-auto mb-2" />
-                            <p className="text-xs text-slate-400 font-medium">No Study Resources were supplied for this week.</p>
-                          </div>
-                        ) : (
-                          <div className="grid md:grid-cols-2 gap-4">
-                            {weekResources.map((res, idx) => {
-                              const status = resourcesStatus[res.title] || 'Not Started';
-                              const isRequired = requiredResources.some(r => r.title === res.title);
-                              const teachesTags = Array.isArray(res.teaches) ? res.teaches : [];
-                              const timeLabel = res.estimatedTime || res.timeEstimate || null;
-                              const purposeText = res.purpose || res.whatToExpect || null;
-
+                        {/* Phase 8C Milestone 3: extracted into LearningKit/ResourceSection/ResourceCard.
+                            grouped=false preserves the exact current flat-grid appearance; the
+                            "Required" tag, study-tracking button, and live status badge stay
+                            page-level (interactive/AppContext-driven) and are composed in via
+                            slots, since LearningKit's own components are rendering-only. */}
+                        <LearningKit
+                          mission={mission}
+                          grouped={false}
+                          linkLabel="Link"
+                          getResourceClassName={(resource) => {
+                            const status = resourcesStatus[resource.title] || 'Not Started';
+                            return status === 'Studied' ? 'border-emerald-500/25 bg-emerald-500/5' :
+                              status === 'Studying' ? 'border-brand-amber/25 bg-brand-amber/5' : '';
+                          }}
+                          renderResourceHeaderRight={(resource) => {
+                            // isRequired must come from unlockChecker.js's getRequiredResources(),
+                            // not resource.metadata.required — that function treats ALL resources
+                            // as implicitly required when a week has no explicit required:true
+                            // flags (true for all current sample data), which a naive read of the
+                            // raw field would miss. This is exactly the kind of gating logic
+                            // ResourceCard/ResourceMetadata must never compute themselves.
+                            const isRequired = requiredResources.some((r) => r.title === resource.title);
+                            if (!isRequired) return null;
+                            return (
+                              <span className="bg-accent-primary/10 text-[10px] text-accent-primary font-bold border border-accent-primary/25 px-2 py-0.5 rounded">
+                                Required
+                              </span>
+                            );
+                          }}
+                          renderResourceFooter={(resource) => {
+                            const status = resourcesStatus[resource.title] || 'Not Started';
+                            if (status === 'Not Started') {
                               return (
-                                <div key={idx} className={`bg-navy-850/40 p-5 rounded-2xl border flex flex-col justify-between gap-4 transition-all duration-200 ${
-                                  status === 'Studied' ? 'border-emerald-500/20 bg-emerald-500/5' :
-                                  status === 'Studying' ? 'border-accent-primary/25 bg-accent-primary/5' : 'border-navy-700/20'
-                                }`}>
-                                  <div className="space-y-3">
-                                    <div className="flex items-center justify-between gap-2 flex-wrap">
-                                      <div className="flex items-center gap-1.5 flex-wrap">
-                                        <span className="bg-navy-900 text-[10px] text-slate-400 font-bold border border-navy-750 px-2 py-0.5 rounded uppercase tracking-wider">{res.type || 'Resource'}</span>
-                                        {res.difficulty && <span className="bg-navy-900 text-[10px] text-slate-450 font-bold border border-navy-750 px-2 py-0.5 rounded capitalize">{cleanDifficultyLabel(res.difficulty)}</span>}
-                                        {isRequired && <span className="bg-accent-primary/10 text-[10px] text-accent-primary font-bold border border-accent-primary/25 px-2 py-0.5 rounded">Required</span>}
-                                      </div>
-                                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${
-                                        status === 'Studied' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' :
-                                        status === 'Studying' ? 'bg-accent-primary/10 text-accent-primary border-accent-primary/20 animate-pulse' :
-                                        'bg-navy-900 text-slate-500 border-navy-750'
-                                      }`}>
-                                        {status}
-                                      </span>
-                                    </div>
-
-                                    <h4 className="font-bold text-white text-[15px] leading-snug">{res.title}</h4>
-                                    
-                                    {timeLabel && (
-                                      <p className="text-xs text-slate-450 font-medium flex items-center gap-1">
-                                        <Clock className="w-3.5 h-3.5 text-slate-500" /> {timeLabel}
-                                      </p>
-                                    )}
-
-                                    {purposeText && (
-                                      <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">{purposeText}</p>
-                                    )}
-
-                                    {teachesTags.length > 0 && (
-                                      <div className="flex flex-wrap gap-1.5 pt-1">
-                                        {teachesTags.map((tag, ti) => (
-                                          <span key={ti} className="text-[10px] font-semibold px-2 py-0.5 bg-accent-primary/5 text-accent-primary/80 border border-accent-primary/15 rounded">
-                                            {tag}
-                                          </span>
-                                        ))}
-                                      </div>
-                                    )}
-                                  </div>
-
-                                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-navy-800/40">
-                                    <a
-                                      href={res.url}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="btn-secondary py-2 px-2 text-xs text-center flex items-center justify-center gap-1 font-bold"
-                                    >
-                                      <ExternalLink className="w-3.5 h-3.5" /> Link
-                                    </a>
-
-                                    {status === 'Not Started' && (
-                                      <button
-                                        onClick={() => updateResourceStatus(res.title, 'Studying')}
-                                        className="btn-secondary py-2 text-xs text-brand-amber border-brand-amber/20 hover:bg-brand-amber/5 font-bold"
-                                      >
-                                        Study
-                                      </button>
-                                    )}
-                                    {status === 'Studying' && (
-                                      <button
-                                        onClick={() => updateResourceStatus(res.title, 'Studied')}
-                                        className="btn-primary py-2 text-xs font-bold"
-                                      >
-                                        Mark Done
-                                      </button>
-                                    )}
-                                    {status === 'Studied' && (
-                                      <div className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl py-2 text-xs text-center flex items-center justify-center gap-1 font-bold">
-                                        <CheckCircle2 className="w-3.5 h-3.5" /> Done
-                                      </div>
-                                    )}
-
-                                    <button
-                                      onClick={() => handleTakeNote(res)}
-                                      className="col-span-2 btn-secondary py-1.5 text-xs text-slate-400 hover:text-white flex items-center justify-center gap-1"
-                                    >
-                                      <FileText className="w-3.5 h-3.5" /> Add Note
-                                    </button>
-                                  </div>
-                                </div>
+                                <button
+                                  onClick={() => updateResourceStatus(resource.title, 'Studying')}
+                                  className="btn-primary py-2 text-xs font-bold"
+                                >
+                                  Study
+                                </button>
                               );
-                            })}
-                          </div>
-                        )}
+                            }
+                            if (status === 'Studying') {
+                              return (
+                                <button
+                                  onClick={() => updateResourceStatus(resource.title, 'Studied')}
+                                  className="btn-primary py-2 text-xs font-bold"
+                                >
+                                  Mark Done
+                                </button>
+                              );
+                            }
+                            return (
+                              <div className="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-xl py-2 text-xs text-center flex items-center justify-center gap-1 font-bold">
+                                <CheckCircle2 className="w-3.5 h-3.5" /> Done
+                              </div>
+                            );
+                          }}
+                          renderResourceStatusBadge={(resource) => {
+                            const status = resourcesStatus[resource.title] || 'Not Started';
+                            const style = status === 'Studied'
+                              ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                              : status === 'Studying'
+                                ? 'bg-brand-amber/10 text-brand-amber border-brand-amber/20 animate-pulse'
+                                : 'bg-navy-900 text-slate-500 border-navy-750';
+                            return (
+                              <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border uppercase tracking-wider ${style}`}>
+                                {status}
+                              </span>
+                            );
+                          }}
+                        />
                       </div>
                     );
                   })()}
@@ -945,6 +893,16 @@ export default function WeeklyMissions() {
                           })}
                         </div>
                       )}
+
+                      {/* Phase 8C Milestone 4: Layer 3 (Guided Learning). None of these
+                          render anything for current sample data (no JSON populates hints/
+                          commonMistakes/debugChecklist/thinkingPrompts yet) — wired in now
+                          so future JSON is supported with zero further code changes, same
+                          pattern as Milestone 2's LearningObjectives. */}
+                      <HintsPanel mission={mission} bare />
+                      <LearningBottlenecks mission={mission} bare />
+                      <DebugChecklist mission={mission} bare />
+                      <ThinkingPrompt mission={mission} bare />
                     </div>
                   )}
                 </div>
@@ -970,17 +928,12 @@ export default function WeeklyMissions() {
                   ) : (
                     <div>
                       {(() => {
-                        const delivers = week.deliverable || null;
                         const requiresProof = true; // Always show submission inputs in the stepper tab
 
                         return (
                           <form onSubmit={handleSaveProof} className="space-y-4">
-                            {delivers && (
-                              <div className="p-4 bg-navy-800 border border-navy-700/30 rounded-xl text-xs text-slate-350">
-                                <p className="font-bold text-white uppercase tracking-wider text-[10px] mb-1">Expected Deliverable:</p>
-                                <p className="italic">"{delivers}"</p>
-                              </div>
-                            )}
+                            {/* Phase 8C Milestone 2: extracted into ExpectedOutcome */}
+                            <ExpectedOutcome mission={mission} bare />
 
                             <div>
                               <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1">GitHub Repository Link *</label>
@@ -1073,16 +1026,16 @@ export default function WeeklyMissions() {
                     />
                   ) : (
                     <div className="space-y-4">
-                      {week.reflectionPrompts && week.reflectionPrompts.length > 0 && (
-                        <div className="bg-navy-850 p-4 rounded-xl border border-navy-700/30">
-                          <h4 className="text-xs font-bold text-accent-cyan uppercase tracking-wider mb-2">Prompt Questions:</h4>
-                          <ul className="list-disc list-inside space-y-1.5 text-xs text-slate-300 leading-relaxed">
-                            {week.reflectionPrompts.map((p, idx) => (
-                              <li key={idx}>{p}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                      {/* Phase 8C Milestone 5: Layer 4 (Reflection & Consolidation).
+                          MissionReview/KnowledgeCheck/ProgressReflection render nothing
+                          for current sample data (no JSON populates those fields yet),
+                          same forward-compatible pattern as Milestones 2 and 4.
+                          ReflectionPrompt is a genuine extraction of the pre-existing
+                          "Prompt Questions:" block — its bare-mode markup is unchanged. */}
+                      <MissionReview mission={mission} bare />
+                      <KnowledgeCheck mission={mission} bare />
+                      <ReflectionPrompt mission={mission} bare />
+                      <ProgressReflection mission={mission} bare />
 
                       <form onSubmit={handleSaveReflection} className="space-y-4">
                         <textarea
@@ -1167,7 +1120,18 @@ export default function WeeklyMissions() {
                               Operations for Week {week.weekNumber} are fully verified. All next week milestones are now accessible.
                             </p>
                           </div>
-                          <div className="flex gap-3 justify-center pt-2">
+
+                          {/* Phase 8C Milestone 6: Layer 5 (Mission Completion & Transition).
+                              MissionSummary/CommanderNotes/NextMissionPreview render nothing for
+                              current sample data (no JSON populates those fields yet) — wired in
+                              now for forward-compatibility, same pattern as prior milestones.
+                              ContinueJourney wraps the pre-existing button logic unchanged; it
+                              makes no routing/unlock decision itself. */}
+                          <MissionSummary mission={mission} bare />
+                          <CommanderNotes mission={mission} bare />
+                          <NextMissionPreview mission={mission} bare />
+
+                          <ContinueJourney mission={mission} bare>
                             {selectedWeekNum < allWeeks.length ? (
                               <button
                                 onClick={goToNext}
@@ -1183,7 +1147,7 @@ export default function WeeklyMissions() {
                                 Return to Dashboard
                               </button>
                             )}
-                          </div>
+                          </ContinueJourney>
                         </>
                       )}
                     </div>
@@ -1272,12 +1236,11 @@ export default function WeeklyMissions() {
                   ) : (
                     <p className="text-slate-550 italic">No briefing details supplied.</p>
                   )}
-                  {week.elliotConnection && (
-                    <div className="bg-accent-cyan/5 border border-accent-cyan/10 rounded-xl p-3 mt-2 text-slate-350">
-                      <p className="text-accent-cyan font-bold uppercase tracking-wider text-[10px] mb-1">{roadmapShortTitle} Connection</p>
-                      <p className="leading-relaxed">{week.elliotConnection}</p>
-                    </div>
-                  )}
+                  {/* Phase 8C Milestone 2: extracted into MissionScenario + LearningObjectives.
+                      Both render nothing when their data is absent, matching this section's
+                      existing behavior for elliotConnection today. */}
+                  <MissionScenario mission={mission} bare />
+                  <LearningObjectives mission={mission} bare />
                 </div>
               </CollapsibleSection>
 
