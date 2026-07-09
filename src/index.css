@@ -336,6 +336,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =============================================
+   RESOURCE CARD (Learning Kit)
+   ============================================= */
+.resource-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--card-accent, rgba(148, 163, 184, 0.35));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--card-accent-soft, rgba(148, 163, 184, 0.12));
+}
+
+/* =============================================
    MOBILE SAFE AREA
    ============================================= */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
