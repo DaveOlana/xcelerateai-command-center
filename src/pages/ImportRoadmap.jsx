@@ -1,12 +1,9 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Upload, CheckCircle2, AlertCircle, FileJson, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock, BookOpen, CheckSquare, Target, FileText, Zap, Coffee, BarChart2, Award, Shield, Check, Download } from 'lucide-react';
+import { Upload, CheckCircle2, AlertCircle, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock, BookOpen, CheckSquare, Target, FileText, Zap, Coffee, BarChart2, Award, Shield, Check, Download } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { validateRoadmapJSON } from '../utils/jsonValidator';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { PageShell, PageHeader } from '../components/common/UIComponents';
 import ConfirmAction from '../components/ui/ConfirmAction';
-import InlineStatus from '../components/ui/InlineStatus';
-import StatusBanner from '../components/ui/StatusBanner';
-import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 export default function ImportRoadmap() {
   const { importRoadmap, resetToSampleRoadmap, settings, exportProgress } = useApp();

@@ -27,7 +27,7 @@ export default function ConfirmAction({
         <div className="space-y-1 min-w-0 flex-1">
           <h4 className="text-xs font-bold text-white uppercase tracking-wider">{title}</h4>
           {description && (
-            <p className="text-[11px] text-slate-400 leading-normal">{description}</p>
+            <div className="text-[11px] text-slate-400 leading-normal">{description}</div>
           )}
         </div>
       </div>

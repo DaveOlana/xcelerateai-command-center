@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Plus, Trash2, FileText, ChevronDown, ChevronUp, Calendar, X, Tag, Link as LinkIcon, Search } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { formatNoteDate, getTodayISO } from '../utils/dateUtils';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton } from '../components/common/UIComponents';
 
 const NOTE_TYPES = [
   { value: 'session_note', label: 'Session Note' },

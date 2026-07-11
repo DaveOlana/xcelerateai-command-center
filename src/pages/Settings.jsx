@@ -6,7 +6,7 @@ import {
 import { useApp } from '../context/AppContext';
 import { getTodayISO } from '../utils/dateUtils';
 import { calculateOverallProgress } from '../utils/progressCalculator';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard, CommandButton } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
 import InlineStatus from '../components/ui/InlineStatus';
 import ConfirmAction from '../components/ui/ConfirmAction';

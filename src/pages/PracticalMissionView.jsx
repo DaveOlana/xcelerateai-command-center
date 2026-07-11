@@ -7,9 +7,8 @@ import {
   BookOpen, Terminal, Code, ShieldAlert, Sparkles, MessageSquare,
   X, Coffee, Check
 } from 'lucide-react';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { PageShell, PageHeader, CommandButton, StatusBadge } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
-import InlineStatus from '../components/ui/InlineStatus';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 export default function PracticalMissionView() {

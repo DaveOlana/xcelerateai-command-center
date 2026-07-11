@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { AlertCircle, CheckCircle2, Trash2, Copy, FileText, Plus, X, Search, HelpCircle, ShieldAlert, Check } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Trash2, Copy, Plus, X, Search, HelpCircle, Check } from 'lucide-react';
 import { PageShell, PageHeader, SectionCard, StatCard } from '../components/common/UIComponents';
 
 export default function Blockers() {

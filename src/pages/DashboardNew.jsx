@@ -17,7 +17,7 @@ import {
   getBootcampDurationPercent,
 } from '../utils/dateUtils';
 import { getWeekStepStatus } from '../utils/unlockChecker';
-import { PageShell, SectionCard, ActionCard, ReflectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
+import { PageShell, SectionCard, ActionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
 
 export default function Dashboard() {
   const {

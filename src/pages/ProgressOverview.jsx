@@ -9,7 +9,7 @@ import {
 import { useApp } from '../context/AppContext';
 import { calculateOverallProgress, getMonthProgress, calculateDynamicReadiness } from '../utils/progressCalculator';
 import { getBootcampDay, getDaysRemaining } from '../utils/dateUtils';
-import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar } from '../components/common/UIComponents';
 import { ProgressOrbit } from '../components/visuals';
 
 const getTaskText = (task) => {

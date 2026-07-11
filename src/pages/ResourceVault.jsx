@@ -1,10 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { ExternalLink, Search, Filter, BookOpen, X, CheckCircle2, Circle, FileText, Check } from 'lucide-react';
+import { ExternalLink, Search, BookOpen, X, FileText, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import ImportRequiredCard from '../components/common/ImportRequiredCard';
-import { PageShell, PageHeader, SectionCard, StatusBadge } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
-import InlineStatus from '../components/ui/InlineStatus';
 
 const DIFFICULTY_COLORS = {
   Beginner: 'bg-blue-500/10 text-blue-400 border border-blue-500/20',
