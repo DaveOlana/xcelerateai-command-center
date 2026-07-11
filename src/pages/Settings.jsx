@@ -6,7 +6,11 @@ import {
 import { useApp } from '../context/AppContext';
 import { getTodayISO } from '../utils/dateUtils';
 import { calculateOverallProgress } from '../utils/progressCalculator';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard, CommandButton } from '../components/common/UIComponents';
+import StatusBanner from '../components/ui/StatusBanner';
+import InlineStatus from '../components/ui/InlineStatus';
+import ConfirmAction from '../components/ui/ConfirmAction';
+import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 const DEFAULT_PROGRESS = {
   completedTasks: {},
@@ -36,6 +40,16 @@ export default function Settings() {
   const [activeResetType, setActiveResetType] = useState(null);
   const [importMsg, setImportMsg] = useState('');
 
+  // Loading & Feedback States
+  const [settingsFeedback, setSettingsFeedback] = useState(null); // { type, text }
+  const [isResetting, setIsResetting] = useState(false);
+  const [confirmActiveRoadmapReset, setConfirmActiveRoadmapReset] = useState(false);
+  const [overrideError, setOverrideError] = useState('');
+  const [guideSuccess, setGuideSuccess] = useState('');
+  const [isExporting, setIsExporting] = useState(false);
+  const [isRestoring, setIsRestoring] = useState(false);
+  const [pendingBackupData, setPendingBackupData] = useState(null);
+
   // Profile states
   const [profileName, setProfileName] = useState(userProfile?.name || '');
   const [profileDisplayName, setProfileDisplayName] = useState(userProfile?.displayName || '');
@@ -61,8 +75,9 @@ export default function Settings() {
   const totalWeeks = roadmap?.months?.reduce((a, m) => a + (m.weeks?.length || 0), 0) || 24;
 
   const handleSave = () => {
+    setOverrideError('');
     if (settings?.manualOverrideEnabled && !settings?.overrideReason?.trim()) {
-      alert('Please provide a reason for overriding prerequisites locking in Advanced Controls.');
+      setOverrideError('Please provide a reason for overriding prerequisites locking in Advanced Controls.');
       return;
     }
     setSaved(true);
@@ -79,6 +94,7 @@ export default function Settings() {
         roadmap: roadmap,
         settings: {
           ...settings,
+          startDate: new Date().toISOString().split('T')[0],
           activeWeek: 1,
           activeMonth: 1,
           manualOverrideEnabled: false,
@@ -95,20 +111,24 @@ export default function Settings() {
         weekProofs: {},
         weekReflections: {}
       });
-      alert('Learning progress logs have been reset. Current roadmap config was preserved.');
+      setSettingsFeedback({ type: 'success', text: 'Learning progress logs have been reset.' });
     } else if (activeResetType === 'roadmap') {
       resetToSampleRoadmap();
-      alert('Roadmap reverted to default sample. Progress and settings have been reset.');
+      setSettingsFeedback({ type: 'success', text: 'Roadmap reverted to default sample.' });
     } else if (activeResetType === 'factory') {
       resetAllProgress();
-      alert('Factory Reset executed. All browser local storage data has been cleared.');
+      setSettingsFeedback({ type: 'success', text: 'Factory Reset executed successfully.' });
     }
+    setTimeout(() => setSettingsFeedback(null), 4000);
     setActiveResetType(null);
   };
 
   const handleProgressImport = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
+    
+    setImportMsg('');
+    setSettingsFeedback(null);
     const reader = new FileReader();
     reader.onload = (ev) => {
       try {
@@ -117,14 +137,23 @@ export default function Settings() {
           setImportMsg('error');
           return;
         }
-        importProgress(data);
-        setImportMsg('success');
+        setPendingBackupData(data);
       } catch {
         setImportMsg('error');
       }
     };
     reader.readAsText(file);
     e.target.value = '';
+  };
+
+  const handleExportProgress = () => {
+    setIsExporting(true);
+    setTimeout(() => {
+      exportProgress();
+      setIsExporting(false);
+      setSettingsFeedback({ type: 'success', text: 'Backup exported successfully.' });
+      setTimeout(() => setSettingsFeedback(null), 3000);
+    }, 600);
   };
 
   return (
@@ -173,7 +202,7 @@ export default function Settings() {
             type="submit"
             className="btn-primary py-2.5 px-6 text-xs font-bold w-full sm:w-auto"
           >
-            {profileSaved ? 'Profile Updated ✓' : 'Save Profile Changes'}
+            {profileSaved ? 'Profile Updated' : 'Save Profile Changes'}
           </button>
         </form>
       </SectionCard>
@@ -252,6 +281,9 @@ export default function Settings() {
           </p>
         </div>
 
+        {overrideError && (
+          <StatusBanner type="error" message={overrideError} className="mb-2" />
+        )}
         <CommandButton onClick={handleSave}>
           {saved ? <><CheckCircle2 className="w-4 h-4" /> Changes Applied!</> : 'Apply Configurations'}
         </CommandButton>
@@ -298,18 +330,47 @@ export default function Settings() {
               </div>
             </div>
 
-            <div className="pt-2">
-              <button
-                onClick={() => {
-                  if (window.confirm('Are you sure you want to reset all progress for the active roadmap? This will clear tasks, checks, and proofs for this roadmap and cannot be undone.')) {
-                    resetProgressForActiveRoadmap();
-                    alert('Progress has been reset for the active roadmap.');
+            <div className="pt-2 space-y-4">
+              {!confirmActiveRoadmapReset ? (
+                <button
+                  onClick={() => setConfirmActiveRoadmapReset(true)}
+                  className="btn-danger w-full py-2.5 text-xs font-bold"
+                >
+                  Reset Progress For Active Roadmap
+                </button>
+              ) : (
+                <ConfirmAction
+                  title="Reset progress for active roadmap?"
+                  description={
+                    <div className="space-y-3">
+                      <p>This clears tasks, checkpoints, and proofs for the current active roadmap. This action is permanent and cannot be undone.</p>
+                      <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2">
+                        <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
+                        <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current progress before resetting.</p>
+                        <button 
+                          type="button" 
+                          onClick={handleExportProgress} 
+                          className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5"
+                        >
+                          <Download className="w-3 h-3" /> Export Backup file
+                        </button>
+                      </div>
+                    </div>
                   }
-                }}
-                className="btn-danger w-full py-2.5 text-xs font-bold"
-              >
-                Reset Progress For Active Roadmap
-              </button>
+                  onConfirm={() => {
+                    setIsResetting(true);
+                    setTimeout(() => {
+                      resetProgressForActiveRoadmap();
+                      setIsResetting(false);
+                      setConfirmActiveRoadmapReset(false);
+                      setSettingsFeedback({ type: 'success', text: 'Progress reset for active roadmap.' });
+                      setTimeout(() => setSettingsFeedback(null), 3000);
+                    }, 750);
+                  }}
+                  onCancel={() => setConfirmActiveRoadmapReset(false)}
+                  isLoading={isResetting}
+                />
+              )}
             </div>
           </div>
         ) : (
@@ -389,29 +450,67 @@ export default function Settings() {
           </div>
         )}
 
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex gap-3 flex-wrap font-sans items-center">
           <button
-            onClick={exportProgress}
-            className="btn-secondary flex items-center gap-2 text-sm border-blue-500/20 text-blue-400 hover:text-white"
+            onClick={handleExportProgress}
+            disabled={isExporting}
+            className="btn-secondary flex items-center gap-2 text-sm border-blue-500/20 text-blue-400 hover:text-white disabled:opacity-50"
           >
             <Download className="w-4 h-4" /> Export Backup file
           </button>
 
-          <label className="btn-secondary flex items-center gap-2 text-sm cursor-pointer border-navy-300 text-slate-400 hover:text-white">
+          <label className={`btn-secondary flex items-center gap-2 text-sm cursor-pointer border-navy-300 text-slate-400 hover:text-white ${isRestoring ? 'opacity-50 pointer-events-none' : ''}`}>
             <Upload className="w-4 h-4" /> Restore Backup
-            <input type="file" accept=".json" className="hidden" onChange={handleProgressImport} />
+            <input type="file" accept=".json" className="hidden" onChange={handleProgressImport} disabled={isRestoring} />
           </label>
+
+          {isExporting && <LoadingIndicator label="Exporting backup..." size="sm" />}
+          {isRestoring && <LoadingIndicator label="Restoring backup..." size="sm" />}
         </div>
 
+        {pendingBackupData && (
+          <ConfirmAction
+            title="Restore progress backup?"
+            description={
+              <div className="space-y-3">
+                <p>This will overwrite all your current roadmap configurations, settings, profile callsigns, and progress logs with the data contained in the backup file.</p>
+                <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2">
+                  <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
+                  <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current session before continuing.</p>
+                  <button 
+                    type="button" 
+                    onClick={handleExportProgress} 
+                    className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5"
+                  >
+                    <Download className="w-3 h-3" /> Export Current Backup
+                  </button>
+                </div>
+              </div>
+            }
+            confirmLabel="Confirm Restore"
+            cancelLabel="Cancel"
+            onConfirm={() => {
+              setIsRestoring(true);
+              setTimeout(() => {
+                importProgress(pendingBackupData);
+                setPendingBackupData(null);
+                setImportMsg('success');
+                setIsRestoring(false);
+              }, 750);
+            }}
+            onCancel={() => setPendingBackupData(null)}
+            isLoading={isRestoring}
+          />
+        )}
+
         {importMsg === 'success' && (
-          <div className="flex items-center gap-2 text-sm text-accent-primary bg-accent-primary/5 border border-accent-primary/20 p-2.5 rounded-lg animate-scale-in">
-            <CheckCircle2 className="w-4 h-4" /> Backup data restored successfully!
-          </div>
+          <StatusBanner type="success" message="Backup data restored successfully!" onClose={() => setImportMsg('')} />
         )}
         {importMsg === 'error' && (
-          <p className="text-sm text-red-400 bg-red-500/5 border border-red-500/20 p-2.5 rounded-lg animate-scale-in">
-            Invalid backup format. Please select a JSON backup file exported from the Command Center.
-          </p>
+          <StatusBanner type="error" message="Invalid backup format. Please select a JSON backup file exported from the Command Center." onClose={() => setImportMsg('')} />
+        )}
+        {settingsFeedback && (
+          <StatusBanner type={settingsFeedback.type} message={settingsFeedback.text} onClose={() => setSettingsFeedback(null)} />
         )}
       </SectionCard>
 
@@ -424,11 +523,12 @@ export default function Settings() {
         <p className="text-xs text-slate-550 font-medium">
           Replay the guided setups and workspace tours.
         </p>
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex gap-3 flex-wrap items-center">
           <button
             onClick={() => {
               replayOnboarding();
-              alert('Onboarding guide reset. You will see it next time you visit the Dashboard.');
+              setGuideSuccess('Onboarding guide reset. You will see it next time you visit the Dashboard.');
+              setTimeout(() => setGuideSuccess(''), 3000);
             }}
             className="btn-secondary text-sm border-accent-primary/20 text-accent-primary hover:text-white"
           >
@@ -448,6 +548,9 @@ export default function Settings() {
             Replay Workspace Tour
           </button>
         </div>
+        {guideSuccess && (
+          <InlineStatus status="success" label={guideSuccess} className="mt-2" />
+        )}
       </SectionCard>
 
       {/* Danger Zone Resets */}
@@ -468,7 +571,8 @@ export default function Settings() {
             </div>
             <button
               onClick={() => handleResetClick('progress')}
-              className="btn-danger hover:bg-red-500/20 text-xs py-2 px-3 flex-shrink-0"
+              disabled={isResetting}
+              className="btn-danger hover:bg-red-500/20 text-xs py-2 px-3 flex-shrink-0 disabled:opacity-50"
             >
               Reset Progress
             </button>
@@ -484,7 +588,8 @@ export default function Settings() {
             </div>
             <button
               onClick={() => handleResetClick('roadmap')}
-              className="btn-danger hover:bg-red-500/20 text-xs py-2 px-3 flex-shrink-0"
+              disabled={isResetting}
+              className="btn-danger hover:bg-red-500/20 text-xs py-2 px-3 flex-shrink-0 disabled:opacity-50"
             >
               Reset Roadmap
             </button>
@@ -500,7 +605,8 @@ export default function Settings() {
             </div>
             <button
               onClick={() => handleResetClick('factory')}
-              className="btn-danger py-2 px-3 flex-shrink-0 text-xs"
+              disabled={isResetting}
+              className="btn-danger py-2 px-3 flex-shrink-0 text-xs disabled:opacity-50"
             >
               Factory Reset
             </button>
@@ -509,29 +615,49 @@ export default function Settings() {
 
         {/* Confirmation Modal block */}
         {activeResetType && (
-          <div className="bg-navy-950 border border-red-500/35 rounded-xl p-4 animate-scale-in space-y-3">
-            <p className="text-xs text-red-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-              <ShieldAlert className="w-4 h-4 text-red-500" />
-              CONFIRM {activeResetType === 'factory' ? 'COMPLETE FACTORY WIPE' : activeResetType === 'roadmap' ? 'ROADMAP RESET' : 'PROGRESS RESET'}
-            </p>
-            <p className="text-xs text-slate-400">
-              This action is permanent and cannot be undone. Please ensure you have backed up your progress if you wish to recover it later.
-            </p>
-            <div className="flex gap-2">
-              <button
-                onClick={executeReset}
-                className="btn-danger text-xs py-2 px-4"
-              >
-                Yes, Execute Reset
-              </button>
-              <button
-                onClick={() => setActiveResetType(null)}
-                className="btn-secondary text-xs py-2 px-4"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
+          <ConfirmAction
+            title={`Confirm ${
+              activeResetType === 'factory'
+                ? 'Complete Factory Wipe'
+                : activeResetType === 'roadmap'
+                ? 'Roadmap Reset'
+                : 'Progress Reset'
+            }`}
+            description={
+              <div className="space-y-3">
+                <p>
+                  {activeResetType === 'factory' 
+                    ? 'This will completely wipe all logs, settings, progress, custom roadmaps, and streak counters from this browser.'
+                    : activeResetType === 'roadmap'
+                    ? 'This will restore the default sample roadmap, wiping any custom imported roadmap schema and progress.'
+                    : 'This will wipe all weekly progress, tasks, checkpoints, practical logs, and blockers. Settings and your custom roadmap layout are preserved.'}
+                  {' This action is permanent and cannot be undone.'}
+                </p>
+                <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2">
+                  <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
+                  <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current progress before resetting.</p>
+                  <button 
+                    type="button" 
+                    onClick={handleExportProgress} 
+                    className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5"
+                  >
+                    <Download className="w-3 h-3" /> Export Backup file
+                  </button>
+                </div>
+              </div>
+            }
+            confirmLabel="Yes, Execute Reset"
+            cancelLabel="Cancel"
+            onConfirm={() => {
+              setIsResetting(true);
+              setTimeout(() => {
+                executeReset();
+                setIsResetting(false);
+              }, 750);
+            }}
+            onCancel={() => setActiveResetType(null)}
+            isLoading={isResetting}
+          />
         )}
       </SectionCard>
 

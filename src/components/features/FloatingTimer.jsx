@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Pause, Coffee, Square, Clock, GripVertical, Move } from 'lucide-react';
+import { Play, Pause, Coffee, Square, GripVertical } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export default function FloatingTimer() {

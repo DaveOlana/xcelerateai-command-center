@@ -5,9 +5,11 @@ import {
   ArrowLeft, CheckCircle2, AlertTriangle, Play, HelpCircle,
   FileText, Clipboard, Settings, ChevronRight, CheckSquare,
   BookOpen, Terminal, Code, ShieldAlert, Sparkles, MessageSquare,
-  X, Coffee
+  X, Coffee, Check
 } from 'lucide-react';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { PageShell, PageHeader, CommandButton, StatusBadge } from '../components/common/UIComponents';
+import StatusBanner from '../components/ui/StatusBanner';
+import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 export default function PracticalMissionView() {
   const { missionId } = useParams();
@@ -34,6 +36,12 @@ export default function PracticalMissionView() {
   const [blockerError, setBlockerError] = useState('');
   const [blockerTried, setBlockerTried] = useState('');
   const [savedReflectionIdx, setSavedReflectionIdx] = useState(null);
+
+  // Loading & Feedback States
+  const [copiedMentorPrompt, setCopiedMentorPrompt] = useState(false);
+  const [copiedCommitMsg, setCopiedCommitMsg] = useState(false);
+  const [missionFeedback, setMissionFeedback] = useState(null); // { type, text }
+  const [isCompleting, setIsCompleting] = useState(false);
 
   // Find mission details inside roadmap
   const missionData = useMemo(() => {
@@ -132,15 +140,22 @@ export default function PracticalMissionView() {
   };
 
   const handleComplete = () => {
-    // Evidence checking: hybrid approach B1 + B2
+    setMissionFeedback(null);
     const requiresProof = mission.required || mission.evidenceRequired || mission.proofOfWork?.length > 0 ||
                           ['Boss Mission', 'Main Build', 'Final Project', 'Assessment'].includes(mission.difficulty);
     
     if (requiresProof && !isProofFormComplete()) {
-      alert('Proof incomplete. Add the required evidence (GitHub repository, commit link, README check, and tests checked) before marking this complete.');
+      setMissionFeedback({
+        type: 'error',
+        text: 'Proof incomplete. Add the required evidence (GitHub repository, commit link, README check, and tests checked) before marking this complete.'
+      });
       return;
     }
-    completePracticalMission(missionId);
+    setIsCompleting(true);
+    setTimeout(() => {
+      completePracticalMission(missionId);
+      setIsCompleting(false);
+    }, 750);
   };
 
   // Blocker trigger
@@ -161,7 +176,8 @@ export default function PracticalMissionView() {
     setBlockerError('');
     setBlockerTried('');
     setShowBlockerModal(false);
-    alert('Blocker logged successfully! You can find it on the Dashboard and Blockers page.');
+    setMissionFeedback({ type: 'warning', text: 'Blocker logged successfully! You can find it on the Dashboard and Blockers page.' });
+    setTimeout(() => setMissionFeedback(null), 4000);
   };
 
   // Ask Mentor helper prompt prefill
@@ -174,7 +190,8 @@ The error I got is: [Insert stack trace or behavior error here]
 I have tried: [Insert steps tried here]
 Please help me debug this without giving me the full answer immediately.`;
     navigator.clipboard.writeText(p);
-    alert(`Ask ${mentorName} debug prompt copied to clipboard!`);
+    setCopiedMentorPrompt(true);
+    setTimeout(() => setCopiedMentorPrompt(false), 3000);
   };
 
   // Helper to get unknown JSON fields
@@ -215,8 +232,8 @@ Please help me debug this without giving me the full answer immediately.`;
               <ShieldAlert className="w-8 h-8 text-red-400" />
             </div>
 
-            <h2 className="text-xl font-bold text-white uppercase tracking-wider font-mono"> Coordinates Locked</h2>
-            <p className="text-xs text-accent-primary font-bold uppercase tracking-wider font-mono mt-1">
+            <h2 className="text-xl font-bold text-white uppercase tracking-wider"> Coordinates Locked</h2>
+            <p className="text-xs text-accent-primary font-bold uppercase tracking-wider mt-1">
               Prerequisite Missing
             </p>
 
@@ -253,7 +270,7 @@ Please help me debug this without giving me the full answer immediately.`;
 
       {/* Back button */}
       <div className="flex items-center gap-2 no-print">
-        <Link to="/missions" className="text-slate-400 hover:text-accent-primary transition-colors flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider font-mono">
+        <Link to="/missions" className="text-slate-400 hover:text-accent-primary transition-colors flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider">
           <ArrowLeft className="w-4 h-4" /> BACK TO WEEKLY MISSIONS
         </Link>
       </div>
@@ -281,6 +298,8 @@ Please help me debug this without giving me the full answer immediately.`;
               <span className="badge-blue py-2 px-3 text-xs font-bold uppercase border border-accent-primary/20">
                 <CheckCircle2 className="w-4 h-4" /> Completed
               </span>
+            ) : isCompleting ? (
+              <LoadingIndicator label="Marking complete..." size="sm" />
             ) : (
               <CommandButton onClick={handleComplete}>
                 <CheckCircle2 className="w-4 h-4" /> Mark Complete
@@ -296,6 +315,10 @@ Please help me debug this without giving me the full answer immediately.`;
           </div>
         }
       />
+
+      {missionFeedback && (
+        <StatusBanner type={missionFeedback.type} message={missionFeedback.text} onClose={() => setMissionFeedback(null)} className="mb-4" />
+      )}
 
       {/* Estimation statistics banner */}
       <div className="grid grid-cols-3 gap-3">
@@ -389,7 +412,9 @@ Please help me debug this without giving me the full answer immediately.`;
             {/* Done Means Done (Requirement 7) */}
             {mission.doneMeansDone && (Array.isArray(mission.doneMeansDone) ? mission.doneMeansDone.length > 0 : !!mission.doneMeansDone) && (
               <div className="card border-blue-500/20 bg-blue-500/5">
-                <h3 className="text-sm font-bold text-blue-400 mb-2 uppercase tracking-wide">✓ Done Means Done Checklist</h3>
+                <h3 className="text-sm font-bold text-blue-400 mb-2 uppercase tracking-wide flex items-center gap-1.5">
+                  <Check className="w-4 h-4 text-blue-450" /> Done Means Done Checklist
+                </h3>
                 <div className="space-y-2">
                   {Array.isArray(mission.doneMeansDone) ? (
                     mission.doneMeansDone.map((item, idx) => (
@@ -491,7 +516,7 @@ Please help me debug this without giving me the full answer immediately.`;
                   {mission.testCases.map((tc, idx) => (
                     <div key={idx} className="p-4 bg-navy-800 border border-navy-400 rounded-xl space-y-2">
                       <div className="flex items-center justify-between flex-wrap gap-2">
-                        <span className="text-[13px] font-mono font-semibold uppercase bg-navy-600 px-2 py-0.5 rounded text-accent-cyan">
+                        <span className="text-[13px] font-semibold uppercase bg-navy-600 px-2 py-0.5 rounded text-accent-cyan">
                           Case {idx + 1}
                         </span>
                         <div className="flex items-center gap-1.5 text-xs text-slate-400">
@@ -549,7 +574,7 @@ Please help me debug this without giving me the full answer immediately.`;
                 onClick={copyMentorPrompt}
                 className="btn-secondary text-xs flex items-center gap-1.5 border-accent-primary/20 text-accent-primary bg-accent-primary/5"
               >
-                <Clipboard className="w-3.5 h-3.5" /> Copy {mentorName} Debug Request
+                <Clipboard className="w-3.5 h-3.5" /> {copiedMentorPrompt ? 'Copied!' : `Copy ${mentorName} Debug Request`}
               </button>
             </div>
           </div>
@@ -655,11 +680,12 @@ Please help me debug this without giving me the full answer immediately.`;
                     <button
                       onClick={() => {
                         navigator.clipboard.writeText(mission.githubCommitMessage);
-                        alert('Commit message copied!');
+                        setCopiedCommitMsg(true);
+                        setTimeout(() => setCopiedCommitMsg(false), 3000);
                       }}
                       className="text-slate-500 hover:text-accent-primary"
                     >
-                      Copy
+                      {copiedCommitMsg ? 'Copied!' : 'Copy'}
                     </button>
                   </div>
                 </div>
@@ -695,7 +721,7 @@ Please help me debug this without giving me the full answer immediately.`;
                       onClick={() => handleReflectionSave(qIdx)}
                       className="text-[13px] font-semibold text-accent-primary hover:underline"
                     >
-                      {savedReflectionIdx === qIdx ? 'Saved ✓' : 'Save Answer'}
+                      {savedReflectionIdx === qIdx ? 'Saved' : 'Save Answer'}
                     </button>
                   </div>
                 </div>

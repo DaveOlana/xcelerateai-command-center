@@ -1,17 +1,32 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Upload, CheckCircle2, AlertCircle, FileJson, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock, BookOpen, CheckSquare, Target, FileText, Zap, Coffee, BarChart2, Award, Shield } from 'lucide-react';
+import { Upload, CheckCircle2, AlertCircle, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock, BookOpen, CheckSquare, Target, FileText, Zap, Coffee, BarChart2, Award, Shield, Check, Download } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { validateRoadmapJSON } from '../utils/jsonValidator';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { PageShell, PageHeader } from '../components/common/UIComponents';
+import ConfirmAction from '../components/ui/ConfirmAction';
 
 export default function ImportRoadmap() {
-  const { importRoadmap, resetToSampleRoadmap, settings } = useApp();
+  const { importRoadmap, resetToSampleRoadmap, settings, exportProgress } = useApp();
   const [dragOver, setDragOver] = useState(false);
   const [validationResult, setValidationResult] = useState(null);
   const [pendingData, setPendingData] = useState(null);
   const [imported, setImported] = useState(false);
   const [error, setError] = useState('');
   const [showSummary, setShowSummary] = useState(true);
+
+  // Loading & Feedback States
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
+  const [isImporting, setIsImporting] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+
+  const handleExportBackup = () => {
+    setIsExporting(true);
+    setTimeout(() => {
+      exportProgress();
+      setIsExporting(false);
+    }, 600);
+  };
 
   const processFile = useCallback((file) => {
     setError('');
@@ -57,19 +72,26 @@ export default function ImportRoadmap() {
 
   const handleConfirmImport = () => {
     if (!pendingData) return;
-    importRoadmap(pendingData);
-    setImported(true);
-    setPendingData(null);
-    setValidationResult(null);
+    setIsImporting(true);
+    setTimeout(() => {
+      importRoadmap(pendingData);
+      setImported(true);
+      setPendingData(null);
+      setValidationResult(null);
+      setIsImporting(false);
+    }, 750);
   };
 
   const handleReset = () => {
-    if (window.confirm('This will reset to the sample roadmap and clear all your progress. Are you sure?')) {
+    setIsResetting(true);
+    setTimeout(() => {
       resetToSampleRoadmap();
       setImported(false);
       setValidationResult(null);
       setPendingData(null);
-    }
+      setIsResetting(false);
+      setShowResetConfirm(false);
+    }, 750);
   };
 
   // ── EXTRACT UNKNOWN TOP LEVEL FIELDS ──
@@ -111,15 +133,14 @@ export default function ImportRoadmap() {
         </div>
       </div>
 
-      {/* Upload Zone */}
       <div
         onDrop={handleDrop}
         onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
         onDragLeave={() => setDragOver(false)}
-        className={`relative border-2 border-dashed rounded-2xl p-10 text-center transition-all duration-300 cursor-pointer
+        className={`relative border border-dashed rounded-2xl p-7 text-center transition-all duration-300 cursor-pointer
           ${dragOver
             ? 'border-accent-primary bg-accent-primary/10'
-            : 'border-navy-400 hover:border-accent-primary/50 hover:bg-navy-700/50'
+            : 'border-navy-500/40 hover:border-accent-primary/50 hover:bg-navy-700/50'
           }`}
         onClick={() => document.getElementById('json-upload').click()}
       >
@@ -132,12 +153,6 @@ export default function ImportRoadmap() {
         />
 
         <div className="flex flex-col items-center gap-3">
-          <div className={`w-16 h-16 rounded-2xl border-2 flex items-center justify-center transition-all duration-300
-            ${dragOver ? 'border-accent-primary bg-accent-primary/20' : 'border-navy-300 bg-navy-700'}`}
-          >
-            <FileJson className={`w-8 h-8 ${dragOver ? 'text-accent-primary' : 'text-slate-400'}`} />
-          </div>
-
           <div>
             <p className="text-white font-semibold text-lg">
               {dragOver ? 'Drop your JSON file here' : 'Drop roadmap-data.json here'}
@@ -173,7 +188,7 @@ export default function ImportRoadmap() {
                 : <AlertCircle className="w-5 h-5 text-red-400" />
               }
               <h3 className="font-semibold text-white">
-                {validationResult.valid ? 'Validation Passed ✓' : 'Validation Failed ✗'}
+                {validationResult.valid ? 'Validation Passed' : 'Validation Failed'}
               </h3>
             </div>
             <button
@@ -199,7 +214,7 @@ export default function ImportRoadmap() {
                     { label: 'Reflection Prompts', value: validationResult.summary.reflectionPrompts ?? 0, color: 'text-teal-400', icon: Zap },
                     { label: 'Scheduled Sessions', value: validationResult.summary.scheduledSessions ?? validationResult.summary.sessions, color: 'text-orange-400', icon: Coffee },
                     { label: 'Readiness Categories', value: validationResult.summary.readinessCategories, color: 'text-rose-400', icon: BarChart2 },
-                    { label: 'Projects', value: validationResult.summary.projects, color: 'text-emerald-400', icon: Award },
+                    { label: 'Projects', value: validationResult.summary.projects, color: 'text-violet-400', icon: Award },
                     { label: 'Checkpoints', value: validationResult.summary.checkpoints, color: 'text-blue-400', icon: Shield },
                   ].map(({ label, value, color, icon: Icon }) => (
                     <div key={label} className="bg-navy-850/60 border border-navy-750/30 rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm hover:border-navy-450 transition-colors">
@@ -309,7 +324,7 @@ export default function ImportRoadmap() {
                     <div className="mt-3 border-t border-navy-400/50 pt-2.5 space-y-2">
                       {validationResult.info.map((inf, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs text-blue-300/80">
-                          <span className="text-blue-500 mt-0.5">✓</span>
+                          <Check className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
                           <span>{inf}</span>
                         </div>
                       ))}
@@ -322,14 +337,35 @@ export default function ImportRoadmap() {
 
           {/* Confirm Button */}
           {validationResult.valid && pendingData && (
-            <div className="mt-4 pt-4 border-t border-navy-400">
-              <p className="text-xs text-slate-500 mb-3">
-                Importing will replace the current roadmap layout and reset your progress files.
-              </p>
-              <button onClick={handleConfirmImport} className="btn-primary w-full flex items-center justify-center gap-2 py-3">
-                <Upload className="w-4 h-4" />
-                Confirm Import
-              </button>
+            <div className="mt-4 pt-4 border-t border-navy-400 space-y-3">
+              <ConfirmAction
+                title="Confirm Custom Roadmap Import?"
+                description={
+                  <div className="space-y-3">
+                    <p>Importing will replace the current roadmap layout, wipe existing configurations, and reset your timeline progress logs.</p>
+                    <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2 text-left">
+                      <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
+                      <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current session before importing.</p>
+                      <button 
+                        type="button" 
+                        onClick={handleExportBackup} 
+                        disabled={isExporting}
+                        className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5 disabled:opacity-50"
+                      >
+                        <Download className="w-3 h-3" /> Export Backup file
+                      </button>
+                    </div>
+                  </div>
+                }
+                confirmLabel="Confirm Import"
+                cancelLabel="Cancel Import"
+                onConfirm={handleConfirmImport}
+                onCancel={() => {
+                  setPendingData(null);
+                  setValidationResult(null);
+                }}
+                isLoading={isImporting}
+              />
             </div>
           )}
         </div>
@@ -350,18 +386,47 @@ export default function ImportRoadmap() {
       <div className="card border-dashed">
         <div className="flex items-start gap-3">
           <RefreshCw className="w-5 h-5 text-slate-500 flex-shrink-0 mt-0.5" />
-          <div className="flex-1">
-            <h3 className="font-semibold text-white text-sm">Reset to Sample Roadmap</h3>
-            <p className="text-xs text-slate-500 mt-1">
-              Wipe custom configurations and restore the built-in sample roadmap.
-            </p>
-            <button
-              onClick={handleReset}
-              className="btn-danger text-sm mt-3 flex items-center gap-2"
-            >
-              <Trash2 className="w-4 h-4" />
-              Reset to Sample
-            </button>
+          <div className="flex-1 space-y-3">
+            <div>
+              <h3 className="font-semibold text-white text-sm">Reset to Sample Roadmap</h3>
+              <p className="text-xs text-slate-500 mt-1">
+                Wipe custom configurations and restore the built-in sample roadmap.
+              </p>
+            </div>
+            
+            {!showResetConfirm ? (
+              <button
+                onClick={() => setShowResetConfirm(true)}
+                className="btn-danger text-sm flex items-center gap-2"
+              >
+                <Trash2 className="w-4 h-4" />
+                Reset to Sample
+              </button>
+            ) : (
+              <ConfirmAction
+                title="Wipe custom configuration and restore sample?"
+                description={
+                  <div className="space-y-3">
+                    <p>This will clear all progress and restore the baseline sample roadmap. This action is permanent and cannot be undone.</p>
+                    <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2 text-left">
+                      <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
+                      <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current session before resetting.</p>
+                      <button 
+                        type="button" 
+                        onClick={handleExportBackup} 
+                        disabled={isExporting}
+                        className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5 disabled:opacity-50"
+                      >
+                        <Download className="w-3 h-3" /> Export Backup file
+                      </button>
+                    </div>
+                  </div>
+                }
+                onConfirm={handleReset}
+                onCancel={() => setShowResetConfirm(false)}
+                isLoading={isResetting}
+              />
+            )}
           </div>
         </div>
       </div>
