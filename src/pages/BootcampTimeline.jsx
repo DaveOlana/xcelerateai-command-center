@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Lock, Calendar, ChevronDown, ChevronUp } from 'lucide-react';
+import { CheckCircle2, Lock, Calendar, ChevronDown, ChevronUp, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { getMonthProgress } from '../utils/progressCalculator';
 import ImportRequiredCard from '../components/common/ImportRequiredCard';
@@ -155,7 +155,7 @@ export default function BootcampTimeline() {
                                   : 'bg-navy-700 text-slate-400 border border-navy-500/50'
                                 }`}
                               >
-                                {weekComplete ? '✓' : `W${week.weekNumber}`}
+                                {weekComplete ? <Check className="w-4 h-4 text-blue-400" /> : `W${week.weekNumber}`}
                               </div>
 
                               <div className="min-w-0">

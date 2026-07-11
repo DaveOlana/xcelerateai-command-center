@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Shield, Sparkles, AlertTriangle, EyeOff, Lock, Check } from 'lucide-react';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { Shield, EyeOff, Lock, Check } from 'lucide-react';
+import { PageShell, PageHeader } from '../components/common/UIComponents';
 import { useApp } from '../context/AppContext';
 
 export default function SideQuestLock() {
@@ -41,7 +41,7 @@ export default function SideQuestLock() {
         subtitle={`Prevent shiny object syndrome. Focus strictly on ${roadmapShortTitle} core milestones.`}
         actions={
           <div className="bg-blue-500/5 border border-blue-500/20 py-2.5 px-4 rounded-xl text-center flex-shrink-0">
-            <p className="text-[13px] text-slate-500 uppercase tracking-wider font-mono">Total Focus Time Saved</p>
+            <p className="text-[13px] text-slate-500 uppercase tracking-wider">Total Focus Time Saved</p>
             <p className="text-sm font-bold text-blue-400 font-mono mt-0.5 flex items-center gap-1"><Shield className="w-3.5 h-3.5 text-accent-primary" /> {totalTimeSaved}</p>
           </div>
         }
@@ -49,7 +49,7 @@ export default function SideQuestLock() {
 
       {/* Focus Shield Indicator */}
       <div className="card relative overflow-hidden flex flex-col items-center py-8 text-center bg-gradient-to-b from-navy-800 to-navy-900 border border-navy-400">
-        <div className="absolute inset-0 bg-glow-green opacity-20 pointer-events-none" />
+        <div className="absolute inset-0 bg-glow-primary opacity-20 pointer-events-none" />
         
         {/* Shield graphic */}
         <div className="relative mb-4">
@@ -118,7 +118,7 @@ export default function SideQuestLock() {
             </div>
 
             <h3 className="text-lg font-bold text-white">Distraction Blocked</h3>
-            <p className="text-xs text-accent-primary font-bold uppercase tracking-wider font-mono mt-1">
+            <p className="text-xs text-accent-primary font-bold uppercase tracking-wider mt-1">
               Focus Shield: 100% · Build {roadmapShortTitle} First
             </p>
 

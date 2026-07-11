@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { AlertCircle, CheckCircle2, Trash2, Copy, FileText, Plus, X, Search, HelpCircle, ShieldAlert } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Trash2, Copy, Plus, X, Search, HelpCircle, Check } from 'lucide-react';
 import { PageShell, PageHeader, SectionCard, StatCard } from '../components/common/UIComponents';
 
 export default function Blockers() {
@@ -71,9 +71,12 @@ I have tried: ${b.whatAlreadyTried || 'Reviewing resources.'}
 Please help me debug this without giving me the full answer immediately.`;
   };
 
+  const [copiedBlocker, setCopiedBlocker] = useState(false);
+
   const copyPromptToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    alert(`Prompt copied to clipboard! Share it with ${mentorName}.`);
+    setCopiedBlocker(true);
+    setTimeout(() => setCopiedBlocker(false), 3000);
   };
 
   const filteredBlockers = blockers.filter((b) => {
@@ -262,7 +265,9 @@ Please help me debug this without giving me the full answer immediately.`;
 
               {b.status === 'Solved' && b.solutionNotes && (
                 <div className="bg-blue-950/20 border border-blue-500/10 rounded-xl p-3.5 mt-3.5">
-                  <span className="text-[13px] font-bold text-blue-400 block mb-1 uppercase tracking-wider">✓ Solution Notes:</span>
+                  <span className="text-[13px] font-bold text-blue-400 mb-1 uppercase tracking-wider flex items-center gap-1">
+                    <Check className="w-3.5 h-3.5" /> Solution Notes:
+                  </span>
                   <p className="text-xs text-slate-300 leading-relaxed">{b.solutionNotes}</p>
                   <p className="text-xs text-slate-500 font-mono mt-2">Solved: {new Date(b.dateSolved).toLocaleString()}</p>
                 </div>
@@ -351,7 +356,7 @@ Please help me debug this without giving me the full answer immediately.`;
                   onClick={() => copyPromptToClipboard(generateMentorPrompt(activePromptBlocker))}
                   className="bg-accent-primary text-navy-900 font-bold px-4 py-2 rounded-xl hover:bg-accent-primary-dim active:scale-95 transition-all text-xs uppercase tracking-wider shadow-primary-glow flex items-center gap-1.5"
                 >
-                  <Copy className="w-4 h-4" /> Copy Prompt
+                  <Copy className="w-4 h-4" /> {copiedBlocker ? 'Copied!' : 'Copy Prompt'}
                 </button>
               </div>
             </div>

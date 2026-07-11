@@ -1,8 +1,9 @@
 import React, { useState, useMemo } from 'react';
-import { ExternalLink, Search, Filter, BookOpen, X, CheckCircle2, Circle, FileText } from 'lucide-react';
+import { ExternalLink, Search, BookOpen, X, FileText, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import ImportRequiredCard from '../components/common/ImportRequiredCard';
-import { PageShell, PageHeader, SectionCard, StatusBadge } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard } from '../components/common/UIComponents';
+import StatusBanner from '../components/ui/StatusBanner';
 
 const DIFFICULTY_COLORS = {
   Beginner: 'bg-blue-500/10 text-blue-400 border border-blue-500/20',
@@ -28,6 +29,7 @@ export default function ResourceVault() {
   const [filterDifficulty, setFilterDifficulty] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [filterLowData, setFilterLowData] = useState(false);
+  const [vaultFeedback, setVaultFeedback] = useState(null); // { type, text }
 
   // Build flat resource list with metadata
   const allResources = useMemo(() => {
@@ -104,7 +106,8 @@ export default function ResourceVault() {
       whatILearned: res.missionObjective || '',
       whatConfusedMe: '',
     });
-    alert('Resource link opened in new tab. A pre-filled Note card has been created in your Notes Journal.');
+    setVaultFeedback({ type: 'info', text: 'Resource link opened in new tab. A pre-filled Note card has been created in your Notes Journal.' });
+    setTimeout(() => setVaultFeedback(null), 5000);
   };
 
   const hasFilters = search || filterMonth || filterWeek || filterType || filterDifficulty || filterStatus || filterLowData;
@@ -115,6 +118,10 @@ export default function ResourceVault() {
         title="Resource Vault" 
         subtitle={`${allResources.length} curated study assets and tutorial links from the active roadmap.`}
       />
+
+      {vaultFeedback && (
+        <StatusBanner type={vaultFeedback.type} message={vaultFeedback.text} onClose={() => setVaultFeedback(null)} className="mb-4" />
+      )}
 
       {/* Search + Filters Card */}
       <SectionCard>
@@ -200,7 +207,7 @@ export default function ResourceVault() {
               Low Data Assets Only
             </button>
 
-            <div className="flex items-center gap-3 font-mono">
+            <div className="flex items-center gap-3">
               <p className="text-[13px] text-slate-500">
                 Found <span className="text-white font-bold">{filtered.length}</span> / {allResources.length} items
               </p>
@@ -242,10 +249,10 @@ export default function ResourceVault() {
                 <div>
                   {/* Top meta badges */}
                   <div className="flex items-center gap-2 flex-wrap mb-3">
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-bold uppercase tracking-wider ${TYPE_COLORS[res.type] || 'bg-navy-700 text-slate-400 border-navy-500/50'}`}>
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider ${TYPE_COLORS[res.type] || 'bg-navy-700 text-slate-400 border-navy-500/50'}`}>
                       {res.type}
                     </span>
-                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-mono font-bold uppercase tracking-wider border ${DIFFICULTY_COLORS[res.difficulty] || 'bg-navy-700 text-slate-400 border-navy-500/50'}`}>
+                    <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider border ${DIFFICULTY_COLORS[res.difficulty] || 'bg-navy-700 text-slate-400 border-navy-500/50'}`}>
                       {res.difficulty}
                     </span>
                     {(res.timeEstimate || res.estimatedTime) && (
@@ -263,7 +270,7 @@ export default function ResourceVault() {
                   <h3 className="font-bold text-white text-sm mb-1 group-hover:text-accent-primary transition-colors">
                     {res.title}
                   </h3>
-                  <p className="text-xs text-slate-500 font-mono mb-2">{res.weekTitle}</p>
+                  <p className="text-xs text-slate-500 mb-2">{res.weekTitle}</p>
 
                   {/* Expectation info */}
                   {res.whatToExpect && (
@@ -290,7 +297,13 @@ export default function ResourceVault() {
                           : 'bg-navy-700/60 border-navy-500/80 text-slate-400 hover:text-white'
                       }`}
                     >
-                      {status === 'Studied' ? '✓ Studied' : 'Mark Studied'}
+                      {status === 'Studied' ? (
+                        <span className="flex items-center justify-center gap-1">
+                          <Check className="w-3.5 h-3.5 text-blue-400" /> Studied
+                        </span>
+                      ) : (
+                        'Mark Studied'
+                      )}
                     </button>
                     
                     {status !== 'Studied' && (

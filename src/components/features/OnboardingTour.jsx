@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
-import { ChevronLeft, ChevronRight, X, Play, Target } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Target } from 'lucide-react';
 
 const TOUR_STEPS = [
   {

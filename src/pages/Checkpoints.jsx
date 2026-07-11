@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Circle, TrendingUp, ChevronDown, ChevronUp, Link as LinkIcon, ExternalLink, ShieldCheck } from 'lucide-react';
+import { ChevronDown, ExternalLink, ShieldCheck, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import ImportRequiredCard from '../components/common/ImportRequiredCard';
-import { PageShell, PageHeader, SectionCard, StatusBadge, ProgressBar } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard } from '../components/common/UIComponents';
 
 const STATUS_CONFIG = {
   'Not yet': {
@@ -86,20 +85,20 @@ export default function Checkpoints() {
       />
 
       {/* Stats row */}
-      <div className="grid grid-cols-3 gap-4">
-        <div className="bg-navy-800/60 border border-accent-primary/25 rounded-2xl p-4 text-center">
-          <p className="text-2xl font-extrabold text-accent-primary text-glow">{stats.confident}</p>
-          <p className="text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Confident</p>
+      <div className="grid grid-cols-3 gap-3 sm:gap-4">
+        <div className="bg-navy-800/60 border border-accent-primary/25 rounded-2xl p-2.5 sm:p-4 text-center">
+          <p className="text-xl sm:text-2xl font-extrabold text-accent-primary text-glow">{stats.confident}</p>
+          <p className="text-[11px] sm:text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Confident</p>
           <div className="w-1.5 h-1.5 rounded-full bg-accent-primary mx-auto mt-2" />
         </div>
-        <div className="bg-navy-800/60 border border-amber-500/20 rounded-2xl p-4 text-center">
-          <p className="text-2xl font-extrabold text-amber-400">{stats.learning}</p>
-          <p className="text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Learning</p>
+        <div className="bg-navy-800/60 border border-amber-500/20 rounded-2xl p-2.5 sm:p-4 text-center">
+          <p className="text-xl sm:text-2xl font-extrabold text-amber-400">{stats.learning}</p>
+          <p className="text-[11px] sm:text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Learning</p>
           <div className="w-1.5 h-1.5 rounded-full bg-amber-400 mx-auto mt-2" />
         </div>
-        <div className="bg-navy-800/60 border border-navy-500/30 rounded-2xl p-4 text-center">
-          <p className="text-2xl font-extrabold text-slate-400">{stats.notYet}</p>
-          <p className="text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Not Yet</p>
+        <div className="bg-navy-800/60 border border-navy-500/30 rounded-2xl p-2.5 sm:p-4 text-center">
+          <p className="text-xl sm:text-2xl font-extrabold text-slate-400">{stats.notYet}</p>
+          <p className="text-[11px] sm:text-[13px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Not Yet</p>
           <div className="w-1.5 h-1.5 rounded-full bg-slate-500 mx-auto mt-2" />
         </div>
       </div>
@@ -184,7 +183,7 @@ export default function Checkpoints() {
               </div>
 
               {/* Status buttons */}
-              <div className="grid grid-cols-3 gap-2 mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
                 {['Not yet', 'Learning', 'Confident'].map((status) => {
                   const sCfg = STATUS_CONFIG[status];
                   const isActive = statusVal === status;
@@ -202,7 +201,7 @@ export default function Checkpoints() {
                       className={`py-2 px-2 rounded-xl border text-[13px] font-bold uppercase tracking-wider transition-all duration-200 active:scale-95
                         ${isActive ? sCfg.active : `${sCfg.bg} ${sCfg.color} hover:opacity-85`}`}
                     >
-                      {status === 'Confident' && isActive && '✓ '}
+                      {status === 'Confident' && isActive && <Check className="w-3.5 h-3.5 inline mr-1" />}
                       {status === 'Confident' ? 'Verify Proof' : status}
                     </button>
                   );
@@ -245,8 +244,8 @@ export default function Checkpoints() {
 
               {/* Evidence Modal overlay */}
               {activeEvidenceSkill === checkpoint.skill && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-                  <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-md p-6 animate-scale-in text-left shadow-card">
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+                  <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-md p-6 animate-scale-in text-left shadow-card max-h-[90vh] overflow-y-auto">
                     <div className="flex items-center justify-between mb-4 border-b border-navy-500/40 pb-3">
                       <div>
                         <h3 className="font-bold text-white text-sm uppercase tracking-wider">Save Skill Evidence</h3>

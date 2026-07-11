@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { validateRoadmapJSON } from '../../utils/jsonValidator';
@@ -7,7 +7,7 @@ import {
   ArrowLeft, ArrowRight, X, Layout, Target, BookOpen, Coffee, Award, 
   FileText, CheckSquare, Zap, BarChart2, CheckCircle2, ChevronRight, Play
 } from 'lucide-react';
-import { PageHeader, SectionCard, ProgressBar } from '../common/UIComponents';
+import StatusBanner from '../ui/StatusBanner';
 
 export default function Onboarding() {
   const { 
@@ -17,7 +17,8 @@ export default function Onboarding() {
     roadmap, 
     importRoadmap,
     onboardingCompleted,
-    completeOnboarding
+    completeOnboarding,
+    userProfile
   } = useApp();
   const navigate = useNavigate();
 
@@ -27,8 +28,9 @@ export default function Onboarding() {
   const totalSteps = 10;
 
   // Step 2 form states
-  const [userName, setUserName] = useState('');
-  const [userDisplayName, setUserDisplayName] = useState('');
+  const [userName, setUserName] = useState(userProfile?.name || '');
+  const [userDisplayName, setUserDisplayName] = useState(userProfile?.displayName || '');
+  const [step2Error, setStep2Error] = useState('');
 
   // Step 3 roadmap upload / selection states
   const [dragOver, setDragOver] = useState(false);
@@ -44,11 +46,22 @@ export default function Onboarding() {
     }
   }, [roadmap, pendingRoadmap]);
 
+  // Sync profile details if previously completed
+  useEffect(() => {
+    if (userProfile?.name && !userName) {
+      setUserName(userProfile.name);
+    }
+    if (userProfile?.displayName && !userDisplayName) {
+      setUserDisplayName(userProfile.displayName);
+    }
+  }, [userProfile, userName, userDisplayName]);
+
   const handleNext = () => {
     if (currentStep === 2 && !userName.trim()) {
-      alert('Please enter your name to personalize your mission cockpit.');
+      setStep2Error('Please enter your name to personalize your mission cockpit.');
       return;
     }
+    setStep2Error('');
     if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
     }
@@ -131,17 +144,23 @@ export default function Onboarding() {
   };
 
   const handleFinish = () => {
-    // 1. Confirm and save the roadmap selection
-    if (roadmapSource === 'custom' && pendingRoadmap) {
-      importRoadmap(pendingRoadmap);
-    } else {
-      resetToSampleRoadmap();
-    }
+    const isReplay = localStorage.getItem('xai_setup_completed_v1') === 'true';
+    if (!isReplay) {
+      // 1. Confirm and save the roadmap selection
+      if (roadmapSource === 'custom' && pendingRoadmap) {
+        importRoadmap(pendingRoadmap);
+      } else {
+        resetToSampleRoadmap();
+      }
 
-    // 2. Complete onboarding with the identity
-    const finalName = userName.trim() || 'Operator';
-    const finalDisplay = userDisplayName.trim() || finalName;
-    completeOnboarding(finalName, finalDisplay);
+      // 2. Complete onboarding with the identity
+      const finalName = userName.trim() || 'Operator';
+      const finalDisplay = userDisplayName.trim() || finalName;
+      completeOnboarding(finalName, finalDisplay);
+    } else {
+      // Replay mode: just mark completed, never touch profile or reset roadmap
+      completeOnboarding(undefined, undefined);
+    }
 
     localStorage.setItem('xai_setup_completed_v1', 'true');
     localStorage.setItem('xai_onboarding_seen_v1', 'false'); // Tour is ready
@@ -201,7 +220,7 @@ export default function Onboarding() {
                         ? 'border-emerald-500 bg-emerald-550/20 text-emerald-450' 
                         : 'border-navy-750 bg-navy-900 text-slate-600'
                     }`}>
-                      {currentStep > s ? '✓' : s}
+                      {currentStep > s ? <Check className="w-3 h-3 text-emerald-450" /> : s}
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-wider">{label}</span>
                   </div>
@@ -211,7 +230,7 @@ export default function Onboarding() {
           </div>
 
           {/* Simple step string */}
-          <div className="flex justify-between items-center text-xs font-mono font-semibold text-slate-550 border-t border-navy-850 pt-4">
+          <div className="flex justify-between items-center text-xs font-semibold text-slate-550 border-t border-navy-850 pt-4">
             <span>Step {currentStep} of {totalSteps}</span>
             <div className="w-24 h-1.5 bg-navy-800 rounded-full overflow-hidden">
               <div 
@@ -291,6 +310,9 @@ export default function Onboarding() {
                       className="input-base w-full text-[14px] font-semibold text-white bg-navy-950 border-navy-800 focus:border-accent-primary"
                     />
                   </div>
+                  {step2Error && (
+                    <StatusBanner type="error" message={step2Error} onClose={() => setStep2Error('')} />
+                  )}
                 </div>
               </div>
             )}
@@ -308,7 +330,7 @@ export default function Onboarding() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2">
                   <button 
                     onClick={handleSelectSample}
                     className={`p-5 rounded-xl border flex flex-col justify-between text-left transition-all ${
@@ -343,7 +365,7 @@ export default function Onboarding() {
                     />
                     <div className="flex justify-between items-center w-full">
                       <span className="text-[11px] font-bold text-white uppercase tracking-widest">
-                        {roadmapSource === 'custom' ? 'Custom JSON ✓' : 'Upload custom'}
+                        {roadmapSource === 'custom' ? 'Custom JSON Loaded' : 'Upload custom'}
                       </span>
                       <Upload className="w-3.5 h-3.5 text-slate-500" />
                     </div>
@@ -356,9 +378,7 @@ export default function Onboarding() {
                 </div>
 
                 {uploadError && (
-                  <p className="text-red-400 text-[11px] font-semibold bg-red-950/20 border border-red-900/30 rounded-lg p-3">
-                    {uploadError}
-                  </p>
+                  <StatusBanner type="error" message={uploadError} onClose={() => setUploadError('')} />
                 )}
               </div>
             )}
@@ -383,7 +403,7 @@ export default function Onboarding() {
                       <h4 className="text-sm font-bold text-slate-200 leading-snug mt-1">{pendingRoadmap.title || pendingRoadmap.bootcampTitle || 'Imported Roadmap'}</h4>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3">
                       {[
                         { label: 'Months', val: pendingRoadmap.months?.length || 0 },
                         { label: 'Weeks', val: pendingRoadmap.weeks?.length || 0 },
@@ -543,11 +563,11 @@ export default function Onboarding() {
 
                 <div className="space-y-2.5 pt-1.5 text-xs text-slate-400">
                   <div className="flex items-center gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-850">
-                    <span className="text-emerald-450 font-bold">✓</span>
+                    <Check className="w-4 h-4 text-emerald-450 flex-shrink-0" />
                     <span className="text-slate-300">Github repository connection and commit links.</span>
                   </div>
                   <div className="flex items-center gap-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-850">
-                    <span className="text-emerald-450 font-bold">✓</span>
+                    <Check className="w-4 h-4 text-emerald-450 flex-shrink-0" />
                     <span className="text-slate-300">Screenshots or notes validating structural deliverables.</span>
                   </div>
                 </div>

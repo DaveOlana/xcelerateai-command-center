@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertTriangle, Clock, Play } from 'lucide-react';
+import { AlertTriangle, Play } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 
 export default function SessionSwitchConfirmation() {

@@ -354,6 +354,7 @@ export function AppProvider({ children }) {
     setRoadmap(normalized);
     setSettingsState((prev) => ({
       ...prev,
+      startDate: new Date().toISOString().split('T')[0],
       usingCustomRoadmap: true,
       activeWeek: 1,
       activeMonth: 1,
@@ -382,6 +383,7 @@ export function AppProvider({ children }) {
     setWeekReflections({});
     setSettingsState((prev) => ({
       ...DEFAULT_SETTINGS,
+      startDate: new Date().toISOString().split('T')[0],
       onboardingCompleted: prev?.onboardingCompleted || false,
       sidebarCollapsed: prev?.sidebarCollapsed || false,
       activeRoadmapId: normalizedSample.id || null
@@ -488,6 +490,13 @@ export function AppProvider({ children }) {
     setProgress((prev) => ({
       ...prev,
       projectNotes: { ...prev.projectNotes, [projectIndex]: note },
+    }));
+  }, []);
+
+  const setProjectLiveDemoLink = useCallback((projectIndex, url) => {
+    setProgress((prev) => ({
+      ...prev,
+      projectLiveDemoLinks: { ...(prev.projectLiveDemoLinks || {}), [projectIndex]: url },
     }));
   }, []);
 
@@ -1068,6 +1077,7 @@ export function AppProvider({ children }) {
     toggleProjectMilestone,
     setProjectGithubLink,
     setProjectNote,
+    setProjectLiveDemoLink,
 
     // Notes
     addNote,

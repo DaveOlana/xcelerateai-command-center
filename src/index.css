@@ -3,10 +3,82 @@
 @tailwind utilities;
 
 /* =============================================
+   DESIGN TOKENS & VARIABLES
+   ============================================= */
+:root {
+  /* Backgrounds */
+  --bg-app: #050811;            /* Deep navy base (darker) */
+  --bg-page: #080B16;           /* Slightly lighter page background */
+  --bg-surface: #0C101E;        /* Standard card surface */
+  --bg-elevated: #111729;       /* Elevated card / popover */
+  --bg-soft: #172033;           /* Softer inset panels */
+  --bg-overlay: rgba(5, 8, 17, 0.90); /* Modal overlay backdrops */
+
+  /* Text Colors */
+  --text-primary: #F8FAFC;       /* Off-white */
+  --text-secondary: #CBD5E1;     /* Soft slate text */
+  --text-muted: #64748B;         /* Muted grey */
+  --text-disabled: #475569;      /* Disabled text color */
+  --text-inverse: #050811;       /* Reverse/contrasting color */
+
+  /* Borders */
+  --border-default: rgba(148, 163, 184, 0.12); /* Default card/component border */
+  --border-strong: rgba(148, 163, 184, 0.25);  /* Hover/focus border strength */
+  --border-focus: #2563EB;                     /* Focus accent */
+  --border-divider: rgba(148, 163, 184, 0.08); /* Divider/lines */
+
+  /* Brand / Status */
+  --color-brand: #2563EB;       /* Brand Blue primary */
+  --color-focus: #06B6D4;       /* Active Learning Focus Cyan */
+  --color-project: #8B5CF6;     /* Project Violet */
+  --color-success: #10B981;     /* Success Green */
+  --color-warning: #F59E0B;     /* Warning Amber */
+  --color-danger: #EF4444;      /* Danger/Error Red */
+  --color-neutral: #64748B;     /* Neutral Slate */
+
+  /* Spacing system variables */
+  --spacing-page-padding: 1.5rem;
+  --spacing-section-gap: 2rem;
+  --spacing-card-gap: 1.5rem;
+  --spacing-card-padding: 2rem;
+  --spacing-card-padding-compact: 1.25rem;
+  --spacing-modal-padding: 2.25rem;
+  --spacing-sidebar-gap: 0.75rem;
+
+  /* Heights */
+  --height-input: 3rem;
+  --height-button: 3rem;
+
+  /* Radius System */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-xxl: 1.5rem;         /* For premium card components (24px) */
+}
+
+/* =============================================
    BASE STYLES
    ============================================= */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }
 
 html {
@@ -17,13 +89,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #080B16; /* App background - navy-950 */
-  color: #F8FAFC;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
   font-size: 15px; /* Premium slightly larger default text size */
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', 'Plus Jakarta Sans', 'Inter', sans-serif;
 }
 
 #root {
@@ -62,11 +138,11 @@ body {
 @layer components {
   /* Card base - Premium clean dark UI */
   .card {
-    @apply bg-navy-850 border border-navy-700/25 rounded-3xl p-7 shadow-card transition-all duration-300;
+    @apply bg-navy-900 border border-navy-700/40 rounded-2xl p-7 shadow-card transition-all duration-300;
   }
 
   .card-hover {
-    @apply hover:border-navy-600 hover:shadow-card-hover transition-all duration-300;
+    @apply hover:border-navy-500 hover:shadow-card-hover transition-all duration-300;
   }
 
   /* Glow button - Refined for premium feel */
@@ -166,7 +242,7 @@ body {
 
   /* Progress bar */
   .progress-track {
-    @apply h-2.5 bg-navy-900 rounded-full overflow-hidden;
+    @apply h-1.5 bg-navy-800 rounded-full overflow-hidden;
   }
 
   .progress-fill {
@@ -257,6 +333,19 @@ body {
   aside, nav {
     display: none !important;
   }
+}
+
+/* =============================================
+   RESOURCE CARD (Learning Kit)
+   ============================================= */
+.resource-card {
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--card-accent, rgba(148, 163, 184, 0.35));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--card-accent-soft, rgba(148, 163, 184, 0.12));
 }
 
 /* =============================================

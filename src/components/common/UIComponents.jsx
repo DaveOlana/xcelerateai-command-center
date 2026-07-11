@@ -1,12 +1,12 @@
 import React from 'react';
-import { Lock, AlertCircle, Loader2, ArrowRight } from 'lucide-react';
+import { Lock, AlertCircle, Loader2, CheckCircle2, AlertTriangle, ShieldAlert } from 'lucide-react';
 
 /**
  * PageShell - Wraps page content with standard max-width, padding, and smooth transition.
  */
 export function PageShell({ children, className = "" }) {
   return (
-    <div className={`max-w-6xl mx-auto py-2 lg:py-4 space-y-6 animate-slide-up ${className}`}>
+    <div className={`w-full max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 py-4 lg:py-6 space-y-6 animate-slide-up ${className}`}>
       {children}
     </div>
   );
@@ -17,10 +17,10 @@ export function PageShell({ children, className = "" }) {
  */
 export function PageHeader({ title, subtitle, actions, className = "" }) {
   return (
-    <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-navy-500 pb-5 ${className}`}>
+    <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border-default pb-5 ${className}`}>
       <div>
-        <h1 className="text-2xl font-bold text-white tracking-tight">{title}</h1>
-        {subtitle && <p className="text-slate-400 text-sm mt-1 leading-relaxed">{subtitle}</p>}
+        <h1 className="text-2xl font-extrabold text-white tracking-tight font-heading">{title}</h1>
+        {subtitle && <p className="text-text-secondary text-sm mt-1.5 leading-relaxed">{subtitle}</p>}
       </div>
       {actions && <div className="flex flex-wrap items-center gap-3 no-print">{actions}</div>}
     </div>
@@ -32,14 +32,14 @@ export function PageHeader({ title, subtitle, actions, className = "" }) {
  */
 export function SectionCard({ title, subtitle, headerActions, children, className = "", hoverable = false }) {
   return (
-    <div className={`bg-navy-850 border border-navy-700/25 rounded-3xl p-7 lg:p-8 backdrop-blur-sm shadow-card transition-all duration-300 ${
-      hoverable ? 'hover:border-navy-600 hover:shadow-card-hover' : ''
+    <div className={`bg-bg-surface border border-border-default rounded-radius-xxl p-6 lg:p-8 backdrop-blur-sm shadow-card transition-all duration-300 ${
+      hoverable ? 'hover:border-border-strong hover:shadow-card-hover' : ''
     } ${className}`}>
       {(title || subtitle || headerActions) && (
-        <div className="flex items-start justify-between gap-4 mb-5 border-b border-navy-700/30 pb-4">
+        <div className="flex items-start justify-between gap-4 mb-6 border-b border-border-divider pb-4">
           <div>
-            {title && <h3 className="text-[16px] font-bold text-white tracking-tight">{title}</h3>}
-            {subtitle && <p className="text-[13px] text-slate-400 mt-1 leading-relaxed">{subtitle}</p>}
+            {title && <h3 className="text-[16px] font-bold text-white tracking-tight font-heading">{title}</h3>}
+            {subtitle && <p className="text-[13px] text-text-muted mt-1 leading-relaxed">{subtitle}</p>}
           </div>
           {headerActions && <div className="flex items-center gap-2">{headerActions}</div>}
         </div>
@@ -50,48 +50,107 @@ export function SectionCard({ title, subtitle, headerActions, children, classNam
 }
 
 /**
- * StatCard - Structured indicator tile for KPI statistics.
+ * ActionCard - For primary high-priority decisions/actions
  */
-export function StatCard({ label, value, icon: Icon, helperText, accentColor = "green", className = "" }) {
+export function ActionCard({ children, className = "", onClick }) {
+  const CardWrapper = onClick ? 'button' : 'div';
+  return (
+    <CardWrapper
+      onClick={onClick}
+      className={`bg-bg-surface border-2 border-brand-blue/35 rounded-radius-xxl p-6 lg:p-7 shadow-card hover:border-brand-blue hover:shadow-card-hover transition-all duration-300 text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus ${onClick ? 'cursor-pointer active:scale-[0.99]' : ''} ${className}`}
+    >
+      {children}
+    </CardWrapper>
+  );
+}
+
+/**
+ * LearningCard - For missions, lessons, checkpoints, resources
+ */
+export function LearningCard({ children, className = "", hoverable = false, onClick }) {
+  const CardWrapper = onClick ? 'button' : 'div';
+  return (
+    <CardWrapper
+      onClick={onClick}
+      className={`bg-bg-surface border border-border-default rounded-radius-xl p-5 lg:p-6 shadow-sm transition-all duration-300 text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus ${
+        hoverable || onClick ? 'hover:border-border-strong hover:bg-bg-elevated cursor-pointer' : ''
+      } ${onClick ? 'active:scale-[0.99]' : ''} ${className}`}
+    >
+      {children}
+    </CardWrapper>
+  );
+}
+
+/**
+ * MetricCard - For statistics and progress charts
+ */
+export function MetricCard({ label, value, icon: Icon, helperText, accentColor = "blue", className = "" }) {
   const borderColors = {
-    green: "border-navy-700/25 hover:border-accent-primary/30",
-    cyan: "border-navy-700/25 hover:border-accent-cyan/30",
-    orange: "border-navy-700/25 hover:border-orange-500/30",
-    purple: "border-navy-700/25 hover:border-purple-500/30",
-    amber: "border-navy-700/25 hover:border-amber-500/30",
-    red: "border-navy-700/25 hover:border-red-500/30",
+    blue: "border-border-default hover:border-brand-blue/30",
+    cyan: "border-border-default hover:border-brand-cyan/30",
+    violet: "border-border-default hover:border-brand-violet/30",
+    green: "border-border-default hover:border-brand-green/30",
+    amber: "border-border-default hover:border-brand-amber/30",
+    red: "border-border-default hover:border-brand-red/30",
   };
 
   const textColors = {
-    green: "text-accent-primary",
-    cyan: "text-accent-cyan",
-    orange: "text-orange-400",
-    purple: "text-purple-400",
-    amber: "text-amber-400",
-    red: "text-red-400",
+    blue: "text-brand-blue",
+    cyan: "text-brand-cyan",
+    violet: "text-brand-violet",
+    green: "text-brand-green",
+    amber: "text-brand-amber",
+    red: "text-brand-red",
   };
 
   return (
-    <div className={`bg-navy-850 border rounded-3xl p-6 lg:p-7 flex flex-col justify-between transition-all duration-300 shadow-sm ${borderColors[accentColor] || "border-navy-700/25"} ${className}`}>
-      <div className="flex items-center justify-between mb-4">
-        <span className="text-[12px] font-bold text-slate-400 uppercase tracking-wider">{label}</span>
-        {Icon && <Icon className={`w-5 h-5 ${textColors[accentColor] || "text-slate-400"}`} />}
+    <div className={`bg-bg-surface border rounded-radius-lg p-5 flex flex-col justify-between transition-all duration-300 shadow-sm ${borderColors[accentColor] || "border-border-default"} ${className}`}>
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-[12px] font-bold text-text-muted uppercase tracking-wider">{label}</span>
+        {Icon && <Icon className={`w-4 h-4 ${textColors[accentColor] || "text-text-muted"}`} />}
       </div>
       <div>
-        <p className="text-3xl font-extrabold tracking-tight text-white">{value}</p>
-        {helperText && <p className="text-[13px] text-slate-450 mt-2 font-medium leading-relaxed">{helperText}</p>}
+        <p className="text-2xl font-extrabold tracking-tight text-white font-heading">{value}</p>
+        {helperText && <p className="text-[12px] text-text-muted mt-1.5 font-medium leading-relaxed">{helperText}</p>}
       </div>
     </div>
   );
 }
 
 /**
+ * ReflectionCard - For journal reflections, notes, and blockers
+ */
+export function ReflectionCard({ children, className = "" }) {
+  return (
+    <div className={`bg-bg-soft border border-border-default rounded-radius-xl p-5 lg:p-6 shadow-sm border-l-4 border-l-brand-violet/60 ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+/**
+ * StatCard - Structured indicator tile for KPI statistics (Backwards compatible wrapper)
+ */
+export function StatCard({ label, value, icon: Icon, helperText, accentColor = "blue", className = "" }) {
+  return (
+    <MetricCard
+      label={label}
+      value={value}
+      icon={Icon}
+      helperText={helperText}
+      accentColor={accentColor === "green" ? "blue" : accentColor} /* Prefer Blue over success Green for stats */
+      className={className}
+    />
+  );
+}
+
+/**
  * ProgressBar - Custom metric loader bar.
  */
-export function ProgressBar({ percent, className = "", colorClass = "bg-gradient-to-r from-accent-primary to-accent-cyan" }) {
+export function ProgressBar({ percent, className = "", colorClass = "bg-gradient-to-r from-brand-blue to-brand-cyan" }) {
   const pct = Math.min(100, Math.max(0, Math.round(percent || 0)));
   return (
-    <div className={`h-2 bg-navy-900 rounded-full overflow-hidden w-full ${className}`}>
+    <div className={`h-1.5 bg-bg-soft border border-border-divider rounded-full overflow-hidden w-full ${className}`}>
       <div
         className={`h-full rounded-full transition-all duration-700 ease-out ${colorClass}`}
         style={{ width: `${pct}%` }}
@@ -105,17 +164,17 @@ export function ProgressBar({ percent, className = "", colorClass = "bg-gradient
  */
 export function InfoPill({ label, icon: Icon, className = "", variant = "slate" }) {
   const variants = {
-    slate: "bg-navy-900 text-slate-400 border-navy-700",
-    green: "bg-accent-primary/10 text-accent-primary border-accent-primary/20",
-    cyan: "bg-accent-cyan/10 text-accent-cyan border-accent-cyan/20",
-    amber: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-    purple: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-    red: "bg-red-500/10 text-red-400 border-red-500/20",
+    slate: "bg-bg-soft text-text-secondary border-border-default",
+    blue: "bg-brand-blue/10 text-brand-blue border-brand-blue/20",
+    cyan: "bg-brand-cyan/10 text-brand-cyan border-brand-cyan/20",
+    amber: "bg-brand-amber/10 text-brand-amber border-brand-amber/20",
+    purple: "bg-brand-violet/10 text-brand-violet border-brand-violet/20",
+    red: "bg-brand-red/10 text-brand-red border-brand-red/20",
   };
 
   return (
-    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold border ${variants[variant] || variants.slate} ${className}`}>
-      {Icon && <Icon className="w-3 h-3 flex-shrink-0" />}
+    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-radius-sm text-xs font-semibold border ${variants[variant] || variants.slate} ${className}`}>
+      {Icon && <Icon className="w-3.5 h-3.5 flex-shrink-0" />}
       <span>{label}</span>
     </span>
   );
@@ -127,29 +186,39 @@ export function InfoPill({ label, icon: Icon, className = "", variant = "slate" 
 export function StatusBadge({ status, className = "" }) {
   const normalized = String(status || '').toLowerCase();
   
-  let styles = "bg-navy-900 text-slate-400 border-navy-750"; // default
+  let styles = "bg-bg-soft text-text-muted border-border-default"; // default
+  let Icon = null;
+
   if (normalized === 'completed' || normalized === 'complete' || normalized === 'studied') {
-    styles = "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20";
-  } else if (normalized === 'in progress' || normalized === 'studying' || normalized === 'available') {
-    styles = "bg-accent-primary/10 text-accent-primary border border-accent-primary/20";
+    styles = "bg-brand-green/10 text-brand-green border border-brand-green/20";
+    Icon = CheckCircle2;
+  } else if (normalized === 'in progress' || normalized === 'studying' || normalized === 'available' || normalized === 'active') {
+    styles = "bg-brand-blue/10 text-brand-blue border border-brand-blue/20";
+    Icon = Loader2;
   } else if (normalized === 'blocked') {
-    styles = "bg-red-500/10 text-red-400 border border-red-500/20 animate-pulse";
+    styles = "bg-brand-red/10 text-brand-red border border-brand-red/20 animate-pulse";
+    Icon = ShieldAlert;
   } else if (normalized === 'locked') {
-    styles = "bg-navy-900 text-slate-500 border-navy-700";
+    styles = "bg-bg-app text-text-disabled border-border-default";
+    Icon = Lock;
   } else if (normalized === 'submitted') {
-    styles = "bg-blue-500/10 text-blue-400 border-blue-500/20";
+    styles = "bg-brand-violet/10 text-brand-violet border border-brand-violet/20";
+    Icon = CheckCircle2;
+  } else if (normalized === 'learning') {
+    styles = "bg-brand-amber/10 text-brand-amber border border-brand-amber/20";
+    Icon = AlertTriangle;
   }
 
   return (
     <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide border ${styles} ${className}`}>
-      {normalized === 'locked' && <Lock className="w-3 h-3" />}
+      {Icon && <Icon className={`w-3 h-3 ${normalized === 'in progress' ? 'animate-spin' : ''}`} />}
       <span>{status}</span>
     </span>
   );
 }
 
 /**
- * CommandButton - Futuristic accent main button.
+ * CommandButton - Accent main button (Primary Button)
  */
 export function CommandButton({ children, onClick, type = "button", disabled = false, className = "" }) {
   return (
@@ -157,8 +226,9 @@ export function CommandButton({ children, onClick, type = "button", disabled = f
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`bg-accent-primary text-white font-semibold px-6 py-3 rounded-xl
-                 hover:bg-accent-primary-dim active:scale-95 transition-all duration-200
+      className={`bg-brand-blue text-white font-semibold px-6 py-3 rounded-radius-lg
+                 hover:bg-blue-600 active:scale-95 transition-all duration-200
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus
                  shadow-sm disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-[14px] ${className}`}
     >
       {children}
@@ -175,8 +245,9 @@ export function SecondaryButton({ children, onClick, type = "button", disabled =
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`bg-navy-850 border border-navy-700 text-slate-350 font-semibold px-6 py-3 rounded-xl
-                 hover:border-navy-600 hover:text-white active:scale-95 transition-all duration-200
+      className={`bg-bg-elevated border border-border-default text-text-secondary font-semibold px-6 py-3 rounded-radius-lg
+                 hover:border-border-strong hover:text-white active:scale-95 transition-all duration-200
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus
                  disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-[14px] ${className}`}
     >
       {children}
@@ -198,13 +269,13 @@ export function EmptyState({
   className = "" 
 }) {
   return (
-    <div className={`bg-navy-850/60 border border-navy-700/20 text-center py-10 px-6 space-y-4 rounded-3xl max-w-md mx-auto backdrop-blur-sm shadow-sm ${className}`}>
-      <div className="w-12 h-12 rounded-2xl bg-navy-900 border border-navy-700/50 flex items-center justify-center mx-auto">
-        <Icon className="w-5 h-5 text-slate-400" />
+    <div className={`bg-bg-surface border border-border-default text-center py-10 px-6 space-y-4 rounded-radius-xxl max-w-md mx-auto backdrop-blur-sm shadow-sm ${className}`}>
+      <div className="w-12 h-12 rounded-radius-lg bg-bg-soft border border-border-divider flex items-center justify-center mx-auto">
+        <Icon className="w-5 h-5 text-text-muted" />
       </div>
       <div className="space-y-1.5">
-        <h4 className="text-sm font-bold text-white uppercase tracking-wider">{message || "No Data Found"}</h4>
-        {submessage && <p className="text-xs text-slate-400 max-w-xs mx-auto leading-relaxed">{submessage}</p>}
+        <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">{message || "No Data Found"}</h4>
+        {submessage && <p className="text-xs text-text-secondary max-w-xs mx-auto leading-relaxed">{submessage}</p>}
       </div>
       
       {(actionText || secondaryActionText) && (
@@ -212,7 +283,7 @@ export function EmptyState({
           {actionText && onActionClick && (
             <button
               onClick={onActionClick}
-              className="btn-primary py-2 px-4 text-xs font-bold w-full sm:w-auto"
+              className="bg-brand-blue text-white font-semibold px-4 py-2.5 rounded-radius-md hover:bg-blue-600 transition-all text-xs font-bold w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
             >
               {actionText}
             </button>
@@ -220,7 +291,7 @@ export function EmptyState({
           {secondaryActionText && onSecondaryActionClick && (
             <button
               onClick={onSecondaryActionClick}
-              className="btn-secondary py-2.5 px-4 text-xs font-bold w-full sm:w-auto"
+              className="bg-bg-elevated border border-border-default text-text-secondary font-semibold px-4 py-2.5 rounded-radius-md hover:border-border-strong hover:text-white transition-all text-xs font-bold w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
             >
               {secondaryActionText}
             </button>
@@ -237,8 +308,8 @@ export function EmptyState({
 export function LoadingState({ message = "Loading Command Module...", className = "" }) {
   return (
     <div className={`flex flex-col items-center justify-center py-16 text-center space-y-3 ${className}`}>
-      <Loader2 className="w-8 h-8 text-accent-primary animate-spin" />
-      <p className="text-xs text-slate-500 tracking-wider">Loading...</p>
+      <Loader2 className="w-8 h-8 text-brand-blue animate-spin" />
+      <p className="text-xs text-text-muted tracking-wider uppercase font-mono">{message || "Loading..."}</p>
     </div>
   );
 }
@@ -248,16 +319,16 @@ export function LoadingState({ message = "Loading Command Module...", className 
  */
 export function LockWarningCard({ title, message, missingLabel, nextActionLabel, onNextAction, className = "" }) {
   return (
-    <div className={`bg-navy-800/80 border border-red-500/35 rounded-2xl p-6 text-center space-y-4 max-w-xl mx-auto my-6 backdrop-blur-sm animate-scale-in shadow-card ${className}`}>
-      <div className="w-12 h-12 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto shadow-red-500/5 shadow-inner">
-        <Lock className="w-5 h-5 text-red-400" />
+    <div className={`bg-bg-surface border border-brand-red/30 rounded-radius-xxl p-6 lg:p-8 text-center space-y-4 max-w-xl mx-auto my-6 backdrop-blur-sm animate-scale-in shadow-card ${className}`}>
+      <div className="w-12 h-12 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mx-auto shadow-sm">
+        <Lock className="w-5 h-5 text-brand-red" />
       </div>
       <div>
-        <h3 className="text-sm font-bold text-white uppercase tracking-wider font-mono">{title}</h3>
-        <p className="text-[14px] text-slate-400 mt-1.5 leading-relaxed">{message}</p>
+        <h3 className="text-sm font-bold text-white uppercase tracking-wider font-heading">{title}</h3>
+        <p className="text-[14px] text-text-secondary mt-1.5 leading-relaxed">{message}</p>
       </div>
       {missingLabel && (
-        <div className="bg-navy-950/70 rounded-xl p-3 text-[13px] text-amber-400 font-mono font-bold border border-navy-500/30 max-w-sm mx-auto">
+        <div className="bg-bg-soft rounded-radius-lg p-3 text-[13px] text-brand-amber font-mono font-bold border border-border-divider max-w-sm mx-auto">
            PREREQUISITE: {missingLabel}
         </div>
       )}
@@ -265,7 +336,7 @@ export function LockWarningCard({ title, message, missingLabel, nextActionLabel,
         <button
           type="button"
           onClick={onNextAction}
-          className="bg-navy-700/80 border border-navy-450 text-slate-300 hover:text-white hover:border-accent-primary/30 px-5 py-2.5 rounded-xl transition-all duration-200 text-[13px] uppercase tracking-wider font-bold font-mono active:scale-95 mx-auto flex items-center gap-1.5"
+          className="bg-bg-elevated border border-border-default text-text-secondary hover:text-white hover:border-brand-blue/30 px-5 py-2.5 rounded-radius-lg transition-all duration-200 text-[13px] uppercase tracking-wider font-bold active:scale-95 mx-auto flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
         >
           {nextActionLabel}
         </button>
