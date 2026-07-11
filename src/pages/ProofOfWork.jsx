@@ -6,9 +6,8 @@ import {
   AlertTriangle, ExternalLink, ShieldAlert, ShieldCheck, 
   Sparkles, FileText, ArrowRight, Clipboard, Award
 } from 'lucide-react';
-import { PageShell, PageHeader, SectionCard, MetricCard, ProgressBar, StatusBadge } from '../components/common/UIComponents';
+import { PageShell, SectionCard, MetricCard, ProgressBar } from '../components/common/UIComponents';
 import { ProofVaultVisual } from '../components/visuals';
-import StatusBanner from '../components/ui/StatusBanner';
 import InlineStatus from '../components/ui/InlineStatus';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
 

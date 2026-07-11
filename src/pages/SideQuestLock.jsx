@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Shield, Sparkles, AlertTriangle, EyeOff, Lock, Check } from 'lucide-react';
-import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton, StatusBadge, InfoPill } from '../components/common/UIComponents';
+import { Shield, EyeOff, Lock, Check } from 'lucide-react';
+import { PageShell, PageHeader } from '../components/common/UIComponents';
 import { useApp } from '../context/AppContext';
 
 export default function SideQuestLock() {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { validateRoadmapJSON } from '../../utils/jsonValidator';
@@ -7,7 +7,6 @@ import {
   ArrowLeft, ArrowRight, X, Layout, Target, BookOpen, Coffee, Award, 
   FileText, CheckSquare, Zap, BarChart2, CheckCircle2, ChevronRight, Play
 } from 'lucide-react';
-import { PageHeader, SectionCard, ProgressBar } from '../common/UIComponents';
 import StatusBanner from '../ui/StatusBanner';
 
 export default function Onboarding() {

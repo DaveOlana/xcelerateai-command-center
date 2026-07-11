@@ -6,7 +6,7 @@ import {
   Sparkles, ArrowRight, BookOpen, AlertTriangle, AlertCircle 
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import { PageShell, PageHeader, MetricCard, ProgressBar, SectionCard, StatusBadge } from '../components/common/UIComponents';
+import { PageShell, PageHeader, MetricCard, ProgressBar, SectionCard } from '../components/common/UIComponents';
 import { ProjectForgeVisual } from '../components/visuals';
 import StatusBanner from '../components/ui/StatusBanner';
 import InlineStatus from '../components/ui/InlineStatus';

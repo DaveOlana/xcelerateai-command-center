@@ -8,10 +8,8 @@ import {
   ChevronRight, ToggleLeft, ToggleRight, X, Terminal, ExternalLink, Check
 } from 'lucide-react';
 import { getItemTitle } from '../utils/safeRender';
-import { PageShell, SectionCard, InfoPill, StatusBadge, CommandButton, SecondaryButton, EmptyState } from '../components/common/UIComponents';
+import { PageShell, CommandButton, SecondaryButton, EmptyState } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
-import InlineStatus from '../components/ui/InlineStatus';
-import LoadingIndicator from '../components/ui/LoadingIndicator';
 
 export default function TodaysFocus() {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { Database, Loader2 } from 'lucide-react';
 

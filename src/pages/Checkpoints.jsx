@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Circle, TrendingUp, ChevronDown, ChevronUp, Link as LinkIcon, ExternalLink, ShieldCheck, Check } from 'lucide-react';
+import { ChevronDown, ExternalLink, ShieldCheck, Check } from 'lucide-react';
 import { useApp } from '../context/AppContext';
-import ImportRequiredCard from '../components/common/ImportRequiredCard';
-import { PageShell, PageHeader, SectionCard, StatusBadge, ProgressBar } from '../components/common/UIComponents';
+import { PageShell, PageHeader, SectionCard } from '../components/common/UIComponents';
 
 const STATUS_CONFIG = {
   'Not yet': {
