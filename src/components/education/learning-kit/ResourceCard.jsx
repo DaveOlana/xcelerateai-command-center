@@ -71,6 +71,26 @@ export default function ResourceCard({
       {/* Title */}
       <h4 className="font-bold text-white text-[15px] leading-snug">{resource.title}</h4>
 
+      {/* Precise entry point (B4). A learner should land on the exact section,
+          not the root of a large course or playlist. Renders nothing when the
+          curriculum has not supplied a verified pointer. */}
+      {(resource.exactLocation || resource.stopPoint) && (
+        <div className="rounded-xl border border-accent-primary/20 bg-accent-primary/5 px-3 py-2.5 flex flex-col gap-1">
+          {resource.exactLocation && (
+            <p className="text-[11px] text-slate-300 leading-snug">
+              <span className="font-bold text-accent-primary uppercase tracking-wider mr-1.5">Start at</span>
+              {resource.exactLocation}
+            </p>
+          )}
+          {resource.stopPoint && (
+            <p className="text-[11px] text-slate-400 leading-snug">
+              <span className="font-bold text-slate-500 uppercase tracking-wider mr-1.5">Stop at</span>
+              {resource.stopPoint}
+            </p>
+          )}
+        </div>
+      )}
+
       {/* Quick facts: time, difficulty, quality */}
       <ResourceMetadata
         difficulty={metadata.difficulty}

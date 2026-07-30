@@ -208,6 +208,17 @@ export function normalizeResource(rawResource) {
     url: r.url || '#',
     type: normalizeResourceType(r.type),
     rawType: r.type || null,
+    // RESOURCE_TAXONOMY.md v2 fields. `exactLocation` / `stopPoint` are the
+    // precise entry and exit points into a large course, playlist or repo, so
+    // a learner is never dropped at a root URL and left to find the relevant
+    // section themselves. All default to null — a resource authored before
+    // these existed renders exactly as it did before.
+    exactLocation: r.exactLocation || null,
+    stopPoint: r.stopPoint || null,
+    tier: r.tier || null,
+    formatType: r.formatType || null,
+    whyChosen: r.whyChosen || null,
+    freeTierVerifiedDate: r.freeTierVerifiedDate || null,
     metadata: {
       provider: r.provider || r.publisher || r.source || null,
       difficulty: r.difficulty || null,

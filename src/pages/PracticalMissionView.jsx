@@ -5,7 +5,7 @@ import {
   ArrowLeft, CheckCircle2, AlertTriangle, Play, HelpCircle,
   FileText, Clipboard, Settings, ChevronRight, CheckSquare,
   BookOpen, Terminal, Code, ShieldAlert, Sparkles, MessageSquare,
-  X, Coffee, Check
+  X, Coffee, Check, Lightbulb, Compass
 } from 'lucide-react';
 import { PageShell, PageHeader, CommandButton, StatusBadge } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
@@ -39,6 +39,7 @@ export default function PracticalMissionView() {
 
   // Loading & Feedback States
   const [copiedMentorPrompt, setCopiedMentorPrompt] = useState(false);
+  const [copiedScopePrompt, setCopiedScopePrompt] = useState(false);
   const [copiedCommitMsg, setCopiedCommitMsg] = useState(false);
   const [missionFeedback, setMissionFeedback] = useState(null); // { type, text }
   const [isCompleting, setIsCompleting] = useState(false);
@@ -194,13 +195,110 @@ Please help me debug this without giving me the full answer immediately.`;
     setTimeout(() => setCopiedMentorPrompt(false), 3000);
   };
 
-  // Helper to get unknown JSON fields
+  // Pre-build scope prompt (fires BEFORE any code is written, when the learner
+  // is unsure what is actually being asked - not when they already have an error).
+  // Prefers an authored scopePromptTemplate; otherwise composes an equivalent
+  // from the mission's own reconciled scope fields.
+  const copyScopePrompt = () => {
+    const concepts = (mission.conceptsUsed || []).join(', ');
+    const features = (mission.requiredFeatures || []).map((f) => `- ${f}`).join('\n');
+    const p =
+      mission.scopePromptTemplate ||
+      `I am on Week ${week.weekNumber}, Mission "${mission.title}" of my bootcamp.
+
+Here is what the mission asks for:
+${features}
+
+The concepts this mission is meant to exercise are: ${concepts || 'see the required features above'}.
+${mission.approachOutline ? `\nThe intended approach is:\n${mission.approachOutline}\n` : ''}
+I have not written any code yet. I want to understand what is being asked before I start.
+
+Please help me understand the requirements and plan my approach. Stay strictly within the concepts listed above, even if a more complete or more advanced solution occurs to you - going beyond that scope makes this harder for me to learn from, not easier. Do not write the solution for me.`;
+    navigator.clipboard.writeText(p);
+    setCopiedScopePrompt(true);
+    setTimeout(() => setCopiedScopePrompt(false), 3000);
+  };
+
+  // Fields that have a dedicated, first-class place in the UI. Anything NOT
+  // listed here falls through to the "Additional Mission Data" accordion, so
+  // every field we render properly must be registered here or it renders twice.
   const knownFields = [
     'missionId', 'title', 'skillFocus', 'difficulty', 'timeEstimate', 'dataEstimate',
     'elliotRelevance', 'scenario', 'filesToCreate', 'conceptsUsed', 'stepByStepInstructions',
     'requiredFeatures', 'rules', 'testCases', 'debuggingDrills', 'doneMeansDone',
-    'proofOfWork', 'githubCommitMessage', 'readmePrompt', 'reflectionQuestions', 'commanderMode'
+    'proofOfWork', 'githubCommitMessage', 'readmePrompt', 'reflectionQuestions', 'commanderMode',
+    // Curriculum enrichment fields - each now rendered in Brief / Debug / Deeper
+    'background', 'approachOutline', 'scopeNote', 'hints', 'commonMistakes',
+    'debuggingChecklist', 'thinkingPrompts', 'stretchChallenge', 'realWorldApplications',
+    'relatedConcepts', 'futureConcepts', 'commanderNotes', 'careerInsight', 'badges',
+    'helpPromptTemplate', 'scopePromptTemplate',
+    // Structural / display metadata the learner does not need surfaced raw
+    'missionNumber', 'displayLabel', 'statusDefault', 'required', 'filesToCreateText',
+    'completionPolicy', 'missionType', 'evidenceRequired',
   ];
+
+  // Human-readable labels for any field that still reaches the accordion.
+  // The app's own compatibility contract states internal IDs are for software
+  // and friendly labels are for people - raw keys must never reach the screen.
+  const FIELD_LABELS = {
+    approachOutline: 'Approach Outline',
+    background: 'Background',
+    careerInsight: 'Career Insight',
+    commanderNotes: 'Commander Notes',
+    commonMistakes: 'Common Mistakes',
+    debuggingChecklist: 'Debugging Checklist',
+    futureConcepts: 'What This Unlocks Later',
+    helpPromptTemplate: 'Help Prompt',
+    hints: 'Hints',
+    realWorldApplications: 'Real-World Applications',
+    relatedConcepts: 'Related Concepts',
+    scopeNote: 'Scope Note',
+    scopePromptTemplate: 'Scope Prompt',
+    stretchChallenge: 'Stretch Challenge',
+    thinkingPrompts: 'Thinking Prompts',
+  };
+
+  const labelForField = (key) =>
+    FIELD_LABELS[key] ||
+    key
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/[_-]+/g, ' ')
+      .replace(/^./, (c) => c.toUpperCase())
+      .trim();
+
+  // Small helper so every enrichment block renders consistently whether the
+  // authored value is a string or an array of strings.
+  const renderFieldBody = (val, tone = 'text-slate-300') => {
+    if (Array.isArray(val)) {
+      return (
+        <ul className="space-y-2">
+          {val.map((item, idx) => (
+            <li key={idx} className={`text-xs leading-relaxed flex gap-2 ${tone}`}>
+              <span className="text-slate-600 select-none">–</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return <p className={`text-xs leading-relaxed whitespace-pre-line ${tone}`}>{val}</p>;
+  };
+
+  // Renders one enrichment section, or nothing at all when the field is empty.
+  // Absence of authored content should be invisible, never an empty-state box.
+  const EnrichmentCard = ({ field, title, icon: Icon, accent = 'text-white', border = '' }) => {
+    const val = mission[field];
+    if (!val || (Array.isArray(val) && val.length === 0)) return null;
+    return (
+      <div className={`card ${border}`}>
+        <h3 className={`text-sm font-bold ${accent} mb-3 uppercase tracking-wide flex items-center gap-1.5`}>
+          {Icon && <Icon className="w-4 h-4" aria-hidden="true" />}
+          {title || labelForField(field)}
+        </h3>
+        {renderFieldBody(val)}
+      </div>
+    );
+  };
 
   const unknownFields = useMemo(() => {
     const fields = {};
@@ -342,7 +440,8 @@ Please help me debug this without giving me the full answer immediately.`;
           { id: 'brief', label: 'Brief', icon: FileText },
           { id: 'steps', label: 'Build Steps', icon: Code },
           { id: 'tests', label: 'Tests', icon: Terminal },
-          { id: 'debug', label: 'Debug', icon: ShieldAlert },
+          { id: 'debug', label: 'If Stuck', icon: ShieldAlert },
+          { id: 'deeper', label: 'Going Deeper', icon: Compass },
           { id: 'proof', label: 'Proof', icon: CheckSquare },
           { id: 'reflection', label: 'Reflection', icon: MessageSquare },
         ].map((tab) => {
@@ -391,6 +490,48 @@ Please help me debug this without giving me the full answer immediately.`;
                   ))}
                 </div>
               </div>
+            </div>
+
+            {/* --- Before You Build (curriculum enrichment) --- */}
+            {(mission.background || mission.approachOutline || mission.scopeNote) && (
+              <div className="pt-1">
+                <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.14em] mb-3">
+                  Before You Build
+                </p>
+                <div className="space-y-5">
+                  <EnrichmentCard field="background" title="Background" icon={BookOpen} />
+                  <EnrichmentCard
+                    field="approachOutline"
+                    title="Approach Outline"
+                    icon={Compass}
+                    accent="text-accent-primary"
+                    border="border-accent-primary/20 bg-accent-primary/5"
+                  />
+                  <EnrichmentCard
+                    field="scopeNote"
+                    title="Scope Note"
+                    icon={AlertTriangle}
+                    accent="text-amber-400"
+                    border="border-amber-500/20 bg-amber-500/5"
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Pre-build scope prompt (B3) - available before any code exists */}
+            <div className="card border-dashed">
+              <h3 className="text-sm font-bold text-white mb-2">Not sure what's being asked?</h3>
+              <p className="text-xs text-slate-500 mb-4">
+                Copy a prompt that explains this mission's scope to any AI, and instructs it to stay
+                inside that scope instead of handing you a bigger solution than the mission needs.
+              </p>
+              <button
+                onClick={copyScopePrompt}
+                className="btn-secondary text-xs flex items-center gap-1.5 border-accent-primary/20 text-accent-primary bg-accent-primary/5"
+              >
+                <Clipboard className="w-3.5 h-3.5" aria-hidden="true" />
+                {copiedScopePrompt ? 'Copied!' : 'Copy Scope Prompt'}
+              </button>
             </div>
 
             {/* Folder Structure */}
@@ -482,27 +623,9 @@ Please help me debug this without giving me the full answer immediately.`;
               </div>
             )}
 
-            {/* Commander Mode Stretch Objectives (Requirement 7) */}
-            {mission.commanderMode && (Array.isArray(mission.commanderMode) ? mission.commanderMode.length > 0 : !!mission.commanderMode) && (
-              <div className="card border-purple-500/20 bg-purple-500/5 mt-4">
-                <div className="flex items-center gap-1.5 mb-3">
-                  <Sparkles className="w-4 h-4 text-purple-400" />
-                  <h3 className="text-sm font-bold text-purple-400 uppercase tracking-wide">Commander Mode (Optional Stretch Goals)</h3>
-                </div>
-                <div className="space-y-2.5">
-                  {Array.isArray(mission.commanderMode) ? (
-                    mission.commanderMode.map((goal, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                        <span className="text-purple-400 mt-0.5">★</span>
-                        <span>{goal}</span>
-                      </div>
-                    ))
-                  ) : (
-                    <p className="text-xs text-slate-300 leading-relaxed">{mission.commanderMode}</p>
-                  )}
-                </div>
-              </div>
-            )}
+            {/* Commander Mode now lives in the "Going Deeper" tab, grouped with
+                the other optional extension material rather than sitting inside
+                the required build steps. */}
           </div>
         )}
 
@@ -544,6 +667,26 @@ Please help me debug this without giving me the full answer immediately.`;
         {/* Debug Tab */}
         {activeTab === 'debug' && (
           <div className="space-y-5">
+            {/* --- If You Get Stuck (curriculum enrichment) --- */}
+            {(mission.hints || mission.commonMistakes || mission.debuggingChecklist) && (
+              <div>
+                <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.14em] mb-3">
+                  If You Get Stuck
+                </p>
+                <div className="space-y-5">
+                  <EnrichmentCard
+                    field="hints"
+                    title="Hints"
+                    icon={Lightbulb}
+                    accent="text-amber-400"
+                    border="border-amber-500/20 bg-amber-500/5"
+                  />
+                  <EnrichmentCard field="commonMistakes" title="Common Mistakes" icon={AlertTriangle} />
+                  <EnrichmentCard field="debuggingChecklist" title="Debugging Checklist" icon={CheckSquare} />
+                </div>
+              </div>
+            )}
+
             {/* Common Errors & Debugging Drills */}
             {mission.debuggingDrills?.length > 0 ? (
               <div className="card">
@@ -577,6 +720,78 @@ Please help me debug this without giving me the full answer immediately.`;
                 <Clipboard className="w-3.5 h-3.5" /> {copiedMentorPrompt ? 'Copied!' : `Copy ${mentorName} Debug Request`}
               </button>
             </div>
+          </div>
+        )}
+
+        {/* Going Deeper Tab */}
+        {activeTab === 'deeper' && (
+          <div className="space-y-5">
+            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.14em]">
+              Going Deeper
+            </p>
+            <p className="text-xs text-slate-500 -mt-2">
+              Optional. None of this blocks mission completion — it is here for when you want more
+              than the minimum.
+            </p>
+
+            <EnrichmentCard
+              field="stretchChallenge"
+              title="Stretch Challenge"
+              icon={Sparkles}
+              accent="text-purple-400"
+              border="border-purple-500/20 bg-purple-500/5"
+            />
+            <EnrichmentCard field="thinkingPrompts" title="Thinking Prompts" icon={HelpCircle} />
+            <EnrichmentCard field="realWorldApplications" title="Real-World Applications" icon={Compass} />
+            <EnrichmentCard field="careerInsight" title="Career Insight" icon={Sparkles} />
+            <EnrichmentCard field="relatedConcepts" title="Related Concepts" icon={BookOpen} />
+            <EnrichmentCard field="futureConcepts" title="What This Unlocks Later" icon={ChevronRight} />
+            <EnrichmentCard
+              field="commanderNotes"
+              title="Commander Notes"
+              icon={MessageSquare}
+              accent="text-accent-primary"
+              border="border-accent-primary/20 bg-accent-primary/5"
+            />
+
+            {/* Commander Mode - a general challenge mode that applies to every
+                mission, deliberately not mission-specific. Mission-specific
+                extension lives in Stretch Challenge above. */}
+            {mission.commanderMode?.length > 0 && (
+              <div className="card border-purple-500/20 bg-purple-500/5">
+                <h3 className="text-sm font-bold text-purple-400 mb-1 uppercase tracking-wide flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4" aria-hidden="true" />
+                  Commander Mode
+                </h3>
+                <p className="text-[11px] text-slate-500 mb-3">
+                  A standing challenge mode that applies to every mission in the bootcamp — not
+                  specific guidance for this one.
+                </p>
+                <ul className="space-y-2">
+                  {mission.commanderMode.map((item, idx) => (
+                    <li key={idx} className="text-xs leading-relaxed text-slate-300 flex gap-2">
+                      <span className="text-purple-400/60 select-none">–</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {!mission.stretchChallenge &&
+              !mission.thinkingPrompts &&
+              !mission.realWorldApplications &&
+              !mission.relatedConcepts &&
+              !mission.futureConcepts &&
+              !mission.commanderNotes &&
+              !mission.commanderMode?.length && (
+                <div className="card text-center py-8">
+                  <Compass className="w-8 h-8 text-slate-600 mx-auto mb-2" aria-hidden="true" />
+                  <p className="text-xs text-slate-500">
+                    No extension material authored for this mission yet.
+                  </p>
+                </div>
+              )}
           </div>
         )}
 
@@ -736,13 +951,13 @@ Please help me debug this without giving me the full answer immediately.`;
         <div className="card">
           <details className="group">
             <summary className="flex items-center justify-between font-bold text-white text-xs cursor-pointer select-none">
-              <span>ADDITIONAL MISSION DATA</span>
+              <span>Additional Mission Data</span>
               <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
             </summary>
             <div className="mt-4 border-t border-navy-400/50 pt-3 space-y-3">
               {Object.entries(unknownFields).map(([key, val]) => (
                 <div key={key} className="text-xs">
-                  <span className="font-bold text-slate-400 block uppercase tracking-wider">{key}:</span>
+                  <span className="font-bold text-slate-400 block tracking-wide">{labelForField(key)}</span>
                   {typeof val === 'object' ? (
                     <pre className="bg-navy-950 font-mono text-[13px] text-slate-300 rounded p-2 overflow-x-auto mt-1 max-w-full">
                       <code>{JSON.stringify(val, null, 2)}</code>
