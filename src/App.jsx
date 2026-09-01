@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import Layout from './components/layout/Layout';
 import DataGuard from './components/layout/DataGuard';
@@ -20,6 +20,7 @@ import Blockers from './pages/Blockers';
 import ProofOfWork from './pages/ProofOfWork';
 import SideQuestLock from './pages/SideQuestLock';
 import PracticalMissionView from './pages/PracticalMissionView';
+import Workspace from './pages/Workspace';
 
 // 404
 function NotFound() {
@@ -60,6 +61,13 @@ export default function App() {
               <Route path="proof" element={<ProofOfWork />} />
               <Route path="side-quests" element={<SideQuestLock />} />
               <Route path="mission/:missionId" element={<PracticalMissionView />} />
+              <Route path="workspace" element={<Workspace />}>
+                <Route index element={<Navigate to="projects" replace />} />
+                <Route path="projects" element={<ProjectTracker />} />
+                <Route path="notes" element={<NotesJournal />} />
+                <Route path="problems" element={<Blockers />} />
+                <Route path="proof" element={<ProofOfWork />} />
+              </Route>
             </Route>
 
             {/* Unprotected Routes */}
