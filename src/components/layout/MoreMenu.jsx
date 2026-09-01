@@ -1,22 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Upload, Clock, BookOpen, FolderKanban,
-  FileText, CheckSquare, Settings, X, AlertCircle, Award, Shield
-} from 'lucide-react';
-
-const moreItems = [
-  { to: '/import', label: 'Import Roadmap', icon: Upload, desc: 'Upload roadmap JSON' },
-  { to: '/timeline', label: 'Bootcamp Timeline', icon: Clock, desc: 'View all 6 months' },
-  { to: '/resources', label: 'Resource Vault', icon: BookOpen, desc: 'Learning vault' },
-  { to: '/projects', label: 'Project Tracker', icon: FolderKanban, desc: 'Track your builds' },
-  { to: '/notes', label: 'Notes Journal', icon: FileText, desc: 'Capture what you learn' },
-  { to: '/checkpoints', label: 'Checkpoints', icon: CheckSquare, desc: 'Rate your confidence' },
-  { to: '/blockers', label: 'Blockers Journal', icon: AlertCircle, desc: 'Track active errors' },
-  { to: '/proof', label: 'Proof of Work', icon: Award, desc: 'Verify build deliverables' },
-  { to: '/side-quests', label: 'Side Quests', icon: Shield, desc: 'Locked side items' },
-  { to: '/settings', label: 'Settings', icon: Settings, desc: 'Configure setup parameters' },
-];
+import { X } from 'lucide-react';
+import { moreMenuItems } from '../../config/navigation';
 
 export default function MoreMenu({ onClose }) {
   return (
@@ -43,10 +28,10 @@ export default function MoreMenu({ onClose }) {
         </div>
 
         <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[60vh] overflow-y-auto">
-          {moreItems.map(({ to, label, icon: Icon, desc }) => (
+          {moreMenuItems.map(({ id, route, label, icon: Icon, description }) => (
             <Link
-              key={to}
-              to={to}
+              key={id}
+              to={route}
               onClick={onClose}
               className="flex flex-col gap-2 p-4 bg-navy-700 border border-navy-400 rounded-xl
                          hover:border-accent-primary/30 hover:bg-navy-600 transition-all duration-200
@@ -57,7 +42,7 @@ export default function MoreMenu({ onClose }) {
               </div>
               <div>
                 <p className="text-sm font-semibold text-white leading-tight">{label}</p>
-                <p className="text-[14px] text-slate-500 mt-0.5">{desc}</p>
+                <p className="text-[14px] text-slate-500 mt-0.5">{description}</p>
               </div>
             </Link>
           ))}

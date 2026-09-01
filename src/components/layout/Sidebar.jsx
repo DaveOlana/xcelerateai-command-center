@@ -1,53 +1,31 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
-  LayoutDashboard, Target, Calendar, BarChart2, Upload,
-  Clock, BookOpen, FolderKanban, FileText, CheckSquare,
-  Settings, Flame, ChevronRight, ChevronLeft, AlertCircle, Award, Shield
+  Flame, ChevronRight, ChevronLeft
 } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { getBootcampDay } from '../../utils/dateUtils';
 import { calculateOverallProgress } from '../../utils/progressCalculator';
+import {
+  isNavigationItemActive,
+  primaryNavigationItems,
+  transitionNavigationItems,
+} from '../../config/navigation';
 
 const navGroups = [
   {
-    title: "Workspace Core",
-    items: [
-      { to: '/', label: 'Dashboard', icon: LayoutDashboard, exact: true },
-      { to: '/today', label: "Today's Focus", icon: Target },
-      { to: '/missions', label: 'Weekly Missions', icon: Calendar },
-      { to: '/progress', label: 'Progress', icon: BarChart2 },
-    ]
+    title: 'Navigation',
+    items: primaryNavigationItems,
   },
   {
-    title: "Evidence & Logs",
-    items: [
-      { to: '/proof', label: 'Proof of Work', icon: Award },
-      { to: '/blockers', label: 'Blockers Journal', icon: AlertCircle },
-      { to: '/notes', label: 'Notes Journal', icon: FileText },
-      { to: '/checkpoints', label: 'Checkpoints', icon: CheckSquare },
-    ]
+    title: 'Available during transition',
+    items: transitionNavigationItems,
   },
-  {
-    title: "Roadmap Assets",
-    items: [
-      { to: '/timeline', label: 'Timeline', icon: Clock },
-      { to: '/resources', label: 'Resource Vault', icon: BookOpen },
-      { to: '/projects', label: 'Project Tracker', icon: FolderKanban },
-      { to: '/side-quests', label: 'Side Quests', icon: Shield },
-    ]
-  },
-  {
-    title: "System",
-    items: [
-      { to: '/import', label: 'Load Roadmap', icon: Upload },
-      { to: '/settings', label: 'Settings', icon: Settings },
-    ]
-  }
 ];
 
 export default function Sidebar() {
   const { roadmap, streak, settings, checkpointStatuses, progress, updateSettings, userProfile } = useApp();
+  const location = useLocation();
   const bootcampDay = getBootcampDay(settings?.startDate);
   
   const isCollapsed = settings?.sidebarCollapsed || false;
@@ -111,22 +89,6 @@ export default function Sidebar() {
           );
         })()}
 
-        {/* Load Custom JSON Button */}
-        {!isCollapsed && (
-          <div className="mt-4 transition-opacity duration-300">
-            <NavLink
-              to="/import"
-              className="flex flex-col gap-1 w-full text-left p-3 rounded-xl border border-accent-cyan/20 bg-accent-cyan/5 hover:bg-accent-cyan/10 transition-all group"
-            >
-              <span className="text-[13px] font-bold text-accent-cyan flex items-center gap-2">
-                 Load Roadmap
-              </span>
-              <span className="text-[12px] text-slate-400">
-                Import bootcamp data JSON
-              </span>
-            </NavLink>
-          </div>
-        )}
       </div>
 
       {/* Navigation Scrollbox */}
@@ -138,34 +100,24 @@ export default function Sidebar() {
             ) : (
               <div className="w-full h-px bg-navy-700/20 my-4" />
             )}
-            {group.items.map(({ to, label, icon: Icon, exact }) => {
-              let tourAttr = undefined;
-              if (to === '/') tourAttr = 'sidebar-dashboard';
-              else if (to === '/today') tourAttr = 'sidebar-today';
-              else if (to === '/missions') tourAttr = 'sidebar-missions';
-              else if (to === '/progress') tourAttr = 'sidebar-progress';
-              else if (to === '/import') tourAttr = 'sidebar-import';
-              else if (to === '/settings') tourAttr = 'sidebar-settings';
-              else if (to === '/projects') tourAttr = 'sidebar-projects';
+            {group.items.map((item) => {
+              const { route, label, icon: Icon, tourTarget } = item;
+              const isActive = isNavigationItemActive(item, location.pathname);
 
               return (
-                <NavLink
-                  key={to}
-                  to={to}
-                  end={exact}
+                <Link
+                  key={item.id}
+                  to={route}
                   title={isCollapsed ? label : undefined}
-                  data-tour={tourAttr}
-                className={({ isActive }) =>
-                  `flex items-center rounded-lg font-medium transition-all duration-200 group relative ${
+                  data-tour={tourTarget}
+                  className={`flex items-center rounded-lg font-medium transition-all duration-200 group relative ${
                     isCollapsed ? 'justify-center p-3' : 'gap-3 px-3 py-2.5 text-[14px]'
                   } ${
                     isActive
                       ? 'bg-accent-primary/10 text-white border-l-[3px] border-accent-primary font-semibold ' + (isCollapsed ? 'pl-[9px]' : 'pl-[9px]')
                       : 'text-slate-450 hover:text-slate-200 hover:bg-navy-850/50 border-l-[3px] border-transparent ' + (isCollapsed ? 'pl-3' : 'pl-[9px]')
-                  }`
-                }
-              >
-                {({ isActive }) => (
+                  }`}
+                >
                   <>
                     <Icon className={`w-[18px] h-[18px] flex-shrink-0 ${isActive ? 'text-accent-primary' : 'text-slate-550 group-hover:text-slate-350'}`} />
                     {!isCollapsed && (
@@ -175,8 +127,7 @@ export default function Sidebar() {
                       </>
                     )}
                   </>
-                )}
-              </NavLink>
+                </Link>
               );
             })}
           </div>

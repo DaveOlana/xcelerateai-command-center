@@ -1,23 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
-  Search, LayoutDashboard, Target, Calendar, BarChart2, 
-  Upload, Settings, FolderKanban, FileText, CheckSquare, 
-  Clock, BookOpen, AlertCircle, Award, Shield, Command
-} from 'lucide-react';
+import { Search, Command } from 'lucide-react';
+import { commandPaletteNavigationItems } from '../../config/navigation';
 
 const STATIC_COMMANDS = [
-  { id: 'dash', title: 'Dashboard', icon: LayoutDashboard, route: '/' },
-  { id: 'today', title: "Today's Focus", icon: Target, route: '/today' },
-  { id: 'missions', title: 'Weekly Missions', icon: Calendar, route: '/missions' },
-  { id: 'progress', title: 'Progress Overview', icon: BarChart2, route: '/progress' },
-  { id: 'proof', title: 'Proof of Work', icon: Award, route: '/proof' },
-  { id: 'blockers', title: 'Blockers Journal', icon: AlertCircle, route: '/blockers' },
-  { id: 'notes', title: 'Notes Journal', icon: FileText, route: '/notes' },
-  { id: 'projects', title: 'Project Tracker', icon: FolderKanban, route: '/projects' },
-  { id: 'resources', title: 'Resource Vault', icon: BookOpen, route: '/resources' },
-  { id: 'settings', title: 'Settings & Backup', icon: Settings, route: '/settings' },
-  { id: 'import', title: 'Import JSON Roadmap', icon: Upload, route: '/import' },
+  ...commandPaletteNavigationItems.map((item) => ({
+    id: item.id,
+    title: item.label,
+    icon: item.icon,
+    route: item.route,
+  })),
   { 
     id: 'replay-tour', 
     title: 'Replay Onboarding Tour', 

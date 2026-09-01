@@ -2,27 +2,13 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Flame } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
+import { getNavigationItemForPath } from '../../config/navigation';
 
 export default function MobileHeader() {
   const { streak, roadmap } = useApp();
   const location = useLocation();
 
-  const titles = {
-    '/': 'Dashboard',
-    '/today': "Today's Focus",
-    '/missions': 'Weekly Missions',
-    '/progress': 'Progress',
-    '/timeline': 'Timeline',
-    '/resources': 'Resource Vault',
-    '/projects': 'Project Tracker',
-    '/notes': 'Notes Journal',
-    '/checkpoints': 'Checkpoints',
-    '/import': 'Import Roadmap',
-    '/settings': 'Settings',
-    '/more': 'More',
-  };
-
-  const currentTitle = titles[location.pathname] || 'XcelerateAI';
+  const currentTitle = getNavigationItemForPath(location.pathname)?.pageTitle || 'XcelerateAI';
 
   return (
     <header className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-navy-800/95 backdrop-blur-md border-b border-navy-400">
