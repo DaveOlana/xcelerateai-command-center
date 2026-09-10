@@ -1,0 +1,3069 @@
+[
+  {
+    "id": "PYAE-R-W01-01",
+    "title": "venv — Creation of virtual environments",
+    "url": "https://docs.python.org/3/library/venv.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "note": "Use the activation-command table and read \"How venvs work\" through the explanation of sys.prefix and sys.base_prefix. Stop before API details for EnvBuilder."
+    },
+    "competencyIds": [
+      "PYAE-C001",
+      "PYAE-C002"
+    ],
+    "whySelected": "The standard-library reference precisely documents Windows activation paths and the sys.prefix versus sys.base_prefix signal assessed by the Environment Doctor. It follows the clearer PyPA workflow as a bounded Core Reference rather than acting as the first explanation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A precise library reference is useful after the guided setup rather than as the beginner’s first explanation.",
+    "purpose": [
+      "authoritative environment reference",
+      "virtual-environment state verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Precisely supports environment activation and the virtual-environment status reported by doctor.py.",
+      "clarity": "The bounded activation and \"How venvs work\" sections are readable after guided setup; the full API is intentionally excluded.",
+      "correctnessAndCurrency": "Python venv documentation was checked against the current destination and contains no material factual defect in the assigned scope. Python venv documentation was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained as a bounded Core Reference because its interpreter-state semantics are assessed; PyPA supplies the guided setup and local practice."
+  },
+  {
+    "id": "PYAE-R-W01-02",
+    "title": "CS50P Week 0: Functions, Variables",
+    "url": "https://cs50.harvard.edu/python/weeks/0/",
+    "provider": "Harvard University",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Watch the lecture from the start through Return Values, then the Variables, Comments, Pseudocode, and first TypeError/debugging demonstrations. Type the hello.py and calculator.py examples locally; stop before the optional problem-set walkthroughs."
+    },
+    "competencyIds": [
+      "PYAE-C001",
+      "PYAE-C002"
+    ],
+    "whySelected": "CS50P introduces first-week Python conversationally through live coding and visible mistakes, making it a stronger beginner explanation than the language reference while still teaching functions, variables, input, output, return values, and debugging needed this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A paced live demonstration reduces the cognitive jump for a learner writing their first CLI.",
+    "purpose": [
+      "primary Python explanation",
+      "live-code demonstration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches variables, input, functions, return values, f-strings, and TypeError reasoning used in Study and assessment.",
+      "clarity": "Assumes no Python experience and explains each first program while showing mistakes and repairs.",
+      "correctnessAndCurrency": "CS50P Week 0 was checked against the current destination and contains no material factual defect in the assigned scope. CS50P Week 0 was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "The stale year-specific URL is replaced by Harvard’s maintained current course route without changing the resource identity."
+  },
+  {
+    "id": "PYAE-R-W01-03",
+    "title": "An Informal Introduction to Python",
+    "url": "https://docs.python.org/3/tutorial/introduction.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Work through Using Python as a Calculator, Text, and the first Lists examples. Re-type each example, replace at least two values, deliberately trigger one string-plus-integer TypeError, and repair it with str() or an f-string. Stop before list slicing exercises become repetitive."
+    },
+    "competencyIds": [
+      "PYAE-C001",
+      "PYAE-C002"
+    ],
+    "whySelected": "The official tutorial provides short copyable examples whose results appear immediately, making it effective guided keyboard practice after the CS50 explanation without adding a new tool or account.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The page becomes a lab because the assignment requires running and changing every selected example.",
+    "purpose": [
+      "guided syntax practice",
+      "type-error exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Builds basic expression, text, collection, and TypeError fluency needed for the first CLI.",
+      "clarity": "Selected early sections use immediate examples and avoid advanced program structure.",
+      "correctnessAndCurrency": "Python informal introduction was checked against the current destination and contains no material factual defect in the assigned scope. Python informal introduction was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained as active practice, not mislabeled as a complete beginner course."
+  },
+  {
+    "id": "PYAE-R-W02-01",
+    "title": "More Control Flow Tools",
+    "url": "https://docs.python.org/3/tutorial/controlflow.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Read if Statements, for Statements, range(), break and continue, else Clauses on Loops, pass, and match Statements. Run one small menu-loop example and stop before function-definition material, which belongs to Week 3."
+    },
+    "competencyIds": [
+      "PYAE-C002",
+      "PYAE-C003"
+    ],
+    "whySelected": "The bounded official tutorial sections precisely document the control-flow constructs used by the Week 2 CLI and remain concise enough to consult during implementation after the video-led explanation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Reference is appropriate because the learner uses exact syntax alongside an explanatory lecture and local exercise.",
+    "purpose": [
+      "control-flow reference",
+      "menu-loop verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports branching, repeated prompts, break/continue, and menu dispatch.",
+      "clarity": "The selected sections progress from if to loops with short examples; advanced function material is excluded.",
+      "correctnessAndCurrency": "Python control-flow tutorial was checked against the current destination and contains no material factual defect in the assigned scope. Python control-flow tutorial was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained with an explicit stop before Week 3 function material."
+  },
+  {
+    "id": "PYAE-R-W02-02",
+    "title": "Data Structures",
+    "url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Read More on Lists, List Comprehensions, Tuples and Sequences, Sets, Dictionaries, and Looping Techniques. Build a five-task dictionary and derive incomplete IDs and unique priorities from it; skip matrix-transpose examples."
+    },
+    "competencyIds": [
+      "PYAE-C002",
+      "PYAE-C003"
+    ],
+    "whySelected": "This tutorial puts Python’s core collections side by side with executable examples, enabling the learner to compare structures and immediately apply dictionary lookup, membership, comprehensions, and sets to the task domain.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The assignment turns selected documentation examples into a domain-specific exercise.",
+    "purpose": [
+      "collection comparison",
+      "task-record practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly covers key lookup, get, membership, filtering, uniqueness, truthiness, and mutation hazards.",
+      "clarity": "Concrete literals and operations make list, tuple, set, and dictionary differences visible.",
+      "correctnessAndCurrency": "Python data-structures tutorial was checked against the current destination and contains no material factual defect in the assigned scope. Python data-structures tutorial was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained because it is the strongest precise companion to the explanatory Week 2 lecture."
+  },
+  {
+    "id": "PYAE-R-W02-03",
+    "title": "CS50P Week 2: Loops",
+    "url": "https://cs50.harvard.edu/python/weeks/2/",
+    "provider": "Harvard University",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "note": "Watch while, for, list, len, dict, and the Mario examples. Re-create one validation loop and one dictionary iteration locally. Stop before completing optional problem-set solutions."
+    },
+    "competencyIds": [
+      "PYAE-C002",
+      "PYAE-C003"
+    ],
+    "whySelected": "The live-coded lecture shows a beginner how loop state evolves and how dictionaries are traversed, which is clearer as a first explanation than reading syntax pages alone and maps directly to the repeated task menu.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Live execution makes loop state and stopping behavior visible.",
+    "purpose": [
+      "primary loops explanation",
+      "validation demonstration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches while/for loops, validation, lists, dictionaries, and controlled exit.",
+      "clarity": "Explains loops from first principles and visualizes repeated program state.",
+      "correctnessAndCurrency": "CS50P Week 2 was checked against the current destination and contains no material factual defect in the assigned scope. CS50P Week 2 was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "The maintained course URL replaces the old year-specific route."
+  },
+  {
+    "id": "PYAE-R-W03-01",
+    "title": "Defining Functions",
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "note": "Read Defining Functions through Default Argument Values, including the mutable-default warning. Run the accumulator example twice, repair it with None, and stop before keyword-only and positional-only parameter syntax."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C005"
+    ],
+    "whySelected": "The Python tutorial is the authoritative concise reference for default-value evaluation and the None-sentinel repair, retained after the gentler Helsinki explanation for exact language behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "A bounded language reference is appropriate for a precise semantic trap after first teaching.",
+    "purpose": [
+      "function semantics reference",
+      "mutable-default verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports parameters, return values, docstrings, and mutable-default assessment items.",
+      "clarity": "The bounded first sections are readable after the Helsinki lesson; advanced signatures are excluded.",
+      "correctnessAndCurrency": "Python defining-functions section was checked against the current destination and contains no material factual defect in the assigned scope. Python defining-functions section was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Demoted from primary teacher because Helsinki introduces functions more gently."
+  },
+  {
+    "id": "PYAE-R-W03-02",
+    "title": "Modules",
+    "url": "https://docs.python.org/3/tutorial/modules.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read Modules, More on Modules, Executing modules as scripts, and The Module Search Path. Run one import and one __name__ guard example; stop before compiled modules and deep package internals."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C005"
+    ],
+    "whySelected": "The official tutorial remains the most precise short reference for import execution, sys.path, and __name__ behavior tested this week, but it follows the more guided Helsinki module lesson.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "Reference use fits exact import semantics after a beginner-oriented lesson.",
+    "purpose": [
+      "module semantics reference",
+      "import behavior verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports imports, __name__, sys.path, explicit names, and module boundaries.",
+      "clarity": "Assigned headings are concrete; compiled-module details are excluded.",
+      "correctnessAndCurrency": "Python modules tutorial was checked against the current destination and contains no material factual defect in the assigned scope. Python modules tutorial was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Demoted from primary teacher and bounded before package internals."
+  },
+  {
+    "id": "PYAE-R-W03-03",
+    "title": "dataclasses — Data Classes",
+    "url": "https://docs.python.org/3/library/dataclasses.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Read the opening description and @dataclass parameters through the first InventoryItem example. Implement Task with id, title, priority, and completed; print two instances and compare them. Stop before make_dataclass(), inheritance, and descriptor fields."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C005"
+    ],
+    "whySelected": "The official page’s small InventoryItem example maps cleanly to the learner’s existing task record and precisely distinguishes generated methods from the separate role of type annotations.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A tightly bounded implementation lab avoids the advanced reference surface.",
+    "purpose": [
+      "data-model practice",
+      "generated-method verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports the Task model and repaired question about generated methods versus runtime checking.",
+      "clarity": "The opening example is approachable when the advanced API is explicitly excluded.",
+      "correctnessAndCurrency": "Python dataclasses reference was checked against the current destination and contains no material factual defect in the assigned scope. Python dataclasses reference was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained as Core Practice; foundational functions and modules teaching is supplied by Helsinki."
+  },
+  {
+    "id": "PYAE-R-W04-01",
+    "title": "Reading and Writing Files",
+    "url": "https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "note": "Read Reading and Writing Files through Methods of File Objects. Focus on encoding=\"utf-8\" and with open(...); run one read/write round trip and stop before pickle."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C007"
+    ],
+    "whySelected": "The official tutorial concisely documents with-open cleanup and encoding behavior used by repository.py, but Helsinki now provides the clearer beginner-first file lesson.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "A precise optional reference follows the guided file lesson.",
+    "purpose": [
+      "file-I/O reference",
+      "encoding verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Precisely supports context-managed UTF-8 file access.",
+      "clarity": "The selected subsection is short and readable after Helsinki; pickle is excluded.",
+      "correctnessAndCurrency": "Python file tutorial was checked against the current destination and contains no material factual defect in the assigned scope. Python file tutorial was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Demoted to optional Reference to remove the prior all-documentation teaching path."
+  },
+  {
+    "id": "PYAE-R-W04-02",
+    "title": "json — JSON encoder and decoder",
+    "url": "https://docs.python.org/3/library/json.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read the Basic Usage examples for dump, dumps, load, and loads plus JSONDecodeError. Run a round trip containing a list of task dictionaries and deliberately try serializing a set; stop before custom encoder subclasses and command-line options."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C007"
+    ],
+    "whySelected": "This is the definitive compact reference for the four JSON entry points, supported data types, UTF-8-friendly output, and JSONDecodeError; a focused assignment keeps the beginner away from advanced encoder customization.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Exact library behavior is appropriately taught as a bounded reference plus runnable examples.",
+    "purpose": [
+      "JSON API reference",
+      "serialization failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly covers dump/dumps, load/loads, serializable shapes, and JSONDecodeError.",
+      "clarity": "Basic Usage is approachable when customization APIs are excluded.",
+      "correctnessAndCurrency": "Python json documentation was checked against the current destination and contains no material factual defect in the assigned scope. Python json documentation was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained because no new dependency is needed and the precise API surface is small."
+  },
+  {
+    "id": "PYAE-R-W04-03",
+    "title": "pathlib — Object-oriented filesystem paths",
+    "url": "https://docs.python.org/3/library/pathlib.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Read Basic use and the Path methods mkdir(), exists(), resolve(), open(), and replace(). In a temporary practice folder, create data/, write valid JSON to tasks.json.tmp, close it, replace tasks.json, and verify the prior target is never opened in \"w\" mode. Stop before URI, ownership, permissions, and subclass sections."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C007"
+    ],
+    "whySelected": "The official Path API is used as a deliberately bounded lab because it supplies every cross-platform operation the Build needs, including same-directory replace, without an extra filesystem dependency.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The assignment transforms an API page into a small observable storage lab.",
+    "purpose": [
+      "path operation practice",
+      "replacement-write rehearsal"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports paths, directory creation, resolution, file opening, and target replacement.",
+      "clarity": "Only six concrete operations are assigned and each is exercised in one familiar folder.",
+      "correctnessAndCurrency": "The page documents Path.replace accurately; the curriculum avoids overclaiming crash or power-loss durability beyond target replacement. Python pathlib documentation was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained and narrowed; atomicity is described honestly as protection from exposing a half-written target, not a universal hardware-durability guarantee."
+  },
+  {
+    "id": "PYAE-R-W05-01",
+    "title": "Errors and Exceptions",
+    "url": "https://docs.python.org/3/tutorial/errors.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Read Handling Exceptions through Defining Clean-up Actions, including else, finally, user-defined exceptions, and Exception Chaining. Run one narrow ValueError handler and one raise StorageCorruptionError(...) from error example; stop before exception groups."
+    },
+    "competencyIds": [
+      "PYAE-C008",
+      "PYAE-C009"
+    ],
+    "whySelected": "The official tutorial builds exception behavior incrementally with runnable examples and directly covers else, finally, custom exceptions, and explicit chaining required by the task repository.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The tutorial is explanatory rather than an API index and is bounded before advanced exception groups.",
+    "purpose": [
+      "exception mental model",
+      "chaining reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports domain exceptions, specific catches, causal tracebacks, else, finally, and logger.exception context.",
+      "clarity": "Progresses from a failing statement to narrow handlers, raising, chaining, and cleanup with small examples.",
+      "correctnessAndCurrency": "Python errors tutorial was checked against the current destination and contains no material factual defect in the assigned scope. Python errors tutorial was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained as primary exception teaching; CS50 provides a second live-code route."
+  },
+  {
+    "id": "PYAE-R-W05-02",
+    "title": "Logging HOWTO",
+    "url": "https://docs.python.org/3/howto/logging.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Read When to use logging, A simple example, Logging to a file, Logging from multiple modules, Logging variable data, and Changing the format. Implement getLogger(__name__) with timestamp, level, operation, and task ID; stop before custom handlers and network logging."
+    },
+    "competencyIds": [
+      "PYAE-C008",
+      "PYAE-C009"
+    ],
+    "whySelected": "The HOWTO teaches the standard logging workflow in runnable increments and covers levels, module loggers, formatting, file output, and exception traces without requiring a third-party logging framework.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A guided implementation assignment is the right use of the HOWTO.",
+    "purpose": [
+      "logging implementation",
+      "diagnostic formatting"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports levels, getLogger(__name__), formatting, file output, and traceback-bearing logs.",
+      "clarity": "Starts with a simple example and introduces configuration only as needed.",
+      "correctnessAndCurrency": "Python Logging HOWTO was checked against the current destination and contains no material factual defect in the assigned scope. Python Logging HOWTO was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained; OWASP is added for the separate security question of what must never be logged."
+  },
+  {
+    "id": "PYAE-R-W05-03",
+    "title": "CS50P Week 3: Exceptions",
+    "url": "https://cs50.harvard.edu/python/weeks/3/",
+    "provider": "Harvard University",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Watch SyntaxError through the repeated-input examples. Rebuild one example with a narrow except, else, and loop, then write three sentences identifying the original failure and why the repair is scoped; skip optional problem-set solutions."
+    },
+    "competencyIds": [
+      "PYAE-C008",
+      "PYAE-C009"
+    ],
+    "whySelected": "CS50P narrates the debugging process at a true-beginner pace and shows why broad catches hide defects, complementing the denser but authoritative Python tutorial.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Live debugging exposes the reasoning between failure output and the repaired code.",
+    "purpose": [
+      "debugging demonstration",
+      "narrow-handler practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Reinforces narrow catches, retry loops, else, and failure diagnosis.",
+      "clarity": "Explains tracebacks and exception branches through familiar input examples.",
+      "correctnessAndCurrency": "CS50P Week 3 was checked against the current destination and contains no material factual defect in the assigned scope. CS50P Week 3 was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "The maintained course URL replaces the stale year-specific route."
+  },
+  {
+    "id": "PYAE-R-W06-01",
+    "title": "Get Started with pytest",
+    "url": "https://docs.pytest.org/en/stable/getting-started.html",
+    "provider": "pytest project",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Complete Install pytest, Create your first test, Assert that a certain exception is raised, Group multiple tests in a class, and Request a unique temporary directory. Run every example with python -m pytest -v; stop before plugin installation."
+    },
+    "competencyIds": [
+      "PYAE-C009",
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "The pytest project’s own getting-started path is short, executable, and covers the exact test discovery and assertion behavior a beginner needs before testing the task queue.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "This is tutorial-style documentation with runnable milestones, suitable as Learn.",
+    "purpose": [
+      "pytest mental model",
+      "first test execution"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports discovery, pytest.raises, pass/fail behavior, tmp_path introduction, and -v output.",
+      "clarity": "Begins with one function and one assert, then adds one concept per section.",
+      "correctnessAndCurrency": "pytest getting started was checked against the current destination and contains no material factual defect in the assigned scope. pytest getting started was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained as the primary test-runner introduction; focused fixture pages provide the next layers."
+  },
+  {
+    "id": "PYAE-R-W06-02",
+    "title": "About fixtures",
+    "url": "https://docs.pytest.org/en/stable/explanation/fixtures.html",
+    "provider": "pytest project",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Read What fixtures are, Fixtures can request other fixtures, Fixtures are reusable, and A test/fixture can request more than one fixture at a time. Build sample_tasks with @pytest.fixture, request it from two tests, and prove each test receives fresh mutable state. Then place a shared fixture in tests/conftest.py."
+    },
+    "competencyIds": [
+      "PYAE-C009",
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "This pytest explanation teaches the fixture model, test-function injection, reuse, isolation, and composition directly; it fits the actual Week 6 Build far better than the broad unittest.mock API reference it replaces.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The explanation page uses small diagrams and examples before the learner implements their own fixture.",
+    "purpose": [
+      "fixture mental model",
+      "shared setup design"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly prepares sample_tasks, conftest.py reuse, and isolation required by S03.",
+      "clarity": "Explains fixtures as named setup requested through arguments before introducing composition.",
+      "correctnessAndCurrency": "The official pytest explanation accurately describes fixture discovery, reuse, and per-test setup. pytest fixture explanation was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Replaces unittest.mock because Week 6 requires pytest fixtures and tmp_path, not advanced Mock/patch APIs."
+  },
+  {
+    "id": "PYAE-R-W06-03",
+    "title": "How to monkeypatch/mock modules and environments",
+    "url": "https://docs.pytest.org/en/stable/how-to/monkeypatch.html",
+    "provider": "pytest project",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Read the monkeypatch.setattr, setitem, setenv, and Context sections plus the environment-variable example. Write one test that sets TASKS_PATH with monkeypatch.setenv and prove the value is restored after the test. Do not treat this page as tmp_path teaching."
+    },
+    "competencyIds": [
+      "PYAE-C009",
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "The official how-to gives small, deterministic examples of replacing attributes, mappings, and environment variables with automatic teardown, which directly teaches isolation without requiring unittest.mock.patch.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A focused local lab turns teardown semantics into observable behavior.",
+    "purpose": [
+      "ambient-state isolation",
+      "controlled dependency replacement"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports deterministic environment-dependent tests and the repaired Q10.",
+      "clarity": "Each helper is shown in a small before/after test and restoration is explicit.",
+      "correctnessAndCurrency": "pytest monkeypatch how-to was checked against the current destination and contains no material factual defect in the assigned scope. pytest monkeypatch how-to was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained but corrected: tmp_path is taught by its own resource rather than falsely attributed to monkeypatch."
+  },
+  {
+    "id": "PYAE-R-W07-01",
+    "title": "HTTPX QuickStart",
+    "url": "https://www.python-httpx.org/quickstart/",
+    "provider": "HTTPX",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Read Making a Request through Response Status Codes, including JSON response content, response.raise_for_status(), headers, and exceptions. Run one httpx.Client call only if internet is available; the assessed path remains MockTransport. Note that HTTPX applies a five-second network-inactivity timeout by default."
+    },
+    "competencyIds": [
+      "PYAE-C011",
+      "PYAE-C012",
+      "PYAE-C013"
+    ],
+    "whySelected": "HTTPX’s QuickStart gives the shortest current path from a request to response data and HTTPStatusError, and it explicitly corrects the earlier curriculum’s false claim that the library waits indefinitely by default.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Tutorial documentation with short executable examples serves as the primary library introduction.",
+    "purpose": [
+      "HTTP client mental model",
+      "response API reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports Client, Response.json, raise_for_status, status categories, and exceptions.",
+      "clarity": "Moves from one request to content, JSON, status, and errors with short examples.",
+      "correctnessAndCurrency": "The inspected page states the default five-second inactivity timeout; the repaired question reflects that. HTTPX QuickStart was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained with provider metadata corrected from Encode OSS and timeout semantics stated accurately."
+  },
+  {
+    "id": "PYAE-R-W07-02",
+    "title": "Timeouts",
+    "url": "https://www.python-httpx.org/advanced/timeouts/",
+    "provider": "HTTPX",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "note": "Read the default-timeout explanation, Setting and disabling timeouts, and Fine tuning the configuration. Create a 5.0-second default and identify connect, read, write, and pool timeout phases; do not disable timeouts in the Build."
+    },
+    "competencyIds": [
+      "PYAE-C011",
+      "PYAE-C012",
+      "PYAE-C013"
+    ],
+    "whySelected": "The first-party timeout page precisely distinguishes inactivity defaults and connect/read/write/pool phases, enabling an intentional application policy instead of relying on folklore.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A focused reference is appropriate after the QuickStart request model.",
+    "purpose": [
+      "timeout policy reference",
+      "latency-budget design"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports explicit timeout configuration and TimeoutException policy.",
+      "clarity": "One numeric default is introduced before the four optional timeout phases.",
+      "correctnessAndCurrency": "Accurately documents the default inactivity timeout and fine-grained configuration. HTTPX timeouts documentation was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained and corrected so explicit configuration is justified by policy, not a false no-default claim."
+  },
+  {
+    "id": "PYAE-R-W07-03",
+    "title": "Transports",
+    "url": "https://www.python-httpx.org/advanced/transports/",
+    "provider": "HTTPX",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Read HTTP Transport through Mock transports. Implement a MockTransport handler that returns 200 JSON, 404, and 503 based on request.url.path, and a second handler that raises httpx.ReadTimeout with the request. Stop before WSGITransport, ASGITransport, and custom transport wrappers."
+    },
+    "competencyIds": [
+      "PYAE-C011",
+      "PYAE-C012",
+      "PYAE-C013"
+    ],
+    "whySelected": "The first-party MockTransport section exposes the lowest-complexity offline seam for HTTPX and supports exactly the success, 404, 503, and timeout cases required by the Build.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A bounded handler exercise makes the transport abstraction concrete.",
+    "purpose": [
+      "offline HTTP test practice",
+      "failure simulation"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports offline tests for success, status failures, and raised timeouts.",
+      "clarity": "The learner uses only MockTransport and a simple function handler; advanced transports are excluded.",
+      "correctnessAndCurrency": "The curriculum distinguishes MockTransport from HTTPTransport connect-only retries. HTTPX transports documentation was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Provider metadata is corrected to HTTPX; built-in transport retries are not misrepresented as 503 retry support."
+  },
+  {
+    "id": "PYAE-R-W08-01",
+    "title": "Getting started — mypy",
+    "url": "https://mypy.readthedocs.io/en/stable/getting_started.html",
+    "provider": "mypy project",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Read Installing and running mypy and Function signatures and dynamic vs static typing. Add annotations to three existing functions, deliberately pass one wrong type, observe mypy’s report, then run the same call to observe that Python does not automatically enforce the annotation. Stop before configuration-file and gradual-typing depth."
+    },
+    "competencyIds": [
+      "PYAE-C012",
+      "PYAE-C014",
+      "PYAE-C015"
+    ],
+    "whySelected": "The mypy getting-started guide directly teaches static checking with immediate before/after examples and corrects the former Pydantic mismatch: Week 8 needs type-hint understanding, not runtime model validation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A runnable checker experiment makes the static/runtime boundary observable.",
+    "purpose": [
+      "static-typing mental model",
+      "annotation practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports annotations, modern unions, declared boundaries, and the repaired static/runtime question.",
+      "clarity": "Begins with one annotated function and one visible checker error.",
+      "correctnessAndCurrency": "Accurately distinguishes mypy’s static analysis from Python runtime behavior. mypy getting started was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Replaces Pydantic Models, which belongs to later runtime validation work and did not teach the assessed static-typing contract."
+  },
+  {
+    "id": "PYAE-R-W08-02",
+    "title": "Argparse Tutorial",
+    "url": "https://docs.python.org/3/howto/argparse.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Work through Introducing Positional arguments and Introducing Optional arguments, including type= and help text. Build a two-argument parser and test valid input, invalid numeric input, and --help. Use the separate subcommands reference before implementing doctor/tasks/ping."
+    },
+    "competencyIds": [
+      "PYAE-C012",
+      "PYAE-C014",
+      "PYAE-C015"
+    ],
+    "whySelected": "The official tutorial introduces parser behavior incrementally with a tiny program and directly teaches positional, optional, typed, and documented arguments without requiring a CLI framework.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Tutorial documentation is appropriate because each addition has an immediately visible terminal result.",
+    "purpose": [
+      "CLI parser mental model",
+      "typed argument practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports parser creation, arguments, type conversion, help, and error behavior.",
+      "clarity": "Builds one tiny parser incrementally and shows every terminal result.",
+      "correctnessAndCurrency": "Argparse tutorial was checked against the current destination and contains no material factual defect in the assigned scope. Argparse tutorial was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Retained for parser foundations; a focused library section is added for subcommands."
+  },
+  {
+    "id": "PYAE-R-W08-03",
+    "title": "Pro Git: Getting Started and Git Basics",
+    "url": "https://git-scm.com/book/en/v2",
+    "provider": "Git project",
+    "format": "book",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Read 1.5 Installing Git, 1.6 First-Time Git Setup, 2.1 Getting a Git Repository, 2.2 Recording Changes, and 2.3 Viewing Commit History. Locally verify git --version, configure user.name and user.email if absent, run git init, create .gitignore before adding generated files, make two focused commits, inspect git status before/after each, and run git log --oneline. Stop before remotes and branching."
+    },
+    "competencyIds": [
+      "PYAE-C012",
+      "PYAE-C014",
+      "PYAE-C015"
+    ],
+    "whySelected": "Pro Git is a free, maintained, tool-neutral guide that teaches local repository creation and the complete working-tree/staging/commit model; it fits this offline Build better than GitHub Hello World’s account- and pull-request-centered exercise.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Selected chapters form a guided local lab even though the source is a book.",
+    "purpose": [
+      "local Git mental model",
+      "version-history practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports installation, configuration, init, ignore rules, status, add, commit, and log.",
+      "clarity": "The chosen sequence explains the three repository states before asking the learner to commit.",
+      "correctnessAndCurrency": "The Git project’s own maintained book accurately describes local repository semantics; the curriculum notes that .gitignore does not automatically untrack existing files. Pro Git selected chapters was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Replaces GitHub Hello World to keep the assessed path local and to teach install/config/status/history prerequisites explicitly."
+  },
+  {
+    "id": "PYAE-R-W09-01",
+    "title": "typing.Protocol and @runtime_checkable",
+    "url": "https://docs.python.org/3/library/typing.html#typing.Protocol",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read typing.Protocol through @typing.runtime_checkable. Type and run a ModelGateway/FakeModel example, then explain why runtime checks inspect member presence rather than full signatures."
+    },
+    "competencyIds": [
+      "PYAE-C014",
+      "PYAE-C016"
+    ],
+    "whySelected": "This exact official section teaches structural subtyping and its runtime limitation with executable Python examples; it directly repairs the R2 OpenAI-quickstart mismatch.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A bounded language reference plus a tiny typed example is precise enough to teach this interface boundary.",
+    "purpose": [
+      "primary mental model",
+      "structural interface reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches Protocol, structural conformance, and runtime_checkable for C014/C016.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "The typing specification was accurate but substantially more advanced; the existing OpenAI quickstart did not teach Protocol at all."
+  },
+  {
+    "id": "PYAE-R-W09-02",
+    "title": "Generate a chat message - Ollama",
+    "url": "https://docs.ollama.com/api/chat",
+    "provider": "Ollama",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "note": "Inspect the POST example and the model, messages, and stream fields; then inspect response message, done_reason, and token counts. Sketch the app-owned mapping. Running Ollama is optional."
+    },
+    "competencyIds": [
+      "PYAE-C016"
+    ],
+    "whySelected": "The exact chat endpoint shows both request and response shapes for a free local provider and supports the optional adapter without turning provider execution into an assessed requirement.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "An endpoint reference is appropriate after the app-owned boundary has been taught.",
+    "purpose": [
+      "local provider reference",
+      "message-boundary mapping"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports the provider-neutral request/response model in C016.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "The prior Ollama introduction page was too shallow; this repairs the title, URL, purpose, and core assignment."
+  },
+  {
+    "id": "PYAE-R-W09-03",
+    "title": "unittest.mock - Quick Guide",
+    "url": "https://docs.python.org/3/library/unittest.mock.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read the introduction and Quick Guide through iterable side_effect and call assertions. Then implement a hand-written ScriptedModel response queue and calls list; do not use Mock as the final FakeModel."
+    },
+    "competencyIds": [
+      "PYAE-C011",
+      "PYAE-C016"
+    ],
+    "whySelected": "The official quick guide demonstrates response scripting and call assertions in runnable Python, the two exact behaviors the Build requires.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A short code-along turns test-double vocabulary into observable behavior.",
+    "purpose": [
+      "test-double practice",
+      "deterministic call inspection"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports deterministic FakeModel behavior, C011, and C016.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "The generic cookbook examples were unfocused; Fowler offers useful taxonomy but is longer and Java-centered."
+  },
+  {
+    "id": "PYAE-R-W10-01",
+    "title": "Text generation",
+    "url": "https://developers.openai.com/api/docs/guides/text",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Read instructions, message roles, and prompt examples. Rewrite one extraction request into task, context, constraints, schema, and example sections. Do not make an API call."
+    },
+    "competencyIds": [
+      "PYAE-C017"
+    ],
+    "whySelected": "The guide provides current concrete message/instruction examples that can be studied offline and adapted into the Build prompt boundary.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Worked provider examples are used for prompt structure, not provider adoption.",
+    "purpose": [
+      "prompt-contract explanation",
+      "worked decomposition"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports prompt-contract design in C017.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Retained with an exact offline activity and stop boundary."
+  },
+  {
+    "id": "PYAE-R-W10-02",
+    "title": "Structured model outputs",
+    "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "note": "Read the introduction, JSON Schema and Pydantic examples, strict mode, refusals, and incomplete responses. Stop before advanced examples and other languages; no API execution is required."
+    },
+    "competencyIds": [
+      "PYAE-C018"
+    ],
+    "whySelected": "The page explains current structured-output behavior and its explicit failure cases, preventing the false assumption that JSON-shaped output always satisfies application rules.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The provider reference is the primary source for the feature semantics being compared with local validation.",
+    "purpose": [
+      "structured-output model",
+      "failure-boundary explanation"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports schema constraints and failure handling in C018.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Execution is excluded so the assessed path remains offline."
+  },
+  {
+    "id": "PYAE-R-W10-03",
+    "title": "JSON - Pydantic Validation",
+    "url": "https://docs.pydantic.dev/latest/concepts/json/",
+    "provider": "Pydantic",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read JSON Parsing through the first model_validate_json and ValidationError example. Stop before Partial JSON Parsing. Run valid, malformed, and schema-invalid TaskExtraction inputs locally."
+    },
+    "competencyIds": [
+      "PYAE-C017",
+      "PYAE-C018"
+    ],
+    "whySelected": "The official Pydantic page gives the exact offline parse/validate/error workflow used by the extraction engine without requiring a provider account.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A short executable documentation lab directly prepares the repair loop.",
+    "purpose": [
+      "local validation practice",
+      "malformed-versus-invalid diagnosis"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches local Pydantic JSON validation for C014/C018.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Selected over generic cookbook material and an API-dependent notebook."
+  },
+  {
+    "id": "PYAE-R-W11-01",
+    "title": "Function calling",
+    "url": "https://developers.openai.com/api/docs/guides/function-calling",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Read How it works, Defining functions, Handling function calls, Returning results, strict mode, and the first multiple-call example. Trace one complete request-call-dispatch-result-request cycle on paper."
+    },
+    "competencyIds": [
+      "PYAE-C018",
+      "PYAE-C019"
+    ],
+    "whySelected": "The guide presents the complete tool-call loop and precise schema/call identifiers needed by the provider-neutral registry.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A traced primary-source lifecycle is clearer than isolated schema snippets.",
+    "purpose": [
+      "tool-call lifecycle",
+      "schema contract"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches the lifecycle and identifiers required by C018/C019.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Retained; the assignment stops before unrelated provider options."
+  },
+  {
+    "id": "PYAE-R-W11-02",
+    "title": "Tools in the OpenAI Agents SDK",
+    "url": "https://openai.github.io/openai-agents-python/tools/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Inspect Function tools, automatic schema generation from annotations/docstrings, and error handling. Compare the SDK convenience layer with the app-owned ToolRegistry; installation is not required."
+    },
+    "competencyIds": [
+      "PYAE-C019"
+    ],
+    "whySelected": "The concise page shows how a production Python tool layer derives schemas and contains failures, while the assignment keeps framework ownership in the learner's code.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Used as a bounded reference after the lifecycle is taught.",
+    "purpose": [
+      "implementation comparison",
+      "schema-generation reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports schema generation and error containment in C019.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "No SDK installation or provider execution is needed."
+  },
+  {
+    "id": "PYAE-R-W11-03",
+    "title": "inspect.signature",
+    "url": "https://docs.python.org/3/library/inspect.html#inspect.signature",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Read the Signature section through Signature.bind. Inspect three annotated functions, print parameter names/annotations/defaults, bind valid and invalid arguments, and manually draft one JSON schema."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C019"
+    ],
+    "whySelected": "The standard-library source teaches the exact introspection and binding mechanics hidden inside the Build's stretch and dispatcher validation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A small runnable inspection lab makes the API concrete.",
+    "purpose": [
+      "reflection practice",
+      "argument-binding practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports function inspection and safe argument handling for C019.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Generic repositories were unfocused; an exact SDK example was unavailable during inspection."
+  },
+  {
+    "id": "PYAE-R-W12-01",
+    "title": "Conversation state",
+    "url": "https://developers.openai.com/api/docs/guides/conversation-state",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read manual conversation-state management and Managing the context window, including input/output/reasoning tokens and compaction. Skip server-managed variants and other-language examples."
+    },
+    "competencyIds": [
+      "PYAE-C020"
+    ],
+    "whySelected": "The guide exposes both explicit message history and context-window pressure, providing a current concrete reference without requiring its server-managed path.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A precise reference is appropriate after prior message-model practice.",
+    "purpose": [
+      "conversation-state reference",
+      "context-window boundary"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports state ownership and window constraints in C020.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Retained with a strict provider-neutral reading boundary."
+  },
+  {
+    "id": "PYAE-R-W12-02",
+    "title": "Effective context engineering for AI agents",
+    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Read Context engineering versus prompt engineering through Compaction and Structured note-taking. Stop before subagents. Write a before/after example of raw turns becoming a useful compact note."
+    },
+    "competencyIds": [
+      "PYAE-C017",
+      "PYAE-C020"
+    ],
+    "whySelected": "The engineering article explains context selection and compaction conceptually, complementing API documentation with a readable agent-focused mental model.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Narrative explanation is well suited to a foundational context-engineering concept.",
+    "purpose": [
+      "context mental model",
+      "compaction explanation"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches context quality, compaction, and note preservation for C017/C020.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "The assignment excludes advanced multi-agent material."
+  },
+  {
+    "id": "PYAE-R-W12-03",
+    "title": "Sessions",
+    "url": "https://openai.github.io/openai-agents-python/sessions/",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Inspect recent-history limits, SessionSettings, and compaction. Implement an equivalent local list that returns a protected system message plus the latest complete turns; do not install the SDK."
+    },
+    "competencyIds": [
+      "PYAE-C020"
+    ],
+    "whySelected": "The page offers a concrete recent-history and compaction pattern that can be recreated locally without adopting the SDK.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A framework example becomes a guided local practice task.",
+    "purpose": [
+      "bounded-history practice",
+      "turn-integrity exercise"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly practices bounded history for C020.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Promoted because turn-safe pruning is required by both assessment and Build."
+  },
+  {
+    "id": "PYAE-R-W13-01",
+    "title": "Building effective agents",
+    "url": "https://www.anthropic.com/engineering/building-effective-agents",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "note": "Read the Agents section through feedback, checkpoints, stopping conditions, testing, and guardrails. Skip the earlier workflow catalog. Draw the model-tool-observation loop and its exits."
+    },
+    "competencyIds": [
+      "PYAE-C021"
+    ],
+    "whySelected": "The bounded Agents section explains autonomous feedback loops and control safeguards in accessible engineering language before implementation details.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A conceptual article is appropriate for the first complete agent-loop mental model.",
+    "purpose": [
+      "agent-loop mental model",
+      "stopping and guardrails"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches feedback loops and stopping for C021.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Earlier workflow patterns are skipped to keep the assignment focused."
+  },
+  {
+    "id": "PYAE-R-W13-02",
+    "title": "Running agents",
+    "url": "https://openai.github.io/openai-agents-python/running_agents/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read The agent loop, final output, no tool call, and max turns. Trace a provider-neutral state diagram with final-answer, maximum-step, repetition, and error exits; do not install the SDK."
+    },
+    "competencyIds": [
+      "PYAE-C019",
+      "PYAE-C021"
+    ],
+    "whySelected": "The page clearly enumerates loop behavior and terminal conditions that map to the custom AgentRunner without requiring framework adoption.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A bounded implementation reference follows the conceptual loop article.",
+    "purpose": [
+      "runner lifecycle reference",
+      "termination cases"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports tool dispatch and termination for C019/C021.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "The project remains provider- and SDK-neutral."
+  },
+  {
+    "id": "PYAE-R-W13-03",
+    "title": "Results",
+    "url": "https://openai.github.io/openai-agents-python/results/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "note": "Optionally inspect final_output, new_items, and to_input_list, then compare those surfaces with AgentResult and AgentState. No installation is required."
+    },
+    "competencyIds": [
+      "PYAE-C020",
+      "PYAE-C021"
+    ],
+    "whySelected": "The page is a concise reference for separating final output from newly produced run items, but it is not required to understand or pass the Build.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "Its narrow result-object detail is best used as optional reference.",
+    "purpose": [
+      "result-surface reference",
+      "framework comparison"
+    ],
+    "evaluation": {
+      "competencyFit": "Provides optional comparison for C020/C021 without carrying required knowledge.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Demoted because no assessment or required Build dependency should rely on SDK-specific result fields."
+  },
+  {
+    "id": "PYAE-R-W14-01",
+    "title": "Writing effective tools for agents",
+    "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read tool boundaries, namespacing, descriptions, returning meaningful context, and token efficiency. Draft read-only and mutating tool descriptions with explicit side effects."
+    },
+    "competencyIds": [
+      "PYAE-C022",
+      "PYAE-C023"
+    ],
+    "whySelected": "The article connects tool ergonomics, context quality, and explicit boundaries in a practical agent-specific explanation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A design article is appropriate before implementing filesystem and command safeguards.",
+    "purpose": [
+      "tool-boundary mental model",
+      "safe contract design"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches tool design and authority boundaries for C022/C023.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Retained with a concrete drafting activity."
+  },
+  {
+    "id": "PYAE-R-W14-02",
+    "title": "Human-in-the-loop",
+    "url": "https://openai.github.io/openai-agents-python/human_in_the_loop/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "note": "Read the overview, Marking tools, the pause-review-approve-or-reject-resume flow, and custom rejection messages. Draw that lifecycle without installing the SDK."
+    },
+    "competencyIds": [
+      "PYAE-C023"
+    ],
+    "whySelected": "The current page explicitly models approval interruption, rejection, and resumption, which the Build requires but the redirected generic R2 source did not teach.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A lifecycle reference plus diagram is enough to teach the gate without adopting the framework.",
+    "purpose": [
+      "approval-gate lifecycle",
+      "rejection handling"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches HITL approval and rejection for C023.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Replaces a redirected page whose assigned content no longer matched."
+  },
+  {
+    "id": "PYAE-R-W14-03",
+    "title": "Path Traversal",
+    "url": "https://owasp.org/www-community/attacks/Path_Traversal",
+    "provider": "OWASP Foundation",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "note": "Read the overview, encoded separators, examples, and prevention guidance. Annotate how each malicious path attempts to escape an allowed root."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C023"
+    ],
+    "whySelected": "OWASP supplies concrete attack forms and prevention context that make the risk understandable before the pathlib implementation lab.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A short threat-focused article establishes why normalization and containment checks are necessary.",
+    "purpose": [
+      "threat model",
+      "path-traversal diagnosis"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches the filesystem threat behind C006/C023.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Replaces a broad input-validation page that did not teach the exact filesystem threat."
+  },
+  {
+    "id": "PYAE-R-W15-01",
+    "title": "sqlite3 - DB-API 2.0 interface for SQLite databases",
+    "url": "https://docs.python.org/3/library/sqlite3.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Complete the tutorial sections for connect, CREATE TABLE, INSERT, SELECT, placeholders, transactions, and connection context managers. Note explicitly that with conn commits or rolls back but does not close conn."
+    },
+    "competencyIds": [
+      "PYAE-C024"
+    ],
+    "whySelected": "The standard-library tutorial documents the exact API used by the Build and corrects a common misconception about connection context managers.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "This API requires an authoritative executable reference.",
+    "purpose": [
+      "SQLite API reference",
+      "transaction and parameter practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports SQLite access, transactions, and safe parameters for C024.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Retained with a bounded tutorial and explicit lifecycle warning."
+  },
+  {
+    "id": "PYAE-R-W15-02",
+    "title": "SQLBolt - Learn SQL with simple, interactive exercises",
+    "url": "https://sqlbolt.com/",
+    "provider": "SQLBolt",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Complete Lessons 1, 2, 6, 13, and 16 and every embedded exercise: SELECT, constraints, multi-table creation, INSERT/UPDATE/DELETE, and JOIN. Stop after Lesson 16."
+    },
+    "competencyIds": [
+      "PYAE-C024"
+    ],
+    "whySelected": "The interactive lessons teach relational operations incrementally with immediate feedback, a substantially better beginner teacher than the unrelated contextlib reference.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "An interactive course is appropriate for a learner's first concentrated SQL work.",
+    "purpose": [
+      "relational SQL foundation",
+      "guided query practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Teaches the SQL subset required by C024 and the repository Build.",
+      "clarity": "Short explanations lead directly into visible practice.",
+      "correctnessAndCurrency": "Exercises use standard relational operations compatible with SQLite. The public lessons were inspected on 2026-09-09.",
+      "accessibility": "Free in the browser with no mandatory login."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Replaces contextlib, which neither taught database design nor prepared the required repository operations."
+  },
+  {
+    "id": "PYAE-R-W15-03",
+    "title": "How to use temporary directories and files in tests",
+    "url": "https://docs.pytest.org/en/stable/how-to/tmp_path.html",
+    "provider": "pytest",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "note": "Run the tmp_path example. Create a file-backed SQLite database under tmp_path, write and close it, reopen it, assert persistence, then force an exception and assert rollback."
+    },
+    "competencyIds": [
+      "PYAE-C010",
+      "PYAE-C011",
+      "PYAE-C024"
+    ],
+    "whySelected": "The official fixture documentation gives the exact isolated filesystem boundary needed to test durable SQLite behavior rather than only in-memory behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A runnable fixture lab prepares the acceptance tests directly.",
+    "purpose": [
+      "isolated persistence test",
+      "restart and rollback proof"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports isolated persistence and rollback tests for C010/C011/C024.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Retained and strengthened from a generic tmp_path reading into a repository-relevant lab."
+  },
+  {
+    "id": "PYAE-R-W16-01",
+    "title": "Contextual Retrieval",
+    "url": "https://www.anthropic.com/engineering/contextual-retrieval",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Read the RAG overview, the isolated-chunk problem, contextual retrieval, and BM25 sections. Stop before benchmark and cost analysis. Compare one ambiguous chunk before and after adding provenance context."
+    },
+    "competencyIds": [
+      "PYAE-C025",
+      "PYAE-C026"
+    ],
+    "whySelected": "The article explains retrieval failure caused by context-poor chunks and introduces BM25 in a concrete agent-oriented narrative.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A visual narrative is a stronger first explanation than an FTS API reference.",
+    "purpose": [
+      "retrieval mental model",
+      "chunk-context diagnosis"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports chunking, retrieval, and grounding for C025/C026.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Retained at its current canonical URL and bounded before advanced evaluation/cost sections."
+  },
+  {
+    "id": "PYAE-R-W16-02",
+    "title": "SQLite FTS5 Extension",
+    "url": "https://www.sqlite.org/fts5.html",
+    "provider": "SQLite",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Read the overview, CREATE VIRTUAL TABLE, MATCH, and bm25 sections. Index three local documents, run parameterized searches, and confirm that lower SQLite bm25() values rank first."
+    },
+    "competencyIds": [
+      "PYAE-C025",
+      "PYAE-C026"
+    ],
+    "whySelected": "The official page precisely documents the SQLite extension used by the Build, including its inverted BM25 score convention.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A bounded executable reference is appropriate for an exact database extension.",
+    "purpose": [
+      "local retrieval practice",
+      "ranking semantics"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports the local retrieval implementation in C024/C026.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Retained with an explicit safe parameter and score-ordering exercise."
+  },
+  {
+    "id": "PYAE-R-W16-03",
+    "title": "Citation formatting",
+    "url": "https://developers.openai.com/api/docs/guides/citation-formatting",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read Overview, Choose citable units, Represent citable material, and Write effective citation instructions including missing support. Design source blocks for filename and line-range provenance; no API call is required."
+    },
+    "competencyIds": [
+      "PYAE-C017",
+      "PYAE-C026"
+    ],
+    "whySelected": "The current guide directly addresses provenance representation and citation instructions, filling a gap left by the stale R2 notebook while remaining usable offline.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Concrete formatting examples teach the prompt-side contract that the Build assembles.",
+    "purpose": [
+      "citation contract",
+      "unsupported-answer behavior"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches citable context and unsupported-answer instructions for C017/C026.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "The old cookbook notebook was stale/unavailable; a cloud retrieval guide duplicated retrieval rather than teaching provenance."
+  },
+  {
+    "id": "PYAE-R-W17-01",
+    "title": "Demystifying evals for AI agents",
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Read The structure of an evaluation, Types of graders for agents, Capability vs. regression evals, How to think about non-determinism, and roadmap Steps 0-6. Build a task/trial/grader/transcript/outcome/harness mapping for this Build. Stop before long-term organizational maintenance."
+    },
+    "competencyIds": [
+      "PYAE-C027",
+      "PYAE-C010"
+    ],
+    "whySelected": "This article explains agent-specific evaluation from first principles, compares deterministic, model, and human graders, and explicitly warns against brittle exact-path scoring. It is a stronger first explanation than an API product guide for a learner building an offline custom harness.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A narrative engineering article is appropriate for the conceptual distinctions that must precede implementation.",
+    "purpose": [
+      "primary mental model",
+      "evaluation design"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly covers dataset design, trajectory/outcome grading, pass rates, and regression use.",
+      "clarity": "Defines unfamiliar eval vocabulary before using it and supplies concrete examples.",
+      "correctnessAndCurrency": "Its distinctions and cautions agree with the observable offline harness required here. Published in 2026 and inspected at the assigned destination.",
+      "accessibility": "Public article; no login, payment, or live model is needed."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Retained over API-first eval tutorials because the Build is framework-neutral and offline."
+  },
+  {
+    "id": "PYAE-R-W17-02",
+    "title": "Working with evals",
+    "url": "https://developers.openai.com/api/docs/guides/evals",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read the overview, data-source and testing-criteria design, and result-analysis sections. Stop before uploading/running an API eval; no account or API execution is part of this assignment."
+    },
+    "competencyIds": [
+      "PYAE-C027"
+    ],
+    "whySelected": "The guide is a useful current industry reference for data sources, criteria, and result analysis, but its managed-API workflow is not needed to complete or pass the offline project.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "Documentation is suitable as an optional implementation comparison after the primary explanation.",
+    "purpose": [
+      "implementation reference",
+      "industry comparison"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports evaluation criteria and result interpretation but not the custom runner mechanics.",
+      "clarity": "The conceptual portions are readable after R-W17-01, though the full page is long.",
+      "correctnessAndCurrency": "Accurately documents the current OpenAI eval workflow. Current provider documentation inspected on 2026-09-09.",
+      "accessibility": "Reading is public; execution would require an account, so execution is explicitly excluded."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Demoted because account-bound API execution would add cost and provider coupling without improving the required offline evidence."
+  },
+  {
+    "id": "PYAE-R-W17-03",
+    "title": "Testing agents",
+    "url": "https://openai.github.io/openai-agents-python/testing/",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Complete Return a fixed response, Test a tool workflow, Inspect model calls, and Detect workflow drift. Recreate one equivalent test with the project FakeModel; do not configure a live provider."
+    },
+    "competencyIds": [
+      "PYAE-C027",
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "The page now provides complete deterministic ScriptedModel recipes, call inspection, and workflow-drift assertions, making it a strong worked example for the local FakeModel harness.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Runnable recipes make this a practice asset rather than passive reference documentation.",
+    "purpose": [
+      "guided practice",
+      "deterministic test design"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports deterministic trajectories, test doubles, and regression detection.",
+      "clarity": "Recipes progress from one response to a full tool loop with visible assertions.",
+      "correctnessAndCurrency": "The inspected recipes make no model request and explain their test boundary precisely. Current Agents SDK testing documentation inspected on 2026-09-09.",
+      "accessibility": "Public and executable without a paid API when used as assigned."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "The learner adapts the pattern rather than adopting the SDK as the project architecture."
+  },
+  {
+    "id": "PYAE-R-W18-01",
+    "title": "Tracing agent runs",
+    "url": "https://openai.github.io/openai-agents-python/tracing/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read Traces and spans, Creating traces, Creating spans, and Sensitive data. Map trace_id, span_id, parent_id, timing, status, and safe attributes to the custom StepSpan. Stop before ecosystem integrations."
+    },
+    "competencyIds": [
+      "PYAE-C028",
+      "PYAE-C009"
+    ],
+    "whySelected": "It gives an agent-specific trace hierarchy and explicitly documents parent_id and sensitive-data concerns; the assignment extracts those concepts without requiring the hosted tracing product.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Focused reference sections provide precise field semantics after the learner receives a vendor-neutral introduction.",
+    "purpose": [
+      "agent-specific reference",
+      "trace field model"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports parent/child spans and safe agent trace attributes.",
+      "clarity": "The assigned sections are short and concrete once scoped.",
+      "correctnessAndCurrency": "The documented field is parent_id; the existing quiz answer parent_span_id is incorrect. Current page inspected on 2026-09-09.",
+      "accessibility": "Public reading; no dashboard or API execution is required."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Kept alongside OpenTelemetry because it supplies agent-event examples while OpenTelemetry supplies the general model."
+  },
+  {
+    "id": "PYAE-R-W18-02",
+    "title": "OpenTelemetry Python instrumentation",
+    "url": "https://opentelemetry.io/docs/languages/python/instrumentation/",
+    "provider": "OpenTelemetry",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Complete Setup and Traces. Create console-exported parent/child spans with attributes, events, status, and a recorded exception. Stop before Metrics and Logs."
+    },
+    "competencyIds": [
+      "PYAE-C028",
+      "PYAE-C009"
+    ],
+    "whySelected": "This official OpenTelemetry guide directly teaches manual spans, attributes, events, status, and exception recording in Python; the replaced production guide does not teach the Build’s tracer or recovery model.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The page combines explanation with a locally runnable console-exporter exercise.",
+    "purpose": [
+      "primary tracing model",
+      "guided instrumentation"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly covers the span mechanics required by S01 and error evidence used by recovery.",
+      "clarity": "The bounded Setup/Traces route introduces each field through a small program.",
+      "correctnessAndCurrency": "Matches the OpenTelemetry span model and avoids invented tracing terminology. Current documentation inspected on 2026-09-09.",
+      "accessibility": "Free public documentation and open-source local packages; no hosted account required."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Selected over product monitoring pages because the project implements local, provider-neutral trace records."
+  },
+  {
+    "id": "PYAE-R-W18-03",
+    "title": "Python Logging Cookbook — Contextual and Structured Logging",
+    "url": "https://docs.python.org/3/howto/logging-cookbook.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Use Implementing structured logging, Using a rotator and namer, and Formatting times using UTC. Implement one-JSON-object-per-line output, structured-field redaction, and a forced rollover test; stop after the UTC exercise."
+    },
+    "competencyIds": [
+      "PYAE-C009",
+      "PYAE-C028"
+    ],
+    "whySelected": "The official cookbook contains the exact logging extension points needed for structured records, rotation, and UTC; the activity narrows a very large reference to the Build’s concrete mechanics.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Selected sections are converted into a hands-on local logging exercise.",
+    "purpose": [
+      "structured logging practice",
+      "rotation and UTC reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSONL-compatible records, rotation, and unambiguous time.",
+      "clarity": "The full cookbook is overwhelming, but the three named sections are manageable.",
+      "correctnessAndCurrency": "Official recipes accurately demonstrate formatter and handler extension points. Current Python documentation inspected on 2026-09-09.",
+      "accessibility": "Free public documentation; only the Python standard library is required."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Retained with an exact route because replacing it would lose authoritative handler and formatter details."
+  },
+  {
+    "id": "PYAE-R-W19-01",
+    "title": "Coroutines and Tasks",
+    "url": "https://docs.python.org/3/library/asyncio-task.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Read Coroutines, Creating Tasks, Task Cancellation, Task Groups, Running Tasks Concurrently, Timeouts, and Running in Threads. Run one TaskGroup sibling-failure example; skip eager-task and introspection sections."
+    },
+    "competencyIds": [
+      "PYAE-C029"
+    ],
+    "whySelected": "This is the authoritative current reference for TaskGroup, cancellation, asyncio.timeout, gather, and to_thread, which prevents the beginner video’s older syntax from becoming the implementation contract.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "API documentation is appropriate as the precise reference paired with a beginner video and a queue lab.",
+    "purpose": [
+      "authoritative API reference",
+      "structured concurrency"
+    ],
+    "evaluation": {
+      "competencyFit": "Covers nearly every runtime API used by the Build and quiz.",
+      "clarity": "Dense but bounded to seven named sections and paired with a video.",
+      "correctnessAndCurrency": "Authoritative semantics for Python 3.11+ structured concurrency. Current Python documentation inspected on 2026-09-09.",
+      "accessibility": "Free and available with the standard library."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Retained because no secondary tutorial should replace the language’s exact cancellation and timeout behavior."
+  },
+  {
+    "id": "PYAE-R-W19-02",
+    "title": "Developing with asyncio",
+    "url": "https://docs.python.org/3/library/asyncio-dev.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "note": "Read Debug Mode, Concurrency and Multithreading, and Running Blocking Code. Enable debug mode and observe one deliberately blocking callback; stop before platform-specific event-loop material."
+    },
+    "competencyIds": [
+      "PYAE-C029",
+      "PYAE-C028"
+    ],
+    "whySelected": "It documents how Python exposes blocking callbacks and thread boundaries, but these troubleshooting details are not mandatory for the first successful runner.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "Best used as a targeted troubleshooting reference.",
+    "purpose": [
+      "debugging reference",
+      "blocking-code diagnostics"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports debugging and blocking-code diagnosis rather than core scheduler construction.",
+      "clarity": "Clear when opened for a named problem, not as a linear beginner lesson.",
+      "correctnessAndCurrency": "Official behavior and diagnostic guidance. Current Python documentation inspected on 2026-09-09.",
+      "accessibility": "Free and standard-library only."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Demoted so two dense standard-library pages are not both required before practice."
+  },
+  {
+    "id": "PYAE-R-W19-03",
+    "title": "Asynchronous Python for the Complete Beginner",
+    "url": "https://www.youtube.com/watch?v=iG6fr81xHKA",
+    "provider": "Miguel Grinberg / PyCon 2017",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Watch 00:00-30:57. Diagram suspend/resume, cooperative multitasking, and the event loop, then rewrite the toy entry point with asyncio.run. Treat R-W19-01 as the source for current TaskGroup syntax."
+    },
+    "competencyIds": [
+      "PYAE-C029"
+    ],
+    "whySelected": "The short PyCon talk was designed for complete beginners and explains concurrency through visual analogies; it is a much better first explanation than the synchronous sched module.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Video supplies the missing visual/conversational route for an otherwise documentation-heavy week.",
+    "purpose": [
+      "beginner mental model",
+      "format diversity"
+    ],
+    "evaluation": {
+      "competencyFit": "Establishes the event-loop model needed to reason about every Build step.",
+      "clarity": "Explicitly aimed at complete beginners and uses concrete waiting-time analogies.",
+      "correctnessAndCurrency": "The core model remains correct; modern APIs are deliberately sourced elsewhere. Older presentation, with its version boundary explicitly disclosed and repaired by current docs.",
+      "accessibility": "Free public video; no login is required to watch."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "The talk predates TaskGroup, so the assignment explicitly separates its timeless mental model from current API syntax."
+  },
+  {
+    "id": "PYAE-R-W20-01",
+    "title": "Guardrails",
+    "url": "https://openai.github.io/openai-agents-python/guardrails/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "note": "Read Workflow boundaries, Input guardrails and execution modes, and Tool guardrails. Produce a table showing which checks happen before a side effect; stop before copying the full framework recipes."
+    },
+    "competencyIds": [
+      "PYAE-C030",
+      "PYAE-C023"
+    ],
+    "whySelected": "The page clearly distinguishes workflow boundaries and shows why blocking pre-tool checks matter; that timing lesson transfers directly to the custom dispatcher.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A focused SDK reference is useful for comparing guardrail placement without adopting the SDK.",
+    "purpose": [
+      "guardrail placement reference",
+      "side-effect timing"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports placement and timing of deterministic tool checks.",
+      "clarity": "Named sections make a complex SDK page manageable.",
+      "correctnessAndCurrency": "Accurately distinguishes input, output, and per-tool boundaries. Current page inspected on 2026-09-09.",
+      "accessibility": "Public reading and no API execution required."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Paired with vendor-neutral OWASP threat guidance so provider mechanics are not mistaken for the security model."
+  },
+  {
+    "id": "PYAE-R-W20-02",
+    "title": "Human-in-the-loop approvals",
+    "url": "https://openai.github.io/openai-agents-python/human_in_the_loop/",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Read approval, rejection, state/resume, and serialized approval flow. Model a local PendingAction record and test approve/reject transitions without a model or network."
+    },
+    "competencyIds": [
+      "PYAE-C030",
+      "PYAE-C023"
+    ],
+    "whySelected": "It provides a concrete interruption/resume lifecycle for approval rather than merely recommending human oversight in prose.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The learner converts the documented workflow into an offline local state-machine exercise.",
+    "purpose": [
+      "approval workflow practice",
+      "state transition reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports the confirmation gate and audit record.",
+      "clarity": "The state transition is concrete and understandable after prior persistence work.",
+      "correctnessAndCurrency": "Accurately models approve/reject before tool execution. Current SDK documentation inspected on 2026-09-09.",
+      "accessibility": "Public and no learner account/API required as assigned."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Used for approval mechanics; OWASP remains the source for the threat model and layered defenses."
+  },
+  {
+    "id": "PYAE-R-W20-03",
+    "title": "LLM Prompt Injection Prevention Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+    "provider": "OWASP Cheat Sheet Series",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Read Anatomy, Direct and Remote/Indirect Prompt Injection, Data Exfiltration, Agent-Specific Attacks, Primary Defenses, Least Privilege, Model-Based Guardrails, caveats, and Best Practices Checklist. Produce a threat/control/remaining-risk matrix."
+    },
+    "competencyIds": [
+      "PYAE-C030",
+      "PYAE-C023"
+    ],
+    "whySelected": "This actionable cheat sheet directly covers indirect injection, exfiltration, structured separation, output validation, HITL, least privilege, and the limitations of regex/model guardrails; the replaced page is now explicitly a historical archive.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A security cheat sheet supports focused threat-to-control analysis and a concrete learner worksheet.",
+    "purpose": [
+      "primary threat model",
+      "defense-in-depth design"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly covers every threat term and defense principle assessed in Week 20.",
+      "clarity": "Starts with attack anatomy and concrete examples before controls.",
+      "correctnessAndCurrency": "Explicitly says pattern/model guardrails are layers, not replacements for deterministic controls. Current OWASP Cheat Sheet destination inspected on 2026-09-09.",
+      "accessibility": "Free public page with no login."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "The current broad Top 10 remains useful as a review index but is not as effective for implementing this week’s gateway."
+  },
+  {
+    "id": "PYAE-R-W21-01",
+    "title": "MCP architecture",
+    "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+    "provider": "Model Context Protocol",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Read Participants, Layers, Statelessness and discovery, Primitives, and the complete tool discovery/execution example. Stop before notification subscription details. Confirm the page resolves to protocol revision 2026-07-28."
+    },
+    "competencyIds": [
+      "PYAE-C031",
+      "PYAE-C019"
+    ],
+    "whySelected": "The current official architecture page explains the 2026 stateless protocol and full tools/list and tools/call exchange in one beginner-readable narrative.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Architecture documentation is the correct source for protocol roles and layers before implementation.",
+    "purpose": [
+      "primary protocol model",
+      "current lifecycle"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports host/client/server boundaries, discovery, primitives, and transports.",
+      "clarity": "Explains roles and layers before raw messages and provides one coherent example.",
+      "correctnessAndCurrency": "Authoritative current protocol explanation; contradicts the R2 legacy handshake. Resolved to 2026-07-28 and inspected on 2026-09-09.",
+      "accessibility": "Free public documentation with no account."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "The stable URL is retained because it currently redirects to the latest dated revision; the checked revision is recorded explicitly."
+  },
+  {
+    "id": "PYAE-R-W21-02",
+    "title": "MCP Tools specification — 2026-07-28",
+    "url": "https://modelcontextprotocol.io/specification/2026-07-28/server/tools",
+    "provider": "Model Context Protocol",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "note": "Read Overview, Listing tools, Calling tools, result/error behavior, and Security Considerations. Use it to verify names and schema mapping; do not hand-write a protocol stack."
+    },
+    "competencyIds": [
+      "PYAE-C031",
+      "PYAE-C019",
+      "PYAE-C023"
+    ],
+    "whySelected": "The dated current specification is the authoritative source for tool discovery, invocation, results, and security; the R2 link points to an obsolete protocol revision.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Normative documentation is appropriate as a narrow reference beside the architecture explanation and SDK lab.",
+    "purpose": [
+      "normative tool reference",
+      "security requirements"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports discovery, schema conversion, execution, error handling, and trust.",
+      "clarity": "Dense but restricted to one primitive and named sections.",
+      "correctnessAndCurrency": "Normative specification for the selected protocol revision. 2026-07-28 revision inspected on 2026-09-09.",
+      "accessibility": "Free public specification."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "The architecture overview is clearer for learning but cannot replace the normative tool contract."
+  },
+  {
+    "id": "PYAE-R-W21-03",
+    "title": "MCP Python SDK — Get started",
+    "url": "https://py.sdk.modelcontextprotocol.io/get-started/",
+    "provider": "Model Context Protocol",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Run the complete local server/client example, replace its tool with calculate or system_info, list the tool, call it, and close the client context. Do not connect to an external service."
+    },
+    "competencyIds": [
+      "PYAE-C031",
+      "PYAE-C019",
+      "PYAE-C029"
+    ],
+    "whySelected": "This focused page provides a coherent, runnable server-and-client path; the replaced GitHub examples directory is a moving collection without one beginner route.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A complete official SDK lab is safer and clearer than manually implementing framing and session details.",
+    "purpose": [
+      "guided SDK practice",
+      "lifecycle and invocation"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports local server, client lifecycle, list, call, and teardown.",
+      "clarity": "One ordered example avoids repository browsing and raw protocol burden.",
+      "correctnessAndCurrency": "Uses the maintained SDK boundary recommended by current architecture documentation. Current SDK documentation inspected on 2026-09-09.",
+      "accessibility": "Free and local; no external MCP service or account is required."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "The broader examples repository remains discoverable from the SDK docs but is not assigned."
+  },
+  {
+    "id": "PYAE-R-W22-01",
+    "title": "Dependency INVERSION vs Dependency INJECTION in Python",
+    "url": "https://www.youtube.com/watch?v=2ejbLVkCndI",
+    "provider": "ArjanCodes",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "note": "Watch 00:20-17:35. Pause at 06:37 and 11:20 to diagram injection versus inversion, then reproduce the fake-based test shown in the video."
+    },
+    "competencyIds": [
+      "PYAE-C032",
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "This concise Python video distinguishes dependency injection from dependency inversion with working tests; the replaced generic Agents page does not teach either prerequisite.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Video and code demonstration provide a clearer first encounter with an abstract architecture topic.",
+    "purpose": [
+      "architecture mental model",
+      "testability demonstration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly repairs the central hidden prerequisite in the Build.",
+      "clarity": "Defines both commonly confused terms with one small running example.",
+      "correctnessAndCurrency": "The distinction and testing consequences are technically sound. The principles remain current; video chapters were inspected on 2026-09-09.",
+      "accessibility": "Free public video with no mandatory login."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Paired with Cosmic Python for a larger composition-root application."
+  },
+  {
+    "id": "PYAE-R-W22-02",
+    "title": "Orchestrating multiple agents",
+    "url": "https://openai.github.io/openai-agents-python/multi_agent/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "note": "Read Orchestrating via LLM and Orchestrating via code. Produce a two-row comparison of manager-as-tool and conversation handoff, then design the bounded manager-controlled route used by this Build."
+    },
+    "competencyIds": [
+      "PYAE-C032",
+      "PYAE-C021",
+      "PYAE-C022"
+    ],
+    "whySelected": "It clearly distinguishes a manager retaining control from a handoff that transfers control, directly preventing the semantic conflation in the current Build and Q04.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A focused pattern reference complements the general architecture resources.",
+    "purpose": [
+      "specialist orchestration reference",
+      "pattern comparison"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports specialist partitioning and delegation ownership.",
+      "clarity": "The two-pattern comparison is short and concrete.",
+      "correctnessAndCurrency": "Accurately distinguishes manager-as-tool from handoff. Current page inspected on 2026-09-09.",
+      "accessibility": "Public and no API run is required."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Retained because this week still needs one agent-specific orchestration source after architecture prerequisites are repaired."
+  },
+  {
+    "id": "PYAE-R-W22-03",
+    "title": "Agent Handoffs",
+    "url": "https://openai.github.io/openai-agents-python/handoffs/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "note": "Read Handoffs, Input types, and Input filters. Write one case where the specialist should genuinely become the active agent; no SDK implementation is required."
+    },
+    "competencyIds": [
+      "PYAE-C032",
+      "PYAE-C021"
+    ],
+    "whySelected": "The page is useful for understanding true handoffs and input filtering, but the required Build returns a specialist result to the manager and therefore should not depend on this SDK mechanism.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "Optional documentation is appropriate for comparing an alternative orchestration pattern.",
+    "purpose": [
+      "true handoff reference",
+      "context filtering"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports handoff vocabulary and least-context filtering, not the core container architecture.",
+      "clarity": "Clear after the manager pattern is understood.",
+      "correctnessAndCurrency": "Current OpenAI SDK behavior; existing provider rationale is factually wrong. Current page inspected on 2026-09-09.",
+      "accessibility": "Free public documentation."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Correct the existing whySelected attribution from Anthropic to OpenAI and remove it from Core."
+  },
+  {
+    "id": "PYAE-R-W23-01",
+    "title": "Packaging Python Projects",
+    "url": "https://packaging.python.org/en/latest/tutorials/packaging-projects/",
+    "provider": "Python Packaging Authority",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Complete package layout, pyproject.toml, and Generating distribution archives. Build the sdist and wheel and inspect their contents. Stop before uploading to an index."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C005"
+    ],
+    "whySelected": "The PyPA tutorial is the most direct authoritative path from source layout and pyproject metadata to sdist/wheel artifacts, while separate focused resources cover scripts and installs it does not teach.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A guided packaging tutorial gives both explanation and a concrete artifact.",
+    "purpose": [
+      "packaging foundation",
+      "distribution build practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly covers layout, build system, metadata, and artifact generation.",
+      "clarity": "Stepwise tutorial with a small example and clear file tree.",
+      "correctnessAndCurrency": "Authoritative PyPA guidance; it does not contain project.scripts or editable-install instruction. Current page inspected on 2026-09-09.",
+      "accessibility": "Free; local build may require installing declared open-source build tooling."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Retained but no longer misrepresented as teaching project.scripts or editable installs."
+  },
+  {
+    "id": "PYAE-R-W23-02",
+    "title": "Building and testing Python with GitHub Actions",
+    "url": "https://docs.github.com/en/actions/tutorials/build-and-test-code/python",
+    "provider": "GitHub",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Read Using multiple Python versions, Using a specific version, Installing dependencies, Testing with pytest, and linting with Ruff. Author the workflow, then run the same install/lint/type/test commands locally. Cloud execution is optional evidence."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C010"
+    ],
+    "whySelected": "The official guide directly demonstrates setup-python, matrices, dependency installation, pytest, and Ruff while allowing the assessed result to remain an inspectable YAML file plus local command evidence.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Runnable workflow examples make this a practice resource.",
+    "purpose": [
+      "CI workflow practice",
+      "version matrix reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports the required CI stages and version matrix.",
+      "clarity": "Examples are copyable and the assigned sections follow a logical workflow.",
+      "correctnessAndCurrency": "Current GitHub Actions syntax and maintained action versions. Inspected on 2026-09-09.",
+      "accessibility": "Reading is public; account/cloud execution is optional."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "A GitHub account is not part of the completion gate; local parity is required."
+  },
+  {
+    "id": "PYAE-R-W23-03",
+    "title": "Python language-specific guide",
+    "url": "https://docs.docker.com/guides/python/",
+    "provider": "Docker",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "note": "Optional only: if Docker is already installed, complete the initial create/build/run path for a minimal Python image. Stop before the FastAPI/Postgres development workflow."
+    },
+    "competencyIds": [
+      "PYAE-C033"
+    ],
+    "whySelected": "Containerization can extend deployment learning, but this large Docker Desktop/FastAPI/Postgres guide does not teach the required local CLI and would create an unnecessary availability barrier if Core.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "Kept as an optional lab for learners with the external tooling already available.",
+    "purpose": [
+      "optional container extension"
+    ],
+    "evaluation": {
+      "competencyFit": "Adjacent to deployment, not necessary for packaging/configuration/CI competency.",
+      "clarity": "The full guide is broad; only the initial build/run route is suitable here.",
+      "correctnessAndCurrency": "Official Docker guidance but unrelated to several current quiz claims, including health checks. Current destination inspected on 2026-09-09.",
+      "accessibility": "Documentation is free, but Docker Desktop availability makes it unsuitable as required learning."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Demoted from Core; no mandatory assessment or acceptance criterion depends on it."
+  },
+  {
+    "id": "PYAE-R-W24-01",
+    "title": "Safety best practices",
+    "url": "https://developers.openai.com/api/docs/guides/safety-best-practices",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "note": "Convert adversarial testing, human oversight, constrained input/output, and safety-control recommendations into a checked capstone evidence table. Do not add a new subsystem."
+    },
+    "competencyIds": [
+      "PYAE-C030",
+      "PYAE-C027",
+      "PYAE-C033"
+    ],
+    "whySelected": "The guide gives a concise operational safety checklist suitable for final review when treated as confirmation of earlier learning rather than new Week 24 instruction.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Reference documentation is converted into a verification checklist.",
+    "purpose": [
+      "capstone safety review",
+      "evidence checklist"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports final verification of testing, oversight, and bounded input/output.",
+      "clarity": "Readable as a short checklist after Week 20.",
+      "correctnessAndCurrency": "Accurate provider safety guidance, not claimed as a universal security standard. Current page inspected on 2026-09-09.",
+      "accessibility": "Public reading; no API/account execution required."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Provider-specific examples do not replace the vendor-neutral OWASP review."
+  },
+  {
+    "id": "PYAE-R-W24-02",
+    "title": "Agents SDK quickstart",
+    "url": "https://openai.github.io/openai-agents-python/quickstart/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "note": "Compare the quickstart’s minimal model/agent/tool loop with the custom project boundaries. Record three similarities and three deliberate differences; do not migrate frameworks or run a live model."
+    },
+    "competencyIds": [
+      "PYAE-C021",
+      "PYAE-C032"
+    ],
+    "whySelected": "It is useful as a compact external comparison, but it neither establishes production readiness nor belongs in the mandatory final verification path.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "Optional reference comparison prevents framework churn during integration.",
+    "purpose": [
+      "industry implementation comparison"
+    ],
+    "evaluation": {
+      "competencyFit": "Only indirectly supports architecture comparison.",
+      "clarity": "Short and approachable after the learner has built an agent.",
+      "correctnessAndCurrency": "Accurately documents the current SDK quickstart. Current page inspected on 2026-09-09.",
+      "accessibility": "Public page; no live API use required as assigned."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Demoted because the capstone must validate the learner’s existing provider-neutral implementation."
+  },
+  {
+    "id": "PYAE-R-W24-03",
+    "title": "OWASP Top 10 for Agentic Applications 2026",
+    "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "provider": "OWASP GenAI Security Project",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Review the ten risk summaries and map each relevant risk to an existing code control, test, and remaining limitation. Stop before deep appendices; do not add a new capstone subsystem."
+    },
+    "competencyIds": [
+      "PYAE-C030",
+      "PYAE-C027",
+      "PYAE-C033"
+    ],
+    "whySelected": "The current agentic Top 10 is a better final review than the duplicated legacy LLM Top 10 landing page and directly matches a tool-using autonomous-agent capstone.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A current risk report is appropriate as a final verification reference.",
+    "purpose": [
+      "agentic security review",
+      "capstone evidence matrix"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly reviews tool authority, identity, memory, and agent-control risks.",
+      "clarity": "The Top 10 summaries support a bounded checklist rather than a full security course.",
+      "correctnessAndCurrency": "Current peer-reviewed OWASP agentic security framework. 2026 edition inspected on 2026-09-09.",
+      "accessibility": "Free public landing/download with no login."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Corrects the existing false Anthropic attribution and removes the duplicate Week 20 URL/function."
+  },
+  {
+    "id": "PYAE-R-W01-04",
+    "title": "Install packages in a virtual environment using pip and venv",
+    "url": "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/",
+    "provider": "Python Packaging Authority",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Follow the Windows steps for checking Python, creating .venv, activating it, confirming where python, upgrading pip, installing one harmless package, and deactivating. Add .venv/ to .gitignore. Record the output of python -m pip --version while active; stop before Unix activation variants."
+    },
+    "competencyIds": [
+      "PYAE-C001",
+      "PYAE-C002"
+    ],
+    "whySelected": "This current PyPA guide provides one complete beginner workflow from checking Python to creating, activating, verifying, using, ignoring, and deactivating .venv, with exact Windows commands and no assumed packaging knowledge.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A command-by-command local lab is the clearest way to establish environment behavior.",
+    "purpose": [
+      "guided Windows setup",
+      "interpreter and pip verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches .venv creation, activation, where python, python -m pip, deactivation, and ignore behavior.",
+      "clarity": "Uses sequential commands, expected checks, and platform-specific activation instructions.",
+      "correctnessAndCurrency": "Current PyPA guidance uses the selected interpreter via python -m pip and project-local .venv. PyPA virtual-environment guide was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added because the venv library page is reference-oriented and did not supply the complete pip/where/.gitignore practice chain."
+  },
+  {
+    "id": "PYAE-R-W01-05",
+    "title": "about_Execution_Policies",
+    "url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies",
+    "provider": "Microsoft",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "note": "Read the short description of execution policies, the Process and CurrentUser scopes, and the precedence note. In a disposable PowerShell window, inspect Get-ExecutionPolicy -List; only if Activate.ps1 is blocked, apply RemoteSigned to Scope Process and confirm that closing the window removes that process-scoped setting. Do not change LocalMachine."
+    },
+    "competencyIds": [
+      "PYAE-C001"
+    ],
+    "whySelected": "Microsoft’s own page is the authoritative source for Process scope, precedence, and lifetime, resolving the prior mismatch between a Process-scope quiz item and the Python page’s CurrentUser example.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A short authoritative security/configuration reference is appropriate for an OS-specific exception path.",
+    "purpose": [
+      "PowerShell troubleshooting reference",
+      "scope and lifetime verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports safe Windows activation troubleshooting and repaired Q02.",
+      "clarity": "The activity limits reading to two scopes and uses the change only after confirming an actual block.",
+      "correctnessAndCurrency": "Accurately states Process scope lasts only for the current PowerShell session and avoids treating execution policy as a complete security boundary. PowerShell execution-policy reference was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added only for blocked activation; the normal path does not ask every learner to weaken policy."
+  },
+  {
+    "id": "PYAE-R-W03-04",
+    "title": "More functions",
+    "url": "https://programming-26.mooc.fi/part-4/2-more-functions/",
+    "provider": "University of Helsinki",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Complete Return values, Using return values from functions, The difference between return and print, and the selected exercises through a function that returns filtered task data. Stop before unrelated later Part 4 topics."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C005"
+    ],
+    "whySelected": "Helsinki explains return values and return-versus-print with incremental examples and immediate exercises, making it a better foundational teacher for a beginner than the compact Python reference.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "An exercise-led course section is effective first teaching for separation of calculation from display.",
+    "purpose": [
+      "function mental model",
+      "return-value exercises"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports explicit parameters, return values, reuse, and UI-free service functions.",
+      "clarity": "Introduces one return-value idea at a time with visible examples.",
+      "correctnessAndCurrency": "Helsinki More functions was checked against the current destination and contains no material factual defect in the assigned scope. Helsinki More functions was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added as the first explanation; Python function docs remain optional for exact default semantics."
+  },
+  {
+    "id": "PYAE-R-W03-05",
+    "title": "Creating your own modules",
+    "url": "https://programming-26.mooc.fi/part-7/5-creating-modules/",
+    "provider": "University of Helsinki",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Complete the creating-a-module and importing-from-a-module examples. Create models.py, service.py, and cli.py stubs; make models import nothing from the other two, service import models, and cli import service. Add a __main__ guard and verify importing cli does not prompt. Stop before packaging modules for distribution."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C005"
+    ],
+    "whySelected": "Helsinki teaches author-created modules through a small local example and gives the beginner an immediate bridge from one script to the exact three-file structure of the Build.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A guided file-creation lab makes imports and module execution observable.",
+    "purpose": [
+      "module creation practice",
+      "dependency-direction rehearsal"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly prepares local modules, import direction, __main__, and zero import-time CLI side effects.",
+      "clarity": "Starts from two small files and makes the imported result visible.",
+      "correctnessAndCurrency": "Helsinki module lesson was checked against the current destination and contains no material factual defect in the assigned scope. Helsinki module lesson was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added because the official module reference is valuable for lookup semantics but not sufficient practice for architecture boundaries."
+  },
+  {
+    "id": "PYAE-R-W04-04",
+    "title": "Reading files",
+    "url": "https://programming-26.mooc.fi/part-6/1-reading-files/",
+    "provider": "University of Helsinki",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Complete Reading data from a file, Reading CSV files, and the error-safe examples relevant to missing or malformed content. Adapt one exercise to return an empty task list when tasks.json is absent; stop before unrelated word-search projects."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C007"
+    ],
+    "whySelected": "Helsinki teaches file reading with incremental runnable exercises and explicit data parsing, providing a gentler first explanation than starting with three standard-library reference pages.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "An exercise-led course section is appropriate for a learner’s first persistence boundary.",
+    "purpose": [
+      "file-reading mental model",
+      "first-run behavior exercise"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly prepares open/read/parse flow and missing/corrupt state distinctions.",
+      "clarity": "Builds from reading one line to structured records with visible intermediate values.",
+      "correctnessAndCurrency": "Helsinki Reading files was checked against the current destination and contains no material factual defect in the assigned scope. Helsinki Reading files was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added as primary explanation; the Python tutorial remains an optional exact reference."
+  },
+  {
+    "id": "PYAE-R-W04-05",
+    "title": "Writing files",
+    "url": "https://programming-26.mooc.fi/part-6/2-writing-files/",
+    "provider": "University of Helsinki",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Complete the write and append examples, then write a list of two task dictionaries to a new text file and read it back. Compare opening a target with \"w\" against writing a complete sibling .tmp file before Path.replace(); stop before unrelated diary exercises."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C007"
+    ],
+    "whySelected": "Helsinki provides short observable writing exercises that make file modes and complete-write behavior concrete before the learner combines them with JSON and Path.replace.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A local lab makes persistence effects visible on disk.",
+    "purpose": [
+      "file-writing practice",
+      "truncation-risk experiment"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports write modes, complete output, read-back verification, and the motivation for sibling replacement.",
+      "clarity": "Begins with one line and progresses to structured output without new abstractions.",
+      "correctnessAndCurrency": "Accurately teaches file writing; the curriculum separately qualifies the limits of atomic replacement. Helsinki Writing files was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added to complement the reading lesson and prepare the replacement-write sequence without pretending the course itself specifies all durability semantics."
+  },
+  {
+    "id": "PYAE-R-W05-04",
+    "title": "Logging Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+    "provider": "OWASP Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "note": "Read Event attributes, Data to exclude, and Verification. Make a table of four allowed diagnostic fields and four values that must be removed, masked, hashed, or encrypted. Test one Authorization header and one API-key-shaped string against the redaction helper."
+    },
+    "competencyIds": [
+      "PYAE-C008",
+      "PYAE-C009"
+    ],
+    "whySelected": "OWASP explicitly enumerates useful event attributes, data to exclude, sanitization risks, and logging verification, covering the security dimension missing from Python’s mechanics-focused Logging HOWTO.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A security checklist is appropriate as a bounded implementation reference.",
+    "purpose": [
+      "safe-logging policy",
+      "redaction verification"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports safe structured fields, credential redaction, injection-safe records, and verification.",
+      "clarity": "The three assigned sections become a concrete allow/exclude table rather than an open-ended security survey.",
+      "correctnessAndCurrency": "OWASP guidance accurately treats credentials and sensitive data as exclusions from logs. OWASP Logging Cheat Sheet was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added because logging configuration alone does not teach sensitive-data exclusion."
+  },
+  {
+    "id": "PYAE-R-W06-04",
+    "title": "How to use temporary directories and files in tests",
+    "url": "https://docs.pytest.org/en/stable/how-to/tmp_path.html",
+    "provider": "pytest project",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "note": "Read The tmp_path fixture and the first content-check example. Write a repository test that receives tmp_path, saves state below it, reloads the state, and confirms no file appeared in the project data directory. Stop before tmp_path_factory retention and custom base-directory configuration."
+    },
+    "competencyIds": [
+      "PYAE-C009",
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "This first-party how-to directly teaches tmp_path as a unique per-test Path and provides the shortest exact bridge from the Week 4 repository to deterministic Week 6 filesystem tests.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "One focused lab is sufficient for this small built-in fixture.",
+    "purpose": [
+      "filesystem-test isolation",
+      "repository round-trip test"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly prepares isolated repository read/write tests and cross-platform paths.",
+      "clarity": "Shows one function argument yielding one familiar Path object.",
+      "correctnessAndCurrency": "pytest tmp_path how-to was checked against the current destination and contains no material factual defect in the assigned scope. pytest tmp_path how-to was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added because the existing monkeypatch page was incorrectly assigned tmp_path work."
+  },
+  {
+    "id": "PYAE-R-W07-04",
+    "title": "HTTP response status codes",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status",
+    "provider": "Mozilla Developer Network",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "note": "Read the category summary and entries for 200, 400, 401, 404, 408, 429, 500, 502, 503, and 504. Classify each as response success/client/server behavior and mark which might be transient. Do not memorize the full catalog."
+    },
+    "competencyIds": [
+      "PYAE-C012",
+      "PYAE-C013"
+    ],
+    "whySelected": "MDN provides clear, current one-line meanings and category organization for the exact status codes used in examples without forcing exhaustive RFC reading.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "optional",
+    "formatRationale": "A scannable optional reference is appropriate because HTTPX already teaches the primary status flow.",
+    "purpose": [
+      "status-code reference",
+      "response classification"
+    ],
+    "evaluation": {
+      "competencyFit": "Supports 404/503/429 interpretation and response-versus-timeout distinction.",
+      "clarity": "Category headings and short entries make lookup straightforward.",
+      "correctnessAndCurrency": "MDN HTTP status reference was checked against the current destination and contains no material factual defect in the assigned scope. MDN HTTP status reference was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added as optional depth; no assessment fact depends on this page alone."
+  },
+  {
+    "id": "PYAE-R-W07-05",
+    "title": "Idempotent",
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Idempotent",
+    "provider": "Mozilla Developer Network",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "note": "Read the full glossary entry and its GET/PUT/DELETE versus POST examples. For four sample operations, write whether repeating the same request has the same intended server effect and whether an automatic retry is justified after an unknown outcome."
+    },
+    "competencyIds": [
+      "PYAE-C013"
+    ],
+    "whySelected": "MDN explains idempotency in plain language, distinguishes protocol intent from identical response codes, and connects the property to HTTP methods in a short beginner-compatible page.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A concise conceptual article is clearer than asking a beginner to infer retry safety from library APIs.",
+    "purpose": [
+      "idempotency mental model",
+      "retry-safety classification"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports retry decisions in Q04, Q09, Q10, and S03.",
+      "clarity": "Defines one property and demonstrates it with familiar methods.",
+      "correctnessAndCurrency": "Correctly frames idempotency as intended server effect, not identical response content. MDN idempotency article was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added because HTTPX documentation does not teach HTTP method semantics."
+  },
+  {
+    "id": "PYAE-R-W07-06",
+    "title": "Exponential Backoff and Jitter",
+    "url": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
+    "provider": "Amazon Web Services",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "note": "Read the contention example through Full Jitter. Compare no-backoff, capped exponential backoff, and jittered backoff graphs. Write a bounded three-attempt delay function that accepts an injected sleep and random source; test the chosen delays without real waiting. Stop before SDK-specific adaptive retry modes."
+    },
+    "competencyIds": [
+      "PYAE-C013"
+    ],
+    "whySelected": "AWS’s visual simulation makes contention and the thundering-herd problem concrete, compares retry strategies, and motivates Full Jitter without tying the learner to a model or HTTP SDK.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Graphs and a small implementation bridge explain a systems behavior that an API reference cannot show well.",
+    "purpose": [
+      "backoff mental model",
+      "jitter policy practice"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports bounded exponential backoff, jitter, retry budget, and testable delay injection.",
+      "clarity": "Graphs expose the retry-synchronization problem before formulas are introduced.",
+      "correctnessAndCurrency": "Accurately distinguishes plain exponential backoff from jittered variants and avoids claiming built-in HTTPX 503 retries. AWS backoff and jitter article was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added because HTTPX HTTPTransport retries only connect failures and does not teach application-level 503 backoff with jitter."
+  },
+  {
+    "id": "PYAE-R-W08-04",
+    "title": "Sub-commands — argparse",
+    "url": "https://docs.python.org/3/library/argparse.html#sub-commands",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "note": "Read Sub-commands through the set_defaults(func=...) dispatch example. Build doctor and tasks subparsers, make the subcommand required, attach one handler to each, and test top-level help, subcommand help, and missing-command behavior. Stop before custom Action classes."
+    },
+    "competencyIds": [
+      "PYAE-C012",
+      "PYAE-C014",
+      "PYAE-C015"
+    ],
+    "whySelected": "The official subcommands section contains the exact add_subparsers, required command, per-command parser, and handler-dispatch pattern needed by the toolkit, which the introductory argparse tutorial does not fully cover.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A focused lab is appropriate for this small advanced slice of argparse.",
+    "purpose": [
+      "subcommand API practice",
+      "handler dispatch"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports required subparsers, help behavior, handler routing, and parser tests.",
+      "clarity": "The assignment limits the large API page to one pattern and two familiar commands.",
+      "correctnessAndCurrency": "argparse subcommands section was checked against the current destination and contains no material factual defect in the assigned scope. argparse subcommands section was current and reachable when inspected on 2026-09-09.",
+      "accessibility": "The assigned destination is free, public, and requires no learner account."
+    },
+    "accessNotes": "The destination and assigned section were opened on 2026-09-09; no payment or account is required.",
+    "alternativeNotes": "Added to close the known gap between basic arguments and the Build’s multi-command architecture."
+  },
+  {
+    "id": "PYAE-R-W14-04",
+    "title": "pathlib - Object-oriented filesystem paths",
+    "url": "https://docs.python.org/3/library/pathlib.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read and run Path.resolve, PurePath.is_relative_to, and relative_to examples. Test a safe child, ../ escape, sibling-prefix trap, absolute path, and a symlink when supported."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C023"
+    ],
+    "whySelected": "The standard-library page documents the exact cross-platform path operations required after OWASP establishes the threat.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A five-case local lab converts the threat model into an implementable check.",
+    "purpose": [
+      "path-confinement practice",
+      "normalization edge cases"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches the concrete confinement implementation for C006/C023.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Added because neither existing resource taught the concrete pathlib containment API."
+  },
+  {
+    "id": "PYAE-R-W14-05",
+    "title": "subprocess - Subprocess management",
+    "url": "https://docs.python.org/3/library/subprocess.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "note": "Read subprocess.run examples, argument sequences, timeout, check, and Security Considerations. Run one harmless success, nonzero exit, and timeout using a list of arguments with shell=False."
+    },
+    "competencyIds": [
+      "PYAE-C022",
+      "PYAE-C023"
+    ],
+    "whySelected": "The official standard-library page precisely teaches argument-list execution, timeouts, nonzero exits, and shell security for the Build's command tool.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A harmless three-case terminal lab is the shortest safe route to the required behavior.",
+    "purpose": [
+      "safe command invocation",
+      "failure and timeout handling"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches the execute_command API and safety boundary for C023.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Added because execute_command was previously required but not taught."
+  },
+  {
+    "id": "PYAE-R-W15-04",
+    "title": "PRAGMA user_version",
+    "url": "https://www.sqlite.org/pragma.html#pragma_user_version",
+    "provider": "SQLite",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "note": "Read user_version and foreign_keys. Record that user_version is application-owned and foreign-key enforcement is configured per connection."
+    },
+    "competencyIds": [
+      "PYAE-C024"
+    ],
+    "whySelected": "The primary SQLite reference defines the exact application-owned version integer and connection-level foreign-key switch assessed and used by the Build.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A short exact reference is appropriate for two API facts.",
+    "purpose": [
+      "migration-version reference",
+      "connection-policy reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports migration and integrity behavior in C024.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Added because these required facts were not covered by the prior Study set."
+  },
+  {
+    "id": "PYAE-R-W15-05",
+    "title": "SQLite Foreign Key Support",
+    "url": "https://www.sqlite.org/foreignkeys.html",
+    "provider": "SQLite",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "note": "Read Sections 1 and 2. Create a parent and child table, demonstrate behavior before and after PRAGMA foreign_keys = ON, and keep the enabled state in the connection setup path."
+    },
+    "competencyIds": [
+      "PYAE-C024"
+    ],
+    "whySelected": "The official focused page explains both the constraint model and the crucial disabled-by-default compatibility behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A short primary reference plus a two-state experiment prevents a subtle repository defect.",
+    "purpose": [
+      "relational-integrity reference",
+      "connection setup check"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports foreign-key integrity in C024.",
+      "clarity": "The bounded assignment introduces terms before asking the learner to apply them.",
+      "correctnessAndCurrency": "The assigned behavior was checked against the primary source and avoids unsupported claims. The live destination and named sections were inspected on 2026-09-09.",
+      "accessibility": "Free public material; no account, payment, or live model call is required."
+    },
+    "accessNotes": "The destination and assigned sections opened publicly on 2026-09-09; no payment or learner account is required.",
+    "alternativeNotes": "Added because schema design requires enforcement, not merely FOREIGN KEY syntax."
+  },
+  {
+    "id": "PYAE-R-W19-04",
+    "title": "asyncio Queues",
+    "url": "https://docs.python.org/3/library/asyncio-queue.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Read Queue and its join/task_done behavior. Build a bounded producer/consumer with two consumers, await join, send explicit shutdown sentinels, and verify clean completion."
+    },
+    "competencyIds": [
+      "PYAE-C029"
+    ],
+    "whySelected": "The official queue page directly teaches the API assessed in Q08 and gives the learner a safe coordination primitive for background work.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A small runnable producer/consumer exercise turns the API reference into practice.",
+    "purpose": [
+      "queue API practice",
+      "backpressure and shutdown"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports Q08 and bounded async work coordination.",
+      "clarity": "Short API surface demonstrated through one familiar producer/consumer pattern.",
+      "correctnessAndCurrency": "Authoritative standard-library semantics. Current Python documentation inspected on 2026-09-09.",
+      "accessibility": "Free and standard-library only."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Added because neither existing asyncio page nor the removed sched page directly teaches asyncio.Queue."
+  },
+  {
+    "id": "PYAE-R-W22-04",
+    "title": "Dependency Injection and Bootstrapping",
+    "url": "https://www.cosmicpython.com/book/chapter_13_dependency_injection",
+    "provider": "Cosmic Python",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Read Implicit Versus Explicit Dependencies through Composition Root, A Bootstrap Script, and Initializing DI in Our Tests. Adapt the manual bootstrap pattern to AgentContainer using one fake override."
+    },
+    "competencyIds": [
+      "PYAE-C032",
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "This chapter shows manual Python dependency injection, explains the composition root, and demonstrates production/test bootstrapping in a realistic application.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "An applied chapter bridges the short concept video and the project refactor.",
+    "purpose": [
+      "composition-root practice",
+      "fake substitution"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly covers AgentContainer, overrides, fakes, and composition-root ownership.",
+      "clarity": "Uses explicit before/after code and names why each extra boundary exists.",
+      "correctnessAndCurrency": "Sound manual-DI approach without service-locator misuse. Stable open book chapter inspected on 2026-09-09.",
+      "accessibility": "Free public chapter and code."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Selected over a DI framework tutorial because the Build needs architectural understanding, not a new dependency."
+  },
+  {
+    "id": "PYAE-R-W23-04",
+    "title": "Creating and packaging command-line tools",
+    "url": "https://packaging.python.org/en/latest/guides/creating-command-line-tools/",
+    "provider": "Python Packaging Authority",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Follow the src-layout and pyproject.toml sections, add a project.scripts entry for pyae, install it, and run pyae --help. Stop before publishing or pipx distribution."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C005"
+    ],
+    "whySelected": "This current PyPA guide directly teaches project.scripts and src-layout CLI packaging, which the existing Packaging Python Projects tutorial does not contain.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "A focused guided CLI package is the shortest route to the required artifact.",
+    "purpose": [
+      "console-script practice",
+      "installable CLI"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports S02 and Q03.",
+      "clarity": "Uses a small command and visible file tree.",
+      "correctnessAndCurrency": "Current PyPA-recommended project.scripts syntax. Page updated in 2026 and inspected on 2026-09-09.",
+      "accessibility": "Free public guide; no package-index account required."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Added instead of pretending R-W23-01 covers console scripts."
+  },
+  {
+    "id": "PYAE-R-W23-05",
+    "title": "Local project installs",
+    "url": "https://pip.pypa.io/en/stable/topics/local-project-installs/",
+    "provider": "Python Packaging Authority / pip",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "note": "Read Regular installs and Editable installs. In disposable virtual environments, perform one editable install and one regular install, then record why CI and release checks use the regular path."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C005"
+    ],
+    "whySelected": "The official pip page directly contrasts regular and editable local installs and explicitly recommends regular installs for CI/deployment fidelity.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "Short authoritative reference plus two terminal commands is sufficient.",
+    "purpose": [
+      "install-mode reference",
+      "release-fidelity check"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports S03 and Q02.",
+      "clarity": "Two short sections state the tradeoff directly.",
+      "correctnessAndCurrency": "Authoritative pip behavior and deployment recommendation. Current stable pip documentation inspected on 2026-09-09.",
+      "accessibility": "Free; uses existing Python/pip."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Added because R-W23-01 contains no editable-install discussion."
+  },
+  {
+    "id": "PYAE-R-W23-06",
+    "title": "The Twelve-Factor App — Config",
+    "url": "https://www.12factor.net/config",
+    "provider": "The Twelve-Factor App",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "note": "Read the complete short Config page. Classify the project’s settings as deploy-varying configuration or internal constants, and mark required secrets as required rather than giving them fake defaults."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C023"
+    ],
+    "whySelected": "This concise original source explains environment-based deploy configuration without forcing an unrelated settings library into the curriculum.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-09",
+    "selectionRole": "core",
+    "formatRationale": "The page is short enough to read fully and apply immediately.",
+    "purpose": [
+      "configuration principle",
+      "secret boundary"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports S04 and the repaired configuration question.",
+      "clarity": "Very short and states a memorable deploy-varying test.",
+      "correctnessAndCurrency": "Sound environment-configuration principle with secret handling repaired in the Build. Stable source inspected on 2026-09-09.",
+      "accessibility": "Free public page."
+    },
+    "accessNotes": "Destination opened successfully on 2026-09-09. The assigned material is free to read or watch and does not require a learner account.",
+    "alternativeNotes": "Selected over a pydantic-settings tutorial because the competency is configuration behavior, not library recall."
+  }
+]

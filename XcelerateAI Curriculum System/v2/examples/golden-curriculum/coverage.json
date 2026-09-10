@@ -1,0 +1,71 @@
+[
+  {
+    "competencyId": "GOLDEN-C001",
+    "taughtIn": [
+      "GOLDEN-W01",
+      "GOLDEN-W02"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "GOLDEN-SC-W01",
+      "GOLDEN-SC-W02"
+    ],
+    "appliedIn": [
+      "GOLDEN-B-W01-01",
+      "GOLDEN-B-W02-01"
+    ],
+    "projectUse": [
+      "GOLDEN-PJ01-M01",
+      "GOLDEN-PJ01-M02"
+    ],
+    "reinforcedIn": [
+      "GOLDEN-W02"
+    ]
+  },
+  {
+    "competencyId": "GOLDEN-C002",
+    "taughtIn": [
+      "GOLDEN-W01",
+      "GOLDEN-W02"
+    ],
+    "practicedIn": [
+      "GOLDEN-W01",
+      "GOLDEN-W02"
+    ],
+    "assessedIn": [
+      "GOLDEN-SC-W01",
+      "GOLDEN-SC-W02"
+    ],
+    "appliedIn": [
+      "GOLDEN-B-W01-01",
+      "GOLDEN-B-W01-02",
+      "GOLDEN-B-W02-01"
+    ],
+    "projectUse": [
+      "GOLDEN-PJ01-M01",
+      "GOLDEN-PJ01-M02"
+    ],
+    "reinforcedIn": [
+      "GOLDEN-W02"
+    ]
+  },
+  {
+    "competencyId": "GOLDEN-C003",
+    "taughtIn": [
+      "GOLDEN-W02"
+    ],
+    "practicedIn": [
+      "GOLDEN-W02"
+    ],
+    "assessedIn": [
+      "GOLDEN-SC-W02"
+    ],
+    "appliedIn": [
+      "GOLDEN-B-W02-01"
+    ],
+    "projectUse": [
+      "GOLDEN-PJ01-M02"
+    ],
+    "reinforcedIn": []
+  }
+]

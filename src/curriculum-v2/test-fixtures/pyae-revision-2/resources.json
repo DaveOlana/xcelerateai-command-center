@@ -1,0 +1,2394 @@
+[
+  {
+    "id": "PYAE-R-W01-01",
+    "title": "venv — Creation of virtual environments",
+    "url": "https://docs.python.org/3/library/venv.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Read through How venvs work and the PowerShell activation commands."
+    },
+    "competencyIds": [
+      "PYAE-C001",
+      "PYAE-C002"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports python workspace and first cli and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Paired with another beginner-compatible explanation or guided practice route.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W01-02",
+    "title": "CS50P Week 0: Functions, Variables",
+    "url": "https://cs50.harvard.edu/python/2022/weeks/0/",
+    "provider": "Harvard University",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Watch the lecture sections on functions, variables, return values, and errors."
+    },
+    "competencyIds": [
+      "PYAE-C001",
+      "PYAE-C002"
+    ],
+    "whySelected": "Harvard University is a primary or official source. This selection directly supports python workspace and first cli and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W01-03",
+    "title": "An Informal Introduction to Python",
+    "url": "https://docs.python.org/3/tutorial/introduction.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Type and modify every code example in a local Python REPL and script."
+    },
+    "competencyIds": [
+      "PYAE-C001",
+      "PYAE-C002"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports python workspace and first cli and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W02-01",
+    "title": "More Control Flow Tools",
+    "url": "https://docs.python.org/3/tutorial/controlflow.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Study if, for, range, match, and loop-control sections."
+    },
+    "competencyIds": [
+      "PYAE-C002",
+      "PYAE-C003"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports control flow and collections and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Paired with another beginner-compatible explanation or guided practice route.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W02-02",
+    "title": "Data Structures",
+    "url": "https://docs.python.org/3/tutorial/datastructures.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Study lists, dictionaries, sets, looping techniques, and comparisons."
+    },
+    "competencyIds": [
+      "PYAE-C002",
+      "PYAE-C003"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports control flow and collections and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W02-03",
+    "title": "CS50P Week 2: Loops",
+    "url": "https://cs50.harvard.edu/python/2022/weeks/2/",
+    "provider": "Harvard University",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 120,
+    "location": {
+      "note": "Complete two loop problems and one collection transformation locally."
+    },
+    "competencyIds": [
+      "PYAE-C002",
+      "PYAE-C003"
+    ],
+    "whySelected": "Harvard University is a primary or official source. This selection directly supports control flow and collections and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W03-01",
+    "title": "Defining Functions",
+    "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Study parameters, return values, defaults, and documentation strings."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C005"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports functions, modules, and data models and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Paired with another beginner-compatible explanation or guided practice route.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W03-02",
+    "title": "Modules",
+    "url": "https://docs.python.org/3/tutorial/modules.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "note": "Study modules, import behavior, packages, and the module search path."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C005"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports functions, modules, and data models and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W03-03",
+    "title": "dataclasses",
+    "url": "https://docs.python.org/3/library/dataclasses.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Implement and compare a plain dictionary and dataclass task record."
+    },
+    "competencyIds": [
+      "PYAE-C004",
+      "PYAE-C005"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports functions, modules, and data models and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W04-01",
+    "title": "Reading and Writing Files",
+    "url": "https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "note": "Study context-managed file I/O and text encoding."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C007"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports files, paths, and json state and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Paired with another beginner-compatible explanation or guided practice route.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W04-02",
+    "title": "json — JSON encoder and decoder",
+    "url": "https://docs.python.org/3/library/json.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Study dumps, loads, file APIs, and decoder errors."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C007"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports files, paths, and json state and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W04-03",
+    "title": "pathlib — Object-oriented filesystem paths",
+    "url": "https://docs.python.org/3/library/pathlib.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Build a path-safe load/save exercise using a temporary directory."
+    },
+    "competencyIds": [
+      "PYAE-C006",
+      "PYAE-C007"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports files, paths, and json state and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W05-01",
+    "title": "Errors and Exceptions",
+    "url": "https://docs.python.org/3/tutorial/errors.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Study exception types, handling, raising, chaining, and cleanup."
+    },
+    "competencyIds": [
+      "PYAE-C008",
+      "PYAE-C009"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports exceptions, debugging, and logging and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W05-02",
+    "title": "Logging HOWTO",
+    "url": "https://docs.python.org/3/howto/logging.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Study loggers, levels, formatting, and file configuration."
+    },
+    "competencyIds": [
+      "PYAE-C008",
+      "PYAE-C009"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports exceptions, debugging, and logging and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W05-03",
+    "title": "CS50P Week 3: Exceptions",
+    "url": "https://cs50.harvard.edu/python/2022/weeks/3/",
+    "provider": "Harvard University",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 120,
+    "location": {
+      "note": "Complete exception-handling exercises and capture one debugging narrative."
+    },
+    "competencyIds": [
+      "PYAE-C008",
+      "PYAE-C009"
+    ],
+    "whySelected": "Harvard University is a primary or official source. This selection directly supports exceptions, debugging, and logging and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W06-01",
+    "title": "Get Started with pytest",
+    "url": "https://docs.pytest.org/en/stable/getting-started.html",
+    "provider": "pytest project",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Follow installation, assertions, exception, grouping, and fixture examples."
+    },
+    "competencyIds": [
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "pytest project is a primary or official source. This selection directly supports tests, fixtures, and test doubles and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W06-02",
+    "title": "unittest.mock",
+    "url": "https://docs.python.org/3/library/unittest.mock.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "note": "Study Mock, patch location, call assertions, and side effects."
+    },
+    "competencyIds": [
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports tests, fixtures, and test doubles and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W06-03",
+    "title": "How to monkeypatch/mock modules and environments",
+    "url": "https://docs.pytest.org/en/stable/how-to/monkeypatch.html",
+    "provider": "pytest project",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Practice tmp_path, monkeypatch, and a deterministic fake dependency."
+    },
+    "competencyIds": [
+      "PYAE-C010",
+      "PYAE-C011"
+    ],
+    "whySelected": "pytest project is a primary or official source. This selection directly supports tests, fixtures, and test doubles and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W07-01",
+    "title": "HTTPX QuickStart",
+    "url": "https://www.python-httpx.org/quickstart/",
+    "provider": "Encode OSS",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Study request methods, parameters, JSON, headers, status handling, and clients."
+    },
+    "competencyIds": [
+      "PYAE-C012",
+      "PYAE-C013"
+    ],
+    "whySelected": "Encode OSS is a primary or official source. This selection directly supports http clients and failure policy and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W07-02",
+    "title": "HTTPX Timeouts",
+    "url": "https://www.python-httpx.org/advanced/timeouts/",
+    "provider": "Encode OSS",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "note": "Study default and fine-grained timeout behavior."
+    },
+    "competencyIds": [
+      "PYAE-C012",
+      "PYAE-C013"
+    ],
+    "whySelected": "Encode OSS is a primary or official source. This selection directly supports http clients and failure policy and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W07-03",
+    "title": "Advanced HTTPX: Custom Transports and Mocking",
+    "url": "https://www.python-httpx.org/advanced/transports/",
+    "provider": "Encode",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Build a fake transport exercise for success, timeout, and server-error responses."
+    },
+    "competencyIds": [
+      "PYAE-C012",
+      "PYAE-C013",
+      "PYAE-C011"
+    ],
+    "whySelected": "pytest project is a primary or official source. This selection directly supports http clients and failure policy and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W08-01",
+    "title": "Pydantic Models",
+    "url": "https://docs.pydantic.dev/latest/concepts/models/",
+    "provider": "Pydantic",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Study model validation, methods, extra data policy, and nested models."
+    },
+    "competencyIds": [
+      "PYAE-C014",
+      "PYAE-C015"
+    ],
+    "whySelected": "Pydantic is a primary or official source. This selection directly supports typed boundaries and versioned interfaces and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W08-02",
+    "title": "Argparse Tutorial",
+    "url": "https://docs.python.org/3/howto/argparse.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Study positional, optional, typed, and help arguments."
+    },
+    "competencyIds": [
+      "PYAE-C014",
+      "PYAE-C015"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports typed boundaries and versioned interfaces and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W08-03",
+    "title": "GitHub Hello World",
+    "url": "https://docs.github.com/en/get-started/start-your-journey/hello-world",
+    "provider": "GitHub",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Create a branch, commit a documented change, and review the diff."
+    },
+    "competencyIds": [
+      "PYAE-C014",
+      "PYAE-C015"
+    ],
+    "whySelected": "GitHub is a primary or official source. This selection directly supports typed boundaries and versioned interfaces and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W09-01",
+    "title": "OpenAI API Quickstart",
+    "url": "https://developers.openai.com/api/docs/quickstart",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Study the current Python request shape, environment configuration, and response handling; a paid key is optional."
+    },
+    "competencyIds": [
+      "PYAE-C016",
+      "PYAE-C012"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports model requests and provider adapters and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W09-02",
+    "title": "Ollama API Introduction",
+    "url": "https://docs.ollama.com/api/introduction",
+    "provider": "Ollama",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "note": "Study the local API base URL and request pattern as an optional offline-capable provider."
+    },
+    "competencyIds": [
+      "PYAE-C016",
+      "PYAE-C012"
+    ],
+    "whySelected": "Ollama is a primary or official source. This selection directly supports model requests and provider adapters and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W09-03",
+    "title": "OpenAI Cookbook Examples",
+    "url": "https://github.com/openai/openai-cookbook/tree/main/examples",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Inspect one current text-generation example, then implement the same internal interface with a deterministic FakeModel."
+    },
+    "competencyIds": [
+      "PYAE-C016",
+      "PYAE-C012"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports model requests and provider adapters and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "optional",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W10-01",
+    "title": "Text generation guide",
+    "url": "https://developers.openai.com/api/docs/guides/text",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Study instruction hierarchy, message roles, reusable prompts, and output control."
+    },
+    "competencyIds": [
+      "PYAE-C017",
+      "PYAE-C018"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports prompt contracts and structured outputs and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W10-02",
+    "title": "Structured model outputs",
+    "url": "https://developers.openai.com/api/docs/guides/structured-outputs",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "note": "Study schema-constrained output behavior and validation boundaries."
+    },
+    "competencyIds": [
+      "PYAE-C017",
+      "PYAE-C018"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports prompt contracts and structured outputs and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W10-03",
+    "title": "Structured output examples",
+    "url": "https://github.com/openai/openai-cookbook/tree/main/examples",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 105,
+    "location": {
+      "note": "Adapt a schema example to the FakeModel and test valid, invalid, and refusal-like results."
+    },
+    "competencyIds": [
+      "PYAE-C017",
+      "PYAE-C018"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports prompt contracts and structured outputs and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W11-01",
+    "title": "Function calling guide",
+    "url": "https://developers.openai.com/api/docs/guides/function-calling",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 105,
+    "location": {
+      "note": "Study tool definitions, strict schemas, call handling, and result return."
+    },
+    "competencyIds": [
+      "PYAE-C019",
+      "PYAE-C018"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports tool calling and safe dispatch and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W11-02",
+    "title": "Tools in the OpenAI Agents SDK",
+    "url": "https://openai.github.io/openai-agents-python/tools/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Study function tools, schema generation, failure functions, and conditional enabling."
+    },
+    "competencyIds": [
+      "PYAE-C019",
+      "PYAE-C018"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports tool calling and safe dispatch and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W11-03",
+    "title": "OpenAI Agents SDK tool examples",
+    "url": "https://github.com/openai/openai-agents-python/tree/main/examples",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 110,
+    "location": {
+      "note": "Inspect one tool example and reproduce its core dispatch behavior without requiring the framework."
+    },
+    "competencyIds": [
+      "PYAE-C019",
+      "PYAE-C018"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports tool calling and safe dispatch and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W12-01",
+    "title": "Conversation state",
+    "url": "https://developers.openai.com/api/docs/guides/conversation-state",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Study manual history, response chaining, conversation objects, and state tradeoffs."
+    },
+    "competencyIds": [
+      "PYAE-C020",
+      "PYAE-C017"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports conversation state and context budgets and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W12-02",
+    "title": "Effective context engineering for AI agents",
+    "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Study context selection, compaction, memory, and long-horizon tradeoffs."
+    },
+    "competencyIds": [
+      "PYAE-C020",
+      "PYAE-C017"
+    ],
+    "whySelected": "Anthropic is a primary or official source. This selection directly supports conversation state and context budgets and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W12-03",
+    "title": "Sessions",
+    "url": "https://openai.github.io/openai-agents-python/sessions/",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "note": "Implement a small local session abstraction and compare it with the documented SDK session behavior."
+    },
+    "competencyIds": [
+      "PYAE-C020",
+      "PYAE-C017"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports conversation state and context budgets and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W13-01",
+    "title": "Building effective agents",
+    "url": "https://www.anthropic.com/engineering/building-effective-agents",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Study workflow versus agent distinctions, orchestration patterns, stopping, and complexity tradeoffs."
+    },
+    "competencyIds": [
+      "PYAE-C021",
+      "PYAE-C019",
+      "PYAE-C020"
+    ],
+    "whySelected": "Anthropic is a primary or official source. This selection directly supports the transparent agent loop and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W13-02",
+    "title": "Running agents",
+    "url": "https://openai.github.io/openai-agents-python/running_agents/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Study the run loop, turns, lifecycle, configuration, and result behavior."
+    },
+    "competencyIds": [
+      "PYAE-C021",
+      "PYAE-C019",
+      "PYAE-C020"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports the transparent agent loop and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W13-03",
+    "title": "Agent results",
+    "url": "https://openai.github.io/openai-agents-python/results/",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Model final output, tool-call history, and max-turn failure in a framework-independent loop."
+    },
+    "competencyIds": [
+      "PYAE-C021",
+      "PYAE-C019",
+      "PYAE-C020"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports the transparent agent loop and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W14-01",
+    "title": "Writing effective tools for agents",
+    "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "note": "Study tool boundaries, descriptions, response usefulness, and evaluation-driven improvement."
+    },
+    "competencyIds": [
+      "PYAE-C022",
+      "PYAE-C023"
+    ],
+    "whySelected": "Anthropic is a primary or official source. This selection directly supports tools as product interfaces and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W14-02",
+    "title": "Anthropic Tool Use Best Practices and Guardrails",
+    "url": "https://docs.anthropic.com/en/docs/build-with-claude/tool-use#tool-use-best-practices",
+    "provider": "Anthropic",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "note": "Study schemas, context, error functions, timeouts, and enablement."
+    },
+    "competencyIds": [
+      "PYAE-C022",
+      "PYAE-C023"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports tools as product interfaces and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W14-03",
+    "title": "OWASP Input Validation and Path Traversal Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+    "provider": "OWASP Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 105,
+    "location": {
+      "note": "Critique two tools and redesign one broad interface into bounded composable operations."
+    },
+    "competencyIds": [
+      "PYAE-C022",
+      "PYAE-C023"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports tools as product interfaces and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W15-01",
+    "title": "sqlite3 — DB-API interface for SQLite databases",
+    "url": "https://docs.python.org/3/library/sqlite3.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 110,
+    "location": {
+      "note": "Study connections, parameter substitution, transactions, rows, and context management."
+    },
+    "competencyIds": [
+      "PYAE-C024",
+      "PYAE-C007"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports durable state with sqlite and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W15-02",
+    "title": "contextlib — Utilities for with-statement contexts",
+    "url": "https://docs.python.org/3/library/contextlib.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Study context managers for transaction and repository lifecycles."
+    },
+    "competencyIds": [
+      "PYAE-C024",
+      "PYAE-C007"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports durable state with sqlite and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W15-03",
+    "title": "Temporary directories and files in pytest",
+    "url": "https://docs.pytest.org/en/stable/how-to/tmp_path.html",
+    "provider": "pytest project",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Test migrations, rollback, and repository queries against temporary databases."
+    },
+    "competencyIds": [
+      "PYAE-C024",
+      "PYAE-C007"
+    ],
+    "whySelected": "pytest project is a primary or official source. This selection directly supports durable state with sqlite and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W16-01",
+    "title": "Contextual Retrieval: Improving RAG Accuracy",
+    "url": "https://www.anthropic.com/news/contextual-retrieval",
+    "provider": "Anthropic",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "note": "Study retrieval, memory, compaction, and context selection for long-horizon agents."
+    },
+    "competencyIds": [
+      "PYAE-C025",
+      "PYAE-C026"
+    ],
+    "whySelected": "Anthropic is a primary or official source. This selection directly supports memory, retrieval, and grounded answers and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W16-02",
+    "title": "SQLite FTS5 Extension User Guide",
+    "url": "https://www.sqlite.org/fts5.html",
+    "provider": "SQLite Consortium",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "note": "Focus on globbing, file metadata, and safe path resolution."
+    },
+    "competencyIds": [
+      "PYAE-C025",
+      "PYAE-C026"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports memory, retrieval, and grounded answers and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W16-03",
+    "title": "Search, Rerank, and Extract for RAG",
+    "url": "https://github.com/openai/openai-cookbook/blob/main/examples/Search_rerank_and_extract_for_RAG.ipynb",
+    "provider": "OpenAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 115,
+    "location": {
+      "note": "Inspect a retrieval example, then build a dependency-free keyword baseline over local text files."
+    },
+    "competencyIds": [
+      "PYAE-C025",
+      "PYAE-C026"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports memory, retrieval, and grounded answers and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W17-01",
+    "title": "Demystifying evals for AI agents",
+    "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "provider": "Anthropic",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 110,
+    "location": {
+      "note": "Study task suites, graders, transcripts, nondeterminism, and iteration practice."
+    },
+    "competencyIds": [
+      "PYAE-C027",
+      "PYAE-C010"
+    ],
+    "whySelected": "Anthropic is a primary or official source. This selection directly supports agent evaluations and regression gates and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W17-02",
+    "title": "Evals guide",
+    "url": "https://developers.openai.com/api/docs/guides/evals",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Study eval design, datasets, testing criteria, and continuous evaluation."
+    },
+    "competencyIds": [
+      "PYAE-C027",
+      "PYAE-C010"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports agent evaluations and regression gates and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W17-03",
+    "title": "Testing agents",
+    "url": "https://openai.github.io/openai-agents-python/testing/",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Create deterministic trace assertions and a small end-to-end task suite using FakeModel."
+    },
+    "competencyIds": [
+      "PYAE-C027",
+      "PYAE-C010"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports agent evaluations and regression gates and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W18-01",
+    "title": "Tracing agent runs",
+    "url": "https://openai.github.io/openai-agents-python/tracing/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Study traces, spans, sensitive data choices, grouping, and custom processors."
+    },
+    "competencyIds": [
+      "PYAE-C028",
+      "PYAE-C009",
+      "PYAE-C013"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports tracing, reliability, and recovery and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W18-02",
+    "title": "Production best practices",
+    "url": "https://developers.openai.com/api/docs/guides/production-best-practices",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "note": "Study scaling, latency, cost, security, and operational planning."
+    },
+    "competencyIds": [
+      "PYAE-C028",
+      "PYAE-C009",
+      "PYAE-C013"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports tracing, reliability, and recovery and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W18-03",
+    "title": "Python Logging Cookbook — Contextual and Structured Logging",
+    "url": "https://docs.python.org/3/howto/logging-cookbook.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Instrument the agent loop with correlation IDs, durations, outcomes, and redaction tests."
+    },
+    "competencyIds": [
+      "PYAE-C028",
+      "PYAE-C009",
+      "PYAE-C013"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports tracing, reliability, and recovery and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W19-01",
+    "title": "Coroutines and Tasks",
+    "url": "https://docs.python.org/3/library/asyncio-task.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Study task creation, groups, cancellation, timeouts, and synchronization."
+    },
+    "competencyIds": [
+      "PYAE-C029",
+      "PYAE-C028"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports async execution and scheduling and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W19-02",
+    "title": "Developing with asyncio",
+    "url": "https://docs.python.org/3/library/asyncio-dev.html",
+    "provider": "Python Software Foundation",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "note": "Study debug mode, cancellation, blocking code, logging, and thread boundaries."
+    },
+    "competencyIds": [
+      "PYAE-C029",
+      "PYAE-C028"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports async execution and scheduling and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W19-03",
+    "title": "sched — Event scheduler",
+    "url": "https://docs.python.org/3/library/sched.html",
+    "provider": "Python Software Foundation",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Compare a simple local scheduler with an idempotent persisted job runner."
+    },
+    "competencyIds": [
+      "PYAE-C029",
+      "PYAE-C028"
+    ],
+    "whySelected": "Python Software Foundation is a primary or official source. This selection directly supports async execution and scheduling and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W20-01",
+    "title": "Guardrails",
+    "url": "https://openai.github.io/openai-agents-python/guardrails/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "note": "Study input, output, and tool guardrails plus execution timing tradeoffs."
+    },
+    "competencyIds": [
+      "PYAE-C030",
+      "PYAE-C023"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports permissions, guardrails, and human control and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W20-02",
+    "title": "Human-in-the-loop approvals",
+    "url": "https://openai.github.io/openai-agents-python/human_in_the_loop/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Study approval pauses, state serialization, resumption, and decisions."
+    },
+    "competencyIds": [
+      "PYAE-C030",
+      "PYAE-C023"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports permissions, guardrails, and human control and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W20-03",
+    "title": "OWASP Top 10 for LLM Applications",
+    "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "provider": "OWASP",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 110,
+    "location": {
+      "note": "Threat-model the current agent and implement tests for prompt injection, excessive agency, and sensitive disclosure."
+    },
+    "competencyIds": [
+      "PYAE-C030",
+      "PYAE-C023"
+    ],
+    "whySelected": "OWASP is a primary or official source. This selection directly supports permissions, guardrails, and human control and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W21-01",
+    "title": "MCP architecture",
+    "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+    "provider": "Model Context Protocol",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "note": "Study host, client, server, primitives, discovery, and security boundaries."
+    },
+    "competencyIds": [
+      "PYAE-C031",
+      "PYAE-C030"
+    ],
+    "whySelected": "Model Context Protocol is a primary or official source. This selection directly supports mcp tools with explicit trust and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W21-02",
+    "title": "MCP server tools specification",
+    "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools",
+    "provider": "Model Context Protocol",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "note": "Study discovery, invocation, schemas, results, errors, and human control guidance."
+    },
+    "competencyIds": [
+      "PYAE-C031",
+      "PYAE-C030"
+    ],
+    "whySelected": "Model Context Protocol is a primary or official source. This selection directly supports mcp tools with explicit trust and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W21-03",
+    "title": "MCP Python SDK examples",
+    "url": "https://github.com/modelcontextprotocol/python-sdk/tree/main/examples",
+    "provider": "Model Context Protocol",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 120,
+    "location": {
+      "note": "Run or inspect a minimal local server/client pair and map calls through the existing action gateway."
+    },
+    "competencyIds": [
+      "PYAE-C031",
+      "PYAE-C030"
+    ],
+    "whySelected": "Model Context Protocol is a primary or official source. This selection directly supports mcp tools with explicit trust and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W22-01",
+    "title": "Agents",
+    "url": "https://openai.github.io/openai-agents-python/agents/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Study agent configuration, output types, tool use, dynamic instructions, and cloning."
+    },
+    "competencyIds": [
+      "PYAE-C032",
+      "PYAE-C027"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports modular and specialist agent architecture and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W22-02",
+    "title": "Orchestrating multiple agents",
+    "url": "https://openai.github.io/openai-agents-python/multi_agent/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "note": "Study manager and handoff patterns plus context and control tradeoffs."
+    },
+    "competencyIds": [
+      "PYAE-C032",
+      "PYAE-C027"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports modular and specialist agent architecture and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W22-03",
+    "title": "Agent Handoffs and Multi-Agent Orchestration",
+    "url": "https://openai.github.io/openai-agents-python/handoffs/",
+    "provider": "OpenAI",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 110,
+    "location": {
+      "note": "Compare a single-agent baseline with one bounded specialist delegation on the same eval set."
+    },
+    "competencyIds": [
+      "PYAE-C032",
+      "PYAE-C027"
+    ],
+    "whySelected": "Anthropic is a primary or official source. This selection directly supports modular and specialist agent architecture and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W23-01",
+    "title": "Packaging Python Projects",
+    "url": "https://packaging.python.org/en/latest/tutorials/packaging-projects/",
+    "provider": "Python Packaging Authority",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 105,
+    "location": {
+      "note": "Study pyproject configuration, build artifacts, metadata, and installation."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C015"
+    ],
+    "whySelected": "Python Packaging Authority is a primary or official source. This selection directly supports packaging, configuration, and continuous verification and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W23-02",
+    "title": "Building and testing Python with GitHub Actions",
+    "url": "https://docs.github.com/en/actions/tutorials/build-and-test-code/python",
+    "provider": "GitHub",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "note": "Study Python versions, dependency caching, pytest, and artifacts."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C015"
+    ],
+    "whySelected": "GitHub is a primary or official source. This selection directly supports packaging, configuration, and continuous verification and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W23-03",
+    "title": "Containerize your app: Python",
+    "url": "https://docs.docker.com/guides/python/",
+    "provider": "Docker",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "note": "Review container packaging as an optional deployment path; complete the required clean-venv install path first."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C015"
+    ],
+    "whySelected": "Docker is a primary or official source. This selection directly supports packaging, configuration, and continuous verification and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  },
+  {
+    "id": "PYAE-R-W24-01",
+    "title": "Safety best practices",
+    "url": "https://developers.openai.com/api/docs/guides/safety-best-practices",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "note": "Use as a final review checklist for moderation, adversarial testing, human oversight, and constrained inputs/outputs."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C032",
+      "PYAE-C030",
+      "PYAE-C028",
+      "PYAE-C027"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports production personal agent capstone and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "primary mental model",
+      "authoritative reference"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W24-02",
+    "title": "Agents SDK quickstart",
+    "url": "https://openai.github.io/openai-agents-python/quickstart/",
+    "provider": "OpenAI",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "note": "Compare the completed transparent architecture with a current SDK implementation path; migration is optional."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C032",
+      "PYAE-C030",
+      "PYAE-C028",
+      "PYAE-C027"
+    ],
+    "whySelected": "OpenAI is a primary or official source. This selection directly supports production personal agent capstone and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "The format describes the selected learning asset itself.",
+    "purpose": [
+      "complementary explanation",
+      "implementation detail"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected for authoritative explanation; a separate hands-on resource and weekly build supply active practice."
+  },
+  {
+    "id": "PYAE-R-W24-03",
+    "title": "OWASP Top 10 for LLM Applications: Production Checklist",
+    "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "provider": "OWASP Foundation",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 120,
+    "location": {
+      "note": "Run the complete eval set, inspect transcripts, classify failures, repair blockers, and rerun from a clean state."
+    },
+    "competencyIds": [
+      "PYAE-C033",
+      "PYAE-C032",
+      "PYAE-C030",
+      "PYAE-C028",
+      "PYAE-C027"
+    ],
+    "whySelected": "Anthropic is a primary or official source. This selection directly supports production personal agent capstone and complements the other formats assigned this week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-05",
+    "selectionRole": "core",
+    "formatRationale": "This section is assigned as a hands-on activity: learners must run, change, break, and verify code rather than only read the page.",
+    "purpose": [
+      "guided practice",
+      "failure exploration"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly teaches or exercises every mapped weekly competency.",
+      "clarity": "Suitable at this point in the prerequisite sequence.",
+      "correctnessAndCurrency": "Publisher-maintained primary material inspected during this run.",
+      "accessibility": "Free to access without making an account part of the learning gate."
+    },
+    "accessNotes": "Public page opened successfully during the Phase 3 production research run; no payment is required to read or use the assigned section.",
+    "alternativeNotes": "Selected as the practice route; the required assessed build remains local and independent of external service availability."
+  }
+]

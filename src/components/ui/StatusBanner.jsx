@@ -20,8 +20,8 @@ export default function StatusBanner({
   const Icon = icons[type] || Info;
 
   const styles = {
-    success: 'bg-emerald-500/5 border-emerald-500/20 text-emerald-400',
-    error: 'bg-red-500/5 border-red-500/20 text-red-400',
+    success: 'bg-brand-green/5 border-brand-green/20 text-brand-green',
+    error: 'bg-red-500/5 border-red-500/20 text-red-500',
     warning: 'bg-brand-amber/5 border-brand-amber/20 text-brand-amber',
     info: 'bg-brand-blue/5 border-brand-blue/20 text-brand-blue',
   };
@@ -40,7 +40,7 @@ export default function StatusBanner({
       {onClose && (
         <button
           onClick={onClose}
-          className="text-slate-400 hover:text-white flex-shrink-0 transition-colors focus:outline-none focus:ring-1 focus:ring-navy-500 rounded p-0.5"
+        className="text-text-muted hover:text-text-primary flex-shrink-0 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded p-0.5"
           aria-label="Close message"
         >
           <X className="w-3.5 h-3.5" />

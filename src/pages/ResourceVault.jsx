@@ -4,6 +4,13 @@ import { useApp } from '../context/AppContext';
 import ImportRequiredCard from '../components/common/ImportRequiredCard';
 import { PageShell, PageHeader, SectionCard } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
+import {
+  canMarkResourceComplete,
+  getResourceIdentity,
+  getRoadmapIdentity,
+  getWeekIdentity,
+} from '../utils/resourceActivity.js';
+import { getSkillCheckDefinition } from '../utils/skillCheckUtils.js';
 
 const DIFFICULTY_COLORS = {
   Beginner: 'bg-blue-500/10 text-blue-400 border border-blue-500/20',
@@ -19,8 +26,9 @@ const TYPE_COLORS = {
   Course: 'bg-pink-500/10 text-pink-400 border border-pink-500/20',
 };
 
-export default function ResourceVault() {
-  const { roadmap, resourcesStatus, updateResourceStatus, addNote, settings } = useApp();
+export default function ResourceVault({ embedded = false }) {
+  const { roadmap, resourcesStatus, resourceActivity, updateResourceStatus, recordResourceOpen, addNote, settings } = useApp();
+  const roadmapId = getRoadmapIdentity(roadmap, settings.activeRoadmapId);
   
   const [search, setSearch] = useState('');
   const [filterMonth, setFilterMonth] = useState('');
@@ -36,6 +44,7 @@ export default function ResourceVault() {
     const list = [];
     roadmap?.months?.forEach((month) => {
       month.weeks?.forEach((week) => {
+        const definition = getSkillCheckDefinition(week);
         week.resources?.forEach((res) => {
           list.push({
             ...res,
@@ -43,6 +52,10 @@ export default function ResourceVault() {
             monthTitle: month.title,
             weekNumber: week.weekNumber,
             weekTitle: week.title,
+            activityWeekId: getWeekIdentity(week),
+            activityResourceId: getResourceIdentity(res, week),
+            skillCheckId: definition.mode === 'quiz' ? definition.skillCheckId : null,
+            usesStudyRequirement: Boolean(week.studyRequirement),
           });
         });
       });
@@ -51,7 +64,7 @@ export default function ResourceVault() {
   }, [roadmap]);
   
   if (allResources.length === 0) {
-    return <ImportRequiredCard pageName="Resource Vault" />;
+    return <ImportRequiredCard pageName="Resource Library" />;
   }
 
   // Unique values for filters
@@ -96,8 +109,20 @@ export default function ResourceVault() {
     setFilterLowData(false);
   };
 
+  const recordOpen = (res) => {
+    recordResourceOpen({
+      roadmapId,
+      weekId: res.activityWeekId,
+      resourceId: res.activityResourceId,
+      title: res.title,
+      skillCheckId: res.skillCheckId,
+    });
+    if (resourcesStatus[res.title] !== 'Studied') updateResourceStatus(res.title, 'Studying');
+  };
+
   const handleOpenAndTakeNote = (res) => {
-    window.open(res.url, '_blank');
+    window.open(res.url, '_blank', 'noopener,noreferrer');
+    recordOpen(res);
     addNote({
       title: `Study Log: ${res.title}`,
       type: 'Resource Summary',
@@ -113,9 +138,9 @@ export default function ResourceVault() {
   const hasFilters = search || filterMonth || filterWeek || filterType || filterDifficulty || filterStatus || filterLowData;
 
   return (
-    <PageShell>
+    <PageShell className={embedded ? '!max-w-none !px-0 !py-0' : ''}>
       <PageHeader 
-        title="Resource Vault" 
+        title="Resource Library"
         subtitle={`${allResources.length} curated study assets and tutorial links from the active roadmap.`}
       />
 
@@ -241,10 +266,23 @@ export default function ResourceVault() {
         <div className="grid md:grid-cols-2 gap-4">
           {filtered.map((res, i) => {
             const status = resourcesStatus[res.title] || 'Not Started';
+            const canComplete = canMarkResourceComplete({
+              week: {
+                weekId: res.activityWeekId,
+                studyRequirement: res.usesStudyRequirement ? {} : null,
+              },
+              resource: {
+                id: res.activityResourceId,
+                title: res.title,
+              },
+              roadmapId,
+              resourcesStatus,
+              resourceActivity,
+            });
             return (
               <div
                 key={i}
-                className="bg-navy-800/80 border border-navy-550/40 rounded-2xl p-5 flex flex-col justify-between gap-4 transition-all duration-300 hover:border-accent-primary/20 hover:shadow-card-hover group"
+                    className="surface-card surface-card--compact p-5 flex flex-col justify-between gap-4 transition-all duration-300 hover:border-accent-primary/20 hover:shadow-card-hover group"
               >
                 <div>
                   {/* Top meta badges */}
@@ -291,10 +329,12 @@ export default function ResourceVault() {
                   <div className="flex gap-2">
                     <button
                       onClick={() => updateResourceStatus(res.title, status === 'Studied' ? 'Not Started' : 'Studied')}
+                      disabled={status !== 'Studied' && !canComplete}
+                      title={status !== 'Studied' && !canComplete ? 'Open this resource before marking it Studied.' : undefined}
                       className={`flex-1 py-1.5 px-3 rounded-xl border text-[13px] uppercase font-bold tracking-wider text-center transition-all active:scale-95 duration-150 ${
                         status === 'Studied'
                           ? 'bg-blue-500/10 border-blue-500/30 text-blue-400'
-                          : 'bg-navy-700/60 border-navy-500/80 text-slate-400 hover:text-white'
+                          : 'bg-navy-700/60 border-navy-500/80 text-slate-400 hover:text-white disabled:cursor-not-allowed disabled:opacity-45'
                       }`}
                     >
                       {status === 'Studied' ? (
@@ -325,6 +365,7 @@ export default function ResourceVault() {
                       href={res.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => recordOpen(res)}
                       className="bg-navy-700/60 border border-navy-500 text-slate-300 hover:text-white py-1.5 px-3 text-[13px] uppercase font-bold tracking-wider flex-1 text-center flex items-center justify-center gap-1.5 rounded-xl hover:border-accent-primary/20 transition-all active:scale-95"
                     >
                       Open URL <ExternalLink className="w-3 h-3" />

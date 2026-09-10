@@ -204,6 +204,8 @@ export function normalizeResourceType(rawType) {
 export function normalizeResource(rawResource) {
   const r = rawResource || {};
   return {
+    id: r.id || r.resourceId || null,
+    resourceId: r.resourceId || r.id || null,
     title: r.title || 'Untitled resource',
     url: r.url || '#',
     type: normalizeResourceType(r.type),
@@ -493,6 +495,7 @@ export function buildMissionObject(week, month = null, practicalMission = null) 
 
     // Layer 2 — Learn
     resources: (week.studyResources || []).map(normalizeResource),
+    studyRequirement: week.studyRequirement || null,
 
     // Layer 3 — Build
     difficulty: mission?.difficulty || null,
@@ -547,6 +550,8 @@ export function attachMissionStatus(
     weekProofs,
     weekReflections,
     settings,
+    skillCheckAttempts,
+    roadmapId,
   } = {}
 ) {
   if (!missionObject || !week) return missionObject;
@@ -562,6 +567,8 @@ export function attachMissionStatus(
     weekProofs,
     weekReflections,
     settings,
+    skillCheckAttempts,
+    roadmapId,
   });
 
   const missionEntry =

@@ -3,11 +3,171 @@
 // Weighted progress: Tasks 50% | Checkpoints 30% | Projects 20%
 // =============================================
 
+function getRoadmapWeeks(roadmap) {
+  if (Array.isArray(roadmap?.months) && roadmap.months.length > 0) {
+    return roadmap.months.flatMap((month) =>
+      (Array.isArray(month.weeks) ? month.weeks : []).map((week) => ({
+        ...week,
+        monthNumber: week.monthNumber ?? month.monthNumber ?? 1,
+      }))
+    );
+  }
+
+  return (Array.isArray(roadmap?.weeks) ? roadmap.weeks : []).map((week) => ({
+    ...week,
+    monthNumber: week.monthNumber ?? 1,
+  }));
+}
+
+function isRequiredLearningActivity(task) {
+  if (!task) return false;
+  if (typeof task === 'string') {
+    const text = task.toLowerCase();
+    return !text.includes('[commander]') && !text.includes('(optional)');
+  }
+
+  if (typeof task !== 'object' || task.required === false || task.commanderMode === true) {
+    return false;
+  }
+
+  const text = String(task.text || task.title || task.label || '').toLowerCase();
+  return !text.includes('[commander]') && !text.includes('(optional)');
+}
+
+/**
+ * Canonical learner-facing course progress.
+ *
+ * The percentage is completed required curriculum tasks divided by all required
+ * curriculum tasks. Optional/Commander activities are excluded. If a legacy
+ * curriculum supplies no tasks, completed weeks divided by curriculum weeks is
+ * used as a conservative fallback rather than inventing another weighting model.
+ */
+export function calculateCourseProgress(roadmap, progress) {
+  const weeks = getRoadmapWeeks(roadmap);
+  let totalActivities = 0;
+  let completedActivities = 0;
+
+  weeks.forEach((week) => {
+    const tasks = Array.isArray(week.tasks) ? week.tasks : [];
+    const requiredIndices = tasks
+      .map((task, index) => ({ task, index }))
+      .filter(({ task }) => isRequiredLearningActivity(task))
+      .map(({ index }) => index);
+    const taskKey = `m${week.monthNumber}_w${week.weekNumber}`;
+    const completed = new Set(
+      Array.isArray(progress?.completedTasks?.[taskKey])
+        ? progress.completedTasks[taskKey]
+        : []
+    );
+
+    totalActivities += requiredIndices.length;
+    completedActivities += requiredIndices.filter((index) => completed.has(index)).length;
+  });
+
+  const validWeekNumbers = new Set(weeks.map((week) => Number(week.weekNumber)));
+  const completedWeekNumbers = new Set(
+    (Array.isArray(progress?.completedWeeks) ? progress.completedWeeks : [])
+      .map(Number)
+      .filter((weekNumber) => validWeekNumbers.has(weekNumber))
+  );
+  const totalWeeks = weeks.length;
+  const completedWeeks = completedWeekNumbers.size;
+  const usesWeekFallback = totalActivities === 0;
+  const percent = usesWeekFallback
+    ? (totalWeeks > 0 ? (completedWeeks / totalWeeks) * 100 : 0)
+    : (completedActivities / totalActivities) * 100;
+
+  return {
+    percent: Math.min(100, Math.max(0, Math.round(percent))),
+    activities: {
+      completed: completedActivities,
+      total: totalActivities,
+    },
+    weeks: {
+      completed: completedWeeks,
+      total: totalWeeks,
+    },
+    usesWeekFallback,
+  };
+}
+
+export function calculateSkillSummary(roadmap, checkpointStatuses) {
+  const checkpoints = Array.isArray(roadmap?.checkpoints) ? roadmap.checkpoints : [];
+  const summary = { confident: 0, developing: 0, notAssessed: 0, total: checkpoints.length };
+
+  checkpoints.forEach((checkpoint) => {
+    const status = getCheckpointStatusValue(checkpointStatuses?.[checkpoint.skill]);
+    if (status === 'Confident') summary.confident += 1;
+    else if (status === 'Learning') summary.developing += 1;
+    else summary.notAssessed += 1;
+  });
+
+  return summary;
+}
+
+export function calculateBuildSummary(roadmap, progress) {
+  const projects = Array.isArray(roadmap?.projects) ? roadmap.projects : [];
+  let completedProjects = 0;
+  let completedMilestones = 0;
+  let totalMilestones = 0;
+
+  projects.forEach((project, projectIndex) => {
+    const milestones = Array.isArray(project?.milestones) ? project.milestones : [];
+    const validCompleted = new Set(
+      (Array.isArray(progress?.completedProjectMilestones?.[projectIndex])
+        ? progress.completedProjectMilestones[projectIndex]
+        : []).filter((index) => Number.isInteger(index) && index >= 0 && index < milestones.length)
+    );
+    totalMilestones += milestones.length;
+    completedMilestones += validCompleted.size;
+    if (milestones.length > 0 && validCompleted.size === milestones.length) completedProjects += 1;
+  });
+
+  return {
+    projects: { completed: completedProjects, total: projects.length },
+    milestones: { completed: completedMilestones, total: totalMilestones },
+  };
+}
+
+export function calculateConsistency(streak, timerHistory, now = new Date()) {
+  const history = Array.isArray(timerHistory) ? timerHistory : [];
+  const currentStreak = Math.max(0, Number(streak?.currentStreak) || 0);
+  const longestStreak = Math.max(currentStreak, Number(streak?.longestStreak) || 0);
+  const startOfWeek = new Date(now);
+  const day = startOfWeek.getDay();
+  startOfWeek.setHours(0, 0, 0, 0);
+  startOfWeek.setDate(startOfWeek.getDate() - ((day + 6) % 7));
+
+  const trustedSessions = history.filter((session) => {
+    const endedAt = new Date(session?.endedAt);
+    const duration = Number(session?.durationSeconds);
+    return session?.mode === 'Focus'
+      && session?.status === 'completed'
+      && session?.completedTimeBlock === true
+      && Number.isFinite(duration)
+      && duration > 0
+      && !Number.isNaN(endedAt.getTime())
+      && endedAt >= startOfWeek
+      && endedAt <= now;
+  });
+
+  return {
+    currentStreak,
+    longestStreak,
+    sessionsThisWeek: trustedSessions.length,
+    focusedSecondsThisWeek: trustedSessions.reduce(
+      (total, session) => total + Number(session.durationSeconds),
+      0
+    ),
+    hasTrustedSessionHistory: trustedSessions.length > 0,
+  };
+}
+
 /**
  * Calculate the overall weighted progress percentage.
  * @param {Object} roadmap - The full roadmap data
  * @param {Object} progress - Progress state from AppContext
- * @param {Object} checkpointStatuses - { [skill]: 'Not yet' | 'Learning' | 'Confident' }
+ * @param {Object} checkpointStatuses - { [skill]: string | { status: string } }
  * @returns {Object} { overall, tasks, checkpoints, projects, breakdown }
  */
 export function calculateOverallProgress(roadmap, progress, checkpointStatuses) {
@@ -36,7 +196,7 @@ export function calculateOverallProgress(roadmap, progress, checkpointStatuses) 
   let learningCount = 0;
 
   allCheckpoints.forEach((cp) => {
-    const status = checkpointStatuses?.[cp.skill];
+    const status = getCheckpointStatusValue(checkpointStatuses?.[cp.skill]);
     if (status === 'Confident') confidentCount++;
     if (status === 'Learning') learningCount++;
   });
@@ -83,6 +243,14 @@ export function calculateOverallProgress(roadmap, progress, checkpointStatuses) 
       total: totalMilestones,
     },
   };
+}
+
+export function getCheckpointStatusValue(record) {
+  if (typeof record === 'string') return record;
+  if (record && typeof record === 'object' && typeof record.status === 'string') {
+    return record.status;
+  }
+  return 'Not yet';
 }
 
 /**
@@ -251,7 +419,7 @@ export function calculateReadinessScores(roadmap, progress, checkpointStatuses, 
   // Checkpoints
   if (roadmap?.checkpoints) {
     roadmap.checkpoints.forEach((cp) => {
-      const status = checkpointStatuses?.[cp.skill] || 'Not yet';
+      const status = getCheckpointStatusValue(checkpointStatuses?.[cp.skill]);
       let compFraction = 0;
       if (status === 'Confident') compFraction = 1;
       else if (status === 'Learning') compFraction = 0.5;

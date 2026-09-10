@@ -1,0 +1,26 @@
+export const quizPreviewFixture = {
+  skillCheckId: 'dev-preview-objects-skill-check',
+  mode: 'quiz',
+  title: 'Objects Skill Check · Development Preview',
+  passingScore: 70,
+  questions: [
+    ['q1', 'Which syntax creates an empty JavaScript object?', ['[]', '{}', '()', '<>'], 'b', 'Curly braces create an object literal.'],
+    ['q2', 'How do you read the name property from a user object?', ['user->name', 'user.name', 'user::name', 'name(user)'], 'b', 'Dot notation reads a named property.'],
+    ['q3', 'Which value can be stored in an object property?', ['Only text', 'Only numbers', 'Any JavaScript value', 'Only arrays'], 'c', 'Properties can hold any JavaScript value.'],
+    ['q4', 'Which expression adds an age property to user?', ['user.age = 20', 'user + age', 'add(user, age)', 'user(age: 20)'], 'a', 'Assignment through dot notation creates or updates the property.'],
+    ['q5', 'Which operator checks whether "email" exists in user?', ['has', 'contains', 'in', 'inside'], 'c', 'The in operator checks for a property key.'],
+    ['q6', 'What does Object.keys(user) return?', ['Property values', 'Property names', 'A copied object', 'One property'], 'b', 'Object.keys returns an array of enumerable property names.'],
+    ['q7', 'Which syntax reads a property whose key is stored in variable key?', ['user.key', 'user[key]', 'user(key)', 'user->key'], 'b', 'Bracket notation evaluates the expression inside the brackets.'],
+    ['q8', 'What happens when an existing property is assigned a new value?', ['The object is deleted', 'The property is updated', 'A syntax error occurs', 'Nothing happens'], 'b', 'Assignment replaces that property value.'],
+    ['q9', 'Which method returns an array of an object’s values?', ['Object.values', 'Object.keys', 'Object.entriesOnly', 'Object.read'], 'a', 'Object.values returns the enumerable property values.'],
+    ['q10', 'Which statement removes the temporary property from user?', ['remove user.temporary', 'delete user.temporary', 'user.temporary.remove()', 'clear(user.temporary)'], 'b', 'The delete operator removes an object property.'],
+  ].map(([questionId, prompt, labels, correctOptionId, explanation]) => ({
+    id: questionId,
+    questionId,
+    type: 'multiple_choice',
+    prompt,
+    options: labels.map((label, index) => ({ id: String.fromCharCode(97 + index), label })),
+    correctOptionId,
+    explanation,
+  })),
+};

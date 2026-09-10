@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "curriculumId": "PYAE",
+  "revision": 3,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 0,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V015-V017",
+      "name": "Resource research validation",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V018",
+      "name": "Runtime contract validation",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V020",
+      "name": "Evidence-backed learning content integrity audit",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "resourceAudits": 93,
+        "questionAudits": 240,
+        "buildAudits": 24,
+        "weekReadiness": 24,
+        "classificationTotals": {
+          "A": 179,
+          "B": 32,
+          "C": 29,
+          "D": 0
+        }
+      }
+    }
+  ],
+  "findings": [],
+  "semanticValidation": {
+    "status": "PASS",
+    "method": "Three human-led week-range reviews opened every final resource destination and adversarially inspected every Skill Check item, every required Build dependency, and every complete Study-to-Build chain. This authored evidence is serialized here; deterministic validators only verify its completeness and consistency.",
+    "findingsReviewed": [
+      "All selected resource destinations and bounded sections were opened and inspected on 2026-09-09; changed selections retain candidate evidence.",
+      "All 240 questions received final A/B/C/D classifications, and rewritten prompts or keys removed every untaught factual dependency.",
+      "All 24 required Builds were reviewed independently from their quizzes, with each discovered hidden prerequisite explicitly repaired and accounted for.",
+      "Every required Build now contains a learner guide with prior knowledge, contextual concepts, a finished result, and sessions linked to real Build steps.",
+      "All 24 complete Study, Skill Check, Build, Proof, and Reflection chains received an evidence-backed beginner-readiness YES judgment."
+    ]
+  }
+}

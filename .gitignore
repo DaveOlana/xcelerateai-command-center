@@ -9,3 +9,14 @@ dist/
 Thumbs.db
 .system_generated/
 scratch/
+
+# Local learner-state exports (preserve locally; never ship in production baselines)
+/latest enriched file/
+/XcelerateAI Curriculum System/**/xca-progress-*.json
+
+# Large generated test-render bundles (auto-generated, not source files)
+test-render.cjs
+test-render.js
+
+# Backup of nested repo's git history (recovery only, not source)
+.git-backup/

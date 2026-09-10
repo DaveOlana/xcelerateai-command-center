@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "curriculum:v2:golden": "node scripts/build-v2-golden.mjs",
+    "curriculum:v2:pyae": "node scripts/build-v2-pyae.mjs",
+    "curriculum:v2:pyae:publish": "node scripts/build-v2-pyae.mjs --publish",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },

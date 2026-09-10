@@ -2,6 +2,40 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { sampleRoadmap } from '../data/sampleRoadmap';
 import { getTodayString, getYesterdayString } from '../utils/dateUtils';
 import { normalizeRoadmap, getRoadmapId } from '../utils/normalizeRoadmap';
+import { recordResourceOpened } from '../utils/resourceActivity.js';
+import { resolveCurriculumMode } from '../utils/learningExperience.js';
+import {
+  applyRecoveryInsight,
+  applyRecoveryResourceReview,
+  applySubmittedAttempt,
+  getAssessmentRecord,
+  setAssessmentRecord,
+} from '../utils/skillCheckUtils.js';
+import { curriculumCatalog } from '../curriculum-v2/catalog/catalog.js';
+import {
+  completeV2Resource as completeV2ResourceState,
+  completeV2Week as completeV2WeekState,
+  EMPTY_V2_STATE_STORE,
+  getCurriculumState,
+  normalizeV2StateStore,
+  reconcileCurriculumState,
+  recordV2RecoveryInsight as recordV2RecoveryInsightState,
+  recordV2ResourceOpened as recordV2ResourceOpenedState,
+  resetCurriculumState,
+  setActiveWeek as setActiveV2WeekState,
+  setV2BuildCompleted as setV2BuildCompletedState,
+  setV2ProofEvidence as setV2ProofEvidenceState,
+  setV2ReflectionResponse as setV2ReflectionResponseState,
+  submitV2SkillCheckAttempt as submitV2SkillCheckAttemptState,
+} from '../curriculum-v2/state/learnerState.js';
+import {
+  activateCurriculumSelection,
+  resolveActiveCurriculumId,
+} from '../curriculum-v2/state/curriculumSelection.js';
+import {
+  createV2BackupSlice,
+  restoreV2BackupSlice,
+} from '../curriculum-v2/state/backupReconciliation.js';
 
 // =============================================
 // STORAGE KEYS
@@ -19,6 +53,10 @@ export const STORAGE_KEYS = {
   SESSION_TIMER: 'xca_session_timer',
   BLOCKERS: 'xca_blockers',
   WEEK_PROOFS: 'xca_week_proofs',
+  SKILL_CHECK_ATTEMPTS: 'xca_skill_check_attempts_v1',
+  RESOURCE_ACTIVITY: 'xca_resource_activity_v1',
+  V2_LEARNER_STATE: 'xca_v2_learner_state_v1',
+  V2_ACTIVE_CURRICULUM: 'xca_v2_active_curriculum_id',
 };
 
 // =============================================
@@ -37,6 +75,7 @@ const DEFAULT_SETTINGS = {
   lastBackupDate: null,
   sidebarCollapsed: false,
   activeRoadmapId: null, // tracks which roadmap is currently active
+  appearanceMode: 'system',
 };
 
 const DEFAULT_PROGRESS = {
@@ -69,6 +108,7 @@ const DEFAULT_SESSION_TIMER = {
   accumulatedActiveSeconds: 0,
   maxContinuousMinutes: 75,
   recommendedBreakMinutes: 10,
+  context: null,
 };
 
 // =============================================
@@ -128,6 +168,17 @@ export function AppProvider({ children }) {
     // Otherwise normalize it
     try { return normalizeRoadmap(loaded); } catch { return loaded; }
   });
+  const [activeV2CurriculumId, setActiveV2CurriculumIdState] = useState(() => (
+    resolveActiveCurriculumId(curriculumCatalog, loadFromStorage(STORAGE_KEYS.V2_ACTIVE_CURRICULUM, null))
+  ));
+  const [v2LearnerState, setV2LearnerState] = useState(() => {
+    const stored = normalizeV2StateStore(loadFromStorage(STORAGE_KEYS.V2_LEARNER_STATE, EMPTY_V2_STATE_STORE));
+    const selected = resolveActiveCurriculumId(curriculumCatalog, loadFromStorage(STORAGE_KEYS.V2_ACTIVE_CURRICULUM, null));
+    const runtime = selected ? curriculumCatalog.getLatest(selected) : null;
+    return runtime ? reconcileCurriculumState(stored, runtime) : stored;
+  });
+  const activeV2Curriculum = activeV2CurriculumId ? curriculumCatalog.getLatest(activeV2CurriculumId) : null;
+  const activeV2Learner = activeV2CurriculumId ? getCurriculumState(v2LearnerState, activeV2CurriculumId) : null;
   const [progress, setProgress] = useState(() => {
     const loaded = loadFromStorage(STORAGE_KEYS.PROGRESS, DEFAULT_PROGRESS);
     if (Array.isArray(loaded)) return { ...DEFAULT_PROGRESS, completedWeeks: loaded };
@@ -142,7 +193,15 @@ export function AppProvider({ children }) {
   const [settings, setSettingsState] = useState(() => {
     const loaded = loadFromStorage(STORAGE_KEYS.SETTINGS, DEFAULT_SETTINGS);
     // Ensure default values are filled in if settings existed before the update
-    return { ...DEFAULT_SETTINGS, ...loaded };
+    const merged = { ...DEFAULT_SETTINGS, ...loaded };
+    if (!['system', 'light', 'dark'].includes(merged.appearanceMode)) {
+      merged.appearanceMode = 'system';
+    }
+    return merged;
+  });
+  const curriculumMode = resolveCurriculumMode({
+    activeV2Curriculum,
+    usingCustomRoadmap: settings.usingCustomRoadmap,
   });
   const [streak, setStreakState] = useState(() =>
     loadFromStorage(STORAGE_KEYS.STREAK, DEFAULT_STREAK)
@@ -173,6 +232,7 @@ export function AppProvider({ children }) {
     if (typeof localStorage !== 'undefined') {
       const completed = localStorage.getItem('xcelerate.onboarding.completed');
       if (completed === 'true') return true;
+      if (localStorage.getItem('xai_setup_completed_v1') === 'true') return true;
     }
     const settingsLoaded = loadFromStorage(STORAGE_KEYS.SETTINGS, {});
     return settingsLoaded.onboardingCompleted || false;
@@ -208,6 +268,8 @@ export function AppProvider({ children }) {
     setCheckpointStatusesState({});
     setResourcesStatus({});
     setSkillChecks({});
+    setSkillCheckAttempts({});
+    setResourceActivity({});
     setPracticalMissions({});
     setWeekProofs({});
     setWeekReflections({});
@@ -228,6 +290,12 @@ export function AppProvider({ children }) {
   );
   const [skillChecks, setSkillChecks] = useState(() =>
     loadFromStorage(STORAGE_KEYS.SKILL_CHECKS, {})
+  );
+  const [skillCheckAttempts, setSkillCheckAttempts] = useState(() =>
+    loadFromStorage(STORAGE_KEYS.SKILL_CHECK_ATTEMPTS, {})
+  );
+  const [resourceActivity, setResourceActivity] = useState(() =>
+    loadFromStorage(STORAGE_KEYS.RESOURCE_ACTIVITY, {})
   );
   const [practicalMissions, setPracticalMissions] = useState(() =>
     loadFromStorage(STORAGE_KEYS.PRACTICAL_MISSIONS, {})
@@ -260,18 +328,49 @@ export function AppProvider({ children }) {
   useEffect(() => { saveToStorage(STORAGE_KEYS.STREAK, streak); }, [streak]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.RESOURCES_STATUS, resourcesStatus); }, [resourcesStatus]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.SKILL_CHECKS, skillChecks); }, [skillChecks]);
+  useEffect(() => { saveToStorage(STORAGE_KEYS.SKILL_CHECK_ATTEMPTS, skillCheckAttempts); }, [skillCheckAttempts]);
+  useEffect(() => { saveToStorage(STORAGE_KEYS.RESOURCE_ACTIVITY, resourceActivity); }, [resourceActivity]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.PRACTICAL_MISSIONS, practicalMissions); }, [practicalMissions]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.SESSION_TIMER, sessionTimer); }, [sessionTimer]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.BLOCKERS, blockers); }, [blockers]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.WEEK_PROOFS, weekProofs); }, [weekProofs]);
   useEffect(() => { saveToStorage('xca_week_reflections', weekReflections); }, [weekReflections]);
+  useEffect(() => { saveToStorage(STORAGE_KEYS.V2_LEARNER_STATE, v2LearnerState); }, [v2LearnerState]);
+  useEffect(() => { saveToStorage(STORAGE_KEYS.V2_ACTIVE_CURRICULUM, activeV2CurriculumId); }, [activeV2CurriculumId]);
+
+  useEffect(() => {
+    const preference = ['system', 'light', 'dark'].includes(settings?.appearanceMode)
+      ? settings.appearanceMode
+      : 'system';
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const applyTheme = () => {
+      const resolvedTheme = preference === 'system'
+        ? (media.matches ? 'dark' : 'light')
+        : preference;
+      document.documentElement.dataset.theme = resolvedTheme;
+      document.documentElement.dataset.themePreference = preference;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute(
+        'content',
+        resolvedTheme === 'dark' ? '#0B1020' : '#F5F7FC'
+      );
+    };
+
+    applyTheme();
+    if (preference !== 'system') return undefined;
+
+    media.addEventListener?.('change', applyTheme);
+    return () => media.removeEventListener?.('change', applyTheme);
+  }, [settings?.appearanceMode]);
 
   // =============================================
   // BOOT & NORMALIZATION
   // =============================================
   useEffect(() => {
     // Check if we have valid roadmap data synchronously to prevent flicker on import
-    const isValid = Boolean(roadmap && roadmap.months && roadmap.months.length > 0);
+    const isValid = Boolean(
+      activeV2Curriculum
+      || (curriculumMode === 'legacy' && roadmap && roadmap.months && roadmap.months.length > 0)
+    );
     setIsDataReady(isValid);
 
     // Simulate a brief boot phase ONCE
@@ -281,9 +380,12 @@ export function AppProvider({ children }) {
       }, 400);
       return () => clearTimeout(bootTimer);
     }
-  }, [roadmap, isBooting]);
+  }, [activeV2Curriculum, curriculumMode, roadmap, isBooting]);
 
-  const hasImport = Boolean(roadmap && roadmap.months && roadmap.months.length > 0);
+  const hasImport = Boolean(
+    activeV2Curriculum
+    || (curriculumMode === 'legacy' && roadmap && roadmap.months && roadmap.months.length > 0)
+  );
 
   // =============================================
   // SAVE TO LOCALSTORAGE
@@ -336,6 +438,8 @@ export function AppProvider({ children }) {
           checkpointStatuses: loadFromStorage(STORAGE_KEYS.CHECKPOINTS, {}),
           resourcesStatus: loadFromStorage(STORAGE_KEYS.RESOURCES_STATUS, {}),
           skillChecks: loadFromStorage(STORAGE_KEYS.SKILL_CHECKS, {}),
+          skillCheckAttempts: loadFromStorage(STORAGE_KEYS.SKILL_CHECK_ATTEMPTS, {}),
+          resourceActivity: loadFromStorage(STORAGE_KEYS.RESOURCE_ACTIVITY, {}),
           practicalMissions: loadFromStorage(STORAGE_KEYS.PRACTICAL_MISSIONS, {}),
           weekProofs: loadFromStorage(STORAGE_KEYS.WEEK_PROOFS, {}),
           weekReflections: loadFromStorage('xca_week_reflections', {}),
@@ -352,6 +456,7 @@ export function AppProvider({ children }) {
     }
 
     setRoadmap(normalized);
+    setActiveV2CurriculumIdState(null);
     setSettingsState((prev) => ({
       ...prev,
       startDate: new Date().toISOString().split('T')[0],
@@ -365,6 +470,8 @@ export function AppProvider({ children }) {
     setCheckpointStatusesState({});
     setResourcesStatus({});
     setSkillChecks({});
+    setSkillCheckAttempts({});
+    setResourceActivity({});
     setPracticalMissions({});
     setWeekProofs({});
     setWeekReflections({});
@@ -378,6 +485,8 @@ export function AppProvider({ children }) {
     setCheckpointStatusesState({});
     setResourcesStatus({});
     setSkillChecks({});
+    setSkillCheckAttempts({});
+    setResourceActivity({});
     setPracticalMissions({});
     setWeekProofs({});
     setWeekReflections({});
@@ -591,6 +700,7 @@ export function AppProvider({ children }) {
         durationSeconds: sessionTimer.durationMinutes * 60,
         completedTimeBlock: true,
         status: 'completed',
+        context: sessionTimer.context || null,
       };
       setTimerHistory((prev) => [newHistoryItem, ...prev]);
       
@@ -600,7 +710,7 @@ export function AppProvider({ children }) {
         hasJustCompleted: false
       }));
     }
-  }, [sessionTimer.hasJustCompleted, sessionTimer.activeSessionId, sessionTimer.startedAt, sessionTimer.isBreak, sessionTimer.durationMinutes]);
+  }, [sessionTimer.hasJustCompleted, sessionTimer.activeSessionId, sessionTimer.startedAt, sessionTimer.isBreak, sessionTimer.durationMinutes, sessionTimer.context]);
 
   // =============================================
   // RESOURCE STATUS ACTIONS
@@ -621,6 +731,81 @@ export function AppProvider({ children }) {
       [weekNum]: { answers, confidence, confirmed, submittedDate: new Date().toISOString() }
     }));
     markStudyToday();
+  }, [markStudyToday]);
+
+  const submitQuizAttempt = useCallback(({ roadmapId, skillCheckId, attempt }) => {
+    if (!roadmapId || !skillCheckId || !attempt) return;
+    setSkillCheckAttempts((prev) => {
+      const record = getAssessmentRecord(prev, roadmapId, skillCheckId);
+      return setAssessmentRecord(
+        prev,
+        roadmapId,
+        skillCheckId,
+        applySubmittedAttempt(record, attempt)
+      );
+    });
+    markStudyToday();
+  }, [markStudyToday]);
+
+  const recordResourceOpen = useCallback(({
+    roadmapId,
+    weekId,
+    resourceId,
+    title,
+    skillCheckId = null,
+    openedAt = new Date().toISOString(),
+  }) => {
+    if (!roadmapId || !weekId || !resourceId) return;
+    setResourceActivity((prev) => recordResourceOpened(prev, {
+      roadmapId,
+      weekId,
+      resourceId,
+      title,
+      openedAt,
+    }));
+
+    if (skillCheckId) {
+      setSkillCheckAttempts((prev) => {
+        const record = getAssessmentRecord(prev, roadmapId, skillCheckId);
+        const nextRecord = applyRecoveryResourceReview(record, { resourceId, reviewedAt: openedAt });
+        return nextRecord === record
+          ? prev
+          : setAssessmentRecord(prev, roadmapId, skillCheckId, nextRecord);
+      });
+    }
+    markStudyToday();
+  }, [markStudyToday]);
+
+  const addStudyInsight = useCallback(({
+    roadmapId,
+    skillCheckId = null,
+    insightScope = 'study',
+    ...noteData
+  }) => {
+    const createdAt = new Date().toISOString();
+    const note = {
+      ...noteData,
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      createdAt,
+      noteType: 'study_insight',
+      insightScope,
+      roadmapId,
+      focusStage: 'Study',
+      linkedResource: insightScope === 'study' ? '' : (noteData.linkedResource || ''),
+    };
+    setNotesState((prev) => [note, ...prev]);
+
+    if (skillCheckId && insightScope === 'study') {
+      setSkillCheckAttempts((prev) => {
+        const record = getAssessmentRecord(prev, roadmapId, skillCheckId);
+        const nextRecord = applyRecoveryInsight(record, note);
+        return nextRecord === record
+          ? prev
+          : setAssessmentRecord(prev, roadmapId, skillCheckId, nextRecord);
+      });
+    }
+    markStudyToday();
+    return note.id;
   }, [markStudyToday]);
 
   // =============================================
@@ -724,9 +909,9 @@ export function AppProvider({ children }) {
   // =============================================
   // TIMER ACTIONS
   // =============================================
-  const startTimer = useCallback((sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes) => {
+  const startTimer = useCallback((sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes, context = null) => {
     if (sessionTimer.activeSessionId && sessionTimer.timeLeftSeconds > 0) {
-      setPendingTimerParams({ sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes });
+      setPendingTimerParams({ sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes, context });
       setShowSwitchConfirmation(true);
       return;
     }
@@ -748,6 +933,7 @@ export function AppProvider({ children }) {
       maxContinuousMinutes: maxContinuousMinutes || 75,
       recommendedBreakMinutes: recommendedBreakMinutes || 10,
       showExpiredPrompt: false,
+      context,
     });
     markStudyToday();
   }, [sessionTimer.activeSessionId, sessionTimer.timeLeftSeconds, markStudyToday]);
@@ -764,10 +950,11 @@ export function AppProvider({ children }) {
         durationSeconds: sessionTimer.durationMinutes * 60,
         completedTimeBlock: false,
         status: 'interrupted',
+        context: sessionTimer.context || null,
       };
       setTimerHistory((prev) => [newHistoryItem, ...prev]);
     }
-    const { sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes } = pendingTimerParams;
+    const { sessionId, type, title, durationMinutes, maxContinuousMinutes, recommendedBreakMinutes, context } = pendingTimerParams;
     const now = Date.now();
     const durSeconds = durationMinutes * 60;
     setSessionTimer({
@@ -786,6 +973,7 @@ export function AppProvider({ children }) {
       maxContinuousMinutes: maxContinuousMinutes || 75,
       recommendedBreakMinutes: recommendedBreakMinutes || 10,
       showExpiredPrompt: false,
+      context: context || null,
     });
     setPendingTimerParams(null);
     setShowSwitchConfirmation(false);
@@ -808,6 +996,7 @@ export function AppProvider({ children }) {
       durationSeconds: sessionTimer.durationMinutes * 60,
       completedTimeBlock: false,
       status: status,
+      context: sessionTimer.context || null,
     };
     setTimerHistory((prev) => [newHistoryItem, ...prev]);
     setSessionTimer(DEFAULT_SESSION_TIMER);
@@ -980,11 +1169,14 @@ export function AppProvider({ children }) {
       streak,
       resourcesStatus,
       skillChecks,
+      skillCheckAttempts,
+      resourceActivity,
       practicalMissions,
       blockers,
       weekProofs,
       weekReflections,
-      timerHistory
+      timerHistory,
+      ...createV2BackupSlice(v2LearnerState, activeV2CurriculumId),
     };
     setSettingsState(prev => ({ ...prev, lastBackupDate: new Date().toISOString() }));
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -994,7 +1186,7 @@ export function AppProvider({ children }) {
     a.download = `xca-progress-v2-${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [roadmap, progress, notes, checkpointStatuses, settings, streak, resourcesStatus, skillChecks, practicalMissions, blockers, weekProofs, weekReflections, timerHistory]);
+  }, [roadmap, progress, notes, checkpointStatuses, settings, streak, resourcesStatus, skillChecks, skillCheckAttempts, resourceActivity, practicalMissions, blockers, weekProofs, weekReflections, timerHistory, v2LearnerState, activeV2CurriculumId]);
 
   const importProgress = useCallback((data) => {
     if (data.roadmap) setRoadmap(data.roadmap);
@@ -1005,14 +1197,28 @@ export function AppProvider({ children }) {
     if (data.streak) setStreakState(data.streak);
     if (data.resourcesStatus) setResourcesStatus(data.resourcesStatus);
     if (data.skillChecks) setSkillChecks(data.skillChecks);
+    setSkillCheckAttempts(data.skillCheckAttempts || {});
+    setResourceActivity(data.resourceActivity || {});
     if (data.practicalMissions) setPracticalMissions(data.practicalMissions);
     if (data.blockers) setBlockers(data.blockers);
     if (data.weekProofs) setWeekProofs(data.weekProofs);
     if (data.weekReflections) setWeekReflections(data.weekReflections);
     if (data.timerHistory) setTimerHistory(data.timerHistory);
+    if (data.v2LearnerState) {
+      const restored = restoreV2BackupSlice(data, curriculumCatalog);
+      setV2LearnerState(restored.stateStore);
+      setActiveV2CurriculumIdState(restored.activeCurriculumId);
+      if (restored.activeCurriculumId) {
+        setSettingsState((current) => ({ ...current, usingCustomRoadmap: false }));
+      }
+    }
   }, []);
 
   const resetAllProgress = useCallback(() => {
+    let normalizedSample;
+    try { normalizedSample = normalizeRoadmap(sampleRoadmap); } catch { normalizedSample = sampleRoadmap; }
+    setRoadmap(normalizedSample);
+    setActiveV2CurriculumIdState(null);
     setProgress(DEFAULT_PROGRESS);
     setCheckpointStatusesState({});
     setStreakState(DEFAULT_STREAK);
@@ -1020,15 +1226,124 @@ export function AppProvider({ children }) {
     setNotesState([]);
     setResourcesStatus({});
     setSkillChecks({});
+    setSkillCheckAttempts({});
+    setResourceActivity({});
     setPracticalMissions({});
     setSessionTimer(DEFAULT_SESSION_TIMER);
     setTimerHistory([]);
     setBlockers([]);
     setWeekProofs({});
     setWeekReflections({});
+    setV2LearnerState(EMPTY_V2_STATE_STORE);
+    setActiveV2CurriculumIdState(null);
+    setUserProfileState({
+      name: '',
+      displayName: '',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    });
+    setOnboardingCompletedState(false);
+    localStorage.removeItem('xcelerate.userProfile');
+    localStorage.removeItem('xcelerate.onboarding.completed');
     localStorage.removeItem('xai_setup_completed_v1');
     localStorage.removeItem('xai_onboarding_seen_v1');
+    localStorage.removeItem('xca_import_backup_1');
+    localStorage.removeItem('xca_import_backup_2');
+    localStorage.removeItem('xca_pre_migration_backup');
+    localStorage.removeItem(STORAGE_KEYS.V2_LEARNER_STATE);
+    localStorage.removeItem(STORAGE_KEYS.V2_ACTIVE_CURRICULUM);
   }, []);
+
+  // =============================================
+  // V2 CATALOG + STABLE LEARNER STATE
+  // =============================================
+  const selectV2Curriculum = useCallback((curriculumId) => {
+    if (!curriculumCatalog.getLatest(curriculumId)) return false;
+    setV2LearnerState((current) => {
+      const selection = activateCurriculumSelection(curriculumCatalog, current, curriculumId);
+      return selection.stateStore;
+    });
+    setActiveV2CurriculumIdState(curriculumId);
+    setSettingsState((current) => ({ ...current, usingCustomRoadmap: false }));
+    return true;
+  }, []);
+
+  const leaveV2Curriculum = useCallback(() => {
+    setActiveV2CurriculumIdState(null);
+  }, []);
+
+  const resetActiveV2Curriculum = useCallback(() => {
+    if (!activeV2CurriculumId) return;
+    setV2LearnerState((current) => resetCurriculumState(current, activeV2CurriculumId));
+    const runtime = curriculumCatalog.getLatest(activeV2CurriculumId);
+    if (runtime) setV2LearnerState((current) => reconcileCurriculumState(current, runtime));
+  }, [activeV2CurriculumId]);
+
+  const setActiveV2Week = useCallback((weekId) => {
+    if (!activeV2Curriculum) return;
+    setV2LearnerState((current) => setActiveV2WeekState(current, activeV2Curriculum, weekId));
+  }, [activeV2Curriculum]);
+
+  const openV2Resource = useCallback((weekId, resourceId, skillCheckId = null) => {
+    if (!activeV2Curriculum) return;
+    setV2LearnerState((current) => recordV2ResourceOpenedState(current, activeV2Curriculum, weekId, resourceId, { skillCheckId }));
+    markStudyToday();
+  }, [activeV2Curriculum, markStudyToday]);
+
+  const completeV2Resource = useCallback((weekId, resourceId) => {
+    if (!activeV2Curriculum) return;
+    setV2LearnerState((current) => completeV2ResourceState(current, activeV2Curriculum, weekId, resourceId));
+    markStudyToday();
+  }, [activeV2Curriculum, markStudyToday]);
+
+  const submitV2SkillCheckAttempt = useCallback((weekId, skillCheckId, attempt) => {
+    if (!activeV2Curriculum) return;
+    setV2LearnerState((current) => submitV2SkillCheckAttemptState(current, activeV2Curriculum, weekId, skillCheckId, attempt));
+    markStudyToday();
+  }, [activeV2Curriculum, markStudyToday]);
+
+  const addV2RecoveryInsight = useCallback((skillCheckId, content) => {
+    if (!activeV2Curriculum) return null;
+    const createdAt = new Date().toISOString();
+    const note = {
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      createdAt,
+      noteType: 'study_insight',
+      insightScope: 'study',
+      content,
+      roadmapId: activeV2Curriculum.curriculumId,
+      focusStage: 'Study',
+      linkedResource: '',
+    };
+    setNotesState((current) => [note, ...current]);
+    setV2LearnerState((current) => recordV2RecoveryInsightState(current, activeV2Curriculum, skillCheckId, note));
+    markStudyToday();
+    return note.id;
+  }, [activeV2Curriculum, markStudyToday]);
+
+  const setV2BuildCompleted = useCallback((weekId, buildId, completed) => {
+    if (!activeV2Curriculum) return;
+    setV2LearnerState((current) => setV2BuildCompletedState(current, activeV2Curriculum, weekId, buildId, completed));
+    markStudyToday();
+  }, [activeV2Curriculum, markStudyToday]);
+
+  const setV2ProofEvidence = useCallback((weekId, proofId, evidenceId, value) => {
+    if (!activeV2Curriculum) return;
+    setV2LearnerState((current) => setV2ProofEvidenceState(current, activeV2Curriculum, weekId, proofId, evidenceId, value));
+    markStudyToday();
+  }, [activeV2Curriculum, markStudyToday]);
+
+  const setV2ReflectionResponse = useCallback((weekId, promptId, response) => {
+    if (!activeV2Curriculum) return;
+    setV2LearnerState((current) => setV2ReflectionResponseState(current, activeV2Curriculum, weekId, promptId, response));
+    markStudyToday();
+  }, [activeV2Curriculum, markStudyToday]);
+
+  const completeV2Week = useCallback((weekId) => {
+    if (!activeV2Curriculum) return;
+    setV2LearnerState((current) => completeV2WeekState(current, activeV2Curriculum, weekId));
+    markStudyToday();
+  }, [activeV2Curriculum, markStudyToday]);
 
   // =============================================
   // CONTEXT VALUE
@@ -1041,6 +1356,13 @@ export function AppProvider({ children }) {
 
     // State
     roadmap,
+    curriculumMode,
+    curriculumCatalog,
+    publishedV2Curricula: curriculumCatalog.listPublished(),
+    activeV2CurriculumId,
+    activeV2Curriculum,
+    activeV2Learner,
+    v2LearnerState,
     progress,
     notes,
     checkpointStatuses,
@@ -1048,6 +1370,8 @@ export function AppProvider({ children }) {
     streak,
     resourcesStatus,
     skillChecks,
+    skillCheckAttempts,
+    resourceActivity,
     practicalMissions,
     sessionTimer,
     blockers,
@@ -1063,6 +1387,18 @@ export function AppProvider({ children }) {
     // Roadmap
     importRoadmap,
     resetToSampleRoadmap,
+    selectV2Curriculum,
+    leaveV2Curriculum,
+    resetActiveV2Curriculum,
+    setActiveV2Week,
+    openV2Resource,
+    completeV2Resource,
+    submitV2SkillCheckAttempt,
+    addV2RecoveryInsight,
+    setV2BuildCompleted,
+    setV2ProofEvidence,
+    setV2ReflectionResponse,
+    completeV2Week,
 
     // Tasks
     toggleTask,
@@ -1086,9 +1422,12 @@ export function AppProvider({ children }) {
 
     // Resources
     updateResourceStatus,
+    recordResourceOpen,
+    addStudyInsight,
 
     // Skill Checks
     submitSkillCheck,
+    submitQuizAttempt,
 
     // Practical Missions
     startPracticalMission,

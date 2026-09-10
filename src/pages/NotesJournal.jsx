@@ -3,6 +3,7 @@ import { Plus, Trash2, FileText, ChevronDown, ChevronUp, Calendar, X, Tag, Link 
 import { useApp } from '../context/AppContext';
 import { formatNoteDate, getTodayISO } from '../utils/dateUtils';
 import { PageShell, PageHeader, SectionCard, CommandButton, SecondaryButton } from '../components/common/UIComponents';
+import { normalizeWorkspaceNote } from '../utils/workspaceAdapters';
 
 const NOTE_TYPES = [
   { value: 'session_note', label: 'Session Note' },
@@ -118,6 +119,10 @@ export default function NotesJournal() {
   const projects = useMemo(() => {
     return roadmap?.projects || [];
   }, [roadmap]);
+  const normalizedNotes = useMemo(
+    () => (Array.isArray(notes) ? notes : []).map(normalizeWorkspaceNote),
+    [notes]
+  );
 
   // Dynamic lists based on selected week in form
   const availableMissions = useMemo(() => {
@@ -158,7 +163,7 @@ export default function NotesJournal() {
 
   // ── FILTER NOTES ──
   const filteredNotes = useMemo(() => {
-    return notes.filter((note) => {
+    return normalizedNotes.filter((note) => {
       // 1. Filter by Note Type
       if (filterType !== 'all' && note.noteType !== filterType) return false;
 
@@ -177,23 +182,19 @@ export default function NotesJournal() {
       // 4. Search Query
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase();
-        const titleMatch = note.title?.toLowerCase().includes(query);
-        const learnedMatch = note.whatLearned?.toLowerCase().includes(query);
-        const confusedMatch = note.whatConfused?.toLowerCase().includes(query);
-        const builtMatch = note.whatBuilt?.toLowerCase().includes(query);
-        const nextMatch = note.nextAction?.toLowerCase().includes(query);
-        return titleMatch || learnedMatch || confusedMatch || builtMatch || nextMatch;
+        return [note.title, note.whatLearned, note.whatConfused, note.whatBuilt, note.nextAction, note.linkedMission, note.linkedResource, note.focusStage]
+          .some((value) => String(value || '').toLowerCase().includes(query));
       }
 
       return true;
     });
-  }, [notes, filterType, filterWeek, filterLinkType, searchQuery]);
+  }, [normalizedNotes, filterType, filterWeek, filterLinkType, searchQuery]);
 
   return (
     <PageShell>
       <PageHeader
-        title="Notes Journal"
-        subtitle={`${notes.length} note${notes.length !== 1 ? 's' : ''} captured. Documenting builds and debug paths secures understanding.`}
+        title="Notes"
+        subtitle={`${notes.length} note${notes.length !== 1 ? 's' : ''}. Review what you learned and wanted to remember.`}
         actions={
           <CommandButton onClick={() => setShowForm((v) => !v)}>
             {showForm ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -207,7 +208,7 @@ export default function NotesJournal() {
         <SectionCard className="border-accent-primary/30 shadow-primary-glow-sm">
           <h2 className="font-bold text-white mb-5 flex items-center gap-2">
             <FileText className="w-5 h-5 text-accent-primary" />
-            New Learning & Build Note
+            New standalone note
           </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid sm:grid-cols-3 gap-4">
@@ -215,7 +216,7 @@ export default function NotesJournal() {
                 <label className="section-label mb-1.5 block">Note Title *</label>
                 <input
                   type="text"
-                  placeholder="e.g. Week 2 - Mini Calculator Build Logs"
+                placeholder="e.g. What I learned about Python objects"
                   value={form.title}
                   onChange={(e) => handleChange('title', e.target.value)}
                   required
@@ -236,7 +237,7 @@ export default function NotesJournal() {
             {/* Note Type and Metadata Links */}
             <div className="bg-navy-950/60 rounded-xl p-4 border border-navy-400/50 space-y-4">
               <p className="text-xs font-bold text-slate-400 flex items-center gap-1.5 uppercase tracking-wide">
-                <Tag className="w-3.5 h-3.5 text-accent-primary" /> NOTE TAG & CONTEXT LINKING
+                <Tag className="w-3.5 h-3.5 text-accent-primary" /> Optional context
               </p>
               
               <div className="grid sm:grid-cols-3 gap-3.5">
@@ -296,13 +297,13 @@ export default function NotesJournal() {
                 </div>
 
                 <div>
-                  <label className="text-[13px] text-slate-400 font-semibold mb-1 block uppercase">Link Blocker</label>
+                <label className="text-[13px] text-slate-400 font-semibold mb-1 block uppercase">Link Problem</label>
                   <select
                     value={form.linkedBlocker}
                     onChange={(e) => handleChange('linkedBlocker', e.target.value)}
                     className="input-base w-full text-xs"
                   >
-                    <option value="">-- No Blocker --</option>
+                    <option value="">-- No Problem --</option>
                     {blockers.map(b => (
                       <option key={b.id} value={b.id}>
                         [{b.status}] {b.title.slice(0, 30)}{b.title.length > 30 ? '...' : ''}
@@ -353,7 +354,7 @@ export default function NotesJournal() {
 
             <div className="flex gap-3 pt-2">
               <CommandButton type="submit">
-                <Plus className="w-4 h-4" /> Save Journal Note
+                <Plus className="w-4 h-4" /> Save Note
               </CommandButton>
               <SecondaryButton onClick={() => setShowForm(false)}>
                 Cancel
@@ -365,7 +366,7 @@ export default function NotesJournal() {
 
       {/* FILTER CONTROLS BAR */}
       <div className="card border-navy-400 p-4 space-y-3">
-        <p className="text-[13px] text-slate-500 font-bold uppercase tracking-wider">FILTER ARCHIVE</p>
+        <p className="text-[13px] text-slate-500 font-bold uppercase tracking-wider">Find notes</p>
         
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
           {/* Search bar */}
@@ -419,7 +420,7 @@ export default function NotesJournal() {
               <option value="week">Linked to Week</option>
               <option value="mission">Linked to Mission</option>
               <option value="resource">Linked to Resource</option>
-              <option value="blocker">Linked to Blocker</option>
+              <option value="blocker">Linked to Problem</option>
               <option value="project">Linked to Project</option>
             </select>
           </div>
@@ -430,8 +431,8 @@ export default function NotesJournal() {
       {filteredNotes.length === 0 ? (
         <div className="card text-center py-14">
           <FileText className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-          <p className="text-slate-500 font-medium">No notes match filters</p>
-          <p className="text-xs text-slate-600 mt-1">Adjust your filter choices or create a new note.</p>
+          <p className="text-slate-400 font-medium">{normalizedNotes.length === 0 ? "You haven't saved any notes yet." : 'No notes match these filters.'}</p>
+          <p className="text-xs text-slate-600 mt-1">{normalizedNotes.length === 0 ? 'Notes created during learning will appear here.' : 'Try a different search or filter.'}</p>
           {!showForm && (
             <button onClick={() => setShowForm(true)} className="btn-primary mt-4 flex items-center gap-2 mx-auto">
               <Plus className="w-4 h-4" /> Add A Note
@@ -487,14 +488,21 @@ export default function NotesJournal() {
                           Resource: {note.linkedResource}
                         </span>
                       )}
+                      {note.focusStage && <span className="badge-slate text-xs">Stage: {note.focusStage}</span>}
+                      {note.focusSessionId && <span className="badge-slate text-xs">Focus Session</span>}
                       {linkedBlockerObj && (
                         <span className="bg-red-500/10 text-red-400 border border-red-500/20 text-xs px-1.5 py-0.5 rounded truncate max-w-[120px]" title={linkedBlockerObj.title}>
-                          Blocker: {linkedBlockerObj.title}
+                          Problem: {linkedBlockerObj.title}
                         </span>
                       )}
                       {linkedProjectObj && (
                         <span className="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs px-1.5 py-0.5 rounded truncate max-w-[120px]" title={linkedProjectObj.name}>
                           Project: {linkedProjectObj.name}
+                        </span>
+                      )}
+                      {note.linkedProject && !linkedProjectObj && (
+                        <span className="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs px-1.5 py-0.5 rounded truncate max-w-[120px]" title={String(note.linkedProject)}>
+                          Project: {note.linkedProject}
                         </span>
                       )}
                     </div>
@@ -551,14 +559,17 @@ export default function NotesJournal() {
                     {/* Context Links Details block inside card */}
                     <div className="mt-4 pt-3 border-t border-navy-400/30 flex flex-wrap gap-2 text-[13px] text-slate-400">
                       <span className="font-semibold flex items-center gap-1 uppercase text-xs">
-                        <LinkIcon className="w-3 h-3 text-accent-primary" /> Linked Elements:
+                        <LinkIcon className="w-3 h-3 text-accent-primary" /> Context:
                       </span>
                       {note.linkedWeek && <span className="bg-navy-950 px-2 py-0.5 rounded border border-navy-400">Week {note.linkedWeek}</span>}
                       {note.linkedMission && <span className="bg-navy-950 px-2 py-0.5 rounded border border-navy-400">Mission {note.linkedMission}</span>}
-                      {note.linkedResource && <span className="bg-navy-950 px-2 py-0.5 rounded border border-navy-400 truncate max-w-[150px]">Res: {note.linkedResource}</span>}
-                      {linkedBlockerObj && <span className="bg-navy-950 px-2 py-0.5 rounded border border-red-500/20 text-red-400 truncate max-w-[150px]">Blocker: {linkedBlockerObj.title}</span>}
-                      {linkedProjectObj && <span className="bg-navy-950 px-2 py-0.5 rounded border border-amber-500/20 text-amber-400 truncate max-w-[150px]">Proj: {linkedProjectObj.name}</span>}
-                      {!note.linkedWeek && !note.linkedMission && !note.linkedResource && !note.linkedBlocker && !note.linkedProject && <span className="text-slate-500 italic">None</span>}
+                      {note.linkedResource && <span className="bg-navy-950 px-2 py-0.5 rounded border border-navy-400 truncate max-w-[150px]">Resource: {note.linkedResource}</span>}
+                      {note.focusStage && <span className="bg-navy-950 px-2 py-0.5 rounded border border-navy-400">Stage: {note.focusStage}</span>}
+                      {note.focusSessionId && <span className="bg-navy-950 px-2 py-0.5 rounded border border-navy-400">Focus Session</span>}
+                      {linkedBlockerObj && <span className="bg-navy-950 px-2 py-0.5 rounded border border-red-500/20 text-red-400 truncate max-w-[150px]">Problem: {linkedBlockerObj.title}</span>}
+                      {linkedProjectObj && <span className="bg-navy-950 px-2 py-0.5 rounded border border-amber-500/20 text-amber-400 truncate max-w-[150px]">Project: {linkedProjectObj.name}</span>}
+                      {note.linkedProject && !linkedProjectObj && <span className="bg-navy-950 px-2 py-0.5 rounded border border-amber-500/20 text-amber-400 truncate max-w-[150px]">Project: {note.linkedProject}</span>}
+                      {!note.linkedWeek && !note.linkedMission && !note.linkedResource && !note.linkedBlocker && !note.linkedProject && !note.focusStage && !note.focusSessionId && <span className="text-slate-500 italic">No context attached</span>}
                     </div>
                   </div>
                 )}

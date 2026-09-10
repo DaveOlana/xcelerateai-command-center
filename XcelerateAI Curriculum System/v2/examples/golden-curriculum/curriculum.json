@@ -1,0 +1,2852 @@
+{
+  "runtimeContractVersion": "2.0",
+  "sourceSchemaVersion": "2.0",
+  "curriculumId": "GOLDEN",
+  "revision": 1,
+  "metadata": {
+    "title": "Golden Curriculum",
+    "shortTitle": "Golden",
+    "target": {
+      "role": "Structured Problem Solver",
+      "learner": "Beginning learner",
+      "professionalOutcome": "Use a small repeatable process to investigate, explain, and improve a simple problem.",
+      "specialGoals": [
+        "structured investigation",
+        "clear evidence"
+      ]
+    },
+    "workload": {
+      "weeklyHours": {
+        "min": 6,
+        "max": 8
+      },
+      "estimatedTotalHours": 12,
+      "estimatedWeeks": 2
+    },
+    "assumptions": [
+      "This curriculum is a structural fixture, not a production learning recommendation.",
+      "All example.com resources are intentionally unverified placeholders."
+    ]
+  },
+  "phases": [
+    {
+      "id": "GOLDEN-PH01",
+      "title": "Observe and Improve",
+      "outcome": "Develop and apply a small evidence-based improvement loop."
+    }
+  ],
+  "competencies": [
+    {
+      "id": "GOLDEN-C001",
+      "name": "Record an observable problem",
+      "description": "Describe a problem using specific observable facts instead of an unsupported conclusion.",
+      "domain": "Investigation",
+      "importance": "core",
+      "prerequisiteIds": []
+    },
+    {
+      "id": "GOLDEN-C002",
+      "name": "Test one proposed change",
+      "description": "Change one factor and record whether the observable result changes.",
+      "domain": "Investigation",
+      "importance": "core",
+      "prerequisiteIds": [
+        "GOLDEN-C001"
+      ]
+    },
+    {
+      "id": "GOLDEN-C003",
+      "name": "Explain an evidence-based improvement",
+      "description": "Compare observations before and after a change and explain what the evidence supports.",
+      "domain": "Communication",
+      "importance": "core",
+      "prerequisiteIds": [
+        "GOLDEN-C002"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "id": "GOLDEN-R001",
+      "title": "Example: Observable Problem Notes",
+      "url": "https://example.com/golden/observable-problems",
+      "provider": "XcelerateAI structural fixture",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 25,
+      "location": {
+        "note": "Read the complete structural example."
+      },
+      "competencyIds": [
+        "GOLDEN-C001"
+      ],
+      "whySelected": "Placeholder content used to exercise a Core explanatory resource assignment."
+    },
+    {
+      "id": "GOLDEN-R002",
+      "title": "Example Exercise: Change One Factor",
+      "url": "https://example.com/golden/change-one-factor",
+      "provider": "XcelerateAI structural fixture",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 35,
+      "location": {
+        "start": "Exercise 1",
+        "stop": "Reflection prompt"
+      },
+      "competencyIds": [
+        "GOLDEN-C002"
+      ],
+      "whySelected": "Placeholder exercise used to provide explicit deterministic practice evidence."
+    },
+    {
+      "id": "GOLDEN-R003",
+      "title": "Optional Example: Investigation Walkthrough",
+      "url": "https://example.com/golden/investigation-walkthrough",
+      "provider": "XcelerateAI structural fixture",
+      "format": "video",
+      "cost": "free",
+      "estimatedMinutes": 20,
+      "location": {
+        "start": "00:00",
+        "stop": "08:00"
+      },
+      "competencyIds": [
+        "GOLDEN-C001",
+        "GOLDEN-C002"
+      ],
+      "whySelected": "Placeholder alternative explanation that is intentionally optional."
+    },
+    {
+      "id": "GOLDEN-R004",
+      "title": "Example: Comparing Before and After",
+      "url": "https://example.com/golden/before-after",
+      "provider": "XcelerateAI structural fixture",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 25,
+      "location": {
+        "note": "Read the complete structural example."
+      },
+      "competencyIds": [
+        "GOLDEN-C001",
+        "GOLDEN-C003"
+      ],
+      "whySelected": "Placeholder explanation that reinforces observation and introduces evidence-based comparison."
+    },
+    {
+      "id": "GOLDEN-R005",
+      "title": "Example Lab: Improvement Report",
+      "url": "https://example.com/golden/improvement-report-lab",
+      "provider": "XcelerateAI structural fixture",
+      "format": "lab",
+      "cost": "free",
+      "estimatedMinutes": 45,
+      "location": {
+        "start": "Scenario",
+        "stop": "Completed report"
+      },
+      "competencyIds": [
+        "GOLDEN-C002",
+        "GOLDEN-C003"
+      ],
+      "whySelected": "Placeholder lab used to exercise explicit practice and reinforcement coverage."
+    },
+    {
+      "id": "GOLDEN-R006",
+      "title": "Optional Example: Evidence Language Reference",
+      "url": "https://example.com/golden/evidence-language",
+      "provider": "XcelerateAI structural fixture",
+      "format": "documentation",
+      "cost": "free",
+      "estimatedMinutes": 15,
+      "location": {
+        "note": "Use only when an additional wording reference is useful."
+      },
+      "competencyIds": [
+        "GOLDEN-C003"
+      ],
+      "whySelected": "Placeholder optional reference for additional explanation."
+    }
+  ],
+  "weeks": [
+    {
+      "id": "GOLDEN-W01",
+      "sequence": 1,
+      "phaseId": "GOLDEN-PH01",
+      "title": "Observe and Test",
+      "outcome": "Record one observable problem and test one controlled change.",
+      "competencyIds": [
+        "GOLDEN-C001",
+        "GOLDEN-C002"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Distinguish observations from conclusions and practice changing one factor.",
+        "coreMinimum": 2,
+        "resources": [
+          {
+            "resourceId": "GOLDEN-R001",
+            "role": "core",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "purpose": "Primary explanation of observable problem records."
+          },
+          {
+            "resourceId": "GOLDEN-R002",
+            "role": "core",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "purpose": "Guided practice changing one factor."
+          },
+          {
+            "resourceId": "GOLDEN-R003",
+            "role": "optional",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C002"
+            ],
+            "purpose": "Alternative walkthrough for reinforcement."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "GOLDEN-SC-W01",
+        "title": "Observation and Testing Check",
+        "instructions": "Choose the best answer for each question.",
+        "passingScore": 70,
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002"
+        ],
+        "questions": [
+          {
+            "id": "GOLDEN-Q-W01-01",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "Which note is an observable fact?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The page displayed an error code."
+              },
+              {
+                "id": "b",
+                "label": "The system is badly designed."
+              },
+              {
+                "id": "c",
+                "label": "The developer was careless."
+              },
+              {
+                "id": "d",
+                "label": "The tool never works."
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "An displayed error code is directly observable; the other choices are unsupported conclusions."
+          },
+          {
+            "id": "GOLDEN-Q-W01-02",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "What should a useful first problem record include?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Only a proposed solution"
+              },
+              {
+                "id": "b",
+                "label": "What happened and how it was observed"
+              },
+              {
+                "id": "c",
+                "label": "A guess about who caused it"
+              },
+              {
+                "id": "d",
+                "label": "No reproducible detail"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "A useful record begins with the observable behavior and its context."
+          },
+          {
+            "id": "GOLDEN-Q-W01-03",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "Why change one factor at a time?",
+            "options": [
+              {
+                "id": "a",
+                "label": "To make the test longer"
+              },
+              {
+                "id": "b",
+                "label": "To avoid recording results"
+              },
+              {
+                "id": "c",
+                "label": "To better connect a changed result to the tested factor"
+              },
+              {
+                "id": "d",
+                "label": "To guarantee success"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "Controlling other factors makes the evidence easier to interpret."
+          },
+          {
+            "id": "GOLDEN-Q-W01-04",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "A test changes three settings and the problem disappears. What is known?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Exactly which setting fixed it"
+              },
+              {
+                "id": "b",
+                "label": "All settings were required"
+              },
+              {
+                "id": "c",
+                "label": "The original observation was false"
+              },
+              {
+                "id": "d",
+                "label": "The combined change altered the result, but the responsible factor is unclear"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "Multiple simultaneous changes prevent attributing the outcome to one factor."
+          },
+          {
+            "id": "GOLDEN-Q-W01-05",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "Which wording avoids an unsupported conclusion?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The request returned status 500 twice."
+              },
+              {
+                "id": "b",
+                "label": "The server is hopeless."
+              },
+              {
+                "id": "c",
+                "label": "The library is broken."
+              },
+              {
+                "id": "d",
+                "label": "Nothing can fix this."
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "The status and repetition are recorded observations."
+          },
+          {
+            "id": "GOLDEN-Q-W01-06",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "What should be recorded after a controlled change?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Only whether the learner liked it"
+              },
+              {
+                "id": "b",
+                "label": "The result observed under the changed condition"
+              },
+              {
+                "id": "c",
+                "label": "A different unrelated problem"
+              },
+              {
+                "id": "d",
+                "label": "Nothing if the change failed"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Both successful and unsuccessful test results provide evidence."
+          },
+          {
+            "id": "GOLDEN-Q-W01-07",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C002"
+            ],
+            "prompt": "Which sequence supports a defensible test?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Conclude, guess, stop"
+              },
+              {
+                "id": "b",
+                "label": "Change everything, then observe"
+              },
+              {
+                "id": "c",
+                "label": "Observe, change one factor, observe again"
+              },
+              {
+                "id": "d",
+                "label": "Copy a conclusion without testing"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "The sequence establishes a baseline and a comparable result."
+          },
+          {
+            "id": "GOLDEN-Q-W01-08",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "A controlled change does not alter the result. What is the best next interpretation?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The test proves every possible cause"
+              },
+              {
+                "id": "b",
+                "label": "That tested factor did not change the observed result in this test"
+              },
+              {
+                "id": "c",
+                "label": "The original problem never existed"
+              },
+              {
+                "id": "d",
+                "label": "Evidence is unnecessary"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "The conclusion should remain limited to what the test actually showed."
+          },
+          {
+            "id": "GOLDEN-Q-W01-09",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "Which detail makes an observation easier to inspect?",
+            "options": [
+              {
+                "id": "a",
+                "label": "A precise message and the action that preceded it"
+              },
+              {
+                "id": "b",
+                "label": "A broad complaint"
+              },
+              {
+                "id": "c",
+                "label": "An unrelated prediction"
+              },
+              {
+                "id": "d",
+                "label": "A hidden assumption"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "Specific context and output make an observation inspectable."
+          },
+          {
+            "id": "GOLDEN-Q-W01-10",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "What makes two test observations comparable?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Changing the goal between tests"
+              },
+              {
+                "id": "b",
+                "label": "Ignoring the original condition"
+              },
+              {
+                "id": "c",
+                "label": "Using unrelated measures"
+              },
+              {
+                "id": "d",
+                "label": "Keeping relevant conditions stable except for the tested factor"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "Comparable conditions isolate the effect of the tested change."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "GOLDEN-B-W01-01",
+          "title": "Controlled Change Log",
+          "required": true,
+          "outcome": "Produce a concise record of one observation, one controlled change, and its result.",
+          "competencyIds": [
+            "GOLDEN-C001",
+            "GOLDEN-C002"
+          ],
+          "estimatedMinutes": 120,
+          "brief": "Choose a harmless everyday or sample-system problem, record the baseline, change one factor, and record the new result.",
+          "steps": [
+            {
+              "id": "GOLDEN-B-W01-01-S01",
+              "text": "Record the initial observable result."
+            },
+            {
+              "id": "GOLDEN-B-W01-01-S02",
+              "text": "Change one factor and repeat the observation."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "GOLDEN-B-W01-01-A01",
+              "text": "The record distinguishes observations from conclusions."
+            },
+            {
+              "id": "GOLDEN-B-W01-01-A02",
+              "text": "Only one relevant factor changes between observations."
+            }
+          ],
+          "hints": [
+            "Use a safe sample or everyday process; do not test a production system."
+          ],
+          "templates": [
+            {
+              "id": "GOLDEN-T001",
+              "label": "Controlled change log",
+              "content": "# Observation\n\n# One change\n\n# Result\n"
+            }
+          ],
+          "stretch": null
+        },
+        {
+          "id": "GOLDEN-B-W01-02",
+          "title": "Second-Factor Exploration",
+          "required": false,
+          "outcome": "Test a second factor in a separate controlled comparison.",
+          "competencyIds": [
+            "GOLDEN-C002"
+          ],
+          "estimatedMinutes": 45,
+          "brief": "Reset the baseline and test one different factor.",
+          "steps": [],
+          "acceptanceCriteria": [
+            {
+              "id": "GOLDEN-B-W01-02-A01",
+              "text": "The second test remains separate from the first."
+            }
+          ],
+          "hints": [],
+          "templates": [],
+          "stretch": null
+        }
+      ],
+      "proof": {
+        "id": "GOLDEN-PR-W01",
+        "prompt": "Provide sufficient evidence of the controlled change log.",
+        "evidence": [
+          {
+            "id": "GOLDEN-PR-W01-E01",
+            "type": "link",
+            "label": "Link to the completed log",
+            "required": true
+          },
+          {
+            "id": "GOLDEN-PR-W01-E02",
+            "type": "text",
+            "label": "What should be inspected?",
+            "required": true
+          },
+          {
+            "id": "GOLDEN-PR-W01-E03",
+            "type": "confirmation",
+            "label": "I changed only one relevant factor.",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "GOLDEN-RF-W01-01",
+            "prompt": "Which wording helped you separate observation from conclusion?"
+          },
+          {
+            "id": "GOLDEN-RF-W01-02",
+            "prompt": "What would make your controlled comparison clearer?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "GOLDEN-W02",
+      "sequence": 2,
+      "phaseId": "GOLDEN-PH01",
+      "title": "Explain the Improvement",
+      "outcome": "Use before-and-after evidence to explain a supported improvement.",
+      "competencyIds": [
+        "GOLDEN-C001",
+        "GOLDEN-C002",
+        "GOLDEN-C003"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Compare evidence and communicate only what the evidence supports.",
+        "coreMinimum": 2,
+        "resources": [
+          {
+            "resourceId": "GOLDEN-R004",
+            "role": "core",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C003"
+            ],
+            "purpose": "Explanation of before-and-after evidence."
+          },
+          {
+            "resourceId": "GOLDEN-R005",
+            "role": "core",
+            "competencyIds": [
+              "GOLDEN-C002",
+              "GOLDEN-C003"
+            ],
+            "purpose": "Guided practice writing an improvement report."
+          },
+          {
+            "resourceId": "GOLDEN-R006",
+            "role": "optional",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "purpose": "Optional evidence-language reference."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "GOLDEN-SC-W02",
+        "title": "Evidence and Explanation Check",
+        "instructions": "Choose the answer best supported by the stated evidence.",
+        "passingScore": 70,
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002",
+          "GOLDEN-C003"
+        ],
+        "questions": [
+          {
+            "id": "GOLDEN-Q-W02-01",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "What should an evidence-based explanation connect?",
+            "options": [
+              {
+                "id": "a",
+                "label": "A preferred answer to no observation"
+              },
+              {
+                "id": "b",
+                "label": "The controlled change to the observed difference"
+              },
+              {
+                "id": "c",
+                "label": "Two unrelated claims"
+              },
+              {
+                "id": "d",
+                "label": "A title to an assumption"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "The explanation connects the tested change with the observed before-and-after result."
+          },
+          {
+            "id": "GOLDEN-Q-W02-02",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "Which conclusion is appropriately limited?",
+            "options": [
+              {
+                "id": "a",
+                "label": "This result proves the change always works."
+              },
+              {
+                "id": "b",
+                "label": "No other explanation is possible."
+              },
+              {
+                "id": "c",
+                "label": "Under the tested conditions, the changed factor improved the measured result."
+              },
+              {
+                "id": "d",
+                "label": "Every similar problem has the same cause."
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "The conclusion states the observed result without claiming more than the test supports."
+          },
+          {
+            "id": "GOLDEN-Q-W02-03",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "Which item belongs in a before record?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The measured or observed baseline"
+              },
+              {
+                "id": "b",
+                "label": "A guaranteed future outcome"
+              },
+              {
+                "id": "c",
+                "label": "A different test result"
+              },
+              {
+                "id": "d",
+                "label": "An unsupported cause"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "The before record establishes the observable baseline."
+          },
+          {
+            "id": "GOLDEN-Q-W02-04",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "Why repeat the same measurement after the change?",
+            "options": [
+              {
+                "id": "a",
+                "label": "To hide the baseline"
+              },
+              {
+                "id": "b",
+                "label": "To compare the same outcome under changed conditions"
+              },
+              {
+                "id": "c",
+                "label": "To add unrelated data"
+              },
+              {
+                "id": "d",
+                "label": "To avoid interpreting results"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Using the same measure makes before-and-after results comparable."
+          },
+          {
+            "id": "GOLDEN-Q-W02-05",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "A result improved once. Which report language is strongest?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The change can never fail."
+              },
+              {
+                "id": "b",
+                "label": "The evidence proves all alternatives wrong."
+              },
+              {
+                "id": "c",
+                "label": "The single test is enough for every situation."
+              },
+              {
+                "id": "d",
+                "label": "The result improved in this test; additional repetition could increase confidence."
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "The statement reports the evidence and acknowledges its limited scope."
+          },
+          {
+            "id": "GOLDEN-Q-W02-06",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C003"
+            ],
+            "prompt": "Which report section best supports inspection?",
+            "options": [
+              {
+                "id": "a",
+                "label": "A vague success claim"
+              },
+              {
+                "id": "b",
+                "label": "Specific before and after observations"
+              },
+              {
+                "id": "c",
+                "label": "An omitted test condition"
+              },
+              {
+                "id": "d",
+                "label": "A personal preference only"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Specific observations allow another person to inspect the basis of the explanation."
+          },
+          {
+            "id": "GOLDEN-Q-W02-07",
+            "competencyIds": [
+              "GOLDEN-C002",
+              "GOLDEN-C003"
+            ],
+            "prompt": "Two factors changed and the result improved. What should the report say?",
+            "options": [
+              {
+                "id": "a",
+                "label": "One exact factor is proven responsible."
+              },
+              {
+                "id": "b",
+                "label": "The evidence is perfectly isolated."
+              },
+              {
+                "id": "c",
+                "label": "The combined changes improved the result, but attribution is uncertain."
+              },
+              {
+                "id": "d",
+                "label": "No observation should be recorded."
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "The report must acknowledge that multiple changes prevent isolating one cause."
+          },
+          {
+            "id": "GOLDEN-Q-W02-08",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "What is the purpose of noting a limitation?",
+            "options": [
+              {
+                "id": "a",
+                "label": "To make the evidence less honest"
+              },
+              {
+                "id": "b",
+                "label": "To hide the result"
+              },
+              {
+                "id": "c",
+                "label": "To replace the observation"
+              },
+              {
+                "id": "d",
+                "label": "To clarify what the evidence does and does not establish"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "Limitations keep the explanation aligned with the actual strength of the evidence."
+          },
+          {
+            "id": "GOLDEN-Q-W02-09",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C002"
+            ],
+            "prompt": "Which record best enables someone to repeat the test?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Baseline, exact change, conditions, and observed result"
+              },
+              {
+                "id": "b",
+                "label": "A success label only"
+              },
+              {
+                "id": "c",
+                "label": "An unnamed change"
+              },
+              {
+                "id": "d",
+                "label": "A conclusion without observations"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "Repeatability depends on specific conditions, actions, and observations."
+          },
+          {
+            "id": "GOLDEN-Q-W02-10",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "An after result is worse. What is the defensible response?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Delete the result"
+              },
+              {
+                "id": "b",
+                "label": "Report the result and reconsider the proposed improvement"
+              },
+              {
+                "id": "c",
+                "label": "Claim improvement anyway"
+              },
+              {
+                "id": "d",
+                "label": "Change the baseline wording"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Evidence-based improvement requires reporting unfavorable results and revising the proposal."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "GOLDEN-B-W02-01",
+          "title": "Evidence-Based Improvement Report",
+          "required": true,
+          "outcome": "Produce an inspectable report explaining a tested improvement and its limits.",
+          "competencyIds": [
+            "GOLDEN-C001",
+            "GOLDEN-C002",
+            "GOLDEN-C003"
+          ],
+          "estimatedMinutes": 150,
+          "brief": "Extend the controlled change log into a short report with comparable observations, a supported conclusion, and one limitation.",
+          "steps": [
+            {
+              "id": "GOLDEN-B-W02-01-S01",
+              "text": "Organize the before and after evidence."
+            },
+            {
+              "id": "GOLDEN-B-W02-01-S02",
+              "text": "Write a conclusion limited to what the test supports."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "GOLDEN-B-W02-01-A01",
+              "text": "The report includes comparable before-and-after evidence."
+            },
+            {
+              "id": "GOLDEN-B-W02-01-A02",
+              "text": "The conclusion identifies at least one limitation."
+            }
+          ],
+          "hints": [
+            "Prefer precise observations over claims such as always or never."
+          ],
+          "templates": [],
+          "stretch": "Repeat the controlled test and compare whether the result is consistent."
+        }
+      ],
+      "proof": {
+        "id": "GOLDEN-PR-W02",
+        "prompt": "Present evidence that the improvement report is complete and inspectable.",
+        "evidence": [
+          {
+            "id": "GOLDEN-PR-W02-E01",
+            "type": "link",
+            "label": "Link to the improvement report",
+            "required": true
+          },
+          {
+            "id": "GOLDEN-PR-W02-E02",
+            "type": "text",
+            "label": "Summarize the evidence and its limitation",
+            "required": true
+          },
+          {
+            "id": "GOLDEN-PR-W02-E03",
+            "type": "confirmation",
+            "label": "I compared the same observation before and after the change.",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "GOLDEN-RF-W02-01",
+            "prompt": "What claim did you narrow after reviewing the evidence?"
+          },
+          {
+            "id": "GOLDEN-RF-W02-02",
+            "prompt": "What additional test would improve confidence in your conclusion?"
+          }
+        ]
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "GOLDEN-PJ01",
+      "title": "Evidence-Based Improvement Portfolio",
+      "outcome": "Combine controlled observations and an improvement explanation into one inspectable body of work.",
+      "competencyIds": [
+        "GOLDEN-C001",
+        "GOLDEN-C002",
+        "GOLDEN-C003"
+      ],
+      "milestones": [
+        {
+          "id": "GOLDEN-PJ01-M01",
+          "title": "Controlled change recorded",
+          "weekId": "GOLDEN-W01",
+          "buildId": "GOLDEN-B-W01-01"
+        },
+        {
+          "id": "GOLDEN-PJ01-M02",
+          "title": "Improvement report completed",
+          "weekId": "GOLDEN-W02",
+          "buildId": "GOLDEN-B-W02-01"
+        }
+      ]
+    }
+  ],
+  "graduation": {
+    "outcome": "Use a small repeatable process to investigate, explain, and improve a simple problem.",
+    "requiredCompetencyIds": [
+      "GOLDEN-C001",
+      "GOLDEN-C002",
+      "GOLDEN-C003"
+    ],
+    "requiredProjectIds": [
+      "GOLDEN-PJ01"
+    ]
+  },
+  "coverage": [
+    {
+      "competencyId": "GOLDEN-C001",
+      "taughtIn": [
+        "GOLDEN-W01",
+        "GOLDEN-W02"
+      ],
+      "practicedIn": [],
+      "assessedIn": [
+        "GOLDEN-SC-W01",
+        "GOLDEN-SC-W02"
+      ],
+      "appliedIn": [
+        "GOLDEN-B-W01-01",
+        "GOLDEN-B-W02-01"
+      ],
+      "projectUse": [
+        "GOLDEN-PJ01-M01",
+        "GOLDEN-PJ01-M02"
+      ],
+      "reinforcedIn": [
+        "GOLDEN-W02"
+      ]
+    },
+    {
+      "competencyId": "GOLDEN-C002",
+      "taughtIn": [
+        "GOLDEN-W01",
+        "GOLDEN-W02"
+      ],
+      "practicedIn": [
+        "GOLDEN-W01",
+        "GOLDEN-W02"
+      ],
+      "assessedIn": [
+        "GOLDEN-SC-W01",
+        "GOLDEN-SC-W02"
+      ],
+      "appliedIn": [
+        "GOLDEN-B-W01-01",
+        "GOLDEN-B-W01-02",
+        "GOLDEN-B-W02-01"
+      ],
+      "projectUse": [
+        "GOLDEN-PJ01-M01",
+        "GOLDEN-PJ01-M02"
+      ],
+      "reinforcedIn": [
+        "GOLDEN-W02"
+      ]
+    },
+    {
+      "competencyId": "GOLDEN-C003",
+      "taughtIn": [
+        "GOLDEN-W02"
+      ],
+      "practicedIn": [
+        "GOLDEN-W02"
+      ],
+      "assessedIn": [
+        "GOLDEN-SC-W02"
+      ],
+      "appliedIn": [
+        "GOLDEN-B-W02-01"
+      ],
+      "projectUse": [
+        "GOLDEN-PJ01-M02"
+      ],
+      "reinforcedIn": []
+    }
+  ],
+  "indexes": {
+    "phasesById": {
+      "GOLDEN-PH01": {
+        "id": "GOLDEN-PH01",
+        "title": "Observe and Improve",
+        "outcome": "Develop and apply a small evidence-based improvement loop."
+      }
+    },
+    "competenciesById": {
+      "GOLDEN-C001": {
+        "id": "GOLDEN-C001",
+        "name": "Record an observable problem",
+        "description": "Describe a problem using specific observable facts instead of an unsupported conclusion.",
+        "domain": "Investigation",
+        "importance": "core",
+        "prerequisiteIds": []
+      },
+      "GOLDEN-C002": {
+        "id": "GOLDEN-C002",
+        "name": "Test one proposed change",
+        "description": "Change one factor and record whether the observable result changes.",
+        "domain": "Investigation",
+        "importance": "core",
+        "prerequisiteIds": [
+          "GOLDEN-C001"
+        ]
+      },
+      "GOLDEN-C003": {
+        "id": "GOLDEN-C003",
+        "name": "Explain an evidence-based improvement",
+        "description": "Compare observations before and after a change and explain what the evidence supports.",
+        "domain": "Communication",
+        "importance": "core",
+        "prerequisiteIds": [
+          "GOLDEN-C002"
+        ]
+      }
+    },
+    "resourcesById": {
+      "GOLDEN-R001": {
+        "id": "GOLDEN-R001",
+        "title": "Example: Observable Problem Notes",
+        "url": "https://example.com/golden/observable-problems",
+        "provider": "XcelerateAI structural fixture",
+        "format": "article",
+        "cost": "free",
+        "estimatedMinutes": 25,
+        "location": {
+          "note": "Read the complete structural example."
+        },
+        "competencyIds": [
+          "GOLDEN-C001"
+        ],
+        "whySelected": "Placeholder content used to exercise a Core explanatory resource assignment."
+      },
+      "GOLDEN-R002": {
+        "id": "GOLDEN-R002",
+        "title": "Example Exercise: Change One Factor",
+        "url": "https://example.com/golden/change-one-factor",
+        "provider": "XcelerateAI structural fixture",
+        "format": "exercise",
+        "cost": "free",
+        "estimatedMinutes": 35,
+        "location": {
+          "start": "Exercise 1",
+          "stop": "Reflection prompt"
+        },
+        "competencyIds": [
+          "GOLDEN-C002"
+        ],
+        "whySelected": "Placeholder exercise used to provide explicit deterministic practice evidence."
+      },
+      "GOLDEN-R003": {
+        "id": "GOLDEN-R003",
+        "title": "Optional Example: Investigation Walkthrough",
+        "url": "https://example.com/golden/investigation-walkthrough",
+        "provider": "XcelerateAI structural fixture",
+        "format": "video",
+        "cost": "free",
+        "estimatedMinutes": 20,
+        "location": {
+          "start": "00:00",
+          "stop": "08:00"
+        },
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002"
+        ],
+        "whySelected": "Placeholder alternative explanation that is intentionally optional."
+      },
+      "GOLDEN-R004": {
+        "id": "GOLDEN-R004",
+        "title": "Example: Comparing Before and After",
+        "url": "https://example.com/golden/before-after",
+        "provider": "XcelerateAI structural fixture",
+        "format": "article",
+        "cost": "free",
+        "estimatedMinutes": 25,
+        "location": {
+          "note": "Read the complete structural example."
+        },
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C003"
+        ],
+        "whySelected": "Placeholder explanation that reinforces observation and introduces evidence-based comparison."
+      },
+      "GOLDEN-R005": {
+        "id": "GOLDEN-R005",
+        "title": "Example Lab: Improvement Report",
+        "url": "https://example.com/golden/improvement-report-lab",
+        "provider": "XcelerateAI structural fixture",
+        "format": "lab",
+        "cost": "free",
+        "estimatedMinutes": 45,
+        "location": {
+          "start": "Scenario",
+          "stop": "Completed report"
+        },
+        "competencyIds": [
+          "GOLDEN-C002",
+          "GOLDEN-C003"
+        ],
+        "whySelected": "Placeholder lab used to exercise explicit practice and reinforcement coverage."
+      },
+      "GOLDEN-R006": {
+        "id": "GOLDEN-R006",
+        "title": "Optional Example: Evidence Language Reference",
+        "url": "https://example.com/golden/evidence-language",
+        "provider": "XcelerateAI structural fixture",
+        "format": "documentation",
+        "cost": "free",
+        "estimatedMinutes": 15,
+        "location": {
+          "note": "Use only when an additional wording reference is useful."
+        },
+        "competencyIds": [
+          "GOLDEN-C003"
+        ],
+        "whySelected": "Placeholder optional reference for additional explanation."
+      }
+    },
+    "weeksById": {
+      "GOLDEN-W01": {
+        "id": "GOLDEN-W01",
+        "sequence": 1,
+        "phaseId": "GOLDEN-PH01",
+        "title": "Observe and Test",
+        "outcome": "Record one observable problem and test one controlled change.",
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002"
+        ],
+        "estimatedHours": 6,
+        "study": {
+          "objective": "Distinguish observations from conclusions and practice changing one factor.",
+          "coreMinimum": 2,
+          "resources": [
+            {
+              "resourceId": "GOLDEN-R001",
+              "role": "core",
+              "competencyIds": [
+                "GOLDEN-C001"
+              ],
+              "purpose": "Primary explanation of observable problem records."
+            },
+            {
+              "resourceId": "GOLDEN-R002",
+              "role": "core",
+              "competencyIds": [
+                "GOLDEN-C002"
+              ],
+              "purpose": "Guided practice changing one factor."
+            },
+            {
+              "resourceId": "GOLDEN-R003",
+              "role": "optional",
+              "competencyIds": [
+                "GOLDEN-C001",
+                "GOLDEN-C002"
+              ],
+              "purpose": "Alternative walkthrough for reinforcement."
+            }
+          ]
+        },
+        "skillCheck": {
+          "id": "GOLDEN-SC-W01",
+          "title": "Observation and Testing Check",
+          "instructions": "Choose the best answer for each question.",
+          "passingScore": 70,
+          "competencyIds": [
+            "GOLDEN-C001",
+            "GOLDEN-C002"
+          ],
+          "questions": [
+            {
+              "id": "GOLDEN-Q-W01-01",
+              "competencyIds": [
+                "GOLDEN-C001"
+              ],
+              "prompt": "Which note is an observable fact?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "The page displayed an error code."
+                },
+                {
+                  "id": "b",
+                  "label": "The system is badly designed."
+                },
+                {
+                  "id": "c",
+                  "label": "The developer was careless."
+                },
+                {
+                  "id": "d",
+                  "label": "The tool never works."
+                }
+              ],
+              "correctOptionId": "a",
+              "explanation": "An displayed error code is directly observable; the other choices are unsupported conclusions."
+            },
+            {
+              "id": "GOLDEN-Q-W01-02",
+              "competencyIds": [
+                "GOLDEN-C001"
+              ],
+              "prompt": "What should a useful first problem record include?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Only a proposed solution"
+                },
+                {
+                  "id": "b",
+                  "label": "What happened and how it was observed"
+                },
+                {
+                  "id": "c",
+                  "label": "A guess about who caused it"
+                },
+                {
+                  "id": "d",
+                  "label": "No reproducible detail"
+                }
+              ],
+              "correctOptionId": "b",
+              "explanation": "A useful record begins with the observable behavior and its context."
+            },
+            {
+              "id": "GOLDEN-Q-W01-03",
+              "competencyIds": [
+                "GOLDEN-C002"
+              ],
+              "prompt": "Why change one factor at a time?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "To make the test longer"
+                },
+                {
+                  "id": "b",
+                  "label": "To avoid recording results"
+                },
+                {
+                  "id": "c",
+                  "label": "To better connect a changed result to the tested factor"
+                },
+                {
+                  "id": "d",
+                  "label": "To guarantee success"
+                }
+              ],
+              "correctOptionId": "c",
+              "explanation": "Controlling other factors makes the evidence easier to interpret."
+            },
+            {
+              "id": "GOLDEN-Q-W01-04",
+              "competencyIds": [
+                "GOLDEN-C002"
+              ],
+              "prompt": "A test changes three settings and the problem disappears. What is known?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Exactly which setting fixed it"
+                },
+                {
+                  "id": "b",
+                  "label": "All settings were required"
+                },
+                {
+                  "id": "c",
+                  "label": "The original observation was false"
+                },
+                {
+                  "id": "d",
+                  "label": "The combined change altered the result, but the responsible factor is unclear"
+                }
+              ],
+              "correctOptionId": "d",
+              "explanation": "Multiple simultaneous changes prevent attributing the outcome to one factor."
+            },
+            {
+              "id": "GOLDEN-Q-W01-05",
+              "competencyIds": [
+                "GOLDEN-C001"
+              ],
+              "prompt": "Which wording avoids an unsupported conclusion?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "The request returned status 500 twice."
+                },
+                {
+                  "id": "b",
+                  "label": "The server is hopeless."
+                },
+                {
+                  "id": "c",
+                  "label": "The library is broken."
+                },
+                {
+                  "id": "d",
+                  "label": "Nothing can fix this."
+                }
+              ],
+              "correctOptionId": "a",
+              "explanation": "The status and repetition are recorded observations."
+            },
+            {
+              "id": "GOLDEN-Q-W01-06",
+              "competencyIds": [
+                "GOLDEN-C002"
+              ],
+              "prompt": "What should be recorded after a controlled change?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Only whether the learner liked it"
+                },
+                {
+                  "id": "b",
+                  "label": "The result observed under the changed condition"
+                },
+                {
+                  "id": "c",
+                  "label": "A different unrelated problem"
+                },
+                {
+                  "id": "d",
+                  "label": "Nothing if the change failed"
+                }
+              ],
+              "correctOptionId": "b",
+              "explanation": "Both successful and unsuccessful test results provide evidence."
+            },
+            {
+              "id": "GOLDEN-Q-W01-07",
+              "competencyIds": [
+                "GOLDEN-C001",
+                "GOLDEN-C002"
+              ],
+              "prompt": "Which sequence supports a defensible test?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Conclude, guess, stop"
+                },
+                {
+                  "id": "b",
+                  "label": "Change everything, then observe"
+                },
+                {
+                  "id": "c",
+                  "label": "Observe, change one factor, observe again"
+                },
+                {
+                  "id": "d",
+                  "label": "Copy a conclusion without testing"
+                }
+              ],
+              "correctOptionId": "c",
+              "explanation": "The sequence establishes a baseline and a comparable result."
+            },
+            {
+              "id": "GOLDEN-Q-W01-08",
+              "competencyIds": [
+                "GOLDEN-C002"
+              ],
+              "prompt": "A controlled change does not alter the result. What is the best next interpretation?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "The test proves every possible cause"
+                },
+                {
+                  "id": "b",
+                  "label": "That tested factor did not change the observed result in this test"
+                },
+                {
+                  "id": "c",
+                  "label": "The original problem never existed"
+                },
+                {
+                  "id": "d",
+                  "label": "Evidence is unnecessary"
+                }
+              ],
+              "correctOptionId": "b",
+              "explanation": "The conclusion should remain limited to what the test actually showed."
+            },
+            {
+              "id": "GOLDEN-Q-W01-09",
+              "competencyIds": [
+                "GOLDEN-C001"
+              ],
+              "prompt": "Which detail makes an observation easier to inspect?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "A precise message and the action that preceded it"
+                },
+                {
+                  "id": "b",
+                  "label": "A broad complaint"
+                },
+                {
+                  "id": "c",
+                  "label": "An unrelated prediction"
+                },
+                {
+                  "id": "d",
+                  "label": "A hidden assumption"
+                }
+              ],
+              "correctOptionId": "a",
+              "explanation": "Specific context and output make an observation inspectable."
+            },
+            {
+              "id": "GOLDEN-Q-W01-10",
+              "competencyIds": [
+                "GOLDEN-C002"
+              ],
+              "prompt": "What makes two test observations comparable?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Changing the goal between tests"
+                },
+                {
+                  "id": "b",
+                  "label": "Ignoring the original condition"
+                },
+                {
+                  "id": "c",
+                  "label": "Using unrelated measures"
+                },
+                {
+                  "id": "d",
+                  "label": "Keeping relevant conditions stable except for the tested factor"
+                }
+              ],
+              "correctOptionId": "d",
+              "explanation": "Comparable conditions isolate the effect of the tested change."
+            }
+          ]
+        },
+        "builds": [
+          {
+            "id": "GOLDEN-B-W01-01",
+            "title": "Controlled Change Log",
+            "required": true,
+            "outcome": "Produce a concise record of one observation, one controlled change, and its result.",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C002"
+            ],
+            "estimatedMinutes": 120,
+            "brief": "Choose a harmless everyday or sample-system problem, record the baseline, change one factor, and record the new result.",
+            "steps": [
+              {
+                "id": "GOLDEN-B-W01-01-S01",
+                "text": "Record the initial observable result."
+              },
+              {
+                "id": "GOLDEN-B-W01-01-S02",
+                "text": "Change one factor and repeat the observation."
+              }
+            ],
+            "acceptanceCriteria": [
+              {
+                "id": "GOLDEN-B-W01-01-A01",
+                "text": "The record distinguishes observations from conclusions."
+              },
+              {
+                "id": "GOLDEN-B-W01-01-A02",
+                "text": "Only one relevant factor changes between observations."
+              }
+            ],
+            "hints": [
+              "Use a safe sample or everyday process; do not test a production system."
+            ],
+            "templates": [
+              {
+                "id": "GOLDEN-T001",
+                "label": "Controlled change log",
+                "content": "# Observation\n\n# One change\n\n# Result\n"
+              }
+            ],
+            "stretch": null
+          },
+          {
+            "id": "GOLDEN-B-W01-02",
+            "title": "Second-Factor Exploration",
+            "required": false,
+            "outcome": "Test a second factor in a separate controlled comparison.",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "estimatedMinutes": 45,
+            "brief": "Reset the baseline and test one different factor.",
+            "steps": [],
+            "acceptanceCriteria": [
+              {
+                "id": "GOLDEN-B-W01-02-A01",
+                "text": "The second test remains separate from the first."
+              }
+            ],
+            "hints": [],
+            "templates": [],
+            "stretch": null
+          }
+        ],
+        "proof": {
+          "id": "GOLDEN-PR-W01",
+          "prompt": "Provide sufficient evidence of the controlled change log.",
+          "evidence": [
+            {
+              "id": "GOLDEN-PR-W01-E01",
+              "type": "link",
+              "label": "Link to the completed log",
+              "required": true
+            },
+            {
+              "id": "GOLDEN-PR-W01-E02",
+              "type": "text",
+              "label": "What should be inspected?",
+              "required": true
+            },
+            {
+              "id": "GOLDEN-PR-W01-E03",
+              "type": "confirmation",
+              "label": "I changed only one relevant factor.",
+              "required": true
+            }
+          ]
+        },
+        "reflection": {
+          "minimumResponses": 1,
+          "prompts": [
+            {
+              "id": "GOLDEN-RF-W01-01",
+              "prompt": "Which wording helped you separate observation from conclusion?"
+            },
+            {
+              "id": "GOLDEN-RF-W01-02",
+              "prompt": "What would make your controlled comparison clearer?"
+            }
+          ]
+        }
+      },
+      "GOLDEN-W02": {
+        "id": "GOLDEN-W02",
+        "sequence": 2,
+        "phaseId": "GOLDEN-PH01",
+        "title": "Explain the Improvement",
+        "outcome": "Use before-and-after evidence to explain a supported improvement.",
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002",
+          "GOLDEN-C003"
+        ],
+        "estimatedHours": 6,
+        "study": {
+          "objective": "Compare evidence and communicate only what the evidence supports.",
+          "coreMinimum": 2,
+          "resources": [
+            {
+              "resourceId": "GOLDEN-R004",
+              "role": "core",
+              "competencyIds": [
+                "GOLDEN-C001",
+                "GOLDEN-C003"
+              ],
+              "purpose": "Explanation of before-and-after evidence."
+            },
+            {
+              "resourceId": "GOLDEN-R005",
+              "role": "core",
+              "competencyIds": [
+                "GOLDEN-C002",
+                "GOLDEN-C003"
+              ],
+              "purpose": "Guided practice writing an improvement report."
+            },
+            {
+              "resourceId": "GOLDEN-R006",
+              "role": "optional",
+              "competencyIds": [
+                "GOLDEN-C003"
+              ],
+              "purpose": "Optional evidence-language reference."
+            }
+          ]
+        },
+        "skillCheck": {
+          "id": "GOLDEN-SC-W02",
+          "title": "Evidence and Explanation Check",
+          "instructions": "Choose the answer best supported by the stated evidence.",
+          "passingScore": 70,
+          "competencyIds": [
+            "GOLDEN-C001",
+            "GOLDEN-C002",
+            "GOLDEN-C003"
+          ],
+          "questions": [
+            {
+              "id": "GOLDEN-Q-W02-01",
+              "competencyIds": [
+                "GOLDEN-C003"
+              ],
+              "prompt": "What should an evidence-based explanation connect?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "A preferred answer to no observation"
+                },
+                {
+                  "id": "b",
+                  "label": "The controlled change to the observed difference"
+                },
+                {
+                  "id": "c",
+                  "label": "Two unrelated claims"
+                },
+                {
+                  "id": "d",
+                  "label": "A title to an assumption"
+                }
+              ],
+              "correctOptionId": "b",
+              "explanation": "The explanation connects the tested change with the observed before-and-after result."
+            },
+            {
+              "id": "GOLDEN-Q-W02-02",
+              "competencyIds": [
+                "GOLDEN-C003"
+              ],
+              "prompt": "Which conclusion is appropriately limited?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "This result proves the change always works."
+                },
+                {
+                  "id": "b",
+                  "label": "No other explanation is possible."
+                },
+                {
+                  "id": "c",
+                  "label": "Under the tested conditions, the changed factor improved the measured result."
+                },
+                {
+                  "id": "d",
+                  "label": "Every similar problem has the same cause."
+                }
+              ],
+              "correctOptionId": "c",
+              "explanation": "The conclusion states the observed result without claiming more than the test supports."
+            },
+            {
+              "id": "GOLDEN-Q-W02-03",
+              "competencyIds": [
+                "GOLDEN-C001"
+              ],
+              "prompt": "Which item belongs in a before record?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "The measured or observed baseline"
+                },
+                {
+                  "id": "b",
+                  "label": "A guaranteed future outcome"
+                },
+                {
+                  "id": "c",
+                  "label": "A different test result"
+                },
+                {
+                  "id": "d",
+                  "label": "An unsupported cause"
+                }
+              ],
+              "correctOptionId": "a",
+              "explanation": "The before record establishes the observable baseline."
+            },
+            {
+              "id": "GOLDEN-Q-W02-04",
+              "competencyIds": [
+                "GOLDEN-C002"
+              ],
+              "prompt": "Why repeat the same measurement after the change?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "To hide the baseline"
+                },
+                {
+                  "id": "b",
+                  "label": "To compare the same outcome under changed conditions"
+                },
+                {
+                  "id": "c",
+                  "label": "To add unrelated data"
+                },
+                {
+                  "id": "d",
+                  "label": "To avoid interpreting results"
+                }
+              ],
+              "correctOptionId": "b",
+              "explanation": "Using the same measure makes before-and-after results comparable."
+            },
+            {
+              "id": "GOLDEN-Q-W02-05",
+              "competencyIds": [
+                "GOLDEN-C003"
+              ],
+              "prompt": "A result improved once. Which report language is strongest?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "The change can never fail."
+                },
+                {
+                  "id": "b",
+                  "label": "The evidence proves all alternatives wrong."
+                },
+                {
+                  "id": "c",
+                  "label": "The single test is enough for every situation."
+                },
+                {
+                  "id": "d",
+                  "label": "The result improved in this test; additional repetition could increase confidence."
+                }
+              ],
+              "correctOptionId": "d",
+              "explanation": "The statement reports the evidence and acknowledges its limited scope."
+            },
+            {
+              "id": "GOLDEN-Q-W02-06",
+              "competencyIds": [
+                "GOLDEN-C001",
+                "GOLDEN-C003"
+              ],
+              "prompt": "Which report section best supports inspection?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "A vague success claim"
+                },
+                {
+                  "id": "b",
+                  "label": "Specific before and after observations"
+                },
+                {
+                  "id": "c",
+                  "label": "An omitted test condition"
+                },
+                {
+                  "id": "d",
+                  "label": "A personal preference only"
+                }
+              ],
+              "correctOptionId": "b",
+              "explanation": "Specific observations allow another person to inspect the basis of the explanation."
+            },
+            {
+              "id": "GOLDEN-Q-W02-07",
+              "competencyIds": [
+                "GOLDEN-C002",
+                "GOLDEN-C003"
+              ],
+              "prompt": "Two factors changed and the result improved. What should the report say?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "One exact factor is proven responsible."
+                },
+                {
+                  "id": "b",
+                  "label": "The evidence is perfectly isolated."
+                },
+                {
+                  "id": "c",
+                  "label": "The combined changes improved the result, but attribution is uncertain."
+                },
+                {
+                  "id": "d",
+                  "label": "No observation should be recorded."
+                }
+              ],
+              "correctOptionId": "c",
+              "explanation": "The report must acknowledge that multiple changes prevent isolating one cause."
+            },
+            {
+              "id": "GOLDEN-Q-W02-08",
+              "competencyIds": [
+                "GOLDEN-C003"
+              ],
+              "prompt": "What is the purpose of noting a limitation?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "To make the evidence less honest"
+                },
+                {
+                  "id": "b",
+                  "label": "To hide the result"
+                },
+                {
+                  "id": "c",
+                  "label": "To replace the observation"
+                },
+                {
+                  "id": "d",
+                  "label": "To clarify what the evidence does and does not establish"
+                }
+              ],
+              "correctOptionId": "d",
+              "explanation": "Limitations keep the explanation aligned with the actual strength of the evidence."
+            },
+            {
+              "id": "GOLDEN-Q-W02-09",
+              "competencyIds": [
+                "GOLDEN-C001",
+                "GOLDEN-C002"
+              ],
+              "prompt": "Which record best enables someone to repeat the test?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Baseline, exact change, conditions, and observed result"
+                },
+                {
+                  "id": "b",
+                  "label": "A success label only"
+                },
+                {
+                  "id": "c",
+                  "label": "An unnamed change"
+                },
+                {
+                  "id": "d",
+                  "label": "A conclusion without observations"
+                }
+              ],
+              "correctOptionId": "a",
+              "explanation": "Repeatability depends on specific conditions, actions, and observations."
+            },
+            {
+              "id": "GOLDEN-Q-W02-10",
+              "competencyIds": [
+                "GOLDEN-C003"
+              ],
+              "prompt": "An after result is worse. What is the defensible response?",
+              "options": [
+                {
+                  "id": "a",
+                  "label": "Delete the result"
+                },
+                {
+                  "id": "b",
+                  "label": "Report the result and reconsider the proposed improvement"
+                },
+                {
+                  "id": "c",
+                  "label": "Claim improvement anyway"
+                },
+                {
+                  "id": "d",
+                  "label": "Change the baseline wording"
+                }
+              ],
+              "correctOptionId": "b",
+              "explanation": "Evidence-based improvement requires reporting unfavorable results and revising the proposal."
+            }
+          ]
+        },
+        "builds": [
+          {
+            "id": "GOLDEN-B-W02-01",
+            "title": "Evidence-Based Improvement Report",
+            "required": true,
+            "outcome": "Produce an inspectable report explaining a tested improvement and its limits.",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C002",
+              "GOLDEN-C003"
+            ],
+            "estimatedMinutes": 150,
+            "brief": "Extend the controlled change log into a short report with comparable observations, a supported conclusion, and one limitation.",
+            "steps": [
+              {
+                "id": "GOLDEN-B-W02-01-S01",
+                "text": "Organize the before and after evidence."
+              },
+              {
+                "id": "GOLDEN-B-W02-01-S02",
+                "text": "Write a conclusion limited to what the test supports."
+              }
+            ],
+            "acceptanceCriteria": [
+              {
+                "id": "GOLDEN-B-W02-01-A01",
+                "text": "The report includes comparable before-and-after evidence."
+              },
+              {
+                "id": "GOLDEN-B-W02-01-A02",
+                "text": "The conclusion identifies at least one limitation."
+              }
+            ],
+            "hints": [
+              "Prefer precise observations over claims such as always or never."
+            ],
+            "templates": [],
+            "stretch": "Repeat the controlled test and compare whether the result is consistent."
+          }
+        ],
+        "proof": {
+          "id": "GOLDEN-PR-W02",
+          "prompt": "Present evidence that the improvement report is complete and inspectable.",
+          "evidence": [
+            {
+              "id": "GOLDEN-PR-W02-E01",
+              "type": "link",
+              "label": "Link to the improvement report",
+              "required": true
+            },
+            {
+              "id": "GOLDEN-PR-W02-E02",
+              "type": "text",
+              "label": "Summarize the evidence and its limitation",
+              "required": true
+            },
+            {
+              "id": "GOLDEN-PR-W02-E03",
+              "type": "confirmation",
+              "label": "I compared the same observation before and after the change.",
+              "required": true
+            }
+          ]
+        },
+        "reflection": {
+          "minimumResponses": 1,
+          "prompts": [
+            {
+              "id": "GOLDEN-RF-W02-01",
+              "prompt": "What claim did you narrow after reviewing the evidence?"
+            },
+            {
+              "id": "GOLDEN-RF-W02-02",
+              "prompt": "What additional test would improve confidence in your conclusion?"
+            }
+          ]
+        }
+      }
+    },
+    "skillChecksById": {
+      "GOLDEN-SC-W01": {
+        "id": "GOLDEN-SC-W01",
+        "title": "Observation and Testing Check",
+        "instructions": "Choose the best answer for each question.",
+        "passingScore": 70,
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002"
+        ],
+        "questions": [
+          {
+            "id": "GOLDEN-Q-W01-01",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "Which note is an observable fact?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The page displayed an error code."
+              },
+              {
+                "id": "b",
+                "label": "The system is badly designed."
+              },
+              {
+                "id": "c",
+                "label": "The developer was careless."
+              },
+              {
+                "id": "d",
+                "label": "The tool never works."
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "An displayed error code is directly observable; the other choices are unsupported conclusions."
+          },
+          {
+            "id": "GOLDEN-Q-W01-02",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "What should a useful first problem record include?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Only a proposed solution"
+              },
+              {
+                "id": "b",
+                "label": "What happened and how it was observed"
+              },
+              {
+                "id": "c",
+                "label": "A guess about who caused it"
+              },
+              {
+                "id": "d",
+                "label": "No reproducible detail"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "A useful record begins with the observable behavior and its context."
+          },
+          {
+            "id": "GOLDEN-Q-W01-03",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "Why change one factor at a time?",
+            "options": [
+              {
+                "id": "a",
+                "label": "To make the test longer"
+              },
+              {
+                "id": "b",
+                "label": "To avoid recording results"
+              },
+              {
+                "id": "c",
+                "label": "To better connect a changed result to the tested factor"
+              },
+              {
+                "id": "d",
+                "label": "To guarantee success"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "Controlling other factors makes the evidence easier to interpret."
+          },
+          {
+            "id": "GOLDEN-Q-W01-04",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "A test changes three settings and the problem disappears. What is known?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Exactly which setting fixed it"
+              },
+              {
+                "id": "b",
+                "label": "All settings were required"
+              },
+              {
+                "id": "c",
+                "label": "The original observation was false"
+              },
+              {
+                "id": "d",
+                "label": "The combined change altered the result, but the responsible factor is unclear"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "Multiple simultaneous changes prevent attributing the outcome to one factor."
+          },
+          {
+            "id": "GOLDEN-Q-W01-05",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "Which wording avoids an unsupported conclusion?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The request returned status 500 twice."
+              },
+              {
+                "id": "b",
+                "label": "The server is hopeless."
+              },
+              {
+                "id": "c",
+                "label": "The library is broken."
+              },
+              {
+                "id": "d",
+                "label": "Nothing can fix this."
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "The status and repetition are recorded observations."
+          },
+          {
+            "id": "GOLDEN-Q-W01-06",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "What should be recorded after a controlled change?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Only whether the learner liked it"
+              },
+              {
+                "id": "b",
+                "label": "The result observed under the changed condition"
+              },
+              {
+                "id": "c",
+                "label": "A different unrelated problem"
+              },
+              {
+                "id": "d",
+                "label": "Nothing if the change failed"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Both successful and unsuccessful test results provide evidence."
+          },
+          {
+            "id": "GOLDEN-Q-W01-07",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C002"
+            ],
+            "prompt": "Which sequence supports a defensible test?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Conclude, guess, stop"
+              },
+              {
+                "id": "b",
+                "label": "Change everything, then observe"
+              },
+              {
+                "id": "c",
+                "label": "Observe, change one factor, observe again"
+              },
+              {
+                "id": "d",
+                "label": "Copy a conclusion without testing"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "The sequence establishes a baseline and a comparable result."
+          },
+          {
+            "id": "GOLDEN-Q-W01-08",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "A controlled change does not alter the result. What is the best next interpretation?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The test proves every possible cause"
+              },
+              {
+                "id": "b",
+                "label": "That tested factor did not change the observed result in this test"
+              },
+              {
+                "id": "c",
+                "label": "The original problem never existed"
+              },
+              {
+                "id": "d",
+                "label": "Evidence is unnecessary"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "The conclusion should remain limited to what the test actually showed."
+          },
+          {
+            "id": "GOLDEN-Q-W01-09",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "Which detail makes an observation easier to inspect?",
+            "options": [
+              {
+                "id": "a",
+                "label": "A precise message and the action that preceded it"
+              },
+              {
+                "id": "b",
+                "label": "A broad complaint"
+              },
+              {
+                "id": "c",
+                "label": "An unrelated prediction"
+              },
+              {
+                "id": "d",
+                "label": "A hidden assumption"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "Specific context and output make an observation inspectable."
+          },
+          {
+            "id": "GOLDEN-Q-W01-10",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "What makes two test observations comparable?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Changing the goal between tests"
+              },
+              {
+                "id": "b",
+                "label": "Ignoring the original condition"
+              },
+              {
+                "id": "c",
+                "label": "Using unrelated measures"
+              },
+              {
+                "id": "d",
+                "label": "Keeping relevant conditions stable except for the tested factor"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "Comparable conditions isolate the effect of the tested change."
+          }
+        ]
+      },
+      "GOLDEN-SC-W02": {
+        "id": "GOLDEN-SC-W02",
+        "title": "Evidence and Explanation Check",
+        "instructions": "Choose the answer best supported by the stated evidence.",
+        "passingScore": 70,
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002",
+          "GOLDEN-C003"
+        ],
+        "questions": [
+          {
+            "id": "GOLDEN-Q-W02-01",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "What should an evidence-based explanation connect?",
+            "options": [
+              {
+                "id": "a",
+                "label": "A preferred answer to no observation"
+              },
+              {
+                "id": "b",
+                "label": "The controlled change to the observed difference"
+              },
+              {
+                "id": "c",
+                "label": "Two unrelated claims"
+              },
+              {
+                "id": "d",
+                "label": "A title to an assumption"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "The explanation connects the tested change with the observed before-and-after result."
+          },
+          {
+            "id": "GOLDEN-Q-W02-02",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "Which conclusion is appropriately limited?",
+            "options": [
+              {
+                "id": "a",
+                "label": "This result proves the change always works."
+              },
+              {
+                "id": "b",
+                "label": "No other explanation is possible."
+              },
+              {
+                "id": "c",
+                "label": "Under the tested conditions, the changed factor improved the measured result."
+              },
+              {
+                "id": "d",
+                "label": "Every similar problem has the same cause."
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "The conclusion states the observed result without claiming more than the test supports."
+          },
+          {
+            "id": "GOLDEN-Q-W02-03",
+            "competencyIds": [
+              "GOLDEN-C001"
+            ],
+            "prompt": "Which item belongs in a before record?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The measured or observed baseline"
+              },
+              {
+                "id": "b",
+                "label": "A guaranteed future outcome"
+              },
+              {
+                "id": "c",
+                "label": "A different test result"
+              },
+              {
+                "id": "d",
+                "label": "An unsupported cause"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "The before record establishes the observable baseline."
+          },
+          {
+            "id": "GOLDEN-Q-W02-04",
+            "competencyIds": [
+              "GOLDEN-C002"
+            ],
+            "prompt": "Why repeat the same measurement after the change?",
+            "options": [
+              {
+                "id": "a",
+                "label": "To hide the baseline"
+              },
+              {
+                "id": "b",
+                "label": "To compare the same outcome under changed conditions"
+              },
+              {
+                "id": "c",
+                "label": "To add unrelated data"
+              },
+              {
+                "id": "d",
+                "label": "To avoid interpreting results"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Using the same measure makes before-and-after results comparable."
+          },
+          {
+            "id": "GOLDEN-Q-W02-05",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "A result improved once. Which report language is strongest?",
+            "options": [
+              {
+                "id": "a",
+                "label": "The change can never fail."
+              },
+              {
+                "id": "b",
+                "label": "The evidence proves all alternatives wrong."
+              },
+              {
+                "id": "c",
+                "label": "The single test is enough for every situation."
+              },
+              {
+                "id": "d",
+                "label": "The result improved in this test; additional repetition could increase confidence."
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "The statement reports the evidence and acknowledges its limited scope."
+          },
+          {
+            "id": "GOLDEN-Q-W02-06",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C003"
+            ],
+            "prompt": "Which report section best supports inspection?",
+            "options": [
+              {
+                "id": "a",
+                "label": "A vague success claim"
+              },
+              {
+                "id": "b",
+                "label": "Specific before and after observations"
+              },
+              {
+                "id": "c",
+                "label": "An omitted test condition"
+              },
+              {
+                "id": "d",
+                "label": "A personal preference only"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Specific observations allow another person to inspect the basis of the explanation."
+          },
+          {
+            "id": "GOLDEN-Q-W02-07",
+            "competencyIds": [
+              "GOLDEN-C002",
+              "GOLDEN-C003"
+            ],
+            "prompt": "Two factors changed and the result improved. What should the report say?",
+            "options": [
+              {
+                "id": "a",
+                "label": "One exact factor is proven responsible."
+              },
+              {
+                "id": "b",
+                "label": "The evidence is perfectly isolated."
+              },
+              {
+                "id": "c",
+                "label": "The combined changes improved the result, but attribution is uncertain."
+              },
+              {
+                "id": "d",
+                "label": "No observation should be recorded."
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "The report must acknowledge that multiple changes prevent isolating one cause."
+          },
+          {
+            "id": "GOLDEN-Q-W02-08",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "What is the purpose of noting a limitation?",
+            "options": [
+              {
+                "id": "a",
+                "label": "To make the evidence less honest"
+              },
+              {
+                "id": "b",
+                "label": "To hide the result"
+              },
+              {
+                "id": "c",
+                "label": "To replace the observation"
+              },
+              {
+                "id": "d",
+                "label": "To clarify what the evidence does and does not establish"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "Limitations keep the explanation aligned with the actual strength of the evidence."
+          },
+          {
+            "id": "GOLDEN-Q-W02-09",
+            "competencyIds": [
+              "GOLDEN-C001",
+              "GOLDEN-C002"
+            ],
+            "prompt": "Which record best enables someone to repeat the test?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Baseline, exact change, conditions, and observed result"
+              },
+              {
+                "id": "b",
+                "label": "A success label only"
+              },
+              {
+                "id": "c",
+                "label": "An unnamed change"
+              },
+              {
+                "id": "d",
+                "label": "A conclusion without observations"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "Repeatability depends on specific conditions, actions, and observations."
+          },
+          {
+            "id": "GOLDEN-Q-W02-10",
+            "competencyIds": [
+              "GOLDEN-C003"
+            ],
+            "prompt": "An after result is worse. What is the defensible response?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Delete the result"
+              },
+              {
+                "id": "b",
+                "label": "Report the result and reconsider the proposed improvement"
+              },
+              {
+                "id": "c",
+                "label": "Claim improvement anyway"
+              },
+              {
+                "id": "d",
+                "label": "Change the baseline wording"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Evidence-based improvement requires reporting unfavorable results and revising the proposal."
+          }
+        ]
+      }
+    },
+    "buildsById": {
+      "GOLDEN-B-W01-01": {
+        "id": "GOLDEN-B-W01-01",
+        "title": "Controlled Change Log",
+        "required": true,
+        "outcome": "Produce a concise record of one observation, one controlled change, and its result.",
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002"
+        ],
+        "estimatedMinutes": 120,
+        "brief": "Choose a harmless everyday or sample-system problem, record the baseline, change one factor, and record the new result.",
+        "steps": [
+          {
+            "id": "GOLDEN-B-W01-01-S01",
+            "text": "Record the initial observable result."
+          },
+          {
+            "id": "GOLDEN-B-W01-01-S02",
+            "text": "Change one factor and repeat the observation."
+          }
+        ],
+        "acceptanceCriteria": [
+          {
+            "id": "GOLDEN-B-W01-01-A01",
+            "text": "The record distinguishes observations from conclusions."
+          },
+          {
+            "id": "GOLDEN-B-W01-01-A02",
+            "text": "Only one relevant factor changes between observations."
+          }
+        ],
+        "hints": [
+          "Use a safe sample or everyday process; do not test a production system."
+        ],
+        "templates": [
+          {
+            "id": "GOLDEN-T001",
+            "label": "Controlled change log",
+            "content": "# Observation\n\n# One change\n\n# Result\n"
+          }
+        ],
+        "stretch": null
+      },
+      "GOLDEN-B-W01-02": {
+        "id": "GOLDEN-B-W01-02",
+        "title": "Second-Factor Exploration",
+        "required": false,
+        "outcome": "Test a second factor in a separate controlled comparison.",
+        "competencyIds": [
+          "GOLDEN-C002"
+        ],
+        "estimatedMinutes": 45,
+        "brief": "Reset the baseline and test one different factor.",
+        "steps": [],
+        "acceptanceCriteria": [
+          {
+            "id": "GOLDEN-B-W01-02-A01",
+            "text": "The second test remains separate from the first."
+          }
+        ],
+        "hints": [],
+        "templates": [],
+        "stretch": null
+      },
+      "GOLDEN-B-W02-01": {
+        "id": "GOLDEN-B-W02-01",
+        "title": "Evidence-Based Improvement Report",
+        "required": true,
+        "outcome": "Produce an inspectable report explaining a tested improvement and its limits.",
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002",
+          "GOLDEN-C003"
+        ],
+        "estimatedMinutes": 150,
+        "brief": "Extend the controlled change log into a short report with comparable observations, a supported conclusion, and one limitation.",
+        "steps": [
+          {
+            "id": "GOLDEN-B-W02-01-S01",
+            "text": "Organize the before and after evidence."
+          },
+          {
+            "id": "GOLDEN-B-W02-01-S02",
+            "text": "Write a conclusion limited to what the test supports."
+          }
+        ],
+        "acceptanceCriteria": [
+          {
+            "id": "GOLDEN-B-W02-01-A01",
+            "text": "The report includes comparable before-and-after evidence."
+          },
+          {
+            "id": "GOLDEN-B-W02-01-A02",
+            "text": "The conclusion identifies at least one limitation."
+          }
+        ],
+        "hints": [
+          "Prefer precise observations over claims such as always or never."
+        ],
+        "templates": [],
+        "stretch": "Repeat the controlled test and compare whether the result is consistent."
+      }
+    },
+    "proofsById": {
+      "GOLDEN-PR-W01": {
+        "id": "GOLDEN-PR-W01",
+        "prompt": "Provide sufficient evidence of the controlled change log.",
+        "evidence": [
+          {
+            "id": "GOLDEN-PR-W01-E01",
+            "type": "link",
+            "label": "Link to the completed log",
+            "required": true
+          },
+          {
+            "id": "GOLDEN-PR-W01-E02",
+            "type": "text",
+            "label": "What should be inspected?",
+            "required": true
+          },
+          {
+            "id": "GOLDEN-PR-W01-E03",
+            "type": "confirmation",
+            "label": "I changed only one relevant factor.",
+            "required": true
+          }
+        ]
+      },
+      "GOLDEN-PR-W02": {
+        "id": "GOLDEN-PR-W02",
+        "prompt": "Present evidence that the improvement report is complete and inspectable.",
+        "evidence": [
+          {
+            "id": "GOLDEN-PR-W02-E01",
+            "type": "link",
+            "label": "Link to the improvement report",
+            "required": true
+          },
+          {
+            "id": "GOLDEN-PR-W02-E02",
+            "type": "text",
+            "label": "Summarize the evidence and its limitation",
+            "required": true
+          },
+          {
+            "id": "GOLDEN-PR-W02-E03",
+            "type": "confirmation",
+            "label": "I compared the same observation before and after the change.",
+            "required": true
+          }
+        ]
+      }
+    },
+    "projectsById": {
+      "GOLDEN-PJ01": {
+        "id": "GOLDEN-PJ01",
+        "title": "Evidence-Based Improvement Portfolio",
+        "outcome": "Combine controlled observations and an improvement explanation into one inspectable body of work.",
+        "competencyIds": [
+          "GOLDEN-C001",
+          "GOLDEN-C002",
+          "GOLDEN-C003"
+        ],
+        "milestones": [
+          {
+            "id": "GOLDEN-PJ01-M01",
+            "title": "Controlled change recorded",
+            "weekId": "GOLDEN-W01",
+            "buildId": "GOLDEN-B-W01-01"
+          },
+          {
+            "id": "GOLDEN-PJ01-M02",
+            "title": "Improvement report completed",
+            "weekId": "GOLDEN-W02",
+            "buildId": "GOLDEN-B-W02-01"
+          }
+        ]
+      }
+    }
+  }
+}

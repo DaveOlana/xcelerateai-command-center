@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import {
-  ChevronLeft, ChevronRight, CheckCircle2,
+  CheckCircle2,
   Printer, BookOpen, Target, Lock, ShieldAlert,
   Coffee, AlertTriangle, FileText,
-  Zap, Clock, CheckSquare, ChevronDown
+  Zap, Clock, CheckSquare, ChevronDown, Map, Shield, Play
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import {
@@ -13,6 +13,8 @@ import {
 } from '../utils/unlockChecker';
 import { cleanDifficultyLabel } from '../utils/safeRender';
 import { buildMissionObject } from '../utils/missionAdapter';
+import { getRoadmapIdentity } from '../utils/resourceActivity.js';
+import { getAssessmentRecord, getSkillCheckDefinition } from '../utils/skillCheckUtils.js';
 
 import { PageShell, PageHeader, LockWarningCard } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
@@ -21,7 +23,6 @@ import MissionBrief from '../components/education/mission-context/MissionBrief';
 import MissionScenario from '../components/education/mission-context/MissionScenario';
 import LearningObjectives from '../components/education/mission-context/LearningObjectives';
 import ExpectedOutcome from '../components/education/mission-context/ExpectedOutcome';
-import LearningKit from '../components/education/learning-kit/LearningKit';
 import HintsPanel from '../components/education/guided-learning/HintsPanel';
 import LearningBottlenecks from '../components/education/guided-learning/LearningBottlenecks';
 import DebugChecklist from '../components/education/guided-learning/DebugChecklist';
@@ -34,6 +35,13 @@ import MissionSummary from '../components/education/mission-transition/MissionSu
 import CommanderNotes from '../components/education/mission-transition/CommanderNotes';
 import NextMissionPreview from '../components/education/mission-transition/NextMissionPreview';
 import ContinueJourney from '../components/education/mission-transition/ContinueJourney';
+import ResourceVault from './ResourceVault';
+import SideQuestLock from './SideQuestLock';
+import InlineFocusTimer from '../components/features/InlineFocusTimer';
+import MissionStageStepper from '../components/missions/MissionStageStepper';
+import StudyStage from '../components/missions/StudyStage';
+import SkillCheckStage from '../components/missions/SkillCheckStage';
+import DevQuizPreview from '../dev/DevQuizPreview';
 
 // Collapsible helper component for supporting details sidebar
 function CollapsibleSection({ title, children, defaultOpen = true }) {
@@ -57,19 +65,117 @@ function CollapsibleSection({ title, children, defaultOpen = true }) {
   );
 }
 
-// ── Step config for the guided stepper ──
-const STEPS = [
-  { id: 'overview',   label: 'Overview',          icon: BookOpen,     stepNum: 0, alwaysOpen: true },
-  { id: 'resources',  label: 'Study Resources',   icon: BookOpen,     stepNum: 1, alwaysOpen: true },
-  { id: 'skillcheck', label: 'Skill Check',       icon: CheckSquare,  stepNum: 2, alwaysOpen: false },
-  { id: 'practicals', label: 'Practical Missions',icon: Target,       stepNum: 3, alwaysOpen: false },
-  { id: 'proof',      label: 'Proof of Work',     icon: FileText,     stepNum: 4, alwaysOpen: false },
-  { id: 'reflection', label: 'Reflection',        icon: Zap,          stepNum: 5, alwaysOpen: false },
-  { id: 'unlock',     label: 'Unlock Next Week',  icon: CheckCircle2, stepNum: 6, alwaysOpen: false },
-  { id: 'tasks',      label: 'All Tasks',         icon: CheckCircle2, stepNum: -1, alwaysOpen: true },
+const InlineLockCard = LockWarningCard;
+
+const MISSION_AREAS = [
+  { id: 'path', label: 'Path', icon: Map },
+  { id: 'current', label: 'Current', icon: Target },
+  { id: 'resources', label: 'Resources', icon: BookOpen },
+  { id: 'side-quests', label: 'Side Quests', icon: Shield },
 ];
 
-const InlineLockCard = LockWarningCard;
+function PathView({ roadmap, allWeeks, activeWeek, viewedWeek, onViewWeek, onOpenCurrent, isWeekComplete, manualOverrideEnabled }) {
+  const viewedEntry = allWeeks.find(({ week }) => week.weekNumber === viewedWeek) || allWeeks[0];
+  const viewedStatus = viewedEntry
+    ? isWeekComplete(viewedEntry.week.weekNumber)
+      ? 'Completed'
+      : viewedEntry.week.weekNumber === activeWeek
+        ? 'Current'
+        : isWeekAccessible(viewedEntry.week.weekNumber, activeWeek, manualOverrideEnabled)
+          ? 'Available'
+          : 'Locked'
+    : null;
+
+  const statusStyles = {
+    Completed: 'badge-green',
+    Current: 'bg-accent-primary/10 text-accent-primary border border-accent-primary/20',
+    Available: 'badge-slate',
+    Locked: 'bg-navy-900 text-slate-500 border border-navy-700/40',
+  };
+
+  return (
+    <div className="space-y-6">
+      {viewedEntry && (
+        <div className="card">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${statusStyles[viewedStatus]}`}>{viewedStatus}</span>
+                <span className="text-xs text-slate-500">Viewing Week {viewedEntry.week.weekNumber}</span>
+                {viewedEntry.week.weekNumber !== activeWeek && (
+                  <span className="text-xs text-slate-500">Current week: {activeWeek}</span>
+                )}
+              </div>
+              <h2 className="text-xl font-bold text-white mt-3">{viewedEntry.week.title}</h2>
+              {(viewedEntry.week.goal || viewedEntry.week.objective || viewedEntry.week.briefing) && (
+                <p className="text-sm text-slate-400 mt-2 leading-relaxed max-w-3xl">
+                  {viewedEntry.week.goal || viewedEntry.week.objective || viewedEntry.week.briefing}
+                </p>
+              )}
+            </div>
+            <button onClick={onOpenCurrent} className="btn-primary py-2.5 px-4 text-xs font-bold whitespace-nowrap">
+              Go to Current Learning
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div className="space-y-5">
+        {(roadmap?.months || []).map((month) => {
+          const monthWeeks = Array.isArray(month.weeks) ? month.weeks : [];
+          const completedCount = monthWeeks.filter((week) => isWeekComplete(week.weekNumber)).length;
+
+          return (
+            <section key={month.monthNumber || month.id} className="card">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+                <div>
+                  <p className="text-[11px] font-bold text-accent-primary uppercase tracking-widest">Month {month.monthNumber}</p>
+                  <h3 className="text-base font-bold text-white mt-1">{month.title}</h3>
+                  {(month.objective || month.goal || month.summary) && (
+                    <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">{month.objective || month.goal || month.summary}</p>
+                  )}
+                </div>
+                <span className="text-xs text-slate-500 whitespace-nowrap">{completedCount} of {monthWeeks.length} weeks complete</span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
+                {monthWeeks.map((week) => {
+                  const status = isWeekComplete(week.weekNumber)
+                    ? 'Completed'
+                    : week.weekNumber === activeWeek
+                      ? 'Current'
+                      : isWeekAccessible(week.weekNumber, activeWeek, manualOverrideEnabled)
+                        ? 'Available'
+                        : 'Locked';
+                  const isViewed = week.weekNumber === viewedWeek;
+
+                  return (
+                    <button
+                      key={week.weekNumber}
+                      type="button"
+                      onClick={() => onViewWeek(week.weekNumber)}
+                      className={`text-left rounded-xl border p-4 transition-all ${
+                        isViewed
+                          ? 'border-accent-primary bg-accent-primary/5 ring-1 ring-accent-primary/20'
+                          : 'border-navy-700/40 bg-navy-850 hover:border-navy-500'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-xs font-bold text-white">Week {week.weekNumber}</span>
+                        <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${statusStyles[status]}`}>{status}</span>
+                      </div>
+                      <p className="text-sm text-slate-300 mt-2 line-clamp-2">{week.title}</p>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 
 // Status badge styles for practical missions
@@ -83,16 +189,22 @@ const STATUS_COLORS = {
 };
 
 export default function WeeklyMissions() {
+  return <MissionsWorkspace />;
+}
+
+function MissionsWorkspace() {
   const {
     roadmap, progress, settings,
     toggleTask, isTaskComplete, markWeekComplete, isWeekComplete,
     resourcesStatus, updateResourceStatus, skillChecks, submitSkillCheck,
+    skillCheckAttempts,
     practicalMissions, weekProofs, submitWeekProof, saveWeekReflection, weekReflections,
-    sessionTimer, startBreakTimer,
+    sessionTimer, startTimer, startBreakTimer,
     blockers, notes,
   } = useApp();
 
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const allWeeks = useMemo(() => {
     const list = [];
@@ -102,13 +214,48 @@ export default function WeeklyMissions() {
     return list;
   }, [roadmap]);
 
+  const requestedArea = searchParams.get('view');
+  const initialArea = MISSION_AREAS.some((area) => area.id === requestedArea) ? requestedArea : 'current';
+  const [missionArea, setMissionArea] = useState(initialArea);
+  const [viewedWeekNum, setViewedWeekNum] = useState(settings.activeWeek);
   const [selectedWeekNum, setSelectedWeekNum] = useState(settings.activeWeek);
+  const [focusOptionId, setFocusOptionId] = useState('recommended');
+  const [customFocusMinutes, setCustomFocusMinutes] = useState(45);
+  const [gradedQuizActive, setGradedQuizActive] = useState(false);
+  const devQuizPreviewRequested = import.meta.env.DEV && searchParams.get('devQuizPreview') === '1';
   const currentEntry = allWeeks.find((e) => e.week.weekNumber === selectedWeekNum);
+
+  React.useEffect(() => {
+    setSelectedWeekNum(settings.activeWeek);
+    setViewedWeekNum((currentViewed) => currentViewed || settings.activeWeek);
+  }, [settings.activeWeek]);
+
+  React.useEffect(() => {
+    const view = searchParams.get('view');
+    const nextArea = MISSION_AREAS.some((area) => area.id === view) ? view : 'current';
+    setMissionArea(nextArea);
+    if (searchParams.get('focus') === 'session' || view !== nextArea) {
+      setSearchParams({ view: nextArea }, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
+
+  React.useEffect(() => {
+    if (devQuizPreviewRequested) setActiveTab('skillcheck');
+  }, [devQuizPreviewRequested]);
+
+  const openMissionArea = (area) => {
+    if (area === 'current') {
+      setSelectedWeekNum(settings.activeWeek);
+    }
+    setMissionArea(area);
+    setSearchParams({ view: area }, { replace: true });
+  };
 
   // Sync/setup step states helper
   const getInitialStep = React.useCallback((status, isDone) => {
+    if (isDone) return 'unlock';
     if (!status.resourcesDone) return 'resources';
-    if (!status.skillCheckDone) return 'skillcheck';
+    if (status.hasSkillCheck && !status.skillCheckDone) return 'skillcheck';
     if (!status.practicalsDone) return 'practicals';
     if (!status.proofDone) return 'proof';
     if (!status.reflectionDone) return 'reflection';
@@ -117,14 +264,9 @@ export default function WeeklyMissions() {
 
   const [activeTab, setActiveTab] = useState('resources');
 
-  // Skill check local states
-  const [skillAns, setSkillAns] = useState('');
-  const [skillConf, setSkillConf] = useState(3);
-
   // Loading & Feedback States
   const [completeError, setCompleteError] = useState('');
   const [isMarking, setIsMarking] = useState(false);
-  const [skillCheckSaved, setSkillCheckSaved] = useState(false);
 
   // Reflection local state
   const [refAns, setRefAns] = useState('');
@@ -147,11 +289,6 @@ export default function WeeklyMissions() {
   React.useEffect(() => {
     if (!currentEntry) return;
     const { week, month } = currentEntry;
-    const savedCheck = skillChecks[week.weekNumber];
-    setSkillAns(savedCheck?.answers?.explanation || '');
-    setSkillConf(savedCheck?.confidence || 3);
-    setSkillCheckSaved(false);
-
     const savedRef = weekReflections[week.weekNumber];
     setRefAns(savedRef?.explanation || '');
     setReflectionSaved(false);
@@ -175,11 +312,12 @@ export default function WeeklyMissions() {
     const nextStatus = getWeekStepStatus({
       week, weekNum: week.weekNumber, monthNum: month.monthNumber,
       progress, resourcesStatus, skillChecks, practicalMissions,
-      weekProofs, weekReflections, settings,
+      weekProofs, weekReflections, settings, skillCheckAttempts,
+      roadmapId: getRoadmapIdentity(roadmap, settings.activeRoadmapId),
     });
     const weekDone = isWeekComplete(week.weekNumber);
     setActiveTab(getInitialStep(nextStatus, weekDone));
-  }, [selectedWeekNum, currentEntry, progress, resourcesStatus, skillChecks, practicalMissions, weekProofs, weekReflections, settings, getInitialStep]);
+  }, [selectedWeekNum, currentEntry, progress, resourcesStatus, skillChecks, skillCheckAttempts, practicalMissions, weekProofs, weekReflections, settings, roadmap, getInitialStep]);
 
   // Break timer check — if timer running over maxContinuousMinutes
   React.useEffect(() => {
@@ -193,7 +331,7 @@ export default function WeeklyMissions() {
   if (!currentEntry) {
     return (
       <div className="card text-center py-12">
-        <p className="text-slate-500 text-sm">No roadmap data active. Please import a roadmap JSON.</p>
+        <p className="text-slate-500 text-sm">No course is available. Open Advanced Settings to recover or import a curriculum.</p>
       </div>
     );
   }
@@ -212,6 +350,12 @@ export default function WeeklyMissions() {
   // [roadmap] and only changes when the roadmap actually does), so this
   // keeps `mission`'s reference stable too.
   const mission = useMemo(() => buildMissionObject(week, month), [week, month]);
+  const roadmapId = getRoadmapIdentity(roadmap, settings.activeRoadmapId);
+  const skillCheckDefinition = getSkillCheckDefinition(week);
+  const assessmentRecord = skillCheckDefinition.mode === 'quiz' && skillCheckDefinition.skillCheckId
+    ? getAssessmentRecord(skillCheckAttempts, roadmapId, skillCheckDefinition.skillCheckId)
+    : null;
+  const devQuizPreview = devQuizPreviewRequested;
   const taskKey = `m${month.monthNumber}_w${week.weekNumber}`;
   const doneTasks = progress?.completedTasks?.[taskKey];
   const doneTasksCount = Array.isArray(doneTasks) ? doneTasks.length : 0;
@@ -223,35 +367,24 @@ export default function WeeklyMissions() {
   const stepStatus = getWeekStepStatus({
     week, weekNum: week.weekNumber, monthNum: month.monthNumber,
     progress, resourcesStatus, skillChecks, practicalMissions,
-    weekProofs, weekReflections, settings,
+    weekProofs, weekReflections, settings, skillCheckAttempts, roadmapId,
   });
 
   const requiredResources = getRequiredResources(week);
 
-  // Safely extract skill check questions — may be:
-  //   - An array of { id, question, expectedConcepts } (new schema)
-  //   - An array of plain strings
-  //   - A single string (old checkpoint)
-  //   - An object with { prompt } (old schema)
-  const skillCheckQuestions = Array.isArray(week.skillCheck)
-    ? week.skillCheck
-    : week.skillCheck
-    ? [week.skillCheck]
-    : Array.isArray(week.checkpoint)
-    ? week.checkpoint
-    : week.checkpoint
-    ? [{ question: typeof week.checkpoint === 'string' ? week.checkpoint : (week.checkpoint?.prompt || '') }]
-    : [];
-
   // --- Handlers ---
   const handleMarkWeekComplete = () => {
     setCompleteError('');
+    if (stepStatus.recoveryLocked) {
+      setCompleteError('Complete the Skill Check recovery steps before finishing this week.');
+      return;
+    }
     if (!settings.manualOverrideEnabled) {
       if (!stepStatus.resourcesDone && Array.isArray(requiredResources) && requiredResources.length > 0) {
         setCompleteError('Study all required resources before completing this week.');
         return;
       }
-      if (week.checkpoint && !stepStatus.skillCheckDone) {
+      if (stepStatus.hasSkillCheck && !stepStatus.skillCheckDone) {
         setCompleteError('Complete the Skill Check before marking this week complete.');
         return;
       }
@@ -275,12 +408,6 @@ export default function WeeklyMissions() {
     }, 600);
   };
 
-  const handleSaveSkillCheck = (e) => {
-    e.preventDefault();
-    submitSkillCheck(week.weekNumber, { explanation: skillAns }, skillConf, true);
-    setSkillCheckSaved(true);
-  };
-
   const handleSaveReflection = (e) => {
     e.preventDefault();
     saveWeekReflection(week.weekNumber, { explanation: refAns });
@@ -293,7 +420,6 @@ export default function WeeklyMissions() {
     setProofSaved(true);
   };
 
-  const goToPrev = () => { if (selectedWeekNum > 1) setSelectedWeekNum((n) => n - 1); };
   const goToNext = () => { if (selectedWeekNum < allWeeks.length) setSelectedWeekNum((n) => n + 1); };
 
   const getStepStatusDetails = (stepId) => {
@@ -330,9 +456,9 @@ export default function WeeklyMissions() {
         break;
     }
 
+    if (isLocked) return 'locked';
     if (isActive) return 'active';
     if (isCompleted) return 'completed';
-    if (isLocked) return 'locked';
     
     // Check needs attention
     if (stepId === 'practicals') {
@@ -343,14 +469,81 @@ export default function WeeklyMissions() {
     return 'available';
   };
 
+  const handleSelectStage = (stageId) => {
+    if (getStepStatusDetails(stageId) === 'locked') return;
+    if (gradedQuizActive && stageId !== 'skillcheck') {
+      const shouldLeave = window.confirm("Leave Skill Check?\nYour current answers won't be saved.");
+      if (!shouldLeave) return;
+      setGradedQuizActive(false);
+    }
+    setActiveTab(stageId);
+  };
+
+  const handleAssessmentStateChange = React.useCallback((isActive) => {
+    setGradedQuizActive(isActive);
+  }, []);
+
   const steps = [
     { id: 'resources', label: 'Study', icon: BookOpen },
     { id: 'skillcheck', label: 'Skill Check', icon: CheckSquare },
     { id: 'practicals', label: 'Build', icon: Target },
     { id: 'proof', label: 'Proof', icon: FileText },
     { id: 'reflection', label: 'Reflect', icon: Zap },
-    { id: 'unlock', label: 'Unlock', icon: CheckCircle2 },
+    { id: 'unlock', label: 'Complete', icon: CheckCircle2 },
   ];
+
+  const focusStageConfig = {
+    resources: { label: 'Study', minutes: 45 },
+    skillcheck: { label: 'Skill Check', minutes: 20 },
+    practicals: { label: 'Build', minutes: 90 },
+    proof: { label: 'Proof', minutes: 30 },
+  }[activeTab];
+  const nextFocusResource = activeTab === 'resources'
+    ? mission.resources.find((resource) => resourcesStatus[resource.title] !== 'Studied') || mission.resources[0]
+    : null;
+  const nextFocusMission = activeTab === 'practicals'
+    ? (week.practicalMissions || []).find((item) => practicalMissions[item.missionId]?.status !== 'Completed') || week.practicalMissions?.[0]
+    : null;
+  const scheduledFocusOptions = (week.scheduledSessions || []).map((session, index) => ({
+    id: `scheduled-${index}`,
+    label: session.title || session.name || `Scheduled session ${index + 1}`,
+    minutes: Number(session.durationMinutes || 45),
+  }));
+  const selectedScheduledFocus = scheduledFocusOptions.find((option) => option.id === focusOptionId);
+  const focusDuration = focusOptionId === 'custom'
+    ? Math.max(1, Math.min(240, Number(customFocusMinutes) || 45))
+    : selectedScheduledFocus?.minutes || focusStageConfig?.minutes || 45;
+  const focusTaskTitle = nextFocusResource?.title
+    || nextFocusMission?.title
+    || (activeTab === 'skillcheck' ? `Week ${week.weekNumber} skill check` : null)
+    || (activeTab === 'proof' ? `Week ${week.weekNumber} proof requirement` : null)
+    || `${focusStageConfig?.label || 'Learning'} for Week ${week.weekNumber}`;
+
+  const handleStartFocusSession = () => {
+    if (!focusStageConfig || getStepStatusDetails(activeTab) === 'locked') return;
+    const context = {
+      courseId: roadmap?.id || '',
+      courseTitle: roadmap?.shortTitle || roadmap?.title || roadmap?.bootcampTitle || '',
+      weekNumber: settings.activeWeek,
+      weekTitle: week.title || '',
+      stage: activeTab,
+      stageLabel: focusStageConfig.label,
+      taskTitle: focusTaskTitle,
+      missionId: nextFocusMission?.missionId || '',
+      missionTitle: nextFocusMission?.title || '',
+      resourceTitle: nextFocusResource?.title || '',
+      resourceUrl: nextFocusResource?.url || nextFocusResource?.link || '',
+      resourceType: nextFocusResource?.type || '',
+      primaryUrl: nextFocusResource?.url || nextFocusResource?.link || (nextFocusMission?.missionId ? `/mission/${nextFocusMission.missionId}` : ''),
+      primaryLabel: nextFocusResource ? 'Open resource' : nextFocusMission ? 'Open practical mission' : 'Return to Current',
+      sessionType: focusStageConfig.label,
+      startedAt: new Date().toISOString(),
+    };
+    const sessionId = nextFocusMission?.missionId
+      ? `focus-mission-${nextFocusMission.missionId}`
+      : `focus-${activeTab}-week-${settings.activeWeek}`;
+    startTimer(sessionId, focusStageConfig.label, focusTaskTitle, focusDuration, 75, 10, context);
+  };
 
   return (
     <PageShell className="relative">
@@ -359,7 +552,7 @@ export default function WeeklyMissions() {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
           <div className="bg-navy-850 border border-amber-500/30 rounded-2xl w-full max-w-md p-6 animate-scale-in text-center shadow-amber-glow">
             <Coffee className="w-10 h-10 text-amber-400 mx-auto mb-3" />
-            <h2 className="text-lg font-bold text-white">Take a Break, Commander</h2>
+            <h2 className="text-lg font-bold text-white">Take a break</h2>
             <p className="text-xs text-slate-400 mt-2">
               You've been active for{' '}
               <span className="text-amber-400 font-bold font-mono">
@@ -399,69 +592,64 @@ export default function WeeklyMissions() {
 
       {/* ── HEADER ── */}
       <PageHeader
-        title="Weekly Missions"
-        subtitle={`Month ${month.monthNumber}: ${month.title}`}
-        actions={
+        title="Missions"
+        subtitle={roadmap?.shortTitle || roadmap?.title || roadmap?.bootcampTitle || 'Your learning path'}
+        actions={missionArea === 'current' ? (
           <button
             onClick={() => window.print()}
-            className="bg-navy-700/80 border border-navy-450 text-slate-300 font-bold px-4 py-2 rounded-xl hover:text-white hover:border-accent-primary/30 transition-all text-[13px] uppercase tracking-wider active:scale-95 flex items-center gap-1.5 no-print"
+            className="border border-border-default bg-bg-surface text-text-secondary font-bold px-4 py-2 rounded-xl hover:text-text-primary hover:border-accent-primary/30 transition-all text-[13px] uppercase tracking-wider active:scale-95 flex items-center gap-1.5 no-print shadow-sm"
           >
             <Printer className="w-3.5 h-3.5" /> Print Week Checklist
           </button>
-        }
+        ) : null}
       />
 
-      {/* ── WEEK QUICK SELECTOR ── */}
-      <div className="flex items-center gap-3 no-print mb-6">
-        <button onClick={goToPrev} disabled={selectedWeekNum <= 1} className="btn-secondary p-2 disabled:opacity-40">
-          <ChevronLeft className="w-4 h-4" />
-        </button>
-
-        <div className="flex-1 overflow-x-auto no-scrollbar">
-          <div className="flex gap-2 min-w-max pb-1">
-            {allWeeks.map(({ week: w }) => {
-              const done = isWeekComplete(w.weekNumber);
-              const active = w.weekNumber === selectedWeekNum;
-              const locked = !isWeekAccessible(w.weekNumber, settings.activeWeek, settings.manualOverrideEnabled);
-
-              return (
-                <button
-                  key={w.weekNumber}
-                  onClick={() => setSelectedWeekNum(w.weekNumber)}
-                  title={w.title}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
-                    active
-                      ? 'bg-accent-primary border-accent-primary text-navy-900 shadow-primary-glow-sm'
-                      : done
-                      ? 'bg-blue-500/10 text-blue-400 border-blue-500/25'
-                      : locked
-                      ? 'bg-navy-800 text-slate-600 border-navy-450 opacity-60'
-                      : 'bg-navy-700 text-slate-400 border-navy-450 hover:border-navy-300'
-                  }`}
-                >
-                  {locked && <Lock className="w-2.5 h-2.5" />}
-                  {done && <CheckCircle2 className="w-3 h-3" />}
-                  W{w.weekNumber}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        <button onClick={goToNext} disabled={selectedWeekNum >= allWeeks.length} className="btn-secondary p-2 disabled:opacity-40">
-          <ChevronRight className="w-4 h-4" />
-        </button>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 no-print" aria-label="Missions sections">
+        {MISSION_AREAS.map(({ id, label, icon: Icon }) => (
+          <button
+            key={id}
+            type="button"
+            onClick={() => openMissionArea(id)}
+            className={`flex items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-semibold transition-all ${
+              missionArea === id
+                ? 'border-accent-primary/40 bg-accent-primary/10 text-accent-primary shadow-sm'
+                : 'border-border-default bg-bg-surface text-text-secondary hover:text-text-primary hover:border-border-strong'
+            }`}
+          >
+            <Icon className={`w-4 h-4 ${missionArea === id ? 'text-accent-primary' : 'text-slate-500'}`} />
+            {label}
+          </button>
+        ))}
       </div>
 
+      {missionArea === 'path' && (
+        <PathView
+          roadmap={roadmap}
+          allWeeks={allWeeks}
+          activeWeek={settings.activeWeek}
+          viewedWeek={viewedWeekNum}
+          onViewWeek={setViewedWeekNum}
+          onOpenCurrent={() => openMissionArea('current')}
+          isWeekComplete={isWeekComplete}
+          manualOverrideEnabled={settings.manualOverrideEnabled}
+        />
+      )}
+
+      {missionArea === 'resources' && <ResourceVault embedded />}
+      {missionArea === 'side-quests' && <SideQuestLock embedded />}
+
+      {missionArea === 'current' && (
+        <>
+      {!gradedQuizActive && <InlineFocusTimer />}
       {isWeekLocked ? (
-        <div className="bg-navy-850 border border-navy-700/20 rounded-3xl p-8 max-w-xl mx-auto my-8 text-center space-y-5 shadow-card">
+        <div className="surface-card p-8 max-w-xl mx-auto my-8 text-center space-y-5">
           <div className="w-14 h-14 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center mx-auto shadow-sm">
             <Lock className="w-5 h-5 text-red-400" />
           </div>
           <div>
-            <h3 className="text-[16px] font-bold text-white tracking-tight">Bootcamp Week Locked</h3>
-            <p className="text-[14px] text-slate-400 mt-2 leading-relaxed">
-              Prerequisite missing. Please complete all tasks and submit proof for Week {selectedWeekNum - 1} before proceeding to these milestones.
+            <h3 className="text-[16px] font-bold text-text-primary tracking-tight">Week unavailable</h3>
+            <p className="text-[14px] text-text-secondary mt-2 leading-relaxed">
+              Complete the required work for Week {selectedWeekNum - 1} before continuing to this week.
             </p>
           </div>
           <div className="flex gap-3 justify-center pt-4 border-t border-navy-700/30">
@@ -489,12 +677,12 @@ export default function WeeklyMissions() {
                   {isComplete ? (
                     <span className="badge-green">Completed</span>
                   ) : (
-                    <span className="badge-slate">In Progress</span>
+                    <span className="bg-accent-primary/10 text-accent-primary border border-accent-primary/20 text-xs font-semibold px-2.5 py-1 rounded-full">Current Week</span>
                   )}
                   <span className="text-xs text-slate-450 font-medium">Week {selectedWeekNum} of {allWeeks.length}</span>
                 </div>
                 <h2 className="text-xl font-bold text-white">{week.title}</h2>
-                <p className="text-[13px] text-slate-450 font-medium mt-1">Ref: W{String(week.weekNumber).padStart(2, '0')} · Month {month.monthNumber}</p>
+                <p className="text-[13px] text-slate-450 font-medium mt-1">Month {month.monthNumber}: {month.title}</p>
               </div>
               <div className="text-right flex-shrink-0">
                 <p className="text-2xl font-bold text-accent-primary">{taskPercent}%</p>
@@ -510,69 +698,41 @@ export default function WeeklyMissions() {
           </div>
 
           {/* ── STAGE PROGRESS STEPPER ── */}
-          <div className="w-full bg-navy-850 border border-navy-700/20 rounded-2xl p-4 no-print mb-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Learning Stage Stepper</span>
-              <div className="flex items-center gap-1.5 overflow-x-auto pb-2 md:pb-0 no-scrollbar w-full md:w-auto">
-                {steps.map((s, idx) => {
-                  const stepStatusVal = getStepStatusDetails(s.id);
-                  const Icon = s.icon;
-                  
-                  let statusStyle = "";
-                  let iconColor = "";
-                  let isClickable = true;
-
-                  if (stepStatusVal === 'active') {
-                    statusStyle = "bg-brand-amber/15 border-brand-amber text-white shadow-brand-amber/5";
-                    iconColor = "text-brand-amber";
-                  } else if (stepStatusVal === 'completed') {
-                    statusStyle = "bg-emerald-500/10 border-emerald-500/30 text-emerald-450 hover:bg-emerald-500/20";
-                    iconColor = "text-emerald-400";
-                  } else if (stepStatusVal === 'needs_attention') {
-                    statusStyle = "bg-brand-red/10 border-brand-red/35 text-brand-red animate-pulse";
-                    iconColor = "text-brand-red";
-                  } else if (stepStatusVal === 'locked') {
-                    statusStyle = "bg-navy-900 border-navy-800 text-slate-650 cursor-not-allowed opacity-55";
-                    iconColor = "text-slate-650";
-                    isClickable = false;
-                  } else {
-                    // available
-                    statusStyle = "bg-navy-800 border-navy-650 text-slate-350 hover:border-navy-500 hover:text-white";
-                    iconColor = "text-slate-400";
-                  }
-
-                  return (
-                    <React.Fragment key={s.id}>
-                      <button
-                        disabled={!isClickable && !settings.manualOverrideEnabled}
-                        onClick={() => setActiveTab(s.id)}
-                        className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold border transition-all whitespace-nowrap active:scale-95 ${statusStyle}`}
-                      >
-                        {stepStatusVal === 'completed' ? (
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                        ) : (
-                          <Icon className={`w-3.5 h-3.5 ${iconColor}`} />
-                        )}
-                        <span>{s.label}</span>
-                      </button>
-                      {idx < steps.length - 1 && (
-                        <ChevronRight className="w-3.5 h-3.5 text-slate-700 flex-shrink-0 hidden md:block" />
-                      )}
-                    </React.Fragment>
-                  );
-                })}
-              </div>
-            </div>
+          <div className="mb-6">
+            <MissionStageStepper steps={steps} activeStage={activeTab} getStatus={getStepStatusDetails} onSelect={handleSelectStage} />
           </div>
 
           {/* ── MAIN CONTENT GRID ── */}
+          {!gradedQuizActive && focusStageConfig && getStepStatusDetails(activeTab) !== 'locked' && (
+            <div className="card mb-6 flex flex-col lg:flex-row lg:items-center justify-between gap-4 no-print">
+              <div className="min-w-0">
+                <p className="text-[11px] font-bold text-accent-primary uppercase tracking-widest">Focus on this stage</p>
+                <p className="text-sm font-bold text-white mt-1 truncate">{focusTaskTitle}</p>
+                <p className="text-xs text-slate-400 mt-1">Start a distraction-free session using the active Week {settings.activeWeek} context.</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2 sm:items-center lg:flex-shrink-0">
+                <select value={focusOptionId} onChange={(event) => setFocusOptionId(event.target.value)} className="input-base text-xs min-w-[170px]">
+                  <option value="recommended">Recommended · {focusStageConfig.minutes}m</option>
+                  {scheduledFocusOptions.map((option) => <option key={option.id} value={option.id}>{option.label} · {option.minutes}m</option>)}
+                  <option value="custom">Custom duration</option>
+                </select>
+                {focusOptionId === 'custom' && (
+                  <input type="number" min="1" max="240" value={customFocusMinutes} onChange={(event) => setCustomFocusMinutes(event.target.value)} aria-label="Custom focus duration in minutes" className="input-base text-xs w-full sm:w-24" />
+                )}
+                <button onClick={handleStartFocusSession} className="btn-primary py-2.5 px-4 text-xs font-bold flex items-center justify-center gap-2 whitespace-nowrap">
+                  <Play className="w-3.5 h-3.5" /> Start {focusDuration}m Focus Session
+                </button>
+              </div>
+            </div>
+          )}
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
             {/* Active Stage Panel (Left Column) */}
             <div className="lg:col-span-2 space-y-6">
               
               {/* STUDY STAGE */}
-              {activeTab === 'resources' && (
+              {false && activeTab === 'resources' && (
                 <div className="card space-y-4">
                   <div className="flex justify-between items-start gap-4 flex-wrap border-b border-navy-700/30 pb-4">
                     <div>
@@ -678,7 +838,7 @@ export default function WeeklyMissions() {
               )}
 
               {/* SKILL CHECK STAGE */}
-              {activeTab === 'skillcheck' && (
+              {false && activeTab === 'skillcheck' && (
                 <div className="card space-y-4">
                   <div className="border-b border-navy-700/30 pb-4">
                     <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest block">Stage 2</span>
@@ -806,6 +966,42 @@ export default function WeeklyMissions() {
                 </div>
               )}
 
+              {/* PASS 2A STUDY STAGE */}
+              {activeTab === 'resources' && (
+                <StudyStage
+                  roadmap={roadmap}
+                  week={week}
+                  mission={mission}
+                  roadmapId={roadmapId}
+                  skillCheckDefinition={skillCheckDefinition}
+                  assessmentRecord={assessmentRecord}
+                  skillCheckUnlocked={stepStatus.skillCheckUnlocked}
+                  onSelectStage={handleSelectStage}
+                />
+              )}
+
+              {/* PASS 2A SKILL CHECK STAGE */}
+              {activeTab === 'skillcheck' && (
+                devQuizPreview ? (
+                  <DevQuizPreview />
+                ) : (!stepStatus.skillCheckUnlocked && !stepStatus.recoveryLocked) ? (
+                  <InlineLockCard
+                    title="Skill Check locked"
+                    description="Complete the Study requirement before starting the Skill Check."
+                  />
+                ) : (
+                  <SkillCheckStage
+                    week={week}
+                    roadmapId={roadmapId}
+                    definition={skillCheckDefinition}
+                    unlocked={stepStatus.skillCheckUnlocked}
+                    onAssessmentStateChange={handleAssessmentStateChange}
+                    onReturnToStudy={() => handleSelectStage('resources')}
+                    onContinue={() => handleSelectStage('practicals')}
+                  />
+                )
+              )}
+
               {/* BUILD STAGE */}
               {activeTab === 'practicals' && (
                 <div className="card space-y-4">
@@ -853,7 +1049,7 @@ export default function WeeklyMissions() {
                                   <div className="flex justify-between items-start gap-2 flex-wrap">
                                     <div className="flex items-center gap-1.5 flex-wrap">
                                       {isReq && <span className="bg-navy-900 text-[10px] text-slate-450 border border-navy-750 px-2 py-0.5 rounded font-bold uppercase tracking-wider">Required</span>}
-                                      {m.commanderMode && <span className="bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[10px] px-2 py-0.5 rounded font-bold">Commander</span>}
+                                      {m.commanderMode && <span className="bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[10px] px-2 py-0.5 rounded font-bold">Optional</span>}
                                     </div>
                                     <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${STATUS_COLORS[missionStatus] || 'badge-slate'}`}>
                                       {missionStatus}
@@ -1012,7 +1208,7 @@ export default function WeeklyMissions() {
                 <div className="card space-y-4">
                   <div className="border-b border-navy-700/30 pb-4">
                     <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest block">Stage 5</span>
-                    <h3 className="text-base font-bold text-white mt-1">Operational Reflection</h3>
+                    <h3 className="text-base font-bold text-white mt-1">Weekly Reflection</h3>
                     <p className="text-xs text-slate-400 mt-1">Solidify concepts by summarizing challenges met and outcomes achieved.</p>
                   </div>
 
@@ -1067,13 +1263,13 @@ export default function WeeklyMissions() {
                 <div className="card space-y-4">
                   <div className="border-b border-navy-700/30 pb-4">
                     <span className="text-[10px] text-accent-primary font-bold uppercase tracking-widest block">Stage 6</span>
-                    <h3 className="text-base font-bold text-white mt-1">Unlock Next Week</h3>
-                    <p className="text-xs text-slate-400 mt-1">Complete operations for the active week and advance to the next set of goals.</p>
+                    <h3 className="text-base font-bold text-white mt-1">Complete Week</h3>
+                    <p className="text-xs text-slate-400 mt-1">Finish the active week and continue to the next set of goals.</p>
                   </div>
 
                   {!stepStatus.weekCompleteUnlocked ? (
                     <InlineLockCard
-                      title="Unlock Stage Locked"
+                      title="Complete stage unavailable"
                       message="Complete your weekly reflection first to proceed."
                       missingLabel="Weekly Reflection pending completion."
                       nextActionLabel="Go to Reflection Stage"
@@ -1160,7 +1356,7 @@ export default function WeeklyMissions() {
             <div className="space-y-6">
               
               {/* Checklist Section */}
-              <CollapsibleSection title="All Tasks Checklist">
+              <CollapsibleSection title="All Tasks Checklist" defaultOpen={false}>
                 {!Array.isArray(week.tasks) || week.tasks.length === 0 ? (
                   <p className="text-xs text-slate-500">No tasks listed for this week.</p>
                 ) : (
@@ -1185,7 +1381,7 @@ export default function WeeklyMissions() {
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className={`text-xs leading-normal ${done ? 'line-through text-slate-500' : 'text-slate-350'}`}>{taskStr}</p>
-                            {isCommander && <span className="inline-block mt-1 text-[9px] text-purple-400 font-bold uppercase tracking-wider">[Commander Mode]</span>}
+                            {isCommander && <span className="inline-block mt-1 text-[9px] text-purple-400 font-bold uppercase tracking-wider">Optional</span>}
                           </div>
                         </button>
                       );
@@ -1195,7 +1391,7 @@ export default function WeeklyMissions() {
               </CollapsibleSection>
 
               {/* Blockers Section */}
-              <CollapsibleSection title={`Open Blockers (${blockers.filter(b => b.weekNumber === week.weekNumber && b.status !== 'Solved').length})`} defaultOpen={false}>
+              <CollapsibleSection title={`Open Problems (${blockers.filter(b => b.weekNumber === week.weekNumber && b.status !== 'Solved').length})`} defaultOpen={false}>
                 {(() => {
                   const weekBlockers = blockers.filter(b => b.weekNumber === week.weekNumber && b.status !== 'Solved');
                   return (
@@ -1218,10 +1414,10 @@ export default function WeeklyMissions() {
                         </div>
                       )}
                       <button
-                        onClick={() => navigate('/today')}
+                        onClick={() => navigate('/workspace/problems')}
                         className="w-full btn-secondary py-2 text-xs font-bold border-red-500/20 text-red-450 hover:bg-red-500/5 text-center flex items-center justify-center gap-1.5"
                       >
-                        <ShieldAlert className="w-3.5 h-3.5" /> Log Blocker
+                        <ShieldAlert className="w-3.5 h-3.5" /> Manage Problems
                       </button>
                     </div>
                   );
@@ -1276,6 +1472,8 @@ export default function WeeklyMissions() {
             </div>
 
           </div>
+        </>
+      )}
         </>
       )}
     </PageShell>

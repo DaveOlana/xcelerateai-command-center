@@ -1,3 +1,6 @@
+import { normalizeSkillCheckValue } from './skillCheckUtils.js';
+import { normalizeTemplates } from './templateUtils.js';
+
 // =============================================
 // ROADMAP NORMALIZER
 // Single adapter that converts any valid imported
@@ -155,8 +158,10 @@ function resolveStudyResources(item, resourceCatalogue) {
       return { id: r, title: r, type: 'Reference', url: '#' };
     }
     if (typeof r === 'object' && r !== null) {
+      const resourceId = r.id || r.resourceId || null;
       return {
         ...r,
+        ...(resourceId ? { id: String(resourceId), resourceId: String(resourceId) } : {}),
         title: r.title || r.name || r.label || `Resource ${idx + 1}`,
         type: r.type || r.resourceType || r.kind || 'Resource',
         url: r.url || r.link || r.href || '#',
@@ -185,11 +190,16 @@ function resolveSkillCheck(item) {
     Array.isArray(item.outcomes)      ? item.outcomes.map(o => ({ question: o })) :
     [];
 
-  return raw.map(q => {
-    if (typeof q === 'string') return { question: q };
-    if (typeof q === 'object' && q !== null) return q;
-    return { question: String(q) };
-  });
+  return normalizeSkillCheckValue(raw);
+}
+
+function resolveStudyRequirement(item) {
+  const requirement = item?.studyRequirement;
+  if (!requirement || typeof requirement !== 'object' || Array.isArray(requirement)) return null;
+  return {
+    ...requirement,
+    minimumCoreResources: Number(requirement.minimumCoreResources),
+  };
 }
 
 /**
@@ -227,11 +237,13 @@ function resolvePracticalMissions(item, weekId) {
         title: m,
         objective: m,
         difficulty: 'Standard',
+        templates: [],
       };
     }
     return {
       ...m,
       missionId: m.missionId || m.id || `${weekId}-pm-${idx}`,
+      templates: normalizeTemplates(m.templates),
     };
   });
 }
@@ -340,6 +352,7 @@ export function normalizeProject(raw, index) {
       title: `Project ${index + 1}`,
       description: '',
       milestones: [],
+      templates: [],
       _milestonesSupplied: false,
     };
   }
@@ -370,6 +383,9 @@ export function normalizeProject(raw, index) {
     title: typeof name === 'string' ? name : String(name),
     description: typeof description === 'string' ? description : String(description),
     milestones,
+    templates: normalizeTemplates(raw.templates),
+    filesToCreate: Array.isArray(raw.filesToCreate) ? [...raw.filesToCreate] : [],
+    readmePrompt: typeof raw.readmePrompt === 'string' ? raw.readmePrompt : '',
     _milestonesSupplied: milestonesSupplied,
     // Pass-through fields
     ...(raw.repositoryUrl || raw.githubUrl ? { repositoryUrl: raw.repositoryUrl || raw.githubUrl } : {}),
@@ -487,6 +503,7 @@ export function normalizeWeek(rawWeek, parentMonth, resourceCatalogue = {}) {
 
   // ── Canonical learning data ───────────────────────────────────────────────
   const studyResources = resolveStudyResources(rawWeek, resourceCatalogue);
+  const studyRequirement = resolveStudyRequirement(rawWeek);
   const skillCheck     = resolveSkillCheck(rawWeek);
   const proofOfWork    = resolveProofOfWork(rawWeek);
   const rawReflectionPrompts = resolveReflectionPrompts(rawWeek);
@@ -582,6 +599,8 @@ export function normalizeWeek(rawWeek, parentMonth, resourceCatalogue = {}) {
 
     // ── Canonical fields ────────────────────────────────────────────────────
     studyResources,
+    studyRequirement,
+    templates: normalizeTemplates(rawWeek.templates),
     skillCheck,
     practicalMissions,
     proofOfWork,
@@ -596,7 +615,7 @@ export function normalizeWeek(rawWeek, parentMonth, resourceCatalogue = {}) {
     resources: studyResources,
     sessions: scheduledSessions,
     tasks: unifiedTasks,
-    checkpoint: skillCheck[0] || rawWeek.checkpoint || null,
+    checkpoint: (Array.isArray(skillCheck) ? skillCheck[0] : skillCheck?.questions?.[0]) || rawWeek.checkpoint || null,
 
     // ── Pass-through display fields ─────────────────────────────────────────
     briefing: rawWeek.briefing || goal,

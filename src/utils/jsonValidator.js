@@ -6,7 +6,37 @@
 // Runs normalizeRoadmap to validate the standard internal shape.
 // =============================================
 
-import { normalizeRoadmap } from './normalizeRoadmap';
+import { normalizeRoadmap } from './normalizeRoadmap.js';
+import { getQuizValidationErrors, getSkillCheckDefinition } from './skillCheckUtils.js';
+import { getTemplateValidationErrors } from './templateUtils.js';
+
+function validateAuthoredTemplates(data, errors) {
+  const validateEntity = (entity, label) => {
+    if (!entity || typeof entity !== 'object') return;
+    errors.push(...getTemplateValidationErrors(entity.templates, label));
+  };
+  const roots = [data, data?.bootcamp, data?.program].filter(Boolean);
+  roots.forEach((root) => {
+    (Array.isArray(root.projects) ? root.projects : []).forEach((project, index) => {
+      validateEntity(project, `Project ${project?.id || project?.title || index + 1}`);
+    });
+    const months = Array.isArray(root.months) ? root.months : [];
+    months.forEach((month, monthIndex) => {
+      const weeks = Array.isArray(month?.weeks) ? month.weeks : [];
+      weeks.forEach((week, weekIndex) => {
+        const weekLabel = `Month ${month?.monthNumber || monthIndex + 1}, Week ${week?.weekNumber || weekIndex + 1}`;
+        validateEntity(week, weekLabel);
+        const collections = [
+          week?.practicalMissions, week?.missions, week?.buildTasks, week?.practicalTasks,
+          week?.assignments, week?.exercises, week?.labs, week?.builds,
+        ];
+        collections.find(Array.isArray)?.forEach((mission, missionIndex) => {
+          validateEntity(mission, `${weekLabel}, Mission ${mission?.missionId || mission?.title || missionIndex + 1}`);
+        });
+      });
+    });
+  });
+}
 
 /**
  * Validate the imported roadmap JSON.
@@ -34,6 +64,8 @@ export function validateRoadmapJSON(data) {
     dataToNormalize = data.roadmap;
     info.push('Full progress backup file detected: We have successfully extracted the roadmap layout from this backup. If you wish to restore your completed weeks, checklist tasks, notes, and study streak as well, please import this file on the Settings page under Data Backups & Recovery.');
   }
+
+  validateAuthoredTemplates(dataToNormalize, errors);
 
   // ── 1. Normalize the roadmap ──────────────────────────────────────────────
   let normalized = null;
@@ -94,7 +126,8 @@ export function validateRoadmapJSON(data) {
 
   normalized.weeks.forEach((w, wi) => {
     totalStudyResources += w.studyResources?.length || 0;
-    totalSkillCheckQuestions += w.skillCheck?.length || 0;
+    const skillCheckDefinition = getSkillCheckDefinition(w);
+    totalSkillCheckQuestions += skillCheckDefinition.questions?.length || 0;
     totalPracticalMissions += w.practicalMissions?.length || 0;
     totalProofItems += w.proofOfWork?.length || 0;
     totalReflectionPrompts += w.reflectionPrompts?.length || 0;
@@ -114,13 +147,29 @@ export function validateRoadmapJSON(data) {
     }
 
     // Skill Check ↔ Resource structural alignment warnings
-    const hasSkillCheck = w.skillCheck && w.skillCheck.length > 0;
+    const hasSkillCheck = (skillCheckDefinition.questions?.length || 0) > 0;
     const hasResources = w.studyResources && w.studyResources.length > 0;
     if (hasSkillCheck && !hasResources) {
       warnings.push(`Week ${w.weekNumber || wi + 1} ("${w.title}"): Skill Check exists but no Study Resources are provided. This Skill Check may reference material not covered by the supplied Study Resources.`);
     }
     if (hasResources && !hasSkillCheck) {
       info.push(`Week ${w.weekNumber || wi + 1} ("${w.title}"): Study Resources exist but no Skill Check is defined. This is acceptable if no assessment is intended.`);
+    }
+
+    if (w.studyRequirement) {
+      const minimum = w.studyRequirement.minimumCoreResources;
+      const coreCount = (w.studyResources || []).filter((resource) => resource?.required === true).length;
+      if (!Number.isInteger(minimum) || minimum < 1) {
+        errors.push(`Week ${w.weekNumber || wi + 1} ("${w.title}"): studyRequirement.minimumCoreResources must be an integer of at least 1.`);
+      } else if (minimum > coreCount) {
+        errors.push(`Week ${w.weekNumber || wi + 1} ("${w.title}"): minimumCoreResources (${minimum}) exceeds the ${coreCount} Core resources.`);
+      }
+    }
+
+    if (skillCheckDefinition.mode === 'quiz') {
+      getQuizValidationErrors(skillCheckDefinition).forEach((message) => {
+        errors.push(`Week ${w.weekNumber || wi + 1} ("${w.title}") Skill Check: ${message}`);
+      });
     }
   });
 

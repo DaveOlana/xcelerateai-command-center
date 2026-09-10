@@ -2,17 +2,11 @@ import {
   AlertCircle,
   Award,
   BarChart2,
-  BookOpen,
   Calendar,
-  CheckSquare,
-  Clock,
   FileText,
   FolderKanban,
   LayoutDashboard,
-  MoreHorizontal,
   Settings,
-  Shield,
-  Target,
 } from 'lucide-react';
 
 export const navigationItems = [
@@ -24,11 +18,10 @@ export const navigationItems = [
     icon: LayoutDashboard,
     exact: true,
     aliases: [],
-    sidebarPrimary: true,
+    sidebarSection: 'core',
     mobileBottom: true,
     mobileOrder: 1,
     commandPalette: true,
-    tourTarget: 'sidebar-dashboard',
   },
   {
     id: 'missions',
@@ -37,11 +30,10 @@ export const navigationItems = [
     route: '/missions',
     icon: Calendar,
     aliases: ['/mission'],
-    sidebarPrimary: true,
+    sidebarSection: 'core',
     mobileBottom: true,
-    mobileOrder: 3,
+    mobileOrder: 2,
     commandPalette: true,
-    tourTarget: 'sidebar-missions',
   },
   {
     id: 'workspace',
@@ -50,11 +42,10 @@ export const navigationItems = [
     route: '/workspace',
     icon: FolderKanban,
     aliases: ['/projects', '/notes', '/blockers', '/proof'],
-    sidebarPrimary: true,
-    moreMenu: true,
-    moreMenuOrder: 1,
+    sidebarSection: 'core',
+    mobileBottom: true,
+    mobileOrder: 3,
     commandPalette: true,
-    tourTarget: 'sidebar-projects',
     description: 'Projects, notes, problems, and proof',
   },
   {
@@ -64,11 +55,10 @@ export const navigationItems = [
     route: '/progress',
     icon: BarChart2,
     aliases: ['/checkpoints'],
-    sidebarPrimary: true,
+    sidebarSection: 'core',
     mobileBottom: true,
     mobileOrder: 4,
     commandPalette: true,
-    tourTarget: 'sidebar-progress',
   },
   {
     id: 'settings',
@@ -77,30 +67,16 @@ export const navigationItems = [
     route: '/settings',
     icon: Settings,
     aliases: [],
-    sidebarPrimary: true,
-    moreMenu: true,
-    moreMenuOrder: 6,
-    commandPalette: true,
-    tourTarget: 'sidebar-settings',
-    description: 'Configure setup and backups',
-  },
-  {
-    id: 'today',
-    label: 'Today',
-    pageTitle: "Today's Focus",
-    route: '/today',
-    icon: Target,
-    aliases: [],
-    sidebarTransition: true,
+    sidebarSection: 'utility',
     mobileBottom: true,
-    mobileOrder: 2,
+    mobileOrder: 5,
     commandPalette: true,
-    tourTarget: 'sidebar-today',
+    description: 'Configure setup and backups',
   },
   {
     id: 'projects',
     label: 'Projects',
-    pageTitle: 'Workspace · Projects',
+    pageTitle: 'Workspace: Projects',
     route: '/workspace/projects',
     icon: FolderKanban,
     aliases: ['/projects'],
@@ -111,7 +87,7 @@ export const navigationItems = [
   {
     id: 'notes',
     label: 'Notes',
-    pageTitle: 'Workspace · Notes',
+    pageTitle: 'Workspace: Notes',
     route: '/workspace/notes',
     icon: FileText,
     aliases: ['/notes'],
@@ -122,7 +98,7 @@ export const navigationItems = [
   {
     id: 'problems',
     label: 'Problems',
-    pageTitle: 'Workspace · Problems',
+    pageTitle: 'Workspace: Problems',
     route: '/workspace/problems',
     icon: AlertCircle,
     aliases: ['/blockers'],
@@ -133,7 +109,7 @@ export const navigationItems = [
   {
     id: 'proof',
     label: 'Proof',
-    pageTitle: 'Workspace · Proof',
+    pageTitle: 'Workspace: Proof',
     route: '/workspace/proof',
     icon: Award,
     aliases: ['/proof'],
@@ -142,80 +118,20 @@ export const navigationItems = [
     description: 'Manage proof of work',
   },
   {
-    id: 'resources',
-    label: 'Resource Library',
-    pageTitle: 'Resource Library',
-    route: '/resources',
-    icon: BookOpen,
-    aliases: [],
-    moreMenu: true,
-    moreMenuOrder: 2,
-    commandPalette: true,
-    description: 'Search all learning resources',
-  },
-  {
-    id: 'checkpoints',
-    label: 'Checkpoints',
-    pageTitle: 'Checkpoints',
-    route: '/checkpoints',
-    icon: CheckSquare,
-    aliases: [],
-    moreMenu: true,
-    moreMenuOrder: 4,
-    commandPalette: true,
-    description: 'Review skill confidence',
-  },
-  {
-    id: 'side-quests',
-    label: 'Side Quests',
-    pageTitle: 'Side Quests',
-    route: '/side-quests',
-    icon: Shield,
-    aliases: [],
-    sidebarTransition: true,
-    moreMenu: true,
-    moreMenuOrder: 5,
-    commandPalette: true,
-    description: 'Review optional learning paths',
-  },
-  {
-    id: 'timeline',
-    label: 'Timeline',
-    pageTitle: 'Timeline',
-    route: '/timeline',
-    icon: Clock,
-    aliases: [],
-    moreMenu: true,
-    moreMenuOrder: 3,
-    description: 'View the curriculum path',
-  },
-  {
     id: 'import',
     label: 'Import Roadmap',
     pageTitle: 'Import Roadmap',
     route: '/import',
     aliases: [],
   },
-  {
-    id: 'more',
-    label: 'More',
-    pageTitle: 'More',
-    route: '/more',
-    icon: MoreHorizontal,
-    aliases: ['/workspace', '/resources', '/timeline', '/side-quests', '/settings'],
-    mobileBottom: true,
-    mobileOrder: 5,
-  },
 ];
 
-export const primaryNavigationItems = navigationItems.filter((item) => item.sidebarPrimary);
-export const transitionNavigationItems = navigationItems.filter((item) => item.sidebarTransition);
+export const coreSidebarItems = navigationItems.filter((item) => item.sidebarSection === 'core');
+export const temporarySidebarItems = navigationItems.filter((item) => item.sidebarSection === 'temporary');
+export const utilitySidebarItems = navigationItems.filter((item) => item.sidebarSection === 'utility');
 export const mobileBottomNavigationItems = navigationItems
   .filter((item) => item.mobileBottom)
   .sort((a, b) => a.mobileOrder - b.mobileOrder);
-export const moreMenuItems = navigationItems
-  .filter((item) => item.moreMenu)
-  .sort((a, b) => a.moreMenuOrder - b.moreMenuOrder);
 export const workspaceNavigationItems = navigationItems.filter((item) => item.workspace);
 export const commandPaletteNavigationItems = navigationItems.filter((item) => item.commandPalette);
 

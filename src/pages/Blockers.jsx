@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { AlertCircle, CheckCircle2, Trash2, Copy, Plus, X, Search, HelpCircle, Check } from 'lucide-react';
 import { PageShell, PageHeader, SectionCard, StatCard } from '../components/common/UIComponents';
+import { normalizeWorkspaceProblem } from '../utils/workspaceAdapters';
 
 export default function Blockers() {
   const { blockers, addBlocker, solveBlocker, deleteBlocker, roadmap, settings } = useApp();
@@ -72,6 +73,10 @@ Please help me debug this without giving me the full answer immediately.`;
   };
 
   const [copiedBlocker, setCopiedBlocker] = useState(false);
+  const normalizedProblems = React.useMemo(
+    () => (Array.isArray(blockers) ? blockers : []).map(normalizeWorkspaceProblem),
+    [blockers]
+  );
 
   const copyPromptToClipboard = (text) => {
     navigator.clipboard.writeText(text);
@@ -79,10 +84,11 @@ Please help me debug this without giving me the full answer immediately.`;
     setTimeout(() => setCopiedBlocker(false), 3000);
   };
 
-  const filteredBlockers = blockers.filter((b) => {
-    const matchesSearch = String(b.title || '').toLowerCase().includes(String(searchQuery || '').toLowerCase()) || 
-                          String(b.errorMessage || '').toLowerCase().includes(String(searchQuery || '').toLowerCase());
-    const matchesStatus = !statusFilter || b.status === statusFilter;
+  const filteredBlockers = normalizedProblems.filter((b) => {
+    const query = String(searchQuery || '').toLowerCase();
+    const matchesSearch = [b.title, b.errorMessage, b.whatWentWrong, b.whatAlreadyTried, b.solutionNotes, b.missionTitle, b.resourceTitle, b.stage]
+      .some((value) => String(value || '').toLowerCase().includes(query));
+    const matchesStatus = !statusFilter || b.workspaceStatus === statusFilter;
     return matchesSearch && matchesStatus;
   });
 
@@ -90,14 +96,14 @@ Please help me debug this without giving me the full answer immediately.`;
     <PageShell>
       {/* Header */}
       <PageHeader
-        title="Blockers Journal"
-        subtitle="Track barriers, log stack traces, and format messages for your mentor."
+        title="Problems"
+        subtitle="Review where you struggled, what you tried, and how you resolved it."
         actions={
           <button
             onClick={() => setShowAddModal(true)}
             className="bg-accent-primary text-navy-900 font-bold px-5 py-2.5 rounded-xl hover:bg-accent-primary-dim active:scale-95 transition-all duration-200 shadow-primary-glow flex items-center gap-1.5 text-xs uppercase tracking-wider"
           >
-            <Plus className="w-4 h-4" /> Log New Blocker
+            <Plus className="w-4 h-4" /> Add Problem
           </button>
         }
       />
@@ -105,17 +111,17 @@ Please help me debug this without giving me the full answer immediately.`;
       {/* Stats and Search deck */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <StatCard 
-          label="Active Blockers" 
-          value={blockers.filter(b => b.status !== 'Solved').length} 
+          label="Open Problems"
+          value={normalizedProblems.filter(b => b.workspaceStatus === 'Open').length}
           icon={AlertCircle} 
-          helperText="Solve barriers to restore progress flow"
+          helperText="Problems still needing attention"
           accentColor="red"
         />
         <StatCard 
-          label="Solved Blockers" 
-          value={blockers.filter(b => b.status === 'Solved').length} 
+          label="Resolved Problems"
+          value={normalizedProblems.filter(b => b.workspaceStatus === 'Resolved').length}
           icon={CheckCircle2} 
-          helperText="Documented learnings & solutions"
+          helperText="Problems with a recorded resolution"
           accentColor="blue"
         />
         <SectionCard className="flex items-center justify-center">
@@ -123,7 +129,7 @@ Please help me debug this without giving me the full answer immediately.`;
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
             <input
               type="text"
-              placeholder="Search errors/titles..."
+              placeholder="Search problems..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="input-base w-full pl-10 text-xs font-medium"
@@ -155,24 +161,14 @@ Please help me debug this without giving me the full answer immediately.`;
           Open
         </button>
         <button
-          onClick={() => setStatusFilter('In Progress')}
+          onClick={() => setStatusFilter('Resolved')}
           className={`px-4 py-1.5 rounded-xl text-[13px] uppercase font-bold tracking-wider border transition-all duration-200 active:scale-95 ${
-            statusFilter === 'In Progress'
-              ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
-              : 'bg-navy-700/60 border-navy-500/80 text-slate-400 hover:text-white'
-          }`}
-        >
-          In Progress
-        </button>
-        <button
-          onClick={() => setStatusFilter('Solved')}
-          className={`px-4 py-1.5 rounded-xl text-[13px] uppercase font-bold tracking-wider border transition-all duration-200 active:scale-95 ${
-            statusFilter === 'Solved'
+            statusFilter === 'Resolved'
               ? 'bg-blue-500/10 text-blue-400 border-blue-500/30'
               : 'bg-navy-700/60 border-navy-500/80 text-slate-400 hover:text-white'
           }`}
         >
-          Solved
+          Resolved
         </button>
       </div>
 
@@ -180,9 +176,9 @@ Please help me debug this without giving me the full answer immediately.`;
       {filteredBlockers.length === 0 ? (
         <div className="bg-navy-800/40 border border-dashed border-navy-500/30 text-center py-16 px-6 rounded-2xl max-w-md mx-auto">
           <AlertCircle className="w-12 h-12 text-slate-600 mx-auto mb-3" />
-          <h4 className="text-sm font-bold text-white uppercase tracking-wider">No blockers found</h4>
+          <h4 className="text-sm font-bold text-white">{statusFilter === 'Open' ? 'No open problems.' : 'No problems found.'}</h4>
           <p className="text-[14px] text-slate-500 mt-1 leading-relaxed">
-            Looking clean, commander! Write notes or log blockers when errors emerge.
+            {normalizedProblems.length === 0 ? 'Problems created while learning will appear here.' : 'Try a different search or filter.'}
           </p>
         </div>
       ) : (
@@ -191,28 +187,28 @@ Please help me debug this without giving me the full answer immediately.`;
             <div
               key={b.id}
               className={`bg-navy-800/80 border border-navy-550/40 border-l-4 rounded-2xl p-5 backdrop-blur-sm transition-all duration-300 ${
-                b.status === 'Solved'
+                b.workspaceStatus === 'Resolved'
                   ? 'border-l-blue-500 border-blue-500/10 hover:border-blue-500/20'
-                  : b.status === 'In Progress'
-                  ? 'border-l-amber-500 border-amber-500/15 hover:border-amber-500/25'
                   : 'border-l-red-500 border-red-500/15 hover:border-red-500/25'
               }`}
             >
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1.5">
-                    <span className="text-xs text-slate-500 uppercase tracking-widest font-mono font-bold">Week {b.weekNumber}</span>
-                    {b.skillArea && <span className="bg-navy-700 text-slate-400 border border-navy-500/50 text-xs px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">{b.skillArea}</span>}
+                    {b.weekNumber && <span className="text-xs text-slate-500 font-semibold">Week {b.weekNumber}</span>}
+                    {b.stage && <span className="badge-slate text-xs">Stage: {b.stage}</span>}
+                    {b.missionTitle && <span className="badge-slate text-xs">Mission: {b.missionTitle}</span>}
+                    {b.resourceTitle && <span className="badge-slate text-xs">Resource: {b.resourceTitle}</span>}
+                    {b.projectTitle && <span className="badge-slate text-xs">Project: {b.projectTitle}</span>}
+                    {b.dateCreated && <span className="text-xs text-slate-500">{new Date(b.dateCreated).toLocaleDateString()}</span>}
                     <span
                       className={`text-xs font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${
-                        b.status === 'Solved'
+                        b.workspaceStatus === 'Resolved'
                           ? 'bg-blue-500/10 text-blue-400 border-blue-500/20'
-                          : b.status === 'In Progress'
-                          ? 'bg-amber-500/10 text-amber-400 border-amber-500/20'
                           : 'bg-red-500/10 text-red-400 border-red-500/20'
                       }`}
                     >
-                      {b.status}
+                      {b.workspaceStatus}
                     </span>
                   </div>
                   <h3 className="text-sm font-bold text-white leading-snug">{b.title}</h3>
@@ -224,12 +220,12 @@ Please help me debug this without giving me the full answer immediately.`;
                 </div>
 
                 <div className="flex items-center gap-2 flex-shrink-0">
-                  {b.status !== 'Solved' && (
+                  {b.workspaceStatus !== 'Resolved' && (
                     <button
                       onClick={() => setSolvingBlockerId(b.id)}
                       className="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[13px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-xl hover:bg-blue-500/20 transition-all active:scale-95"
                     >
-                      Mark Solved
+                      Resolve
                     </button>
                   )}
                   <button
@@ -247,29 +243,35 @@ Please help me debug this without giving me the full answer immediately.`;
                 </div>
               </div>
 
-              {/* Blocker Context Details */}
+              {/* Problem context */}
               <div className="mt-4 grid md:grid-cols-2 gap-4 text-[14px] text-slate-400 border-t border-navy-500/20 pt-3.5">
                 {b.whatTryingToDo && (
                   <div>
-                    <span className="font-bold text-slate-500 uppercase text-xs tracking-wider block mb-0.5">Trying to build:</span>
+                    <span className="font-bold text-slate-500 uppercase text-xs tracking-wider block mb-0.5">What I was doing</span>
                     <p className="text-slate-300">{b.whatTryingToDo}</p>
+                  </div>
+                )}
+                {b.whatWentWrong && b.whatWentWrong !== b.title && (
+                  <div>
+                    <span className="font-bold text-slate-500 uppercase text-xs tracking-wider block mb-0.5">What went wrong</span>
+                    <p className="text-slate-300 whitespace-pre-wrap break-words">{b.whatWentWrong}</p>
                   </div>
                 )}
                 {b.whatAlreadyTried && (
                   <div>
-                    <span className="font-bold text-slate-500 uppercase text-xs tracking-wider block mb-0.5">Already tried:</span>
+                    <span className="font-bold text-slate-500 uppercase text-xs tracking-wider block mb-0.5">What I tried</span>
                     <p className="text-slate-300">{b.whatAlreadyTried}</p>
                   </div>
                 )}
               </div>
 
-              {b.status === 'Solved' && b.solutionNotes && (
+              {b.workspaceStatus === 'Resolved' && b.solutionNotes && (
                 <div className="bg-blue-950/20 border border-blue-500/10 rounded-xl p-3.5 mt-3.5">
                   <span className="text-[13px] font-bold text-blue-400 mb-1 uppercase tracking-wider flex items-center gap-1">
-                    <Check className="w-3.5 h-3.5" /> Solution Notes:
+                    <Check className="w-3.5 h-3.5" /> What fixed it
                   </span>
                   <p className="text-xs text-slate-300 leading-relaxed">{b.solutionNotes}</p>
-                  <p className="text-xs text-slate-500 font-mono mt-2">Solved: {new Date(b.dateSolved).toLocaleString()}</p>
+                  {b.dateResolved && <p className="text-xs text-slate-500 mt-2">Resolved: {new Date(b.dateResolved).toLocaleString()}</p>}
                 </div>
               )}
             </div>
@@ -280,9 +282,9 @@ Please help me debug this without giving me the full answer immediately.`;
       {/* Solver Modal */}
       {solvingBlockerId && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-md p-6 animate-scale-in text-left shadow-card">
+        <div className="surface-card w-full max-w-md p-6 animate-scale-in text-left">
             <div className="flex items-center justify-between mb-4 border-b border-navy-500/40 pb-3">
-              <h2 className="text-sm font-bold text-white uppercase tracking-wider">Document Solution</h2>
+              <h2 className="text-sm font-bold text-white uppercase tracking-wider">Record Resolution</h2>
               <button onClick={() => setSolvingBlockerId(null)} className="text-slate-400 hover:text-white transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -313,7 +315,7 @@ Please help me debug this without giving me the full answer immediately.`;
                     disabled={!solutionNotes}
                     className="bg-accent-primary text-navy-900 font-bold px-4 py-2 rounded-xl hover:bg-accent-primary-dim active:scale-95 transition-all text-xs uppercase tracking-wider shadow-primary-glow disabled:opacity-50 disabled:pointer-events-none"
                   >
-                    Save & Solve
+                    Save Resolution
                   </button>
                 </div>
               </div>
@@ -325,7 +327,7 @@ Please help me debug this without giving me the full answer immediately.`;
       {/* Ask Mentor Modal */}
       {activePromptBlocker && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-2xl p-6 animate-scale-in text-left shadow-card">
+        <div className="surface-card w-full max-w-2xl p-6 animate-scale-in text-left">
             <div className="flex items-center justify-between mb-4 border-b border-navy-500/40 pb-3">
               <div>
                 <h2 className="text-sm font-bold text-white uppercase tracking-wider">Ask {mentorName} Help Prompt</h2>
@@ -364,12 +366,12 @@ Please help me debug this without giving me the full answer immediately.`;
         </div>
       )}
 
-      {/* Log Blocker Modal */}
+      {/* Add Problem Modal */}
       {showAddModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
-          <div className="bg-navy-850 border border-navy-500/60 rounded-2xl w-full max-w-lg p-6 animate-scale-in my-8 max-h-[90vh] overflow-y-auto shadow-card text-left">
+        <div className="surface-card w-full max-w-lg p-6 animate-scale-in my-8 max-h-[90vh] overflow-y-auto text-left">
             <div className="flex items-center justify-between mb-4 border-b border-navy-500/40 pb-3">
-              <h2 className="text-sm font-bold text-white uppercase tracking-wider">Log Active Blocker</h2>
+              <h2 className="text-sm font-bold text-white uppercase tracking-wider">Add Problem</h2>
               <button onClick={() => setShowAddModal(false)} className="text-slate-400 hover:text-white transition-colors">
                 <X className="w-5 h-5" />
               </button>
@@ -377,7 +379,7 @@ Please help me debug this without giving me the full answer immediately.`;
 
             <form onSubmit={handleCreate} className="space-y-4">
               <div>
-                <label className="block text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-1">Blocker Title *</label>
+                <label className="block text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-1">Problem Title *</label>
                 <input
                   type="text"
                   required
@@ -447,10 +449,10 @@ Please help me debug this without giving me the full answer immediately.`;
               </div>
 
               <div>
-                <label className="block text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-1">Error Message / Stack Trace (Code block)</label>
+                <label className="block text-[13px] font-bold text-slate-400 uppercase tracking-wider mb-1">Error message or technical detail</label>
                 <textarea
                   rows={3}
-                  placeholder="Paste error logs or code snippet here..."
+                  placeholder="Paste an error message or relevant code snippet here..."
                   value={errorMessage}
                   onChange={(e) => setErrorMessage(e.target.value)}
                   className="input-base w-full text-[13px] font-mono resize-none text-red-300"
@@ -480,7 +482,7 @@ Please help me debug this without giving me the full answer immediately.`;
                   type="submit"
                   className="bg-accent-primary text-navy-900 font-bold px-4 py-2 rounded-xl hover:bg-accent-primary-dim active:scale-95 transition-all text-xs uppercase tracking-wider shadow-primary-glow"
                 >
-                  Create Blocker
+                  Create Problem
                 </button>
               </div>
             </form>

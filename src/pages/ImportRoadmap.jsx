@@ -1,471 +1,221 @@
-import React, { useState, useCallback, useMemo } from 'react';
-import { Upload, CheckCircle2, AlertCircle, Trash2, RefreshCw, Info, ChevronDown, ChevronUp, ChevronRight, Calendar, Clock, BookOpen, CheckSquare, Target, FileText, Zap, Coffee, BarChart2, Award, Shield, Check, Download } from 'lucide-react';
+import React, { useCallback, useMemo, useState } from 'react';
+import {
+  AlertCircle,
+  ArrowLeft,
+  CheckCircle2,
+  ChevronRight,
+  Download,
+  FileJson,
+  RefreshCw,
+  Upload,
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { validateRoadmapJSON } from '../utils/jsonValidator';
-import { PageShell, PageHeader } from '../components/common/UIComponents';
+import { PageShell } from '../components/common/UIComponents';
 import ConfirmAction from '../components/ui/ConfirmAction';
+import StatusBanner from '../components/ui/StatusBanner';
+
+function ValidationGroup({ title, items, tone = 'neutral', open = false }) {
+  if (!Array.isArray(items) || items.length === 0) return null;
+  const tones = {
+    error: 'border-red-500/20 bg-red-500/5 text-red-500',
+    warning: 'border-brand-amber/20 bg-brand-amber/5 text-brand-amber',
+    info: 'border-brand-blue/20 bg-brand-blue/5 text-brand-blue',
+    neutral: 'border-border-default bg-bg-soft text-text-secondary',
+  };
+  return (
+    <details open={open} className={`group rounded-xl border p-4 ${tones[tone]}`}>
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+        <span>{title} ({items.length})</span>
+        <ChevronRight className="h-4 w-4 transition-transform duration-200 group-open:rotate-90 motion-reduce:transition-none" aria-hidden="true" />
+      </summary>
+      <ul className="mt-3 space-y-2 border-t border-current/10 pt-3">
+        {items.map((item, index) => <li key={`${index}-${item}`} className="text-xs leading-relaxed text-text-secondary">{item}</li>)}
+      </ul>
+    </details>
+  );
+}
 
 export default function ImportRoadmap() {
   const { importRoadmap, resetToSampleRoadmap, settings, exportProgress } = useApp();
   const [dragOver, setDragOver] = useState(false);
   const [validationResult, setValidationResult] = useState(null);
   const [pendingData, setPendingData] = useState(null);
-  const [imported, setImported] = useState(false);
-  const [error, setError] = useState('');
-  const [showSummary, setShowSummary] = useState(true);
-
-  // Loading & Feedback States
+  const [feedback, setFeedback] = useState(null);
+  const [showImportConfirm, setShowImportConfirm] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
-  const [isResetting, setIsResetting] = useState(false);
-  const [isImporting, setIsImporting] = useState(false);
-  const [isExporting, setIsExporting] = useState(false);
-
-  const handleExportBackup = () => {
-    setIsExporting(true);
-    setTimeout(() => {
-      exportProgress();
-      setIsExporting(false);
-    }, 600);
-  };
+  const [busy, setBusy] = useState(false);
 
   const processFile = useCallback((file) => {
-    setError('');
+    setFeedback(null);
     setValidationResult(null);
     setPendingData(null);
-    setImported(false);
-
+    setShowImportConfirm(false);
     if (!file) return;
-    if (!file.name.endsWith('.json')) {
-      setError('Please upload a .json file. PDFs and other formats are not supported in Version 1.');
+    if (!file.name.toLowerCase().endsWith('.json')) {
+      setFeedback({ type: 'error', text: 'Choose a JSON curriculum file.' });
       return;
     }
-
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = (event) => {
       try {
-        const data = JSON.parse(e.target.result);
-        const result = validateRoadmapJSON(data);
-        setValidationResult(result);
-        if (result.valid) {
-          // Store the raw JSON; AppContext.importRoadmap will normalize it
-          setPendingData(result.normalizedData);
+        const parsed = JSON.parse(event.target.result);
+        if (parsed?.schemaVersion === '2.0') {
+          setFeedback({ type: 'error', text: 'V2 Curriculum Source must be validated, compiled, runtime-validated, and published through the V2 catalog pipeline. This legacy import utility cannot activate raw V2 source.' });
+          return;
         }
-        setShowSummary(true);
-      } catch (err) {
-        setError('Invalid JSON file. Please check that the file is properly formatted.');
+        if (parsed?.runtimeContractVersion === '2.0') {
+          setFeedback({ type: 'error', text: 'Compiled V2 runtime files cannot be activated directly. Published V2 curricula are loaded only from the embedded catalog.' });
+          return;
+        }
+        const result = validateRoadmapJSON(parsed);
+        setValidationResult(result);
+        if (result.valid) setPendingData(result.normalizedData);
+      } catch {
+        setFeedback({ type: 'error', text: 'This file is not valid JSON. Check its formatting and try again.' });
       }
     };
-    reader.onerror = () => setError('Failed to read the file. Please try again.');
+    reader.onerror = () => setFeedback({ type: 'error', text: 'The curriculum file could not be read.' });
     reader.readAsText(file);
   }, []);
 
-  const handleFileInput = (e) => {
-    processFile(e.target.files?.[0]);
-    e.target.value = '';
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    setDragOver(false);
-    processFile(e.dataTransfer.files?.[0]);
-  };
-
-  const handleConfirmImport = () => {
-    if (!pendingData) return;
-    setIsImporting(true);
-    setTimeout(() => {
-      importRoadmap(pendingData);
-      setImported(true);
-      setPendingData(null);
-      setValidationResult(null);
-      setIsImporting(false);
-    }, 750);
-  };
-
-  const handleReset = () => {
-    setIsResetting(true);
-    setTimeout(() => {
-      resetToSampleRoadmap();
-      setImported(false);
-      setValidationResult(null);
-      setPendingData(null);
-      setIsResetting(false);
-      setShowResetConfirm(false);
-    }, 750);
-  };
-
-  // ── EXTRACT UNKNOWN TOP LEVEL FIELDS ──
   const unknownTopLevelFields = useMemo(() => {
     if (!pendingData) return {};
-    const knownFields = ['bootcampTitle', 'learner', 'duration', 'weeklyHours', 'months', 'projects', 'checkpoints'];
-    const fields = {};
-    Object.keys(pendingData).forEach((key) => {
-      if (!knownFields.includes(key)) {
-        fields[key] = pendingData[key];
-      }
-    });
-    return fields;
+    const knownFields = ['bootcampTitle', 'title', 'shortTitle', 'learner', 'duration', 'weeklyHours', 'months', 'weeks', 'projects', 'checkpoints', 'templates'];
+    return Object.fromEntries(Object.entries(pendingData).filter(([key]) => !knownFields.includes(key)));
   }, [pendingData]);
 
+  const confirmImport = () => {
+    if (!pendingData) return;
+    setBusy(true);
+    importRoadmap(pendingData);
+    setBusy(false);
+    setShowImportConfirm(false);
+    setPendingData(null);
+    setValidationResult(null);
+    setFeedback({ type: 'success', text: 'Curriculum imported and activated.' });
+  };
+
+  const confirmReset = () => {
+    setBusy(true);
+    resetToSampleRoadmap();
+    setBusy(false);
+    setShowResetConfirm(false);
+    setPendingData(null);
+    setValidationResult(null);
+    setFeedback({ type: 'success', text: 'The bundled curriculum is now active.' });
+  };
+
+  const summary = validationResult?.summary || {};
+  const summaryFacts = [
+    ['Months', summary.months],
+    ['Weeks', summary.weeks],
+    ['Study resources', summary.studyResources ?? summary.resources],
+    ['Skill Check questions', summary.skillCheckQuestions ?? 0],
+    ['Practical missions', summary.practicalMissions],
+    ['Projects', summary.projects],
+    ['Checkpoints', summary.checkpoints],
+  ];
+
   return (
-    <PageShell className="max-w-2xl">
-      <PageHeader
-        title="Import Roadmap"
-        subtitle={
-          <span>
-            Upload your <code className="text-accent-primary bg-navy-700 px-1.5 py-0.5 rounded font-mono text-xs">roadmap-data.json</code> file to load your custom learning track.
-          </span>
-        }
-      />
+    <PageShell className="max-w-3xl">
+      <header>
+        <Link to="/settings#advanced-settings" className="inline-flex items-center gap-1.5 text-xs font-semibold text-text-muted hover:text-text-primary"><ArrowLeft className="h-3.5 w-3.5" /> Back to Settings</Link>
+        <p className="mt-7 text-xs font-bold uppercase tracking-[0.15em] text-brand-violet">Advanced</p>
+        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-text-primary">Import curriculum</h1>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-text-secondary">Validate a curriculum file, review its result, and confirm before replacing your active course.</p>
+      </header>
 
-      {/* Status banner */}
-      <div className="card flex items-center gap-3">
-        <div className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${settings.usingCustomRoadmap ? 'bg-accent-primary animate-pulse' : 'bg-amber-400'}`} />
-        <div>
-          <p className="text-sm font-medium text-white">
-            {settings.usingCustomRoadmap ? 'Custom roadmap loaded' : 'Using sample roadmap'}
-          </p>
-          <p className="text-xs text-slate-500">
-            {settings.usingCustomRoadmap
-              ? 'Your imported roadmap-data.json is active.'
-              : 'Import your roadmap-data.json to configure custom tracks, missions, and checkpoints.'}
-          </p>
+      {feedback && <StatusBanner type={feedback.type} message={feedback.text} onClose={() => setFeedback(null)} />}
+
+      <section className="border-y border-border-divider py-5">
+        <div className="flex items-center gap-3">
+          <span className={`h-2.5 w-2.5 rounded-full ${settings?.usingCustomRoadmap ? 'bg-brand-green' : 'bg-text-muted'}`} aria-hidden="true" />
+          <div><h2 className="text-sm font-semibold text-text-primary">{settings?.usingCustomRoadmap ? 'Imported curriculum active' : 'Bundled curriculum active'}</h2><p className="mt-0.5 text-xs text-text-muted">Import is optional and intended for custom-course management.</p></div>
         </div>
-      </div>
+      </section>
 
-      <div
-        onDrop={handleDrop}
-        onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-        onDragLeave={() => setDragOver(false)}
-        className={`relative border border-dashed rounded-2xl p-7 text-center transition-all duration-300 cursor-pointer
-          ${dragOver
-            ? 'border-accent-primary bg-accent-primary/10'
-            : 'border-navy-500/40 hover:border-accent-primary/50 hover:bg-navy-700/50'
-          }`}
-        onClick={() => document.getElementById('json-upload').click()}
-      >
-        <input
-          id="json-upload"
-          type="file"
-          accept=".json"
-          className="hidden"
-          onChange={handleFileInput}
-        />
+      <section>
+        <h2 className="text-lg font-bold text-text-primary">1. Choose curriculum</h2>
+        <label
+          htmlFor="curriculum-file"
+          onDragOver={(event) => { event.preventDefault(); setDragOver(true); }}
+          onDragLeave={() => setDragOver(false)}
+          onDrop={(event) => { event.preventDefault(); setDragOver(false); processFile(event.dataTransfer.files?.[0]); }}
+          className={`mt-4 flex cursor-pointer flex-col items-center rounded-[22px] border border-dashed p-8 text-center transition-colors duration-200 motion-reduce:transition-none ${dragOver ? 'border-brand-blue bg-brand-blue/10' : 'border-border-strong bg-bg-soft hover:border-brand-blue/50'}`}
+        >
+          <FileJson className="h-7 w-7 text-brand-blue" aria-hidden="true" />
+          <span className="mt-3 text-sm font-semibold text-text-primary">Drop a curriculum JSON file here</span>
+          <span className="mt-1 text-xs text-text-muted">or choose a file from your device</span>
+          <span className="btn-secondary mt-4 px-4 py-2 text-xs"><Upload className="h-3.5 w-3.5" /> Choose file</span>
+          <input id="curriculum-file" type="file" accept=".json,application/json" className="sr-only" onChange={(event) => { processFile(event.target.files?.[0]); event.target.value = ''; }} />
+        </label>
+      </section>
 
-        <div className="flex flex-col items-center gap-3">
-          <div>
-            <p className="text-white font-semibold text-lg">
-              {dragOver ? 'Drop your JSON file here' : 'Drop roadmap-data.json here'}
-            </p>
-            <p className="text-slate-500 text-sm mt-1">or click to browse your files</p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="badge-blue">JSON only</span>
-            <span className="badge-slate">Version 1</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Error */}
-      {error && (
-        <div className="flex items-start gap-3 p-4 bg-red-500/10 border border-red-500/30 rounded-xl animate-scale-in">
-          <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-          <div>
-            <p className="text-red-400 font-medium text-sm">Import Failed</p>
-            <p className="text-red-400/70 text-sm mt-0.5">{error}</p>
-          </div>
-        </div>
-      )}
-
-      {/* Validation Result */}
       {validationResult && (
-        <div className={`card animate-scale-in ${validationResult.valid ? 'border-accent-primary/30' : 'border-red-500/30'}`}>
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              {validationResult.valid
-                ? <CheckCircle2 className="w-5 h-5 text-accent-primary" />
-                : <AlertCircle className="w-5 h-5 text-red-400" />
-              }
-              <h3 className="font-semibold text-white">
-                {validationResult.valid ? 'Validation Passed' : 'Validation Failed'}
-              </h3>
-            </div>
-            <button
-              onClick={() => setShowSummary(!showSummary)}
-              className="text-slate-400 hover:text-white transition-colors"
-            >
-              {showSummary ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-            </button>
+        <section className="border-t border-border-divider pt-8">
+          <div className="flex items-start gap-3">
+            {validationResult.valid ? <CheckCircle2 className="mt-0.5 h-5 w-5 text-brand-green" /> : <AlertCircle className="mt-0.5 h-5 w-5 text-red-500" />}
+            <div><h2 className="text-lg font-bold text-text-primary">2. {validationResult.valid ? 'Validation passed' : 'Validation needs attention'}</h2><p className="mt-1 text-sm text-text-secondary">{validationResult.valid ? 'Review the curriculum summary before importing.' : 'Resolve the blocking errors in the file, then validate it again.'}</p></div>
           </div>
 
-          {showSummary && (
-            <div className="space-y-4">
-              {/* Summary Grid */}
-              {validationResult.valid && (
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {[
-                    { label: 'Months', value: validationResult.summary.months, color: 'text-accent-primary', icon: Calendar },
-                    { label: 'Weeks', value: validationResult.summary.weeks, color: 'text-blue-400', icon: Clock },
-                    { label: 'Study Resources', value: validationResult.summary.studyResources ?? validationResult.summary.resources, color: 'text-amber-400', icon: BookOpen },
-                    { label: 'Skill Check Qs', value: validationResult.summary.skillCheckQuestions ?? 0, color: 'text-cyan-400', icon: CheckSquare },
-                    { label: 'Practical Missions', value: validationResult.summary.practicalMissions, color: 'text-pink-400', icon: Target },
-                    { label: 'Proof Items', value: validationResult.summary.proofItems ?? 0, color: 'text-purple-400', icon: FileText },
-                    { label: 'Reflection Prompts', value: validationResult.summary.reflectionPrompts ?? 0, color: 'text-teal-400', icon: Zap },
-                    { label: 'Scheduled Sessions', value: validationResult.summary.scheduledSessions ?? validationResult.summary.sessions, color: 'text-orange-400', icon: Coffee },
-                    { label: 'Readiness Categories', value: validationResult.summary.readinessCategories, color: 'text-rose-400', icon: BarChart2 },
-                    { label: 'Projects', value: validationResult.summary.projects, color: 'text-violet-400', icon: Award },
-                    { label: 'Checkpoints', value: validationResult.summary.checkpoints, color: 'text-blue-400', icon: Shield },
-                  ].map(({ label, value, color, icon: Icon }) => (
-                    <div key={label} className="bg-navy-850/60 border border-navy-750/30 rounded-xl p-3 flex flex-col items-center justify-center text-center shadow-sm hover:border-navy-450 transition-colors">
-                      <div className="w-8 h-8 rounded-lg bg-navy-900 border border-navy-750/50 flex items-center justify-center mb-1.5">
-                        <Icon className={`w-4 h-4 ${color}`} />
-                      </div>
-                      <p className={`text-lg font-mono font-bold text-white`}>{value ?? '—'}</p>
-                      <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mt-0.5">{label}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Learner info */}
-              {validationResult.valid && (
-                <div className="bg-navy-800 rounded-lg p-3 border border-navy-400">
-                  <p className="text-xs text-slate-500">Bootcamp Target</p>
-                  <p className="text-sm font-semibold text-white">{validationResult.summary.bootcampTitle}</p>
-                  <p className="text-xs text-slate-400 mt-1">
-                    Learner: <span className="text-white font-bold">{validationResult.summary.learner}</span>
-                  </p>
-                </div>
-              )}
-
-              {/* Unknown Fields Accordion */}
-              {validationResult.valid && Object.keys(unknownTopLevelFields).length > 0 && (
-                <div className="border border-amber-500/20 bg-amber-500/5 rounded-xl p-3">
-                  <details className="group">
-                    <summary className="flex items-center justify-between text-xs font-bold text-amber-400 cursor-pointer select-none">
-                      <span className="flex items-center gap-1.5">
-                         ADDITIONAL ROADMAP DATA ({Object.keys(unknownTopLevelFields).length} Custom Attribute{Object.keys(unknownTopLevelFields).length !== 1 ? 's' : ''})
-                      </span>
-                      <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
-                    </summary>
-                    <div className="mt-3 border-t border-navy-400/50 pt-2 space-y-3">
-                      {Object.entries(unknownTopLevelFields).map(([key, val]) => (
-                        <div key={key} className="text-xs">
-                          <span className="font-bold text-slate-300 block uppercase tracking-wider">{key}:</span>
-                          {typeof val === 'object' ? (
-                            <pre className="bg-navy-950 font-mono text-[13px] text-slate-400 rounded p-2 overflow-x-auto mt-1 max-w-full">
-                              <code>{JSON.stringify(val, null, 2)}</code>
-                            </pre>
-                          ) : (
-                            <p className="text-slate-300 mt-0.5">{val.toString()}</p>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </details>
-                </div>
-              )}
-
-              {/* Errors */}
-              {validationResult.errors && validationResult.errors.length > 0 && (
-                <div className="border border-red-500/25 bg-red-500/5 rounded-xl p-3.5">
-                  <details className="group" open={true}>
-                    <summary className="flex items-center justify-between text-xs font-bold text-red-400 cursor-pointer select-none">
-                      <span className="flex items-center gap-1.5 uppercase tracking-wider">
-                        Errors (Must Fix) ({validationResult.errors.length})
-                      </span>
-                      <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
-                    </summary>
-                    <div className="mt-3 border-t border-navy-400/50 pt-2.5 space-y-2">
-                      {validationResult.errors.map((err, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs text-red-300">
-                          <span className="text-red-500 mt-0.5">✗</span>
-                          <span>{err}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
-                </div>
-              )}
-
-              {/* Warnings */}
-              {validationResult.warnings && validationResult.warnings.length > 0 && (
-                <div className="border border-amber-500/20 bg-amber-500/5 rounded-xl p-3.5">
-                  <details className="group" open={validationResult.warnings.length < 3}>
-                    <summary className="flex items-center justify-between text-xs font-bold text-amber-400 cursor-pointer select-none">
-                      <span className="flex items-center gap-1.5 uppercase tracking-wider">
-                        Warnings (Optional) ({validationResult.warnings.length})
-                      </span>
-                      <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
-                    </summary>
-                    <div className="mt-3 border-t border-navy-400/50 pt-2.5 space-y-2">
-                      {validationResult.warnings.map((w, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs text-amber-300/80">
-                          <span className="text-amber-500 mt-0.5">⚠</span>
-                          <span>{w}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
-                </div>
-              )}
-
-              {/* Auto-fixed / Info */}
-              {validationResult.info && validationResult.info.length > 0 && (
-                <div className="border border-blue-500/20 bg-blue-500/5 rounded-xl p-3.5">
-                  <details className="group" open={validationResult.info.length < 3}>
-                    <summary className="flex items-center justify-between text-xs font-bold text-blue-450 cursor-pointer select-none">
-                      <span className="flex items-center gap-1.5 uppercase tracking-wider">
-                        Auto-Fixed / Info ({validationResult.info.length})
-                      </span>
-                      <ChevronRight className="w-4 h-4 text-slate-500 group-open:rotate-90 transition-transform" />
-                    </summary>
-                    <div className="mt-3 border-t border-navy-400/50 pt-2.5 space-y-2">
-                      {validationResult.info.map((inf, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs text-blue-300/80">
-                          <Check className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
-                          <span>{inf}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </details>
-                </div>
-              )}
+          {validationResult.valid && (
+            <div className="mt-6 rounded-2xl border border-border-default bg-bg-soft p-5">
+              <h3 className="text-base font-bold text-text-primary">{summary.bootcampTitle || pendingData?.title || pendingData?.bootcampTitle || 'Curriculum summary'}</h3>
+              <dl className="mt-5 grid grid-cols-2 gap-x-5 gap-y-4 sm:grid-cols-4">
+                {summaryFacts.map(([label, value]) => <div key={label}><dt className="text-[11px] text-text-muted">{label}</dt><dd className="mt-1 text-lg font-bold text-text-primary">{value ?? '—'}</dd></div>)}
+              </dl>
             </div>
           )}
 
-          {/* Confirm Button */}
-          {validationResult.valid && pendingData && (
-            <div className="mt-4 pt-4 border-t border-navy-400 space-y-3">
-              <ConfirmAction
-                title="Confirm Custom Roadmap Import?"
-                description={
-                  <div className="space-y-3">
-                    <p>Importing will replace the current roadmap layout, wipe existing configurations, and reset your timeline progress logs.</p>
-                    <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2 text-left">
-                      <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
-                      <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current session before importing.</p>
-                      <button 
-                        type="button" 
-                        onClick={handleExportBackup} 
-                        disabled={isExporting}
-                        className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5 disabled:opacity-50"
-                      >
-                        <Download className="w-3 h-3" /> Export Backup file
-                      </button>
-                    </div>
-                  </div>
-                }
-                confirmLabel="Confirm Import"
-                cancelLabel="Cancel Import"
-                onConfirm={handleConfirmImport}
-                onCancel={() => {
-                  setPendingData(null);
-                  setValidationResult(null);
-                }}
-                isLoading={isImporting}
-              />
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Success */}
-      {imported && (
-        <div className="flex items-start gap-3 p-4 bg-accent-primary/10 border border-accent-primary/30 rounded-xl animate-scale-in">
-          <CheckCircle2 className="w-5 h-5 text-accent-primary flex-shrink-0 mt-0.5" />
-          <div>
-            <p className="text-accent-primary font-semibold">Roadmap imported successfully!</p>
-            <p className="text-accent-primary/70 text-sm mt-0.5">Your dashboard is now loaded with the custom roadmap configuration.</p>
-          </div>
-        </div>
-      )}
-
-      {/* Reset to Sample */}
-      <div className="card border-dashed">
-        <div className="flex items-start gap-3">
-          <RefreshCw className="w-5 h-5 text-slate-500 flex-shrink-0 mt-0.5" />
-          <div className="flex-1 space-y-3">
-            <div>
-              <h3 className="font-semibold text-white text-sm">Reset to Sample Roadmap</h3>
-              <p className="text-xs text-slate-500 mt-1">
-                Wipe custom configurations and restore the built-in sample roadmap.
-              </p>
-            </div>
-            
-            {!showResetConfirm ? (
-              <button
-                onClick={() => setShowResetConfirm(true)}
-                className="btn-danger text-sm flex items-center gap-2"
-              >
-                <Trash2 className="w-4 h-4" />
-                Reset to Sample
-              </button>
-            ) : (
-              <ConfirmAction
-                title="Wipe custom configuration and restore sample?"
-                description={
-                  <div className="space-y-3">
-                    <p>This will clear all progress and restore the baseline sample roadmap. This action is permanent and cannot be undone.</p>
-                    <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2 text-left">
-                      <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
-                      <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current session before resetting.</p>
-                      <button 
-                        type="button" 
-                        onClick={handleExportBackup} 
-                        disabled={isExporting}
-                        className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5 disabled:opacity-50"
-                      >
-                        <Download className="w-3 h-3" /> Export Backup file
-                      </button>
-                    </div>
-                  </div>
-                }
-                onConfirm={handleReset}
-                onCancel={() => setShowResetConfirm(false)}
-                isLoading={isResetting}
-              />
+          <div className="mt-5 space-y-3">
+            <ValidationGroup title="Blocking errors" items={validationResult.errors} tone="error" open />
+            <ValidationGroup title="Warnings" items={validationResult.warnings} tone="warning" open={(validationResult.warnings?.length || 0) < 3} />
+            <ValidationGroup title="Validation information" items={validationResult.info} tone="info" />
+            {Object.keys(unknownTopLevelFields).length > 0 && (
+              <details className="group rounded-xl border border-border-default bg-bg-soft p-4">
+                <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-text-secondary"><span>Additional curriculum fields ({Object.keys(unknownTopLevelFields).length})</span><ChevronRight className="h-4 w-4 transition-transform group-open:rotate-90" /></summary>
+                <pre className="mt-3 max-h-72 overflow-auto rounded-lg border border-border-default bg-bg-surface p-3 text-xs text-text-secondary"><code>{JSON.stringify(unknownTopLevelFields, null, 2)}</code></pre>
+              </details>
             )}
           </div>
-        </div>
-      </div>
 
-      {/* JSON Structure Reference */}
-      <div className="card">
-        <div className="flex items-center gap-2 mb-3">
-          <Info className="w-4 h-4 text-blue-400" />
-          <h3 className="font-semibold text-white text-sm">Expected JSON Structure</h3>
-        </div>
-        <p className="text-xs text-slate-500 mb-3">
-          Your custom roadmap schema should adhere to the following JSON blueprint:
-        </p>
-        <pre className="bg-navy-900 rounded-lg p-4 text-xs text-slate-300 overflow-x-auto font-mono leading-relaxed">
-{`{
-  "bootcampTitle": "Your bootcamp name",
-  "learner": "Your name",
-  "duration": "6 months",
-  "weeklyHours": "15-20 hours",
-  "months": [ { ... } ],
-  "projects": [ { ... } ],
-  "checkpoints": [ { ... } ]
-}`}
-        </pre>
-        <p className="text-xs text-slate-500 mt-3">
-          A templates list is available in <code className="text-accent-primary bg-navy-800 px-1 rounded">/public/roadmap-data.json</code> of this workspace.
-        </p>
-      </div>
+          {validationResult.valid && pendingData && (
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <button type="button" onClick={() => setShowImportConfirm(true)} className="btn-primary justify-center px-5 py-2.5 text-sm">Confirm import</button>
+              <button type="button" onClick={() => { setPendingData(null); setValidationResult(null); }} className="btn-secondary justify-center px-5 py-2.5 text-sm">Cancel</button>
+            </div>
+          )}
+        </section>
+      )}
 
-      {/* AI PDF Future Section */}
-      <div className="card border-dashed border-slate-700 opacity-60">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="badge-slate">Coming in Version 2</div>
-        </div>
-        <h3 className="font-semibold text-slate-400 text-sm">AI PDF Import</h3>
-        <p className="text-xs text-slate-600 mt-2">
-          Upload any text or image-based PDF syllabus. The AI will translate it into sequential weeks, missions, and deliverables.
-        </p>
-      </div>
+      <section className="border-t border-border-divider pt-8">
+        <h2 className="text-lg font-bold text-text-primary">Course recovery</h2>
+        <p className="mt-1 text-sm text-text-secondary">Restore the bundled curriculum using the application’s existing reset behavior.</p>
+        <button type="button" onClick={() => setShowResetConfirm(true)} className="btn-secondary mt-4 justify-center gap-2 px-4 py-2.5 text-sm"><RefreshCw className="h-4 w-4" /> Restore bundled curriculum</button>
+      </section>
+
+      {showImportConfirm && (
+        <ConfirmAction
+          title="Import this curriculum?"
+          description={<div className="space-y-3"><p>This replaces the active curriculum and resets its associated progress using the existing import behavior.</p><button type="button" onClick={exportProgress} className="btn-secondary inline-flex gap-2 px-3 py-2 text-xs"><Download className="h-3.5 w-3.5" /> Download backup first</button></div>}
+          confirmLabel="Import curriculum"
+          onConfirm={confirmImport}
+          onCancel={() => setShowImportConfirm(false)}
+          isLoading={busy}
+        />
+      )}
+      {showResetConfirm && (
+        <ConfirmAction
+          title="Restore the bundled curriculum?"
+          description={<div className="space-y-3"><p>This replaces the current curriculum and removes progress associated with it.</p><button type="button" onClick={exportProgress} className="btn-secondary inline-flex gap-2 px-3 py-2 text-xs"><Download className="h-3.5 w-3.5" /> Download backup first</button></div>}
+          confirmLabel="Restore curriculum"
+          onConfirm={confirmReset}
+          onCancel={() => setShowResetConfirm(false)}
+          isLoading={busy}
+        />
+      )}
     </PageShell>
   );
 }

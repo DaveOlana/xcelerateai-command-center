@@ -1,0 +1,133 @@
+{
+  "curriculumId": "PYAE",
+  "revision": 3,
+  "designPrinciple": "Move from understandable Python programs to bounded agent systems. New concepts are first explained clearly, then practiced, consulted in authoritative references when useful, and integrated through cumulative Builds with inspectable evidence.",
+  "targetLearner": "A motivated Windows learner who can follow instructions but is not assumed to know Python, APIs, databases, testing architecture, model APIs, agent frameworks, or professional software-engineering terminology.",
+  "learningRhythm": [
+    {
+      "stage": "Study",
+      "purpose": "Use the smallest sufficient set of Core explanations, demonstrations, and guided practice needed for this week's assessed knowledge and Build foundation. Optional material may deepen learning but never carries a mandatory dependency alone."
+    },
+    {
+      "stage": "Recap and experiment",
+      "purpose": "Run, modify, predict, or debug the specifically assigned examples until the learner can explain their behavior rather than merely recognize syntax."
+    },
+    {
+      "stage": "Skill Check",
+      "purpose": "Answer ten questions that test taught knowledge, established prior knowledge, and limited reasonable transfer. Seven correct answers pass; no question may depend on untaught factual knowledge."
+    },
+    {
+      "stage": "Build",
+      "purpose": "Translate the professional specification into a learner-readable destination and execute it across natural planning sessions. Difficulty should come from implementation, integration, testing, and debugging—not decoding unexplained requirements."
+    },
+    {
+      "stage": "Proof and reflection",
+      "purpose": "Record the current learner-declared evidence and reflection required by the frontend. Independent evidence verification remains intentionally deferred to backend architecture."
+    }
+  ],
+  "resourceRoleStrategy": {
+    "learn": "The primary explanation or demonstration used to teach a concept at the learner's current level.",
+    "practice": "An active exercise, lab, implementation, modification, or debugging activity.",
+    "reference": "Precise authoritative information used for consultation, verification, API behavior, syntax, or documentation literacy.",
+    "selectionOrder": "For new or foundational concepts, compare candidates for pedagogical clarity first, guided-practice quality second, and authoritative precision third. Authority remains a quality dimension, not an automatic selection trump card.",
+    "shapeRule": "Resource count, format, and provider distribution emerge from educational need. Provider concentration triggers review but is not itself a quota violation.",
+    "accessRule": "The required path uses free material and free/local tools without mandatory paid model access. A Core video requires usable captions or transcript support and a precise assigned segment."
+  },
+  "scaffoldingPolicy": "Scaffolding depends on familiarity, not absolute week number. A newly introduced technology receives a clear explanation, exact practice, contextual terminology, and explicit acceptance criteria even late in the curriculum. Repeated workflows gradually transfer design choices to the learner.",
+  "buildTranslation": {
+    "learnerView": "Every required Build provides a concise summary, why it matters, legitimate prior competencies, a visible finished destination, contextual concept references, and a natural multi-session plan.",
+    "professionalView": "The original brief, steps, acceptance criteria, hints, templates, and stretch specification remain authoritative and separately inspectable.",
+    "readinessGate": "Study readiness and Skill Check readiness are audited separately from Build readiness. A learner who completes Core Study and passes the Skill Check should receive roughly 80–90 percent of the conceptual and technical preparation required to begin the Build without researching what the assignment means.",
+    "sessionRule": "Sessions are informational planning groups, not checkboxes or persisted progress. Their step coverage is exact and their total estimate remains within the existing plus-or-minus 20 percent tolerance."
+  },
+  "workloadPrinciples": {
+    "duration": "The pathway remains 24 weeks and 520 estimated hours unless a demonstrated local workload defect requires a bounded repair.",
+    "weeklyVariation": "Weekly effort varies with concept novelty, Build scope, testing needs, and integration risk. No fixed Study or Build hour quota is imposed.",
+    "substantialBuilds": "A seven- or eight-hour Build is acceptable when its scope is authentic and decomposed into understandable sessions. Opaque work is repaired; meaningful effort is not reduced merely because it is substantial.",
+    "calendar": "The design supports Study, recap, assessment, several Build sessions, contingency, Proof, and Reflection without assigning weekdays or assuming seven perfect days."
+  },
+  "learnerIndependenceProgression": [
+    {
+      "phaseId": "PYAE-PH01",
+      "approach": "Use conversational explanations, exact commands, small experiments, and visible file destinations while establishing Python and Windows foundations."
+    },
+    {
+      "phaseId": "PYAE-PH02",
+      "approach": "Retain guided boundary tests and failure examples while the learner begins choosing implementation details inside explicit contracts."
+    },
+    {
+      "phaseId": "PYAE-PH03",
+      "approach": "Introduce model and tool abstractions through provider-neutral interfaces and deterministic fixtures before optional live providers or frameworks."
+    },
+    {
+      "phaseId": "PYAE-PH04",
+      "approach": "Make agent loops, policy boundaries, memory, and retrieval explicit so the learner can inspect and debug behavior rather than depend on hidden orchestration."
+    },
+    {
+      "phaseId": "PYAE-PH05",
+      "approach": "Provide full teaching for unfamiliar evaluation, observability, asynchronous, security, and protocol concepts while requiring more independent integration and diagnosis."
+    },
+    {
+      "phaseId": "PYAE-PH06",
+      "approach": "Ask the learner to assemble, package, evaluate, and explain previously learned components with contextual support for newly introduced architecture and release terminology."
+    }
+  ],
+  "assessmentPolicy": {
+    "weeklyQuestionCount": 10,
+    "optionsPerQuestion": 4,
+    "passingScorePercent": 70,
+    "readinessClassification": "Every question is recorded as A (directly taught this week), B (established prior knowledge), C (reasonable transfer or inference), or D (untaught dependency). D must be zero and every week must contain at least seven A/B questions.",
+    "coreIntegrity": "Knowledge required by a Skill Check, required Build step, or acceptance criterion cannot live only in Optional material.",
+    "recoveryLock": "Existing retry and recovery behavior is preserved: after two consecutive failed attempts, Build remains locked until the defined recovery activity is completed and a fresh attempt passes.",
+    "buildUnlock": "Existing progression remains Study, Skill Check, Build, Proof, Reflect, Complete."
+  },
+  "projectArchitecture": [
+    {
+      "projectId": "PYAE-PJ01",
+      "milestoneBuildIds": [
+        "PYAE-B-W01-01",
+        "PYAE-B-W02-01",
+        "PYAE-B-W04-01",
+        "PYAE-B-W06-01",
+        "PYAE-B-W07-01",
+        "PYAE-B-W08-01"
+      ]
+    },
+    {
+      "projectId": "PYAE-PJ02",
+      "milestoneBuildIds": [
+        "PYAE-B-W09-01",
+        "PYAE-B-W10-01",
+        "PYAE-B-W11-01",
+        "PYAE-B-W12-01",
+        "PYAE-B-W13-01",
+        "PYAE-B-W14-01",
+        "PYAE-B-W15-01"
+      ]
+    },
+    {
+      "projectId": "PYAE-PJ03",
+      "milestoneBuildIds": [
+        "PYAE-B-W16-01",
+        "PYAE-B-W17-01",
+        "PYAE-B-W18-01",
+        "PYAE-B-W19-01",
+        "PYAE-B-W20-01",
+        "PYAE-B-W21-01",
+        "PYAE-B-W22-01",
+        "PYAE-B-W23-01",
+        "PYAE-B-W24-01"
+      ]
+    }
+  ],
+  "providerPolicy": {
+    "required": "A deterministic FakeModel implementing the internal provider protocol and local fixtures sufficient for every assessed path.",
+    "optional": [
+      "Ollama local HTTP adapter",
+      "A hosted model adapter supplied by the learner",
+      "Docker/container packaging",
+      "Remote MCP services"
+    ],
+    "rule": "Provider or framework capability never bypasses schema validation, tool authorization, evaluation, human approval, or offline regression gates."
+  }
+}

@@ -1,0 +1,1152 @@
+[
+  {
+    "competencyId": "PYAE-C001",
+    "taughtIn": [
+      "PYAE-W01"
+    ],
+    "practicedIn": [
+      "PYAE-W01"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W01"
+    ],
+    "appliedIn": [
+      "PYAE-B-W01-01",
+      "PYAE-B-W08-01",
+      "PYAE-B-W23-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M01",
+      "PYAE-PJ01-M06",
+      "PYAE-PJ03-M08",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W08",
+      "PYAE-W23",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W08",
+      "PYAE-W23"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C002",
+    "taughtIn": [
+      "PYAE-W01",
+      "PYAE-W02"
+    ],
+    "practicedIn": [
+      "PYAE-W01",
+      "PYAE-W02"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W01",
+      "PYAE-SC-W02"
+    ],
+    "appliedIn": [
+      "PYAE-B-W01-01",
+      "PYAE-B-W02-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M01",
+      "PYAE-PJ01-M02",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W02",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W02"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C003",
+    "taughtIn": [
+      "PYAE-W02"
+    ],
+    "practicedIn": [
+      "PYAE-W02"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W02"
+    ],
+    "appliedIn": [
+      "PYAE-B-W02-01",
+      "PYAE-B-W04-01",
+      "PYAE-B-W11-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M02",
+      "PYAE-PJ01-M03",
+      "PYAE-PJ02-M03",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W04",
+      "PYAE-W11",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W04",
+      "PYAE-W11"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C004",
+    "taughtIn": [
+      "PYAE-W03"
+    ],
+    "practicedIn": [
+      "PYAE-W03"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W03"
+    ],
+    "appliedIn": [
+      "PYAE-B-W03-01",
+      "PYAE-B-W06-01",
+      "PYAE-B-W11-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M04",
+      "PYAE-PJ02-M03",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W06",
+      "PYAE-W11",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W06",
+      "PYAE-W11"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C005",
+    "taughtIn": [
+      "PYAE-W03"
+    ],
+    "practicedIn": [
+      "PYAE-W03"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W03"
+    ],
+    "appliedIn": [
+      "PYAE-B-W03-01",
+      "PYAE-B-W08-01",
+      "PYAE-B-W22-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M06",
+      "PYAE-PJ03-M07",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W08",
+      "PYAE-W22",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W08",
+      "PYAE-W22"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C006",
+    "taughtIn": [
+      "PYAE-W04"
+    ],
+    "practicedIn": [
+      "PYAE-W04"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W04"
+    ],
+    "appliedIn": [
+      "PYAE-B-W04-01",
+      "PYAE-B-W14-01",
+      "PYAE-B-W16-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M03",
+      "PYAE-PJ02-M06",
+      "PYAE-PJ03-M01",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W14",
+      "PYAE-W16",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W14",
+      "PYAE-W16"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C007",
+    "taughtIn": [
+      "PYAE-W04"
+    ],
+    "practicedIn": [
+      "PYAE-W04"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W04"
+    ],
+    "appliedIn": [
+      "PYAE-B-W04-01",
+      "PYAE-B-W10-01",
+      "PYAE-B-W15-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M03",
+      "PYAE-PJ02-M02",
+      "PYAE-PJ02-M07",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W10",
+      "PYAE-W15",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W10",
+      "PYAE-W15"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C008",
+    "taughtIn": [
+      "PYAE-W05"
+    ],
+    "practicedIn": [
+      "PYAE-W05"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W05"
+    ],
+    "appliedIn": [
+      "PYAE-B-W05-01",
+      "PYAE-B-W06-01",
+      "PYAE-B-W18-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M04",
+      "PYAE-PJ03-M03",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W06",
+      "PYAE-W18",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W06",
+      "PYAE-W18"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C009",
+    "taughtIn": [
+      "PYAE-W05",
+      "PYAE-W06"
+    ],
+    "practicedIn": [
+      "PYAE-W05",
+      "PYAE-W06"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W05",
+      "PYAE-SC-W06"
+    ],
+    "appliedIn": [
+      "PYAE-B-W05-01",
+      "PYAE-B-W06-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M04",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W06",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W06"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C010",
+    "taughtIn": [
+      "PYAE-W06",
+      "PYAE-W17"
+    ],
+    "practicedIn": [
+      "PYAE-W06",
+      "PYAE-W17"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W06",
+      "PYAE-SC-W17",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W06-01",
+      "PYAE-B-W17-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M04",
+      "PYAE-PJ03-M02",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W17",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W17"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C011",
+    "taughtIn": [
+      "PYAE-W06",
+      "PYAE-W07"
+    ],
+    "practicedIn": [
+      "PYAE-W06",
+      "PYAE-W07"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W07"
+    ],
+    "appliedIn": [
+      "PYAE-B-W06-01",
+      "PYAE-B-W07-01",
+      "PYAE-B-W09-01",
+      "PYAE-B-W17-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M04",
+      "PYAE-PJ01-M05",
+      "PYAE-PJ02-M01",
+      "PYAE-PJ03-M02",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W07",
+      "PYAE-W09",
+      "PYAE-W17",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W07",
+      "PYAE-W09",
+      "PYAE-W17"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C012",
+    "taughtIn": [
+      "PYAE-W07",
+      "PYAE-W08"
+    ],
+    "practicedIn": [
+      "PYAE-W07",
+      "PYAE-W08"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W07"
+    ],
+    "appliedIn": [
+      "PYAE-B-W07-01",
+      "PYAE-B-W08-01",
+      "PYAE-B-W09-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M05",
+      "PYAE-PJ01-M06",
+      "PYAE-PJ02-M01",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W08",
+      "PYAE-W09",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W08",
+      "PYAE-W09"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C013",
+    "taughtIn": [
+      "PYAE-W07"
+    ],
+    "practicedIn": [
+      "PYAE-W07"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W07"
+    ],
+    "appliedIn": [
+      "PYAE-B-W07-01",
+      "PYAE-B-W18-01",
+      "PYAE-B-W19-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M05",
+      "PYAE-PJ03-M03",
+      "PYAE-PJ03-M04",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W18",
+      "PYAE-W19",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W18",
+      "PYAE-W19"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C014",
+    "taughtIn": [
+      "PYAE-W08",
+      "PYAE-W09"
+    ],
+    "practicedIn": [
+      "PYAE-W08"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W08",
+      "PYAE-SC-W09"
+    ],
+    "appliedIn": [
+      "PYAE-B-W08-01",
+      "PYAE-B-W09-01",
+      "PYAE-B-W10-01",
+      "PYAE-B-W11-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M06",
+      "PYAE-PJ02-M01",
+      "PYAE-PJ02-M02",
+      "PYAE-PJ02-M03",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W09",
+      "PYAE-W10",
+      "PYAE-W11",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W09",
+      "PYAE-W10",
+      "PYAE-W11"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C015",
+    "taughtIn": [
+      "PYAE-W08"
+    ],
+    "practicedIn": [
+      "PYAE-W08"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W08"
+    ],
+    "appliedIn": [
+      "PYAE-B-W08-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ01-M06",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C016",
+    "taughtIn": [
+      "PYAE-W09"
+    ],
+    "practicedIn": [
+      "PYAE-W09"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W09",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W09-01",
+      "PYAE-B-W12-01",
+      "PYAE-B-W13-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M01",
+      "PYAE-PJ02-M04",
+      "PYAE-PJ02-M05",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W12",
+      "PYAE-W13",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W12",
+      "PYAE-W13"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C017",
+    "taughtIn": [
+      "PYAE-W10",
+      "PYAE-W12"
+    ],
+    "practicedIn": [
+      "PYAE-W10"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W10",
+      "PYAE-SC-W12"
+    ],
+    "appliedIn": [
+      "PYAE-B-W10-01",
+      "PYAE-B-W12-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M02",
+      "PYAE-PJ02-M04",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W12",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W12"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C018",
+    "taughtIn": [
+      "PYAE-W10",
+      "PYAE-W11"
+    ],
+    "practicedIn": [
+      "PYAE-W10"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W10",
+      "PYAE-SC-W11"
+    ],
+    "appliedIn": [
+      "PYAE-B-W10-01",
+      "PYAE-B-W11-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M02",
+      "PYAE-PJ02-M03",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W11",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W11"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C019",
+    "taughtIn": [
+      "PYAE-W11",
+      "PYAE-W13"
+    ],
+    "practicedIn": [
+      "PYAE-W11",
+      "PYAE-W13"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W11",
+      "PYAE-SC-W13",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W11-01",
+      "PYAE-B-W13-01",
+      "PYAE-B-W21-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M03",
+      "PYAE-PJ02-M05",
+      "PYAE-PJ03-M06",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W13",
+      "PYAE-W21",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W13",
+      "PYAE-W21"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C020",
+    "taughtIn": [
+      "PYAE-W12",
+      "PYAE-W13"
+    ],
+    "practicedIn": [
+      "PYAE-W12"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W12",
+      "PYAE-SC-W15"
+    ],
+    "appliedIn": [
+      "PYAE-B-W12-01",
+      "PYAE-B-W13-01",
+      "PYAE-B-W15-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M04",
+      "PYAE-PJ02-M05",
+      "PYAE-PJ02-M07",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W13",
+      "PYAE-W15",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W13",
+      "PYAE-W15"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C021",
+    "taughtIn": [
+      "PYAE-W13",
+      "PYAE-W24"
+    ],
+    "practicedIn": [
+      "PYAE-W13"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W13",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W13-01",
+      "PYAE-B-W17-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M05",
+      "PYAE-PJ03-M02",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W17",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W17"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C022",
+    "taughtIn": [
+      "PYAE-W14"
+    ],
+    "practicedIn": [
+      "PYAE-W14"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W14"
+    ],
+    "appliedIn": [
+      "PYAE-B-W14-01",
+      "PYAE-B-W21-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M06",
+      "PYAE-PJ03-M06",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W21",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W21"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C023",
+    "taughtIn": [
+      "PYAE-W14"
+    ],
+    "practicedIn": [
+      "PYAE-W14"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W14",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W14-01",
+      "PYAE-B-W20-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M06",
+      "PYAE-PJ03-M05",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W20",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W20"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C024",
+    "taughtIn": [
+      "PYAE-W15"
+    ],
+    "practicedIn": [
+      "PYAE-W15"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W15",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W15-01",
+      "PYAE-B-W16-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ02-M07",
+      "PYAE-PJ03-M01",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W16",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W16"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C025",
+    "taughtIn": [
+      "PYAE-W16"
+    ],
+    "practicedIn": [
+      "PYAE-W16"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W16"
+    ],
+    "appliedIn": [
+      "PYAE-B-W16-01",
+      "PYAE-B-W22-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M01",
+      "PYAE-PJ03-M07",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W22",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W22"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C026",
+    "taughtIn": [
+      "PYAE-W16"
+    ],
+    "practicedIn": [
+      "PYAE-W16"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W16"
+    ],
+    "appliedIn": [
+      "PYAE-B-W16-01",
+      "PYAE-B-W22-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M01",
+      "PYAE-PJ03-M07",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W22",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W22"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C027",
+    "taughtIn": [
+      "PYAE-W17",
+      "PYAE-W24"
+    ],
+    "practicedIn": [
+      "PYAE-W17"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W17",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W17-01",
+      "PYAE-B-W23-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M02",
+      "PYAE-PJ03-M08",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W23",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W23"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C028",
+    "taughtIn": [
+      "PYAE-W18"
+    ],
+    "practicedIn": [
+      "PYAE-W18"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W18",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W18-01",
+      "PYAE-B-W19-01",
+      "PYAE-B-W20-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M03",
+      "PYAE-PJ03-M04",
+      "PYAE-PJ03-M05",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W19",
+      "PYAE-W20",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W19",
+      "PYAE-W20"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C029",
+    "taughtIn": [
+      "PYAE-W19"
+    ],
+    "practicedIn": [
+      "PYAE-W19"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W19"
+    ],
+    "appliedIn": [
+      "PYAE-B-W19-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M04",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C030",
+    "taughtIn": [
+      "PYAE-W20",
+      "PYAE-W24"
+    ],
+    "practicedIn": [
+      "PYAE-W20"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W20",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W20-01",
+      "PYAE-B-W21-01",
+      "PYAE-B-W22-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M05",
+      "PYAE-PJ03-M06",
+      "PYAE-PJ03-M07",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W21",
+      "PYAE-W22",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W21",
+      "PYAE-W22"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C031",
+    "taughtIn": [
+      "PYAE-W21"
+    ],
+    "practicedIn": [
+      "PYAE-W21"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W21",
+      "PYAE-SC-W22"
+    ],
+    "appliedIn": [
+      "PYAE-B-W21-01",
+      "PYAE-B-W22-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M06",
+      "PYAE-PJ03-M07",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W22",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W22"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C032",
+    "taughtIn": [
+      "PYAE-W22",
+      "PYAE-W24"
+    ],
+    "practicedIn": [
+      "PYAE-W22"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W22",
+      "PYAE-SC-W23"
+    ],
+    "appliedIn": [
+      "PYAE-B-W22-01",
+      "PYAE-B-W23-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M07",
+      "PYAE-PJ03-M08",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W23",
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PYAE-W23"
+    ],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  },
+  {
+    "competencyId": "PYAE-C033",
+    "taughtIn": [
+      "PYAE-W23",
+      "PYAE-W24"
+    ],
+    "practicedIn": [
+      "PYAE-W23"
+    ],
+    "assessedIn": [
+      "PYAE-SC-W23",
+      "PYAE-SC-W24"
+    ],
+    "appliedIn": [
+      "PYAE-B-W23-01",
+      "PYAE-B-W24-01"
+    ],
+    "projectUse": [
+      "PYAE-PJ03-M08",
+      "PYAE-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PYAE-W24"
+    ],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": [
+      "PYAE-W24"
+    ]
+  }
+]

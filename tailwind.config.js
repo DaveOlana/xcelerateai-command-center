@@ -7,24 +7,41 @@ export default {
   theme: {
     extend: {
       colors: {
+        white: 'rgb(var(--legacy-white) / <alpha-value>)',
         navy: {
-          950: '#080B16', // Deep charcoal/navy background
-          900: '#0C0F1E', // Sidebar/Deep navigation surface
-          850: '#121829', // Card surface
-          800: '#172033', // Elevated card
-          700: '#1E293B', // Subtle backgrounds
-          600: '#2E3E59', // High contrast borders
-          500: '#475569', // Muted borders
-          450: '#64748B',
-          400: '#94A3B8',
-          300: '#CBD5E1', // Muted text
+          950: 'rgb(var(--legacy-navy-950) / <alpha-value>)',
+          900: 'rgb(var(--legacy-navy-900) / <alpha-value>)',
+          850: 'rgb(var(--legacy-navy-850) / <alpha-value>)',
+          800: 'rgb(var(--legacy-navy-800) / <alpha-value>)',
+          700: 'rgb(var(--legacy-navy-700) / <alpha-value>)',
+          600: 'rgb(var(--legacy-navy-600) / <alpha-value>)',
+          500: 'rgb(var(--legacy-navy-500) / <alpha-value>)',
+          450: 'rgb(var(--legacy-navy-450) / <alpha-value>)',
+          400: 'rgb(var(--legacy-navy-400) / <alpha-value>)',
+          300: 'rgb(var(--legacy-navy-300) / <alpha-value>)',
+        },
+        slate: {
+          50: 'rgb(var(--legacy-slate-50) / <alpha-value>)',
+          100: 'rgb(var(--legacy-slate-100) / <alpha-value>)',
+          200: 'rgb(var(--legacy-slate-200) / <alpha-value>)',
+          300: 'rgb(var(--legacy-slate-300) / <alpha-value>)',
+          350: 'rgb(var(--legacy-slate-350) / <alpha-value>)',
+          400: 'rgb(var(--legacy-slate-400) / <alpha-value>)',
+          450: 'rgb(var(--legacy-slate-450) / <alpha-value>)',
+          500: 'rgb(var(--legacy-slate-500) / <alpha-value>)',
+          550: 'rgb(var(--legacy-slate-550) / <alpha-value>)',
+          600: 'rgb(var(--legacy-slate-600) / <alpha-value>)',
+          700: 'rgb(var(--legacy-slate-700) / <alpha-value>)',
+          800: 'rgb(var(--legacy-slate-800) / <alpha-value>)',
+          900: 'rgb(var(--legacy-slate-900) / <alpha-value>)',
+          950: 'rgb(var(--legacy-slate-950) / <alpha-value>)',
         },
         accent: {
-          primary: '#2563EB', // Modern blue accent
-          'primary-dim': '#3B82F6', // Lighter hover state
-          'primary-glow': 'rgba(37,99,235,0.1)',
-          cyan: '#06B6D4',
-          'cyan-dim': '#22D3EE',
+          primary: 'rgb(var(--accent-primary) / <alpha-value>)',
+          'primary-dim': 'rgb(var(--accent-primary-hover) / <alpha-value>)',
+          'primary-glow': 'rgb(var(--accent-primary) / 0.1)',
+          cyan: 'rgb(var(--accent-cyan) / <alpha-value>)',
+          'cyan-dim': 'rgb(var(--accent-cyan-soft) / <alpha-value>)',
         },
         status: {
           locked: '#475569',
@@ -40,6 +57,7 @@ export default {
           surface: 'var(--bg-surface)',
           elevated: 'var(--bg-elevated)',
           soft: 'var(--bg-soft)',
+          glass: 'var(--bg-glass)',
           overlay: 'var(--bg-overlay)',
         },
         text: {
@@ -48,6 +66,7 @@ export default {
           muted: 'var(--text-muted)',
           disabled: 'var(--text-disabled)',
           inverse: 'var(--text-inverse)',
+          'on-brand': 'var(--text-on-brand)',
         },
         border: {
           default: 'var(--border-default)',
@@ -63,6 +82,7 @@ export default {
           amber: 'var(--color-warning)',
           red: 'var(--color-danger)',
           slate: 'var(--color-neutral)',
+          on: 'var(--text-on-brand)',
         }
       },
       fontFamily: {
@@ -129,8 +149,8 @@ export default {
         'primary-glow-sm': '0 0 10px rgba(59,130,246,0.15)',
         'amber-glow': '0 0 20px rgba(245, 158, 11, 0.2), 0 0 40px rgba(245, 158, 11, 0.05)',
         'cyan-glow': '0 0 20px rgba(6, 182, 212, 0.2), 0 0 40px rgba(6, 182, 212, 0.05)',
-        'card': '0 4px 24px rgba(0,0,0,0.4)',
-        'card-hover': '0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(59,130,246,0.15)',
+        'card': 'var(--shadow-card)',
+        'card-hover': 'var(--shadow-card-hover)',
       },
     },
   },

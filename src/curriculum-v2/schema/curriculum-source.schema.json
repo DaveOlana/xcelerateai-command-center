@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xcelerateai.local/schemas/curriculum-source-v2.json",
+  "title": "XcelerateAI Curriculum Source V2",
+  "type": "object",
+  "required": [
+    "schemaVersion", "curriculumId", "revision", "title", "shortTitle",
+    "target", "workload", "assumptions", "phases", "competencies",
+    "resources", "weeks", "projects", "graduation"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "2.0" },
+    "curriculumId": { "$ref": "#/$defs/id" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "title": { "$ref": "#/$defs/nonEmptyString" },
+    "shortTitle": { "$ref": "#/$defs/nonEmptyString" },
+    "target": {
+      "type": "object",
+      "required": ["role", "learner", "professionalOutcome", "specialGoals"],
+      "properties": {
+        "role": { "$ref": "#/$defs/nonEmptyString" },
+        "learner": { "$ref": "#/$defs/nonEmptyString" },
+        "professionalOutcome": { "$ref": "#/$defs/nonEmptyString" },
+        "specialGoals": { "type": "array", "items": { "$ref": "#/$defs/nonEmptyString" } }
+      },
+      "additionalProperties": false
+    },
+    "workload": {
+      "type": "object",
+      "required": ["weeklyHours", "estimatedTotalHours", "estimatedWeeks"],
+      "properties": {
+        "weeklyHours": {
+          "type": "object",
+          "required": ["min", "max"],
+          "properties": {
+            "min": { "type": "number", "exclusiveMinimum": 0 },
+            "max": { "type": "number", "exclusiveMinimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "estimatedTotalHours": { "type": "number", "exclusiveMinimum": 0 },
+        "estimatedWeeks": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "assumptions": { "type": "array", "items": { "$ref": "#/$defs/nonEmptyString" } },
+    "phases": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/phase" } },
+    "competencies": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/competency" } },
+    "concepts": { "type": "array", "items": { "$ref": "#/$defs/concept" } },
+    "resources": { "type": "array", "items": { "$ref": "#/$defs/resource" } },
+    "weeks": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/week" } },
+    "projects": { "type": "array", "items": { "$ref": "#/$defs/project" } },
+    "graduation": { "$ref": "#/$defs/graduation" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "id": { "type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" },
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "idArray": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+    "phase": {
+      "type": "object",
+      "required": ["id", "title", "outcome"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "outcome": { "$ref": "#/$defs/nonEmptyString" } },
+      "additionalProperties": false
+    },
+    "competency": {
+      "type": "object",
+      "required": ["id", "name", "description", "domain", "importance", "prerequisiteIds"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "name": { "$ref": "#/$defs/nonEmptyString" }, "description": { "$ref": "#/$defs/nonEmptyString" },
+        "domain": { "$ref": "#/$defs/nonEmptyString" }, "importance": { "enum": ["core", "supporting"] }, "prerequisiteIds": { "$ref": "#/$defs/idArray" }
+      },
+      "additionalProperties": false
+    },
+    "concept": {
+      "type": "object",
+      "required": ["id", "term", "simpleMeaning", "example", "commonMistake"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "term": { "$ref": "#/$defs/nonEmptyString" },
+        "simpleMeaning": { "$ref": "#/$defs/nonEmptyString" },
+        "example": { "$ref": "#/$defs/nonEmptyString" },
+        "commonMistake": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "additionalProperties": false
+    },
+    "location": {
+      "type": "object",
+      "properties": { "start": { "$ref": "#/$defs/nonEmptyString" }, "stop": { "$ref": "#/$defs/nonEmptyString" }, "note": { "$ref": "#/$defs/nonEmptyString" } },
+      "minProperties": 1,
+      "additionalProperties": false
+    },
+    "resource": {
+      "type": "object",
+      "required": ["id", "title", "url", "provider", "format", "cost", "estimatedMinutes", "competencyIds", "whySelected"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "url": { "$ref": "#/$defs/nonEmptyString" },
+        "provider": { "$ref": "#/$defs/nonEmptyString" }, "format": { "enum": ["video", "article", "documentation", "course", "lab", "exercise", "book", "repository", "other"] },
+        "cost": { "enum": ["free", "paid", "mixed"] }, "estimatedMinutes": { "type": "number", "exclusiveMinimum": 0 },
+        "location": { "$ref": "#/$defs/location" }, "competencyIds": { "$ref": "#/$defs/idArray" }, "whySelected": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "additionalProperties": false
+    },
+    "studyAssignment": {
+      "type": "object",
+      "required": ["resourceId", "role", "competencyIds", "purpose"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "resourceId": { "$ref": "#/$defs/id" },
+        "role": { "enum": ["core", "optional"] },
+        "learningRole": { "enum": ["learn", "practice", "reference"] },
+        "competencyIds": { "$ref": "#/$defs/idArray" },
+        "purpose": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "additionalProperties": false
+    },
+    "study": {
+      "type": "object",
+      "required": ["objective", "coreMinimum", "resources"],
+      "properties": { "objective": { "$ref": "#/$defs/nonEmptyString" }, "coreMinimum": { "type": "integer", "minimum": 0 }, "resources": { "type": "array", "items": { "$ref": "#/$defs/studyAssignment" } } },
+      "additionalProperties": false
+    },
+    "option": {
+      "type": "object", "required": ["id", "label"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "label": { "$ref": "#/$defs/nonEmptyString" } }, "additionalProperties": false
+    },
+    "question": {
+      "type": "object", "required": ["id", "competencyIds", "prompt", "options", "correctOptionId", "explanation"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "competencyIds": { "$ref": "#/$defs/idArray" }, "prompt": { "$ref": "#/$defs/nonEmptyString" }, "options": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "$ref": "#/$defs/option" } }, "correctOptionId": { "$ref": "#/$defs/id" }, "explanation": { "$ref": "#/$defs/nonEmptyString" } },
+      "additionalProperties": false
+    },
+    "skillCheck": {
+      "type": "object", "required": ["id", "title", "instructions", "passingScore", "competencyIds", "questions"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "instructions": { "$ref": "#/$defs/nonEmptyString" }, "passingScore": { "type": "integer", "minimum": 1, "maximum": 100 }, "competencyIds": { "$ref": "#/$defs/idArray" }, "questions": { "type": "array", "minItems": 10, "maxItems": 10, "items": { "$ref": "#/$defs/question" } } },
+      "additionalProperties": false
+    },
+    "textItem": {
+      "type": "object", "required": ["id", "text"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "text": { "$ref": "#/$defs/nonEmptyString" } }, "additionalProperties": false
+    },
+    "template": {
+      "type": "object", "required": ["id", "label", "content"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "label": { "$ref": "#/$defs/nonEmptyString" }, "content": { "type": "string" } }, "additionalProperties": false
+    },
+    "conceptRef": {
+      "type": "object",
+      "required": ["conceptId", "relevance"],
+      "properties": {
+        "conceptId": { "$ref": "#/$defs/id" },
+        "relevance": { "$ref": "#/$defs/nonEmptyString" }
+      },
+      "additionalProperties": false
+    },
+    "buildSession": {
+      "type": "object",
+      "required": ["id", "title", "estimatedMinutes", "stepIds"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "estimatedMinutes": { "type": "number", "exclusiveMinimum": 0 },
+        "stepIds": { "$ref": "#/$defs/idArray" }
+      },
+      "additionalProperties": false
+    },
+    "learnerGuide": {
+      "type": "object",
+      "required": ["summary", "whyItMatters", "priorKnowledgeCompetencyIds", "finishedResult", "conceptRefs", "sessions"],
+      "properties": {
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "whyItMatters": { "$ref": "#/$defs/nonEmptyString" },
+        "priorKnowledgeCompetencyIds": { "$ref": "#/$defs/idArray" },
+        "finishedResult": { "$ref": "#/$defs/nonEmptyString" },
+        "conceptRefs": { "type": "array", "items": { "$ref": "#/$defs/conceptRef" } },
+        "sessions": { "type": "array", "items": { "$ref": "#/$defs/buildSession" } }
+      },
+      "additionalProperties": false
+    },
+    "build": {
+      "type": "object",
+      "required": ["id", "title", "required", "outcome", "competencyIds", "estimatedMinutes", "brief", "steps", "acceptanceCriteria", "hints", "templates", "stretch"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "required": { "type": "boolean" }, "outcome": { "$ref": "#/$defs/nonEmptyString" },
+        "competencyIds": { "$ref": "#/$defs/idArray" }, "estimatedMinutes": { "type": "number", "exclusiveMinimum": 0 }, "brief": { "$ref": "#/$defs/nonEmptyString" },
+        "steps": { "type": "array", "items": { "$ref": "#/$defs/textItem" } }, "acceptanceCriteria": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/textItem" } },
+        "hints": { "type": "array", "items": { "$ref": "#/$defs/nonEmptyString" } }, "templates": { "type": "array", "items": { "$ref": "#/$defs/template" } }, "stretch": { "type": ["string", "null"] },
+        "learnerGuide": { "$ref": "#/$defs/learnerGuide" }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object", "required": ["id", "type", "label", "required"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "type": { "enum": ["link", "text", "confirmation"] }, "label": { "$ref": "#/$defs/nonEmptyString" }, "required": { "type": "boolean" } }, "additionalProperties": false
+    },
+    "proof": {
+      "type": "object", "required": ["id", "prompt", "evidence"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "prompt": { "$ref": "#/$defs/nonEmptyString" }, "evidence": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/evidence" } } }, "additionalProperties": false
+    },
+    "reflectionPrompt": {
+      "type": "object", "required": ["id", "prompt"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "prompt": { "$ref": "#/$defs/nonEmptyString" } }, "additionalProperties": false
+    },
+    "reflection": {
+      "type": "object", "required": ["minimumResponses", "prompts"],
+      "properties": { "minimumResponses": { "type": "integer", "minimum": 0 }, "prompts": { "type": "array", "items": { "$ref": "#/$defs/reflectionPrompt" } } }, "additionalProperties": false
+    },
+    "week": {
+      "type": "object",
+      "required": ["id", "sequence", "phaseId", "title", "outcome", "competencyIds", "estimatedHours", "study", "skillCheck", "builds", "proof", "reflection"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "sequence": { "type": "integer", "minimum": 1 }, "phaseId": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" },
+        "outcome": { "$ref": "#/$defs/nonEmptyString" }, "competencyIds": { "$ref": "#/$defs/idArray" }, "estimatedHours": { "type": "number", "exclusiveMinimum": 0 },
+        "study": { "$ref": "#/$defs/study" }, "skillCheck": { "$ref": "#/$defs/skillCheck" }, "builds": { "type": "array", "items": { "$ref": "#/$defs/build" } },
+        "proof": { "$ref": "#/$defs/proof" }, "reflection": { "$ref": "#/$defs/reflection" }
+      },
+      "additionalProperties": false
+    },
+    "milestone": {
+      "type": "object", "required": ["id", "title", "weekId", "buildId"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "weekId": { "$ref": "#/$defs/id" }, "buildId": { "$ref": "#/$defs/id" } }, "additionalProperties": false
+    },
+    "project": {
+      "type": "object", "required": ["id", "title", "outcome", "competencyIds", "milestones"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "outcome": { "$ref": "#/$defs/nonEmptyString" }, "competencyIds": { "$ref": "#/$defs/idArray" }, "milestones": { "type": "array", "items": { "$ref": "#/$defs/milestone" } } }, "additionalProperties": false
+    },
+    "graduation": {
+      "type": "object", "required": ["outcome", "requiredCompetencyIds", "requiredProjectIds"],
+      "properties": { "outcome": { "$ref": "#/$defs/nonEmptyString" }, "requiredCompetencyIds": { "$ref": "#/$defs/idArray" }, "requiredProjectIds": { "$ref": "#/$defs/idArray" } }, "additionalProperties": false
+    }
+  }
+}

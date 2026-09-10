@@ -9,8 +9,8 @@ export default function BottomNav() {
   const location = useLocation();
 
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-navy-800 border-t border-navy-400 mobile-nav-safe">
-      <div className="flex items-center justify-around px-2 pt-2 pb-2">
+    <nav className="glass-surface mobile-nav-safe fixed bottom-0 left-0 right-0 z-50 border-t border-border-default lg:hidden">
+      <div className="flex items-center justify-around px-2 pb-2 pt-2">
         {mobileBottomNavigationItems.map((item) => {
           const { id, route, label, icon: Icon } = item;
           const isActive = isNavigationItemActive(item, location.pathname);
@@ -19,17 +19,17 @@ export default function BottomNav() {
           <Link
             key={id}
             to={route}
-            className={`flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl transition-all duration-200 min-w-0 ${
+            className={`flex min-w-0 flex-1 flex-col items-center gap-1 rounded-xl px-1 py-1.5 transition-all duration-200 ${
                 isActive
                   ? 'text-accent-primary'
-                  : 'text-slate-500 hover:text-slate-300'
+                  : 'text-text-muted hover:text-text-primary'
               }`}
           >
               <>
-                <div className={`p-1.5 rounded-lg transition-all duration-200 ${isActive ? 'bg-accent-primary/15' : ''}`}>
+                <div className={`rounded-xl px-3 py-1.5 transition-all duration-200 ${isActive ? 'bg-accent-primary/10 ring-1 ring-accent-primary/15' : ''}`}>
                   <Icon className="w-5 h-5" />
                 </div>
-                <span className="text-[13px] font-medium leading-none">{label}</span>
+                <span className="text-[11px] font-semibold leading-none">{label}</span>
               </>
           </Link>
           );

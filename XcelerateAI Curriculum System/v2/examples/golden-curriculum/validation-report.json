@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "curriculumId": "GOLDEN",
+  "revision": 1,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 1,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V018",
+      "name": "Runtime contract validation",
+      "status": "PASS",
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "code": "GOLDEN-N001",
+      "severity": "NOTE",
+      "message": "Golden Curriculum URLs are structural example.com placeholders and are not verified learning resources.",
+      "affectedIds": [
+        "GOLDEN-R001",
+        "GOLDEN-R002",
+        "GOLDEN-R003",
+        "GOLDEN-R004",
+        "GOLDEN-R005",
+        "GOLDEN-R006"
+      ]
+    }
+  ],
+  "semanticValidation": {
+    "status": "NOT_APPLICABLE_TO_STRUCTURAL_FIXTURE",
+    "reason": "The Golden Curriculum proves engine structure and runtime behavior; it is not production educational content."
+  }
+}

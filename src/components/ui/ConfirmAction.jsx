@@ -17,7 +17,7 @@ export default function ConfirmAction({
     <div
       role="alert"
       aria-live="assertive"
-      className={`bg-navy-950/90 border ${
+      className={`bg-bg-surface border shadow-lg ${
         isDanger ? 'border-red-500/25' : 'border-brand-amber/25'
       } rounded-2xl p-5 space-y-4 transition-all duration-200 ease-out transform scale-100 translate-y-0 ${className}`}
       {...props}
@@ -25,9 +25,9 @@ export default function ConfirmAction({
       <div className="flex gap-3 items-start">
         <ShieldAlert className={`w-5 h-5 flex-shrink-0 mt-0.5 ${isDanger ? 'text-red-400' : 'text-brand-amber'}`} />
         <div className="space-y-1 min-w-0 flex-1">
-          <h4 className="text-xs font-bold text-white uppercase tracking-wider">{title}</h4>
+          <h4 className="text-xs font-bold text-text-primary uppercase tracking-wider">{title}</h4>
           {description && (
-            <div className="text-[11px] text-slate-400 leading-normal">{description}</div>
+            <div className="text-[11px] text-text-secondary leading-normal">{description}</div>
           )}
         </div>
       </div>
@@ -36,7 +36,7 @@ export default function ConfirmAction({
         <button
           onClick={onCancel}
           disabled={isLoading}
-          className="btn-secondary text-[11px] font-bold uppercase tracking-wider py-2 px-4 select-none disabled:opacity-50"
+          className="btn-secondary text-[11px] font-bold uppercase tracking-wider py-2 px-4 select-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue"
         >
           {cancelLabel}
         </button>
@@ -45,7 +45,7 @@ export default function ConfirmAction({
           disabled={isLoading}
           className={`${
             isDanger ? 'btn-danger' : 'btn-primary'
-          } text-[11px] font-bold uppercase tracking-wider py-2 px-4 flex items-center gap-1.5 select-none`}
+          } text-[11px] font-bold uppercase tracking-wider py-2 px-4 flex items-center gap-1.5 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue`}
         >
           {isLoading && <Loader2 className="w-3.5 h-3.5 animate-spin" />}
           {confirmLabel}

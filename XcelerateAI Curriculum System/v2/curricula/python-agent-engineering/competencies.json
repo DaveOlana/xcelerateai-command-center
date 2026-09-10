@@ -1,0 +1,356 @@
+[
+  {
+    "id": "PYAE-C001",
+    "name": "Windows Python workspace",
+    "description": "Create, activate, and verify an isolated Python environment from PowerShell.",
+    "domain": "Python foundations",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "PYAE-C002",
+    "name": "Values, types, and expressions",
+    "description": "Represent and transform values with suitable Python types and operators.",
+    "domain": "Python foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C001"
+    ]
+  },
+  {
+    "id": "PYAE-C003",
+    "name": "Control flow and collections",
+    "description": "Use conditions, loops, lists, dictionaries, sets, and tuples to model decisions and data.",
+    "domain": "Python foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C002"
+    ]
+  },
+  {
+    "id": "PYAE-C004",
+    "name": "Functions and contracts",
+    "description": "Design small functions with explicit inputs, outputs, names, and responsibilities.",
+    "domain": "Python foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C002"
+    ]
+  },
+  {
+    "id": "PYAE-C005",
+    "name": "Modules and packages",
+    "description": "Organize Python code into importable modules and installable project dependencies.",
+    "domain": "Python foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C004"
+    ]
+  },
+  {
+    "id": "PYAE-C006",
+    "name": "Files and paths",
+    "description": "Read, write, and locate files safely with pathlib and context managers.",
+    "domain": "Python foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C004"
+    ]
+  },
+  {
+    "id": "PYAE-C007",
+    "name": "JSON data contracts",
+    "description": "Serialize, validate, and evolve JSON-shaped application data without losing meaning.",
+    "domain": "Python foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C003",
+      "PYAE-C006"
+    ]
+  },
+  {
+    "id": "PYAE-C008",
+    "name": "Exceptions and debugging",
+    "description": "Diagnose failures and use narrow exception handling that preserves actionable context.",
+    "domain": "Reliability",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C004"
+    ]
+  },
+  {
+    "id": "PYAE-C009",
+    "name": "Operational logging",
+    "description": "Emit useful structured diagnostic events without leaking secrets.",
+    "domain": "Reliability",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PYAE-C008"
+    ]
+  },
+  {
+    "id": "PYAE-C010",
+    "name": "Automated tests",
+    "description": "Write deterministic unit and integration tests for success and failure paths.",
+    "domain": "Reliability",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C005",
+      "PYAE-C008"
+    ]
+  },
+  {
+    "id": "PYAE-C011",
+    "name": "Test doubles and isolation",
+    "description": "Replace external dependencies with controlled fakes, mocks, and temporary state.",
+    "domain": "Reliability",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C010"
+    ]
+  },
+  {
+    "id": "PYAE-C012",
+    "name": "HTTP and API clients",
+    "description": "Call HTTP APIs with explicit requests, responses, authentication boundaries, and parsing.",
+    "domain": "Integration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C007",
+      "PYAE-C008"
+    ]
+  },
+  {
+    "id": "PYAE-C013",
+    "name": "Timeouts, retries, and failure policy",
+    "description": "Bound external calls and retry only safe transient failures with backoff.",
+    "domain": "Reliability",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C012"
+    ]
+  },
+  {
+    "id": "PYAE-C014",
+    "name": "Typed validation boundaries",
+    "description": "Validate untrusted inputs and outputs into typed domain models with clear errors.",
+    "domain": "Architecture",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C007",
+      "PYAE-C008"
+    ]
+  },
+  {
+    "id": "PYAE-C015",
+    "name": "Versioned interfaces and documentation",
+    "description": "Document commands and interfaces, use Git history, and manage compatibility deliberately.",
+    "domain": "Professional practice",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PYAE-C005",
+      "PYAE-C010"
+    ]
+  },
+  {
+    "id": "PYAE-C016",
+    "name": "LLM request and message model",
+    "description": "Construct provider-neutral model requests and interpret response metadata and failure modes.",
+    "domain": "LLM applications",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C012",
+      "PYAE-C014"
+    ]
+  },
+  {
+    "id": "PYAE-C017",
+    "name": "Prompt contracts",
+    "description": "Specify task, context, constraints, examples, and output expectations as a testable contract.",
+    "domain": "LLM applications",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C016"
+    ]
+  },
+  {
+    "id": "PYAE-C018",
+    "name": "Structured model outputs",
+    "description": "Constrain and validate model output before application code trusts or executes it.",
+    "domain": "LLM applications",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C014",
+      "PYAE-C017"
+    ]
+  },
+  {
+    "id": "PYAE-C019",
+    "name": "Tool schemas and execution",
+    "description": "Define typed tool schemas, dispatch tool calls, and return inspectable results.",
+    "domain": "Agent engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C018"
+    ]
+  },
+  {
+    "id": "PYAE-C020",
+    "name": "Conversation and context state",
+    "description": "Persist and compact conversation state while preserving provenance and task-critical facts.",
+    "domain": "Agent engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C007",
+      "PYAE-C016"
+    ]
+  },
+  {
+    "id": "PYAE-C021",
+    "name": "Agent control loop",
+    "description": "Implement an explicit observe-decide-act loop with budgets and deterministic stop conditions.",
+    "domain": "Agent engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C019",
+      "PYAE-C020"
+    ]
+  },
+  {
+    "id": "PYAE-C022",
+    "name": "Agent tool interface design",
+    "description": "Design discoverable, composable tools with useful feedback and bounded effects.",
+    "domain": "Agent engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C019",
+      "PYAE-C021"
+    ]
+  },
+  {
+    "id": "PYAE-C023",
+    "name": "Safe action boundaries",
+    "description": "Separate planning from execution and make state-changing actions confirmable and idempotent.",
+    "domain": "Agent safety",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C021",
+      "PYAE-C022"
+    ]
+  },
+  {
+    "id": "PYAE-C024",
+    "name": "Persistent application state",
+    "description": "Model and migrate durable agent state with SQLite transactions and repositories.",
+    "domain": "Agent engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C007",
+      "PYAE-C010"
+    ]
+  },
+  {
+    "id": "PYAE-C025",
+    "name": "Memory and context engineering",
+    "description": "Select, summarize, retrieve, and expire memory according to task value and risk.",
+    "domain": "Agent engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C020",
+      "PYAE-C024"
+    ]
+  },
+  {
+    "id": "PYAE-C026",
+    "name": "Grounded retrieval",
+    "description": "Retrieve from local sources with citations, provenance, and explicit no-answer behavior.",
+    "domain": "Agent engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C006",
+      "PYAE-C014",
+      "PYAE-C025"
+    ]
+  },
+  {
+    "id": "PYAE-C027",
+    "name": "Agent evaluations",
+    "description": "Build representative eval datasets, graders, thresholds, and regression reports.",
+    "domain": "Evaluation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C010",
+      "PYAE-C021"
+    ]
+  },
+  {
+    "id": "PYAE-C028",
+    "name": "Observability and resilience",
+    "description": "Trace agent runs, classify failures, and recover without hiding partial effects.",
+    "domain": "Reliability",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C009",
+      "PYAE-C013",
+      "PYAE-C027"
+    ]
+  },
+  {
+    "id": "PYAE-C029",
+    "name": "Async work and scheduling",
+    "description": "Coordinate cancellable concurrent work and scheduled jobs without blocking or duplication.",
+    "domain": "Runtime systems",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PYAE-C013",
+      "PYAE-C024"
+    ]
+  },
+  {
+    "id": "PYAE-C030",
+    "name": "Permissions, guardrails, and security",
+    "description": "Apply least privilege, human approval, input/output guardrails, and secret hygiene.",
+    "domain": "Agent safety",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C023",
+      "PYAE-C028"
+    ]
+  },
+  {
+    "id": "PYAE-C031",
+    "name": "MCP integration",
+    "description": "Connect MCP clients and servers while preserving tool trust and permission boundaries.",
+    "domain": "Integration",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PYAE-C022",
+      "PYAE-C030"
+    ]
+  },
+  {
+    "id": "PYAE-C032",
+    "name": "Modular agent architecture",
+    "description": "Compose provider, tool, memory, policy, and specialist components behind replaceable interfaces.",
+    "domain": "Architecture",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C021",
+      "PYAE-C025",
+      "PYAE-C028"
+    ]
+  },
+  {
+    "id": "PYAE-C033",
+    "name": "Deployment, configuration, and CI",
+    "description": "Package, configure, continuously verify, and operate a Python agent across environments.",
+    "domain": "Professional practice",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYAE-C015",
+      "PYAE-C028",
+      "PYAE-C030",
+      "PYAE-C032"
+    ]
+  }
+]

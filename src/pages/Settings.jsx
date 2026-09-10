@@ -1,18 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-  Settings as SettingsIcon, Trash2, RefreshCw, Download,
-  Upload, Calendar, User, MessageSquare, AlertTriangle, CheckCircle2, ShieldAlert
+  Calendar,
+  ChevronDown,
+  Download,
+  ExternalLink,
+  Monitor,
+  Moon,
+  Settings as SettingsIcon,
+  Sun,
+  Upload,
 } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
+import { calculateCourseProgress } from '../utils/progressCalculator';
 import { getTodayISO } from '../utils/dateUtils';
-import { calculateOverallProgress } from '../utils/progressCalculator';
-import { PageShell, PageHeader, SectionCard, CommandButton } from '../components/common/UIComponents';
-import StatusBanner from '../components/ui/StatusBanner';
-import InlineStatus from '../components/ui/InlineStatus';
+import { getCurrentCourseDefinition } from '../utils/learningExperience.js';
+import { PageShell, ProgressBar } from '../components/common/UIComponents';
 import ConfirmAction from '../components/ui/ConfirmAction';
-import LoadingIndicator from '../components/ui/LoadingIndicator';
+import StatusBanner from '../components/ui/StatusBanner';
 
-const DEFAULT_PROGRESS = {
+const EMPTY_PROGRESS = {
   completedTasks: {},
   completedWeeks: [],
   completedProjectMilestones: {},
@@ -20,671 +27,312 @@ const DEFAULT_PROGRESS = {
   projectNotes: {},
 };
 
-const DEFAULT_STREAK = {
+const EMPTY_STREAK = {
   currentStreak: 0,
   lastStudyDate: null,
   longestStreak: 0,
   totalStudyDays: 0,
 };
 
+function SettingsSection({ id, title, description, children, className = '' }) {
+  return (
+    <section id={id} className={`scroll-mt-6 border-t border-border-divider py-8 first:border-0 first:pt-3 sm:py-10 ${className}`}>
+      <div className="grid gap-5 md:grid-cols-[minmax(0,190px)_minmax(0,1fr)] md:gap-10">
+        <div>
+          <h2 className="text-lg font-bold text-text-primary">{title}</h2>
+          {description && <p className="mt-1.5 text-xs leading-relaxed text-text-muted">{description}</p>}
+        </div>
+        <div className="min-w-0">{children}</div>
+      </div>
+    </section>
+  );
+}
+
+function SettingsRow({ label, description, children, className = '' }) {
+  return (
+    <div className={`flex flex-col gap-3 py-5 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:justify-between ${className}`}>
+      <div className="min-w-0 sm:max-w-sm">
+        <p className="text-sm font-semibold text-text-primary">{label}</p>
+        {description && <p className="mt-1 text-xs leading-relaxed text-text-muted">{description}</p>}
+      </div>
+      <div className="shrink-0 sm:max-w-[55%]">{children}</div>
+    </div>
+  );
+}
+
 export default function Settings() {
+  const navigate = useNavigate();
   const {
-    settings, updateSettings, setActiveWeek,
-    resetAllProgress, exportProgress, importProgress,
-    resetToSampleRoadmap, roadmap,
-    userProfile, updateUserProfile, replayOnboarding,
-    resetProgressForActiveRoadmap, checkpointStatuses, progress,
+    settings,
+    updateSettings,
+    setActiveWeek,
+    resetAllProgress,
+    exportProgress,
+    importProgress,
+    resetProgressForActiveRoadmap,
+    roadmap,
+    progress,
+    userProfile,
+    updateUserProfile,
+    curriculumMode,
+    activeV2Curriculum,
+    activeV2Learner,
+    resetActiveV2Curriculum,
+    leaveV2Curriculum,
   } = useApp();
+  const [displayName, setDisplayName] = useState(userProfile?.displayName || userProfile?.name || '');
+  const [advancedOpen, setAdvancedOpen] = useState(() => window.location.hash === '#advanced-settings');
+  const [feedback, setFeedback] = useState(null);
+  const [pendingBackup, setPendingBackup] = useState(null);
+  const [pendingReset, setPendingReset] = useState(null);
+  const [busy, setBusy] = useState(false);
 
-  const [saved, setSaved] = useState(false);
-  const [activeResetType, setActiveResetType] = useState(null);
-  const [importMsg, setImportMsg] = useState('');
-
-  // Loading & Feedback States
-  const [settingsFeedback, setSettingsFeedback] = useState(null); // { type, text }
-  const [isResetting, setIsResetting] = useState(false);
-  const [confirmActiveRoadmapReset, setConfirmActiveRoadmapReset] = useState(false);
-  const [overrideError, setOverrideError] = useState('');
-  const [guideSuccess, setGuideSuccess] = useState('');
-  const [isExporting, setIsExporting] = useState(false);
-  const [isRestoring, setIsRestoring] = useState(false);
-  const [pendingBackupData, setPendingBackupData] = useState(null);
-
-  // Profile states
-  const [profileName, setProfileName] = useState(userProfile?.name || '');
-  const [profileDisplayName, setProfileDisplayName] = useState(userProfile?.displayName || '');
-  const [profileSaved, setProfileSaved] = useState(false);
-
-  // Sync profile state if context updates
   useEffect(() => {
-    if (userProfile) {
-      setProfileName(userProfile.name || '');
-      setProfileDisplayName(userProfile.displayName || '');
-    }
+    setDisplayName(userProfile?.displayName || userProfile?.name || '');
   }, [userProfile]);
 
-  const handleSaveProfile = (e) => {
-    e.preventDefault();
-    updateUserProfile({ name: profileName, displayName: profileDisplayName });
-    setProfileSaved(true);
-    setTimeout(() => setProfileSaved(false), 2000);
+  const legacyTotalWeeks = Array.isArray(roadmap?.months)
+    ? roadmap.months.reduce((total, month) => total + (month.weeks?.length || 0), 0)
+    : roadmap?.weeks?.length || 0;
+  const currentCourse = getCurrentCourseDefinition({ curriculumMode, activeV2Curriculum, roadmap });
+  const totalWeeks = currentCourse?.totalWeeks || 0;
+  const legacyCourseProgress = curriculumMode === 'legacy'
+    ? calculateCourseProgress(roadmap, progress)
+    : { percent: 0 };
+  const courseProgress = curriculumMode === 'v2'
+    ? { percent: totalWeeks ? Math.round(((activeV2Learner?.completedWeekIds?.length || 0) / totalWeeks) * 100) : 0 }
+    : curriculumMode === 'legacy' ? legacyCourseProgress : { percent: 0 };
+
+  const saveProfile = (event) => {
+    event.preventDefault();
+    const value = displayName.trim();
+    if (!value) return;
+    updateUserProfile({ name: value, displayName: value });
+    setFeedback({ type: 'success', text: 'Display name saved.' });
   };
 
-  const prog = calculateOverallProgress(roadmap, progress, checkpointStatuses);
-
-  const totalWeeks = roadmap?.months?.reduce((a, m) => a + (m.weeks?.length || 0), 0) || 24;
-
-  const handleSave = () => {
-    setOverrideError('');
-    if (settings?.manualOverrideEnabled && !settings?.overrideReason?.trim()) {
-      setOverrideError('Please provide a reason for overriding prerequisites locking in Advanced Controls.');
-      return;
-    }
-    setSaved(true);
-    setTimeout(() => setSaved(false), 2000);
+  const restoreFileSelected = (event) => {
+    const file = event.target.files?.[0];
+    event.target.value = '';
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (loadEvent) => {
+      try {
+        const data = JSON.parse(loadEvent.target.result);
+        if (!data.version || !data.exportedAt) throw new Error('Invalid backup');
+        setPendingBackup(data);
+      } catch {
+        setFeedback({ type: 'error', text: 'That file is not a compatible XcelerateAI backup.' });
+      }
+    };
+    reader.onerror = () => setFeedback({ type: 'error', text: 'The backup file could not be read.' });
+    reader.readAsText(file);
   };
 
-  const handleResetClick = (type) => {
-    setActiveResetType(type);
+  const restoreBackup = () => {
+    setBusy(true);
+    importProgress(pendingBackup);
+    setPendingBackup(null);
+    setBusy(false);
+    setFeedback({ type: 'success', text: 'Backup restored.' });
   };
 
   const executeReset = () => {
-    if (activeResetType === 'progress') {
+    setBusy(true);
+    if (pendingReset === 'progress') {
       importProgress({
-        roadmap: roadmap,
-        settings: {
-          ...settings,
-          startDate: new Date().toISOString().split('T')[0],
-          activeWeek: 1,
-          activeMonth: 1,
-          manualOverrideEnabled: false,
-          overrideReason: ''
-        },
-        progress: DEFAULT_PROGRESS,
+        roadmap,
+        settings: { ...settings, startDate: new Date().toISOString().split('T')[0], activeWeek: 1, activeMonth: 1, manualOverrideEnabled: false, overrideReason: '' },
+        progress: EMPTY_PROGRESS,
         notes: [],
         checkpointStatuses: {},
-        streak: DEFAULT_STREAK,
+        streak: EMPTY_STREAK,
         resourcesStatus: {},
         skillChecks: {},
         practicalMissions: {},
         blockers: [],
         weekProofs: {},
-        weekReflections: {}
+        weekReflections: {},
       });
-      setSettingsFeedback({ type: 'success', text: 'Learning progress logs have been reset.' });
-    } else if (activeResetType === 'roadmap') {
-      resetToSampleRoadmap();
-      setSettingsFeedback({ type: 'success', text: 'Roadmap reverted to default sample.' });
-    } else if (activeResetType === 'factory') {
+      setFeedback({ type: 'success', text: 'Learning progress and learning records reset.' });
+    } else if (pendingReset === 'course-progress') {
+      if (curriculumMode === 'v2') resetActiveV2Curriculum();
+      else if (curriculumMode === 'legacy') resetProgressForActiveRoadmap();
+      setFeedback(curriculumMode === 'catalog'
+        ? { type: 'error', text: 'Choose a curriculum before resetting course progress.' }
+        : { type: 'success', text: 'Progress for the current course reset.' });
+    } else if (pendingReset === 'course') {
+      if (curriculumMode === 'v2') leaveV2Curriculum();
+      if (curriculumMode === 'legacy') updateSettings({ usingCustomRoadmap: false });
+      setFeedback({ type: 'success', text: 'Choose a published curriculum from the catalog.' });
+      navigate('/curricula');
+    } else if (pendingReset === 'factory') {
       resetAllProgress();
-      setSettingsFeedback({ type: 'success', text: 'Factory Reset executed successfully.' });
+      setFeedback({ type: 'success', text: 'Local XcelerateAI data reset.' });
     }
-    setTimeout(() => setSettingsFeedback(null), 4000);
-    setActiveResetType(null);
+    setPendingReset(null);
+    setBusy(false);
   };
 
-  const handleProgressImport = (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    
-    setImportMsg('');
-    setSettingsFeedback(null);
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      try {
-        const data = JSON.parse(ev.target.result);
-        if (!data.version || !data.exportedAt) {
-          setImportMsg('error');
-          return;
-        }
-        setPendingBackupData(data);
-      } catch {
-        setImportMsg('error');
-      }
-    };
-    reader.readAsText(file);
-    e.target.value = '';
-  };
-
-  const handleExportProgress = () => {
-    setIsExporting(true);
-    setTimeout(() => {
-      exportProgress();
-      setIsExporting(false);
-      setSettingsFeedback({ type: 'success', text: 'Backup exported successfully.' });
-      setTimeout(() => setSettingsFeedback(null), 3000);
-    }, 600);
+  const resetCopy = {
+    progress: { title: 'Reset all learning records?', description: 'Removes task progress, skill checks, notes, problems, proof, reflections, and streaks. The current course and basic settings are preserved.' },
+    'course-progress': { title: 'Reset current course progress?', description: 'Removes progress, skill checks, resources, practical missions, proof, and reflections for the current course. Notes, problems, and profile settings remain.' },
+    course: { title: 'Choose another curriculum?', description: 'Returns to the curriculum catalog without deleting saved curriculum progress.' },
+    factory: { title: 'Reset all local data?', description: 'Removes locally stored settings, progress, courses, notes, problems, timer history, and onboarding completion from this browser.' },
   };
 
   return (
-    <PageShell className="max-w-2xl">
-      <PageHeader
-        title="Settings"
-        subtitle="Configure your personal learning operating system."
-      />
+    <PageShell className="max-w-4xl">
+      <header className="pb-5">
+        <h1 className="text-3xl font-extrabold tracking-tight text-text-primary">Settings</h1>
+        <p className="mt-2 text-sm text-text-secondary">Personalize your learning environment and manage your course data.</p>
+      </header>
 
-      {/* User Profile Settings */}
-      <SectionCard className="space-y-4 border border-navy-400">
-        <h2 className="font-bold text-white flex items-center gap-2">
-          <User className="w-4 h-4 text-accent-primary" />
-          User Profile Settings
-        </h2>
-        <p className="text-xs text-slate-500">
-          Personalize your cockpit settings and dashboard greetings.
-        </p>
+      {feedback && <StatusBanner type={feedback.type} message={feedback.text} onClose={() => setFeedback(null)} />}
 
-        <form onSubmit={handleSaveProfile} className="space-y-4">
-          <div>
-            <label className="section-label mb-1.5 block">Full Name</label>
-            <input
-              type="text"
-              value={profileName}
-              onChange={(e) => setProfileName(e.target.value)}
-              className="input-base w-full text-sm"
-              placeholder="Enter your full name"
-              required
-            />
+      <SettingsSection title="Profile" description="How XcelerateAI addresses you.">
+        <form onSubmit={saveProfile}>
+          <label htmlFor="profile-display-name" className="block text-sm font-semibold text-text-primary">Display name</label>
+          <p className="mt-1 text-xs text-text-muted">Used in greetings throughout your learning environment.</p>
+          <div className="mt-3 flex flex-col gap-3 sm:flex-row">
+            <input id="profile-display-name" required value={displayName} onChange={(event) => setDisplayName(event.target.value)} className="input-base min-w-0 flex-1 text-sm" placeholder="How you want to be addressed" />
+            <button type="submit" className="btn-primary justify-center px-5 py-2.5 text-sm">Save</button>
           </div>
-
-          <div>
-            <label className="section-label mb-1.5 block">Display Name / Call Sign</label>
-            <input
-              type="text"
-              value={profileDisplayName}
-              onChange={(e) => setProfileDisplayName(e.target.value)}
-              className="input-base w-full text-sm"
-              placeholder="e.g. Commander, Rookie, Rogue"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="btn-primary py-2.5 px-6 text-xs font-bold w-full sm:w-auto"
-          >
-            {profileSaved ? 'Profile Updated' : 'Save Profile Changes'}
-          </button>
         </form>
-      </SectionCard>
+      </SettingsSection>
 
-      {/* Bootcamp Configuration */}
-      <SectionCard className="space-y-5 border border-navy-400">
-        <h2 className="font-bold text-white flex items-center gap-2">
-          <Calendar className="w-4 h-4 text-accent-primary" />
-          Bootcamp Configuration
-        </h2>
-
-        {/* Start Date */}
-        <div>
-          <label className="section-label mb-1.5 block">Bootcamp Start Date</label>
-          <input
-            type="date"
-            value={settings?.startDate || ''}
-            max={getTodayISO()}
-            onChange={(e) => updateSettings({ startDate: e.target.value || null })}
-            className="input-base w-full text-sm"
-          />
-          <p className="text-xs text-slate-600 mt-1.5">
-            Used to show day count trackers relative to target completion dates.
-          </p>
+      <SettingsSection title="Appearance" description="Choose how XcelerateAI looks on this device.">
+        <div className="grid grid-cols-3 gap-1 rounded-2xl border border-border-default bg-bg-soft p-1" role="radiogroup" aria-label="Appearance">
+          {[
+            { value: 'system', label: 'System', icon: Monitor },
+            { value: 'light', label: 'Light', icon: Sun },
+            { value: 'dark', label: 'Dark', icon: Moon },
+          ].map(({ value, label, icon: Icon }) => {
+            const selected = (settings?.appearanceMode || 'system') === value;
+            return (
+              <button
+                key={value}
+                type="button"
+                role="radio"
+                aria-checked={selected}
+                onClick={() => updateSettings({ appearanceMode: value })}
+                className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-2 py-2 text-sm font-semibold transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue ${selected ? 'bg-bg-surface text-text-primary shadow-sm ring-1 ring-border-default' : 'text-text-muted hover:text-text-primary'}`}
+              >
+                <Icon className="h-4 w-4" aria-hidden="true" />
+                <span>{label}</span>
+                {selected && <span className="sr-only">selected</span>}
+              </button>
+            );
+          })}
         </div>
+        <p className="mt-3 text-xs text-text-muted">System follows your device preference and responds when it changes.</p>
+      </SettingsSection>
 
-        {/* Learner Name */}
-        <div>
-          <label className="section-label mb-1.5 flex items-center gap-1.5 block">
-            <User className="w-3 h-3 text-slate-400" /> Learner Name
-          </label>
-          <p className="text-xs text-slate-500 mb-2">
-            Loaded from active roadmap schema configuration (<code className="text-accent-primary text-[13px]">"learner"</code> attribute).
-          </p>
-          <div className="input-base text-sm text-slate-500 cursor-not-allowed bg-navy-950 border border-navy-400">
-            {roadmap?.learner || 'Set in roadmap JSON'}
+      <SettingsSection title="Learning" description="Everyday preferences used during your course.">
+        <SettingsRow label="Course start date" description="Used for course-day and schedule information.">
+          <div className="flex items-center gap-2">
+            <Calendar className="h-4 w-4 text-brand-blue" aria-hidden="true" />
+            <input id="start-date" aria-label="Course start date" type="date" max={getTodayISO()} value={settings?.startDate || ''} onChange={(event) => updateSettings({ startDate: event.target.value || null })} className="input-base w-full text-sm sm:w-44" />
           </div>
-        </div>
+        </SettingsRow>
+      </SettingsSection>
 
-        {/* Mentor Name */}
-        <div>
-          <label className="section-label mb-1.5 flex items-center gap-1.5 block">
-            <MessageSquare className="w-3 h-3 text-slate-400" /> Mentor / Accountability Code Name
-          </label>
-          <input
-            type="text"
-            placeholder="e.g. Coach, Mentor, Tolu"
-            value={settings?.mentorName || ''}
-            onChange={(e) => updateSettings({ mentorName: e.target.value })}
-            className="input-base w-full text-sm"
-          />
-          <p className="text-xs text-slate-600 mt-1.5">
-            This tag customizes mentor-facing prompt templates and journal note guides.
-          </p>
-        </div>
-
-        {/* Active Week */}
-        <div>
-          <label className="section-label mb-1.5 block">Active Week Coordinates (Manual Adjustment)</label>
-          <div className="flex items-center gap-3">
-            <input
-              type="number"
-              min={1}
-              max={totalWeeks}
-              value={settings?.activeWeek || 1}
-              onChange={(e) => {
-                const v = Math.min(Math.max(1, Number(e.target.value)), totalWeeks);
-                setActiveWeek(v);
-              }}
-              className="input-base w-24 text-sm text-center font-mono"
-            />
-            <p className="text-xs text-slate-500">of {totalWeeks} weeks total</p>
-          </div>
-          <p className="text-xs text-slate-600 mt-1.5">
-            Synchronizes timeline indices. Completing weekly missions automatically increments this.
-          </p>
-        </div>
-
-        {overrideError && (
-          <StatusBanner type="error" message={overrideError} className="mb-2" />
-        )}
-        <CommandButton onClick={handleSave}>
-          {saved ? <><CheckCircle2 className="w-4 h-4" /> Changes Applied!</> : 'Apply Configurations'}
-        </CommandButton>
-      </SectionCard>
-
-      {/* Active Roadmap Management */}
-      <SectionCard className="space-y-4 border border-navy-400">
-        <h2 className="font-bold text-white flex items-center gap-2">
-          <SettingsIcon className="w-4 h-4 text-accent-cyan" />
-          Active Roadmap Management
-        </h2>
-        <p className="text-xs text-slate-500">
-          Manage and track the metadata and progress of your currently active curriculum.
-        </p>
-
-        {roadmap ? (
-          <div className="bg-navy-950 p-4 rounded-xl border border-navy-750/30 space-y-4">
-            <div className="flex justify-between items-start flex-wrap gap-2">
-              <div>
-                <span className="badge-blue text-xs uppercase tracking-wider font-bold">ACTIVE TIMELINE</span>
-                <h3 className="text-base font-bold text-white mt-1">{roadmap.bootcampTitle || roadmap.title}</h3>
-                <p className="text-xs text-slate-400 mt-0.5">
-                  Version: <span className="font-mono text-slate-300 font-semibold">{roadmap.version || '1.0.0'}</span>
-                </p>
+      <SettingsSection title="Course and data" description="Your active course and local backup controls.">
+        {currentCourse ? (
+          <div className="rounded-2xl border border-border-default bg-bg-soft p-5">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="min-w-0">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-text-muted">Current course</p>
+                <h3 className="mt-1.5 text-base font-bold text-text-primary">{currentCourse.title}</h3>
+                <p className="mt-2 text-xs text-text-muted">{currentCourse.detail}</p>
               </div>
-              <div className="text-right">
-                <span className="text-sm font-bold text-accent-primary">{prog.overall}%</span>
-                <p className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Completions</p>
-              </div>
+              <span className="shrink-0 text-sm font-bold text-brand-blue">{courseProgress.percent}% complete</span>
             </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-navy-700/30">
-              <div className="text-center bg-navy-900 border border-navy-800 p-2.5 rounded-lg">
-                <span className="text-slate-500 text-[10px] uppercase font-bold block">Duration</span>
-                <span className="text-white text-xs font-semibold mt-1 block">{roadmap.duration || 'Not specified'}</span>
-              </div>
-              <div className="text-center bg-navy-900 border border-navy-800 p-2.5 rounded-lg">
-                <span className="text-slate-500 text-[10px] uppercase font-bold block">Total Weeks</span>
-                <span className="text-white text-xs font-semibold mt-1 block">{totalWeeks} weeks</span>
-              </div>
-              <div className="text-center bg-navy-900 border border-navy-800 p-2.5 rounded-lg col-span-2 sm:col-span-1">
-                <span className="text-slate-500 text-[10px] uppercase font-bold block">Weekly Hours</span>
-                <span className="text-white text-xs font-semibold mt-1 block">{roadmap.weeklyHours || 'Not specified'}</span>
-              </div>
-            </div>
-
-            <div className="pt-2 space-y-4">
-              {!confirmActiveRoadmapReset ? (
-                <button
-                  onClick={() => setConfirmActiveRoadmapReset(true)}
-                  className="btn-danger w-full py-2.5 text-xs font-bold"
-                >
-                  Reset Progress For Active Roadmap
-                </button>
-              ) : (
-                <ConfirmAction
-                  title="Reset progress for active roadmap?"
-                  description={
-                    <div className="space-y-3">
-                      <p>This clears tasks, checkpoints, and proofs for the current active roadmap. This action is permanent and cannot be undone.</p>
-                      <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2">
-                        <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
-                        <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current progress before resetting.</p>
-                        <button 
-                          type="button" 
-                          onClick={handleExportProgress} 
-                          className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5"
-                        >
-                          <Download className="w-3 h-3" /> Export Backup file
-                        </button>
-                      </div>
-                    </div>
-                  }
-                  onConfirm={() => {
-                    setIsResetting(true);
-                    setTimeout(() => {
-                      resetProgressForActiveRoadmap();
-                      setIsResetting(false);
-                      setConfirmActiveRoadmapReset(false);
-                      setSettingsFeedback({ type: 'success', text: 'Progress reset for active roadmap.' });
-                      setTimeout(() => setSettingsFeedback(null), 3000);
-                    }, 750);
-                  }}
-                  onCancel={() => setConfirmActiveRoadmapReset(false)}
-                  isLoading={isResetting}
-                />
-              )}
-            </div>
+            <ProgressBar percent={courseProgress.percent} className="mt-5 h-1.5" />
           </div>
         ) : (
-          <p className="text-xs text-slate-550 font-medium">No custom roadmap loaded. Please import one.</p>
+          <div className="rounded-2xl border border-border-default bg-bg-soft p-5">
+            <p className="text-sm font-bold text-text-primary">No curriculum selected</p>
+            <p className="mt-1.5 text-xs leading-relaxed text-text-muted">Choose a published curriculum before beginning the learner experience.</p>
+            <Link to="/curricula" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:opacity-80">Choose curriculum <ExternalLink className="h-3.5 w-3.5" /></Link>
+          </div>
         )}
-      </SectionCard>
 
-      {/* Advanced Controls Override */}
-      <SectionCard className="space-y-4 border border-navy-400">
-        <h2 className="font-bold text-white flex items-center gap-2">
-          <SettingsIcon className="w-4 h-4 text-accent-cyan" />
-          Advanced Controls
-        </h2>
-        <p className="text-xs text-slate-500">
-          Gating override tools to unlock all weeks and milestones without completing sequential requirements.
-        </p>
+        <div className="mt-6 divide-y divide-border-divider">
+          <SettingsRow label="Curriculum catalog" description="Choose or continue another published learning path.">
+            <Link to="/curricula" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:opacity-80">Open catalog <ExternalLink className="h-3.5 w-3.5" /></Link>
+          </SettingsRow>
+          <SettingsRow label="Download backup" description="Saves your course, learning progress, and local learning data.">
+            <button type="button" onClick={() => { exportProgress(); setFeedback({ type: 'success', text: 'Backup downloaded.' }); }} className="btn-secondary w-full justify-center gap-2 px-4 py-2.5 text-sm sm:w-auto"><Download className="h-4 w-4" /> Download</button>
+          </SettingsRow>
+          <SettingsRow label="Restore from backup" description="Replaces current local course and learning data after confirmation.">
+            <label className="btn-secondary flex w-full cursor-pointer items-center justify-center gap-2 px-4 py-2.5 text-sm sm:w-auto"><Upload className="h-4 w-4" /> Choose backup<input type="file" accept=".json,application/json" onChange={restoreFileSelected} className="sr-only" aria-label="Choose an XcelerateAI backup file" /></label>
+          </SettingsRow>
+        </div>
+        {settings?.lastBackupDate && <p className="mt-4 text-xs text-text-muted">Last backup: {new Date(settings.lastBackupDate).toLocaleString()}</p>}
+      </SettingsSection>
 
-        <div className="space-y-4">
-          <label className="flex items-start gap-3 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={settings?.manualOverrideEnabled || false}
-              onChange={(e) => {
-                const checked = e.target.checked;
-                updateSettings({
-                  manualOverrideEnabled: checked,
-                  overrideReason: checked ? (settings?.overrideReason || '') : ''
-                });
-              }}
-              className="mt-1 h-4 w-4 rounded border-navy-400 bg-navy-900 text-accent-cyan focus:ring-accent-cyan"
-            />
-            <div>
-              <span className="text-sm font-semibold text-white">Enable Prerequisite Override (Unlock All)</span>
-              <p className="text-xs text-slate-500 mt-0.5">
-                Temporarily ignore required resources, checkpoints, and mission dependency locks.
-              </p>
+      <section id="advanced-settings" className="scroll-mt-6 border-t border-border-divider py-8 sm:py-10">
+        <button type="button" onClick={() => setAdvancedOpen((open) => !open)} aria-expanded={advancedOpen} aria-controls="advanced-settings-content" className="flex w-full items-center justify-between gap-4 rounded-xl py-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue">
+          <div>
+            <h2 className="text-lg font-bold text-text-primary">Advanced</h2>
+            <p className="mt-1.5 text-xs leading-relaxed text-text-muted">These controls can change how course progression behaves.</p>
+          </div>
+          <span className="inline-flex items-center gap-2 text-xs font-semibold text-text-secondary">{advancedOpen ? 'Hide' : 'Show'} advanced settings <ChevronDown className={`h-4 w-4 transition-transform duration-200 motion-reduce:transition-none ${advancedOpen ? 'rotate-180' : ''}`} /></span>
+        </button>
+
+        {advancedOpen && (
+          <div id="advanced-settings-content" className="mt-6 rounded-2xl border border-border-default bg-bg-soft px-5">
+            <SettingsRow label="Curriculum import" description="Validate and load a custom course curriculum.">
+              <Link to="/import" className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue hover:opacity-80">Open import <ExternalLink className="h-3.5 w-3.5" /></Link>
+            </SettingsRow>
+            <div className="border-t border-border-divider">
+              <SettingsRow label="Mentor name" description="Used in help prompts and mentor-question labels.">
+                <input id="mentor-name" aria-label="Mentor name" value={settings?.mentorName || ''} onChange={(event) => updateSettings({ mentorName: event.target.value })} className="input-base w-full text-sm sm:w-52" placeholder="Mentor" />
+              </SettingsRow>
             </div>
-          </label>
-
-          {settings?.manualOverrideEnabled && (
-            <div className="space-y-2.5 animate-scale-in bg-navy-950 p-4 border border-navy-400 rounded-xl">
-              <label className="text-[13px] text-amber-400 font-bold block uppercase tracking-wider">
-                Reason for Lock Override *
+            {curriculumMode === 'legacy' && <div className="border-t border-border-divider">
+              <SettingsRow label="Active week" description="For course recovery or testing. Normal progression updates this automatically.">
+                <div className="flex items-center gap-2"><input id="active-week" aria-label="Set active week manually" type="number" min="1" max={Math.max(1, totalWeeks)} value={settings?.activeWeek || 1} onChange={(event) => setActiveWeek(Math.min(Math.max(1, Number(event.target.value)), Math.max(1, totalWeeks)))} className="input-base w-20 text-center text-sm" /><span className="text-xs text-text-muted">of {totalWeeks || 0}</span></div>
+              </SettingsRow>
+            </div>}
+            <div className="border-t border-border-divider py-5">
+              <label className="flex cursor-pointer items-start gap-3">
+                <input type="checkbox" checked={settings?.manualOverrideEnabled || false} onChange={(event) => updateSettings({ manualOverrideEnabled: event.target.checked, overrideReason: event.target.checked ? settings?.overrideReason || '' : '' })} className="mt-0.5 h-4 w-4 rounded border-border-strong bg-bg-surface text-brand-blue" />
+                <span><span className="text-sm font-semibold text-text-primary">Inspect locked stages</span><span className="mt-1 block text-xs leading-relaxed text-text-muted">Allows inspection of future content. It cannot satisfy requirements, complete a week, advance progress, or bypass Skill Check recovery.</span></span>
               </label>
-              <textarea
-                rows={2}
-                required
-                placeholder="Log your reasoning (e.g., 'Inspecting Week 6 database structures to plan Backend schema')"
-                value={settings?.overrideReason || ''}
-                onChange={(e) => updateSettings({ overrideReason: e.target.value })}
-                className="input-base w-full text-xs resize-none"
-              />
-              <p className="text-[13px] text-slate-500 italic">
-                A valid log reason maintains coding discipline when bypassing systemic guardrails.
-              </p>
+              {settings?.manualOverrideEnabled && <div className="ml-7 mt-4"><label htmlFor="override-reason" className="text-xs font-semibold text-text-secondary">Reason</label><textarea id="override-reason" rows="2" required value={settings?.overrideReason || ''} onChange={(event) => updateSettings({ overrideReason: event.target.value })} className="input-base mt-1.5 w-full resize-none text-sm" placeholder="Why are you bypassing prerequisites?" /></div>}
             </div>
-          )}
-        </div>
-      </SectionCard>
-
-      {/* Progress Export/Import & Backup Logs */}
-      <SectionCard className="space-y-4 border border-navy-400">
-        <h2 className="font-bold text-white flex items-center gap-2">
-          <Download className="w-4 h-4 text-blue-400" />
-          Data Backups & Recovery
-        </h2>
-        <p className="text-xs text-slate-500">
-          Save your database as a portable JSON file. It is highly recommended to backup before importing new roadmaps.
-        </p>
-
-        {settings?.lastBackupDate && (
-          <div className="text-xs text-slate-400 bg-navy-950 border border-navy-400/50 rounded-lg p-2.5 flex justify-between items-center">
-            <span>Last local backup created:</span>
-            <span className="font-mono text-accent-primary font-bold">
-              {new Date(settings.lastBackupDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
-            </span>
-          </div>
-        )}
-
-        <div className="flex gap-3 flex-wrap font-sans items-center">
-          <button
-            onClick={handleExportProgress}
-            disabled={isExporting}
-            className="btn-secondary flex items-center gap-2 text-sm border-blue-500/20 text-blue-400 hover:text-white disabled:opacity-50"
-          >
-            <Download className="w-4 h-4" /> Export Backup file
-          </button>
-
-          <label className={`btn-secondary flex items-center gap-2 text-sm cursor-pointer border-navy-300 text-slate-400 hover:text-white ${isRestoring ? 'opacity-50 pointer-events-none' : ''}`}>
-            <Upload className="w-4 h-4" /> Restore Backup
-            <input type="file" accept=".json" className="hidden" onChange={handleProgressImport} disabled={isRestoring} />
-          </label>
-
-          {isExporting && <LoadingIndicator label="Exporting backup..." size="sm" />}
-          {isRestoring && <LoadingIndicator label="Restoring backup..." size="sm" />}
-        </div>
-
-        {pendingBackupData && (
-          <ConfirmAction
-            title="Restore progress backup?"
-            description={
-              <div className="space-y-3">
-                <p>This will overwrite all your current roadmap configurations, settings, profile callsigns, and progress logs with the data contained in the backup file.</p>
-                <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2">
-                  <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
-                  <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current session before continuing.</p>
-                  <button 
-                    type="button" 
-                    onClick={handleExportProgress} 
-                    className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5"
-                  >
-                    <Download className="w-3 h-3" /> Export Current Backup
-                  </button>
-                </div>
-              </div>
-            }
-            confirmLabel="Confirm Restore"
-            cancelLabel="Cancel"
-            onConfirm={() => {
-              setIsRestoring(true);
-              setTimeout(() => {
-                importProgress(pendingBackupData);
-                setPendingBackupData(null);
-                setImportMsg('success');
-                setIsRestoring(false);
-              }, 750);
-            }}
-            onCancel={() => setPendingBackupData(null)}
-            isLoading={isRestoring}
-          />
-        )}
-
-        {importMsg === 'success' && (
-          <StatusBanner type="success" message="Backup data restored successfully!" onClose={() => setImportMsg('')} />
-        )}
-        {importMsg === 'error' && (
-          <StatusBanner type="error" message="Invalid backup format. Please select a JSON backup file exported from the Command Center." onClose={() => setImportMsg('')} />
-        )}
-        {settingsFeedback && (
-          <StatusBanner type={settingsFeedback.type} message={settingsFeedback.text} onClose={() => setSettingsFeedback(null)} />
-        )}
-      </SectionCard>
-
-      {/* Interactive Onboarding & Guide */}
-      <SectionCard className="space-y-4 border border-navy-700/25">
-        <h2 className="font-bold text-white flex items-center gap-2">
-          <SettingsIcon className="w-4 h-4 text-accent-primary" />
-          Interactive Guides
-        </h2>
-        <p className="text-xs text-slate-550 font-medium">
-          Replay the guided setups and workspace tours.
-        </p>
-        <div className="flex gap-3 flex-wrap items-center">
-          <button
-            onClick={() => {
-              replayOnboarding();
-              setGuideSuccess('Onboarding guide reset. You will see it next time you visit the Dashboard.');
-              setTimeout(() => setGuideSuccess(''), 3000);
-            }}
-            className="btn-secondary text-sm border-accent-primary/20 text-accent-primary hover:text-white"
-          >
-            Replay Onboarding Guide
-          </button>
-          <button
-            onClick={() => {
-              if (window.replayXaiOnboardingTour) {
-                window.replayXaiOnboardingTour();
-              } else {
-                localStorage.setItem('xai_onboarding_seen_v1', 'false');
-                window.location.href = '/';
-              }
-            }}
-            className="btn-secondary text-sm border-navy-300 text-slate-400 hover:text-white"
-          >
-            Replay Workspace Tour
-          </button>
-        </div>
-        {guideSuccess && (
-          <InlineStatus status="success" label={guideSuccess} className="mt-2" />
-        )}
-      </SectionCard>
-
-      {/* Danger Zone Resets */}
-      <SectionCard className="border-red-500/25 space-y-5 bg-red-500/5 shadow-red-glow-sm">
-        <h2 className="font-bold text-white flex items-center gap-2">
-          <AlertTriangle className="w-4 h-4 text-red-400 animate-pulse" />
-          Danger Zone Actions
-        </h2>
-
-        <div className="space-y-4">
-          {/* Reset Progress */}
-          <div className="border-b border-navy-400/50 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <p className="text-sm font-semibold text-white">Reset Learning Progress only</p>
-              <p className="text-xs text-slate-500">
-                Wipe tasks, checkpoints, practical logs, and blockers. Preserves current settings and imported roadmap.
-              </p>
+            <div className="border-t border-border-divider py-5">
+              <h3 className="flex items-center gap-2 text-sm font-semibold text-text-primary"><SettingsIcon className="h-4 w-4 text-text-muted" /> System information</h3>
+              <dl className="mt-3 grid gap-3 text-xs sm:grid-cols-3">
+                <div><dt className="text-text-muted">Version</dt><dd className="mt-1 font-semibold text-text-secondary">2.0.0</dd></div>
+                <div><dt className="text-text-muted">Data storage</dt><dd className="mt-1 font-semibold text-text-secondary">This browser</dd></div>
+                <div><dt className="text-text-muted">Course source</dt><dd className="mt-1 font-semibold text-text-secondary">{currentCourse?.source || 'No course selected'}</dd></div>
+              </dl>
             </div>
-            <button
-              onClick={() => handleResetClick('progress')}
-              disabled={isResetting}
-              className="btn-danger hover:bg-red-500/20 text-xs py-2 px-3 flex-shrink-0 disabled:opacity-50"
-            >
-              Reset Progress
-            </button>
           </div>
-
-          {/* Reset Roadmap */}
-          <div className="border-b border-navy-400/50 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <p className="text-sm font-semibold text-white">Reset Custom Roadmap Schema</p>
-              <p className="text-xs text-slate-500">
-                Restore the baseline sample roadmap. Wipes custom roadmap configurations.
-              </p>
-            </div>
-            <button
-              onClick={() => handleResetClick('roadmap')}
-              disabled={isResetting}
-              className="btn-danger hover:bg-red-500/20 text-xs py-2 px-3 flex-shrink-0 disabled:opacity-50"
-            >
-              Reset Roadmap
-            </button>
-          </div>
-
-          {/* Complete Factory Reset */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <p className="text-sm font-semibold text-white">Complete Factory Wipe (Hard Reset)</p>
-              <p className="text-xs text-slate-500">
-                Clear all settings, logs, streak counters, backups, and notes. Wipes local storage completely.
-              </p>
-            </div>
-            <button
-              onClick={() => handleResetClick('factory')}
-              disabled={isResetting}
-              className="btn-danger py-2 px-3 flex-shrink-0 text-xs disabled:opacity-50"
-            >
-              Factory Reset
-            </button>
-          </div>
-        </div>
-
-        {/* Confirmation Modal block */}
-        {activeResetType && (
-          <ConfirmAction
-            title={`Confirm ${
-              activeResetType === 'factory'
-                ? 'Complete Factory Wipe'
-                : activeResetType === 'roadmap'
-                ? 'Roadmap Reset'
-                : 'Progress Reset'
-            }`}
-            description={
-              <div className="space-y-3">
-                <p>
-                  {activeResetType === 'factory' 
-                    ? 'This will completely wipe all logs, settings, progress, custom roadmaps, and streak counters from this browser.'
-                    : activeResetType === 'roadmap'
-                    ? 'This will restore the default sample roadmap, wiping any custom imported roadmap schema and progress.'
-                    : 'This will wipe all weekly progress, tasks, checkpoints, practical logs, and blockers. Settings and your custom roadmap layout are preserved.'}
-                  {' This action is permanent and cannot be undone.'}
-                </p>
-                <div className="p-3 bg-red-950/20 border border-red-900/30 rounded-xl space-y-2">
-                  <p className="text-[10px] text-red-400 font-bold uppercase tracking-widest">Backup Recommended</p>
-                  <p className="text-[11px] text-slate-550">It is strongly recommended that you export a backup of your current progress before resetting.</p>
-                  <button 
-                    type="button" 
-                    onClick={handleExportProgress} 
-                    className="btn-secondary text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 flex items-center gap-1.5"
-                  >
-                    <Download className="w-3 h-3" /> Export Backup file
-                  </button>
-                </div>
-              </div>
-            }
-            confirmLabel="Yes, Execute Reset"
-            cancelLabel="Cancel"
-            onConfirm={() => {
-              setIsResetting(true);
-              setTimeout(() => {
-                executeReset();
-                setIsResetting(false);
-              }, 750);
-            }}
-            onCancel={() => setActiveResetType(null)}
-            isLoading={isResetting}
-          />
         )}
-      </SectionCard>
+      </section>
 
-      {/* App Info */}
-      <SectionCard className="border-dashed border-navy-400 space-y-3">
-        <h2 className="font-bold text-white text-sm">System Information</h2>
-        <div className="space-y-2 text-xs text-slate-500">
-          <div className="flex justify-between">
-            <span>Version Index</span>
-            <span className="text-slate-400 font-mono">2.0.0</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Local Database</span>
-            <span className="text-slate-400">Indexed localStorage DB</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Status</span>
-            <span className="text-accent-primary">Offline Sandbox Gated</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Active Roadmap configuration</span>
-            <span className="text-accent-primary font-medium">
-              {settings?.usingCustomRoadmap ? 'Custom JSON Roadmap' : 'Sample JavaScript Mobile Ops'}
-            </span>
-          </div>
+      <SettingsSection title="Danger zone" description="These existing actions remove locally stored learning data." className="border-t border-red-500/20">
+        <div className="rounded-2xl border border-red-500/20 bg-red-500/[0.03] px-5">
+          {[
+            ['course-progress', 'Reset current course progress', 'Keeps your profile, notes, problems, and current course.'],
+            ['progress', 'Reset all learning records', 'Keeps the current course and basic settings.'],
+            ['course', 'Choose another curriculum', 'Returns to the catalog without deleting saved curriculum progress.'],
+            ['factory', 'Reset all local data', 'Removes all XcelerateAI data stored in this browser.'],
+          ].filter(([id]) => currentCourse || id !== 'course-progress').map(([id, label, description]) => (
+            <div key={id} className="flex flex-col gap-3 border-b border-red-500/10 py-5 last:border-0 sm:flex-row sm:items-center sm:justify-between">
+              <div><p className="text-sm font-semibold text-text-primary">{label}</p><p className="mt-1 text-xs text-text-muted">{description}</p></div>
+              <button type="button" onClick={() => setPendingReset(id)} className={`shrink-0 rounded-lg border px-3 py-2 text-xs font-semibold transition-colors ${id === 'factory' ? 'border-red-500/35 bg-red-500/10 text-red-500 hover:bg-red-500/15' : 'border-border-default bg-bg-surface text-text-secondary hover:border-red-500/30 hover:text-red-500'}`}>{label}</button>
+            </div>
+          ))}
         </div>
-      </SectionCard>
+      </SettingsSection>
+
+      {pendingBackup && <ConfirmAction title="Restore this backup?" description="Your current course, settings, and learning data will be replaced by the compatible data contained in this backup." confirmLabel="Restore backup" cancelLabel="Cancel" onConfirm={restoreBackup} onCancel={() => setPendingBackup(null)} isLoading={busy} />}
+      {pendingReset && <ConfirmAction title={resetCopy[pendingReset].title} description={<div className="space-y-3"><p>{resetCopy[pendingReset].description}</p><p className="text-brand-amber">Download a backup first if you may need to recover this data.</p></div>} confirmLabel="Confirm reset" cancelLabel="Cancel" onConfirm={executeReset} onCancel={() => setPendingReset(null)} isLoading={busy} />}
     </PageShell>
   );
 }

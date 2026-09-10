@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { 
-  CheckCircle2, Github, FileText, ChevronDown, ChevronUp, 
-  FolderKanban, Star, ExternalLink, ShieldCheck, Award, 
-  Sparkles, ArrowRight, BookOpen, AlertTriangle, AlertCircle 
+  CheckCircle2, FolderKanban, ExternalLink, Award, Sparkles
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { PageShell, PageHeader, MetricCard, ProgressBar, SectionCard } from '../components/common/UIComponents';
@@ -11,13 +9,14 @@ import { ProjectForgeVisual } from '../components/visuals';
 import StatusBanner from '../components/ui/StatusBanner';
 import InlineStatus from '../components/ui/InlineStatus';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
+import CopyTemplateButton from '../components/common/CopyTemplateButton';
+import { resolveTemplates } from '../utils/templateUtils.js';
 
 export default function ProjectTracker() {
   const {
-    roadmap, progress, blockers,
+    roadmap, progress,
     toggleProjectMilestone, setProjectGithubLink, setProjectNote, setProjectLiveDemoLink,
   } = useApp();
-  const navigate = useNavigate();
   const workspaceRef = useRef(null);
 
   const [activeProjIdx, setActiveProjIdx] = useState(0);
@@ -56,29 +55,15 @@ export default function ProjectTracker() {
     return (
       <PageShell>
         <PageHeader 
-          title="Project Tracker" 
-          subtitle="Track your builds and milestones across all capstone projects."
+          title="Projects"
+          subtitle="Review what you are building and update project milestones."
         />
-        <div className="bg-bg-surface border border-dashed border-border-default text-center py-16 px-6 rounded-radius-xxl max-w-md mx-auto select-none">
-          <ProjectForgeVisual status="empty" size="md" className="mx-auto mb-3" />
-          <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">No Projects Found</h4>
-          <p className="text-[13px] text-text-secondary mt-1">Import a rich roadmap configuration with a projects array to start tracking.</p>
+        <div className="surface-card border-dashed text-center py-16 px-6 max-w-md mx-auto select-none">
+          <h4 className="text-sm font-bold text-white">No projects are available in this course.</h4>
         </div>
       </PageShell>
     );
   }
-
-  const getProjectBlockers = (project) => {
-    if (!Array.isArray(blockers)) return [];
-    const projectNameLower = String(project.name || '').toLowerCase();
-    return blockers.filter(b => {
-      if (b.status === 'Solved') return false;
-      const titleMatch = String(b.title || '').toLowerCase().includes(projectNameLower);
-      const skillMatch = String(b.skillArea || '').toLowerCase().includes(projectNameLower);
-      const missionMatch = String(b.missionTitle || '').toLowerCase().includes(projectNameLower);
-      return titleMatch || skillMatch || missionMatch;
-    });
-  };
 
   // overall calculations
   const completedMilestonesCount = Object.values(progress.completedProjectMilestones || {})
@@ -92,6 +77,7 @@ export default function ProjectTracker() {
   }).length;
 
   const activeProject = projects[activeProjIdx] || projects[0];
+  const activeProjectTemplates = resolveTemplates(activeProject);
   const activeDoneMilestones = progress.completedProjectMilestones?.[activeProjIdx] || [];
   const activeTotalMilestones = activeProject?.milestones?.length || 0;
   const activePercent = activeTotalMilestones > 0 ? Math.round((activeDoneMilestones.length / activeTotalMilestones) * 100) : 0;
@@ -168,7 +154,7 @@ export default function ProjectTracker() {
   return (
     <PageShell>
       {/* ── 1. Project Studio Hero ── */}
-      <div className="relative overflow-hidden rounded-radius-xxl border border-border-default bg-bg-surface p-6 sm:p-8 lg:p-10 shadow-card flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="surface-card surface-card--hero relative overflow-hidden p-6 sm:p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="absolute -left-20 -top-20 w-96 h-96 bg-brand-violet/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -176,16 +162,16 @@ export default function ProjectTracker() {
           <div className="flex items-center gap-2">
             <FolderKanban className="w-4 h-4 text-brand-violet animate-pulse" />
             <span className="text-xs text-brand-violet font-bold tracking-widest uppercase">
-              Production Build Studio
+              What are you building?
             </span>
           </div>
 
           <div>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight font-heading">
-              Project Tracker
+              Projects
             </h1>
             <p className="text-text-secondary mt-3 text-[15px] leading-relaxed max-w-xl">
-              Turn this roadmap into something you can show. Manage your capstone tracks and portfolio integrations.
+              Review project purpose, milestones, repository, demo, and notes without changing their curriculum order.
             </p>
           </div>
 
@@ -196,8 +182,8 @@ export default function ProjectTracker() {
             >
               Continue Project
             </button>
-            <Link to="/proof" className="btn-secondary py-3 px-6 text-[14px] font-semibold">
-              View Proof of Work
+            <Link to="/workspace/proof" className="btn-secondary py-3 px-6 text-[14px] font-semibold">
+              View Proof
             </Link>
           </div>
         </div>
@@ -227,14 +213,14 @@ export default function ProjectTracker() {
           helperText="Milestones fully complete"
         />
         <MetricCard
-          label="Resolved Milestones"
+          label="Completed Milestones"
           value={`${completedMilestonesCount} / ${totalMilestonesCount}`}
           icon={Award}
           accentColor="cyan"
           helperText="Total project tasks"
         />
         <MetricCard
-          label="Milestones Ratio"
+          label="Milestone Progress"
           value={`${totalMilestonesCount > 0 ? Math.round((completedMilestonesCount / totalMilestonesCount) * 100) : 0}%`}
           icon={Sparkles}
           accentColor="violet"
@@ -242,9 +228,9 @@ export default function ProjectTracker() {
         />
       </div>
       {/* ── 3. Active Project Selector Tabs ── */}
-      <div className="bg-bg-surface border border-border-default rounded-radius-xxl p-5 shadow-sm">
+      <div className="surface-card p-5">
         <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-4 block">
-          Select Project Track
+          Choose a project
         </span>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {projects.map((proj, idx) => {
@@ -260,8 +246,8 @@ export default function ProjectTracker() {
                 onClick={() => setActiveProjIdx(idx)}
                 className={`p-4 rounded-xl border text-left flex flex-col justify-between gap-3 transition-all ${
                   isSelected
-                    ? 'border-brand-violet bg-brand-violet/5 text-white shadow-primary-glow-sm'
-                    : 'border-border-default bg-bg-surface/50 text-slate-400 hover:border-border-strong hover:bg-bg-soft'
+                    ? 'border-brand-violet/50 bg-brand-violet/5 text-text-primary shadow-primary-glow-sm'
+                    : 'border-border-default bg-bg-surface text-text-secondary hover:border-border-strong hover:bg-bg-soft'
                 }`}
               >
                 <div className="space-y-1.5 min-w-0 w-full font-sans">
@@ -273,7 +259,7 @@ export default function ProjectTracker() {
                       </span>
                     )}
                   </div>
-                  <h4 className="font-bold text-white text-xs truncate leading-tight">{proj.name || proj.title}</h4>
+                  <h4 className="font-bold text-text-primary text-xs truncate leading-tight">{proj.name || proj.title}</h4>
                 </div>
 
                 <div className="w-full space-y-1">
@@ -307,7 +293,7 @@ export default function ProjectTracker() {
                 <span className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${
                   activePercent === 100
                     ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                    : 'bg-navy-900 text-slate-500 border-navy-750'
+                    : 'bg-bg-soft text-text-muted border-border-default'
                 }`}>
                   {activePercent === 100 ? 'Completed' : 'In Progress'}
                 </span>
@@ -316,30 +302,40 @@ export default function ProjectTracker() {
           >
             <div className="space-y-6">
               <div>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">Project Brief</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-2">About this project</span>
                 <p className="text-xs text-text-secondary leading-relaxed">{activeProject.description || "No project description provided."}</p>
               </div>
 
+              {activeProjectTemplates.length > 0 && (
+                <div className="space-y-3 border-t border-border-divider pt-4">
+                  <div>
+                    <span className="block text-xs font-bold uppercase tracking-widest text-slate-400">Starter templates</span>
+                    {activeProject.readmePrompt && <p className="mt-2 text-xs leading-relaxed text-text-secondary">{activeProject.readmePrompt}</p>}
+                  </div>
+                  {activeProjectTemplates.map((template) => <CopyTemplateButton key={template.id} template={template} />)}
+                </div>
+              )}
+
               {/* Milestones timeline */}
               <div>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-3">Build Timeline Milestones</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-3">Milestones</span>
                 {activeTotalMilestones > 0 ? (
                   <div className="space-y-2.5">
                     {activeProject.milestones.map((milestone, mi) => {
                       const mDone = activeDoneMilestones.includes(mi);
                       const milestoneTitle = typeof milestone === 'string' ? milestone : (milestone?.title || `Milestone ${mi + 1}`);
                       
-                      let milestoneStyle = "border-border-default bg-bg-surface text-slate-300";
-                      let dotColor = "border-navy-600 bg-navy-850";
+                      let milestoneStyle = "border-border-default bg-bg-surface text-text-primary";
+                      let dotColor = "border-border-strong bg-bg-soft";
                       
                       if (mDone) {
                         milestoneStyle = "border-emerald-500/15 bg-emerald-500/5 text-text-muted";
                         dotColor = "border-emerald-500 bg-emerald-500/20";
                       } else if (mi === nextMilestoneIdx) {
-                        milestoneStyle = "border-brand-violet bg-brand-violet/5 text-white shadow-primary-glow-sm";
+                        milestoneStyle = "border-brand-violet/55 bg-brand-violet/5 text-text-primary shadow-primary-glow-sm";
                         dotColor = "border-brand-violet bg-brand-violet/25 animate-pulse";
                       } else if (nextMilestoneIdx !== undefined && mi > nextMilestoneIdx) {
-                        milestoneStyle = "border-border-default bg-bg-surface/30 opacity-60 text-slate-500";
+                        milestoneStyle = "border-border-default bg-bg-soft text-text-muted";
                       }
 
                       return (
@@ -359,7 +355,7 @@ export default function ProjectTracker() {
                     })}
                   </div>
                 ) : (
-                  <div className="p-4 bg-navy-850 border border-navy-750 rounded-xl text-xs text-slate-550 italic">
+                  <div className="p-4 bg-bg-soft border border-border-default rounded-xl text-xs text-text-muted italic">
                     No milestones supplied for this project.
                   </div>
                 )}
@@ -367,7 +363,7 @@ export default function ProjectTracker() {
 
               {/* GitHub Link Entry */}
               <div className="pt-4 border-t border-navy-800/40 space-y-3">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block">Repository Configuration</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block">Repository</span>
                 <div className="flex gap-2 flex-col sm:flex-row">
                   <input
                     type="url"
@@ -401,7 +397,7 @@ export default function ProjectTracker() {
                   <StatusBanner type="error" message={githubError} />
                 )}
                 {savingGithub && (
-                  <LoadingIndicator label="Configuring repository link..." size="sm" />
+                  <LoadingIndicator label="Saving repository link..." size="sm" />
                 )}
                 {githubSuccess && (
                   <InlineStatus status="success" label={githubSuccess} />
@@ -410,7 +406,7 @@ export default function ProjectTracker() {
 
               {/* Live Demo Link Entry */}
               <div className="pt-4 border-t border-navy-800/40 space-y-3">
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block">Live Demo Configuration</span>
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-widest block">Live demo</span>
                 <div className="flex gap-2 flex-col sm:flex-row">
                   <input
                     type="url"
@@ -444,7 +440,7 @@ export default function ProjectTracker() {
                   <StatusBanner type="error" message={liveDemoError} />
                 )}
                 {savingLiveDemo && (
-                  <LoadingIndicator label="Configuring live demo link..." size="sm" />
+                  <LoadingIndicator label="Saving live demo link..." size="sm" />
                 )}
                 {liveDemoSuccess && (
                   <InlineStatus status="success" label={liveDemoSuccess} />
@@ -494,7 +490,7 @@ export default function ProjectTracker() {
                   {savingNote ? 'Updating...' : 'Save Project Notes'}
                 </button>
                 {savingNote && (
-                  <LoadingIndicator label="Logging project notes..." size="sm" />
+                  <LoadingIndicator label="Saving project notes..." size="sm" />
                 )}
                 {noteSuccess && (
                   <InlineStatus status="success" label={noteSuccess} />

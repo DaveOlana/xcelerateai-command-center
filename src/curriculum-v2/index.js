@@ -1,0 +1,17 @@
+export { compileCurriculum } from './compiler/compileCurriculum.js';
+export { generateCoverage } from './coverage/generateCoverage.js';
+export { loadCurriculumSource, loadPublishedRuntime } from './runtime/curriculumLoader.js';
+export { validateCurriculumSource } from './validation/validateCurriculumSource.js';
+export { validateRuntimeCurriculum } from './validation/validateRuntimeCurriculum.js';
+export { validateResourceResearch } from './validation/validateResourceResearch.js';
+export { validateContentIntegrityAudit } from './validation/validateContentIntegrityAudit.js';
+export { SEMANTIC_REVIEW_VALIDATORS, isSemanticReviewFinding } from './validation/semanticReviewContract.js';
+export { CurriculumValidationError } from './validation/findings.js';
+export { createCatalogEntry, createCurriculumCatalog, publishCurriculumSource } from './catalog/publishCurriculum.js';
+export { curriculumCatalog } from './catalog/catalog.js';
+export * from './state/learnerState.js';
+export * from './state/curriculumSelection.js';
+export * from './state/backupReconciliation.js';
+export * from './runtime/progression.js';
+export * from './runtime/projects.js';
+export * from './runtime/competencyProgress.js';

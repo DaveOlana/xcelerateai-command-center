@@ -6,7 +6,7 @@ import { Lock, AlertCircle, Loader2, CheckCircle2, AlertTriangle, ShieldAlert } 
  */
 export function PageShell({ children, className = "" }) {
   return (
-    <div className={`w-full max-w-full md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 py-4 lg:py-6 space-y-6 animate-slide-up ${className}`}>
+    <div className={`mx-auto w-full max-w-[1240px] space-y-6 px-4 py-4 sm:px-6 lg:px-8 lg:py-6 ${className}`}>
       {children}
     </div>
   );
@@ -19,7 +19,7 @@ export function PageHeader({ title, subtitle, actions, className = "" }) {
   return (
     <div className={`flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border-default pb-5 ${className}`}>
       <div>
-        <h1 className="text-2xl font-extrabold text-white tracking-tight font-heading">{title}</h1>
+        <h1 className="text-2xl font-extrabold text-text-primary tracking-tight font-heading">{title}</h1>
         {subtitle && <p className="text-text-secondary text-sm mt-1.5 leading-relaxed">{subtitle}</p>}
       </div>
       {actions && <div className="flex flex-wrap items-center gap-3 no-print">{actions}</div>}
@@ -32,13 +32,13 @@ export function PageHeader({ title, subtitle, actions, className = "" }) {
  */
 export function SectionCard({ title, subtitle, headerActions, children, className = "", hoverable = false }) {
   return (
-    <div className={`bg-bg-surface border border-border-default rounded-radius-xxl p-6 lg:p-8 backdrop-blur-sm shadow-card transition-all duration-300 ${
+    <div className={`surface-card p-6 lg:p-8 transition-all duration-300 ${
       hoverable ? 'hover:border-border-strong hover:shadow-card-hover' : ''
     } ${className}`}>
       {(title || subtitle || headerActions) && (
         <div className="flex items-start justify-between gap-4 mb-6 border-b border-border-divider pb-4">
           <div>
-            {title && <h3 className="text-[16px] font-bold text-white tracking-tight font-heading">{title}</h3>}
+            {title && <h3 className="text-[16px] font-bold text-text-primary tracking-tight font-heading">{title}</h3>}
             {subtitle && <p className="text-[13px] text-text-muted mt-1 leading-relaxed">{subtitle}</p>}
           </div>
           {headerActions && <div className="flex items-center gap-2">{headerActions}</div>}
@@ -57,7 +57,7 @@ export function ActionCard({ children, className = "", onClick }) {
   return (
     <CardWrapper
       onClick={onClick}
-      className={`bg-bg-surface border-2 border-brand-blue/35 rounded-radius-xxl p-6 lg:p-7 shadow-card hover:border-brand-blue hover:shadow-card-hover transition-all duration-300 text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus ${onClick ? 'cursor-pointer active:scale-[0.99]' : ''} ${className}`}
+      className={`surface-card surface-card--hero border-2 border-brand-blue/25 p-6 lg:p-7 hover:border-brand-blue/55 hover:shadow-card-hover transition-all duration-300 text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus ${onClick ? 'cursor-pointer active:scale-[0.99]' : ''} ${className}`}
     >
       {children}
     </CardWrapper>
@@ -72,7 +72,7 @@ export function LearningCard({ children, className = "", hoverable = false, onCl
   return (
     <CardWrapper
       onClick={onClick}
-      className={`bg-bg-surface border border-border-default rounded-radius-xl p-5 lg:p-6 shadow-sm transition-all duration-300 text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus ${
+      className={`surface-card surface-card--compact p-5 lg:p-6 transition-all duration-300 text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus ${
         hoverable || onClick ? 'hover:border-border-strong hover:bg-bg-elevated cursor-pointer' : ''
       } ${onClick ? 'active:scale-[0.99]' : ''} ${className}`}
     >
@@ -104,13 +104,13 @@ export function MetricCard({ label, value, icon: Icon, helperText, accentColor =
   };
 
   return (
-    <div className={`bg-bg-surface border rounded-radius-lg p-5 flex flex-col justify-between transition-all duration-300 shadow-sm ${borderColors[accentColor] || "border-border-default"} ${className}`}>
+    <div className={`surface-card surface-card--compact border p-5 flex flex-col justify-between transition-all duration-300 ${borderColors[accentColor] || "border-border-default"} ${className}`}>
       <div className="flex items-center justify-between mb-3">
         <span className="text-[12px] font-bold text-text-muted uppercase tracking-wider">{label}</span>
         {Icon && <Icon className={`w-4 h-4 ${textColors[accentColor] || "text-text-muted"}`} />}
       </div>
       <div>
-        <p className="text-2xl font-extrabold tracking-tight text-white font-heading">{value}</p>
+        <p className="text-2xl font-extrabold tracking-tight text-text-primary font-heading">{value}</p>
         {helperText && <p className="text-[12px] text-text-muted mt-1.5 font-medium leading-relaxed">{helperText}</p>}
       </div>
     </div>
@@ -122,7 +122,7 @@ export function MetricCard({ label, value, icon: Icon, helperText, accentColor =
  */
 export function ReflectionCard({ children, className = "" }) {
   return (
-    <div className={`bg-bg-soft border border-border-default rounded-radius-xl p-5 lg:p-6 shadow-sm border-l-4 border-l-brand-violet/60 ${className}`}>
+    <div className={`surface-card surface-card--inset p-5 lg:p-6 border-l-4 border-l-brand-violet/60 ${className}`}>
       {children}
     </div>
   );
@@ -226,7 +226,7 @@ export function CommandButton({ children, onClick, type = "button", disabled = f
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`bg-brand-blue text-white font-semibold px-6 py-3 rounded-radius-lg
+      className={`bg-brand-blue text-[var(--text-on-brand)] font-semibold px-6 py-3 rounded-radius-lg
                  hover:bg-blue-600 active:scale-95 transition-all duration-200
                  focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus
                  shadow-sm disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-[14px] ${className}`}
@@ -246,7 +246,7 @@ export function SecondaryButton({ children, onClick, type = "button", disabled =
       onClick={onClick}
       disabled={disabled}
       className={`bg-bg-elevated border border-border-default text-text-secondary font-semibold px-6 py-3 rounded-radius-lg
-                 hover:border-border-strong hover:text-white active:scale-95 transition-all duration-200
+                 hover:border-border-strong hover:text-text-primary active:scale-95 transition-all duration-200
                  focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus
                  disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center gap-2 text-[14px] ${className}`}
     >
@@ -269,12 +269,12 @@ export function EmptyState({
   className = "" 
 }) {
   return (
-    <div className={`bg-bg-surface border border-border-default text-center py-10 px-6 space-y-4 rounded-radius-xxl max-w-md mx-auto backdrop-blur-sm shadow-sm ${className}`}>
+    <div className={`surface-card text-center py-10 px-6 space-y-4 max-w-md mx-auto ${className}`}>
       <div className="w-12 h-12 rounded-radius-lg bg-bg-soft border border-border-divider flex items-center justify-center mx-auto">
         <Icon className="w-5 h-5 text-text-muted" />
       </div>
       <div className="space-y-1.5">
-        <h4 className="text-sm font-bold text-white uppercase tracking-wider font-heading">{message || "No Data Found"}</h4>
+        <h4 className="text-sm font-bold text-text-primary uppercase tracking-wider font-heading">{message || "No Data Found"}</h4>
         {submessage && <p className="text-xs text-text-secondary max-w-xs mx-auto leading-relaxed">{submessage}</p>}
       </div>
       
@@ -283,7 +283,7 @@ export function EmptyState({
           {actionText && onActionClick && (
             <button
               onClick={onActionClick}
-              className="bg-brand-blue text-white font-semibold px-4 py-2.5 rounded-radius-md hover:bg-blue-600 transition-all text-xs font-bold w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
+              className="bg-brand-blue text-[var(--text-on-brand)] font-semibold px-4 py-2.5 rounded-radius-md hover:bg-blue-600 transition-all text-xs font-bold w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
             >
               {actionText}
             </button>
@@ -291,7 +291,7 @@ export function EmptyState({
           {secondaryActionText && onSecondaryActionClick && (
             <button
               onClick={onSecondaryActionClick}
-              className="bg-bg-elevated border border-border-default text-text-secondary font-semibold px-4 py-2.5 rounded-radius-md hover:border-border-strong hover:text-white transition-all text-xs font-bold w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
+              className="bg-bg-elevated border border-border-default text-text-secondary font-semibold px-4 py-2.5 rounded-radius-md hover:border-border-strong hover:text-text-primary transition-all text-xs font-bold w-full sm:w-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
             >
               {secondaryActionText}
             </button>
@@ -319,12 +319,12 @@ export function LoadingState({ message = "Loading Command Module...", className 
  */
 export function LockWarningCard({ title, message, missingLabel, nextActionLabel, onNextAction, className = "" }) {
   return (
-    <div className={`bg-bg-surface border border-brand-red/30 rounded-radius-xxl p-6 lg:p-8 text-center space-y-4 max-w-xl mx-auto my-6 backdrop-blur-sm animate-scale-in shadow-card ${className}`}>
+    <div className={`surface-card border-brand-red/30 p-6 lg:p-8 text-center space-y-4 max-w-xl mx-auto my-6 animate-scale-in ${className}`}>
       <div className="w-12 h-12 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center mx-auto shadow-sm">
         <Lock className="w-5 h-5 text-brand-red" />
       </div>
       <div>
-        <h3 className="text-sm font-bold text-white uppercase tracking-wider font-heading">{title}</h3>
+        <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider font-heading">{title}</h3>
         <p className="text-[14px] text-text-secondary mt-1.5 leading-relaxed">{message}</p>
       </div>
       {missingLabel && (
@@ -336,7 +336,7 @@ export function LockWarningCard({ title, message, missingLabel, nextActionLabel,
         <button
           type="button"
           onClick={onNextAction}
-          className="bg-bg-elevated border border-border-default text-text-secondary hover:text-white hover:border-brand-blue/30 px-5 py-2.5 rounded-radius-lg transition-all duration-200 text-[13px] uppercase tracking-wider font-bold active:scale-95 mx-auto flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
+          className="bg-bg-elevated border border-border-default text-text-secondary hover:text-text-primary hover:border-brand-blue/30 px-5 py-2.5 rounded-radius-lg transition-all duration-200 text-[13px] uppercase tracking-wider font-bold active:scale-95 mx-auto flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-border-focus"
         >
           {nextActionLabel}
         </button>

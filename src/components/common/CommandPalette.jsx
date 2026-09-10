@@ -3,27 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { Search, Command } from 'lucide-react';
 import { commandPaletteNavigationItems } from '../../config/navigation';
 
-const STATIC_COMMANDS = [
-  ...commandPaletteNavigationItems.map((item) => ({
+const STATIC_COMMANDS = commandPaletteNavigationItems.map((item) => ({
     id: item.id,
     title: item.label,
     icon: item.icon,
     route: item.route,
-  })),
-  { 
-    id: 'replay-tour', 
-    title: 'Replay Onboarding Tour', 
-    icon: Command, 
-    action: () => {
-      if (window.replayXaiOnboardingTour) {
-        window.replayXaiOnboardingTour();
-      } else {
-        localStorage.setItem('xai_onboarding_seen_v1', 'false');
-        window.location.href = '/';
-      }
-    } 
-  }
-];
+  }));
 
 export default function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false);

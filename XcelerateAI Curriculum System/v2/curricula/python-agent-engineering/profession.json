@@ -1,0 +1,149 @@
+{
+  "curriculumId": "PYAE",
+  "revision": 3,
+  "researchedAt": "2026-09-05",
+  "role": "Python Agent Engineer",
+  "roleDefinition": "A Python engineer who builds, evaluates, secures, and operates bounded software agents that use language models, tools, memory, and external systems to complete useful tasks with inspectable evidence.",
+  "evidenceSummary": [
+    "Production agent work combines ordinary Python software engineering with model interaction, tool execution, state, evaluation, observability, and safety boundaries.",
+    "Current primary guidance favors simple composable workflows before adding autonomy, explicit tool contracts, continuous evaluations, and human control for consequential actions.",
+    "A beginner pathway must teach deterministic Python and API fundamentals before frameworks so learners can debug behavior rather than depend on hidden orchestration."
+  ],
+  "practitionerOutputs": [
+    "Task-oriented Python services and command-line applications with stable data contracts.",
+    "LLM applications that validate structured outputs and expose model providers through replaceable adapters.",
+    "Tool-using agents with explicit loops, durable state, grounded retrieval, bounded actions, and human approval.",
+    "Evaluation suites, traces, runbooks, threat models, migration paths, and reproducible release artifacts."
+  ],
+  "systemComponents": [
+    "Python package and configuration",
+    "model-provider adapter",
+    "prompt and output contracts",
+    "tool registry and policy gateway",
+    "agent loop",
+    "session/context manager",
+    "SQLite repository",
+    "retrieval layer",
+    "evaluation harness",
+    "tracing and recovery",
+    "optional MCP adapter"
+  ],
+  "professionalPractices": [
+    "Use documentation as a normal engineering tool",
+    "write deterministic tests before live-provider checks",
+    "preserve failure evidence",
+    "review narrow changes",
+    "version interfaces and state",
+    "document setup, limitations, recovery, and security decisions"
+  ],
+  "independentCompetenceSignals": [
+    "Can explain and diagram the system without relying on framework vocabulary alone.",
+    "Can reproduce a failure, identify its boundary, implement a focused repair, and add a regression test.",
+    "Can replace a model provider or tool implementation without rewriting domain behavior.",
+    "Can justify when not to use autonomy, MCP, multiple agents, cloud infrastructure, or a paid model."
+  ],
+  "deploymentExpectation": "A graduate can package and continuously verify a local Windows installation and explain an optional container or hosted deployment path; operating distributed cloud infrastructure is outside the graduation boundary.",
+  "safetyAndControlPractices": [
+    "least privilege",
+    "untrusted-content separation",
+    "strict input/output schemas",
+    "human approval for consequential actions",
+    "idempotency and effect reconciliation",
+    "secret redaction",
+    "cancellation and run budgets",
+    "independent safety evaluation gates"
+  ],
+  "coreCapabilities": [
+    "PYAE-C001",
+    "PYAE-C002",
+    "PYAE-C003",
+    "PYAE-C004",
+    "PYAE-C005",
+    "PYAE-C006",
+    "PYAE-C007",
+    "PYAE-C008",
+    "PYAE-C010",
+    "PYAE-C011",
+    "PYAE-C012",
+    "PYAE-C013",
+    "PYAE-C014",
+    "PYAE-C016",
+    "PYAE-C017",
+    "PYAE-C018",
+    "PYAE-C019",
+    "PYAE-C020",
+    "PYAE-C021",
+    "PYAE-C022",
+    "PYAE-C023",
+    "PYAE-C024",
+    "PYAE-C025",
+    "PYAE-C026",
+    "PYAE-C027",
+    "PYAE-C028",
+    "PYAE-C030",
+    "PYAE-C032",
+    "PYAE-C033"
+  ],
+  "supportingCapabilities": [
+    "PYAE-C009",
+    "PYAE-C015",
+    "PYAE-C029",
+    "PYAE-C031"
+  ],
+  "optionalCapabilities": [
+    "Multi-agent delegation beyond one bounded specialist handoff",
+    "Hosted cloud scaling",
+    "Fine-tuning foundation models",
+    "Custom GPU inference operations"
+  ],
+  "exclusions": [
+    "No claim of autonomous general intelligence or unsupervised authority over consequential systems.",
+    "No paid API, cloud account, Docker installation, or GPU is required to complete assessed work.",
+    "No framework is treated as a substitute for understanding the agent loop and its failure modes."
+  ],
+  "graduationBoundary": "A graduate can design, implement, test, evaluate, and operate a local-first Python personal agent with replaceable model providers, bounded tools, durable state, grounded answers, approval gates, and a reproducible readiness report. Advanced distributed systems and unrestricted autonomy remain outside scope.",
+  "sources": [
+    {
+      "title": "Python 3 documentation",
+      "url": "https://docs.python.org/3/",
+      "publisher": "Python Software Foundation",
+      "contribution": "Language, standard library, environment, persistence, concurrency, and testing foundations."
+    },
+    {
+      "title": "OpenAI API documentation",
+      "url": "https://developers.openai.com/api/docs/quickstart",
+      "publisher": "OpenAI",
+      "contribution": "Current model request, structured output, tool calling, production, safety, and evaluation practices."
+    },
+    {
+      "title": "OpenAI Agents SDK documentation",
+      "url": "https://openai.github.io/openai-agents-python/",
+      "publisher": "OpenAI",
+      "contribution": "Current agent loop, tools, sessions, guardrails, tracing, human approval, MCP, and testing concepts."
+    },
+    {
+      "title": "Building effective agents",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "publisher": "Anthropic",
+      "contribution": "Evidence for simple composable workflows, explicit agent loops, and autonomy tradeoffs."
+    },
+    {
+      "title": "Demystifying evals for AI agents",
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "publisher": "Anthropic",
+      "contribution": "Evaluation design for non-deterministic agent systems."
+    },
+    {
+      "title": "Model Context Protocol architecture",
+      "url": "https://modelcontextprotocol.io/docs/learn/architecture",
+      "publisher": "Model Context Protocol",
+      "contribution": "Host, client, server, capability, and security boundaries for interoperable tools."
+    },
+    {
+      "title": "OWASP Top 10 for LLM Applications",
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+      "publisher": "OWASP",
+      "contribution": "Threat categories and mitigations for LLM-enabled applications."
+    }
+  ]
+}

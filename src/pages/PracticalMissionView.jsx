@@ -10,6 +10,8 @@ import {
 import { PageShell, PageHeader, CommandButton, StatusBadge } from '../components/common/UIComponents';
 import StatusBanner from '../components/ui/StatusBanner';
 import LoadingIndicator from '../components/ui/LoadingIndicator';
+import CopyTemplateButton from '../components/common/CopyTemplateButton';
+import { resolveTemplates } from '../utils/templateUtils.js';
 
 export default function PracticalMissionView() {
   const { missionId } = useParams();
@@ -93,6 +95,7 @@ export default function PracticalMissionView() {
   }
 
   const { mission, week, month } = missionData;
+  const missionTemplates = resolveTemplates(mission);
 
   // Prerequisites Lock check (Option A1)
   const isLocked = useMemo(() => {
@@ -234,7 +237,7 @@ Please help me understand the requirements and plan my approach. Stay strictly w
     'helpPromptTemplate', 'scopePromptTemplate',
     // Structural / display metadata the learner does not need surfaced raw
     'missionNumber', 'displayLabel', 'statusDefault', 'required', 'filesToCreateText',
-    'completionPolicy', 'missionType', 'evidenceRequired',
+    'completionPolicy', 'missionType', 'evidenceRequired', 'templates',
   ];
 
   // Human-readable labels for any field that still reaches the accordion.
@@ -325,12 +328,12 @@ Please help me understand the requirements and plan my approach. Stay strictly w
       {/* Locked Alert Modal Backdrop (Option A1) */}
       {isLocked && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
-          <div className="bg-navy-850/90 border border-navy-500/50 rounded-2xl w-full max-w-lg p-8 animate-scale-in text-center shadow-card relative backdrop-blur-md">
+          <div className="surface-card w-full max-w-lg p-8 animate-scale-in text-center relative">
             <div className="w-16 h-16 rounded-full bg-red-500/10 border border-red-500/30 flex items-center justify-center mx-auto mb-4">
               <ShieldAlert className="w-8 h-8 text-red-400" />
             </div>
 
-            <h2 className="text-xl font-bold text-white uppercase tracking-wider"> Coordinates Locked</h2>
+            <h2 className="text-xl font-bold text-white uppercase tracking-wider">Mission locked</h2>
             <p className="text-xs text-accent-primary font-bold uppercase tracking-wider mt-1">
               Prerequisite Missing
             </p>
@@ -550,6 +553,24 @@ Please help me understand the requirements and plan my approach. Stay strictly w
               </div>
             )}
 
+            {(mission.readmePrompt || missionTemplates.length > 0) && (
+              <div className="card space-y-4">
+                <div>
+                  <h3 className="text-sm font-bold uppercase tracking-wide text-text-primary">Starter templates</h3>
+                  <p className="mt-1 text-xs leading-relaxed text-text-muted">Copy a starter structure into your editor, then complete it in your own words.</p>
+                </div>
+                {mission.readmePrompt && (
+                  <div className="rounded-xl border border-border-default bg-bg-soft p-3">
+                    <p className="text-xs font-bold text-text-primary">README guidance</p>
+                    <p className="mt-1 text-xs leading-relaxed text-text-secondary">{mission.readmePrompt}</p>
+                  </div>
+                )}
+                <div className="space-y-3">
+                  {missionTemplates.map((template) => <CopyTemplateButton key={template.id} template={template} />)}
+                </div>
+              </div>
+            )}
+
             {/* Done Means Done (Requirement 7) */}
             {mission.doneMeansDone && (Array.isArray(mission.doneMeansDone) ? mission.doneMeansDone.length > 0 : !!mission.doneMeansDone) && (
               <div className="card border-blue-500/20 bg-blue-500/5">
@@ -582,7 +603,7 @@ Please help me understand the requirements and plan my approach. Stay strictly w
               <div className="space-y-3">
                 {(mission.stepByStepInstructions?.length > 0
                   ? mission.stepByStepInstructions
-                  : ['Review the tasks inside TodaysFocus page.', 'Create directory structures and test files.', 'Verify inputs and logs in terminal.']
+                  : ['Review the active stage in Missions.', 'Create directory structures and test files.', 'Verify inputs and logs in terminal.']
                 ).map((step, idx) => {
                   const checked = (Array.isArray(progressRecord.completedSteps) ? progressRecord.completedSteps : []).includes(idx);
                   return (

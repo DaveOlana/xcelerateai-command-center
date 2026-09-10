@@ -3,11 +3,11 @@ import { Shield, EyeOff, Lock, Check } from 'lucide-react';
 import { PageShell, PageHeader } from '../components/common/UIComponents';
 import { useApp } from '../context/AppContext';
 
-export default function SideQuestLock() {
+export default function SideQuestLock({ embedded = false }) {
   const { roadmap, userProfile, settings } = useApp();
   const roadmapTitle = roadmap?.title || roadmap?.bootcampTitle || 'Active Roadmap';
   const roadmapShortTitle = roadmap?.shortTitle || roadmapTitle;
-  const displayName = userProfile?.displayName || userProfile?.name || roadmap?.learner || 'Operator';
+  const displayName = userProfile?.displayName || userProfile?.name || roadmap?.learner || 'Learner';
 
   const [activeQuest, setActiveQuest] = useState(null);
   const [shieldPower, setShieldPower] = useState(100);
@@ -35,7 +35,7 @@ export default function SideQuestLock() {
   const totalTimeSaved = '890 Hours';
 
   return (
-    <PageShell>
+    <PageShell className={embedded ? '!max-w-none !px-0 !py-0' : ''}>
       <PageHeader
         title="Side Quest Lock"
         subtitle={`Prevent shiny object syndrome. Focus strictly on ${roadmapShortTitle} core milestones.`}

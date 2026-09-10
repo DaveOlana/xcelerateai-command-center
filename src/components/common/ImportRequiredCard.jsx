@@ -10,7 +10,7 @@ export default function ImportRequiredCard({ pageName }) {
       </div>
       <h2 className="text-lg font-bold text-white">Roadmap Data Missing</h2>
       <p className="text-xs text-slate-400 leading-relaxed">
-        To view the {pageName || 'requested workspace'}, you need to initialize your learning environment by importing the custom roadmap JSON mission file first.
+        The {pageName || 'requested section'} needs an active course. Open Advanced Settings to recover or import a curriculum.
       </p>
       <div className="pt-2">
         <Link

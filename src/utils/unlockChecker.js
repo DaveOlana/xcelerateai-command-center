@@ -1,3 +1,11 @@
+import { getStudyRequirementStatus } from './resourceActivity.js';
+import {
+  getAssessmentRecord,
+  getSkillCheckDefinition,
+  isQuizSkillCheck,
+  isRecoveryLocked,
+} from './skillCheckUtils.js';
+
 // =============================================
 // UNLOCK CHECKER UTILITY
 // Centralized logic for determining whether
@@ -17,7 +25,7 @@ export const KNOWN_WEEK_FIELDS = [
   // Time
   'timeEstimate', 'estimatedHours', 'estimatedData', 'hours', 'dataEstimate',
   // Canonical fields (new schema)
-  'studyResources', 'skillCheck', 'practicalMissions', 'proofOfWork',
+  'studyResources', 'studyRequirement', 'skillCheck', 'practicalMissions', 'proofOfWork',
   'reflectionPrompts', 'reflectionPrompt', 'unlockCriteria', 'scheduledSessions',
   'frontendIntegration',
   // Backward-compat aliases
@@ -34,7 +42,7 @@ export const KNOWN_WEEK_FIELDS = [
  * Known resource-level fields (supports both old and new schemas)
  */
 export const KNOWN_RESOURCE_FIELDS = [
-  'id', 'title', 'url', 'type', 'difficulty', 'whatToExpect', 'missionObjective',
+  'id', 'resourceId', 'title', 'url', 'type', 'difficulty', 'whatToExpect', 'missionObjective',
   'required', 'timeEstimate', 'estimatedTime', 'dataEstimate', 'lowData',
   'purpose', 'teaches',
 ];
@@ -47,6 +55,9 @@ export const KNOWN_RESOURCE_FIELDS = [
  */
 export function getRequiredResources(week) {
   if (!week) return [];
+  if (week.studyRequirement) {
+    return getStudyRequirementStatus(week, {}).coreResources;
+  }
   // Support both canonical studyResources and legacy resources alias
   const resources =
     Array.isArray(week.studyResources) ? week.studyResources :
@@ -69,6 +80,9 @@ export function getRequiredResources(week) {
  */
 export function areRequiredResourcesStudied(week, resourcesStatus) {
   if (!week) return true;
+  if (week.studyRequirement) {
+    return getStudyRequirementStatus(week, resourcesStatus).satisfied;
+  }
   const required = getRequiredResources(week);
   if (required.length === 0) return true;
   const status = resourcesStatus || {};
@@ -196,6 +210,8 @@ export function getWeekStepStatus({
   weekProofs,
   weekReflections,
   settings,
+  skillCheckAttempts,
+  roadmapId = 'default-roadmap',
 }) {
   const defaultStatus = {
     resourcesUnlocked: true,
@@ -209,29 +225,49 @@ export function getWeekStepStatus({
     practicalsDone: false,
     proofDone: false,
     reflectionDone: false,
+    hasSkillCheck: false,
+    quizMode: false,
+    recoveryLocked: false,
   };
 
   if (!week) return defaultStatus;
+
+  const skillCheckDefinition = getSkillCheckDefinition(week);
+  const quizMode = isQuizSkillCheck(skillCheckDefinition);
+  const assessmentRecord = quizMode
+    ? getAssessmentRecord(skillCheckAttempts, roadmapId, skillCheckDefinition.skillCheckId)
+    : null;
+  const recoveryLocked = quizMode && isRecoveryLocked(assessmentRecord);
+  const quizPassed = quizMode && (assessmentRecord?.attempts || []).some((attempt) => attempt.passed);
+  const legacySkillCheckDone = isSkillCheckComplete(weekNum, skillChecks);
+  const hasSkillCheck = Boolean(
+    skillCheckDefinition.questions?.length ||
+    week.skillCheck || week.checkpoint || week.skillChecks || week.quiz
+  );
+  const canonicalSkillCheckDone = quizMode ? quizPassed : legacySkillCheckDone;
 
   // With override, everything is unlocked
   if (settings?.manualOverrideEnabled) {
     return {
       resourcesUnlocked: true,
-      skillCheckUnlocked: true,
-      practicalsUnlocked: true,
-      proofUnlocked: true,
-      reflectionUnlocked: true,
-      weekCompleteUnlocked: true,
+      skillCheckUnlocked: !recoveryLocked,
+      practicalsUnlocked: !recoveryLocked,
+      proofUnlocked: !recoveryLocked,
+      reflectionUnlocked: !recoveryLocked,
+      weekCompleteUnlocked: !recoveryLocked,
       resourcesDone: areRequiredResourcesStudied(week, resourcesStatus),
-      skillCheckDone: isSkillCheckComplete(weekNum, skillChecks),
+      skillCheckDone: canonicalSkillCheckDone,
       practicalsDone: areRequiredPracticalsComplete(week, practicalMissions),
       proofDone: isWeekProofSubmitted(weekNum, weekProofs),
       reflectionDone: isWeekReflectionWritten(weekNum, weekReflections),
+      hasSkillCheck,
+      quizMode,
+      recoveryLocked,
     };
   }
 
   const resourcesDone = areRequiredResourcesStudied(week, resourcesStatus);
-  const skillCheckDone = isSkillCheckComplete(weekNum, skillChecks);
+  const skillCheckDone = canonicalSkillCheckDone;
   const practicalsDone = areRequiredPracticalsComplete(week, practicalMissions);
   const proofDone = isWeekProofSubmitted(weekNum, weekProofs);
   const reflectionDone = isWeekReflectionWritten(weekNum, weekReflections);
@@ -242,16 +278,15 @@ export function getWeekStepStatus({
     Array.isArray(week.resources)      ? week.resources :
     [];
   const hasResources = resolvedResources.length > 0;
-  const hasSkillCheck = !!(week.skillCheck || week.checkpoint);
   const hasPracticals = Array.isArray(week.practicalMissions) && week.practicalMissions.length > 0;
 
   // Step unlock logic: each step requires previous step done
   const resourcesUnlocked = true; // always open
-  const skillCheckUnlocked = !hasResources || resourcesDone;
-  const practicalsUnlocked = (!hasSkillCheck || skillCheckDone) && (!hasResources || resourcesDone);
+  const skillCheckUnlocked = (!hasResources || resourcesDone) && !recoveryLocked;
+  const practicalsUnlocked = (!hasSkillCheck || skillCheckDone) && (!hasResources || resourcesDone) && !recoveryLocked;
   const proofUnlocked = practicalsUnlocked && (!hasPracticals || practicalsDone);
-  const reflectionUnlocked = proofDone || !hasPracticals;
-  const weekCompleteUnlocked = reflectionDone || (!hasPracticals && !hasResources);
+  const reflectionUnlocked = proofDone;
+  const weekCompleteUnlocked = reflectionDone;
 
   return {
     resourcesUnlocked,
@@ -265,6 +300,9 @@ export function getWeekStepStatus({
     practicalsDone,
     proofDone,
     reflectionDone,
+    hasSkillCheck,
+    quizMode,
+    recoveryLocked,
   };
 }
 
