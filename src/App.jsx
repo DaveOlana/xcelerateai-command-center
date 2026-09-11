@@ -31,6 +31,7 @@ import PasswordRecovery from './pages/auth/PasswordRecovery';
 import PasswordUpdate from './pages/auth/PasswordUpdate';
 import GuestEntry from './components/auth/GuestEntry';
 import LearnerAccessGate from './components/auth/LearnerAccessGate';
+import { SyncProvider } from './context/SyncContext.jsx';
 
 function CurriculumAware({ legacy: Legacy, v2: V2 }) {
   const { curriculumMode } = useApp();
@@ -68,6 +69,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppProvider>
+        <SyncProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<LearnerAccessGate fallback={<GuestEntry />}><DataGuard><ActiveDashboard /></DataGuard></LearnerAccessGate>} />
@@ -108,6 +110,7 @@ export default function App() {
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
+        </SyncProvider>
       </AppProvider>
     </BrowserRouter>
   );

@@ -10,6 +10,7 @@ import ErrorBoundary from '../common/ErrorBoundary';
 import CommandPalette from '../common/CommandPalette';
 import SessionSwitchConfirmation from '../features/SessionSwitchConfirmation';
 import { shouldRenderExclusiveOnboarding } from '../../utils/learningExperience.js';
+import SyncStatus from '../sync/SyncStatus.jsx';
 
 export default function Layout() {
   const { settings, onboardingCompleted } = useApp();
@@ -51,6 +52,7 @@ export default function Layout() {
       <MobileHeader />
 
       {/* Main Content */}
+      <SyncStatus />
       <main className={`min-h-screen transition-all duration-300 ${isCollapsed ? 'lg:ml-[76px]' : 'lg:ml-[256px]'}`}>
         {/* Top padding for mobile header */}
         <div className="pb-28 pt-[64px] lg:pb-0 lg:pt-0">

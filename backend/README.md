@@ -65,3 +65,14 @@ The owner manually accepted the guest/catalog experience, restoration of the exi
 
 - The root lint script references ESLint, but ESLint is not currently installed. Repairing that tooling mismatch is deferred and is not a Phase 1 blocker.
 - Four known frontend dependency advisories remain assigned to a dedicated upgrade task. Phase 1 does not force React Router 7, Vite 8, or `npm audit fix --force`.
+
+## Phase 2 V2 progress synchronization
+
+The authenticated progress surface is:
+
+- `GET /api/v1/v2/learning-instances/:curriculumId` to fetch the verified learner's cloud-safe V2 progress projection.
+- `PUT /api/v1/v2/learning-instances/:curriculumId` to conditionally create, synchronize, or reset that projection.
+
+Phase 2 adds `learning_instances` and `learning_instance_mutations`. Each instance is uniquely owned by a JWT subject and curriculum, uses an optimistic `version`, and has a separate `generation` barrier so stale pre-reset progress cannot merge automatically after a reset. Mutation UUIDs are retained for exact idempotent retries. Progress writes use a transaction and conditional version/generation checks. Direct `anon` and `authenticated` database-table access is revoked; browser application data continues to flow through Fastify.
+
+The progress PUT route alone accepts up to 1 MiB. The global API body limit remains 64 KiB. Only the published, cloud-enabled PYAE curriculum is accepted, currently at Revision 3 with learner-state schema version 1. `npm run verify:schema` verifies both Phase 1 and Phase 2 tables plus every applied migration checksum.

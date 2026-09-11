@@ -42,4 +42,16 @@ Phase 1 owns backend foundation, identity verification, health/readiness, and th
 
 The owner accepted the Phase 1 identity behavior after manually verifying guest catalog access, existing-state restoration, cloud profile persistence, offline verified-device learning, non-destructive logout and sign-in restoration, and password recovery. Branded authentication delivery is separately deferred until XcelerateAI has an owned domain, verified DNS, custom SMTP, a branded sender address, applied templates, and delivery testing.
 
-The historical Phase 9 direct-to-Supabase application-data proposal is superseded. Phase 2 may add V2 learner-state synchronization through the Fastify API without changing immutable curriculum truth.
+The historical Phase 9 direct-to-Supabase application-data proposal is superseded. V2 learner-state synchronization flows through the Fastify API without changing immutable curriculum truth.
+
+## Phase 2 progress synchronization
+
+Normal learning remains local-first: AppContext persists learner activity immediately, while a dedicated SyncContext observes and coalesces the published V2 curriculum state. `projectForCloud` removes local-only `questionSnapshot` curriculum content and filters Notes/Blockers to the current published V2 curriculum. `hydrateFromCloud` reconciles the projection through the current curriculum runtime and retains matching local historical snapshots when available. The backend validates and persists this projection; it does not own curriculum content or educational progression rules.
+
+Cloud state is keyed by authenticated user and curriculum. A deterministic, recursively key-sorted JSON representation feeds UTF-8 SHA-256 hashes in both browser and backend; the backend always recomputes authoritative state and request hashes. Writes carry an expected version, expected reset generation, and UUID mutation ID. PostgreSQL serializes mutations inside a transaction and records mutation acknowledgements for exact retries.
+
+The browser stores coordination metadata separately under `xca_v2_sync_metadata_v1`, nested by account ID and curriculum ID. A record contains the last cloud base state/hash/version/generation, dirty state, at most one exact persisted in-flight mutation, an optional pending reset with its recovery branch, and any preserved conflict branches. This key is excluded from learner backup/export/import. A separate short-lived `xca_v2_sync_lease_v1:<userId>:<curriculumId>` key and BroadcastChannel/storage events reduce routine duplicate writes across tabs; server concurrency remains authoritative.
+
+Only proven-safe same-generation changes merge automatically. Monotonic week/stage/resource achievements are protected; stable-ID Skill Check attempts union only when identical; Builds use per-ID three-way semantics; learner-authored Proof, Reflection, Note, and Blocker conflicts remain preserved for focused resolution. Note/Blocker deletions use tombstones. A generation mismatch pauses writes and preserves base/local/remote branches instead of resurrecting pre-reset history.
+
+Phase 2 remains deliberately narrow: it does not add curriculum authoring, AI execution, evidence-file storage, portfolio publishing, analytics, or learner-code execution.

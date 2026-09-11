@@ -18,6 +18,25 @@ test('API client attaches the current bearer token and sends only display_name',
   assert.deepEqual(JSON.parse(captured.options.body), { display_name: 'Olana' });
 });
 
+test('progress client encodes curriculum identity and retains conflict payloads', async () => {
+  const calls = [];
+  const client = createApiClient({
+    baseUrl: 'http://localhost:3001',
+    getAccessToken: async () => 'token',
+    fetchImpl: async (url, options) => {
+      calls.push({ url, options });
+      if (options?.method === 'PUT') return new Response(JSON.stringify({ error: { code: 'SYNC_VERSION_CONFLICT', message: 'Conflict' }, instance: { version: 2 } }), { status: 409 });
+      return new Response(JSON.stringify({ instance: { version: 1 } }), { status: 200 });
+    },
+  });
+  assert.equal((await client.getLearningInstance('PYAE')).instance.version, 1);
+  await assert.rejects(
+    () => client.putLearningInstance('PYAE', { expectedVersion: 1 }),
+    (error) => error instanceof ApiClientError && error.status === 409 && error.payload.instance.version === 2,
+  );
+  assert.equal(calls[1].options.headers.Authorization, 'Bearer token');
+});
+
 test('anonymous API calls omit Authorization', async () => {
   let headers;
   const client = createApiClient({

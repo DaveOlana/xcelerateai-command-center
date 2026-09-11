@@ -3,6 +3,7 @@ import { afterEach, describe, expect, test } from 'vitest';
 import { buildApp } from '../src/app.js';
 import type { BackendEnvironment } from '../src/config/env.js';
 import type { Database } from '../src/db/database.js';
+import type { TransactionDatabase } from '../src/db/database.js';
 
 const config: BackendEnvironment = {
   NODE_ENV: 'test',
@@ -51,6 +52,10 @@ class FakeDatabase implements Database {
     }
     if (text.includes('FROM public.profiles')) return result(this.profile ? [this.profile] : []) as QueryResult<Row>;
     return result([]) as QueryResult<Row>;
+  }
+
+  async transaction<T>(work: (database: TransactionDatabase) => Promise<T>): Promise<T> {
+    return work(this);
   }
 
   async close(): Promise<void> {
@@ -180,6 +185,18 @@ describe('verified profile API', () => {
     expect(response.statusCode).toBe(500);
     expect(response.body).not.toContain('private database detail');
     expect(response.json().error.code).toBe('INTERNAL_ERROR');
+  });
+
+  test('the global body limit keeps a generic error outside progress sync', async () => {
+    const { app } = await setup();
+    const response = await app.inject({
+      method: 'PATCH',
+      url: '/api/v1/profile/me',
+      headers: auth(),
+      payload: { display_name: 'x'.repeat(70 * 1024) },
+    });
+    expect(response.statusCode).toBe(413);
+    expect(response.json().error.code).toBe('PAYLOAD_TOO_LARGE');
   });
 });
 

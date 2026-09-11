@@ -36,6 +36,8 @@ import {
   createV2BackupSlice,
   restoreV2BackupSlice,
 } from '../curriculum-v2/state/backupReconciliation.js';
+import { V2_ARTIFACT_TOMBSTONES_KEY } from '../sync/cloudState.js';
+import { V2_SYNC_METADATA_KEY } from '../sync/syncStorage.js';
 
 // =============================================
 // STORAGE KEYS
@@ -57,6 +59,7 @@ export const STORAGE_KEYS = {
   RESOURCE_ACTIVITY: 'xca_resource_activity_v1',
   V2_LEARNER_STATE: 'xca_v2_learner_state_v1',
   V2_ACTIVE_CURRICULUM: 'xca_v2_active_curriculum_id',
+  V2_ARTIFACT_TOMBSTONES: V2_ARTIFACT_TOMBSTONES_KEY,
 };
 
 // =============================================
@@ -306,6 +309,9 @@ export function AppProvider({ children }) {
   const [blockers, setBlockers] = useState(() =>
     loadFromStorage(STORAGE_KEYS.BLOCKERS, [])
   );
+  const [v2ArtifactTombstones, setV2ArtifactTombstones] = useState(() =>
+    loadFromStorage(STORAGE_KEYS.V2_ARTIFACT_TOMBSTONES, [])
+  );
   const [weekProofs, setWeekProofs] = useState(() =>
     loadFromStorage(STORAGE_KEYS.WEEK_PROOFS, {})
   );
@@ -337,6 +343,30 @@ export function AppProvider({ children }) {
   useEffect(() => { saveToStorage('xca_week_reflections', weekReflections); }, [weekReflections]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.V2_LEARNER_STATE, v2LearnerState); }, [v2LearnerState]);
   useEffect(() => { saveToStorage(STORAGE_KEYS.V2_ACTIVE_CURRICULUM, activeV2CurriculumId); }, [activeV2CurriculumId]);
+  useEffect(() => { saveToStorage(STORAGE_KEYS.V2_ARTIFACT_TOMBSTONES, v2ArtifactTombstones); }, [v2ArtifactTombstones]);
+
+  useEffect(() => {
+    const receiveSharedState = (event) => {
+      try {
+        const parsed = event.newValue ? JSON.parse(event.newValue) : null;
+        const retainIfEqual = (current, next) => JSON.stringify(current) === JSON.stringify(next) ? current : next;
+        if (event.key === STORAGE_KEYS.V2_LEARNER_STATE) {
+          const next = parsed ? normalizeV2StateStore(parsed) : EMPTY_V2_STATE_STORE;
+          setV2LearnerState((current) => retainIfEqual(current, next));
+        } else if (event.key === STORAGE_KEYS.NOTES && (parsed === null || Array.isArray(parsed))) {
+          setNotesState((current) => retainIfEqual(current, parsed || []));
+        } else if (event.key === STORAGE_KEYS.BLOCKERS && (parsed === null || Array.isArray(parsed))) {
+          setBlockers((current) => retainIfEqual(current, parsed || []));
+        } else if (event.key === STORAGE_KEYS.V2_ARTIFACT_TOMBSTONES && (parsed === null || Array.isArray(parsed))) {
+          setV2ArtifactTombstones((current) => retainIfEqual(current, parsed || []));
+        }
+      } catch {
+        // Malformed state from another tab is ignored; the current valid local state is retained.
+      }
+    };
+    window.addEventListener('storage', receiveSharedState);
+    return () => window.removeEventListener('storage', receiveSharedState);
+  }, []);
 
   useEffect(() => {
     const preference = ['system', 'light', 'dark'].includes(settings?.appearanceMode)
@@ -613,23 +643,38 @@ export function AppProvider({ children }) {
   // NOTES ACTIONS
   // =============================================
   const addNote = useCallback((noteData) => {
+    const curriculumId = noteData.roadmapId || activeV2Curriculum?.curriculumId || null;
+    const v2Linked = Boolean(curriculumId && curriculumCatalog.has(curriculumId));
+    const timestamp = new Date().toISOString();
     const newNote = {
-      id: Date.now().toString(),
-      createdAt: new Date().toISOString(),
+      id: v2Linked && globalThis.crypto?.randomUUID ? globalThis.crypto.randomUUID() : Date.now().toString(),
+      createdAt: timestamp,
+      ...(v2Linked ? { roadmapId: curriculumId, updatedAt: timestamp } : {}),
       ...noteData,
     };
     setNotesState((prev) => [newNote, ...prev]);
     markStudyToday();
     return newNote.id;
-  }, [markStudyToday]);
+  }, [activeV2Curriculum, markStudyToday]);
 
   const deleteNote = useCallback((noteId) => {
+    const record = notes.find((note) => note.id === noteId);
+    if (record?.roadmapId && curriculumCatalog.has(record.roadmapId)) {
+      setV2ArtifactTombstones((current) => [
+        ...current.filter((item) => !(item.recordType === 'note' && item.id === noteId)),
+        { id: noteId, recordType: 'note', curriculumId: record.roadmapId, deletedAt: new Date().toISOString() },
+      ]);
+    }
     setNotesState((prev) => prev.filter((n) => n.id !== noteId));
-  }, []);
+  }, [notes]);
 
   const updateNote = useCallback((noteId, updates) => {
     setNotesState((prev) =>
-      prev.map((n) => (n.id === noteId ? { ...n, ...updates } : n))
+      prev.map((n) => (n.id === noteId ? {
+        ...n,
+        ...updates,
+        ...(n.roadmapId && curriculumCatalog.has(n.roadmapId) ? { updatedAt: new Date().toISOString() } : {}),
+      } : n))
     );
   }, []);
 
@@ -1056,24 +1101,34 @@ export function AppProvider({ children }) {
   // BLOCKERS ACTIONS
   // =============================================
   const addBlocker = useCallback((blockerData) => {
+    const curriculumId = blockerData.roadmapId || activeV2Curriculum?.curriculumId || null;
+    const v2Linked = Boolean(curriculumId && curriculumCatalog.has(curriculumId));
+    const timestamp = new Date().toISOString();
     const newBlocker = {
-      id: Date.now().toString(),
-      dateCreated: new Date().toISOString(),
+      id: v2Linked && globalThis.crypto?.randomUUID ? globalThis.crypto.randomUUID() : Date.now().toString(),
+      dateCreated: timestamp,
       status: 'Open',
       solutionNotes: '',
       dateSolved: null,
+      ...(v2Linked ? { roadmapId: curriculumId, updatedAt: timestamp } : {}),
       ...blockerData,
     };
     setBlockers((prev) => [newBlocker, ...prev]);
     markStudyToday();
     return newBlocker;
-  }, [markStudyToday]);
+  }, [activeV2Curriculum, markStudyToday]);
 
   const solveBlocker = useCallback((blockerId, solutionNotes) => {
     setBlockers((prev) =>
       prev.map((b) =>
         b.id === blockerId
-          ? { ...b, status: 'Solved', solutionNotes, dateSolved: new Date().toISOString() }
+          ? {
+              ...b,
+              status: 'Solved',
+              solutionNotes,
+              dateSolved: new Date().toISOString(),
+              ...(b.roadmapId && curriculumCatalog.has(b.roadmapId) ? { updatedAt: new Date().toISOString() } : {}),
+            }
           : b
       )
     );
@@ -1081,13 +1136,24 @@ export function AppProvider({ children }) {
 
   const updateBlocker = useCallback((blockerId, updates) => {
     setBlockers((prev) =>
-      prev.map((b) => (b.id === blockerId ? { ...b, ...updates } : b))
+      prev.map((b) => (b.id === blockerId ? {
+        ...b,
+        ...updates,
+        ...(b.roadmapId && curriculumCatalog.has(b.roadmapId) ? { updatedAt: new Date().toISOString() } : {}),
+      } : b))
     );
   }, []);
 
   const deleteBlocker = useCallback((blockerId) => {
+    const record = blockers.find((blocker) => blocker.id === blockerId);
+    if (record?.roadmapId && curriculumCatalog.has(record.roadmapId)) {
+      setV2ArtifactTombstones((current) => [
+        ...current.filter((item) => !(item.recordType === 'blocker' && item.id === blockerId)),
+        { id: blockerId, recordType: 'blocker', curriculumId: record.roadmapId, deletedAt: new Date().toISOString() },
+      ]);
+    }
     setBlockers((prev) => prev.filter((b) => b.id !== blockerId));
-  }, []);
+  }, [blockers]);
 
   // =============================================
   // WEEK PROOF & REFLECTION ACTIONS
@@ -1177,6 +1243,7 @@ export function AppProvider({ children }) {
       weekReflections,
       timerHistory,
       ...createV2BackupSlice(v2LearnerState, activeV2CurriculumId),
+      v2ArtifactTombstones,
     };
     setSettingsState(prev => ({ ...prev, lastBackupDate: new Date().toISOString() }));
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -1186,7 +1253,7 @@ export function AppProvider({ children }) {
     a.download = `xca-progress-v2-${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [roadmap, progress, notes, checkpointStatuses, settings, streak, resourcesStatus, skillChecks, skillCheckAttempts, resourceActivity, practicalMissions, blockers, weekProofs, weekReflections, timerHistory, v2LearnerState, activeV2CurriculumId]);
+  }, [roadmap, progress, notes, checkpointStatuses, settings, streak, resourcesStatus, skillChecks, skillCheckAttempts, resourceActivity, practicalMissions, blockers, weekProofs, weekReflections, timerHistory, v2LearnerState, activeV2CurriculumId, v2ArtifactTombstones]);
 
   const importProgress = useCallback((data) => {
     if (data.roadmap) setRoadmap(data.roadmap);
@@ -1211,6 +1278,7 @@ export function AppProvider({ children }) {
       if (restored.activeCurriculumId) {
         setSettingsState((current) => ({ ...current, usingCustomRoadmap: false }));
       }
+      setV2ArtifactTombstones(Array.isArray(data.v2ArtifactTombstones) ? data.v2ArtifactTombstones : []);
     }
   }, []);
 
@@ -1235,6 +1303,7 @@ export function AppProvider({ children }) {
     setWeekProofs({});
     setWeekReflections({});
     setV2LearnerState(EMPTY_V2_STATE_STORE);
+    setV2ArtifactTombstones([]);
     setActiveV2CurriculumIdState(null);
     setUserProfileState({
       name: '',
@@ -1252,6 +1321,8 @@ export function AppProvider({ children }) {
     localStorage.removeItem('xca_pre_migration_backup');
     localStorage.removeItem(STORAGE_KEYS.V2_LEARNER_STATE);
     localStorage.removeItem(STORAGE_KEYS.V2_ACTIVE_CURRICULUM);
+    localStorage.removeItem(STORAGE_KEYS.V2_ARTIFACT_TOMBSTONES);
+    localStorage.removeItem(V2_SYNC_METADATA_KEY);
   }, []);
 
   // =============================================
@@ -1278,6 +1349,19 @@ export function AppProvider({ children }) {
     const runtime = curriculumCatalog.getLatest(activeV2CurriculumId);
     if (runtime) setV2LearnerState((current) => reconcileCurriculumState(current, runtime));
   }, [activeV2CurriculumId]);
+
+  const applyV2CloudHydration = useCallback(({ curriculumId, curriculumState, notes: nextNotes, blockers: nextBlockers, tombstones }) => {
+    setV2LearnerState((current) => {
+      const normalized = normalizeV2StateStore(current);
+      return { ...normalized, curricula: { ...normalized.curricula, [curriculumId]: curriculumState } };
+    });
+    setNotesState(nextNotes);
+    setBlockers(nextBlockers);
+    setV2ArtifactTombstones((current) => [
+      ...current.filter((item) => item.curriculumId !== curriculumId),
+      ...tombstones,
+    ]);
+  }, []);
 
   const setActiveV2Week = useCallback((weekId) => {
     if (!activeV2Curriculum) return;
@@ -1306,8 +1390,9 @@ export function AppProvider({ children }) {
     if (!activeV2Curriculum) return null;
     const createdAt = new Date().toISOString();
     const note = {
-      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      id: globalThis.crypto?.randomUUID ? globalThis.crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
       createdAt,
+      updatedAt: createdAt,
       noteType: 'study_insight',
       insightScope: 'study',
       content,
@@ -1375,6 +1460,7 @@ export function AppProvider({ children }) {
     practicalMissions,
     sessionTimer,
     blockers,
+    v2ArtifactTombstones,
     weekProofs,
     weekReflections,
     timerHistory,
@@ -1390,6 +1476,7 @@ export function AppProvider({ children }) {
     selectV2Curriculum,
     leaveV2Curriculum,
     resetActiveV2Curriculum,
+    applyV2CloudHydration,
     setActiveV2Week,
     openV2Resource,
     completeV2Resource,

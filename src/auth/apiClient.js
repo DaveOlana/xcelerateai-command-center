@@ -1,9 +1,10 @@
 export class ApiClientError extends Error {
-  constructor(code, message, status) {
+  constructor(code, message, status, payload = null) {
     super(message);
     this.name = 'ApiClientError';
     this.code = code;
     this.status = status;
+    this.payload = payload;
   }
 }
 
@@ -29,6 +30,7 @@ export function createApiClient({ baseUrl, getAccessToken, fetchImpl = fetch }) 
         payload?.error?.code || 'API_ERROR',
         payload?.error?.message || 'The cloud request could not be completed.',
         response.status,
+        payload,
       );
     }
     return payload;
@@ -39,6 +41,11 @@ export function createApiClient({ baseUrl, getAccessToken, fetchImpl = fetch }) 
     updateProfile: (displayName) => request('/api/v1/profile/me', {
       method: 'PATCH',
       body: JSON.stringify({ display_name: displayName }),
+    }),
+    getLearningInstance: (curriculumId) => request(`/api/v1/v2/learning-instances/${encodeURIComponent(curriculumId)}`),
+    putLearningInstance: (curriculumId, mutation) => request(`/api/v1/v2/learning-instances/${encodeURIComponent(curriculumId)}`, {
+      method: 'PUT',
+      body: JSON.stringify(mutation),
     }),
   };
 }

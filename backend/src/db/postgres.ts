@@ -15,6 +15,22 @@ export function createPostgresDatabase(config: BackendEnvironment): Database {
 
   return {
     query: (text, values) => pool.query(text, values as unknown[] | undefined),
+    transaction: async (work) => {
+      const client = await pool.connect();
+      try {
+        await client.query('BEGIN');
+        const result = await work({
+          query: (text, values) => client.query(text, values as unknown[] | undefined),
+        });
+        await client.query('COMMIT');
+        return result;
+      } catch (error) {
+        await client.query('ROLLBACK');
+        throw error;
+      } finally {
+        client.release();
+      }
+    },
     close: () => pool.end(),
   };
 }

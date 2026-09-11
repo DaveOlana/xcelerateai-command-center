@@ -20,6 +20,7 @@ import ConfirmAction from '../components/ui/ConfirmAction';
 import StatusBanner from '../components/ui/StatusBanner';
 import AccountSettings from '../components/auth/AccountSettings';
 import { useAuth } from '../context/AuthContext.jsx';
+import { useSync } from '../context/SyncContext.jsx';
 
 const EMPTY_PROGRESS = {
   completedTasks: {},
@@ -81,6 +82,7 @@ function AppearanceSettings({ settings, updateSettings }) {
 export default function Settings() {
   const navigate = useNavigate();
   const auth = useAuth();
+  const sync = useSync();
   const {
     settings,
     updateSettings,
@@ -167,7 +169,7 @@ export default function Settings() {
     setFeedback({ type: 'success', text: 'Backup restored.' });
   };
 
-  const executeReset = () => {
+  const executeReset = async () => {
     setBusy(true);
     if (pendingReset === 'progress') {
       importProgress({
@@ -186,7 +188,7 @@ export default function Settings() {
       });
       setFeedback({ type: 'success', text: 'Learning progress and learning records reset.' });
     } else if (pendingReset === 'course-progress') {
-      if (curriculumMode === 'v2') resetActiveV2Curriculum();
+      if (curriculumMode === 'v2') await sync.requestCurriculumReset();
       else if (curriculumMode === 'legacy') resetProgressForActiveRoadmap();
       setFeedback(curriculumMode === 'catalog'
         ? { type: 'error', text: 'Choose a curriculum before resetting course progress.' }

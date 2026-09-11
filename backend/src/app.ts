@@ -13,6 +13,8 @@ import {
 import { registerHealthRoutes } from './modules/health/routes.js';
 import { ProfileRepository } from './modules/profile/repository.js';
 import { registerProfileRoutes } from './modules/profile/routes.js';
+import { LearningInstanceRepository } from './modules/progress/repository.js';
+import { registerProgressRoutes } from './modules/progress/routes.js';
 import { HttpError, IdentityProviderUnavailableError } from './types/errors.js';
 
 export interface AppDependencies {
@@ -37,7 +39,7 @@ export async function buildApp(dependencies: AppDependencies): Promise<FastifyIn
   await app.register(cors, {
     origin: dependencies.config.CORS_ORIGINS,
     credentials: true,
-    methods: ['GET', 'PATCH', 'OPTIONS'],
+    methods: ['GET', 'PATCH', 'PUT', 'OPTIONS'],
   });
 
   const verifyAccessToken = dependencies.verifyAccessToken
@@ -48,8 +50,15 @@ export async function buildApp(dependencies: AppDependencies): Promise<FastifyIn
 
   await registerHealthRoutes(app, dependencies.database);
   await registerProfileRoutes(app, new ProfileRepository(dependencies.database), requireVerifiedIdentity);
+  await registerProgressRoutes(app, new LearningInstanceRepository(dependencies.database), requireVerifiedIdentity);
 
-  app.setErrorHandler((error, _request, reply) => {
+  app.setErrorHandler((error, request, reply) => {
+    if (error && typeof error === 'object' && 'statusCode' in error && error.statusCode === 413) {
+      const progressSync = request.method === 'PUT' && request.url.startsWith('/api/v1/v2/learning-instances/');
+      return reply.status(413).send({ error: progressSync
+        ? { code: 'STATE_TOO_LARGE', message: 'The cloud progress payload exceeds the allowed size.' }
+        : { code: 'PAYLOAD_TOO_LARGE', message: 'The request payload exceeds the allowed size.' } });
+    }
     if (error instanceof HttpError) {
       return reply.status(error.statusCode).send({ error: { code: error.code, message: error.message } });
     }

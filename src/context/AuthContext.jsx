@@ -149,6 +149,10 @@ export function AuthProvider({ children }) {
     ownershipConflict: learnerEntitlement.ownershipConflict,
     learnerEntitlement,
     networkUnavailable,
+    progressApi: api ? {
+      getLearningInstance: api.getLearningInstance,
+      putLearningInstance: api.putLearningInstance,
+    } : null,
     profile,
     error,
     clearError: () => setError(null),
