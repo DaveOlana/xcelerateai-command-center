@@ -20,3 +20,11 @@ test-render.js
 
 # Backup of nested repo's git history (recovery only, not source)
 .git-backup/
+
+# Backend private configuration and generated output
+/backend/.env
+/backend/.env.*
+!/backend/.env.example
+/backend/node_modules/
+/backend/dist/
+/backend/coverage/

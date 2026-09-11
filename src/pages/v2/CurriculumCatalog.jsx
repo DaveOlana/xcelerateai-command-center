@@ -3,12 +3,20 @@ import { ArrowRight, BookOpen, Clock3, Layers3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { PageShell } from '../../components/common/UIComponents';
 import { useApp } from '../../context/AppContext';
+import { useAuth } from '../../context/AuthContext.jsx';
+import { getCurriculumAction } from '../../auth/accessPolicy.js';
 import { getCurriculumLaunchLabel } from '../../curriculum-v2/state/curriculumSelection.js';
 
 export default function CurriculumCatalog() {
   const { publishedV2Curricula, v2LearnerState, selectV2Curriculum, activeV2CurriculumId } = useApp();
+  const auth = useAuth();
   const navigate = useNavigate();
   const launch = (curriculumId) => {
+    const action = getCurriculumAction(auth.learnerEntitlement);
+    if (!action.allowed) {
+      navigate(action.destination);
+      return;
+    }
     if (selectV2Curriculum(curriculumId)) navigate('/');
   };
   return (
@@ -20,8 +28,9 @@ export default function CurriculumCatalog() {
       </header>
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {publishedV2Curricula.map((curriculum) => {
-          const label = getCurriculumLaunchLabel(v2LearnerState, curriculum.curriculumId);
-          const current = activeV2CurriculumId === curriculum.curriculumId;
+          const action = getCurriculumAction(auth.learnerEntitlement);
+          const label = action.allowed ? getCurriculumLaunchLabel(v2LearnerState, curriculum.curriculumId) : action.label;
+          const current = action.allowed && activeV2CurriculumId === curriculum.curriculumId;
           return (
             <article key={curriculum.curriculumId} className="surface-card overflow-hidden p-6 sm:p-7">
               <div className="flex items-start justify-between gap-4">

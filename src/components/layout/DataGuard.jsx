@@ -3,7 +3,7 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { Database, Loader2 } from 'lucide-react';
 
-export default function DataGuard() {
+export default function DataGuard({ children }) {
   const { isBooting, isDataReady, hasImport, curriculumMode } = useApp();
   const location = useLocation();
 
@@ -54,5 +54,5 @@ export default function DataGuard() {
   }
 
   // Once everything is booted, imported, and ready:
-  return <Outlet />;
+  return children || <Outlet />;
 }
