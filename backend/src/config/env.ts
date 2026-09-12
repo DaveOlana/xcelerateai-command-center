@@ -7,6 +7,8 @@ const environmentNames = [
   'DATABASE_URL',
   'SUPABASE_URL',
   'SUPABASE_PUBLISHABLE_KEY',
+  'SUPABASE_SECRET_KEY',
+  'EVIDENCE_BUCKET',
   'CORS_ORIGINS',
 ] as const;
 
@@ -18,6 +20,8 @@ const backendEnvironmentSchema = z
     DATABASE_URL: z.string().trim().url(),
     SUPABASE_URL: z.string().trim().url().refine((value) => value.startsWith('https://'), 'must use HTTPS'),
     SUPABASE_PUBLISHABLE_KEY: z.string().trim().min(1),
+    SUPABASE_SECRET_KEY: z.string().trim().regex(/^sb_secret_[A-Za-z0-9_-]+$/, 'must be a Supabase secret key').optional(),
+    EVIDENCE_BUCKET: z.string().trim().min(1).max(100).regex(/^[a-z0-9][a-z0-9._-]*$/).optional(),
     CORS_ORIGINS: z
       .string()
       .trim()

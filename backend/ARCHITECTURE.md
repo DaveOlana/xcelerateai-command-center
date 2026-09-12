@@ -55,3 +55,15 @@ The browser stores coordination metadata separately under `xca_v2_sync_metadata_
 Only proven-safe same-generation changes merge automatically. Monotonic week/stage/resource achievements are protected; stable-ID Skill Check attempts union only when identical; Builds use per-ID three-way semantics; learner-authored Proof, Reflection, Note, and Blocker conflicts remain preserved for focused resolution. Note/Blocker deletions use tombstones. A generation mismatch pauses writes and preserves base/local/remote branches instead of resurrecting pre-reset history.
 
 Phase 2 remains deliberately narrow: it does not add curriculum authoring, AI execution, evidence-file storage, portfolio publishing, analytics, or learner-code execution.
+
+## Phase 3 evidence submission
+
+Phase 3 adds a separate evidence authority without embedding submission identities or binary data into Phase 2 learner snapshots. Existing Proof values remain editable, local-first drafts. For incomplete PYAE Revision 3 weeks, Proof submission satisfaction now requires a current server-acknowledged `submitted` record; it does not require or imply verification. Previously completed weeks remain durable across this change.
+
+`evidence_submissions` provides immutable revisions and authoritative timestamps. Resubmission atomically supersedes the current revision, while withdrawal changes lifecycle status without deleting history. `evidence_items` holds strict structured payloads for text, URL, repository, file reference, and explicit self-attestation. `evidence_assets` tracks private object metadata, upload readiness, byte count, detected MIME, and SHA-256. Direct `anon` and `authenticated` table privileges are revoked, and all ownership derives from the verified JWT subject.
+
+Private binary upload uses a purpose-specific Fastify intent, a short-lived Supabase signed upload authorization, and backend finalization that downloads and inspects the stored bytes before marking the asset ready. The server-only `SUPABASE_SECRET_KEY` is never returned to the browser. Objects use opaque user-ID paths, are not publicly enumerable, and are accessed later only through short-lived signed downloads. Stored ZIPs are never extracted or executed; MIME inspection is not represented as malware scanning.
+
+The browser keeps evidence receipts, staged asset metadata, and retryable submission operations in an account-namespaced evidence store separate from AppContext and SyncContext. No File/Blob bytes enter localStorage. Offline text/link/repository/attestation submissions queue for retry but do not satisfy Proof until the server acknowledges them. Account switches load a different namespace. Normal backup/export/import deliberately excludes evidence cache, outbox, submission IDs, and binary files. Course reset withdraws current submissions and preserves immutable history.
+
+Phase 3 does not add verification results, grading, AI review, code execution, public portfolios, or competency confirmation. A future verifier can reference an immutable `evidence_submission_id` without mutating the evidence record.

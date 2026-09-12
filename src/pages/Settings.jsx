@@ -21,6 +21,7 @@ import StatusBanner from '../components/ui/StatusBanner';
 import AccountSettings from '../components/auth/AccountSettings';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useSync } from '../context/SyncContext.jsx';
+import { useEvidence } from '../context/EvidenceContext.jsx';
 
 const EMPTY_PROGRESS = {
   completedTasks: {},
@@ -83,6 +84,7 @@ export default function Settings() {
   const navigate = useNavigate();
   const auth = useAuth();
   const sync = useSync();
+  const evidence = useEvidence();
   const {
     settings,
     updateSettings,
@@ -172,6 +174,7 @@ export default function Settings() {
   const executeReset = async () => {
     setBusy(true);
     if (pendingReset === 'progress') {
+      if (activeV2Curriculum) await evidence.resetCurriculumEvidence(activeV2Curriculum);
       importProgress({
         roadmap,
         settings: { ...settings, startDate: new Date().toISOString().split('T')[0], activeWeek: 1, activeMonth: 1, manualOverrideEnabled: false, overrideReason: '' },
@@ -188,7 +191,10 @@ export default function Settings() {
       });
       setFeedback({ type: 'success', text: 'Learning progress and learning records reset.' });
     } else if (pendingReset === 'course-progress') {
-      if (curriculumMode === 'v2') await sync.requestCurriculumReset();
+      if (curriculumMode === 'v2') {
+        await evidence.resetCurriculumEvidence(activeV2Curriculum);
+        await sync.requestCurriculumReset();
+      }
       else if (curriculumMode === 'legacy') resetProgressForActiveRoadmap();
       setFeedback(curriculumMode === 'catalog'
         ? { type: 'error', text: 'Choose a curriculum before resetting course progress.' }
@@ -199,6 +205,7 @@ export default function Settings() {
       setFeedback({ type: 'success', text: 'Choose a published curriculum from the catalog.' });
       navigate('/curricula');
     } else if (pendingReset === 'factory') {
+      if (activeV2Curriculum) await evidence.resetCurriculumEvidence(activeV2Curriculum);
       resetAllProgress();
       setFeedback({ type: 'success', text: 'Local XcelerateAI data reset.' });
     }
@@ -207,8 +214,8 @@ export default function Settings() {
   };
 
   const resetCopy = {
-    progress: { title: 'Reset all learning records?', description: 'Removes task progress, skill checks, notes, problems, proof, reflections, and streaks. The current course and basic settings are preserved.' },
-    'course-progress': { title: 'Reset current course progress?', description: 'Removes progress, skill checks, resources, practical missions, proof, and reflections for the current course. Notes, problems, and profile settings remain.' },
+    progress: { title: 'Reset all learning records?', description: 'Removes task progress, skill checks, notes, problems, Proof drafts, reflections, and streaks. Current evidence submissions are withdrawn while immutable history remains.' },
+    'course-progress': { title: 'Reset current course progress?', description: 'Removes progress, skill checks, resources, practical missions, Proof drafts, and reflections for the current course. Current evidence submissions are withdrawn; prior submission history remains.' },
     course: { title: 'Choose another curriculum?', description: 'Returns to the curriculum catalog without deleting saved curriculum progress.' },
     factory: { title: 'Reset all local data?', description: 'Removes locally stored settings, progress, courses, notes, problems, timer history, and onboarding completion from this browser.' },
   };

@@ -153,6 +153,23 @@ export function AuthProvider({ children }) {
       getLearningInstance: api.getLearningInstance,
       putLearningInstance: api.putLearningInstance,
     } : null,
+    evidenceApi: api ? {
+      listSubmissions: api.listEvidenceSubmissions,
+      getSubmission: api.getEvidenceSubmission,
+      createUploadIntent: api.createEvidenceUploadIntent,
+      finalizeAsset: api.finalizeEvidenceAsset,
+      accessAsset: api.accessEvidenceAsset,
+      abandonAsset: api.abandonEvidenceAsset,
+      createSubmission: api.createEvidenceSubmission,
+      withdrawSubmission: api.withdrawEvidenceSubmission,
+      uploadSignedAsset: async ({ bucket, path, token, file, contentType }) => {
+        const { error: uploadError } = await client.storage.from(bucket).uploadToSignedUrl(path, token, file, {
+          contentType,
+          upsert: false,
+        });
+        if (uploadError) throw uploadError;
+      },
+    } : null,
     profile,
     error,
     clearError: () => setError(null),

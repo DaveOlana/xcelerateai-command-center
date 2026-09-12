@@ -136,7 +136,9 @@ export function setV2ProofEvidence(storeValue, runtime, weekId, proofId, evidenc
     const next = clone(state);
     next.proofs[proofId] = next.proofs[proofId] || { evidence: {} };
     next.proofs[proofId].evidence[evidenceId] = { value, updatedAt: nowIso(timestamp) };
-    return latchStageIfSatisfied(runtime, next, weekId, 'proof', nowIso(timestamp));
+    return runtime.curriculumId === 'PYAE' && runtime.revision >= 3
+      ? next
+      : latchStageIfSatisfied(runtime, next, weekId, 'proof', nowIso(timestamp));
   });
 }
 
@@ -149,9 +151,9 @@ export function setV2ReflectionResponse(storeValue, runtime, weekId, promptId, r
   });
 }
 
-export function completeV2Week(storeValue, runtime, weekId, completedAt) {
+export function completeV2Week(storeValue, runtime, weekId, completedAt, evidenceState = null) {
   return updateCurriculum(storeValue, runtime, (state) => {
-    const status = getV2WeekProgress(runtime, state, weekId);
+    const status = getV2WeekProgress(runtime, state, weekId, evidenceState);
     if (!status?.complete.unlocked) return state;
     const next = clone(state);
     if (!next.completedWeekIds.includes(weekId)) next.completedWeekIds.push(weekId);

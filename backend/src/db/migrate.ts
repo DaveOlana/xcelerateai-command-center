@@ -1,9 +1,9 @@
-import { createHash } from 'node:crypto';
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pg from 'pg';
 import { parseBackendEnvironment } from '../config/env.js';
+import { checksumForNewMigration, matchMigrationChecksum } from './migrationIntegrity.js';
 
 const { Pool } = pg;
 const migrationsDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../migrations');
@@ -27,15 +27,21 @@ try {
       .sort();
 
     for (const name of files) {
-      const sql = await readFile(path.join(migrationsDirectory, name), 'utf8');
-      const checksum = createHash('sha256').update(sql).digest('hex');
+      const migrationBytes = await readFile(path.join(migrationsDirectory, name));
+      const sql = migrationBytes.toString('utf8');
+      const checksum = checksumForNewMigration(migrationBytes);
       const existing = await client.query<{ checksum: string }>(
         'SELECT checksum FROM public.schema_migrations WHERE name = $1',
         [name],
       );
 
       if (existing.rowCount) {
-        if (existing.rows[0]?.checksum !== checksum) throw new Error(`Applied migration changed: ${name}`);
+        const match = matchMigrationChecksum(name, migrationBytes, existing.rows[0]?.checksum ?? '');
+        if (match === 'mismatch') throw new Error(`Applied migration changed: ${name}`);
+        if (match === 'historical_terminal_newline') {
+          console.log(`already applied (historical terminal-newline representation): ${name}`);
+          continue;
+        }
         console.log(`already applied: ${name}`);
         continue;
       }

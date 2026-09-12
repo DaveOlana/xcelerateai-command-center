@@ -38,4 +38,9 @@ describe('backend environment', () => {
     expect(() => parseBackendEnvironment({ ...completeEnvironment, CORS_ORIGINS: '*' })).toThrowError(/CORS_ORIGINS/);
     expect(() => parseBackendEnvironment({ ...completeEnvironment, CORS_ORIGINS: 'not-an-origin' })).toThrowError(/CORS_ORIGINS/);
   });
+
+  test('accepts only the current server-only Supabase secret-key format for evidence storage', () => {
+    expect(parseBackendEnvironment({ ...completeEnvironment, SUPABASE_SECRET_KEY: 'sb_secret_test-value', EVIDENCE_BUCKET: 'learner-evidence' }).EVIDENCE_BUCKET).toBe('learner-evidence');
+    expect(() => parseBackendEnvironment({ ...completeEnvironment, SUPABASE_SECRET_KEY: 'public-or-legacy-key' })).toThrowError(/SUPABASE_SECRET_KEY/);
+  });
 });

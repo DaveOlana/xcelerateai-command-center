@@ -15,6 +15,10 @@ import { ProfileRepository } from './modules/profile/repository.js';
 import { registerProfileRoutes } from './modules/profile/routes.js';
 import { LearningInstanceRepository } from './modules/progress/repository.js';
 import { registerProgressRoutes } from './modules/progress/routes.js';
+import { PostgresEvidenceRepository, type EvidenceRepository } from './modules/evidence/repository.js';
+import { registerEvidenceRoutes } from './modules/evidence/routes.js';
+import { EVIDENCE_BUCKET_DEFAULT } from './modules/evidence/schema.js';
+import { SupabaseEvidenceStorage, type EvidenceStorage } from './modules/evidence/storage.js';
 import { HttpError, IdentityProviderUnavailableError } from './types/errors.js';
 
 export interface AppDependencies {
@@ -22,6 +26,8 @@ export interface AppDependencies {
   database: Database;
   verifyAccessToken?: AccessTokenVerifier;
   resolveVerification?: VerificationResolver;
+  evidenceRepository?: EvidenceRepository;
+  evidenceStorage?: EvidenceStorage | null;
   logger?: boolean;
 }
 
@@ -39,7 +45,7 @@ export async function buildApp(dependencies: AppDependencies): Promise<FastifyIn
   await app.register(cors, {
     origin: dependencies.config.CORS_ORIGINS,
     credentials: true,
-    methods: ['GET', 'PATCH', 'PUT', 'OPTIONS'],
+    methods: ['GET', 'PATCH', 'PUT', 'POST', 'OPTIONS'],
   });
 
   const verifyAccessToken = dependencies.verifyAccessToken
@@ -51,6 +57,23 @@ export async function buildApp(dependencies: AppDependencies): Promise<FastifyIn
   await registerHealthRoutes(app, dependencies.database);
   await registerProfileRoutes(app, new ProfileRepository(dependencies.database), requireVerifiedIdentity);
   await registerProgressRoutes(app, new LearningInstanceRepository(dependencies.database), requireVerifiedIdentity);
+  const evidenceRepository = dependencies.evidenceRepository ?? new PostgresEvidenceRepository(dependencies.database);
+  const evidenceStorage = dependencies.evidenceStorage !== undefined
+    ? dependencies.evidenceStorage
+    : dependencies.config.SUPABASE_SECRET_KEY
+      ? new SupabaseEvidenceStorage(
+        dependencies.config.SUPABASE_URL,
+        dependencies.config.SUPABASE_SECRET_KEY,
+        dependencies.config.EVIDENCE_BUCKET ?? EVIDENCE_BUCKET_DEFAULT,
+      )
+      : null;
+  await registerEvidenceRoutes(
+    app,
+    evidenceRepository,
+    evidenceStorage,
+    requireVerifiedIdentity,
+    dependencies.config.EVIDENCE_BUCKET ?? EVIDENCE_BUCKET_DEFAULT,
+  );
 
   app.setErrorHandler((error, request, reply) => {
     if (error && typeof error === 'object' && 'statusCode' in error && error.statusCode === 413) {

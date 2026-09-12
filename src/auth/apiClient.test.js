@@ -61,3 +61,24 @@ test('API errors are normalized and network internals are not exposed', async ()
   });
   await assert.rejects(networkClient.getProfile(), (error) => error.message === 'Cloud services are currently unreachable.' && !error.message.includes('private'));
 });
+
+test('evidence client uses purpose-specific routes and preserves server-owned identifiers', async () => {
+  const calls = [];
+  const client = createApiClient({
+    baseUrl: 'http://localhost:3001',
+    getAccessToken: async () => 'evidence-token',
+    fetchImpl: async (url, options = {}) => {
+      calls.push({ url, options });
+      return new Response(JSON.stringify({ outcome: 'created', submission: { id: 'server-submission-id' }, submissions: [] }), { status: 200 });
+    },
+  });
+  await client.listEvidenceSubmissions({ curriculumId: 'PYAE', revision: 3, proofId: 'PYAE-PR-W01' });
+  await client.createEvidenceSubmission({ clientSubmissionId: 'client-id', items: [] });
+  await client.withdrawEvidenceSubmission('submission/id', 'mutation-id');
+  assert.equal(calls[0].url, 'http://localhost:3001/api/v1/evidence/proofs/PYAE-PR-W01/submissions?curriculumId=PYAE&revision=3');
+  assert.equal(calls[1].url, 'http://localhost:3001/api/v1/evidence/submissions');
+  assert.equal(calls[1].options.method, 'POST');
+  assert.deepEqual(JSON.parse(calls[1].options.body), { clientSubmissionId: 'client-id', items: [] });
+  assert.equal(calls[2].url, 'http://localhost:3001/api/v1/evidence/submissions/submission%2Fid/withdraw');
+  assert.equal(calls[2].options.headers.Authorization, 'Bearer evidence-token');
+});

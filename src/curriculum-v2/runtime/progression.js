@@ -24,7 +24,7 @@ export function isMeaningfulReflection(value) {
   return typeof value === 'string' && value.trim().length >= REFLECTION_MEANINGFUL_MIN_LENGTH;
 }
 
-export function getV2WeekProgress(runtime, curriculumState, weekId) {
+export function getV2WeekProgress(runtime, curriculumState, weekId, evidenceState = null) {
   const week = runtime?.indexes?.weeksById?.[weekId];
   if (!week) return null;
   const completed = asArray(curriculumState?.completedWeekIds).includes(weekId);
@@ -46,7 +46,11 @@ export function getV2WeekProgress(runtime, curriculumState, weekId) {
 
   const requiredEvidence = asArray(week.proof.evidence).filter((item) => item.required);
   const proofRecord = curriculumState?.proofs?.[week.proof.id]?.evidence || {};
-  const proofDone = durable.proof?.satisfied === true || requiredEvidence.every((item) => isProofEvidenceComplete(item, proofRecord[item.id]));
+  const serverSubmissionRequired = runtime.curriculumId === 'PYAE' && runtime.revision >= 3;
+  const currentSubmission = evidenceState?.currentByProof?.[week.proof.id];
+  const proofDone = serverSubmissionRequired
+    ? currentSubmission?.status === 'submitted'
+    : durable.proof?.satisfied === true || requiredEvidence.every((item) => isProofEvidenceComplete(item, proofRecord[item.id]));
 
   const responseRecords = curriculumState?.reflections?.[week.id] || {};
   const meaningfulResponses = asArray(week.reflection.prompts).filter((prompt) => isMeaningfulReflection(responseRecords[prompt.id]?.response)).length;
@@ -79,11 +83,11 @@ function completedProgress(week) {
   };
 }
 
-export function getV2NextAction(runtime, curriculumState) {
+export function getV2NextAction(runtime, curriculumState, evidenceState = null) {
   const firstIncomplete = runtime.weeks.find((week) => !asArray(curriculumState?.completedWeekIds).includes(week.id));
   const week = runtime.indexes.weeksById[curriculumState?.activeWeekId] || firstIncomplete || runtime.weeks[0];
   if (!week) return null;
-  const status = getV2WeekProgress(runtime, curriculumState, week.id);
+  const status = getV2WeekProgress(runtime, curriculumState, week.id, evidenceState);
   const ordered = [
     ['study', 'Study'],
     ['skillCheck', 'Skill Check'],

@@ -47,5 +47,19 @@ export function createApiClient({ baseUrl, getAccessToken, fetchImpl = fetch }) 
       method: 'PUT',
       body: JSON.stringify(mutation),
     }),
+    listEvidenceSubmissions: ({ curriculumId, revision, proofId }) => request(`/api/v1/evidence/proofs/${encodeURIComponent(proofId)}/submissions?curriculumId=${encodeURIComponent(curriculumId)}&revision=${encodeURIComponent(revision)}`),
+    getEvidenceSubmission: (submissionId) => request(`/api/v1/evidence/submissions/${encodeURIComponent(submissionId)}`),
+    createEvidenceUploadIntent: (intent) => request('/api/v1/evidence/upload-intents', {
+      method: 'POST', body: JSON.stringify(intent),
+    }),
+    finalizeEvidenceAsset: (assetId) => request(`/api/v1/evidence/assets/${encodeURIComponent(assetId)}/finalize`, { method: 'POST' }),
+    accessEvidenceAsset: (assetId) => request(`/api/v1/evidence/assets/${encodeURIComponent(assetId)}/access`, { method: 'POST' }),
+    abandonEvidenceAsset: (assetId) => request(`/api/v1/evidence/assets/${encodeURIComponent(assetId)}/abandon`, { method: 'POST' }),
+    createEvidenceSubmission: (submission) => request('/api/v1/evidence/submissions', {
+      method: 'POST', body: JSON.stringify(submission),
+    }),
+    withdrawEvidenceSubmission: (submissionId, clientMutationId) => request(`/api/v1/evidence/submissions/${encodeURIComponent(submissionId)}/withdraw`, {
+      method: 'POST', body: JSON.stringify({ clientMutationId }),
+    }),
   };
 }

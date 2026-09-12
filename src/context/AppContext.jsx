@@ -1424,9 +1424,9 @@ export function AppProvider({ children }) {
     markStudyToday();
   }, [activeV2Curriculum, markStudyToday]);
 
-  const completeV2Week = useCallback((weekId) => {
+  const completeV2Week = useCallback((weekId, evidenceState = null) => {
     if (!activeV2Curriculum) return;
-    setV2LearnerState((current) => completeV2WeekState(current, activeV2Curriculum, weekId));
+    setV2LearnerState((current) => completeV2WeekState(current, activeV2Curriculum, weekId, undefined, evidenceState));
     markStudyToday();
   }, [activeV2Curriculum, markStudyToday]);
 
