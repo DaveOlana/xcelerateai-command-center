@@ -8,7 +8,8 @@ const expectedMutationColumns = ['learning_instance_id', 'client_mutation_id', '
 const expectedSubmissionColumns = ['id', 'user_id', 'curriculum_id', 'curriculum_revision', 'evidence_schema_version', 'week_id', 'build_id', 'proof_id', 'submission_revision', 'supersedes_submission_id', 'status', 'client_submission_id', 'withdraw_client_mutation_id', 'request_hash', 'submitted_at', 'status_changed_at', 'created_at'];
 const expectedItemColumns = ['id', 'submission_id', 'evidence_requirement_id', 'kind', 'payload', 'created_at'];
 const expectedAssetColumns = ['id', 'user_id', 'client_asset_id', 'curriculum_id', 'curriculum_revision', 'proof_id', 'evidence_requirement_id', 'status', 'bucket_id', 'object_key', 'original_filename', 'declared_mime_type', 'detected_mime_type', 'declared_byte_size', 'byte_size', 'sha256', 'intent_request_hash', 'evidence_item_id', 'intent_expires_at', 'ready_at', 'abandoned_at', 'created_at', 'updated_at'];
-const migrationNames = ['0001_create_profiles.sql', '0002_create_learning_instances.sql', '0003_create_evidence_submissions.sql'];
+const expectedVerificationColumns = ['id', 'user_id', 'evidence_submission_id', 'requirement_id', 'verifier_type', 'verifier_version', 'trust_level', 'outcome', 'criteria', 'source_sha256', 'client_run_id', 'created_at'];
+const migrationNames = ['0001_create_profiles.sql', '0002_create_learning_instances.sql', '0003_create_evidence_submissions.sql', '0004_create_verification_results.sql'];
 const historicalTerminalNewlineMigration = '0002_create_learning_instances.sql';
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const checksumMatches = (name, repositoryBytes, storedChecksum) => (
@@ -29,18 +30,18 @@ try {
      FROM information_schema.columns
      WHERE table_schema = 'public' AND table_name = ANY($1::text[])
      ORDER BY table_name, ordinal_position`,
-    [['profiles', 'learning_instances', 'learning_instance_mutations', 'evidence_submissions', 'evidence_items', 'evidence_assets']],
+    [['profiles', 'learning_instances', 'learning_instance_mutations', 'evidence_submissions', 'evidence_items', 'evidence_assets', 'verification_results']],
   );
   const constraints = await pool.query(
     `SELECT c.conrelid::regclass::text AS table_name, c.contype, pg_get_constraintdef(c.oid) AS definition
      FROM pg_constraint c
-     WHERE c.conrelid IN ('public.learning_instances'::regclass, 'public.learning_instance_mutations'::regclass, 'public.evidence_submissions'::regclass, 'public.evidence_items'::regclass, 'public.evidence_assets'::regclass)`,
+     WHERE c.conrelid IN ('public.learning_instances'::regclass, 'public.learning_instance_mutations'::regclass, 'public.evidence_submissions'::regclass, 'public.evidence_items'::regclass, 'public.evidence_assets'::regclass, 'public.verification_results'::regclass)`,
   );
   const indexes = await pool.query(
     `SELECT tablename, indexname, indexdef
      FROM pg_indexes
      WHERE schemaname = 'public' AND tablename = ANY($1::text[])`,
-    [['learning_instances', 'learning_instance_mutations', 'evidence_submissions', 'evidence_items', 'evidence_assets']],
+    [['learning_instances', 'learning_instance_mutations', 'evidence_submissions', 'evidence_items', 'evidence_assets', 'verification_results']],
   );
   const directPrivileges = await pool.query(
     `SELECT grantee, table_name, privilege_type
@@ -48,7 +49,7 @@ try {
      WHERE table_schema = 'public'
        AND table_name = ANY($1::text[])
        AND grantee = ANY($2::text[])`,
-    [['learning_instances', 'learning_instance_mutations', 'evidence_submissions', 'evidence_items', 'evidence_assets'], ['anon', 'authenticated']],
+    [['learning_instances', 'learning_instance_mutations', 'evidence_submissions', 'evidence_items', 'evidence_assets', 'verification_results'], ['anon', 'authenticated']],
   );
   const triggers = await pool.query(
     `SELECT trigger_name
@@ -84,11 +85,15 @@ try {
     && hasConstraint('evidence_submissions', 'f', ['FOREIGN KEY (user_id)', 'auth.users(id)', 'ON DELETE CASCADE'])
     && hasConstraint('evidence_submissions', 'u', ['UNIQUE (user_id, client_submission_id)'])
     && hasConstraint('evidence_items', 'f', ['FOREIGN KEY (submission_id)', 'evidence_submissions(id)', 'ON DELETE CASCADE'])
-    && hasConstraint('evidence_assets', 'f', ['FOREIGN KEY (user_id)', 'auth.users(id)', 'ON DELETE CASCADE']);
+    && hasConstraint('evidence_assets', 'f', ['FOREIGN KEY (user_id)', 'auth.users(id)', 'ON DELETE CASCADE'])
+    && hasConstraint('verification_results', 'f', ['FOREIGN KEY (user_id)', 'auth.users(id)', 'ON DELETE CASCADE'])
+    && hasConstraint('verification_results', 'f', ['FOREIGN KEY (evidence_submission_id)', 'evidence_submissions(id)', 'ON DELETE CASCADE'])
+    && hasConstraint('verification_results', 'u', ['UNIQUE (user_id, client_run_id)']);
   const indexesValid = indexes.rows.some(({ tablename, indexdef }) => tablename === 'learning_instances' && indexdef.includes('(user_id, curriculum_id)'))
     && indexes.rows.some(({ indexname, indexdef }) => indexname === 'learning_instance_mutations_created_at_idx' && indexdef.includes('(created_at)'))
     && indexes.rows.some(({ indexname }) => indexname === 'evidence_submissions_current_idx')
-    && indexes.rows.some(({ indexname }) => indexname === 'evidence_assets_cleanup_idx');
+    && indexes.rows.some(({ indexname }) => indexname === 'evidence_assets_cleanup_idx')
+    && indexes.rows.some(({ indexname }) => indexname === 'verification_results_submission_created_idx');
   const triggerValid = triggers.rows.some(({ trigger_name }) => trigger_name === 'learning_instances_set_updated_at')
     && triggers.rows.some(({ trigger_name }) => trigger_name === 'evidence_assets_set_updated_at');
   const report = {
@@ -98,12 +103,14 @@ try {
     evidenceSubmissionColumns: names('evidence_submissions'),
     evidenceItemColumns: names('evidence_items'),
     evidenceAssetColumns: names('evidence_assets'),
+    verificationResultColumns: names('verification_results'),
     profilesUnchanged: JSON.stringify(names('profiles')) === JSON.stringify(expectedProfileColumns),
     instancesValid: JSON.stringify(names('learning_instances')) === JSON.stringify(expectedInstanceColumns),
     mutationsValid: JSON.stringify(names('learning_instance_mutations')) === JSON.stringify(expectedMutationColumns),
     evidenceSubmissionsValid: JSON.stringify(names('evidence_submissions')) === JSON.stringify(expectedSubmissionColumns),
     evidenceItemsValid: JSON.stringify(names('evidence_items')) === JSON.stringify(expectedItemColumns),
     evidenceAssetsValid: JSON.stringify(names('evidence_assets')) === JSON.stringify(expectedAssetColumns),
+    verificationResultsValid: JSON.stringify(names('verification_results')) === JSON.stringify(expectedVerificationColumns),
     constraintsValid,
     indexesValid,
     triggerValid,
@@ -112,7 +119,7 @@ try {
   };
   console.log(JSON.stringify(report, null, 2));
   if (!report.profilesUnchanged || !report.instancesValid || !report.mutationsValid || !report.evidenceSubmissionsValid
-    || !report.evidenceItemsValid || !report.evidenceAssetsValid || !report.constraintsValid
+    || !report.evidenceItemsValid || !report.evidenceAssetsValid || !report.verificationResultsValid || !report.constraintsValid
     || !report.indexesValid || !report.triggerValid || !report.directRolesRevoked || !report.migrationLedgerValid) {
     process.exitCode = 1;
   }

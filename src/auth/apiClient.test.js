@@ -82,3 +82,20 @@ test('evidence client uses purpose-specific routes and preserves server-owned id
   assert.equal(calls[2].url, 'http://localhost:3001/api/v1/evidence/submissions/submission%2Fid/withdraw');
   assert.equal(calls[2].options.headers.Authorization, 'Bearer evidence-token');
 });
+
+test('verification client sends only structured results and a source fingerprint', async () => {
+  const calls = [];
+  const client = createApiClient({
+    baseUrl: 'http://localhost:3001', getAccessToken: async () => 'token',
+    fetchImpl: async (url, options = {}) => { calls.push({ url, options }); return new Response(JSON.stringify({ outcome: 'created', result: {} }), { status: 200 }); },
+  });
+  const payload = { evidenceSubmissionId: 'submission', requirementId: 'requirement', sourceSha256: 'a'.repeat(64), checks: [] };
+  await client.createBrowserPythonVerification(payload);
+  await client.createStructuralVerification({ evidenceSubmissionId: 'submission', requirementId: 'requirement' });
+  await client.listVerificationResults('submission/id');
+  assert.equal(calls[0].url, 'http://localhost:3001/api/v1/verifications/browser-python');
+  assert.deepEqual(JSON.parse(calls[0].options.body), payload);
+  assert.equal(Object.hasOwn(JSON.parse(calls[0].options.body), 'source'), false);
+  assert.equal(calls[1].url, 'http://localhost:3001/api/v1/verifications/structural');
+  assert.equal(calls[2].url, 'http://localhost:3001/api/v1/evidence/submissions/submission%2Fid/verifications');
+});

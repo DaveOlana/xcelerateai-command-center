@@ -4,6 +4,7 @@ import { describe, expect, test } from 'vitest';
 const migrationUrl = new URL('../migrations/0001_create_profiles.sql', import.meta.url);
 const progressMigrationUrl = new URL('../migrations/0002_create_learning_instances.sql', import.meta.url);
 const evidenceMigrationUrl = new URL('../migrations/0003_create_evidence_submissions.sql', import.meta.url);
+const verificationMigrationUrl = new URL('../migrations/0004_create_verification_results.sql', import.meta.url);
 
 describe('minimal profile migration', () => {
   test('owns only the required profile fields and JWT-subject foreign key', async () => {
@@ -19,6 +20,17 @@ describe('minimal profile migration', () => {
     const sql = await readFile(migrationUrl, 'utf8');
     expect(sql).toMatch(/REVOKE ALL ON public\.profiles FROM anon, authenticated/);
     expect(sql).not.toMatch(/DROP TABLE|TRUNCATE|DELETE FROM/i);
+  });
+});
+
+describe('Backend V1 verification migration', () => {
+  test('stores truthful account-owned verifier results without enabling direct browser CRUD', async () => {
+    const sql = await readFile(verificationMigrationUrl, 'utf8');
+    expect(sql).toMatch(/CREATE TABLE IF NOT EXISTS public\.verification_results/);
+    expect(sql).toMatch(/evidence_submission_id UUID NOT NULL REFERENCES public\.evidence_submissions\(id\)/);
+    expect(sql).toMatch(/'structural', 'browser_python', 'future_server_sandbox', 'future_ai_rubric'/);
+    expect(sql).toMatch(/'server_structural', 'client_advisory', 'future_authoritative'/);
+    expect(sql).toMatch(/REVOKE ALL ON public\.verification_results FROM anon, authenticated/);
   });
 });
 

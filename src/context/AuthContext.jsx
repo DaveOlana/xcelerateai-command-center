@@ -162,6 +162,9 @@ export function AuthProvider({ children }) {
       abandonAsset: api.abandonEvidenceAsset,
       createSubmission: api.createEvidenceSubmission,
       withdrawSubmission: api.withdrawEvidenceSubmission,
+      listVerificationResults: api.listVerificationResults,
+      createStructuralVerification: api.createStructuralVerification,
+      createBrowserPythonVerification: api.createBrowserPythonVerification,
       uploadSignedAsset: async ({ bucket, path, token, file, contentType }) => {
         const { error: uploadError } = await client.storage.from(bucket).uploadToSignedUrl(path, token, file, {
           contentType,

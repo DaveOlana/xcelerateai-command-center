@@ -1,7 +1,9 @@
 import React from 'react';
-import { Archive, CheckCircle2, Cloud, CloudOff, FileText, Link2, Loader2, RotateCcw, Upload, X } from 'lucide-react';
+import { Archive, CheckCircle2, Cloud, CloudOff, Code2, FileText, Link2, Loader2, RotateCcw, Upload, X } from 'lucide-react';
 import { useEvidence } from '../../../context/EvidenceContext.jsx';
 import { EVIDENCE_TOTAL_FILE_LIMIT } from '../../../evidence/evidenceStore.js';
+import { browserPythonSpecFor } from '../../../verification/registry.js';
+import { runBrowserPythonVerification, sourceSha256 } from '../../../verification/browserPythonRunner.js';
 
 const kindOptions = (evidence) => {
   if (evidence.type === 'confirmation') return [{ id: 'self_attestation', label: 'Confirmation' }];
@@ -26,15 +28,28 @@ export default function EvidenceProofStage({ curriculum, week, learner, status, 
   const [busyRequirement, setBusyRequirement] = React.useState(null);
   const [submitting, setSubmitting] = React.useState(false);
   const [feedback, setFeedback] = React.useState(null);
+  const [verificationResults, setVerificationResults] = React.useState([]);
+  const [checking, setChecking] = React.useState(false);
   const current = evidence.getCurrentSubmission(week.proof.id);
   const history = evidence.getHistory(context);
   const pending = evidence.outbox.operations.some((operation) => operation.type === 'submit' && operation.payload?.proofId === week.proof.id);
+  const browserRequirement = React.useMemo(() => week.proof.evidence.map((item) => ({
+    item,
+    spec: browserPythonSpecFor({ ...context, requirementId: item.id }),
+  })).find((entry) => entry.spec) || null, [context, week.proof.evidence]);
 
   React.useEffect(() => {
     setKinds(Object.fromEntries(week.proof.evidence.map((item) => [item.id, item.type === 'confirmation' ? 'self_attestation' : item.type === 'link' ? 'url' : 'text'])));
     setFeedback(null);
     evidence.loadHistory(context).catch((error) => setFeedback({ type: 'error', text: error.message || 'Evidence history could not be loaded.' }));
   }, [context, week.proof.evidence]); // Evidence methods are stable for the active account.
+
+  React.useEffect(() => {
+    let active = true;
+    setVerificationResults([]);
+    if (current?.id) evidence.loadVerificationResults(current.id).then((results) => active && setVerificationResults(results)).catch(() => undefined);
+    return () => { active = false; };
+  }, [current?.id]); // The evidence service is stable for the active account.
 
   const draftValue = (item) => learner?.proofs?.[week.proof.id]?.evidence?.[item.id]?.value ?? (item.type === 'confirmation' ? false : '');
   const setKind = (item, kind) => {
@@ -83,6 +98,13 @@ export default function EvidenceProofStage({ curriculum, week, learner, status, 
         clientSubmissionId: createId(), expectedCurrentSubmissionId: current?.id || null,
         ...context, items,
       });
+      if (result.submission) {
+        await Promise.allSettled(items.map((item) => evidence.recordStructuralVerification({
+          evidenceSubmissionId: result.submission.id,
+          requirementId: item.evidenceRequirementId,
+          clientRunId: createId(),
+        })));
+      }
       setFeedback(result.outcome === 'queued'
         ? { type: 'pending', text: 'Submission pending — saved locally and will retry when cloud service returns.' }
         : { type: 'success', text: 'Evidence submitted. It has not been verified.' });
@@ -91,6 +113,34 @@ export default function EvidenceProofStage({ curriculum, week, learner, status, 
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const runAutomatedChecks = async (file) => {
+    if (!file || !browserRequirement || !current) return;
+    setChecking(true);
+    setFeedback(null);
+    try {
+      if (!file.name.toLowerCase().endsWith('.py')) throw new Error('Choose a local .py source file.');
+      const source = await file.text();
+      const [result, hash] = await Promise.all([
+        runBrowserPythonVerification({ source, spec: browserRequirement.spec }),
+        sourceSha256(source),
+      ]);
+      const recorded = await evidence.recordBrowserPythonVerification({
+        evidenceSubmissionId: current.id,
+        requirementId: browserRequirement.item.id,
+        clientRunId: createId(),
+        verifierSpecId: browserRequirement.spec.id,
+        verifierVersion: browserRequirement.spec.version,
+        sourceSha256: hash,
+        outcome: result.outcome,
+        checks: result.checks,
+      });
+      setVerificationResults((prior) => [recorded.result, ...prior]);
+      setFeedback({ type: result.outcome === 'passed' ? 'success' : 'error', text: result.outcome === 'passed' ? 'Automated checks passed. This is advisory learning feedback, not verified competency.' : 'Automated checks need attention. Your submission and progress are unchanged.' });
+    } catch (error) {
+      setFeedback({ type: 'error', text: error.message || 'Automated checks could not run.' });
+    } finally { setChecking(false); }
   };
 
   const withdraw = async () => {
@@ -135,9 +185,21 @@ export default function EvidenceProofStage({ curriculum, week, learner, status, 
         {!draftComplete && <span className="text-xs text-text-muted">{totalFileBytes > EVIDENCE_TOTAL_FILE_LIMIT ? 'Combined files cannot exceed 10 MiB.' : 'Complete every required evidence item before submitting.'}</span>}
       </div>
 
+      {current && browserRequirement && <div className="mt-7 rounded-2xl border border-brand-violet/25 bg-brand-violet/5 p-5">
+        <div className="flex items-start gap-3"><Code2 className="mt-0.5 h-5 w-5 text-brand-violet" /><div><h3 className="text-sm font-extrabold text-text-primary">Automated browser checks</h3><p className="mt-1 text-xs leading-relaxed text-text-muted">Choose <strong>{browserRequirement.spec.filenameHint}</strong>. XcelerateAI loads Python automatically in an isolated Web Worker. Your source stays in this tab, is never uploaded or saved, and only an advisory result plus SHA-256 fingerprint is recorded.</p></div></div>
+        <label className={`mt-4 inline-flex items-center gap-2 rounded-xl bg-brand-violet px-4 py-2.5 text-sm font-bold text-white ${checking || inspectionOnly ? 'cursor-not-allowed opacity-50' : 'cursor-pointer hover:opacity-90'}`}>{checking ? <Loader2 className="h-4 w-4 animate-spin" /> : <Code2 className="h-4 w-4" />}{checking ? 'Loading isolated Python…' : 'Run automated checks'}<input type="file" accept=".py,text/x-python" className="sr-only" disabled={checking || inspectionOnly} onChange={(event) => { const file = event.target.files?.[0]; event.target.value = ''; void runAutomatedChecks(file); }} /></label>
+        <p className="mt-3 text-[11px] text-text-muted">First use requires a connection to download the cached browser runtime. Client-side checks are inspectable and not certification-grade.</p>
+        {verificationResults.find((result) => result.verifierType === 'browser_python') && <VerificationSummary result={verificationResults.find((result) => result.verifierType === 'browser_python')} />}
+      </div>}
+
       {history.length > 0 && <details className="mt-7 border-t border-border-default pt-5"><summary className="cursor-pointer text-sm font-bold text-text-secondary">Submission history ({history.length})</summary><div className="mt-4 space-y-2">{history.map((submission) => <div key={submission.id} className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border-default bg-bg-soft p-3"><div><p className="text-sm font-bold text-text-primary">Revision {submission.submissionRevision}</p><p className="text-xs text-text-muted">Submitted {new Date(submission.submittedAt).toLocaleString()} · Curriculum revision {submission.curriculumRevision}</p></div><span className="rounded-full border border-border-default px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-text-secondary">{submission.status}</span></div>)}</div></details>}
     </section>
   );
+}
+
+function VerificationSummary({ result }) {
+  const passed = result.outcome === 'passed';
+  return <div className={`mt-4 rounded-xl border p-3 ${passed ? 'border-brand-green/25 bg-brand-green/5' : 'border-brand-amber/25 bg-brand-amber/5'}`}><p className={`text-sm font-bold ${passed ? 'text-brand-green' : 'text-brand-amber'}`}>{passed ? 'Automated checks passed' : 'Automated checks need attention'}</p><p className="mt-1 text-xs text-text-muted">Advisory client-side result · Not verified competency</p></div>;
 }
 
 function EvidenceStatus({ current, pending, loading }) {

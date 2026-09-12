@@ -1,4 +1,4 @@
-import { randomBytes, randomUUID } from 'node:crypto';
+import { createHash, randomBytes, randomUUID } from 'node:crypto';
 import { createClient } from '@supabase/supabase-js';
 import { buildApp } from '../dist/app.js';
 import { parseBackendEnvironment } from '../dist/config/env.js';
@@ -147,6 +147,12 @@ try {
   };
   const second = await request(baseUrl, ownerToken, 'POST', '/api/v1/evidence/submissions', secondSubmissionBody, [201]);
   invariant(second.payload?.submission?.submissionRevision === 2, 'Evidence revision did not supersede safely.');
+  const structural = await request(baseUrl, ownerToken, 'POST', '/api/v1/verifications/structural', {
+    evidenceSubmissionId: second.payload.submission.id,
+    requirementId: 'PYAE-PR-W01-E01',
+    clientRunId: randomUUID(),
+  }, [201]);
+  invariant(structural.payload?.result?.outcome === 'passed' && structural.payload?.result?.trustLevel === 'server_structural', 'Server structural verification was not recorded truthfully.');
   await request(baseUrl, otherToken, 'POST', `/api/v1/evidence/assets/${intent.asset.id}/access`, undefined, [404]);
   const access = await request(baseUrl, ownerToken, 'POST', `/api/v1/evidence/assets/${intent.asset.id}/access`, undefined, [200]);
   invariant(typeof access.payload?.download?.url === 'string', 'Authorized private download was not issued.');
@@ -161,6 +167,32 @@ try {
   invariant(abandoned.payload?.outcome === 'abandoned', 'Staged asset was not abandoned.');
   const duplicateAbandon = await request(baseUrl, ownerToken, 'POST', `/api/v1/evidence/assets/${abandonedIntent.asset.id}/abandon`, undefined, [200]);
   invariant(duplicateAbandon.payload?.outcome === 'duplicate', 'Abandon retry was not idempotent.');
+
+  const weekThree = { curriculumId: 'PYAE', curriculumRevision: 3, weekId: 'PYAE-W03', buildId: 'PYAE-B-W03-01', proofId: 'PYAE-PR-W03' };
+  const weekThreeSubmission = await request(baseUrl, ownerToken, 'POST', '/api/v1/evidence/submissions', {
+    clientSubmissionId: randomUUID(), expectedCurrentSubmissionId: null, ...weekThree,
+    items: [
+      { evidenceRequirementId: 'PYAE-PR-W03-E01', kind: 'text', text: 'Local service.py selected separately for advisory checks.' },
+      { evidenceRequirementId: 'PYAE-PR-W03-E02', kind: 'text', text: 'Service logic remains separate from terminal input and output.' },
+      { evidenceRequirementId: 'PYAE-PR-W03-E03', kind: 'self_attestation', attested: true },
+    ],
+  }, [201]);
+  const checkIds = ['python-syntax', 'create-task-function', 'complete-task-function', 'filter-priority-function', 'explicit-returns', 'service-io-separation'];
+  const browserRunId = randomUUID();
+  const browserPayload = {
+    evidenceSubmissionId: weekThreeSubmission.payload.submission.id,
+    requirementId: 'PYAE-PR-W03-E01', clientRunId: browserRunId,
+    verifierSpecId: 'PYAE-W03-E01-service-structure', verifierVersion: '1.0.0',
+    sourceSha256: createHash('sha256').update('temporary local source').digest('hex'), outcome: 'passed',
+    checks: checkIds.map((id) => ({ id, passed: true, message: 'Automated browser check passed.' })),
+  };
+  const browserResult = await request(baseUrl, ownerToken, 'POST', '/api/v1/verifications/browser-python', browserPayload, [201]);
+  invariant(browserResult.payload?.result?.trustLevel === 'client_advisory' && browserResult.payload?.result?.outcome === 'passed', 'Browser result was not recorded as client advisory.');
+  const browserDuplicate = await request(baseUrl, ownerToken, 'POST', '/api/v1/verifications/browser-python', browserPayload, [200]);
+  invariant(browserDuplicate.payload?.outcome === 'duplicate', 'Browser verification retry was not idempotent.');
+  await request(baseUrl, otherToken, 'GET', `/api/v1/evidence/submissions/${weekThreeSubmission.payload.submission.id}/verifications`, undefined, [404]);
+  const capabilities = await request(baseUrl, ownerToken, 'GET', '/api/v1/verifications/capabilities', undefined, [200]);
+  invariant(capabilities.payload?.future?.every((entry) => entry.configured === false && entry.status === 'unavailable'), 'Future paid verifier adapters were unexpectedly enabled.');
 
   const anonymousList = await publicStorage.storage.from(bucket).list('v1', { limit: 1 });
   invariant(Boolean(anonymousList.error) || anonymousList.data.length === 0, 'Private bucket was anonymously enumerable.');
@@ -180,6 +212,11 @@ try {
     stagedAssetAbandonmentSafe: true,
     sizeAndMimeRejections: true,
     anonymousEnumerationDenied: true,
+    structuralVerificationRecorded: true,
+    browserResultRecordedAsAdvisory: true,
+    verificationRetrySafe: true,
+    verificationAccountIsolation: true,
+    futurePaidAdaptersUnavailable: true,
   };
 } catch (error) {
   verificationFailure = error;

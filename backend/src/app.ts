@@ -19,6 +19,8 @@ import { PostgresEvidenceRepository, type EvidenceRepository } from './modules/e
 import { registerEvidenceRoutes } from './modules/evidence/routes.js';
 import { EVIDENCE_BUCKET_DEFAULT } from './modules/evidence/schema.js';
 import { SupabaseEvidenceStorage, type EvidenceStorage } from './modules/evidence/storage.js';
+import { registerVerificationRoutes } from './modules/verification/routes.js';
+import { VerificationRepository } from './modules/verification/repository.js';
 import { HttpError, IdentityProviderUnavailableError } from './types/errors.js';
 
 export interface AppDependencies {
@@ -74,6 +76,7 @@ export async function buildApp(dependencies: AppDependencies): Promise<FastifyIn
     requireVerifiedIdentity,
     dependencies.config.EVIDENCE_BUCKET ?? EVIDENCE_BUCKET_DEFAULT,
   );
+  await registerVerificationRoutes(app, new VerificationRepository(dependencies.database), evidenceRepository, requireVerifiedIdentity);
 
   app.setErrorHandler((error, request, reply) => {
     if (error && typeof error === 'object' && 'statusCode' in error && error.statusCode === 413) {

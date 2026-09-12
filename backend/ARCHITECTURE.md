@@ -20,6 +20,7 @@ The API never decodes without verification, never treats the publishable key as 
 
 - `config` validates the complete runtime environment without echoing values.
 - `db` owns PostgreSQL pooling and versioned migration execution.
+- `verification` owns immutable verifier results, server structural checks, the explicit browser-Python registry, and disabled future adapter declarations.
 - `plugins/auth` owns bearer parsing, ES256/JWKS verification, and confirmed-email identity.
 - `modules/health` owns liveness and dependency readiness.
 - `modules/profile` owns create-on-first profile persistence and display-name updates.
@@ -67,3 +68,11 @@ Private binary upload uses a purpose-specific Fastify intent, a short-lived Supa
 The browser keeps evidence receipts, staged asset metadata, and retryable submission operations in an account-namespaced evidence store separate from AppContext and SyncContext. No File/Blob bytes enter localStorage. Offline text/link/repository/attestation submissions queue for retry but do not satisfy Proof until the server acknowledges them. Account switches load a different namespace. Normal backup/export/import deliberately excludes evidence cache, outbox, submission IDs, and binary files. Course reset withdraws current submissions and preserves immutable history.
 
 Phase 3 does not add verification results, grading, AI review, code execution, public portfolios, or competency confirmation. A future verifier can reference an immutable `evidence_submission_id` without mutating the evidence record.
+
+## Backend V1 verification foundation
+
+The additive verification layer references immutable evidence submissions without changing Proof completion. Server structural checks establish only that the required item, allowed method, and finalized file metadata exist. Browser Python results are stored as `client_advisory` and shown as automated checks, never as verified competency. Results contain bounded check records and an optional SHA-256 source fingerprint; learner source code itself is not uploaded or persisted.
+
+Browser Python support is intentionally limited to `PYAE-PR-W03-E01`. A local `service.py` is parsed by a controlled Python AST harness inside a dedicated Web Worker to check syntax, named service functions, explicit returns, and separation from `input()`/`print()`. Pyodide is pinned to the official CDN release and loaded only when the learner invokes this check. The worker receives no React objects, DOM reference, bearer token, Supabase session, or privileged API client, and is terminated on completion, error, oversized output, or timeout.
+
+The registry marks server sandbox and AI rubric verifiers as unavailable extension points. No paid execution or inference service is called. Unsupported PYAE tasks retain `Submitted · Not yet verified` and ordinary progression remains based on curriculum gates plus formal evidence submission.

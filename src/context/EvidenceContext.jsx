@@ -177,6 +177,22 @@ export function EvidenceProvider({ children }) {
     return auth.evidenceApi.accessAsset(assetId);
   }, [auth.evidenceApi, cloudAvailable]);
 
+  const loadVerificationResults = useCallback(async (submissionId) => {
+    if (!cloudAvailable) return [];
+    const result = await auth.evidenceApi.listVerificationResults(submissionId);
+    return result.results || [];
+  }, [auth.evidenceApi, cloudAvailable]);
+
+  const recordStructuralVerification = useCallback(async (payload) => {
+    if (!cloudAvailable) throw new Error('Connect to the internet to run structural checks.');
+    return auth.evidenceApi.createStructuralVerification(payload);
+  }, [auth.evidenceApi, cloudAvailable]);
+
+  const recordBrowserPythonVerification = useCallback(async (payload) => {
+    if (!cloudAvailable) throw new Error('Connect to the internet to record automated checks.');
+    return auth.evidenceApi.createBrowserPythonVerification(payload);
+  }, [auth.evidenceApi, cloudAvailable]);
+
   const stageAsset = useCallback((context, evidenceRequirementId, asset) => {
     const key = `${proofKey(context)}:${evidenceRequirementId}`;
     setCache((current) => ({ ...current, stagedAssets: { ...(current.stagedAssets || {}), [key]: asset } }));
@@ -242,8 +258,9 @@ export function EvidenceProvider({ children }) {
     getCurrentSubmission: (proofId) => currentByProof[proofId] || null,
     getStagedAsset: (context, evidenceRequirementId) => cache.stagedAssets?.[`${proofKey(context)}:${evidenceRequirementId}`] || null,
     loadHistory, submitEvidence, uploadFile, stageAsset, removeStagedAsset, abandonAsset, accessAsset, withdrawSubmission, resetCurriculumEvidence, flushOutbox,
+    loadVerificationResults, recordStructuralVerification, recordBrowserPythonVerification,
     retryOutbox: () => setOutbox((current) => ({ ...current, operations: current.operations.map(({ error: _error, ...operation }) => operation) })),
-  }), [abandonAsset, accessAsset, cache, currentByProof, enabled, flushOutbox, loadHistory, loadingKeys, outbox, removeStagedAsset, resetCurriculumEvidence, stageAsset, submitEvidence, syncing, uploadFile, withdrawSubmission]);
+  }), [abandonAsset, accessAsset, cache, currentByProof, enabled, flushOutbox, loadHistory, loadVerificationResults, loadingKeys, outbox, recordBrowserPythonVerification, recordStructuralVerification, removeStagedAsset, resetCurriculumEvidence, stageAsset, submitEvidence, syncing, uploadFile, withdrawSubmission]);
 
   return <EvidenceContext.Provider value={value}>{children}</EvidenceContext.Provider>;
 }

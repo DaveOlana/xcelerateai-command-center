@@ -61,5 +61,8 @@ export function createApiClient({ baseUrl, getAccessToken, fetchImpl = fetch }) 
     withdrawEvidenceSubmission: (submissionId, clientMutationId) => request(`/api/v1/evidence/submissions/${encodeURIComponent(submissionId)}/withdraw`, {
       method: 'POST', body: JSON.stringify({ clientMutationId }),
     }),
+    listVerificationResults: (submissionId) => request(`/api/v1/evidence/submissions/${encodeURIComponent(submissionId)}/verifications`),
+    createStructuralVerification: (verification) => request('/api/v1/verifications/structural', { method: 'POST', body: JSON.stringify(verification) }),
+    createBrowserPythonVerification: (verification) => request('/api/v1/verifications/browser-python', { method: 'POST', body: JSON.stringify(verification) }),
   };
 }
