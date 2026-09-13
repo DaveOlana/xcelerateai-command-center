@@ -3,12 +3,17 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pg from 'pg';
 import { parseBackendEnvironment } from '../config/env.js';
+import { createPostgresConnectionConfig } from './connectionConfig.js';
 import { checksumForNewMigration, matchMigrationChecksum } from './migrationIntegrity.js';
 
 const { Pool } = pg;
 const migrationsDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../migrations');
 const config = parseBackendEnvironment(process.env);
-const pool = new Pool({ connectionString: config.DATABASE_URL, application_name: 'xcelerateai-migrations', max: 1 });
+const pool = new Pool({
+  ...createPostgresConnectionConfig(config),
+  application_name: 'xcelerateai-migrations',
+  max: 1,
+});
 
 try {
   const client = await pool.connect();

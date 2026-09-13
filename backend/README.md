@@ -21,6 +21,7 @@ Required variable names:
 - `HOST`
 - `PORT`
 - `DATABASE_URL`
+- `DATABASE_SSL_CA_FILE` (production only; absolute path to the provider-managed Supabase database CA)
 - `SUPABASE_URL`
 - `SUPABASE_PUBLISHABLE_KEY`
 - `CORS_ORIGINS`
@@ -39,7 +40,7 @@ Phase 3 private file evidence additionally uses `SUPABASE_SECRET_KEY`, a server-
 - `npm test` — run backend tests
 - `npm run typecheck` — validate TypeScript without output
 - `npm run build` — compile to `dist/`
-- `npm start` — run the compiled API using `.env`
+- `npm start` — run the compiled API using runtime-injected environment variables
 
 ## HTTP surface
 

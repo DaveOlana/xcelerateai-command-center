@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --maxWorkers=1 --isolate=false",
     "test:watch": "vitest",
     "migrate": "node --env-file=.env --import tsx src/db/migrate.ts",
     "verify:schema": "node --env-file=.env scripts/verify-schema.mjs",
@@ -17,7 +17,7 @@
     "verify:evidence-roundtrip": "node --env-file=.env scripts/verify-evidence-roundtrip.mjs",
     "setup:evidence-storage": "node --env-file=.env scripts/setup-evidence-storage.mjs",
     "dev": "node --env-file=.env --import tsx src/server.ts",
-    "start": "node --env-file=.env dist/server.js"
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@fastify/cors": "^11.3.0",

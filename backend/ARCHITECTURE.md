@@ -69,6 +69,40 @@ The browser keeps evidence receipts, staged asset metadata, and retryable submis
 
 Phase 3 does not add verification results, grading, AI review, code execution, public portfolios, or competency confirmation. A future verifier can reference an immutable `evidence_submission_id` without mutating the evidence record.
 
+## Zero-cost pilot deployment contract
+
+The initial backend deployment target is one Render Web Service configured as follows:
+
+- Service: Web Service
+- Plan: Free
+- Branch: `main` after reviewed merge
+- Root directory: `backend`
+- Build command: `npm ci --include=dev && npm run build`
+- Start command: `node dist/server.js`
+- Health-check path: `/readyz`
+- Runtime: Node.js 24, matching `engines.node`
+
+Render injects runtime configuration directly; production startup does not require a physical `.env` file. Local development continues to use `npm run dev`, which loads `backend/.env`.
+
+The production environment contract is:
+
+```text
+NODE_ENV=production
+HOST=0.0.0.0
+PORT=<Render-provided>
+DATABASE_URL=<Supabase Session Pooler URL with exactly one sslmode=verify-full>
+DATABASE_SSL_CA_FILE=<absolute path to the provider-managed Supabase database CA file>
+SUPABASE_URL=<Supabase project URL>
+SUPABASE_PUBLISHABLE_KEY=<Supabase publishable key>
+SUPABASE_SECRET_KEY=<server-only Supabase secret key>
+EVIDENCE_BUCKET=learner-evidence
+CORS_ORIGINS=https://xcelerateai-command-center.vercel.app
+```
+
+`DATABASE_URL` and `SUPABASE_SECRET_KEY` are server-private and must never enter Vercel, the browser bundle, repository files, or logs. Production accepts exactly one unambiguous `sslmode=verify-full`, requires an absolute `DATABASE_SSL_CA_FILE`, and fails closed for missing, weak, duplicate, or conflicting TLS options. The backend reads and validates the CA before creating its PostgreSQL pool, removes URL-level TLS parameters, and supplies connection-scoped pg TLS with the CA and `rejectUnauthorized: true`; Node's standard hostname verification remains enabled.
+
+On Render, provision the authoritative certificate from the owner's Supabase database SSL configuration as a Secret File, then set `DATABASE_SSL_CA_FILE` to the absolute mounted path reported by Render. Do not assume that path in source or documentation, and do not commit the certificate. The manual/idempotent migration command uses the same connection builder as the production API.
+
 ## Backend V1 verification foundation
 
 The additive verification layer references immutable evidence submissions without changing Proof completion. Server structural checks establish only that the required item, allowed method, and finalized file metadata exist. Browser Python results are stored as `client_advisory` and shown as automated checks, never as verified competency. Results contain bounded check records and an optional SHA-256 source fingerprint; learner source code itself is not uploaded or persisted.

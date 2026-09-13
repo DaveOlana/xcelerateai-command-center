@@ -1,12 +1,13 @@
 import pg from 'pg';
 import type { BackendEnvironment } from '../config/env.js';
+import { createPostgresConnectionConfig } from './connectionConfig.js';
 import type { Database } from './database.js';
 
 const { Pool } = pg;
 
 export function createPostgresDatabase(config: BackendEnvironment): Database {
   const pool = new Pool({
-    connectionString: config.DATABASE_URL,
+    ...createPostgresConnectionConfig(config),
     application_name: 'xcelerateai-api',
     max: 10,
     connectionTimeoutMillis: 5_000,
