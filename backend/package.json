@@ -1,0 +1,38 @@
+{
+  "name": "@xcelerateai/backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --maxWorkers=1 --isolate=false",
+    "test:watch": "vitest",
+    "migrate": "node --env-file=.env --import tsx src/db/migrate.ts",
+    "verify:schema": "node --env-file=.env scripts/verify-schema.mjs",
+    "verify:profile-activity": "node --env-file=.env scripts/verify-profile-activity.mjs",
+    "verify:evidence-roundtrip": "node --env-file=.env scripts/verify-evidence-roundtrip.mjs",
+    "setup:evidence-storage": "node --env-file=.env scripts/setup-evidence-storage.mjs",
+    "dev": "node --env-file=.env --import tsx src/server.ts",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.3.0",
+    "@fastify/helmet": "^13.1.1",
+    "@supabase/supabase-js": "^2.116.0",
+    "fastify": "^5.12.3",
+    "jose": "^6.2.12",
+    "pg": "^8.23.0",
+    "zod": "^4.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.4",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.0"
+  }
+}

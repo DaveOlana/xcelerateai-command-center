@@ -24,6 +24,14 @@ import V2Progress from './pages/v2/V2Progress';
 import V2Projects from './pages/v2/V2Projects';
 import V2ProofLibrary from './pages/v2/V2ProofLibrary';
 import { useApp } from './context/AppContext';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import VerificationPending from './pages/auth/VerificationPending';
+import PasswordRecovery from './pages/auth/PasswordRecovery';
+import PasswordUpdate from './pages/auth/PasswordUpdate';
+import GuestEntry from './components/auth/GuestEntry';
+import LearnerAccessGate from './components/auth/LearnerAccessGate';
+import { SyncProvider } from './context/SyncContext.jsx';
 
 function CurriculumAware({ legacy: Legacy, v2: V2 }) {
   const { curriculumMode } = useApp();
@@ -61,10 +69,12 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppProvider>
+        <SyncProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route element={<DataGuard />}>
-              <Route index element={<ActiveDashboard />} />
+            <Route index element={<LearnerAccessGate fallback={<GuestEntry />}><DataGuard><ActiveDashboard /></DataGuard></LearnerAccessGate>} />
+            <Route element={<LearnerAccessGate />}>
+              <Route element={<DataGuard />}>
               <Route path="today" element={<Navigate to="/missions?view=current" replace />} />
               <Route path="missions" element={<ActiveMissions />} />
               <Route path="progress" element={<ActiveProgress />} />
@@ -84,16 +94,23 @@ export default function App() {
                 <Route path="problems" element={<ProblemsWorkbench />} />
                 <Route path="proof" element={<ActiveProof />} />
               </Route>
+              <Route path="import" element={<ImportRoadmap />} />
+              </Route>
             </Route>
 
-            {/* Unprotected Routes */}
-            <Route path="import" element={<ImportRoadmap />} />
+            {/* Guest-safe routes */}
             <Route path="curricula" element={<CurriculumCatalog />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="auth/login" element={<Login />} />
+            <Route path="auth/register" element={<Register />} />
+            <Route path="auth/verify" element={<VerificationPending />} />
+            <Route path="auth/recover" element={<PasswordRecovery />} />
+            <Route path="auth/update-password" element={<PasswordUpdate />} />
             <Route path="more" element={<Navigate to="/settings" replace />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
+        </SyncProvider>
       </AppProvider>
     </BrowserRouter>
   );

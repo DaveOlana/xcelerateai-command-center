@@ -18,6 +18,10 @@ import { getCurrentCourseDefinition } from '../utils/learningExperience.js';
 import { PageShell, ProgressBar } from '../components/common/UIComponents';
 import ConfirmAction from '../components/ui/ConfirmAction';
 import StatusBanner from '../components/ui/StatusBanner';
+import AccountSettings from '../components/auth/AccountSettings';
+import { useAuth } from '../context/AuthContext.jsx';
+import { useSync } from '../context/SyncContext.jsx';
+import { useEvidence } from '../context/EvidenceContext.jsx';
 
 const EMPTY_PROGRESS = {
   completedTasks: {},
@@ -60,8 +64,27 @@ function SettingsRow({ label, description, children, className = '' }) {
   );
 }
 
+function AppearanceSettings({ settings, updateSettings }) {
+  return <>
+    <div className="grid grid-cols-3 gap-1 rounded-2xl border border-border-default bg-bg-soft p-1" role="radiogroup" aria-label="Appearance">
+      {[
+        { value: 'system', label: 'System', icon: Monitor },
+        { value: 'light', label: 'Light', icon: Sun },
+        { value: 'dark', label: 'Dark', icon: Moon },
+      ].map(({ value, label, icon: Icon }) => {
+        const selected = (settings?.appearanceMode || 'system') === value;
+        return <button key={value} type="button" role="radio" aria-checked={selected} onClick={() => updateSettings({ appearanceMode: value })} className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-2 py-2 text-sm font-semibold transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue ${selected ? 'bg-bg-surface text-text-primary shadow-sm ring-1 ring-border-default' : 'text-text-muted hover:text-text-primary'}`}><Icon className="h-4 w-4" aria-hidden="true" /><span>{label}</span>{selected && <span className="sr-only">selected</span>}</button>;
+      })}
+    </div>
+    <p className="mt-3 text-xs text-text-muted">System follows your device preference and responds when it changes.</p>
+  </>;
+}
+
 export default function Settings() {
   const navigate = useNavigate();
+  const auth = useAuth();
+  const sync = useSync();
+  const evidence = useEvidence();
   const {
     settings,
     updateSettings,
@@ -90,6 +113,17 @@ export default function Settings() {
   useEffect(() => {
     setDisplayName(userProfile?.displayName || userProfile?.name || '');
   }, [userProfile]);
+
+  if (!auth.hasLearnerAccess) {
+    return (
+      <PageShell className="max-w-4xl">
+        <header className="pb-5"><h1 className="text-3xl font-extrabold tracking-tight text-text-primary">Settings</h1><p className="mt-2 text-sm text-text-secondary">Manage account access and this device's appearance.</p></header>
+        {auth.ownershipConflict && <StatusBanner type="warning" message="This browser's private learning record belongs to a different verified account. It remains preserved and hidden. Sign in with the account that first claimed this device." />}
+        <SettingsSection id="account" title="Account" description="A verified account is required to activate the full Learning OS."><AccountSettings /></SettingsSection>
+        <SettingsSection title="Appearance" description="Choose how XcelerateAI looks on this device."><AppearanceSettings settings={settings} updateSettings={updateSettings} /></SettingsSection>
+      </PageShell>
+    );
+  }
 
   const legacyTotalWeeks = Array.isArray(roadmap?.months)
     ? roadmap.months.reduce((total, month) => total + (month.weeks?.length || 0), 0)
@@ -137,9 +171,10 @@ export default function Settings() {
     setFeedback({ type: 'success', text: 'Backup restored.' });
   };
 
-  const executeReset = () => {
+  const executeReset = async () => {
     setBusy(true);
     if (pendingReset === 'progress') {
+      if (activeV2Curriculum) await evidence.resetCurriculumEvidence(activeV2Curriculum);
       importProgress({
         roadmap,
         settings: { ...settings, startDate: new Date().toISOString().split('T')[0], activeWeek: 1, activeMonth: 1, manualOverrideEnabled: false, overrideReason: '' },
@@ -156,7 +191,10 @@ export default function Settings() {
       });
       setFeedback({ type: 'success', text: 'Learning progress and learning records reset.' });
     } else if (pendingReset === 'course-progress') {
-      if (curriculumMode === 'v2') resetActiveV2Curriculum();
+      if (curriculumMode === 'v2') {
+        await evidence.resetCurriculumEvidence(activeV2Curriculum);
+        await sync.requestCurriculumReset();
+      }
       else if (curriculumMode === 'legacy') resetProgressForActiveRoadmap();
       setFeedback(curriculumMode === 'catalog'
         ? { type: 'error', text: 'Choose a curriculum before resetting course progress.' }
@@ -167,6 +205,7 @@ export default function Settings() {
       setFeedback({ type: 'success', text: 'Choose a published curriculum from the catalog.' });
       navigate('/curricula');
     } else if (pendingReset === 'factory') {
+      if (activeV2Curriculum) await evidence.resetCurriculumEvidence(activeV2Curriculum);
       resetAllProgress();
       setFeedback({ type: 'success', text: 'Local XcelerateAI data reset.' });
     }
@@ -175,8 +214,8 @@ export default function Settings() {
   };
 
   const resetCopy = {
-    progress: { title: 'Reset all learning records?', description: 'Removes task progress, skill checks, notes, problems, proof, reflections, and streaks. The current course and basic settings are preserved.' },
-    'course-progress': { title: 'Reset current course progress?', description: 'Removes progress, skill checks, resources, practical missions, proof, and reflections for the current course. Notes, problems, and profile settings remain.' },
+    progress: { title: 'Reset all learning records?', description: 'Removes task progress, skill checks, notes, problems, Proof drafts, reflections, and streaks. Current evidence submissions are withdrawn while immutable history remains.' },
+    'course-progress': { title: 'Reset current course progress?', description: 'Removes progress, skill checks, resources, practical missions, Proof drafts, and reflections for the current course. Current evidence submissions are withdrawn; prior submission history remains.' },
     course: { title: 'Choose another curriculum?', description: 'Returns to the curriculum catalog without deleting saved curriculum progress.' },
     factory: { title: 'Reset all local data?', description: 'Removes locally stored settings, progress, courses, notes, problems, timer history, and onboarding completion from this browser.' },
   };
@@ -190,6 +229,10 @@ export default function Settings() {
 
       {feedback && <StatusBanner type={feedback.type} message={feedback.text} onClose={() => setFeedback(null)} />}
 
+      <SettingsSection id="account" title="Account" description="Verified identity and cloud profile for this learner.">
+        <AccountSettings />
+      </SettingsSection>
+
       <SettingsSection title="Profile" description="How XcelerateAI addresses you.">
         <form onSubmit={saveProfile}>
           <label htmlFor="profile-display-name" className="block text-sm font-semibold text-text-primary">Display name</label>
@@ -202,30 +245,7 @@ export default function Settings() {
       </SettingsSection>
 
       <SettingsSection title="Appearance" description="Choose how XcelerateAI looks on this device.">
-        <div className="grid grid-cols-3 gap-1 rounded-2xl border border-border-default bg-bg-soft p-1" role="radiogroup" aria-label="Appearance">
-          {[
-            { value: 'system', label: 'System', icon: Monitor },
-            { value: 'light', label: 'Light', icon: Sun },
-            { value: 'dark', label: 'Dark', icon: Moon },
-          ].map(({ value, label, icon: Icon }) => {
-            const selected = (settings?.appearanceMode || 'system') === value;
-            return (
-              <button
-                key={value}
-                type="button"
-                role="radio"
-                aria-checked={selected}
-                onClick={() => updateSettings({ appearanceMode: value })}
-                className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-2 py-2 text-sm font-semibold transition-all duration-200 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue ${selected ? 'bg-bg-surface text-text-primary shadow-sm ring-1 ring-border-default' : 'text-text-muted hover:text-text-primary'}`}
-              >
-                <Icon className="h-4 w-4" aria-hidden="true" />
-                <span>{label}</span>
-                {selected && <span className="sr-only">selected</span>}
-              </button>
-            );
-          })}
-        </div>
-        <p className="mt-3 text-xs text-text-muted">System follows your device preference and responds when it changes.</p>
+        <AppearanceSettings settings={settings} updateSettings={updateSettings} />
       </SettingsSection>
 
       <SettingsSection title="Learning" description="Everyday preferences used during your course.">

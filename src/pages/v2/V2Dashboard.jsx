@@ -3,12 +3,19 @@ import { ArrowRight, BookOpen, CheckCircle2, FolderKanban, RefreshCw } from 'luc
 import { Link } from 'react-router-dom';
 import { PageShell, ProgressBar } from '../../components/common/UIComponents';
 import { useApp } from '../../context/AppContext';
+import { useEvidence } from '../../context/EvidenceContext.jsx';
 import { getV2NextAction } from '../../curriculum-v2/runtime/progression.js';
 import { getAllV2ProjectProgress } from '../../curriculum-v2/runtime/projects.js';
 
 export default function V2Dashboard() {
   const { activeV2Curriculum: curriculum, activeV2Learner: learner, userProfile } = useApp();
-  const next = React.useMemo(() => getV2NextAction(curriculum, learner), [curriculum, learner]);
+  const evidence = useEvidence();
+  const activeWeek = curriculum.indexes.weeksById[learner?.activeWeekId] || curriculum.weeks.find((week) => !learner?.completedWeekIds?.includes(week.id)) || curriculum.weeks[0];
+  React.useEffect(() => {
+    if (!activeWeek) return;
+    evidence.loadHistory({ curriculumId: curriculum.curriculumId, curriculumRevision: curriculum.revision, proofId: activeWeek.proof.id }).catch(() => {});
+  }, [activeWeek?.proof.id, curriculum.curriculumId, curriculum.revision]); // Refresh the active Proof receipt without coupling it to Phase 2 state.
+  const next = React.useMemo(() => getV2NextAction(curriculum, learner, { currentByProof: evidence.currentByProof }), [curriculum, evidence.currentByProof, learner]);
   const completed = learner?.completedWeekIds?.length || 0;
   const percent = curriculum.weeks.length ? Math.round((completed / curriculum.weeks.length) * 100) : 0;
   const projects = React.useMemo(() => getAllV2ProjectProgress(curriculum, learner), [curriculum, learner]);
