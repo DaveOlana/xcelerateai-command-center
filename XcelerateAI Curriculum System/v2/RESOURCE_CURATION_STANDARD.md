@@ -363,6 +363,8 @@ Accessibility                5
 Total                      100
 ```
 
+The score is applied only after hard suitability gates. For beginner-stage teaching, a material prerequisite mismatch is disqualifying until repaired, and clarity carries exceptional importance. A more authoritative source does not outrank a substantially more teachable, accurate source merely because it is official.
+
 This score is internal guidance.
 
 It is not a learner-facing rating.
@@ -1229,3 +1231,45 @@ Knowledge required by a Skill Check, required Build step, or acceptance criterio
 Resource count, format, and provider distribution are not quotas. Provider concentration is an audit signal: reviewers must challenge whether discovery stopped too early, then retain the concentration when the evidence shows those resources are still the strongest coherent set.
 
 A Core video must be freely accessible without making an account part of the learning gate, provide usable captions or transcript support, and identify the exact segment or activity assigned. If it cannot satisfy those conditions, select or pair a suitable text or guided-practice route.
+
+---
+
+# 42. Beginner Integrity Calibration
+
+## Hard principle
+
+> **A learner must not need to research an assigned resource merely to understand the resource.**
+
+Good difficulty comes from the concept being learned. Bad difficulty comes from untaught terminology, tools, workflows, conventions, or prerequisite concepts assumed by the resource. Bad difficulty must not silently pass because a source is accurate, official, free, or easy to verify.
+
+For every important assignment, inspect the exact selected section and record:
+
+- knowledge accumulated before this assignment;
+- knowledge and tools the section assumes;
+- new knowledge the section teaches;
+- any unexplained assumption still present;
+- why the resource fits this learner at this exact point;
+- the observable learner outcome;
+- the repair used when a mismatch was found.
+
+Allowed repairs are replacement, later placement, prerequisite-first teaching, a concise bridge, or reference reclassification. A bridge is a normal, ordered learning resource: it is short, gap-specific, connected directly to the next activity, and never a generated substitute textbook.
+
+## Documentation progression
+
+Official documentation is valuable professional material but is not automatically the primary beginner explanation. Early-stage use should generally move from clear explanation or demonstration through guided action and then consultation of documentation. As learners mature, documentation may become the primary source and documentation interpretation may itself be assessed. The choice remains competency- and learner-specific.
+
+## Justified modality review
+
+For each major concept, consider whether comprehension would materially improve through explanation, visual demonstration, worked example, video, guided or interactive practice, lab, reference, recovery explanation, or independent application. Select the smallest useful combination. No format count or percentage is required, and a single format may remain correct when the evidence justifies it.
+
+## Immediate application and recovery
+
+Where meaningful practice is possible, important Core competencies should be used in a `practice` assignment or required Build during the introduction Week or the next Week. Profession-specific activity is preferred over passive repetition.
+
+A recovery resource is an alternate use context, not a new `learningRole`. It retains the existing `learn`, `practice`, or `reference` role while changing explanation style, modality, example, difficulty, or scaffolding. The audit must state how it differs from the primary route.
+
+## Prospective evidence contract
+
+New curricula and deliberately regenerated future revisions use `content-integrity-audit.json` schema version `1.1`. Version `1.1` adds non-runtime prerequisite-fit evidence, expanded resource-quality judgments, justified modality review, and optional recovery-alternative evidence. Version `1.0` remains accepted for already-published PYAE Revision 3 and is not retroactively tightened.
+
+This evidence is consumed by V020 validation only. It does not add Curriculum Source fields, change compilation, enter learner state, or alter runtime behavior.

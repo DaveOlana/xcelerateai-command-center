@@ -1319,3 +1319,24 @@ Semantic review must inspect what deterministic code cannot judge, including beg
 The content audit is non-runtime. It is retained for traceability and review but must not be compiled into learner curriculum data, learner state, backup/export payloads, or catalog metadata.
 
 For a curriculum revision, production publication is an atomic final action. Any failed educational, deterministic, reconciliation, runtime, test, or build gate leaves the prior published revision active.
+
+---
+
+# 39. Prospective Beginner-Integrity Calibration
+
+New curricula and deliberately regenerated future revisions use V020 audit schema version `1.1`. Published PYAE Revision 3 retains its valid version `1.0` audit; this calibration does not alter its source, resources, runtime, or learner-state contract.
+
+Version `1.1` deterministically blocks:
+
+- missing point-of-use prerequisite evidence;
+- an assumed competency not available before the exact Study assignment;
+- unresolved terminology, tool, workflow, or prerequisite assumptions;
+- a bridge repair that does not identify an earlier assigned bridge resource;
+- missing or inconsistent modality-review evidence;
+- incomplete prerequisite, learner-stage, scope, access, cost, availability, section, role, or maintenance-risk judgments;
+- malformed recovery-alternative evidence;
+- a Core competency with no `practice` assignment or required Build application in its introduction Week or the following Week.
+
+V020 issues a review Warning when documentation is used as the primary `learn` route for a beginner without an explicit teaching justification. It does not impose a video, lab, documentation, provider, or format quota.
+
+Code can prove ordering, references, evidence presence, unresolved recorded gaps, and near-term application. Human or author review must still judge whether an explanation is genuinely clear, whether assumptions were discovered completely, whether a modality would materially improve comprehension, whether resources are instructionally redundant, and whether a recovery route is meaningfully different. These judgments must be inspectable; the pipeline may not manufacture them.

@@ -377,6 +377,8 @@ The actual resource or relevant section must be inspected sufficiently to establ
 Candidate evaluation considers:
 
 - correctness
+- prerequisite fit at the exact assignment point
+- learner-stage fit
 - exact competency match
 - clarity for the target learner
 - practical usefulness
@@ -384,7 +386,14 @@ Candidate evaluation considers:
 - accessibility
 - unnecessary scope
 - cost
+- availability and maintenance risk
+- exact-section assignability
+- learning-role fit
 - data burden where relevant
+
+For a beginner-facing teaching resource, prerequisite fit and clarity are gates, not minor scoring bonuses. The generator must compare what the learner knows immediately before the assignment with what the inspected section assumes. A learner must not need to research an assigned resource merely to understand the resource. Official authority does not excuse unexplained terminology, tools, workflows, or professional context.
+
+If a material mismatch exists, the generator must replace the resource, move it later, teach the prerequisite first, add a concise XcelerateAI bridge before it, or reclassify it as reference. It must not record semantic approval while leaving the mismatch unresolved.
 
 There is no mandatory resource quota.
 
@@ -427,6 +436,8 @@ Stage 3 passes only if:
 - obvious redundant Core resources are removed
 - exact locations are recorded where useful
 - paid resources are not required when the brief prohibits them
+- every important assignment has an evidence-backed point-of-use prerequisite review
+- no required beginner teaching resource retains an unexplained material assumption
 
 ---
 
@@ -477,6 +488,12 @@ Examples include:
 - explain a decision
 - integrate the skill into a larger build
 
+For each major concept, consider the smallest useful combination of explanation, demonstration, worked example, guided or interactive practice, lab, reference, recovery route, and independent application. These are review options, not quotas. Format describes what a resource is; `learn`, `practice`, and `reference` describe why it is assigned.
+
+When meaningful action is possible, avoid long passive chains ending only in a quiz. Prefer a short path from learning to trying, correcting friction, applying, and explaining or reflecting only where useful. A Core competency should normally receive meaningful practice or required Build application in its introduction Week or the next Week.
+
+Documentation literacy should progress deliberately. Early instruction generally favors a clear explanation, example or demonstration, and guided practice before documentation becomes a primary independent source. Later curricula may assess implementation and debugging from documentation itself. This is a progression principle, not a rigid sequence for every concept.
+
 ### Assessment need
 
 Decide whether the competency should be directly assessed in a Skill Check, evaluated through a Build, evaluated through both, or reinforced without direct weekly assessment.
@@ -515,6 +532,9 @@ Stage 4 passes only if:
 - assessments are not substitutes for teaching
 - independent research does not hide missing instruction
 - reinforcement exists where forgetting risk is meaningful
+- major concepts receive justified modality review without resource-format quotas
+- important Core competencies receive reasonably near-term application
+- recovery routes, when assigned, change explanation, example, modality, difficulty, or scaffolding rather than merely repeating the primary route
 
 ---
 

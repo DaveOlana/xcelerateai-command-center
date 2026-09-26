@@ -104,6 +104,42 @@ function productionFixture() {
   return { source, research, audit };
 }
 
+function prospectiveFixture() {
+  const fixtureData = productionFixture();
+  fixtureData.audit.schemaVersion = '1.1';
+  fixtureData.audit.resourceAudits.forEach((record) => {
+    const resource = fixtureData.source.resources.find((item) => item.id === record.resourceId);
+    record.prerequisiteFit = {
+      assumedCompetencyIds: [],
+      unresolvedAssumptions: [],
+      resolution: 'fit',
+      bridgeResourceIds: [],
+      evidence: 'The inspected assignment assumes no knowledge beyond what is available before this exact point.',
+      expectedOutcome: 'The learner can perform the mapped competency after completing the assignment.',
+    };
+    record.modalityReview = {
+      consideredFormats: [resource.format],
+      selectedFormat: resource.format,
+      rationale: 'This format is the smallest useful route for the learning need; no format quota was applied.',
+    };
+    Object.assign(record.judgment, {
+      prerequisiteFit: 'All material prerequisites are available before the assignment.',
+      learnerStageFit: 'The explanation and activity fit a complete beginner at this point.',
+      scopeFit: 'The assigned section contains only the needed scope.',
+      accessibility: 'The selected section is usable with the stated learner setup.',
+      cost: 'The resource is free for required progression.',
+      availability: 'The exact assigned section was reachable during review.',
+      sectionAssignability: 'The assignment has a precise learner-visible boundary.',
+      learningRoleFit: 'The resource performs its authored learning role.',
+      maintenanceRisk: 'The source and replacement risk were reviewed.',
+    });
+    if (resource.format === 'documentation') {
+      record.documentationTeachingJustification = 'The assigned section is deliberately suitable as the primary explanation at this learner stage.';
+    }
+  });
+  return fixtureData;
+}
+
 test('complete evidence-backed content integrity audit passes', () => {
   const { source, research, audit } = productionFixture();
   const report = validateContentIntegrityAudit(audit, source, research);
@@ -145,4 +181,110 @@ test('classification evidence cannot hide required knowledge in Optional or futu
   const priorReport = validateContentIntegrityAudit(badPrior.audit, badPrior.source, badPrior.research);
   assert.equal(priorReport.status, 'FAIL');
   assert.ok(priorReport.findings.some((finding) => finding.code === 'V020-B066'));
+});
+
+test('prospective audit accepts prerequisites already learned and an earlier explicit bridge', () => {
+  const learned = prospectiveFixture();
+  const secondWeek = learned.source.weeks[1];
+  const secondWeekResourceId = secondWeek.study.resources[0].resourceId;
+  learned.audit.resourceAudits.find((record) => record.resourceId === secondWeekResourceId)
+    .prerequisiteFit.assumedCompetencyIds = [learned.source.weeks[0].competencyIds[0]];
+  assert.equal(validateContentIntegrityAudit(learned.audit, learned.source, learned.research).status, 'PASS');
+
+  const bridged = prospectiveFixture();
+  const firstWeekAssignments = bridged.source.weeks[0].study.resources;
+  assert.ok(firstWeekAssignments.length >= 2, 'Fixture requires two ordered Study assignments.');
+  const bridgedAudit = bridged.audit.resourceAudits.find((record) => record.resourceId === firstWeekAssignments[1].resourceId);
+  bridgedAudit.prerequisiteFit.resolution = 'bridge';
+  bridgedAudit.prerequisiteFit.bridgeResourceIds = [firstWeekAssignments[0].resourceId];
+  assert.equal(validateContentIntegrityAudit(bridged.audit, bridged.source, bridged.research).status, 'PASS');
+});
+
+test('prospective audit blocks an untaught resource prerequisite or unresolved assumption', () => {
+  const { source, research, audit } = prospectiveFixture();
+  const firstResourceId = source.weeks[0].study.resources[0].resourceId;
+  const record = audit.resourceAudits.find((item) => item.resourceId === firstResourceId);
+  record.prerequisiteFit.assumedCompetencyIds = [source.weeks[1].competencyIds[0]];
+  record.prerequisiteFit.unresolvedAssumptions = ['An unexplained professional tool'];
+  const report = validateContentIntegrityAudit(audit, source, research);
+  assert.equal(report.status, 'FAIL');
+  assert.ok(report.findings.some((finding) => finding.code === 'V020-B069'));
+  assert.ok(report.findings.some((finding) => finding.code === 'V020-B070'));
+});
+
+test('documentation used to teach a beginner requires review but reference use does not', () => {
+  const teaching = prospectiveFixture();
+  const assignment = teaching.source.weeks[0].study.resources[0];
+  const resource = teaching.source.resources.find((item) => item.id === assignment.resourceId);
+  const auditRecord = teaching.audit.resourceAudits.find((item) => item.resourceId === assignment.resourceId);
+  resource.format = 'documentation';
+  assignment.learningRole = 'learn';
+  auditRecord.learningRole = 'learn';
+  auditRecord.modalityReview.selectedFormat = 'documentation';
+  auditRecord.modalityReview.consideredFormats = ['documentation'];
+  delete auditRecord.documentationTeachingJustification;
+  const teachingReport = validateContentIntegrityAudit(teaching.audit, teaching.source, teaching.research);
+  assert.equal(teachingReport.status, 'PASS');
+  assert.ok(teachingReport.findings.some((finding) => finding.code === 'V020-W001'));
+
+  assignment.learningRole = 'reference';
+  auditRecord.learningRole = 'reference';
+  const referenceReport = validateContentIntegrityAudit(teaching.audit, teaching.source, teaching.research);
+  assert.ok(!referenceReport.findings.some((finding) => finding.code === 'V020-W001'));
+});
+
+test('prospective audit blocks a Core competency without near-term application', () => {
+  const { source, research, audit } = prospectiveFixture();
+  const competencyId = source.competencies.find((competency) => competency.importance === 'core').id;
+  source.weeks.forEach((week) => {
+    week.study.resources.forEach((assignment) => {
+      if (assignment.competencyIds.includes(competencyId) && assignment.learningRole === 'practice') assignment.learningRole = 'learn';
+      const record = audit.resourceAudits.find((item) => item.resourceId === assignment.resourceId);
+      if (record) record.learningRole = assignment.learningRole;
+    });
+    week.builds.forEach((build) => {
+      build.competencyIds = build.competencyIds.filter((id) => id !== competencyId);
+    });
+  });
+  const report = validateContentIntegrityAudit(audit, source, research);
+  assert.equal(report.status, 'FAIL');
+  assert.ok(report.findings.some((finding) => finding.code === 'V020-B075'));
+});
+
+test('prospective audit permits a different recovery route and imposes no modality quota', () => {
+  const { source, research, audit } = prospectiveFixture();
+  source.resources.forEach((resource) => { resource.format = 'documentation'; });
+  audit.resourceAudits.forEach((record) => {
+    record.modalityReview = {
+      consideredFormats: ['documentation'],
+      selectedFormat: 'documentation',
+      rationale: 'Only documentation materially improves this fixture need; no quota requires another format.',
+    };
+    record.documentationTeachingJustification = 'Direct inspection found this concise section appropriate for the learner stage.';
+  });
+  audit.resourceAudits[1].recoveryAlternative = {
+    primaryResourceId: audit.resourceAudits[0].resourceId,
+    difference: 'Uses a smaller worked example and additional scaffolding rather than repeating the primary explanation.',
+  };
+  const report = validateContentIntegrityAudit(audit, source, research);
+  assert.equal(report.status, 'PASS');
+  assert.equal(report.findings.filter((finding) => finding.code === 'V020-W001').length, 0);
+});
+
+test('prospective audit flags potentially redundant same-role resources for review', () => {
+  const { source, research, audit } = prospectiveFixture();
+  const assignments = source.weeks[0].study.resources;
+  assert.ok(assignments.length >= 2, 'Fixture requires two Study assignments.');
+  assignments[1].learningRole = assignments[0].learningRole;
+  assignments[1].competencyIds = [...assignments[0].competencyIds];
+  const firstResource = source.resources.find((resource) => resource.id === assignments[0].resourceId);
+  const secondResource = source.resources.find((resource) => resource.id === assignments[1].resourceId);
+  secondResource.format = firstResource.format;
+  const secondAudit = audit.resourceAudits.find((record) => record.resourceId === assignments[1].resourceId);
+  secondAudit.learningRole = assignments[1].learningRole;
+  secondAudit.modalityReview.selectedFormat = secondResource.format;
+  secondAudit.modalityReview.consideredFormats = [secondResource.format];
+  const report = validateContentIntegrityAudit(audit, source, research);
+  assert.equal(report.status, 'PASS');
+  assert.ok(report.findings.some((finding) => finding.code === 'V020-W002'));
 });

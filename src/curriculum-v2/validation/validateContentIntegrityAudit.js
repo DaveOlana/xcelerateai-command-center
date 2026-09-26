@@ -1,8 +1,21 @@
-import { STUDY_LEARNING_ROLES } from '../schema/constants.js';
+import { RESOURCE_FORMATS, STUDY_LEARNING_ROLES } from '../schema/constants.js';
 import { createFinding, createValidationReport, SEVERITIES } from './findings.js';
 
 const QUESTION_CLASSIFICATIONS = Object.freeze(['A', 'B', 'C', 'D']);
 const RESOURCE_DECISIONS = Object.freeze(['retained', 'replaced', 'added', 'removed']);
+const AUDIT_SCHEMA_VERSIONS = Object.freeze(['1.0', '1.1']);
+const PREREQUISITE_REPAIRS = Object.freeze(['fit', 'replaced', 'moved-later', 'taught-first', 'bridge', 'reference']);
+const PROSPECTIVE_JUDGMENT_FIELDS = Object.freeze([
+  'prerequisiteFit',
+  'learnerStageFit',
+  'scopeFit',
+  'accessibility',
+  'cost',
+  'availability',
+  'sectionAssignability',
+  'learningRoleFit',
+  'maintenanceRisk',
+]);
 const BUILD_DEPENDENCY_CLASSES = Object.freeze([
   'taught-this-week',
   'established-previously',
@@ -18,6 +31,7 @@ const isString = (value) => typeof value === 'string' && value.trim().length > 0
 export function validateContentIntegrityAudit(audit, source, research = []) {
   const findings = [];
   const add = (code, message, ids = []) => findings.push(createFinding(code, SEVERITIES.BLOCKER, message, ids));
+  const warn = (code, message, ids = []) => findings.push(createFinding(code, SEVERITIES.WARNING, message, ids));
 
   if (!isObject(audit)) {
     add('V020-B001', 'content-integrity-audit.json must contain an object.');
@@ -28,7 +42,8 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
     return createValidationReport(source, findings);
   }
 
-  if (audit.schemaVersion !== '1.0') add('V020-B003', 'Content integrity audit schemaVersion must be "1.0".');
+  if (!AUDIT_SCHEMA_VERSIONS.includes(audit.schemaVersion)) add('V020-B003', 'Content integrity audit schemaVersion must be "1.0" or "1.1".');
+  const prospectiveBeginnerIntegrity = audit.schemaVersion === '1.1';
   if (audit.curriculumId !== source.curriculumId) add('V020-B004', 'Audit curriculumId must match Curriculum Source.', [audit.curriculumId, source.curriculumId]);
   if (audit.revision !== source.revision) add('V020-B005', 'Audit revision must match Curriculum Source.', [String(audit.revision), String(source.revision)]);
   if (!isString(audit.auditedAt) || Number.isNaN(Date.parse(audit.auditedAt))) add('V020-B006', 'Audit auditedAt must be a valid ISO-compatible date.');
@@ -43,12 +58,19 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
   const weekSequenceById = new Map(weeks.map((week) => [week?.id, week?.sequence]));
   const firstCompetencyWeek = new Map();
   const assignmentByResourceId = new Map();
+  const assignmentOrderByResourceId = new Map();
+  const availableCompetenciesBeforeResource = new Map();
+  const accumulatedCompetencies = new Set();
+  let assignmentOrder = 0;
 
-  weeks.forEach((week) => {
+  [...weeks].sort((left, right) => left?.sequence - right?.sequence).forEach((week) => {
     asArray(week?.competencyIds).forEach((competencyId) => {
       if (!firstCompetencyWeek.has(competencyId)) firstCompetencyWeek.set(competencyId, week?.sequence);
     });
     asArray(week?.study?.resources).forEach((assignment) => {
+      availableCompetenciesBeforeResource.set(assignment?.resourceId, new Set(accumulatedCompetencies));
+      assignmentOrderByResourceId.set(assignment?.resourceId, assignmentOrder);
+      assignmentOrder += 1;
       assignmentByResourceId.set(assignment?.resourceId, { assignment, week });
       if (!STUDY_LEARNING_ROLES.includes(assignment?.learningRole)) {
         add('V020-B008', `Production Study assignment ${assignment?.resourceId || '(missing ID)'} requires an authored learningRole.`, [week?.id, assignment?.resourceId]);
@@ -56,7 +78,11 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
       if (!isString(assignment?.purpose)) {
         add('V020-B009', `Production Study assignment ${assignment?.resourceId || '(missing ID)'} requires a learner-facing purpose.`, [week?.id, assignment?.resourceId]);
       }
+      if (assignment?.learningRole === 'learn') {
+        asArray(assignment?.competencyIds).forEach((competencyId) => accumulatedCompetencies.add(competencyId));
+      }
     });
+    asArray(week?.competencyIds).forEach((competencyId) => accumulatedCompetencies.add(competencyId));
   });
 
   const resourceAudits = asArray(audit.resourceAudits);
@@ -73,6 +99,18 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
     const researchRecord = researchById.get(resource?.id);
     if (!researchRecord || researchRecord.url !== resource?.url || researchRecord.accessStatus !== 'verified') {
       add('V020-B014', `Resource ${resource?.id} requires matching verified research evidence.`, [resource?.id]);
+    }
+    if (prospectiveBeginnerIntegrity) {
+      validateProspectiveResourceIntegrity({
+        record,
+        resource,
+        assignment,
+        sourceResourceById,
+        availableCompetencies: availableCompetenciesBeforeResource.get(resource?.id) ?? new Set(),
+        assignmentOrderByResourceId,
+        add,
+        warn,
+      });
     }
   });
 
@@ -112,6 +150,7 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
     if (record.decision === 'replaced' && (!isString(record.previousUrl) || record.previousUrl === record.finalUrl)) add('V020-B060', `${label} replaced decision requires a different previousUrl.`, [record.resourceId]);
     if (record.decision === 'added' && record.previousUrl !== null) add('V020-B061', `${label} added decision requires previousUrl null.`, [record.resourceId]);
   });
+  if (prospectiveBeginnerIntegrity) warnPotentialResourceRedundancy(resourceAudits, sourceResourceById, assignmentByResourceId, warn);
 
   const expectedQuestions = weeks.flatMap((week) => asArray(week?.skillCheck?.questions).map((question) => ({ question, week })));
   const questionAudits = asArray(audit.questionAudits);
@@ -215,6 +254,8 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
   });
   if (readiness.length !== weeks.length) add('V020-B056', `Week readiness count ${readiness.length} must equal Week count ${weeks.length}.`);
 
+  if (prospectiveBeginnerIntegrity) validateImmediateApplication(source, add);
+
   if (!isObject(audit.semanticReview) || audit.semanticReview.status !== 'PASS'
     || !isString(audit.semanticReview.method) || asArray(audit.semanticReview.findingsReviewed).length === 0) {
     add('V020-B057', 'semanticReview must contain evidence-backed PASS details; the pipeline may not manufacture semantic approval.');
@@ -233,6 +274,114 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
       weekReadiness: readiness.length,
       classificationTotals,
     },
+  });
+}
+
+function validateProspectiveResourceIntegrity({
+  record,
+  resource,
+  assignment,
+  sourceResourceById,
+  availableCompetencies,
+  assignmentOrderByResourceId,
+  add,
+  warn,
+}) {
+  const prerequisiteFit = record?.prerequisiteFit;
+  if (!isObject(prerequisiteFit)
+    || !Array.isArray(prerequisiteFit.assumedCompetencyIds)
+    || !Array.isArray(prerequisiteFit.unresolvedAssumptions)
+    || !PREREQUISITE_REPAIRS.includes(prerequisiteFit.resolution)
+    || !isString(prerequisiteFit.evidence)
+    || !isString(prerequisiteFit.expectedOutcome)) {
+    add('V020-B068', `Resource ${resource?.id} requires a complete point-of-use prerequisiteFit review.`, [resource?.id]);
+    return;
+  }
+
+  const unavailable = prerequisiteFit.assumedCompetencyIds.filter((competencyId) => !availableCompetencies.has(competencyId));
+  if (unavailable.length > 0) {
+    add('V020-B069', `Resource ${resource?.id} assumes competencies unavailable before its exact assignment point.`, [resource?.id, ...unavailable]);
+  }
+  if (prerequisiteFit.unresolvedAssumptions.length > 0) {
+    add('V020-B070', `Resource ${resource?.id} retains unexplained terminology, tools, workflows, or prerequisites.`, [resource?.id]);
+  }
+
+  const bridgeResourceIds = asArray(prerequisiteFit.bridgeResourceIds);
+  if (prerequisiteFit.resolution === 'bridge') {
+    const currentOrder = assignmentOrderByResourceId.get(resource?.id);
+    const invalidBridge = bridgeResourceIds.length === 0 || bridgeResourceIds.some((resourceId) => (
+      !sourceResourceById.has(resourceId)
+      || resourceId === resource?.id
+      || (assignmentOrderByResourceId.get(resourceId) ?? Infinity) >= (currentOrder ?? -1)
+    ));
+    if (invalidBridge) add('V020-B071', `Resource ${resource?.id} bridge repair must identify an earlier assigned bridge resource.`, [resource?.id, ...bridgeResourceIds]);
+  }
+
+  const modalityReview = record?.modalityReview;
+  if (!isObject(modalityReview)
+    || !Array.isArray(modalityReview.consideredFormats)
+    || modalityReview.consideredFormats.length === 0
+    || modalityReview.consideredFormats.some((format) => !RESOURCE_FORMATS.includes(format))
+    || modalityReview.selectedFormat !== resource?.format
+    || !isString(modalityReview.rationale)) {
+    add('V020-B072', `Resource ${resource?.id} requires a justified modality review without format quotas.`, [resource?.id]);
+  }
+
+  if (PROSPECTIVE_JUDGMENT_FIELDS.some((field) => !isString(record?.judgment?.[field]))) {
+    add('V020-B073', `Resource ${resource?.id} requires the prospective resource-quality judgments.`, [resource?.id]);
+  }
+
+  if (resource?.format === 'documentation' && assignment?.learningRole === 'learn'
+    && !isString(record?.documentationTeachingJustification)) {
+    warn('V020-W001', `Documentation is the primary beginner teaching route for ${resource?.id} without an explicit teaching justification.`, [resource?.id]);
+  }
+
+  if (record?.recoveryAlternative !== undefined) {
+    const recovery = record.recoveryAlternative;
+    if (!isObject(recovery) || !isString(recovery.primaryResourceId) || recovery.primaryResourceId === resource?.id
+      || !sourceResourceById.has(recovery.primaryResourceId) || !isString(recovery.difference)) {
+      add('V020-B074', `Resource ${resource?.id} has an invalid recoveryAlternative review.`, [resource?.id, recovery?.primaryResourceId]);
+    }
+  }
+}
+
+function validateImmediateApplication(source, add) {
+  const weeks = [...asArray(source?.weeks)].sort((left, right) => left?.sequence - right?.sequence);
+  asArray(source?.competencies).filter((competency) => competency?.importance === 'core').forEach((competency) => {
+    const introduction = weeks.find((week) => asArray(week?.competencyIds).includes(competency.id));
+    if (!introduction) return;
+    const applicationWindow = weeks.filter((week) => week?.sequence >= introduction.sequence && week?.sequence <= introduction.sequence + 1);
+    const hasApplication = applicationWindow.some((week) => (
+      asArray(week?.study?.resources).some((assignment) => assignment?.learningRole === 'practice'
+        && asArray(assignment?.competencyIds).includes(competency.id))
+      || asArray(week?.builds).some((build) => build?.required && asArray(build?.competencyIds).includes(competency.id))
+    ));
+    if (!hasApplication) {
+      add('V020-B075', `Core competency ${competency.id} has no meaningful practice or required Build in its introduction Week or the next Week.`, [competency.id, introduction.id]);
+    }
+  });
+}
+
+function warnPotentialResourceRedundancy(resourceAudits, sourceResourceById, assignmentByResourceId, warn) {
+  const signatures = new Map();
+  resourceAudits.filter((record) => record?.decision !== 'removed').forEach((record) => {
+    const resource = sourceResourceById.get(record?.resourceId);
+    const assignmentRecord = assignmentByResourceId.get(record?.resourceId);
+    if (!resource || !assignmentRecord?.assignment) return;
+    const signature = [
+      assignmentRecord.week?.id,
+      assignmentRecord.assignment.learningRole,
+      resource.format,
+      [...asArray(assignmentRecord.assignment.competencyIds)].sort().join(','),
+    ].join('|');
+    const matches = signatures.get(signature) ?? [];
+    matches.push(record.resourceId);
+    signatures.set(signature, matches);
+  });
+  signatures.forEach((resourceIds) => {
+    if (resourceIds.length > 1) {
+      warn('V020-W002', 'Multiple resources share the same Week, learning role, format, and competency mapping; reviewers must confirm that each contributes a distinct instructional benefit.', resourceIds);
+    }
   });
 }
 
