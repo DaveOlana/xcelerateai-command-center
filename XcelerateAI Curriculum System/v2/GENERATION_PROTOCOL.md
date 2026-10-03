@@ -1232,3 +1232,12 @@ candidate source and research
 ```
 
 Until every required gate passes, the current published revision remains active and the candidate must not enter the learner catalog.
+
+For content-integrity schema `1.2`, generation must also declare an optional focus vendor, cap that vendor at one learner-facing Study card per Week, land required Core Learn/Practice assignments directly (or record a wholly deterministic hub path), and author explicit start, consume, stop, account/access, outcome, and next-action instructions. Studio work is authored in a non-runtime activity contract and validated before compilation: one activity per Week, concrete output, tools, time, prerequisites, finished state, submission, steps, checklist, recovery help, and no unresolved prerequisite terms. Learner presentation selects and renders one requested Week only.
+# Learning-surface separation and beginner actions
+
+Before publication, classify the primary action of every Study candidate. Explanations and demonstrations are `learn`; bounded lookup material is `reference`; educational interactions with feedback are `practice`. If the learner must produce, debug, retain, submit, or prove a curriculum artifact, consolidate that work into the existing Build rather than creating a parallel Study task or a new learner stage.
+
+When guided work and an independent Build describe the same output, the Build is the canonical task. Move useful sequence, starter material, recovery guidance, and completion checks into the Build's existing steps, templates, hints, learner guide, and acceptance criteria.
+
+Weeks for complete beginners must use observable actions and named files, controls, tools, and results. Avoid curriculum-author shorthand such as “restate the outcome,” “identify the acceptance boundary,” or “create an inspectable artifact” where the learner instead needs to know what to open, type, click, observe, and save. Scaffolding should reduce progressively as competence grows.

@@ -139,6 +139,12 @@ The learner should always understand:
 - why they are building it
 - what success looks like
 
+## Skill Check and Quiz Work
+
+Whenever creating, regenerating, reviewing, validating, or repairing Skill Checks, curriculum quiz questions, multiple-choice assessments, or learner knowledge checks, read and follow [`SKILL_CHECK_AUTHORING_STANDARD.md`](./SKILL_CHECK_AUTHORING_STANDARD.md) in full.
+
+That standard is authoritative for assessment quality. Do not generate assessments from templates or curriculum metadata alone: first inspect the relevant competencies, assigned Study, Studio activity, Build, prerequisites, and intended learning outcomes. Where older informal quiz-generation behavior conflicts with the explicit standard, the standard governs unless a higher repository authority explicitly says otherwise.
+
 ---
 
 # Final Rule

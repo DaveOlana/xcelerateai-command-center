@@ -1,0 +1,122 @@
+{
+  "curriculumId": "FEWE",
+  "revision": 1,
+  "researchedAt": "2026-09-27T12:00:00.000Z",
+  "role": "Junior Front-End Engineer",
+  "roleDefinition": "Independently build, debug, test, optimize, and deploy responsive, accessible web interfaces from product requirements, visual designs, and API contracts under appropriate junior supervision.",
+  "evidenceSummary": "Current hiring and professional guidance converge on platform fundamentals, React/TypeScript, responsive and accessible design implementation, APIs, tests, debugging, Git collaboration, performance, and deployment. Senior infrastructure and backend ownership remain outside the graduation boundary.",
+  "capabilityTiers": {
+    "essentialEntryLevel": [
+      "semantic HTML",
+      "modern responsive CSS",
+      "JavaScript and DOM",
+      "TypeScript",
+      "React",
+      "API integration",
+      "forms and accessibility",
+      "Git/GitHub",
+      "testing and debugging",
+      "production builds and deployment",
+      "design/backend collaboration"
+    ],
+    "valuable": [
+      "Core Web Vitals investigation",
+      "component systems",
+      "browser automation",
+      "responsible AI-assisted development",
+      "basic release operation"
+    ],
+    "advancedLater": [
+      "micro-frontends",
+      "custom rendering infrastructure",
+      "advanced compiler/bundler internals",
+      "large-scale state platforms",
+      "distributed backend architecture",
+      "organization-wide design-system governance"
+    ]
+  },
+  "practitionerOutputs": [
+    "responsive semantic pages",
+    "interactive vanilla applications",
+    "typed React applications",
+    "automated test suites",
+    "deployed production builds",
+    "reviewable pull requests",
+    "capstone and technical case study"
+  ],
+  "professionalPractices": [
+    "clarify requirements",
+    "work from design and API contracts",
+    "debug from evidence",
+    "review code",
+    "communicate blockers",
+    "measure performance",
+    "integrate accessibility",
+    "document decisions and limitations"
+  ],
+  "boundaries": [
+    "Does not promise backend engineering proficiency.",
+    "Does not require a React meta-framework for graduation.",
+    "Does not teach senior architecture, infrastructure ownership, or advanced type-system theory.",
+    "Does not equate quiz completion with coding competence."
+  ],
+  "graduationBoundary": "Independently build, debug, test, optimize, and deploy responsive, accessible web interfaces from product requirements, visual designs, and API contracts under appropriate junior supervision.",
+  "technologyDecision": {
+    "framework": "React",
+    "language": "TypeScript after JavaScript",
+    "tooling": "Vite and npm",
+    "tests": "Vitest, Testing Library, and Playwright",
+    "state": "Platform/React state models before external state libraries",
+    "metaFramework": "Not required; extension-only after graduation because core platform and React competence have higher beginner value."
+  },
+  "sources": [
+    {
+      "category": "profession baseline",
+      "title": "MDN Curriculum",
+      "url": "https://developer.mozilla.org/en-US/curriculum/",
+      "finding": "The October 2025 curriculum emphasizes platform fundamentals, accessibility, responsive design, tools, environment knowledge, and soft skills; it explicitly warns about framework knowledge without foundations."
+    },
+    {
+      "category": "current employer evidence",
+      "title": "GoodData Frontend Engineer Intern",
+      "url": "https://jobs.ashbyhq.com/gooddata/37a3997c-da72-4857-a849-833c89836c9d",
+      "finding": "Current internship expectations include React, TypeScript, JavaScript, HTML/CSS, build tools, REST/async work, communication, and Git/testing as valuable evidence."
+    },
+    {
+      "category": "current employer evidence",
+      "title": "Quantcast New Grad Software Engineer",
+      "url": "https://jobs.ashbyhq.com/quantcast/09271839-e273-472b-948d-3d362867f809",
+      "finding": "Early-career engineers ship customer features with React/TypeScript, tests, documentation, code review, operational ownership, and designer/product collaboration under mentorship."
+    },
+    {
+      "category": "framework authority",
+      "title": "React Learn",
+      "url": "https://react.dev/learn",
+      "finding": "Modern React learning centers components, JSX, state, events, data flow, Effects as external synchronization, and intentional state architecture."
+    },
+    {
+      "category": "language authority",
+      "title": "TypeScript Handbook",
+      "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "finding": "TypeScript assumes JavaScript fundamentals and exists to statically check value relationships rather than replace runtime validation."
+    },
+    {
+      "category": "accessibility authority",
+      "title": "W3C WAI Tutorials",
+      "url": "https://www.w3.org/WAI/tutorials/",
+      "finding": "Semantic structure, labels, keyboard operation, feedback, and native controls are implementation requirements, not a separate late topic."
+    },
+    {
+      "category": "testing authority",
+      "title": "Testing Library Guiding Principle",
+      "url": "https://testing-library.com/docs/react-testing-library/intro/",
+      "finding": "Frontend tests should resemble user interaction and avoid coupling confidence to component internals."
+    },
+    {
+      "category": "browser testing authority",
+      "title": "Playwright Best Practices",
+      "url": "https://playwright.dev/docs/best-practices",
+      "finding": "End-to-end tests should verify user-visible behavior with isolation and resilient locators."
+    }
+  ]
+}

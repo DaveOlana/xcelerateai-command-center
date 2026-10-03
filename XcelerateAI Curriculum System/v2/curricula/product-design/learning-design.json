@@ -1,0 +1,105 @@
+{
+  "curriculumId": "PDES",
+  "revision": 1,
+  "designPrinciple": "Understand, investigate, create, test, explain, iterate, and improve. New capabilities move from bounded explanation or demonstration into an active Studio Exercise, a scenario-based Skill Check where appropriate, and an observable Build with professional proof.",
+  "targetLearner": "A complete beginner with basic computer literacy and no assumed design, research, Figma, HTML/CSS, accessibility, product-team, or professional communication experience.",
+  "primaryTool": {
+    "primary": "Figma",
+    "rationale": "Figma is the recurring tool expectation in current junior-role evidence and provides unlimited drafts plus core design, auto-layout, component, and prototyping capability on Starter. The curriculum avoids paid-only Dev Mode and advanced features by teaching explicit specifications and manual handoff.",
+    "alternativeEvaluated": "Penpot",
+    "alternativeFinding": "Penpot is a credible open-source, fully featured, no-paywall option with flex/grid layouts, components, tokens, prototyping, and inspect mode. It is not primary because current entry-level role evidence is materially more Figma-specific, but the concepts and artifacts remain portable.",
+    "paidFeatureBoundary": "Dev Mode, paid libraries, advanced AI, organization controls, and premium prototype features are optional. No assessment requires them."
+  },
+  "learningRhythm": [
+    {
+      "stage": "Study",
+      "purpose": "Use the smallest sufficient combination of explanation, demonstration, precise reference, and a Core Studio Exercise."
+    },
+    {
+      "stage": "Skill Check",
+      "purpose": "Use ten scenario-based judgments for assessable knowledge; seven correct answers pass, and quizzes never stand in for visual or practical skill."
+    },
+    {
+      "stage": "Build",
+      "purpose": "Produce an observable product-design artifact, test or critique it appropriately, revise it, and explain material decisions."
+    },
+    {
+      "stage": "Proof",
+      "purpose": "Submit links or exports, decision evidence, and an explicit acceptance-criteria review; submitted remains distinct from verified."
+    },
+    {
+      "stage": "Reflect",
+      "purpose": "Identify evidence that changed a decision, remaining uncertainty, tradeoffs, or the next proportionate test."
+    }
+  ],
+  "resourceRoleStrategy": {
+    "learn": "Primary explanation or visible demonstration at the learner’s current stage.",
+    "practice": "Active, bounded Studio work that rehearses the week’s decisions before assessment and Build.",
+    "reference": "Exact professional guidance consulted during application rather than consumed as a broad beginner lecture.",
+    "modalityRule": "Format follows the learning need. Every major capability combines explanation or demonstration with active practice and an observable artifact; no format percentage is optimized.",
+    "documentationProgression": "Early documentation is tightly bounded and bridged. Later documentation becomes a deliberate professional reference skill for standards, platform guidance, systems, accessibility, and handoff."
+  },
+  "progressionPolicy": "Proof is required for practical capability, Skill Checks for scenario judgment, and Reflection for decisions or uncertainty. Scaffolding decreases as patterns become familiar but returns whenever a genuinely new method, tool behavior, or professional workflow appears.",
+  "workloadPrinciples": {
+    "duration": "28 weeks emerged from dependency order, four integrated projects, repeated application, and the 20–27 hour weekly capacity.",
+    "total": "673 estimated hours, including resource use, Studio practice, Skill Checks, artifact creation, research or testing, revision, Proof, Reflection, and portfolio work.",
+    "honesty": "Required Build session estimates are explicit; research recruitment and participant access are treated as risks rather than hidden inside short tasks."
+  },
+  "assessmentPolicy": {
+    "weeklyQuestions": 10,
+    "passingScorePercent": 70,
+    "classificationRule": "Every production question is A, B, C, or D; D is forbidden and at least seven A/B items are required.",
+    "buildUnlock": "Study → Skill Check → Build → Proof → Reflect → Complete",
+    "recovery": "After failed attempts, learners revisit explanations and use the distinct Studio Exercise recovery route before a fresh attempt under existing platform behavior."
+  },
+  "projectArchitecture": [
+    {
+      "projectId": "PDES-PJ01",
+      "milestoneBuildIds": [
+        "PDES-B-W01-01",
+        "PDES-B-W02-01",
+        "PDES-B-W03-01",
+        "PDES-B-W04-01"
+      ]
+    },
+    {
+      "projectId": "PDES-PJ02",
+      "milestoneBuildIds": [
+        "PDES-B-W05-01",
+        "PDES-B-W06-01",
+        "PDES-B-W07-01",
+        "PDES-B-W08-01",
+        "PDES-B-W09-01",
+        "PDES-B-W10-01",
+        "PDES-B-W11-01"
+      ]
+    },
+    {
+      "projectId": "PDES-PJ03",
+      "milestoneBuildIds": [
+        "PDES-B-W12-01",
+        "PDES-B-W13-01",
+        "PDES-B-W14-01",
+        "PDES-B-W15-01",
+        "PDES-B-W16-01",
+        "PDES-B-W17-01",
+        "PDES-B-W18-01",
+        "PDES-B-W19-01",
+        "PDES-B-W20-01",
+        "PDES-B-W21-01",
+        "PDES-B-W22-01",
+        "PDES-B-W23-01"
+      ]
+    },
+    {
+      "projectId": "PDES-PJ04",
+      "milestoneBuildIds": [
+        "PDES-B-W24-01",
+        "PDES-B-W25-01",
+        "PDES-B-W26-01",
+        "PDES-B-W27-01",
+        "PDES-B-W28-01"
+      ]
+    }
+  ]
+}

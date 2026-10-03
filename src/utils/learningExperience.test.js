@@ -32,7 +32,7 @@ test('no selected V2 curriculum resolves to catalog mode and ignores stale bundl
   const mode = resolveCurriculumMode({ activeV2Curriculum: null, usingCustomRoadmap: false });
   assert.equal(mode, 'catalog');
   assert.equal(getCurrentCourseDefinition({ curriculumMode: mode, activeV2Curriculum: null, roadmap: staleLegacyRoadmap }), null);
-  assert.deepEqual(curriculumCatalog.listPublished().map((item) => item.title), ['Python Agent Engineering']);
+  assert.deepEqual(curriculumCatalog.listPublished().map((item) => item.title), ['Front-End Web Engineering', 'Product Design', 'Python Agent Engineering']);
   assert.equal(curriculumCatalog.listPublished().some((item) => item.title.includes('JavaScript')), false);
 });
 

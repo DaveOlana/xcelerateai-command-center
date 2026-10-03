@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "curriculumId": "FEWE",
+  "revision": 1,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 1,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V015-V017",
+      "name": "Resource research and professional capability review",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V018",
+      "name": "Runtime contract validation",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V020",
+      "name": "Evidence-backed content integrity",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "resourceAudits": 100,
+        "questionAudits": 330,
+        "buildAudits": 33,
+        "weekReadiness": 33,
+        "classificationTotals": {
+          "A": 330,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        }
+      }
+    },
+    {
+      "validator": "V021",
+      "name": "Studio learner contract",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V022",
+      "name": "Skill Check authoring and assessment maps",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "questions": 330,
+        "coverageEntries": 330,
+        "distinctTargets": 330
+      }
+    }
+  ],
+  "findings": [
+    {
+      "severity": "NOTE",
+      "message": "External services and resources were verified during generation and must be rechecked before a future revision."
+    }
+  ],
+  "semanticValidation": {
+    "status": "PASS",
+    "method": "Human-led AI author review opened current professional and authority sources, compared each point-of-use candidate, inspected every Week story, tested each question option for one defensible answer, traced hidden prerequisites, and ran five adversarial passes before deterministic validation.",
+    "findingsReviewed": [
+      "Moved React after platform, JavaScript, DOM, Git, tooling, TypeScript, and initial testing foundations.",
+      "Kept documentation optional/reference early except bounded tutorial-shaped authority paired with immediate Studio work.",
+      "Removed external state-library requirements because local, derived, shared, URL, and server state reasoning is the stronger junior foundation.",
+      "Excluded a required meta-framework because it would distort the platform-first graduation boundary; recorded it as a post-graduation extension.",
+      "Separated quiz understanding from practical coding evidence and supplied ten distinct targets per Week only because the current runtime requires ten.",
+      "Added deliberate debugging, accessibility, responsive, API-failure, security, performance, review, deployment, and capstone evidence throughout rather than isolating them.",
+      "Rechecked every external final destination, removed the one unavailable assignment, and prohibited final-destination inference from a merely reachable URL.",
+      "Separated instructional Study resources from curriculum tasks and retained the single Study → Skill Check → Build → Proof → Reflect journey."
+    ],
+    "adversarialResult": "No unavailable active destination, curriculum-task Study card, unresolved Studio stage, or abstract Week 1 action remains."
+  }
+}

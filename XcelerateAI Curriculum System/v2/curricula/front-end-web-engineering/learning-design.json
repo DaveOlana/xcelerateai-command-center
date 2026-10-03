@@ -1,0 +1,80 @@
+{
+  "curriculumId": "FEWE",
+  "revision": 1,
+  "designPrinciple": "Platform understanding precedes abstraction; every important concept moves quickly from explanation to browser observation, implementation, deliberate failure, debugging, testing, and explanation.",
+  "targetLearner": "Complete beginner with basic computer literacy only",
+  "technologySequence": [
+    "files/editor/browser",
+    "HTML semantics",
+    "CSS and responsive design",
+    "JavaScript",
+    "DOM/browser APIs",
+    "HTTP/APIs",
+    "Git/tooling",
+    "TypeScript",
+    "automated testing",
+    "React",
+    "routing/state/accessibility",
+    "performance/security/deployment",
+    "capstone"
+  ],
+  "learningRhythm": [
+    "bounded Core Learn",
+    "optional precision reference",
+    "guided Studio",
+    "10-target understanding check",
+    "required Build",
+    "minimum proof",
+    "specific reflection"
+  ],
+  "resourceRoleStrategy": {
+    "learn": "Primary explanation or demonstration.",
+    "practice": "Immediate active implementation and debugging.",
+    "reference": "Optional precision consultation; never the sole source of assessed knowledge."
+  },
+  "progressionPolicy": [
+    "Weeks 1–8 are highly guided.",
+    "Weeks 9–19 retain checkpoints while increasing learner decisions.",
+    "Weeks 20–27 require architecture and testing decisions inside React.",
+    "Weeks 28–33 resemble ticket, release, and capstone work with review gates."
+  ],
+  "workloadPrinciples": [
+    "20–27 hours per week.",
+    "Resource time includes active pauses and examples.",
+    "Most time is reserved for Studio, Build, debugging, testing, proof, and explanation.",
+    "Duration is the sum of authored workload."
+  ],
+  "assessmentPolicy": "Every Week maps ten distinct knowledge/reasoning targets because the current runtime requires ten questions; practical competence remains proven by Studio, Builds, Projects, and Proof.",
+  "projectArchitecture": [
+    {
+      "projectId": "FEWE-PJ01",
+      "title": "Accessible Responsive Site",
+      "milestoneCount": 5,
+      "outcome": "Create a semantic, accessible, responsive multi-page site from content structure through viewport verification."
+    },
+    {
+      "projectId": "FEWE-PJ02",
+      "title": "Vanilla JavaScript Product",
+      "milestoneCount": 8,
+      "outcome": "Build a modular, resilient browser application that consumes an API without framework abstractions."
+    },
+    {
+      "projectId": "FEWE-PJ03",
+      "title": "Typed and Tested Workflow",
+      "milestoneCount": 5,
+      "outcome": "Move a real frontend project through Git review, modern tooling, TypeScript boundaries, and automated tests."
+    },
+    {
+      "projectId": "FEWE-PJ04",
+      "title": "Production React Application",
+      "milestoneCount": 11,
+      "outcome": "Build, test, harden, deploy, and deliver a routed React product feature through a professional workflow."
+    },
+    {
+      "projectId": "FEWE-PJ05",
+      "title": "Independent Frontend Capstone",
+      "milestoneCount": 3,
+      "outcome": "Frame, build, validate, release, and defend an independent production-quality frontend application."
+    }
+  ]
+}

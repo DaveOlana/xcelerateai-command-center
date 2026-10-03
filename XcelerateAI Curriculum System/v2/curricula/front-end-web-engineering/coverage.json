@@ -1,0 +1,1904 @@
+[
+  {
+    "competencyId": "FEWE-C001",
+    "taughtIn": [
+      "FEWE-W01"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W01"
+    ],
+    "appliedIn": [
+      "FEWE-B-W01-01",
+      "FEWE-B-W02-01",
+      "FEWE-B-W03-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M01",
+      "FEWE-PJ01-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W02",
+      "FEWE-W03"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W02",
+      "FEWE-W03"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C002",
+    "taughtIn": [
+      "FEWE-W01"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W01"
+    ],
+    "appliedIn": [
+      "FEWE-B-W01-01",
+      "FEWE-B-W02-01",
+      "FEWE-B-W03-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M01",
+      "FEWE-PJ01-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W02",
+      "FEWE-W03"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W02",
+      "FEWE-W03"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C003",
+    "taughtIn": [
+      "FEWE-W02"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W02"
+    ],
+    "appliedIn": [
+      "FEWE-B-W02-01",
+      "FEWE-B-W03-01",
+      "FEWE-B-W04-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M01",
+      "FEWE-PJ01-M02",
+      "FEWE-PJ01-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W03",
+      "FEWE-W04"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W03",
+      "FEWE-W04"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C004",
+    "taughtIn": [
+      "FEWE-W02"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W02"
+    ],
+    "appliedIn": [
+      "FEWE-B-W02-01",
+      "FEWE-B-W03-01",
+      "FEWE-B-W04-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M01",
+      "FEWE-PJ01-M02",
+      "FEWE-PJ01-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W03",
+      "FEWE-W04"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W03",
+      "FEWE-W04"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C005",
+    "taughtIn": [
+      "FEWE-W03"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W03"
+    ],
+    "appliedIn": [
+      "FEWE-B-W03-01",
+      "FEWE-B-W04-01",
+      "FEWE-B-W05-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M02",
+      "FEWE-PJ01-M03",
+      "FEWE-PJ01-M04"
+    ],
+    "reinforcedIn": [
+      "FEWE-W04",
+      "FEWE-W05"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W04",
+      "FEWE-W05"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C006",
+    "taughtIn": [
+      "FEWE-W03"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W03"
+    ],
+    "appliedIn": [
+      "FEWE-B-W03-01",
+      "FEWE-B-W04-01",
+      "FEWE-B-W05-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M02",
+      "FEWE-PJ01-M03",
+      "FEWE-PJ01-M04"
+    ],
+    "reinforcedIn": [
+      "FEWE-W04",
+      "FEWE-W05"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W04",
+      "FEWE-W05"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C007",
+    "taughtIn": [
+      "FEWE-W04"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W04"
+    ],
+    "appliedIn": [
+      "FEWE-B-W04-01",
+      "FEWE-B-W05-01",
+      "FEWE-B-W06-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M03",
+      "FEWE-PJ01-M04",
+      "FEWE-PJ01-M05"
+    ],
+    "reinforcedIn": [
+      "FEWE-W05",
+      "FEWE-W06"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W05",
+      "FEWE-W06"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C008",
+    "taughtIn": [
+      "FEWE-W04"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W04"
+    ],
+    "appliedIn": [
+      "FEWE-B-W04-01",
+      "FEWE-B-W05-01",
+      "FEWE-B-W06-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M03",
+      "FEWE-PJ01-M04",
+      "FEWE-PJ01-M05"
+    ],
+    "reinforcedIn": [
+      "FEWE-W05",
+      "FEWE-W06"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W05",
+      "FEWE-W06"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C009",
+    "taughtIn": [
+      "FEWE-W05"
+    ],
+    "practicedIn": [
+      "FEWE-W05"
+    ],
+    "assessedIn": [
+      "FEWE-SC-W05"
+    ],
+    "appliedIn": [
+      "FEWE-B-W05-01",
+      "FEWE-B-W06-01",
+      "FEWE-B-W07-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M04",
+      "FEWE-PJ01-M05",
+      "FEWE-PJ02-M01"
+    ],
+    "reinforcedIn": [
+      "FEWE-W06",
+      "FEWE-W07"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W06",
+      "FEWE-W07"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C010",
+    "taughtIn": [
+      "FEWE-W05"
+    ],
+    "practicedIn": [
+      "FEWE-W05"
+    ],
+    "assessedIn": [
+      "FEWE-SC-W05"
+    ],
+    "appliedIn": [
+      "FEWE-B-W05-01",
+      "FEWE-B-W06-01",
+      "FEWE-B-W07-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M04",
+      "FEWE-PJ01-M05",
+      "FEWE-PJ02-M01"
+    ],
+    "reinforcedIn": [
+      "FEWE-W06",
+      "FEWE-W07"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W06",
+      "FEWE-W07"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C011",
+    "taughtIn": [
+      "FEWE-W06"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W06"
+    ],
+    "appliedIn": [
+      "FEWE-B-W06-01",
+      "FEWE-B-W07-01",
+      "FEWE-B-W08-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M05",
+      "FEWE-PJ02-M01",
+      "FEWE-PJ02-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W07",
+      "FEWE-W08"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W07",
+      "FEWE-W08"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C012",
+    "taughtIn": [
+      "FEWE-W06"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W06"
+    ],
+    "appliedIn": [
+      "FEWE-B-W06-01",
+      "FEWE-B-W07-01",
+      "FEWE-B-W08-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ01-M05",
+      "FEWE-PJ02-M01",
+      "FEWE-PJ02-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W07",
+      "FEWE-W08"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W07",
+      "FEWE-W08"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C013",
+    "taughtIn": [
+      "FEWE-W07"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W07"
+    ],
+    "appliedIn": [
+      "FEWE-B-W07-01",
+      "FEWE-B-W08-01",
+      "FEWE-B-W09-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M01",
+      "FEWE-PJ02-M02",
+      "FEWE-PJ02-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W08",
+      "FEWE-W09"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W08",
+      "FEWE-W09"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C014",
+    "taughtIn": [
+      "FEWE-W07"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W07"
+    ],
+    "appliedIn": [
+      "FEWE-B-W07-01",
+      "FEWE-B-W08-01",
+      "FEWE-B-W09-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M01",
+      "FEWE-PJ02-M02",
+      "FEWE-PJ02-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W08",
+      "FEWE-W09"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W08",
+      "FEWE-W09"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C015",
+    "taughtIn": [
+      "FEWE-W08"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W08"
+    ],
+    "appliedIn": [
+      "FEWE-B-W08-01",
+      "FEWE-B-W09-01",
+      "FEWE-B-W10-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M02",
+      "FEWE-PJ02-M03",
+      "FEWE-PJ02-M04"
+    ],
+    "reinforcedIn": [
+      "FEWE-W09",
+      "FEWE-W10"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W09",
+      "FEWE-W10"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C016",
+    "taughtIn": [
+      "FEWE-W08"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W08"
+    ],
+    "appliedIn": [
+      "FEWE-B-W08-01",
+      "FEWE-B-W09-01",
+      "FEWE-B-W10-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M02",
+      "FEWE-PJ02-M03",
+      "FEWE-PJ02-M04"
+    ],
+    "reinforcedIn": [
+      "FEWE-W09",
+      "FEWE-W10"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W09",
+      "FEWE-W10"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C017",
+    "taughtIn": [
+      "FEWE-W09"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W09"
+    ],
+    "appliedIn": [
+      "FEWE-B-W09-01",
+      "FEWE-B-W10-01",
+      "FEWE-B-W11-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M03",
+      "FEWE-PJ02-M04",
+      "FEWE-PJ02-M05"
+    ],
+    "reinforcedIn": [
+      "FEWE-W10",
+      "FEWE-W11"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W10",
+      "FEWE-W11"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C018",
+    "taughtIn": [
+      "FEWE-W09"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W09"
+    ],
+    "appliedIn": [
+      "FEWE-B-W09-01",
+      "FEWE-B-W10-01",
+      "FEWE-B-W11-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M03",
+      "FEWE-PJ02-M04",
+      "FEWE-PJ02-M05"
+    ],
+    "reinforcedIn": [
+      "FEWE-W10",
+      "FEWE-W11"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W10",
+      "FEWE-W11"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C019",
+    "taughtIn": [
+      "FEWE-W10"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W10"
+    ],
+    "appliedIn": [
+      "FEWE-B-W10-01",
+      "FEWE-B-W11-01",
+      "FEWE-B-W12-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M04",
+      "FEWE-PJ02-M05",
+      "FEWE-PJ02-M06"
+    ],
+    "reinforcedIn": [
+      "FEWE-W11",
+      "FEWE-W12"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W11",
+      "FEWE-W12"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C020",
+    "taughtIn": [
+      "FEWE-W10"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W10"
+    ],
+    "appliedIn": [
+      "FEWE-B-W10-01",
+      "FEWE-B-W11-01",
+      "FEWE-B-W12-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M04",
+      "FEWE-PJ02-M05",
+      "FEWE-PJ02-M06"
+    ],
+    "reinforcedIn": [
+      "FEWE-W11",
+      "FEWE-W12"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W11",
+      "FEWE-W12"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C021",
+    "taughtIn": [
+      "FEWE-W11"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W11"
+    ],
+    "appliedIn": [
+      "FEWE-B-W11-01",
+      "FEWE-B-W12-01",
+      "FEWE-B-W13-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M05",
+      "FEWE-PJ02-M06",
+      "FEWE-PJ02-M07"
+    ],
+    "reinforcedIn": [
+      "FEWE-W12",
+      "FEWE-W13"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W12",
+      "FEWE-W13"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C022",
+    "taughtIn": [
+      "FEWE-W11"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W11"
+    ],
+    "appliedIn": [
+      "FEWE-B-W11-01",
+      "FEWE-B-W12-01",
+      "FEWE-B-W13-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M05",
+      "FEWE-PJ02-M06",
+      "FEWE-PJ02-M07"
+    ],
+    "reinforcedIn": [
+      "FEWE-W12",
+      "FEWE-W13"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W12",
+      "FEWE-W13"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C023",
+    "taughtIn": [
+      "FEWE-W12"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W12"
+    ],
+    "appliedIn": [
+      "FEWE-B-W12-01",
+      "FEWE-B-W13-01",
+      "FEWE-B-W14-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M06",
+      "FEWE-PJ02-M07",
+      "FEWE-PJ02-M08"
+    ],
+    "reinforcedIn": [
+      "FEWE-W13",
+      "FEWE-W14"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W13",
+      "FEWE-W14"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C024",
+    "taughtIn": [
+      "FEWE-W12"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W12"
+    ],
+    "appliedIn": [
+      "FEWE-B-W12-01",
+      "FEWE-B-W13-01",
+      "FEWE-B-W14-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M06",
+      "FEWE-PJ02-M07",
+      "FEWE-PJ02-M08"
+    ],
+    "reinforcedIn": [
+      "FEWE-W13",
+      "FEWE-W14"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W13",
+      "FEWE-W14"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C025",
+    "taughtIn": [
+      "FEWE-W13"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W13"
+    ],
+    "appliedIn": [
+      "FEWE-B-W13-01",
+      "FEWE-B-W14-01",
+      "FEWE-B-W15-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M07",
+      "FEWE-PJ02-M08",
+      "FEWE-PJ03-M01"
+    ],
+    "reinforcedIn": [
+      "FEWE-W14",
+      "FEWE-W15"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W14",
+      "FEWE-W15"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C026",
+    "taughtIn": [
+      "FEWE-W13"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W13"
+    ],
+    "appliedIn": [
+      "FEWE-B-W13-01",
+      "FEWE-B-W14-01",
+      "FEWE-B-W15-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M07",
+      "FEWE-PJ02-M08",
+      "FEWE-PJ03-M01"
+    ],
+    "reinforcedIn": [
+      "FEWE-W14",
+      "FEWE-W15"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W14",
+      "FEWE-W15"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C027",
+    "taughtIn": [
+      "FEWE-W14"
+    ],
+    "practicedIn": [
+      "FEWE-W14"
+    ],
+    "assessedIn": [
+      "FEWE-SC-W14"
+    ],
+    "appliedIn": [
+      "FEWE-B-W14-01",
+      "FEWE-B-W15-01",
+      "FEWE-B-W16-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M08",
+      "FEWE-PJ03-M01",
+      "FEWE-PJ03-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W15",
+      "FEWE-W16"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W15",
+      "FEWE-W16"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C028",
+    "taughtIn": [
+      "FEWE-W14"
+    ],
+    "practicedIn": [
+      "FEWE-W14"
+    ],
+    "assessedIn": [
+      "FEWE-SC-W14"
+    ],
+    "appliedIn": [
+      "FEWE-B-W14-01",
+      "FEWE-B-W15-01",
+      "FEWE-B-W16-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ02-M08",
+      "FEWE-PJ03-M01",
+      "FEWE-PJ03-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W15",
+      "FEWE-W16"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W15",
+      "FEWE-W16"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C029",
+    "taughtIn": [
+      "FEWE-W15"
+    ],
+    "practicedIn": [
+      "FEWE-W15"
+    ],
+    "assessedIn": [
+      "FEWE-SC-W15"
+    ],
+    "appliedIn": [
+      "FEWE-B-W15-01",
+      "FEWE-B-W16-01",
+      "FEWE-B-W17-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M01",
+      "FEWE-PJ03-M02",
+      "FEWE-PJ03-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W16",
+      "FEWE-W17"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W16",
+      "FEWE-W17"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C030",
+    "taughtIn": [
+      "FEWE-W15"
+    ],
+    "practicedIn": [
+      "FEWE-W15"
+    ],
+    "assessedIn": [
+      "FEWE-SC-W15"
+    ],
+    "appliedIn": [
+      "FEWE-B-W15-01",
+      "FEWE-B-W16-01",
+      "FEWE-B-W17-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M01",
+      "FEWE-PJ03-M02",
+      "FEWE-PJ03-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W16",
+      "FEWE-W17"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W16",
+      "FEWE-W17"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C031",
+    "taughtIn": [
+      "FEWE-W16"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W16"
+    ],
+    "appliedIn": [
+      "FEWE-B-W16-01",
+      "FEWE-B-W17-01",
+      "FEWE-B-W18-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M02",
+      "FEWE-PJ03-M03",
+      "FEWE-PJ03-M04"
+    ],
+    "reinforcedIn": [
+      "FEWE-W17",
+      "FEWE-W18"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W17",
+      "FEWE-W18"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C032",
+    "taughtIn": [
+      "FEWE-W16"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W16"
+    ],
+    "appliedIn": [
+      "FEWE-B-W16-01",
+      "FEWE-B-W17-01",
+      "FEWE-B-W18-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M02",
+      "FEWE-PJ03-M03",
+      "FEWE-PJ03-M04"
+    ],
+    "reinforcedIn": [
+      "FEWE-W17",
+      "FEWE-W18"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W17",
+      "FEWE-W18"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C033",
+    "taughtIn": [
+      "FEWE-W17"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W17"
+    ],
+    "appliedIn": [
+      "FEWE-B-W17-01",
+      "FEWE-B-W18-01",
+      "FEWE-B-W19-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M03",
+      "FEWE-PJ03-M04",
+      "FEWE-PJ03-M05"
+    ],
+    "reinforcedIn": [
+      "FEWE-W18",
+      "FEWE-W19"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W18",
+      "FEWE-W19"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C034",
+    "taughtIn": [
+      "FEWE-W17"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W17"
+    ],
+    "appliedIn": [
+      "FEWE-B-W17-01",
+      "FEWE-B-W18-01",
+      "FEWE-B-W19-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M03",
+      "FEWE-PJ03-M04",
+      "FEWE-PJ03-M05"
+    ],
+    "reinforcedIn": [
+      "FEWE-W18",
+      "FEWE-W19"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W18",
+      "FEWE-W19"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C035",
+    "taughtIn": [
+      "FEWE-W18"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W18"
+    ],
+    "appliedIn": [
+      "FEWE-B-W18-01",
+      "FEWE-B-W19-01",
+      "FEWE-B-W20-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M04",
+      "FEWE-PJ03-M05",
+      "FEWE-PJ04-M01"
+    ],
+    "reinforcedIn": [
+      "FEWE-W19",
+      "FEWE-W20"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W19",
+      "FEWE-W20"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C036",
+    "taughtIn": [
+      "FEWE-W18"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W18"
+    ],
+    "appliedIn": [
+      "FEWE-B-W18-01",
+      "FEWE-B-W19-01",
+      "FEWE-B-W20-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M04",
+      "FEWE-PJ03-M05",
+      "FEWE-PJ04-M01"
+    ],
+    "reinforcedIn": [
+      "FEWE-W19",
+      "FEWE-W20"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W19",
+      "FEWE-W20"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C037",
+    "taughtIn": [
+      "FEWE-W19"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W19"
+    ],
+    "appliedIn": [
+      "FEWE-B-W19-01",
+      "FEWE-B-W20-01",
+      "FEWE-B-W21-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M05",
+      "FEWE-PJ04-M01",
+      "FEWE-PJ04-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W20",
+      "FEWE-W21"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W20",
+      "FEWE-W21"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C038",
+    "taughtIn": [
+      "FEWE-W19"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W19"
+    ],
+    "appliedIn": [
+      "FEWE-B-W19-01",
+      "FEWE-B-W20-01",
+      "FEWE-B-W21-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ03-M05",
+      "FEWE-PJ04-M01",
+      "FEWE-PJ04-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W20",
+      "FEWE-W21"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W20",
+      "FEWE-W21"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C039",
+    "taughtIn": [
+      "FEWE-W20"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W20"
+    ],
+    "appliedIn": [
+      "FEWE-B-W20-01",
+      "FEWE-B-W21-01",
+      "FEWE-B-W22-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M01",
+      "FEWE-PJ04-M02",
+      "FEWE-PJ04-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W21",
+      "FEWE-W22"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W21",
+      "FEWE-W22"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C040",
+    "taughtIn": [
+      "FEWE-W20"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W20"
+    ],
+    "appliedIn": [
+      "FEWE-B-W20-01",
+      "FEWE-B-W21-01",
+      "FEWE-B-W22-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M01",
+      "FEWE-PJ04-M02",
+      "FEWE-PJ04-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W21",
+      "FEWE-W22"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W21",
+      "FEWE-W22"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C041",
+    "taughtIn": [
+      "FEWE-W21"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W21"
+    ],
+    "appliedIn": [
+      "FEWE-B-W21-01",
+      "FEWE-B-W22-01",
+      "FEWE-B-W23-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M02",
+      "FEWE-PJ04-M03",
+      "FEWE-PJ04-M04"
+    ],
+    "reinforcedIn": [
+      "FEWE-W22",
+      "FEWE-W23"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W22",
+      "FEWE-W23"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C042",
+    "taughtIn": [
+      "FEWE-W21"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W21"
+    ],
+    "appliedIn": [
+      "FEWE-B-W21-01",
+      "FEWE-B-W22-01",
+      "FEWE-B-W23-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M02",
+      "FEWE-PJ04-M03",
+      "FEWE-PJ04-M04"
+    ],
+    "reinforcedIn": [
+      "FEWE-W22",
+      "FEWE-W23"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W22",
+      "FEWE-W23"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C043",
+    "taughtIn": [
+      "FEWE-W22"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W22"
+    ],
+    "appliedIn": [
+      "FEWE-B-W22-01",
+      "FEWE-B-W23-01",
+      "FEWE-B-W24-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M03",
+      "FEWE-PJ04-M04",
+      "FEWE-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "FEWE-W23",
+      "FEWE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W23",
+      "FEWE-W24"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C044",
+    "taughtIn": [
+      "FEWE-W22"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W22"
+    ],
+    "appliedIn": [
+      "FEWE-B-W22-01",
+      "FEWE-B-W23-01",
+      "FEWE-B-W24-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M03",
+      "FEWE-PJ04-M04",
+      "FEWE-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "FEWE-W23",
+      "FEWE-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W23",
+      "FEWE-W24"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C045",
+    "taughtIn": [
+      "FEWE-W23"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W23"
+    ],
+    "appliedIn": [
+      "FEWE-B-W23-01",
+      "FEWE-B-W24-01",
+      "FEWE-B-W25-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M04",
+      "FEWE-PJ04-M05",
+      "FEWE-PJ04-M06"
+    ],
+    "reinforcedIn": [
+      "FEWE-W24",
+      "FEWE-W25"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W24",
+      "FEWE-W25"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C046",
+    "taughtIn": [
+      "FEWE-W23"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W23"
+    ],
+    "appliedIn": [
+      "FEWE-B-W23-01",
+      "FEWE-B-W24-01",
+      "FEWE-B-W25-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M04",
+      "FEWE-PJ04-M05",
+      "FEWE-PJ04-M06"
+    ],
+    "reinforcedIn": [
+      "FEWE-W24",
+      "FEWE-W25"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W24",
+      "FEWE-W25"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C047",
+    "taughtIn": [
+      "FEWE-W24"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W24"
+    ],
+    "appliedIn": [
+      "FEWE-B-W24-01",
+      "FEWE-B-W25-01",
+      "FEWE-B-W26-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M05",
+      "FEWE-PJ04-M06",
+      "FEWE-PJ04-M07"
+    ],
+    "reinforcedIn": [
+      "FEWE-W25",
+      "FEWE-W26"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W25",
+      "FEWE-W26"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C048",
+    "taughtIn": [
+      "FEWE-W24"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W24"
+    ],
+    "appliedIn": [
+      "FEWE-B-W24-01",
+      "FEWE-B-W25-01",
+      "FEWE-B-W26-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M05",
+      "FEWE-PJ04-M06",
+      "FEWE-PJ04-M07"
+    ],
+    "reinforcedIn": [
+      "FEWE-W25",
+      "FEWE-W26"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W25",
+      "FEWE-W26"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C049",
+    "taughtIn": [
+      "FEWE-W25"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W25"
+    ],
+    "appliedIn": [
+      "FEWE-B-W25-01",
+      "FEWE-B-W26-01",
+      "FEWE-B-W27-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M06",
+      "FEWE-PJ04-M07",
+      "FEWE-PJ04-M08"
+    ],
+    "reinforcedIn": [
+      "FEWE-W26",
+      "FEWE-W27"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W26",
+      "FEWE-W27"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C050",
+    "taughtIn": [
+      "FEWE-W25"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W25"
+    ],
+    "appliedIn": [
+      "FEWE-B-W25-01",
+      "FEWE-B-W26-01",
+      "FEWE-B-W27-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M06",
+      "FEWE-PJ04-M07",
+      "FEWE-PJ04-M08"
+    ],
+    "reinforcedIn": [
+      "FEWE-W26",
+      "FEWE-W27"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W26",
+      "FEWE-W27"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C051",
+    "taughtIn": [
+      "FEWE-W26"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W26"
+    ],
+    "appliedIn": [
+      "FEWE-B-W26-01",
+      "FEWE-B-W27-01",
+      "FEWE-B-W28-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M07",
+      "FEWE-PJ04-M08",
+      "FEWE-PJ04-M09"
+    ],
+    "reinforcedIn": [
+      "FEWE-W27",
+      "FEWE-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W27",
+      "FEWE-W28"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C052",
+    "taughtIn": [
+      "FEWE-W26"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W26"
+    ],
+    "appliedIn": [
+      "FEWE-B-W26-01",
+      "FEWE-B-W27-01",
+      "FEWE-B-W28-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M07",
+      "FEWE-PJ04-M08",
+      "FEWE-PJ04-M09"
+    ],
+    "reinforcedIn": [
+      "FEWE-W27",
+      "FEWE-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W27",
+      "FEWE-W28"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C053",
+    "taughtIn": [
+      "FEWE-W27"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W27"
+    ],
+    "appliedIn": [
+      "FEWE-B-W27-01",
+      "FEWE-B-W28-01",
+      "FEWE-B-W29-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M08",
+      "FEWE-PJ04-M09",
+      "FEWE-PJ04-M10"
+    ],
+    "reinforcedIn": [
+      "FEWE-W28",
+      "FEWE-W29"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W28",
+      "FEWE-W29"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C054",
+    "taughtIn": [
+      "FEWE-W27"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W27"
+    ],
+    "appliedIn": [
+      "FEWE-B-W27-01",
+      "FEWE-B-W28-01",
+      "FEWE-B-W29-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M08",
+      "FEWE-PJ04-M09",
+      "FEWE-PJ04-M10"
+    ],
+    "reinforcedIn": [
+      "FEWE-W28",
+      "FEWE-W29"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W28",
+      "FEWE-W29"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C055",
+    "taughtIn": [
+      "FEWE-W28"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W28"
+    ],
+    "appliedIn": [
+      "FEWE-B-W28-01",
+      "FEWE-B-W29-01",
+      "FEWE-B-W30-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M09",
+      "FEWE-PJ04-M10",
+      "FEWE-PJ04-M11"
+    ],
+    "reinforcedIn": [
+      "FEWE-W29",
+      "FEWE-W30"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W29",
+      "FEWE-W30"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C056",
+    "taughtIn": [
+      "FEWE-W28"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W28"
+    ],
+    "appliedIn": [
+      "FEWE-B-W28-01",
+      "FEWE-B-W29-01",
+      "FEWE-B-W30-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M09",
+      "FEWE-PJ04-M10",
+      "FEWE-PJ04-M11"
+    ],
+    "reinforcedIn": [
+      "FEWE-W29",
+      "FEWE-W30"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W29",
+      "FEWE-W30"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C057",
+    "taughtIn": [
+      "FEWE-W29"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W29"
+    ],
+    "appliedIn": [
+      "FEWE-B-W29-01",
+      "FEWE-B-W30-01",
+      "FEWE-B-W31-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M10",
+      "FEWE-PJ04-M11",
+      "FEWE-PJ05-M01"
+    ],
+    "reinforcedIn": [
+      "FEWE-W30",
+      "FEWE-W31"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W30",
+      "FEWE-W31"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C058",
+    "taughtIn": [
+      "FEWE-W29"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W29"
+    ],
+    "appliedIn": [
+      "FEWE-B-W29-01",
+      "FEWE-B-W30-01",
+      "FEWE-B-W31-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M10",
+      "FEWE-PJ04-M11",
+      "FEWE-PJ05-M01"
+    ],
+    "reinforcedIn": [
+      "FEWE-W30",
+      "FEWE-W31"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W30",
+      "FEWE-W31"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C059",
+    "taughtIn": [
+      "FEWE-W30"
+    ],
+    "practicedIn": [
+      "FEWE-W30"
+    ],
+    "assessedIn": [
+      "FEWE-SC-W30"
+    ],
+    "appliedIn": [
+      "FEWE-B-W30-01",
+      "FEWE-B-W31-01",
+      "FEWE-B-W32-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M11",
+      "FEWE-PJ05-M01",
+      "FEWE-PJ05-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W31",
+      "FEWE-W32"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W31",
+      "FEWE-W32"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C060",
+    "taughtIn": [
+      "FEWE-W30"
+    ],
+    "practicedIn": [
+      "FEWE-W30"
+    ],
+    "assessedIn": [
+      "FEWE-SC-W30"
+    ],
+    "appliedIn": [
+      "FEWE-B-W30-01",
+      "FEWE-B-W31-01",
+      "FEWE-B-W32-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ04-M11",
+      "FEWE-PJ05-M01",
+      "FEWE-PJ05-M02"
+    ],
+    "reinforcedIn": [
+      "FEWE-W31",
+      "FEWE-W32"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W31",
+      "FEWE-W32"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C061",
+    "taughtIn": [
+      "FEWE-W31"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W31"
+    ],
+    "appliedIn": [
+      "FEWE-B-W31-01",
+      "FEWE-B-W32-01",
+      "FEWE-B-W33-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ05-M01",
+      "FEWE-PJ05-M02",
+      "FEWE-PJ05-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W32",
+      "FEWE-W33"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W32"
+    ],
+    "capstoneIntegration": [
+      "FEWE-W33"
+    ]
+  },
+  {
+    "competencyId": "FEWE-C062",
+    "taughtIn": [
+      "FEWE-W31"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W31"
+    ],
+    "appliedIn": [
+      "FEWE-B-W31-01",
+      "FEWE-B-W32-01",
+      "FEWE-B-W33-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ05-M01",
+      "FEWE-PJ05-M02",
+      "FEWE-PJ05-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W32",
+      "FEWE-W33"
+    ],
+    "intermediateReinforcedIn": [
+      "FEWE-W32"
+    ],
+    "capstoneIntegration": [
+      "FEWE-W33"
+    ]
+  },
+  {
+    "competencyId": "FEWE-C063",
+    "taughtIn": [
+      "FEWE-W32"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W32"
+    ],
+    "appliedIn": [
+      "FEWE-B-W32-01",
+      "FEWE-B-W33-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ05-M02",
+      "FEWE-PJ05-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W33"
+    ],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": [
+      "FEWE-W33"
+    ]
+  },
+  {
+    "competencyId": "FEWE-C064",
+    "taughtIn": [
+      "FEWE-W32"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W32"
+    ],
+    "appliedIn": [
+      "FEWE-B-W32-01",
+      "FEWE-B-W33-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ05-M02",
+      "FEWE-PJ05-M03"
+    ],
+    "reinforcedIn": [
+      "FEWE-W33"
+    ],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": [
+      "FEWE-W33"
+    ]
+  },
+  {
+    "competencyId": "FEWE-C065",
+    "taughtIn": [
+      "FEWE-W33"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W33"
+    ],
+    "appliedIn": [
+      "FEWE-B-W33-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ05-M03"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "FEWE-C066",
+    "taughtIn": [
+      "FEWE-W33"
+    ],
+    "practicedIn": [],
+    "assessedIn": [
+      "FEWE-SC-W33"
+    ],
+    "appliedIn": [
+      "FEWE-B-W33-01"
+    ],
+    "projectUse": [
+      "FEWE-PJ05-M03"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  }
+]

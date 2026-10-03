@@ -1,0 +1,1402 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "FEWE",
+  "revision": 1,
+  "activities": [
+    {
+      "weekId": "FEWE-W01",
+      "title": "First Browser-Ready Page guided Build plan",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Complete the required First Browser-Ready Page by following its visible Build steps.",
+        "why": "Professional frontend work begins with understanding which file the browser loads and how structure, presentation, and behavior reach the screen.",
+        "output": "A `first-page` folder containing index.html, styles.css, and script.js; opening index.html shows a styled callout and a button that changes its text.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 900,
+        "prerequisites": "Basic computer literacy; every project term is introduced in the activity.",
+        "finished": "The browser displays content from index.html without an error page. CSS and JavaScript load from separate files using correct relative paths. The button visibly changes the page after activation. A short debugging note identifies the broken path and the evidence used to repair it.",
+        "submission": "Use the Week 1 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Create a folder named `first-page`. Inside it, create index.html, styles.css, and script.js. Before adding code, write one sentence explaining the job of each file.",
+        "Copy the HTML starter into index.html, save it, and open the file in your browser. Confirm that you can see the page title, heading, paragraph, callout, and button.",
+        "Copy the CSS and JavaScript starters into their named files. Reload the page, confirm the callout is styled, click the button, and confirm its text changes.",
+        "Change one CSS or JavaScript filename in index.html so the browser cannot find it. Reload, observe what stops working, inspect the browser console or Network panel, then restore the correct filename.",
+        "Write a short debug note stating what you broke, what browser evidence you saw, why it failed, and how you confirmed the repair."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Web standards — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/curriculum/core/web-standards/"
+        },
+        {
+          "label": "Your first website — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website"
+        }
+      ],
+      "checklist": [
+        "The browser displays content from index.html without an error page.",
+        "CSS and JavaScript load from separate files using correct relative paths.",
+        "The button visibly changes the page after activation.",
+        "A short debugging note identifies the broken path and the evidence used to repair it."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W01-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W02",
+      "title": "Semantic Community Guide guided Build plan",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Complete the required Semantic Community Guide by following its visible Build steps.",
+        "why": "Semantic structure lets browsers, search tools, assistive technology, and teammates understand content before styling is applied.",
+        "output": "A multi-section community guide webpage with one clear heading hierarchy, landmarks, internal and external links, a meaningful image, lists, metadata, and no layout-only misuse of headings.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 900,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The page has one descriptive h1 and no skipped heading level in the main outline. Landmark elements reflect the page regions rather than visual styling alone. Every link describes its destination and the informative image has purpose-appropriate alt text. The page remains understandable with CSS disabled.",
+        "submission": "Use the Week 2 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Outline the guide content and assign one page title, one h1, and a logical h2/h3 hierarchy.",
+        "Mark up header, navigation, main content sections, complementary content, and footer using appropriate elements.",
+        "Add links, one informative image with useful alternative text, and lists whose markup matches their meaning.",
+        "Inspect the accessibility tree or document outline and repair one unclear structure."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Structuring content with HTML — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"
+        }
+      ],
+      "checklist": [
+        "The page has one descriptive h1 and no skipped heading level in the main outline.",
+        "Landmark elements reflect the page regions rather than visual styling alone.",
+        "Every link describes its destination and the informative image has purpose-appropriate alt text.",
+        "The page remains understandable with CSS disabled."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W02-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W03",
+      "title": "Accessible Registration and Schedule guided Build plan",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Complete the required Accessible Registration and Schedule by following its visible Build steps.",
+        "why": "Forms and data tables are common product surfaces where semantic mistakes directly prevent people from completing tasks.",
+        "output": "A registration page containing a labelled form with grouped choices, inline validation guidance, success/error status text, and a captioned schedule table with row and column headers.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 1020,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Every control has an accessible name and related instructions are programmatically or visibly clear. Validation feedback identifies the field and the correction without relying on color alone. Grouped options use fieldset and legend where the group label changes their meaning. The schedule uses table markup only for tabular relationships and includes a caption and headers.",
+        "submission": "Use the Week 3 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Design the smallest set of registration fields and choose a native control for each input.",
+        "Connect visible labels, fieldset/legend groups, hints, required cues, and error messages.",
+        "Create a schedule table with a caption and correctly scoped headers.",
+        "Complete the entire page using only the keyboard and repair any unclear focus or feedback."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Forms tutorial — return to the assigned boundary",
+          "url": "https://www.w3.org/WAI/tutorials/forms/"
+        }
+      ],
+      "checklist": [
+        "Every control has an accessible name and related instructions are programmatically or visibly clear.",
+        "Validation feedback identifies the field and the correction without relying on color alone.",
+        "Grouped options use fieldset and legend where the group label changes their meaning.",
+        "The schedule uses table markup only for tabular relationships and includes a caption and headers."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W03-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W04",
+      "title": "Readable Article System guided Build plan",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Complete the required Readable Article System by following its visible Build steps.",
+        "why": "Reliable CSS depends on explaining why styles apply, not accumulating overrides until the page looks right.",
+        "output": "A styled long-form article with a predictable box model, readable type scale, controlled line length, consistent spacing, documented color tokens, and one repaired specificity conflict.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 990,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Text has readable contrast, line height, and line length across the article. Spacing follows a repeatable scale rather than unrelated values. Computed box dimensions match the learner’s explanation of content, padding, and border. The repaired cascade does not rely on `!important` or an unexplained selector escalation.",
+        "submission": "Use the Week 4 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Define a small set of custom properties for color, spacing, and type.",
+        "Style the article container, headings, paragraphs, links, callouts, and code snippets using a consistent type and spacing rhythm.",
+        "Use `box-sizing: border-box` deliberately and inspect computed dimensions for two components.",
+        "Create a specificity conflict, identify the winning declaration in DevTools, and repair the selector design without `!important`."
+      ],
+      "contextualReferences": [
+        {
+          "label": "CSS styling basics — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics"
+        }
+      ],
+      "checklist": [
+        "Text has readable contrast, line height, and line length across the article.",
+        "Spacing follows a repeatable scale rather than unrelated values.",
+        "Computed box dimensions match the learner’s explanation of content, padding, and border.",
+        "The repaired cascade does not rely on `!important` or an unexplained selector escalation."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W04-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W05",
+      "title": "Adaptive Dashboard Layout guided Build plan",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Complete the required Adaptive Dashboard Layout by following its visible Build steps.",
+        "why": "Professional interfaces combine layout systems; choosing by content relationship produces more resilient code than arbitrary positioning.",
+        "output": "A dashboard shell with a grid-based page structure, flexible navigation and metric rows, resilient card content, and a written diagnosis of one overflow or alignment bug.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 1080,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Grid controls major rows and columns while Flexbox controls appropriate one-dimensional groups. Content can wrap or grow without overlapping adjacent cards. No major page region is placed with unexplained absolute pixel offsets. The debugging note identifies the causal layout property and the verified repair.",
+        "submission": "Use the Week 5 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Sketch the major two-dimensional regions and implement them with CSS Grid.",
+        "Implement navigation and card action rows with Flexbox, including wrapping behavior.",
+        "Test short, long, and missing content, then repair one overflow without hiding it.",
+        "Use DevTools overlays to record how tracks, gaps, axes, growth, and shrinkage produce the final layout."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Flexbox Froggy — return to the assigned boundary",
+          "url": "https://flexboxfroggy.com/"
+        },
+        {
+          "label": "Grid Garden — return to the assigned boundary",
+          "url": "https://cssgridgarden.com/"
+        }
+      ],
+      "checklist": [
+        "Grid controls major rows and columns while Flexbox controls appropriate one-dimensional groups.",
+        "Content can wrap or grow without overlapping adjacent cards.",
+        "No major page region is placed with unexplained absolute pixel offsets.",
+        "The debugging note identifies the causal layout property and the verified repair."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W05-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W06",
+      "title": "Responsive Local Events Site guided Build plan",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Complete the required Responsive Local Events Site by following its visible Build steps.",
+        "why": "Entry-level frontend work must serve real devices and content changes rather than one fixed design screenshot.",
+        "output": "A three-page events site that works at 320px, 768px, and wide desktop sizes, uses responsive navigation and images, retains logical content order, and documents viewport test evidence.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 1110,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "No horizontal page scrolling occurs at the three required viewports. Content priority and reading order remain sensible without depending on visual reordering. Images preserve aspect ratio and use an appropriate responsive source strategy. Navigation and controls remain reachable, visible, and comfortably operable on narrow screens.",
+        "submission": "Use the Week 6 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Build the small-screen content order and navigation first using semantic HTML.",
+        "Add intrinsic layout and only the breakpoints required by observed layout failures.",
+        "Provide fluid and responsive images without layout shift or distortion.",
+        "Test keyboard use and touch-target spacing at three named viewport sizes; record and repair two failures."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Learn responsive design — return to the assigned boundary",
+          "url": "https://web.dev/learn/design/"
+        }
+      ],
+      "checklist": [
+        "No horizontal page scrolling occurs at the three required viewports.",
+        "Content priority and reading order remain sensible without depending on visual reordering.",
+        "Images preserve aspect ratio and use an appropriate responsive source strategy.",
+        "Navigation and controls remain reachable, visible, and comfortably operable on narrow screens."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W06-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W07",
+      "title": "Decision-Based Ticket Calculator guided Build plan",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Complete the required Decision-Based Ticket Calculator by following its visible Build steps.",
+        "why": "Variables and control flow become useful when they model clear product rules and observable outcomes.",
+        "output": "A browser-based ticket calculator that validates entered quantities, applies explicit price rules, produces a line-by-line total, and handles empty or invalid input without crashing.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 900,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Every rule can be traced from an input value to a named branch. The calculation distinguishes numbers from numeric-looking strings intentionally. The loop has a clear starting state, continuation condition, and update. Invalid input produces a useful message rather than `NaN` or an uncaught failure.",
+        "submission": "Use the Week 7 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Write the pricing rules in plain language and list the values each rule needs.",
+        "Implement the calculation with named variables, comparisons, and conditionals.",
+        "Use a loop to calculate several ticket categories and produce an itemized summary.",
+        "Test boundary, empty, zero, and invalid cases; record one prediction that differed from the result."
+      ],
+      "contextualReferences": [
+        {
+          "label": "JavaScript first steps — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting"
+        }
+      ],
+      "checklist": [
+        "Every rule can be traced from an input value to a named branch.",
+        "The calculation distinguishes numbers from numeric-looking strings intentionally.",
+        "The loop has a clear starting state, continuation condition, and update.",
+        "Invalid input produces a useful message rather than `NaN` or an uncaught failure."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W07-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W08",
+      "title": "Modular Price Quote Engine guided Build plan",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Complete the required Modular Price Quote Engine by following its visible Build steps.",
+        "why": "Frontend code becomes maintainable when business rules can be understood and tested independently of the interface that invokes them.",
+        "output": "A browser quote tool whose validation, calculation, formatting, and DOM coordination are separated into imported modules with documented function contracts.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 990,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Calculation functions receive required values through parameters and return results explicitly. DOM access remains in the interface layer rather than inside every business-rule function. The page loads scripts as modules and imports only the features it uses. The learner can explain the scope/import failure and why the repair works.",
+        "submission": "Use the Week 8 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Define function contracts for validating selections, calculating a subtotal, applying a discount, and formatting currency.",
+        "Implement and call the pure calculations before connecting them to the page.",
+        "Move related functions into modules and wire named exports/imports from the entry script.",
+        "Deliberately create one scope or import failure, diagnose it in the console/network panel, and repair it."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Functions — reusable blocks of code — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions"
+        }
+      ],
+      "checklist": [
+        "Calculation functions receive required values through parameters and return results explicitly.",
+        "DOM access remains in the interface layer rather than inside every business-rule function.",
+        "The page loads scripts as modules and imports only the features it uses.",
+        "The learner can explain the scope/import failure and why the repair works."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W08-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W09",
+      "title": "Filterable Product Inventory guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Filterable Product Inventory by following its visible Build steps.",
+        "why": "Frontend applications constantly turn API-like collections into filtered, sorted, summarized, and rendered views.",
+        "output": "A data-driven inventory page that renders product objects, filters by category and availability, derives summary totals, and avoids mutating the source collection during display operations.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 990,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Every product uses the same documented property meanings. Filtering creates a derived collection without deleting source items. The summary is calculated from the currently displayed data. An empty result shows a useful message and reset action rather than a blank page.",
+        "submission": "Use the Week 9 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Define a consistent product object shape and create a small representative array.",
+        "Write pure functions for filtering, finding, mapping display data, and calculating a summary.",
+        "Render the derived view and preserve the original collection for reset and comparison.",
+        "Add empty-result behavior and debug one accidental mutation using before/after observations."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Arrays — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays"
+        }
+      ],
+      "checklist": [
+        "Every product uses the same documented property meanings.",
+        "Filtering creates a derived collection without deleting source items.",
+        "The summary is calculated from the currently displayed data.",
+        "An empty result shows a useful message and reset action rather than a blank page."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W09-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W10",
+      "title": "Interactive Task Board guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Interactive Task Board by following its visible Build steps.",
+        "why": "Direct DOM work reveals the browser mechanisms that React will later coordinate rather than replace.",
+        "output": "A semantic task board that adds, completes, filters, and removes tasks through events, renders from one JavaScript state array, and retains keyboard-usable native controls.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 1020,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The visible task list can be recreated from the state array after each action. User-provided task text is inserted as text rather than interpreted as HTML. Buttons remain native, named, focusable controls with visible focus. Filtering does not destroy tasks and the documented event bug no longer reproduces.",
+        "submission": "Use the Week 10 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Model tasks as objects in one state array and write a render function for the current view.",
+        "Connect form submission, completion, deletion, and filtering with event listeners.",
+        "Use dataset identifiers and event delegation where it reduces repeated listeners without hiding behavior.",
+        "Create and repair one double-submit or propagation bug, then verify the board by keyboard."
+      ],
+      "contextualReferences": [
+        {
+          "label": "DOM scripting introduction — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting"
+        }
+      ],
+      "checklist": [
+        "The visible task list can be recreated from the state array after each action.",
+        "User-provided task text is inserted as text rather than interpreted as HTML.",
+        "Buttons remain native, named, focusable controls with visible focus.",
+        "Filtering does not destroy tasks and the documented event bug no longer reproduces."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W10-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W11",
+      "title": "Persistent Preferences Form guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Persistent Preferences Form by following its visible Build steps.",
+        "why": "Form handling must respect browser semantics, recovery, server trust boundaries, and the privacy limits of client storage.",
+        "output": "A settings form that uses native and custom validation, displays accessible field and summary feedback, saves non-sensitive preferences to localStorage, restores them, and provides a clear reset.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Native controls and labels remain the foundation of the interaction. Invalid submission identifies every failing field and moves focus predictably without erasing input. Only non-sensitive preferences are stored and JSON parsing failure is handled. The reset action clears both visible state and the correct storage key.",
+        "submission": "Use the Week 11 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Define field rules and map each rule to native constraints or a justified custom check.",
+        "Render field-level feedback and a submission summary while preserving entered values.",
+        "Serialize approved preferences to localStorage and restore them safely when the page loads.",
+        "Test corrupt stored data, failed validation, refresh, reset, and keyboard focus recovery."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Client-side form validation — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation"
+        }
+      ],
+      "checklist": [
+        "Native controls and labels remain the foundation of the interaction.",
+        "Invalid submission identifies every failing field and moves focus predictably without erasing input.",
+        "Only non-sensitive preferences are stored and JSON parsing failure is handled.",
+        "The reset action clears both visible state and the correct storage key."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W11-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W12",
+      "title": "Resilient Data Explorer guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Resilient Data Explorer by following its visible Build steps.",
+        "why": "Frontend engineers must make remote uncertainty visible and recoverable rather than assuming every request succeeds.",
+        "output": "A search interface that requests JSON from a public API, validates the expected response shape, and renders distinct loading, success, empty, HTTP-error, network-error, and retry experiences.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The interface never presents stale success content as the result of a failed request. Non-2xx HTTP responses are handled explicitly rather than treated as success. Unexpected response data produces a controlled error state instead of a property-access crash. Loading and retry controls are named and remain keyboard operable.",
+        "submission": "Use the Week 12 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Inspect the API contract and one real response in the Network panel before writing rendering code.",
+        "Implement one async request with explicit pending, response-status, parsing, and result-shape handling.",
+        "Render separate loading, empty, success, and error views with a usable retry.",
+        "Simulate an invalid path and offline/network failure; record the evidence that distinguishes them."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Using the Fetch API — return to the assigned boundary",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+        }
+      ],
+      "checklist": [
+        "The interface never presents stale success content as the result of a failed request.",
+        "Non-2xx HTTP responses are handled explicitly rather than treated as success.",
+        "Unexpected response data produces a controlled error state instead of a property-access crash.",
+        "Loading and retry controls are named and remain keyboard operable."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W12-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W13",
+      "title": "Frontend Bug Investigation Pack guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Frontend Bug Investigation Pack by following its visible Build steps.",
+        "why": "Junior engineers earn trust by turning vague reports into reproducible causes and verified repairs.",
+        "output": "A repaired application containing one CSS layout defect, one DOM event defect, one runtime exception, and one failed request, plus a four-entry incident log with reproduction, evidence, cause, fix, and regression check.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Each defect has reproduction steps that another person can follow. Evidence identifies the first incorrect assumption rather than only the visible symptom. No catch block silently discards an error without recovery or reporting. Every repair includes a regression check that failed before and passes after.",
+        "submission": "Use the Week 13 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Reproduce each seeded defect and write exact starting conditions before changing code.",
+        "Use the appropriate panel, breakpoint, stack trace, or network record to isolate the first incorrect state.",
+        "Make one minimal repair per defect and explain the causal chain.",
+        "Add a repeatable regression check and retest the surrounding behavior."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Debug JavaScript — return to the assigned boundary",
+          "url": "https://developer.chrome.com/docs/devtools/javascript/"
+        }
+      ],
+      "checklist": [
+        "Each defect has reproduction steps that another person can follow.",
+        "Evidence identifies the first incorrect assumption rather than only the visible symptom.",
+        "No catch block silently discards an error without recovery or reporting.",
+        "Every repair includes a regression check that failed before and passes after."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W13-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W14",
+      "title": "Local Weather Decision App guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Local Weather Decision App by following its visible Build steps.",
+        "why": "This project proves the platform foundations before framework abstractions are introduced.",
+        "output": "A deployed-ready vanilla JavaScript weather decision app with location search, saved places, responsive results, explicit request states, accessible controls, modular code, and a professional README.",
+        "tools": "Code editor, browser, browser DevTools, and the Build instructions in XcelerateAI.",
+        "estimatedMinutes": 1230,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The main flow works at small and wide viewports using keyboard-only interaction. Loading, empty, invalid-location, rate/network failure, and successful results are distinct. State, API access, and DOM rendering have inspectable responsibility boundaries. The README lets another developer run the app and explains decisions and known limitations.",
+        "submission": "Use the Week 14 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Translate the product brief into user flows, data needs, modules, UI states, and acceptance tests.",
+        "Build the semantic responsive shell and a mocked data path before connecting the live API.",
+        "Integrate requests, validation, saved places, state rendering, error recovery, and stale-request protection.",
+        "Run accessibility, responsive, network, and regression checks; write setup, architecture, limitations, and test notes."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Open-Meteo API documentation — return to the assigned boundary",
+          "url": "https://open-meteo.com/en/docs"
+        }
+      ],
+      "checklist": [
+        "The main flow works at small and wide viewports using keyboard-only interaction.",
+        "Loading, empty, invalid-location, rate/network failure, and successful results are distinct.",
+        "State, API access, and DOM rendering have inspectable responsibility boundaries.",
+        "The README lets another developer run the app and explains decisions and known limitations."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W14-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W15",
+      "title": "Reviewable Feature Branch guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Reviewable Feature Branch by following its visible Build steps.",
+        "why": "Professional code is delivered as inspectable change that teammates can review, discuss, and integrate safely.",
+        "output": "A GitHub repository containing the weather app history, a focused feature branch, several purposeful commits, a reviewed pull request, one resolved practice conflict, and a README describing the workflow.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 930,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The working tree is clean after every intended change is committed. Commit messages describe outcomes rather than vague activity. The pull request explains scope, testing, risks, and screenshots or evidence. The conflict resolution preserves the chosen combined behavior and is verified after merge.",
+        "submission": "Use the Week 15 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Initialize or inspect the repository, create a useful .gitignore, and commit a clean baseline.",
+        "Create a branch and implement one bounded feature in several coherent commits.",
+        "Push the branch, open a pull request with context and verification notes, and review its diff.",
+        "Create a controlled text conflict, resolve it without losing either intended change, verify, and merge."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Pro Git: Getting Started and Git Basics — return to the assigned boundary",
+          "url": "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
+        }
+      ],
+      "checklist": [
+        "The working tree is clean after every intended change is committed.",
+        "Commit messages describe outcomes rather than vague activity.",
+        "The pull request explains scope, testing, risks, and screenshots or evidence.",
+        "The conflict resolution preserves the chosen combined behavior and is verified after merge."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W15-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W16",
+      "title": "Tooling Migration and Build Inspection guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Tooling Migration and Build Inspection by following its visible Build steps.",
+        "why": "Modern frontend work depends on reproducible project tooling, but engineers still need to understand what the tools are doing.",
+        "output": "The vanilla weather app migrated into a Vite project with deliberate package scripts, lint/format notes, environment-variable guidance, a reproducible install, a successful production build, and inspected output.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1020,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "A fresh install from package metadata reproduces the required project dependencies. The project exposes documented scripts for development, checking, building, and previewing. No secret is committed or claimed to be hidden by a Vite client variable. The production output runs through preview and its generated files are not edited as source.",
+        "submission": "Use the Week 16 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Verify Node/npm versions, create the Vite project, and map existing source files into its entry structure.",
+        "Inspect package.json, add named check/build scripts, and document dependency versus devDependency choices.",
+        "Move one non-secret configuration value to an appropriate client environment variable and explain why secrets cannot live there.",
+        "Run development, production build, and local preview; inspect output and intentionally diagnose one missing-script or import error."
+      ],
+      "contextualReferences": [
+        {
+          "label": "An introduction to the npm package manager — return to the assigned boundary",
+          "url": "https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager"
+        }
+      ],
+      "checklist": [
+        "A fresh install from package metadata reproduces the required project dependencies.",
+        "The project exposes documented scripts for development, checking, building, and previewing.",
+        "No secret is committed or claimed to be hidden by a Vite client variable.",
+        "The production output runs through preview and its generated files are not edited as source."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W16-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W17",
+      "title": "Typed Quote Engine guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Typed Quote Engine by following its visible Build steps.",
+        "why": "TypeScript is valuable when it makes assumptions and impossible states visible before the browser executes them.",
+        "output": "The quote engine converted to TypeScript with typed domain data, functions, discriminated result states, strict checking, and no unexplained `any` or assertion used to suppress errors.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The project passes its TypeScript check with strict mode enabled. Union states are narrowed before state-specific properties are read. No `any`, non-null assertion, or type assertion appears without a documented boundary reason. The README distinguishes static type checking from runtime data validation.",
+        "submission": "Use the Week 17 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Add TypeScript through the project’s supported Vite configuration and enable strict checking.",
+        "Define types for quote inputs, line items, success results, and validation failures.",
+        "Type function inputs/outputs and repair compiler errors by correcting assumptions rather than broadly asserting.",
+        "Introduce one unknown external value, narrow it safely, and document what still requires runtime validation."
+      ],
+      "contextualReferences": [
+        {
+          "label": "TypeScript for JavaScript Programmers — return to the assigned boundary",
+          "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html"
+        }
+      ],
+      "checklist": [
+        "The project passes its TypeScript check with strict mode enabled.",
+        "Union states are narrowed before state-specific properties are read.",
+        "No `any`, non-null assertion, or type assertion appears without a documented boundary reason.",
+        "The README distinguishes static type checking from runtime data validation."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W17-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W18",
+      "title": "Typed Weather Application guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Typed Weather Application by following its visible Build steps.",
+        "why": "The most valuable type boundaries are where the browser or network can supply missing, broad, or changing values.",
+        "output": "The weather app converted to TypeScript with safe DOM/event handling, validated API data, typed request states, a small justified generic utility, and a migration report of defects caught.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1170,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "DOM queries are narrowed or guarded before element-specific use. External JSON is not trusted solely because an interface exists. Every request-state variant has deliberate rendering and no impossible property access. Generic code has a concrete reuse case and remains easier to read than duplicated alternatives.",
+        "submission": "Use the Week 18 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Type DOM queries and event handlers, handling missing elements and target capabilities explicitly.",
+        "Represent request states as a discriminated union and render them exhaustively.",
+        "Parse API JSON as unknown, validate the fields used by the app, and return typed success/failure.",
+        "Add one useful constrained generic helper, run strict checking, and document assumptions caught during migration."
+      ],
+      "contextualReferences": [
+        {
+          "label": "DOM Manipulation — return to the assigned boundary",
+          "url": "https://www.typescriptlang.org/docs/handbook/dom-manipulation.html"
+        }
+      ],
+      "checklist": [
+        "DOM queries are narrowed or guarded before element-specific use.",
+        "External JSON is not trusted solely because an interface exists.",
+        "Every request-state variant has deliberate rendering and no impossible property access.",
+        "Generic code has a concrete reuse case and remains easier to read than duplicated alternatives."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W18-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W19",
+      "title": "Tested Typed Interface guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Tested Typed Interface by following its visible Build steps.",
+        "why": "Tests provide confidence when they protect contracts and behavior that matter, not internal line count.",
+        "output": "A Vitest suite covering quote calculations, API validation, request-state rendering, form interaction, one async transition, and one regression bug using user-facing queries.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Every test name states a behavior and condition rather than an implementation method. DOM tests prefer role, label, and visible feedback over CSS classes or component internals. Async tests wait for user-visible results instead of arbitrary delays. The regression test demonstrably fails against the broken behavior and passes after repair.",
+        "submission": "Use the Week 19 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Create a risk list and choose unit versus DOM integration boundaries for each behavior.",
+        "Test pure calculations and runtime validators with normal, boundary, and invalid cases.",
+        "Test the form and request UI using accessible queries and realistic interaction.",
+        "Recreate one previous bug as a failing regression test, apply the repair, and run the suite plus production build."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Getting Started — return to the assigned boundary",
+          "url": "https://vitest.dev/guide/"
+        }
+      ],
+      "checklist": [
+        "Every test name states a behavior and condition rather than an implementation method.",
+        "DOM tests prefer role, label, and visible feedback over CSS classes or component internals.",
+        "Async tests wait for user-visible results instead of arbitrary delays.",
+        "The regression test demonstrably fails against the broken behavior and passes after repair."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W19-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W20",
+      "title": "Componentized Event Catalogue guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Componentized Event Catalogue by following its visible Build steps.",
+        "why": "React should organize already-understood UI and data relationships rather than obscure HTML, CSS, and JavaScript fundamentals.",
+        "output": "A typed React event catalogue built from semantic components, prop-driven data, composed card content, stable list keys, and a component map explaining every boundary.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Rendered markup retains suitable landmarks, headings, links, and buttons. Components have focused responsibilities and no wrapper exists only to make the tree deeper. Props are treated as inputs and are not mutated by child components. List items use stable data identity rather than array position when order can change.",
+        "submission": "Use the Week 20 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Mark component boundaries on the existing events design and justify which regions stay together.",
+        "Create a Vite React TypeScript project and translate the semantic static structure into JSX.",
+        "Move event data into objects and render reusable components through typed props and composition.",
+        "Inspect rendered DOM semantics, repair one unnecessary component split, and document the final tree."
+      ],
+      "contextualReferences": [
+        {
+          "label": "React Quick Start — return to the assigned boundary",
+          "url": "https://react.dev/learn"
+        }
+      ],
+      "checklist": [
+        "Rendered markup retains suitable landmarks, headings, links, and buttons.",
+        "Components have focused responsibilities and no wrapper exists only to make the tree deeper.",
+        "Props are treated as inputs and are not mutated by child components.",
+        "List items use stable data identity rather than array position when order can change."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W20-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W21",
+      "title": "Stateful Product Comparison guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Stateful Product Comparison by following its visible Build steps.",
+        "why": "Most React defects start with unclear ownership, duplicated state, or mutations that make rendering hard to predict.",
+        "output": "A typed React comparison interface with selected products, filters, a derived count/summary, immutable updates, disabled limits, empty state, and keyboard-operable controls.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "No state variable stores a value that can be cheaply and reliably derived from other state. Object and array updates create new values rather than mutating existing state. Selection limits and empty results are communicated in visible, accessible UI. Rapid repeated actions produce correct results using functional updates where necessary.",
+        "submission": "Use the Week 21 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "List every changing value and classify it as source state, derived value, or constant data.",
+        "Implement selection, removal, filters, and limits using event handlers and immutable updates.",
+        "Derive filtered products and summary totals during render instead of synchronizing duplicates.",
+        "Use React DevTools or targeted logs to diagnose one stale or mutated state bug and repair it."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Adding Interactivity — return to the assigned boundary",
+          "url": "https://react.dev/learn/adding-interactivity"
+        }
+      ],
+      "checklist": [
+        "No state variable stores a value that can be cheaply and reliably derived from other state.",
+        "Object and array updates create new values rather than mutating existing state.",
+        "Selection limits and empty results are communicated in visible, accessible UI.",
+        "Rapid repeated actions produce correct results using functional updates where necessary."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W21-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W22",
+      "title": "Accessible Multi-Step Application Form guided Build plan",
+      "scaffolding": "coached",
+      "contract": {
+        "doing": "Complete the required Accessible Multi-Step Application Form by following its visible Build steps.",
+        "why": "Forms reveal whether state architecture, browser semantics, validation, and failure recovery work together.",
+        "output": "A typed two-step React application form with shared state, field and summary validation, preserved values, submission loading/success/failure states, reset confirmation, and keyboard/focus evidence.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Every control has an accessible label and validation association. Shared values have one owner and update through explicit handlers. Failure does not erase valid work and focus moves to useful feedback. Submit is protected from duplicate requests and exposes pending, success, and failure states.",
+        "submission": "Use the Week 22 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Model form fields, touched state, validation results, and submission state without duplicating derived errors.",
+        "Implement labelled controlled inputs and lift data needed across both steps to their closest common owner.",
+        "Add step validation, accessible error summary, focus movement, and preserved input on failure.",
+        "Simulate slow success and server validation failure, then test back/next/reset by keyboard."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Managing State — return to the assigned boundary",
+          "url": "https://react.dev/learn/managing-state"
+        }
+      ],
+      "checklist": [
+        "Every control has an accessible label and validation association.",
+        "Shared values have one owner and update through explicit handlers.",
+        "Failure does not erase valid work and focus moves to useful feedback.",
+        "Submit is protected from duplicate requests and exposes pending, success, and failure states."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W22-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W23",
+      "title": "React Search and Detail Experience guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required React Search and Detail Experience by following its visible Build steps.",
+        "why": "Effects are an escape hatch to external systems; disciplined lifecycles prevent races, leaks, loops, and misleading UI.",
+        "output": "A typed React search/detail interface with request cancellation or stale-result protection, explicit async states, retry, preserved query intent, and no Effect used solely to compute render data.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Every Effect has an identified external system or lifecycle reason. Dependencies match values used by the Effect rather than being suppressed. Rapid query changes cannot allow an older response to replace the latest intent. Loading, empty, error, retry, and successful detail states remain accessible.",
+        "submission": "Use the Week 23 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Classify each behavior as render calculation, user event, or external synchronization before coding.",
+        "Fetch data from an explicit query input and model idle/loading/success/empty/error states.",
+        "Add cleanup or stale-response protection and verify behavior under rapid query changes.",
+        "Audit dependencies, remove one unnecessary derived-state Effect, and document the resulting state flow."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Synchronizing with Effects — return to the assigned boundary",
+          "url": "https://react.dev/learn/synchronizing-with-effects"
+        }
+      ],
+      "checklist": [
+        "Every Effect has an identified external system or lifecycle reason.",
+        "Dependencies match values used by the Effect rather than being suppressed.",
+        "Rapid query changes cannot allow an older response to replace the latest intent.",
+        "Loading, empty, error, retry, and successful detail states remain accessible."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W23-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W24",
+      "title": "Routed Knowledge Catalogue guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Routed Knowledge Catalogue by following its visible Build steps.",
+        "why": "Professional web applications use URLs as durable navigation contracts, not merely hidden component state.",
+        "output": "A typed React catalogue with shared layout, list/detail routes, route parameters, URL-backed search/filter state, active navigation, a useful not-found route, and direct-load deployment notes.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1080,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Every primary screen has a meaningful URL and can be reached by links. Back, forward, refresh, and copied filtered URLs preserve expected behavior. Unknown routes show recovery navigation rather than a blank screen. Deployment notes identify SPA fallback requirements for direct route loads.",
+        "submission": "Use the Week 24 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Map the information architecture to routes, nested layouts, parameters, and error/not-found behavior.",
+        "Implement semantic navigation and list/detail routes with stable data identity.",
+        "Move shareable filters into URL search parameters and preserve back/forward behavior.",
+        "Test direct loads, refresh, unknown paths, keyboard navigation, and encoded query values."
+      ],
+      "contextualReferences": [
+        {
+          "label": "React Router Tutorial — return to the assigned boundary",
+          "url": "https://reactrouter.com/start/framework/routing"
+        }
+      ],
+      "checklist": [
+        "Every primary screen has a meaningful URL and can be reached by links.",
+        "Back, forward, refresh, and copied filtered URLs preserve expected behavior.",
+        "Unknown routes show recovery navigation rather than a blank screen.",
+        "Deployment notes identify SPA fallback requirements for direct route loads."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W24-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W25",
+      "title": "Reusable Application Shell and Feature Module guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Reusable Application Shell and Feature Module by following its visible Build steps.",
+        "why": "Maintainable React architecture starts with explicit ownership and proven repetition, not a library or folder template.",
+        "output": "A refactored routed React app with a documented state inventory, one justified custom Hook, one limited Context or explicit decision not to use it, feature-oriented folders, and deleted premature abstractions.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1050,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The custom Hook begins with `use`, follows Hook rules, and shares logic rather than a single hidden global value. State is owned at the narrowest practical boundary. Context scope and update frequency are documented, or its rejection is justified. Folder/component boundaries reduce navigation and change cost for the selected feature.",
+        "submission": "Use the Week 25 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Inventory each state value as local UI, derived, URL, server, or shared application state.",
+        "Extract one repeated stateful behavior into a custom Hook with explicit parameters and result.",
+        "Evaluate Context for one cross-cutting value; implement it only if explicit props create real coupling.",
+        "Refactor folders around features/responsibilities, remove one unnecessary abstraction, and compare before/after change cost."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Reusing Logic with Custom Hooks — return to the assigned boundary",
+          "url": "https://react.dev/learn/reusing-logic-with-custom-hooks"
+        }
+      ],
+      "checklist": [
+        "The custom Hook begins with `use`, follows Hook rules, and shares logic rather than a single hidden global value.",
+        "State is owned at the narrowest practical boundary.",
+        "Context scope and update frequency are documented, or its rejection is justified.",
+        "Folder/component boundaries reduce navigation and change cost for the selected feature."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W25-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W26",
+      "title": "Accessible Design-System Slice guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Accessible Design-System Slice by following its visible Build steps.",
+        "why": "Frontend engineers turn incomplete visual intent into robust browser behavior through collaboration, not pixel copying alone.",
+        "output": "A responsive React implementation of a provided dashboard slice with tokens, Button/Input/Disclosure/Status components, all major states, keyboard/focus notes, reduced-motion behavior, and a clarification log.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1080,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Tokens and component variants map to repeated design decisions rather than one-off magic values. Every interactive component has complete keyboard and focus behavior. ARIA is used only where native HTML cannot express the required behavior. The clarification log distinguishes confirmed answers, assumptions, constraints, and remaining risk.",
+        "submission": "Use the Week 26 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Audit the design for tokens, repeated components, responsive intent, interaction states, content extremes, and unanswered questions.",
+        "Write and prioritize clarification questions; record safe provisional decisions separately from confirmed requirements.",
+        "Implement semantic components with documented variants, focus behavior, errors, loading, empty, disabled, and reduced-motion states.",
+        "Test keyboard flow, accessible names/states, contrast, zoom, and narrow layout; return implementation constraints to the design handoff."
+      ],
+      "contextualReferences": [
+        {
+          "label": "ARIA Authoring Practices Guide — return to the assigned boundary",
+          "url": "https://www.w3.org/WAI/ARIA/apg/"
+        }
+      ],
+      "checklist": [
+        "Tokens and component variants map to repeated design decisions rather than one-off magic values.",
+        "Every interactive component has complete keyboard and focus behavior.",
+        "ARIA is used only where native HTML cannot express the required behavior.",
+        "The clarification log distinguishes confirmed answers, assumptions, constraints, and remaining risk."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W26-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W27",
+      "title": "React Confidence Suite guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required React Confidence Suite by following its visible Build steps.",
+        "why": "A professional suite protects user journeys and enables refactoring without becoming coupled to the component tree.",
+        "output": "A maintained test suite for the routed catalogue covering component variants, form errors, route navigation, loading/empty/error/retry, stale-response protection, and one keyboard interaction regression.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1110,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Tests query by role, name, label, or visible state unless a documented exception exists. Each test owns or resets its state and does not depend on execution order. Async assertions wait for observable transitions and include failure/retry behavior. The suite remains green after an internal component refactor that preserves behavior.",
+        "submission": "Use the Week 27 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Create a test-risk matrix and select component/integration boundaries for the most important journeys.",
+        "Build shared render helpers for required router/context providers without hiding scenario setup.",
+        "Mock only the network boundary and test loading, success, empty, error, retry, and out-of-order behavior.",
+        "Add a keyboard regression, run tests in isolation and as a suite, and remove one implementation-detail assertion."
+      ],
+      "contextualReferences": [
+        {
+          "label": "React Testing Library — return to the assigned boundary",
+          "url": "https://testing-library.com/docs/react-testing-library/intro/"
+        }
+      ],
+      "checklist": [
+        "Tests query by role, name, label, or visible state unless a documented exception exists.",
+        "Each test owns or resets its state and does not depend on execution order.",
+        "Async assertions wait for observable transitions and include failure/retry behavior.",
+        "The suite remains green after an internal component refactor that preserves behavior."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W27-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W28",
+      "title": "Measured Security and Performance Hardening guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Measured Security and Performance Hardening by following its visible Build steps.",
+        "why": "Performance and security claims must be tied to evidence and browser boundaries, not optimistic code style.",
+        "output": "A hardened React build with recorded baseline/final measurements, optimized images and loading, one justified code split, removed unsafe HTML path, dependency review, secret scan, and production-preview verification.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1110,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Before/after measurements use the same route, conditions, and documented method. Optimizations improve a measured constraint without breaking accessibility or behavior. Untrusted content is rendered through safe text/React escaping unless a reviewed sanitizer is required. The production artifact contains no credential and runs successfully through local preview.",
+        "submission": "Use the Week 28 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Capture reproducible network, bundle, Lighthouse, and interaction baselines before changing code.",
+        "Prioritize and implement two improvements based on measured cost, including images or loading and JavaScript delivery.",
+        "Trace untrusted data to DOM sinks, remove or sanitize unsafe behavior, and verify no client secret is shipped.",
+        "Run tests, dependency/secret review, production build, preview, and final measurements; explain trade-offs."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Learn Performance — return to the assigned boundary",
+          "url": "https://web.dev/learn/performance/"
+        }
+      ],
+      "checklist": [
+        "Before/after measurements use the same route, conditions, and documented method.",
+        "Optimizations improve a measured constraint without breaking accessibility or behavior.",
+        "Untrusted content is rendered through safe text/React escaping unless a reviewed sanitizer is required.",
+        "The production artifact contains no credential and runs successfully through local preview."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W28-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W29",
+      "title": "Deployed Application with Browser Smoke Suite guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Deployed Application with Browser Smoke Suite by following its visible Build steps.",
+        "why": "A frontend feature is not delivered until its production artifact can be reached, exercised, diagnosed, and restored safely.",
+        "output": "A public HTTPS deployment of the routed React app with working direct routes, documented environment configuration, build logs, and Playwright smoke tests for navigation, search, form error recovery, API failure, and keyboard use.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1110,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The browser suite tests user-visible outcomes and does not depend on CSS implementation selectors. Tests run independently and produce a useful report/trace on failure. The deployed app supports copied nested URLs and refresh without host 404s. README documents build command, environment contract, deployment URL, verification, and recovery.",
+        "submission": "Use the Week 29 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Choose five high-risk user journeys and implement isolated Playwright tests using role/label locators.",
+        "Run tests in Chromium and one other browser, inspect one trace, and repair a timing or locator weakness.",
+        "Deploy the production build to a free-enough host with SPA fallback and non-secret environment configuration.",
+        "Verify HTTPS, direct URLs, refresh, asset paths, failure logs, and deployment rollback/redeploy instructions."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Playwright Test — return to the assigned boundary",
+          "url": "https://playwright.dev/docs/intro"
+        }
+      ],
+      "checklist": [
+        "The browser suite tests user-visible outcomes and does not depend on CSS implementation selectors.",
+        "Tests run independently and produce a useful report/trace on failure.",
+        "The deployed app supports copied nested URLs and refresh without host 404s.",
+        "README documents build command, environment contract, deployment URL, verification, and recovery."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W29-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W30",
+      "title": "Ticket-to-Production Feature guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Ticket-to-Production Feature by following its visible Build steps.",
+        "why": "Junior professional work is judged by reliable delivery and communication, not isolated code output.",
+        "output": "A reviewed, tested, deployed React feature delivered from an ambiguous ticket, with clarification log, task plan, design/API contract notes, branch/PR history, QA evidence, release note, and honest follow-up risks.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1200,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Questions resolve material ambiguity before irreversible implementation decisions. The PR links requirement decisions to code and verification evidence. Frontend handling matches the agreed request/response/error contract. The final status report distinguishes completed scope, known limitations, blockers, and follow-up.",
+        "submission": "Use the Week 30 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Read the ticket and design/API artifacts; list assumptions, missing states, contract questions, constraints, and acceptance criteria.",
+        "Propose a scoped task plan and estimate, then implement a vertical slice on a focused branch with progress updates.",
+        "Request review, respond to suggestions, coordinate any contract change, and verify tests/accessibility/performance.",
+        "Deploy, write the release note and QA handoff, and report remaining risks without fake metrics."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Review pull requests — return to the assigned boundary",
+          "url": "https://github.com/skills/review-pull-requests"
+        }
+      ],
+      "checklist": [
+        "Questions resolve material ambiguity before irreversible implementation decisions.",
+        "The PR links requirement decisions to code and verification evidence.",
+        "Frontend handling matches the agreed request/response/error contract.",
+        "The final status report distinguishes completed scope, known limitations, blockers, and follow-up."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W30-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W31",
+      "title": "Capstone Definition and Vertical Slice guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Capstone Definition and Vertical Slice by following its visible Build steps.",
+        "why": "An independent project becomes credible when scope and architecture are tested by working software before the learner invests in breadth.",
+        "output": "A capstone repository containing a bounded brief, user flows, design/state inventory, API contract, route/component plan, risk register, issue backlog, test strategy, and deployed vertical slice of the highest-risk journey.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1140,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The brief names a specific user problem and excludes adjacent scope. Design and architecture cover failure, accessibility, responsive, data, and security concerns before full build. The vertical slice uses real contracts and production tooling rather than a disconnected mockup. Evidence from the slice changes or confirms at least one recorded risk decision.",
+        "submission": "Use the Week 31 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Choose a real, bounded user problem and write outcome, user, non-goals, constraints, success evidence, and ethical/privacy notes.",
+        "Create flows and responsive designs including loading, empty, error, validation, keyboard, and reduced-motion states.",
+        "Define API/data contracts, route/state/component boundaries, risk register, milestones, and verification plan.",
+        "Build and deploy one thin end-to-end slice; test the highest-risk assumption and revise the plan from evidence."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Thinking in React — return to the assigned boundary",
+          "url": "https://react.dev/learn/thinking-in-react"
+        }
+      ],
+      "checklist": [
+        "The brief names a specific user problem and excludes adjacent scope.",
+        "Design and architecture cover failure, accessibility, responsive, data, and security concerns before full build.",
+        "The vertical slice uses real contracts and production tooling rather than a disconnected mockup.",
+        "Evidence from the slice changes or confirms at least one recorded risk decision."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W31-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W32",
+      "title": "Capstone Feature-Complete Candidate guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Capstone Feature-Complete Candidate by following its visible Build steps.",
+        "why": "Professional independence means sustaining quality while scope grows, not postponing verification until the final hour.",
+        "output": "A feature-complete deployed capstone candidate with issue-linked commits/PRs, responsive and accessible core flows, resilient API/form states, typed code, automated suites, manual QA log, performance baseline, security review, and zero known release blockers.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1200,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "Every core requirement traces to implemented behavior and verification evidence. No known keyboard trap, unlabeled form control, unhandled core-flow error, exposed secret, or failing required test remains. Automated accessibility results are not presented as complete conformance. The release-candidate report lists repaired findings and any justified non-blocking limitations.",
+        "submission": "Use the Week 32 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Implement core backlog items as vertical increments on focused branches with reviewable commits and PR notes.",
+        "Complete responsive, keyboard, focus, form, async, error, and empty behavior for every required flow.",
+        "Run type, unit/integration, E2E, automated accessibility, manual accessibility, performance, and security checks.",
+        "Triage findings by severity, repair blockers, rerun global gates, and freeze the feature-complete candidate."
+      ],
+      "contextualReferences": [
+        {
+          "label": "Accessibility testing — return to the assigned boundary",
+          "url": "https://playwright.dev/docs/accessibility-testing"
+        }
+      ],
+      "checklist": [
+        "Every core requirement traces to implemented behavior and verification evidence.",
+        "No known keyboard trap, unlabeled form control, unhandled core-flow error, exposed secret, or failing required test remains.",
+        "Automated accessibility results are not presented as complete conformance.",
+        "The release-candidate report lists repaired findings and any justified non-blocking limitations."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W32-01"
+      }
+    },
+    {
+      "weekId": "FEWE-W33",
+      "title": "Independent Capstone Release and Portfolio Case Study guided Build plan",
+      "scaffolding": "independent-with-checkpoints",
+      "contract": {
+        "doing": "Complete the required Independent Capstone Release and Portfolio Case Study by following its visible Build steps.",
+        "why": "Graduation requires inspectable, explainable evidence of real frontend work—not a certificate or unsupported confidence claim.",
+        "output": "A production capstone release with live URL, repository, complete README, test/accessibility/performance evidence, release and rollback notes, issue triage, architecture decision record, portfolio case study, and a recorded or written technical walkthrough.",
+        "tools": "Code editor, terminal, Git, browser, browser DevTools, and the current project toolchain.",
+        "estimatedMinutes": 1290,
+        "prerequisites": "Completed Core Learn assignment and the prior Week’s required Build.",
+        "finished": "The live application and repository can be inspected without private credentials or paid access. Documentation enables setup, architecture understanding, test execution, deployment, and known-limit review. Claims link to concrete code, tests, measurements, decisions, or release evidence and avoid fabricated metrics. The learner can independently explain and debug the core system under normal junior-review questioning.",
+        "submission": "Use the Week 33 Proof fields after every Build acceptance criterion passes."
+      },
+      "steps": [
+        "Run the final requirement, test, accessibility, responsive, performance, security, production-build, and direct-route gates.",
+        "Deploy the tagged release, perform smoke checks, exercise rollback or safe redeploy, and record release evidence.",
+        "Write the README and case study around problem, role, process, decisions, setbacks, verification, outcome, and limitations.",
+        "Conduct an adversarial walkthrough: explain code, debug a seeded issue, review a change, and answer design/API collaboration questions."
+      ],
+      "contextualReferences": [
+        {
+          "label": "How to write a good README — return to the assigned boundary",
+          "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes"
+        }
+      ],
+      "checklist": [
+        "The live application and repository can be inspected without private credentials or paid access.",
+        "Documentation enables setup, architecture understanding, test execution, deployment, and known-limit review.",
+        "Claims link to concrete code, tests, measurements, decisions, or release evidence and avoid fabricated metrics.",
+        "The learner can independently explain and debug the core system under normal junior-review questioning."
+      ],
+      "stuck": "Return to the current Core Study boundary, compare its smallest example with your first failing line or element, and inspect browser or test evidence before changing another cause.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Terms and tools appear only after their Core introduction; the activity repeats the required output and tool path."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "FEWE-B-W33-01"
+      }
+    }
+  ]
+}

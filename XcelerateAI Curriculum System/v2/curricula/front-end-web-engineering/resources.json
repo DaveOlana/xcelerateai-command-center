@@ -1,0 +1,3170 @@
+[
+  {
+    "id": "FEWE-R-W01-01",
+    "title": "Web standards",
+    "url": "https://developer.mozilla.org/en-US/curriculum/core/web-standards/",
+    "provider": "MDN",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "start": "Open the direct “Web standards” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read 1.1 through 1.4; stop before the assessment section.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C001",
+      "FEWE-C002"
+    ],
+    "whySelected": "A current beginner map of clients, servers, URLs, HTML, CSS, JavaScript, standards, and browser loading.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C001, FEWE-C002 and decisions required by First Browser-Ready Page.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/howbrowserswork/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/curriculum/core/web-standards/",
+      "finalUrl": "https://developer.mozilla.org/en-US/curriculum/core/web-standards/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W01-04",
+    "title": "Your first website",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website",
+    "provider": "MDN",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open “Your first website” and begin with the overview and prerequisites.",
+      "stop": "Continue through “Creating the content” and “Styling the content”, then complete only the “Hello world!” walkthrough in “Adding interactivity”. Stop before publishing and storing visitor data.",
+      "note": "Follow the sections in order. Keep your own index.html, styles.css, and script.js open so you can identify what each file contributes, then return to XcelerateAI for the Week 1 Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C001",
+      "FEWE-C002"
+    ],
+    "whySelected": "A current beginner tutorial that introduces the three webpage files through visible results before the learner creates the required Week 1 Build.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "This tutorial-shaped course gives a complete beginner a visible first success with HTML, CSS, and JavaScript before independent construction.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned sections introduce the exact three-file relationship used in the Week 1 Build.",
+      "clarity": "The route states that no prior web technology knowledge is required and introduces each file through a visible result.",
+      "correctnessAndCurrency": "The live MDN destination and assigned boundaries were inspected on 2026-09-27; the page was last modified in 2025.",
+      "accessibility": "The public tutorial is readable without payment or an account and uses structured text, examples, and ordered tasks."
+    },
+    "accessNotes": "The final MDN destination and each assigned subsection were opened and inspected on 2026-09-27.",
+    "alternativeNotes": "Replaced the now-unavailable Microsoft Learn module with the current MDN beginner tutorial after inspecting the final destination and bounded sequence.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W02-01",
+    "title": "Structuring content with HTML",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+    "provider": "MDN",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "start": "Open the direct “Structuring content with HTML” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete the overview through the Structuring documents and websites challenge; stop before the next core module.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C003",
+      "FEWE-C004"
+    ],
+    "whySelected": "A sequenced beginner explanation of semantic text, links, images, tables, and page structure.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C003, FEWE-C004 and decisions required by Semantic Community Guide.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/html; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W02-02",
+    "title": "Learn HTML",
+    "url": "https://web.dev/learn/html/",
+    "provider": "web.dev",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "start": "Open the direct “Learn HTML” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Introduction, Document structure, Metadata, Semantic HTML, Headings and sections, Attributes, and Links.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C003",
+      "FEWE-C004"
+    ],
+    "whySelected": "Short examples reinforce semantic choices and expose the accessibility tree consequences of markup.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "course supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C003, FEWE-C004 and decisions required by Semantic Community Guide.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://www.freecodecamp.org/learn/2022/responsive-web-design/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/html/",
+      "finalUrl": "https://web.dev/learn/html/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W03-01",
+    "title": "Forms tutorial",
+    "url": "https://www.w3.org/WAI/tutorials/forms/",
+    "provider": "W3C Web Accessibility Initiative",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open the direct “Forms tutorial” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Labeling Controls through User Notifications; stop before Multi-page Forms.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C005",
+      "FEWE-C006"
+    ],
+    "whySelected": "Authoritative, example-led guidance on labels, grouping, instructions, validation, and accessible feedback.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C005, FEWE-C006 and decisions required by Accessible Registration and Schedule.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.w3.org/WAI/tutorials/forms/",
+      "finalUrl": "https://www.w3.org/WAI/tutorials/forms/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W03-02",
+    "title": "HTML table basics",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "start": "Open the direct “HTML table basics” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read from What is a table? through Providing common styling to columns; complete the active-learning table exercises.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C005",
+      "FEWE-C006"
+    ],
+    "whySelected": "A bounded beginner explanation of when tables fit and how headers, captions, rows, and cells relate.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C005, FEWE-C006 and decisions required by Accessible Registration and Schedule.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/html/tables; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W04-01",
+    "title": "CSS styling basics",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics",
+    "provider": "MDN",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 105,
+    "location": {
+      "start": "Open the direct “CSS styling basics” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete CSS first steps through Cascade, specificity, and inheritance; stop before CSS text styling.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C007",
+      "FEWE-C008"
+    ],
+    "whySelected": "A structured beginner route from selectors and values into the cascade and the box model.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C007, FEWE-C008 and decisions required by Readable Article System.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/css/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W04-02",
+    "title": "Box model",
+    "url": "https://web.dev/learn/css/box-model/",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "start": "Open the direct “Box model” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Content and sizing through Debugging the box model, including the interactive checks.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C007",
+      "FEWE-C008"
+    ],
+    "whySelected": "A visual explanation and hands-on inspection of content, padding, border, margin, and box sizing.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C007, FEWE-C008 and decisions required by Readable Article System.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/css/box-model/",
+      "finalUrl": "https://web.dev/learn/css/box-model/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W05-01",
+    "title": "Flexbox Froggy",
+    "url": "https://flexboxfroggy.com/",
+    "provider": "Codepip",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "start": "Open the direct “Flexbox Froggy” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete levels 1 through 24; stop after the final pond.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C009",
+      "FEWE-C010"
+    ],
+    "whySelected": "Immediate visual feedback turns Flexbox axes and alignment into observed behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "The interactive exercise teaches through immediate action and feedback; it does not ask for the curriculum Build artifact.",
+    "purpose": [
+      "practice the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C009, FEWE-C010 and decisions required by Adaptive Dashboard Layout.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_breakout_game_Phaser; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://flexboxfroggy.com/",
+      "finalUrl": "https://flexboxfroggy.com/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W05-02",
+    "title": "Grid Garden",
+    "url": "https://cssgridgarden.com/",
+    "provider": "Codepip",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "start": "Open the direct “Grid Garden” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete levels 1 through 28; stop after the final garden.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C009",
+      "FEWE-C010"
+    ],
+    "whySelected": "A focused interactive route for grid lines, tracks, spans, template areas, and alignment.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "The interactive exercise teaches through immediate action and feedback; it does not ask for the curriculum Build artifact.",
+    "purpose": [
+      "practice the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C009, FEWE-C010 and decisions required by Adaptive Dashboard Layout.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Grids; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://cssgridgarden.com/",
+      "finalUrl": "https://cssgridgarden.com/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W06-01",
+    "title": "Learn responsive design",
+    "url": "https://web.dev/learn/design/",
+    "provider": "web.dev",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "start": "Open the direct “Learn responsive design” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Introduction through Theming; perform the quizzes and responsive image examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C011",
+      "FEWE-C012"
+    ],
+    "whySelected": "A practical course covering viewport behavior, media queries, macro/micro layouts, typography, images, interaction, and theming.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C011, FEWE-C012 and decisions required by Responsive Local Events Site.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/design/",
+      "finalUrl": "https://web.dev/learn/design/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W06-02",
+    "title": "Responsive images",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "start": "Open the direct “Responsive images” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Resolution switching through Art direction; complete the active-learning examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C011",
+      "FEWE-C012"
+    ],
+    "whySelected": "Focused browser-native techniques for choosing image resolution and composition.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C011, FEWE-C012 and decisions required by Responsive Local Events Site.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/images/descriptive; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W07-01",
+    "title": "JavaScript first steps",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting",
+    "provider": "MDN",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 105,
+    "location": {
+      "start": "Open the direct “JavaScript first steps” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete the module through the Silly story generator challenge; stop before Object building practice.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C013",
+      "FEWE-C014"
+    ],
+    "whySelected": "A beginner sequence that connects values and control flow to visible browser behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C013, FEWE-C014 and decisions required by Decision-Based Ticket Calculator.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/first-steps; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W07-02",
+    "title": "JavaScript fundamentals",
+    "url": "https://javascript.info/first-steps",
+    "provider": "javascript.info",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open the direct “JavaScript fundamentals” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Hello, world! through Loops; stop before the switch statement.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C013",
+      "FEWE-C014"
+    ],
+    "whySelected": "Short runnable examples provide a second explanation and prediction practice for program flow.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "course supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C013, FEWE-C014 and decisions required by Decision-Based Ticket Calculator.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://javascript.info/first-steps",
+      "finalUrl": "https://javascript.info/first-steps",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W08-01",
+    "title": "Functions — reusable blocks of code",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "start": "Open the direct “Functions — reusable blocks of code” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read from Where do I find functions? through Function scope and conflicts; complete the active-learning tasks.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C015",
+      "FEWE-C016"
+    ],
+    "whySelected": "A beginner-focused explanation of calling, parameters, return values, and scope.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C015, FEWE-C016 and decisions required by Modular Price Quote Engine.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/function-basics; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W08-02",
+    "title": "JavaScript modules",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "start": "Open the direct “JavaScript modules” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Exporting module features through Applying the module to your HTML; stop before Aggregating modules.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C015",
+      "FEWE-C016"
+    ],
+    "whySelected": "A concrete browser-module workflow with explicit import/export and script loading requirements.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C015, FEWE-C016 and decisions required by Modular Price Quote Engine.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/modules-intro; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W09-01",
+    "title": "Arrays",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+    "provider": "MDN",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "start": "Open the direct “Arrays” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete the lesson and all three active-learning exercises; stop before the assessment link.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C017",
+      "FEWE-C018"
+    ],
+    "whySelected": "A beginner sequence for creating, accessing, modifying, and processing collections.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C017, FEWE-C018 and decisions required by Filterable Product Inventory.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/array-methods; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W09-02",
+    "title": "Array methods",
+    "url": "https://javascript.info/array-methods",
+    "provider": "javascript.info",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "start": "Open the direct “Array methods” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Add/remove items through Transform an array; complete the map, filter, and reduce tasks, then stop before advanced method chaining.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C017",
+      "FEWE-C018"
+    ],
+    "whySelected": "Runnable transformations support prediction and comparison of mutating versus non-mutating operations.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C017, FEWE-C018 and decisions required by Filterable Product Inventory.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://javascript.info/array-methods",
+      "finalUrl": "https://javascript.info/array-methods",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W10-01",
+    "title": "DOM scripting introduction",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting",
+    "provider": "MDN",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Open the direct “DOM scripting introduction” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete the lesson through Creating and placing new nodes and the active-learning dynamic list.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C019",
+      "FEWE-C020"
+    ],
+    "whySelected": "A guided bridge from JavaScript data to document selection, updates, node creation, and events.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C019, FEWE-C020 and decisions required by Interactive Task Board.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/document; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W10-02",
+    "title": "Introduction to events",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "start": "Open the direct “Introduction to events” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read the full lesson and complete the random color, keyboard, and event-object exercises.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C019",
+      "FEWE-C020"
+    ],
+    "whySelected": "Focused event examples establish handlers, event objects, defaults, and bubbling before delegation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C019, FEWE-C020 and decisions required by Interactive Task Board.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/events; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W11-01",
+    "title": "Client-side form validation",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open the direct “Client-side form validation” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Built-in form validation through Validating forms using JavaScript; complete the constraint-validation example.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C021",
+      "FEWE-C022"
+    ],
+    "whySelected": "Shows native constraints, custom validation, accessible feedback, and the server-validation boundary.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C021, FEWE-C022 and decisions required by Persistent Preferences Form.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/forms/validation; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W11-02",
+    "title": "Using the Web Storage API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "start": "Open the direct “Using the Web Storage API” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Basic concepts through Responding to storage changes with the StorageEvent; run the feature-detection snippet.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C021",
+      "FEWE-C022"
+    ],
+    "whySelected": "A focused reference and worked example for localStorage/sessionStorage behavior and serialization.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C021, FEWE-C022 and decisions required by Persistent Preferences Form.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/localstorage; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W12-01",
+    "title": "Using the Fetch API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "start": "Open the direct “Using the Fetch API” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Making a request through Checking the response type; run the GET and response-status examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C023",
+      "FEWE-C024"
+    ],
+    "whySelected": "An authoritative, example-rich path through requests, responses, status handling, headers, and JSON parsing.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C023, FEWE-C024 and decisions required by Resilient Data Explorer.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/articles/fetch-api-error-handling; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W12-02",
+    "title": "Fetch API error handling",
+    "url": "https://web.dev/articles/fetch-api-error-handling",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "start": "Open the direct “Fetch API error handling” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read When the Fetch API throws errors through Anticipate potential network errors; reproduce one handled failure.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C023",
+      "FEWE-C024"
+    ],
+    "whySelected": "Shows why network rejection and unsuccessful HTTP status need different handling and user states.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C023, FEWE-C024 and decisions required by Resilient Data Explorer.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/fetch; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://web.dev/articles/fetch-api-error-handling",
+      "finalUrl": "https://web.dev/articles/fetch-api-error-handling",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W13-01",
+    "title": "Debug JavaScript",
+    "url": "https://developer.chrome.com/docs/devtools/javascript/",
+    "provider": "Chrome for Developers",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open the direct “Debug JavaScript” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Reproduce the bug through Step through the code; perform the line-of-code breakpoint exercise.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C025",
+      "FEWE-C026"
+    ],
+    "whySelected": "A guided, tool-based workflow for breakpoints, scope inspection, call stacks, and stepping.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C025, FEWE-C026 and decisions required by Frontend Bug Investigation Pack.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_went_wrong; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.chrome.com/docs/devtools/javascript/",
+      "finalUrl": "https://developer.chrome.com/docs/devtools/javascript/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W13-02",
+    "title": "Control flow and error handling",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "start": "Open the direct “Control flow and error handling” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Exception handling statements through Nesting try blocks; run the throw/try/catch/finally examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C025",
+      "FEWE-C026"
+    ],
+    "whySelected": "An authoritative explanation of exceptions and deliberate handling boundaries.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C025, FEWE-C026 and decisions required by Frontend Bug Investigation Pack.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://javascript.info/try-catch; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W14-01",
+    "title": "Open-Meteo API documentation",
+    "url": "https://open-meteo.com/en/docs",
+    "provider": "Open-Meteo",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "start": "Open the direct “Open-Meteo API documentation” destination and begin at the first assigned heading or exercise.",
+      "stop": "Use API URL, Parameters, Current weather variables, and Weather forecast variables; stop before specialized model APIs.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C027",
+      "FEWE-C028"
+    ],
+    "whySelected": "A free, no-key weather API with an interactive URL builder and explicit parameter/response contract.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C027, FEWE-C028 and decisions required by Local Weather Decision App.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://jsonplaceholder.typicode.com/guide/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://open-meteo.com/en/docs",
+      "finalUrl": "https://open-meteo.com/en/docs",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W14-02",
+    "title": "JSONPlaceholder guide",
+    "url": "https://jsonplaceholder.typicode.com/guide/",
+    "provider": "JSONPlaceholder",
+    "format": "lab",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "start": "Open the direct “JSONPlaceholder guide” destination and begin at the first assigned heading or exercise.",
+      "stop": "Run the Fetching, Listing, Creating, Updating, and Deleting resource examples; note which writes are simulated.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C027",
+      "FEWE-C028"
+    ],
+    "whySelected": "A low-friction secondary API lab for comparing methods and response behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "lab supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C027, FEWE-C028 and decisions required by Local Weather Decision App.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://dummyjson.com/docs; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://jsonplaceholder.typicode.com/guide/",
+      "finalUrl": "https://jsonplaceholder.typicode.com/guide/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W15-01",
+    "title": "Pro Git: Getting Started and Git Basics",
+    "url": "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control",
+    "provider": "Git project",
+    "format": "book",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "start": "Open the direct “Pro Git: Getting Started and Git Basics” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Getting Started sections 1.1–1.6 and Git Basics sections 2.1–2.5; run the status, add, diff, commit, log, remote, fetch, pull, and push examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C029",
+      "FEWE-C030"
+    ],
+    "whySelected": "The free official book separates working tree, index, repository, history, and remotes with command examples.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "book gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C029, FEWE-C030 and decisions required by Reviewable Feature Branch.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/get-started/using-git/about-git; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control",
+      "finalUrl": "https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W15-02",
+    "title": "Introduction to GitHub",
+    "url": "https://github.com/skills/introduction-to-github",
+    "provider": "GitHub Skills",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "start": "Open the direct “Introduction to GitHub” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete all four exercise steps: branch, commit, pull request, and merge.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C029",
+      "FEWE-C030"
+    ],
+    "whySelected": "A real hosted workflow provides inspectable practice with branches, commits, and pull requests.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "The interactive exercise teaches through immediate action and feedback; it does not ask for the curriculum Build artifact.",
+    "purpose": [
+      "practice the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C029, FEWE-C030 and decisions required by Reviewable Feature Branch.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/get-started/start-your-journey/hello-world; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://github.com/skills/introduction-to-github",
+      "finalUrl": "https://github.com/skills/introduction-to-github",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W16-01",
+    "title": "An introduction to the npm package manager",
+    "url": "https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager",
+    "provider": "Node.js",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "start": "Open the direct “An introduction to the npm package manager” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read npm introduction through Updating packages; run init, install, and script commands in a disposable project.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C031",
+      "FEWE-C032"
+    ],
+    "whySelected": "Explains packages, package.json, dependencies, scripts, installation, and updates without assuming a framework.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C031, FEWE-C032 and decisions required by Tooling Migration and Build Inspection.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://docs.npmjs.com/about-npm; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager",
+      "finalUrl": "https://nodejs.org/en/learn/getting-started/an-introduction-to-the-npm-package-manager",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W16-02",
+    "title": "Getting Started",
+    "url": "https://vite.dev/guide/",
+    "provider": "Vite",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open the direct “Getting Started” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Overview, Browser Support, Scaffolding Your First Vite Project, index.html and Project Root, Command Line Interface, and Using Unreleased Commits; run dev, build, and preview.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C031",
+      "FEWE-C032"
+    ],
+    "whySelected": "The maintained official guide defines the selected project workflow and current commands.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C031, FEWE-C032 and decisions required by Tooling Migration and Build Inspection.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://parceljs.org/getting-started/webapp/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://vite.dev/guide/",
+      "finalUrl": "https://vite.dev/guide/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W17-01",
+    "title": "TypeScript for JavaScript Programmers",
+    "url": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+    "provider": "TypeScript",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "start": "Open the direct “TypeScript for JavaScript Programmers” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Defining Types through Structural Type System; run every sample in the Playground.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C033",
+      "FEWE-C034"
+    ],
+    "whySelected": "Introduces TypeScript as a checker layered on JavaScript the learner already understands.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C033, FEWE-C034 and decisions required by Typed Quote Engine.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://www.typescriptlang.org/docs/handbook/2/basic-types.html; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+      "finalUrl": "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W17-02",
+    "title": "Everyday Types",
+    "url": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+    "provider": "TypeScript",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "start": "Open the direct “Everyday Types” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Primitives through Type Aliases, Interfaces, Type Assertions, Literal Types, and null/undefined; complete the Playground edits.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C033",
+      "FEWE-C034"
+    ],
+    "whySelected": "The official reference gives bounded examples of the types juniors use daily.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C033, FEWE-C034 and decisions required by Typed Quote Engine.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://www.totaltypescript.com/tutorials/beginners-typescript; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+      "finalUrl": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W18-01",
+    "title": "DOM Manipulation",
+    "url": "https://www.typescriptlang.org/docs/handbook/dom-manipulation.html",
+    "provider": "TypeScript",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "start": "Open the direct “DOM Manipulation” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Document interface through Difference between children and childNodes; run the querySelector examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C035",
+      "FEWE-C036"
+    ],
+    "whySelected": "The official guide explains DOM type maps, element specificity, and nullable queries.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C035, FEWE-C036 and decisions required by Typed Weather Application.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.typescriptlang.org/docs/handbook/dom-manipulation.html",
+      "finalUrl": "https://www.typescriptlang.org/docs/handbook/dom-manipulation.html",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W18-02",
+    "title": "Narrowing",
+    "url": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
+    "provider": "TypeScript",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open the direct “Narrowing” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read typeof guards through discriminated unions and exhaustiveness checking; run the examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C035",
+      "FEWE-C036"
+    ],
+    "whySelected": "Narrowing supports safe validation and explicit request-state modeling.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C035, FEWE-C036 and decisions required by Typed Weather Application.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://www.typescriptlang.org/docs/handbook/2/generics.html; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
+      "finalUrl": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W19-01",
+    "title": "Getting Started",
+    "url": "https://vitest.dev/guide/",
+    "provider": "Vitest",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "start": "Open the direct “Getting Started” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Overview through Writing Tests and Configuring Vitest; create and run one unit suite in watch and run mode.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C037",
+      "FEWE-C038"
+    ],
+    "whySelected": "The selected runner’s maintained guide covers project setup, test structure, assertions, and configuration.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C037, FEWE-C038 and decisions required by Tested Typed Interface.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://nodejs.org/api/test.html; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://vitest.dev/guide/",
+      "finalUrl": "https://vitest.dev/guide/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W19-02",
+    "title": "About Queries",
+    "url": "https://testing-library.com/docs/queries/about/",
+    "provider": "Testing Library",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 65,
+    "location": {
+      "start": "Open the direct “About Queries” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Types of Queries and Priority; complete examples using role, label, text, and async find queries.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C037",
+      "FEWE-C038"
+    ],
+    "whySelected": "User-oriented query priority links testability with accessible markup.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C037, FEWE-C038 and decisions required by Tested Typed Interface.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://testing-library.com/docs/dom-testing-library/example-intro/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://testing-library.com/docs/queries/about/",
+      "finalUrl": "https://testing-library.com/docs/queries/about/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W20-01",
+    "title": "React Quick Start",
+    "url": "https://react.dev/learn",
+    "provider": "React",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Open the direct “React Quick Start” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Creating and nesting components through Sharing data between components and the Tic-Tac-Toe next-steps recap.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C039",
+      "FEWE-C040"
+    ],
+    "whySelected": "The current official React learning path covers the daily component, JSX, data, event, and state model with editable sandboxes.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C039, FEWE-C040 and decisions required by Componentized Event Catalogue.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://scrimba.com/learn-react-c0e; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://react.dev/learn",
+      "finalUrl": "https://react.dev/learn",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W20-02",
+    "title": "JSX with TypeScript",
+    "url": "https://www.typescriptlang.org/docs/handbook/jsx.html",
+    "provider": "TypeScript",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "start": "Open the direct “JSX with TypeScript” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Basic usage through Type checking; stop before Function Component overload edge cases.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C039",
+      "FEWE-C040"
+    ],
+    "whySelected": "A focused reference connects known HTML/TypeScript syntax to JSX checking without replacing React instruction.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C039, FEWE-C040 and decisions required by Componentized Event Catalogue.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.typescriptlang.org/docs/handbook/jsx.html",
+      "finalUrl": "https://www.typescriptlang.org/docs/handbook/jsx.html",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W21-01",
+    "title": "Adding Interactivity",
+    "url": "https://react.dev/learn/adding-interactivity",
+    "provider": "React",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "start": "Open the direct “Adding Interactivity” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Responding to events through Updating arrays in state, including every challenge.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C041",
+      "FEWE-C042"
+    ],
+    "whySelected": "The official chapter teaches events, render snapshots, queued updates, and immutable object/array state.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C041, FEWE-C042 and decisions required by Stateful Product Comparison.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_interactivity_events_state; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://react.dev/learn/adding-interactivity",
+      "finalUrl": "https://react.dev/learn/adding-interactivity",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W21-02",
+    "title": "Immutability",
+    "url": "https://developer.mozilla.org/en-US/docs/Glossary/Immutable",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "start": "Open the direct “Immutability” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read the full glossary article, then compare primitive and object update examples in the linked JavaScript data structures page.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C041",
+      "FEWE-C042"
+    ],
+    "whySelected": "A concise platform explanation reinforces why new object/array values matter beyond React syntax.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C041, FEWE-C042 and decisions required by Stateful Product Comparison.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/javascript/data-types; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Glossary/Immutable",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Glossary/Immutable",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W22-01",
+    "title": "Managing State",
+    "url": "https://react.dev/learn/managing-state",
+    "provider": "React",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "start": "Open the direct “Managing State” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Reacting to input with state through Sharing state between components and Preserving and resetting state; stop before Extracting state logic into a reducer.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C043",
+      "FEWE-C044"
+    ],
+    "whySelected": "The official chapter connects declarative forms to state shape, lifting, ownership, and reset behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C043, FEWE-C044 and decisions required by Accessible Multi-Step Application Form.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_accessibility; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://react.dev/learn/managing-state",
+      "finalUrl": "https://react.dev/learn/managing-state",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W22-02",
+    "title": "Forms Tutorial",
+    "url": "https://www.w3.org/WAI/tutorials/forms/",
+    "provider": "W3C Web Accessibility Initiative",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "start": "Open the direct “Forms Tutorial” destination and begin at the first assigned heading or exercise.",
+      "stop": "Revisit Labeling Controls, Validating Input, and User Notifications; implement each pattern in JSX.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C043",
+      "FEWE-C044"
+    ],
+    "whySelected": "Authoritative form semantics prevent React state from replacing labels, native controls, and accessible feedback.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "course supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C043, FEWE-C044 and decisions required by Accessible Multi-Step Application Form.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/forms/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.w3.org/WAI/tutorials/forms/",
+      "finalUrl": "https://www.w3.org/WAI/tutorials/forms/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W23-01",
+    "title": "Synchronizing with Effects",
+    "url": "https://react.dev/learn/synchronizing-with-effects",
+    "provider": "React",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 100,
+    "location": {
+      "start": "Open the direct “Synchronizing with Effects” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete What are Effects through Fetching data and all four challenges, including cleanup behavior.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C045",
+      "FEWE-C046"
+    ],
+    "whySelected": "The current official model explains external synchronization, dependencies, cleanup, development remounts, and when Effects are unnecessary.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C045, FEWE-C046 and decisions required by React Search and Detail Experience.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_async_fetching; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://react.dev/learn/synchronizing-with-effects",
+      "finalUrl": "https://react.dev/learn/synchronizing-with-effects",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W23-02",
+    "title": "AbortController",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+    "provider": "MDN",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "start": "Open the direct “AbortController” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read the constructor, instance methods, and examples; follow the link to abortable fetch and run one cancellation example.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C045",
+      "FEWE-C046"
+    ],
+    "whySelected": "A focused browser reference supports real request cleanup rather than boolean-only theory.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C045, FEWE-C046 and decisions required by React Search and Detail Experience.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/articles/fetch-api-error-handling; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/AbortController",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W24-01",
+    "title": "React Router Tutorial",
+    "url": "https://reactrouter.com/start/framework/routing",
+    "provider": "React Router",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 80,
+    "location": {
+      "start": "Open the direct “React Router Tutorial” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Configuring Routes through Route Modules, Nested Routes, Dynamic Segments, Optional Segments, and Splats; implement the examples in the existing app mode.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C047",
+      "FEWE-C048"
+    ],
+    "whySelected": "The maintained routing documentation teaches route matching and nesting in the selected ecosystem.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C047, FEWE-C048 and decisions required by Routed Knowledge Catalogue.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://reactrouter.com/en/main/start/tutorial; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://reactrouter.com/start/framework/routing",
+      "finalUrl": "https://reactrouter.com/start/framework/routing",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W24-02",
+    "title": "URLSearchParams",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+    "provider": "MDN",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "start": "Open the direct “URLSearchParams” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read the constructor, instance methods, and Examples; run append, get, set, and toString examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C047",
+      "FEWE-C048"
+    ],
+    "whySelected": "A browser-native reference makes query-state behavior transferable beyond one routing library.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C047, FEWE-C048 and decisions required by Routed Knowledge Catalogue.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/articles/url-parts; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W25-01",
+    "title": "Reusing Logic with Custom Hooks",
+    "url": "https://react.dev/learn/reusing-logic-with-custom-hooks",
+    "provider": "React",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "start": "Open the direct “Reusing Logic with Custom Hooks” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Custom Hooks: Sharing logic between components through When to use custom Hooks and all challenges.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C049",
+      "FEWE-C050"
+    ],
+    "whySelected": "The official chapter frames Hooks as shared logic rather than shared state and emphasizes explicit reactive inputs.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C049, FEWE-C050 and decisions required by Reusable Application Shell and Feature Module.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://react.dev/learn/passing-data-deeply-with-context; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks",
+      "finalUrl": "https://react.dev/learn/reusing-logic-with-custom-hooks",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W25-02",
+    "title": "Patterns for React developers",
+    "url": "https://web.dev/articles/react",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "start": "Open the direct “Patterns for React developers” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Componentization through Code splitting; stop before framework-specific server rendering material.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C049",
+      "FEWE-C050"
+    ],
+    "whySelected": "An independent source provides architecture and performance context without becoming a second framework curriculum.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C049, FEWE-C050 and decisions required by Reusable Application Shell and Feature Module.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://www.patterns.dev/react/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://web.dev/articles/react",
+      "finalUrl": "https://web.dev/articles/react",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W26-01",
+    "title": "ARIA Authoring Practices Guide",
+    "url": "https://www.w3.org/WAI/ARIA/apg/",
+    "provider": "W3C Web Accessibility Initiative",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open the direct “ARIA Authoring Practices Guide” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Read Me First, Landmark Regions, and the Disclosure pattern including keyboard interaction and examples; stop before unrelated widgets.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C051",
+      "FEWE-C052"
+    ],
+    "whySelected": "Authoritative pattern guidance clarifies native-first semantics and the full keyboard contract of a custom interaction.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C051, FEWE-C052 and decisions required by Accessible Design-System Slice.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/accessibility/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.w3.org/WAI/ARIA/apg/",
+      "finalUrl": "https://www.w3.org/WAI/ARIA/apg/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W26-02",
+    "title": "Learn Accessibility",
+    "url": "https://web.dev/learn/accessibility/",
+    "provider": "web.dev",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "start": "Open the direct “Learn Accessibility” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete HTML and accessibility, ARIA and HTML, Keyboard focus, JavaScript, and Motion; perform the module checks.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C051",
+      "FEWE-C052"
+    ],
+    "whySelected": "A practical independent course connects markup, focus, dynamic updates, and reduced motion.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "course supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C051, FEWE-C052 and decisions required by Accessible Design-System Slice.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/accessibility/",
+      "finalUrl": "https://web.dev/learn/accessibility/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W27-01",
+    "title": "React Testing Library",
+    "url": "https://testing-library.com/docs/react-testing-library/intro/",
+    "provider": "Testing Library",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 75,
+    "location": {
+      "start": "Open the direct “React Testing Library” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read The problem, This solution, Basic example, and Setup; implement one accessible component test and follow links only for APIs used.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C053",
+      "FEWE-C054"
+    ],
+    "whySelected": "The library’s user-centered principle fits the curriculum’s behavioral and accessibility goals.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C053, FEWE-C054 and decisions required by React Confidence Suite.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://react.dev/learn/testing; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://testing-library.com/docs/react-testing-library/intro/",
+      "finalUrl": "https://testing-library.com/docs/react-testing-library/intro/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W27-02",
+    "title": "Best Practices",
+    "url": "https://playwright.dev/docs/best-practices",
+    "provider": "Playwright",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "start": "Open the direct “Best Practices” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Testing philosophy, Test isolation, Locators, and Web-first assertions; stop before CI-specific examples.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C053",
+      "FEWE-C054"
+    ],
+    "whySelected": "End-to-end best practices reinforce visible behavior, isolation, resilient locators, and controlled external dependencies.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C053, FEWE-C054 and decisions required by React Confidence Suite.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://vitest.dev/guide/mocking.html; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://playwright.dev/docs/best-practices",
+      "finalUrl": "https://playwright.dev/docs/best-practices",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W28-01",
+    "title": "Learn Performance",
+    "url": "https://web.dev/learn/performance/",
+    "provider": "web.dev",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 95,
+    "location": {
+      "start": "Open the direct “Learn Performance” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Welcome through Resource loading, Image performance, Code-split JavaScript, and Web Workers; run one Lighthouse before/after measurement.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C055",
+      "FEWE-C056"
+    ],
+    "whySelected": "A current measurement-first course connects network, rendering, images, JavaScript, and Core Web Vitals.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C055, FEWE-C056 and decisions required by Measured Security and Performance Hardening.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/Performance; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/performance/",
+      "finalUrl": "https://web.dev/learn/performance/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W28-02",
+    "title": "Cross Site Scripting Prevention Cheat Sheet",
+    "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+    "provider": "OWASP",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "start": "Open the direct “Cross Site Scripting Prevention Cheat Sheet” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Introduction through Framework Security, Output Encoding, HTML Sanitization, and Common Anti-patterns; stop before language-specific rules not used here.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C055",
+      "FEWE-C056"
+    ],
+    "whySelected": "Authoritative defensive guidance explains output context, unsafe sinks, sanitization, and framework limits.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C055, FEWE-C056 and decisions required by Measured Security and Performance Hardening.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/XSS; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+      "finalUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W29-01",
+    "title": "Playwright Test",
+    "url": "https://playwright.dev/docs/intro",
+    "provider": "Playwright",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 85,
+    "location": {
+      "start": "Open the direct “Playwright Test” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Installation through First test, Running tests, HTML report, UI mode, and Trace Viewer; run one test in Chromium and one additional browser.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C057",
+      "FEWE-C058"
+    ],
+    "whySelected": "The maintained cross-browser test framework includes isolation, web-first assertions, reports, and debugging traces.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C057, FEWE-C058 and decisions required by Deployed Application with Browser Smoke Suite.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.chrome.com/docs/lighthouse/overview; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://playwright.dev/docs/intro",
+      "finalUrl": "https://playwright.dev/docs/intro",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W29-02",
+    "title": "Deploying a Static Site",
+    "url": "https://vite.dev/guide/static-deploy.html",
+    "provider": "Vite",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "start": "Open the direct “Deploying a Static Site” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Build the App, Testing the App Locally, and the section for the selected free host; configure SPA fallback using that host’s linked guidance.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C057",
+      "FEWE-C058"
+    ],
+    "whySelected": "The project tool’s maintained deployment guide ties build output and free hosting paths together.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C057, FEWE-C058 and decisions required by Deployed Application with Browser Smoke Suite.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://docs.netlify.com/manage/routing/redirects/rewrites-proxies/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://vite.dev/guide/static-deploy.html",
+      "finalUrl": "https://vite.dev/guide/static-deploy.html",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W30-01",
+    "title": "Review pull requests",
+    "url": "https://github.com/skills/review-pull-requests",
+    "provider": "GitHub Skills",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "start": "Open the direct “Review pull requests” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete all steps: assign, review, suggest changes, apply a suggestion, and merge.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C059",
+      "FEWE-C060"
+    ],
+    "whySelected": "A real review workflow practices concrete, respectful feedback and response to change requests.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "The interactive exercise teaches through immediate action and feedback; it does not ask for the curriculum Build artifact.",
+    "purpose": [
+      "practice the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C059, FEWE-C060 and decisions required by Ticket-to-Production Feature.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://github.com/skills/review-pull-requests",
+      "finalUrl": "https://github.com/skills/review-pull-requests",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W30-02",
+    "title": "OpenAPI Specification",
+    "url": "https://spec.openapis.org/oas/latest.html",
+    "provider": "OpenAPI Initiative",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 50,
+    "location": {
+      "start": "Open the direct “OpenAPI Specification” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Introduction, Definitions, Document Structure, Paths Object, Operation Object, Responses Object, and Schema Object examples; stop before security-scheme details.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C059",
+      "FEWE-C060"
+    ],
+    "whySelected": "A standards-based reference helps frontend learners read API shape and status contracts without becoming backend authors.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C059, FEWE-C060 and decisions required by Ticket-to-Production Feature.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://spec.openapis.org/oas/latest.html",
+      "finalUrl": "https://spec.openapis.org/oas/latest.html",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W31-01",
+    "title": "Thinking in React",
+    "url": "https://react.dev/learn/thinking-in-react",
+    "provider": "React",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 70,
+    "location": {
+      "start": "Open the direct “Thinking in React” destination and begin at the first assigned heading or exercise.",
+      "stop": "Complete Start with the mockup through Step 5: Add inverse data flow; apply each step to the capstone instead of the sample product table.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C061",
+      "FEWE-C062"
+    ],
+    "whySelected": "A bounded framework-specific method supports component/data design after platform and state foundations are established.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C061, FEWE-C062 and decisions required by Capstone Definition and Vertical Slice.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_tools/Project_management; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://react.dev/learn/thinking-in-react",
+      "finalUrl": "https://react.dev/learn/thinking-in-react",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W31-02",
+    "title": "Web app manifest and progressive enhancement overview",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Client-side_storage",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "start": "Open the direct “Web app manifest and progressive enhancement overview” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read the client-side storage overview and compare cache/storage choices only; stop before IndexedDB implementation if the capstone does not require it.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C061",
+      "FEWE-C062"
+    ],
+    "whySelected": "A late reference helps the learner choose persistence deliberately rather than assume every app needs a new backend.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C061, FEWE-C062 and decisions required by Capstone Definition and Vertical Slice.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://web.dev/learn/pwa/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Client-side_storage",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Client-side_storage",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W32-01",
+    "title": "Accessibility testing",
+    "url": "https://playwright.dev/docs/accessibility-testing",
+    "provider": "Playwright",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 60,
+    "location": {
+      "start": "Open the direct “Accessibility testing” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Introduction through Scanning for WCAG violations and the manual-testing disclaimer; add one targeted automated scan and record manual checks.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C063",
+      "FEWE-C064"
+    ],
+    "whySelected": "The selected E2E tool demonstrates useful automated checks while explicitly preserving the need for manual assessment.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C063, FEWE-C064 and decisions required by Capstone Feature-Complete Candidate.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://www.w3.org/WAI/test-evaluate/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://playwright.dev/docs/accessibility-testing",
+      "finalUrl": "https://playwright.dev/docs/accessibility-testing",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W32-02",
+    "title": "Web Vitals",
+    "url": "https://web.dev/articles/vitals",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 45,
+    "location": {
+      "start": "Open the direct “Web Vitals” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Core Web Vitals, Current Core Web Vitals, Tools to measure, and the field/lab distinction; capture repeatable lab evidence.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C063",
+      "FEWE-C064"
+    ],
+    "whySelected": "A current authoritative performance reference supports honest measurement and limitations.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C063, FEWE-C064 and decisions required by Capstone Feature-Complete Candidate.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.chrome.com/docs/lighthouse/performance/performance-scoring; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://web.dev/articles/vitals",
+      "finalUrl": "https://web.dev/articles/vitals",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W33-01",
+    "title": "How to write a good README",
+    "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "provider": "GitHub Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 40,
+    "location": {
+      "start": "Open the direct “How to write a good README” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read About READMEs, Auto-generated table of contents, Section links, and Relative links; apply them to the capstone documentation.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C065",
+      "FEWE-C066"
+    ],
+    "whySelected": "The hosting platform’s guidance supports a navigable project explanation without teaching frontend concepts.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article gives the smallest coherent explanation or demonstration before active application.",
+    "purpose": [
+      "learn the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C065, FEWE-C066 and decisions required by Independent Capstone Release and Portfolio Case Study.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "finalUrl": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  },
+  {
+    "id": "FEWE-R-W33-02",
+    "title": "Technical interview handbook — Frontend",
+    "url": "https://www.frontendinterviewhandbook.com/introduction/",
+    "provider": "Tech Interview Handbook",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 55,
+    "location": {
+      "start": "Open the direct “Technical interview handbook — Frontend” destination and begin at the first assigned heading or exercise.",
+      "stop": "Read Introduction, Front End Interview Formats, and Preparation Tips; use the question taxonomy to rehearse explanations, not memorize answers.",
+      "note": "Use only the bounded assignment. Follow external setup only when the assignment explicitly requires it; then return to XcelerateAI and take the Week Skill Check."
+    },
+    "competencyIds": [
+      "FEWE-C065",
+      "FEWE-C066"
+    ],
+    "whySelected": "A free community reference helps the learner practice communicating foundations and project decisions honestly.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-09-27T18:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "article supplies precise consultation without displacing the primary explanation.",
+    "purpose": [
+      "reference the mapped competencies",
+      "prepare or verify the Week Build"
+    ],
+    "evaluation": {
+      "competencyFit": "The assigned scope directly supports FEWE-C065, FEWE-C066 and decisions required by Independent Capstone Release and Portfolio Case Study.",
+      "clarity": "Terms and tools are introduced in this assignment or established in earlier Core learning.",
+      "correctnessAndCurrency": "The destination and assigned scope were inspected on 2026-09-27 against current authoritative or professional guidance.",
+      "accessibility": "The public text or interactive material is usable without payment; active Studio work follows it."
+    },
+    "accessNotes": "The public direct destination and assigned scope were inspected on 2026-09-27.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/curriculum/soft-skills/; the selected item made the stronger point-of-use contribution.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-09-27T18:00:00.000Z",
+      "requestedUrl": "https://www.frontendinterviewhandbook.com/introduction/",
+      "finalUrl": "https://www.frontendinterviewhandbook.com/introduction/",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "manual-web-inspection",
+      "notes": "The assigned final destination and bounded content were opened and inspected during the FEWE learner-experience repair."
+    }
+  }
+]

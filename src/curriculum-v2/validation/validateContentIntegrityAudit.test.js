@@ -140,6 +140,50 @@ function prospectiveFixture() {
   return fixtureData;
 }
 
+function learnerSurfaceFixture() {
+  const fixtureData = prospectiveFixture();
+  fixtureData.audit.schemaVersion = '1.3';
+  fixtureData.audit.focusVendor = { applicable: false, aliases: [] };
+  fixtureData.audit.repairLedger = [];
+  fixtureData.audit.weekResourceAudit = fixtureData.source.weeks.map((week) => ({ weekId: week.id, result: 'PASS' }));
+  fixtureData.research.forEach((record) => {
+    record.availability = {
+      checked: true,
+      checkedAt: '2026-09-27',
+      requestedUrl: record.url,
+      finalUrl: record.url,
+      redirected: false,
+      finalDestinationKind: 'assigned-content',
+      finalDestinationStatus: 'success',
+      finalContentVerified: true,
+      accessRestricted: false,
+      verificationMethod: 'manual-web-inspection',
+    };
+  });
+  fixtureData.audit.resourceAudits.forEach((record) => {
+    const assignment = fixtureData.source.weeks.flatMap((week) => week.study.resources)
+      .find((item) => item.resourceId === record.resourceId);
+    record.access = {
+      ...record.access,
+      finalUrl: record.finalUrl,
+      redirected: false,
+      finalDestinationKind: 'assigned-content',
+      finalDestinationStatus: 'success',
+      finalContentVerified: true,
+      accessRestricted: false,
+      verificationMethod: 'manual-web-inspection',
+    };
+    record.surfaceClassification = assignment.learningRole === 'practice' ? 'educational-practice' : `${assignment.learningRole}-material`;
+    record.primaryLearnerAction = assignment.learningRole === 'practice' ? 'interact-to-learn' : 'consume';
+    record.requiredArtifact = false;
+    record.learnerAssignment = {
+      destinationType: 'direct', start: 'Open the assigned page.', consume: 'Complete the named section.', stop: 'Stop after the named section.',
+      accountRequirement: 'No account is required.', expectedOutcome: 'Explain the mapped concept.', nextAction: 'Return to the Skill Check.',
+    };
+  });
+  return fixtureData;
+}
+
 test('complete evidence-backed content integrity audit passes', () => {
   const { source, research, audit } = productionFixture();
   const report = validateContentIntegrityAudit(audit, source, research);
@@ -287,4 +331,34 @@ test('prospective audit flags potentially redundant same-role resources for revi
   const report = validateContentIntegrityAudit(audit, source, research);
   assert.equal(report.status, 'PASS');
   assert.ok(report.findings.some((finding) => finding.code === 'V020-W002'));
+});
+
+test('schema 1.3 accepts inspected final content and educational external practice', () => {
+  const { source, research, audit } = learnerSurfaceFixture();
+  const practice = source.weeks[0].study.resources[1];
+  practice.learningRole = 'practice';
+  practice.role = 'core';
+  const record = audit.resourceAudits.find((item) => item.resourceId === practice.resourceId);
+  record.learningRole = 'practice';
+  record.surfaceClassification = 'educational-practice';
+  record.primaryLearnerAction = 'interact-to-learn';
+  assert.equal(validateContentIntegrityAudit(audit, source, research).status, 'PASS');
+});
+
+test('schema 1.3 blocks unavailable final content, generic redirects, and curriculum tasks in Study', () => {
+  const unavailable = learnerSurfaceFixture();
+  unavailable.research[0].availability.finalDestinationStatus = 'not-found';
+  unavailable.research[0].availability.finalContentVerified = false;
+  assert.ok(validateContentIntegrityAudit(unavailable.audit, unavailable.source, unavailable.research).findings.some((finding) => finding.code === 'V020-B086'));
+
+  const redirected = learnerSurfaceFixture();
+  redirected.research[0].availability.redirected = true;
+  redirected.research[0].availability.finalDestinationKind = 'generic-landing';
+  assert.ok(validateContentIntegrityAudit(redirected.audit, redirected.source, redirected.research).findings.some((finding) => finding.code === 'V020-B087'));
+
+  const task = learnerSurfaceFixture();
+  task.audit.resourceAudits[0].surfaceClassification = 'curriculum-task';
+  task.audit.resourceAudits[0].primaryLearnerAction = 'produce-curriculum-work';
+  task.audit.resourceAudits[0].requiredArtifact = true;
+  assert.ok(validateContentIntegrityAudit(task.audit, task.source, task.research).findings.some((finding) => finding.code === 'V020-B089'));
 });

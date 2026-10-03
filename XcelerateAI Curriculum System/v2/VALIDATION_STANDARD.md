@@ -1340,3 +1340,23 @@ Version `1.1` deterministically blocks:
 V020 issues a review Warning when documentation is used as the primary `learn` route for a beginner without an explicit teaching justification. It does not impose a video, lab, documentation, provider, or format quota.
 
 Code can prove ordering, references, evidence presence, unresolved recorded gaps, and near-term application. Human or author review must still judge whether an explanation is genuinely clear, whether assumptions were discovered completely, whether a modality would materially improve comprehension, whether resources are instructionally redundant, and whether a recovery route is meaningfully different. These judgments must be inspectable; the pipeline may not manufacture them.
+
+---
+
+# 40. Prospective Learner-Experience Contract
+
+Audit schema `1.2` adds deterministic blockers for more than one configured focus-vendor Study card in a Week, unresolved Core learning hubs, missing or vague entry/exit instructions, beginner-delegated relevance judgments, unnamed Build outputs, and missing Proof expectations. V021 validates the non-runtime Studio activity source: exactly one activity per Week; complete learner contract; concrete output; ordered steps; completion checklist; recovery guidance; and zero recorded unresolved terms.
+
+The Studio generator must render only the requested Week into the learner DOM. Technical links embedded at point of need are permitted and do not count as Study cards. Whether an independent explanation is clearest, a visual demonstration is superior, wording is sufficiently beginner-friendly, or a non-focus provider is overused remains a documented human-review judgment rather than a fabricated mechanical PASS.
+# Learner-experience resource gates
+
+For prospective content-integrity audit schema 1.3 and later, validation must block publication when:
+
+- final-destination evidence is missing, unsuccessful, restricted, or uninspected;
+- a redirect resolves only to a generic landing page rather than the assigned content;
+- a Study card's primary action is production of a required curriculum artifact;
+- a Study `practice` item is a disguised Build rather than an educational interaction;
+- guided activity metadata is not placed in and aligned with its required Build;
+- Weeks 1–6 use abstract curriculum-author language instead of concrete beginner actions.
+
+Removed or replaced resources remain in the audit history, but they must not remain in Curriculum Source, compiled runtime data, or active learner assignments.

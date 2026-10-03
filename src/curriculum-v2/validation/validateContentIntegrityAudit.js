@@ -1,9 +1,10 @@
 import { RESOURCE_FORMATS, STUDY_LEARNING_ROLES } from '../schema/constants.js';
 import { createFinding, createValidationReport, SEVERITIES } from './findings.js';
+import { validateLearnerExperience } from './validateLearnerExperience.js';
 
 const QUESTION_CLASSIFICATIONS = Object.freeze(['A', 'B', 'C', 'D']);
 const RESOURCE_DECISIONS = Object.freeze(['retained', 'replaced', 'added', 'removed']);
-const AUDIT_SCHEMA_VERSIONS = Object.freeze(['1.0', '1.1']);
+const AUDIT_SCHEMA_VERSIONS = Object.freeze(['1.0', '1.1', '1.2', '1.3']);
 const PREREQUISITE_REPAIRS = Object.freeze(['fit', 'replaced', 'moved-later', 'taught-first', 'bridge', 'reference']);
 const PROSPECTIVE_JUDGMENT_FIELDS = Object.freeze([
   'prerequisiteFit',
@@ -42,8 +43,8 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
     return createValidationReport(source, findings);
   }
 
-  if (!AUDIT_SCHEMA_VERSIONS.includes(audit.schemaVersion)) add('V020-B003', 'Content integrity audit schemaVersion must be "1.0" or "1.1".');
-  const prospectiveBeginnerIntegrity = audit.schemaVersion === '1.1';
+  if (!AUDIT_SCHEMA_VERSIONS.includes(audit.schemaVersion)) add('V020-B003', 'Content integrity audit schemaVersion must be "1.0", "1.1", "1.2", or "1.3".');
+  const prospectiveBeginnerIntegrity = ['1.1', '1.2', '1.3'].includes(audit.schemaVersion);
   if (audit.curriculumId !== source.curriculumId) add('V020-B004', 'Audit curriculumId must match Curriculum Source.', [audit.curriculumId, source.curriculumId]);
   if (audit.revision !== source.revision) add('V020-B005', 'Audit revision must match Curriculum Source.', [String(audit.revision), String(source.revision)]);
   if (!isString(audit.auditedAt) || Number.isNaN(Date.parse(audit.auditedAt))) add('V020-B006', 'Audit auditedAt must be a valid ISO-compatible date.');
@@ -78,7 +79,7 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
       if (!isString(assignment?.purpose)) {
         add('V020-B009', `Production Study assignment ${assignment?.resourceId || '(missing ID)'} requires a learner-facing purpose.`, [week?.id, assignment?.resourceId]);
       }
-      if (assignment?.learningRole === 'learn') {
+      if (assignment?.role === 'core' && ['learn', 'practice'].includes(assignment?.learningRole)) {
         asArray(assignment?.competencyIds).forEach((competencyId) => accumulatedCompetencies.add(competencyId));
       }
     });
@@ -100,6 +101,7 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
     if (!researchRecord || researchRecord.url !== resource?.url || researchRecord.accessStatus !== 'verified') {
       add('V020-B014', `Resource ${resource?.id} requires matching verified research evidence.`, [resource?.id]);
     }
+    if (audit.schemaVersion === '1.3') validateFinalDestinationAndSurface(record, researchRecord, resource, assignment, add);
     if (prospectiveBeginnerIntegrity) {
       validateProspectiveResourceIntegrity({
         record,
@@ -255,6 +257,16 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
   if (readiness.length !== weeks.length) add('V020-B056', `Week readiness count ${readiness.length} must equal Week count ${weeks.length}.`);
 
   if (prospectiveBeginnerIntegrity) validateImmediateApplication(source, add);
+  if (['1.2', '1.3'].includes(audit.schemaVersion)) {
+    if (!isObject(audit.focusVendor) || (audit.focusVendor.applicable !== false && !isString(audit.focusVendor.name))) add('V020-B083', 'Schema 1.2 requires a declared focusVendor, or an explicit non-applicable focus-vendor configuration.');
+    if (!Array.isArray(audit.repairLedger)) add('V020-B084', 'Schema 1.2 requires an inspectable learner-experience repair ledger.');
+    const weeklyResourceAudits = asArray(audit.weekResourceAudit);
+    const auditedWeekIds = new Set(weeklyResourceAudits.map((record) => record?.weekId));
+    if (weeklyResourceAudits.length !== weeks.length || weeks.some((week) => !auditedWeekIds.has(week.id))) {
+      add('V020-B085', 'Schema 1.2 requires one complete learner-facing resource audit for every Week.');
+    }
+    validateLearnerExperience(audit, source).findings.forEach((finding) => findings.push(finding));
+  }
 
   if (!isObject(audit.semanticReview) || audit.semanticReview.status !== 'PASS'
     || !isString(audit.semanticReview.method) || asArray(audit.semanticReview.findingsReviewed).length === 0) {
@@ -275,6 +287,32 @@ export function validateContentIntegrityAudit(audit, source, research = []) {
       classificationTotals,
     },
   });
+}
+
+function validateFinalDestinationAndSurface(record, research, resource, assignment, add) {
+  const availability = research?.availability;
+  if (!isObject(availability) || availability.checked !== true || !isString(availability.checkedAt)
+    || availability.requestedUrl !== resource?.url || !isString(availability.finalUrl)
+    || availability.finalDestinationStatus !== 'success' || availability.finalContentVerified !== true
+    || availability.accessRestricted !== false || !isString(availability.verificationMethod)) {
+    add('V020-B086', `Resource ${resource?.id} lacks successful, inspected final-destination evidence.`, [resource?.id]);
+  }
+  if (availability?.redirected === true && availability?.finalDestinationKind !== 'assigned-content') {
+    add('V020-B087', `Resource ${resource?.id} redirects without proving that the final page is the assigned content.`, [resource?.id]);
+  }
+  const access = record?.access;
+  if (!isObject(access) || access.finalDestinationStatus !== 'success' || access.finalContentVerified !== true
+    || access.accessRestricted !== false || !isString(access.verificationMethod)) {
+    add('V020-B088', `Resource audit ${resource?.id} lacks final-content inspection evidence.`, [resource?.id]);
+  }
+  if (!['learn-material', 'reference-material', 'educational-practice'].includes(record?.surfaceClassification)
+    || !['consume', 'interact-to-learn'].includes(record?.primaryLearnerAction)
+    || record?.requiredArtifact !== false) {
+    add('V020-B089', `Study resource ${resource?.id} is not classified as instruction, reference, or educational practice without a required curriculum artifact.`, [resource?.id]);
+  }
+  if (assignment?.learningRole === 'practice' && record?.surfaceClassification !== 'educational-practice') {
+    add('V020-B090', `Practice resource ${resource?.id} must be an educational interaction rather than a curriculum task.`, [resource?.id]);
+  }
 }
 
 function validateProspectiveResourceIntegrity({
@@ -379,7 +417,11 @@ function warnPotentialResourceRedundancy(resourceAudits, sourceResourceById, ass
     signatures.set(signature, matches);
   });
   signatures.forEach((resourceIds) => {
-    if (resourceIds.length > 1) {
+    const explicitlyDistinct = resourceIds.every((resourceId) => {
+      const record = resourceAudits.find((item) => item?.resourceId === resourceId);
+      return record?.redundancyDecision === 'distinct' && isString(record?.distinctContribution);
+    });
+    if (resourceIds.length > 1 && !explicitlyDistinct) {
       warn('V020-W002', 'Multiple resources share the same Week, learning role, format, and competency mapping; reviewers must confirm that each contributes a distinct instructional benefit.', resourceIds);
     }
   });

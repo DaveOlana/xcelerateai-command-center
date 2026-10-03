@@ -1,0 +1,435 @@
+[
+  {
+    "id": "PDES-C001",
+    "name": "Evidence-first product design",
+    "description": "Frame product design as an iterative practice that connects user evidence, product goals, constraints, designed behavior, and measured learning.",
+    "domain": "Product thinking",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "PDES-C002",
+    "name": "Figma workspace and file hygiene",
+    "description": "Create, name, organize, share, and export Figma files using frames, layers, pages, and version-conscious professional habits.",
+    "domain": "Tool practice",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "PDES-C003",
+    "name": "Critique and design rationale",
+    "description": "Give and receive specific critique, distinguish preference from evidence, and explain a design decision with observable reasoning.",
+    "domain": "Professional communication",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C001"
+    ]
+  },
+  {
+    "id": "PDES-C004",
+    "name": "Briefs, requirements, and scope",
+    "description": "Interpret a product brief, identify ambiguity, ask useful questions, state assumptions, and define a feasible design scope.",
+    "domain": "Professional practice",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C001"
+    ]
+  },
+  {
+    "id": "PDES-C005",
+    "name": "Research questions and method choice",
+    "description": "Turn product uncertainty into research questions and select a proportionate qualitative or quantitative method.",
+    "domain": "User research",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C004"
+    ]
+  },
+  {
+    "id": "PDES-C006",
+    "name": "Research ethics, consent, and privacy",
+    "description": "Recruit and work with participants ethically, obtain informed consent, minimize collected data, and document limitations.",
+    "domain": "User research",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C005"
+    ]
+  },
+  {
+    "id": "PDES-C007",
+    "name": "Interviews and contextual observation",
+    "description": "Plan and conduct neutral interviews or observation, take evidence-based notes, and avoid leading participants.",
+    "domain": "User research",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C005",
+      "PDES-C006"
+    ]
+  },
+  {
+    "id": "PDES-C008",
+    "name": "Surveys, sampling, and bias",
+    "description": "Use surveys only when appropriate, write neutral questions, recognize sampling limits, and avoid overstating results.",
+    "domain": "User research",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PDES-C005",
+      "PDES-C006"
+    ]
+  },
+  {
+    "id": "PDES-C009",
+    "name": "Research synthesis and insights",
+    "description": "Separate observations, patterns, findings, insights, and recommendations through traceable collaborative synthesis.",
+    "domain": "User research",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C007"
+    ]
+  },
+  {
+    "id": "PDES-C010",
+    "name": "Problem framing and outcomes",
+    "description": "Write evidence-backed problem statements, define outcome-oriented opportunities, and keep solutions separate from needs.",
+    "domain": "Product thinking",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C009"
+    ]
+  },
+  {
+    "id": "PDES-C011",
+    "name": "Journeys and task flows",
+    "description": "Map an evidence-backed current journey and create task flows that expose decisions, branches, failure points, and recovery.",
+    "domain": "Experience design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C010"
+    ]
+  },
+  {
+    "id": "PDES-C012",
+    "name": "Information architecture and labeling",
+    "description": "Organize content, name categories in user language, define navigation hierarchy, and explain the underlying mental model.",
+    "domain": "Information architecture",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C009"
+    ]
+  },
+  {
+    "id": "PDES-C013",
+    "name": "Card sorting and tree testing",
+    "description": "Choose and run a bounded card sort or tree test, interpret limitations, and revise information architecture from evidence.",
+    "domain": "Information architecture",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PDES-C005",
+      "PDES-C012"
+    ]
+  },
+  {
+    "id": "PDES-C014",
+    "name": "Sketching and concept divergence",
+    "description": "Generate multiple low-cost concepts before convergence and compare them against evidence, constraints, and task outcomes.",
+    "domain": "Concept design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C010"
+    ]
+  },
+  {
+    "id": "PDES-C015",
+    "name": "Wireframing",
+    "description": "Create low-fidelity wireframes that communicate hierarchy, content, navigation, and task behavior without premature polish.",
+    "domain": "Interaction design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C011",
+      "PDES-C014"
+    ]
+  },
+  {
+    "id": "PDES-C016",
+    "name": "Usability heuristics and evaluation",
+    "description": "Apply established usability heuristics to identify, prioritize, and communicate interface risks without substituting inspection for user testing.",
+    "domain": "Interaction design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C003"
+    ]
+  },
+  {
+    "id": "PDES-C017",
+    "name": "Interaction patterns and feedback",
+    "description": "Design discoverable controls, navigation, feedback, confirmations, progressive disclosure, and reversible actions.",
+    "domain": "Interaction design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C015",
+      "PDES-C016"
+    ]
+  },
+  {
+    "id": "PDES-C018",
+    "name": "Forms and system states",
+    "description": "Design forms, validation, errors, empty states, loading states, success states, permissions, and destructive actions as coherent flows.",
+    "domain": "Interaction design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C017"
+    ]
+  },
+  {
+    "id": "PDES-C019",
+    "name": "Visual hierarchy and composition",
+    "description": "Use scale, contrast, grouping, alignment, whitespace, density, and rhythm to communicate priority and relationships.",
+    "domain": "Visual design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C003"
+    ]
+  },
+  {
+    "id": "PDES-C020",
+    "name": "Typography systems",
+    "description": "Choose readable type, establish a purposeful scale, control line length and spacing, and preserve hierarchy across viewports.",
+    "domain": "Visual design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C019"
+    ]
+  },
+  {
+    "id": "PDES-C021",
+    "name": "Color, contrast, and color independence",
+    "description": "Build restrained semantic palettes, verify contrast, avoid color-only meaning, and document accessible color decisions.",
+    "domain": "Visual design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C019"
+    ]
+  },
+  {
+    "id": "PDES-C022",
+    "name": "Grids, spacing, imagery, and iconography",
+    "description": "Apply coherent grids and spacing scales and select licensed imagery and recognizable icons that support content.",
+    "domain": "Visual design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C019"
+    ]
+  },
+  {
+    "id": "PDES-C023",
+    "name": "Responsive and multi-device design",
+    "description": "Prioritize content and adapt layout, navigation, controls, and touch targets across narrow, medium, and wide contexts.",
+    "domain": "Responsive design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C015",
+      "PDES-C019"
+    ]
+  },
+  {
+    "id": "PDES-C024",
+    "name": "Figma auto layout and constraints",
+    "description": "Build adaptable Figma frames with auto layout, resizing, constraints, and content stress tests.",
+    "domain": "Tool practice",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C002",
+      "PDES-C023"
+    ]
+  },
+  {
+    "id": "PDES-C025",
+    "name": "Components, variants, and states",
+    "description": "Create reusable components and variants whose names, properties, states, and overrides remain understandable.",
+    "domain": "Design systems",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C017",
+      "PDES-C024"
+    ]
+  },
+  {
+    "id": "PDES-C026",
+    "name": "Design-system foundations and tokens",
+    "description": "Define a small system of foundations, semantic tokens, components, patterns, and usage guidance without premature over-systematization.",
+    "domain": "Design systems",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C020",
+      "PDES-C021",
+      "PDES-C022",
+      "PDES-C025"
+    ]
+  },
+  {
+    "id": "PDES-C027",
+    "name": "Interactive prototyping",
+    "description": "Choose an appropriate fidelity and create task-focused prototype flows with meaningful feedback and realistic content.",
+    "domain": "Prototyping",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C017",
+      "PDES-C025"
+    ]
+  },
+  {
+    "id": "PDES-C028",
+    "name": "Usability-test planning and moderation",
+    "description": "Write neutral task scenarios, recruit representative participants, moderate without teaching, and capture observable behavior.",
+    "domain": "Usability testing",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C006",
+      "PDES-C027"
+    ]
+  },
+  {
+    "id": "PDES-C029",
+    "name": "Findings, prioritization, and iteration",
+    "description": "Convert test observations into traceable findings, prioritize by evidence and risk, and iterate without chasing every opinion.",
+    "domain": "Usability testing",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C009",
+      "PDES-C028"
+    ]
+  },
+  {
+    "id": "PDES-C030",
+    "name": "WCAG-aware interface review",
+    "description": "Apply relevant WCAG 2.2 principles to contrast, reflow, target size, focus, labels, errors, content, and non-text information.",
+    "domain": "Accessibility",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C018",
+      "PDES-C021",
+      "PDES-C023"
+    ]
+  },
+  {
+    "id": "PDES-C031",
+    "name": "Inclusive interaction and assistive-technology awareness",
+    "description": "Anticipate keyboard, screen-reader, zoom, reduced-motion, cognitive, motor, hearing, and situational needs in design and testing.",
+    "domain": "Accessibility",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C030"
+    ]
+  },
+  {
+    "id": "PDES-C032",
+    "name": "Frontend implementation literacy",
+    "description": "Explain how semantic HTML, CSS layout, breakpoints, components, content, and browser behavior constrain and enable a design.",
+    "domain": "Implementation literacy",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PDES-C023",
+      "PDES-C025"
+    ]
+  },
+  {
+    "id": "PDES-C033",
+    "name": "Developer handoff and design QA",
+    "description": "Prepare inspectable specifications, assets, states, responsive rules, acceptance notes, and constructive implementation QA.",
+    "domain": "Developer collaboration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C025",
+      "PDES-C030",
+      "PDES-C032"
+    ]
+  },
+  {
+    "id": "PDES-C034",
+    "name": "Product goals, metrics, and tradeoffs",
+    "description": "Connect design choices to user value, business constraints, feasibility, qualitative evidence, and bounded success measures.",
+    "domain": "Product thinking",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C001",
+      "PDES-C029"
+    ]
+  },
+  {
+    "id": "PDES-C035",
+    "name": "Team workflow, tickets, and estimation",
+    "description": "Work from tickets and briefs, decompose design work, estimate uncertainty, communicate progress, and collaborate asynchronously.",
+    "domain": "Professional practice",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C004",
+      "PDES-C033"
+    ]
+  },
+  {
+    "id": "PDES-C036",
+    "name": "Stakeholder, client, and freelance communication",
+    "description": "Set scope and revision boundaries, present uncertainty, negotiate feedback, document decisions, and hand over work professionally.",
+    "domain": "Professional communication",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PDES-C003",
+      "PDES-C035"
+    ]
+  },
+  {
+    "id": "PDES-C037",
+    "name": "Responsible AI-assisted design",
+    "description": "Use AI for bounded ideation, organization, critique, and repetitive work while protecting privacy and rejecting fabricated research or evidence.",
+    "domain": "Responsible AI",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PDES-C006",
+      "PDES-C034"
+    ]
+  },
+  {
+    "id": "PDES-C038",
+    "name": "Asset licensing and attribution",
+    "description": "Select fonts, icons, images, and templates with appropriate licenses, attribution, privacy, and reuse discipline.",
+    "domain": "Professional ethics",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "PDES-C006"
+    ]
+  },
+  {
+    "id": "PDES-C039",
+    "name": "Portfolio case-study construction",
+    "description": "Build concise case studies that connect problem, evidence, decisions, iterations, outcome, limitations, and learning without invented metrics.",
+    "domain": "Portfolio",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C029",
+      "PDES-C033"
+    ]
+  },
+  {
+    "id": "PDES-C040",
+    "name": "Professional presentation and storytelling",
+    "description": "Present a scoped design narrative, adapt detail to the audience, answer challenges honestly, and make evidence inspectable.",
+    "domain": "Portfolio",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C003",
+      "PDES-C039"
+    ]
+  },
+  {
+    "id": "PDES-C041",
+    "name": "Independent end-to-end product design",
+    "description": "Independently plan, execute, test, document, and present a reasonably scoped digital-product design under normal junior supervision.",
+    "domain": "Professional integration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PDES-C034",
+      "PDES-C035",
+      "PDES-C039"
+    ]
+  }
+]

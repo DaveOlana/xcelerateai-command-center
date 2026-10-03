@@ -1,0 +1,1321 @@
+[
+  {
+    "competencyId": "PDES-C001",
+    "taughtIn": [
+      "PDES-W01"
+    ],
+    "practicedIn": [
+      "PDES-W01"
+    ],
+    "assessedIn": [
+      "PDES-SC-W01"
+    ],
+    "appliedIn": [
+      "PDES-B-W01-01",
+      "PDES-B-W02-01",
+      "PDES-B-W24-01"
+    ],
+    "projectUse": [
+      "PDES-PJ01-M01",
+      "PDES-PJ01-M02",
+      "PDES-PJ04-M01"
+    ],
+    "reinforcedIn": [
+      "PDES-W02",
+      "PDES-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W02",
+      "PDES-W24"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C002",
+    "taughtIn": [
+      "PDES-W01"
+    ],
+    "practicedIn": [
+      "PDES-W01"
+    ],
+    "assessedIn": [
+      "PDES-SC-W01"
+    ],
+    "appliedIn": [
+      "PDES-B-W01-01",
+      "PDES-B-W02-01",
+      "PDES-B-W18-01"
+    ],
+    "projectUse": [
+      "PDES-PJ01-M01",
+      "PDES-PJ01-M02",
+      "PDES-PJ03-M07"
+    ],
+    "reinforcedIn": [
+      "PDES-W02",
+      "PDES-W18"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W02",
+      "PDES-W18"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C003",
+    "taughtIn": [
+      "PDES-W01"
+    ],
+    "practicedIn": [
+      "PDES-W01"
+    ],
+    "assessedIn": [
+      "PDES-SC-W01"
+    ],
+    "appliedIn": [
+      "PDES-B-W01-01",
+      "PDES-B-W02-01",
+      "PDES-B-W03-01",
+      "PDES-B-W04-01",
+      "PDES-B-W15-01",
+      "PDES-B-W25-01",
+      "PDES-B-W28-01"
+    ],
+    "projectUse": [
+      "PDES-PJ01-M01",
+      "PDES-PJ01-M02",
+      "PDES-PJ01-M03",
+      "PDES-PJ01-M04",
+      "PDES-PJ03-M04",
+      "PDES-PJ04-M02",
+      "PDES-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "PDES-W02",
+      "PDES-W03",
+      "PDES-W04",
+      "PDES-W15",
+      "PDES-W25",
+      "PDES-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W02",
+      "PDES-W03",
+      "PDES-W04",
+      "PDES-W15",
+      "PDES-W25"
+    ],
+    "capstoneIntegration": [
+      "PDES-W28"
+    ]
+  },
+  {
+    "competencyId": "PDES-C004",
+    "taughtIn": [
+      "PDES-W02"
+    ],
+    "practicedIn": [
+      "PDES-W02"
+    ],
+    "assessedIn": [
+      "PDES-SC-W02"
+    ],
+    "appliedIn": [
+      "PDES-B-W02-01",
+      "PDES-B-W03-01",
+      "PDES-B-W05-01",
+      "PDES-B-W23-01",
+      "PDES-B-W25-01"
+    ],
+    "projectUse": [
+      "PDES-PJ01-M02",
+      "PDES-PJ01-M03",
+      "PDES-PJ02-M01",
+      "PDES-PJ03-M12",
+      "PDES-PJ04-M02"
+    ],
+    "reinforcedIn": [
+      "PDES-W03",
+      "PDES-W05",
+      "PDES-W23",
+      "PDES-W25"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W03",
+      "PDES-W05",
+      "PDES-W23",
+      "PDES-W25"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C005",
+    "taughtIn": [
+      "PDES-W05"
+    ],
+    "practicedIn": [
+      "PDES-W05"
+    ],
+    "assessedIn": [
+      "PDES-SC-W05"
+    ],
+    "appliedIn": [
+      "PDES-B-W05-01",
+      "PDES-B-W06-01",
+      "PDES-B-W07-01",
+      "PDES-B-W11-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M01",
+      "PDES-PJ02-M02",
+      "PDES-PJ02-M03",
+      "PDES-PJ02-M07"
+    ],
+    "reinforcedIn": [
+      "PDES-W06",
+      "PDES-W07",
+      "PDES-W11"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W06",
+      "PDES-W07",
+      "PDES-W11"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C006",
+    "taughtIn": [
+      "PDES-W06"
+    ],
+    "practicedIn": [
+      "PDES-W06"
+    ],
+    "assessedIn": [
+      "PDES-SC-W06"
+    ],
+    "appliedIn": [
+      "PDES-B-W06-01",
+      "PDES-B-W07-01",
+      "PDES-B-W16-01",
+      "PDES-B-W21-01",
+      "PDES-B-W24-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M02",
+      "PDES-PJ02-M03",
+      "PDES-PJ03-M05",
+      "PDES-PJ03-M10",
+      "PDES-PJ04-M01"
+    ],
+    "reinforcedIn": [
+      "PDES-W07",
+      "PDES-W16",
+      "PDES-W21",
+      "PDES-W24"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W07",
+      "PDES-W16",
+      "PDES-W21",
+      "PDES-W24"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C007",
+    "taughtIn": [
+      "PDES-W06",
+      "PDES-W07"
+    ],
+    "practicedIn": [
+      "PDES-W06",
+      "PDES-W07"
+    ],
+    "assessedIn": [
+      "PDES-SC-W06",
+      "PDES-SC-W07"
+    ],
+    "appliedIn": [
+      "PDES-B-W06-01",
+      "PDES-B-W07-01",
+      "PDES-B-W08-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M02",
+      "PDES-PJ02-M03",
+      "PDES-PJ02-M04"
+    ],
+    "reinforcedIn": [
+      "PDES-W07",
+      "PDES-W08"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W07",
+      "PDES-W08"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C008",
+    "taughtIn": [
+      "PDES-W07"
+    ],
+    "practicedIn": [
+      "PDES-W07"
+    ],
+    "assessedIn": [
+      "PDES-SC-W07"
+    ],
+    "appliedIn": [
+      "PDES-B-W07-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M03"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C009",
+    "taughtIn": [
+      "PDES-W08"
+    ],
+    "practicedIn": [
+      "PDES-W08"
+    ],
+    "assessedIn": [
+      "PDES-SC-W08"
+    ],
+    "appliedIn": [
+      "PDES-B-W08-01",
+      "PDES-B-W09-01",
+      "PDES-B-W10-01",
+      "PDES-B-W21-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M04",
+      "PDES-PJ02-M05",
+      "PDES-PJ02-M06",
+      "PDES-PJ03-M10"
+    ],
+    "reinforcedIn": [
+      "PDES-W09",
+      "PDES-W10",
+      "PDES-W21"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W09",
+      "PDES-W10",
+      "PDES-W21"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C010",
+    "taughtIn": [
+      "PDES-W09"
+    ],
+    "practicedIn": [
+      "PDES-W09"
+    ],
+    "assessedIn": [
+      "PDES-SC-W09"
+    ],
+    "appliedIn": [
+      "PDES-B-W09-01",
+      "PDES-B-W10-01",
+      "PDES-B-W12-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M05",
+      "PDES-PJ02-M06",
+      "PDES-PJ03-M01"
+    ],
+    "reinforcedIn": [
+      "PDES-W10",
+      "PDES-W12"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W10",
+      "PDES-W12"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C011",
+    "taughtIn": [
+      "PDES-W09"
+    ],
+    "practicedIn": [
+      "PDES-W09"
+    ],
+    "assessedIn": [
+      "PDES-SC-W09"
+    ],
+    "appliedIn": [
+      "PDES-B-W09-01",
+      "PDES-B-W10-01",
+      "PDES-B-W12-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M05",
+      "PDES-PJ02-M06",
+      "PDES-PJ03-M01"
+    ],
+    "reinforcedIn": [
+      "PDES-W10",
+      "PDES-W12"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W10",
+      "PDES-W12"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C012",
+    "taughtIn": [
+      "PDES-W10"
+    ],
+    "practicedIn": [
+      "PDES-W10"
+    ],
+    "assessedIn": [
+      "PDES-SC-W10"
+    ],
+    "appliedIn": [
+      "PDES-B-W10-01",
+      "PDES-B-W11-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M06",
+      "PDES-PJ02-M07"
+    ],
+    "reinforcedIn": [
+      "PDES-W11"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W11"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C013",
+    "taughtIn": [
+      "PDES-W11"
+    ],
+    "practicedIn": [
+      "PDES-W11"
+    ],
+    "assessedIn": [
+      "PDES-SC-W11"
+    ],
+    "appliedIn": [
+      "PDES-B-W11-01"
+    ],
+    "projectUse": [
+      "PDES-PJ02-M07"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C014",
+    "taughtIn": [
+      "PDES-W12"
+    ],
+    "practicedIn": [
+      "PDES-W12"
+    ],
+    "assessedIn": [
+      "PDES-SC-W12"
+    ],
+    "appliedIn": [
+      "PDES-B-W12-01",
+      "PDES-B-W13-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M01",
+      "PDES-PJ03-M02"
+    ],
+    "reinforcedIn": [
+      "PDES-W13"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W13"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C015",
+    "taughtIn": [
+      "PDES-W12"
+    ],
+    "practicedIn": [
+      "PDES-W12"
+    ],
+    "assessedIn": [
+      "PDES-SC-W12"
+    ],
+    "appliedIn": [
+      "PDES-B-W12-01",
+      "PDES-B-W13-01",
+      "PDES-B-W17-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M01",
+      "PDES-PJ03-M02",
+      "PDES-PJ03-M06"
+    ],
+    "reinforcedIn": [
+      "PDES-W13",
+      "PDES-W17"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W13",
+      "PDES-W17"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C016",
+    "taughtIn": [
+      "PDES-W04"
+    ],
+    "practicedIn": [
+      "PDES-W04"
+    ],
+    "assessedIn": [
+      "PDES-SC-W04"
+    ],
+    "appliedIn": [
+      "PDES-B-W04-01",
+      "PDES-B-W05-01",
+      "PDES-B-W13-01"
+    ],
+    "projectUse": [
+      "PDES-PJ01-M04",
+      "PDES-PJ02-M01",
+      "PDES-PJ03-M02"
+    ],
+    "reinforcedIn": [
+      "PDES-W05",
+      "PDES-W13"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W05",
+      "PDES-W13"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C017",
+    "taughtIn": [
+      "PDES-W13"
+    ],
+    "practicedIn": [
+      "PDES-W13"
+    ],
+    "assessedIn": [
+      "PDES-SC-W13"
+    ],
+    "appliedIn": [
+      "PDES-B-W13-01",
+      "PDES-B-W14-01",
+      "PDES-B-W18-01",
+      "PDES-B-W20-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M02",
+      "PDES-PJ03-M03",
+      "PDES-PJ03-M07",
+      "PDES-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PDES-W14",
+      "PDES-W18",
+      "PDES-W20"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W14",
+      "PDES-W18",
+      "PDES-W20"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C018",
+    "taughtIn": [
+      "PDES-W14"
+    ],
+    "practicedIn": [
+      "PDES-W14"
+    ],
+    "assessedIn": [
+      "PDES-SC-W14"
+    ],
+    "appliedIn": [
+      "PDES-B-W14-01",
+      "PDES-B-W15-01",
+      "PDES-B-W22-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M03",
+      "PDES-PJ03-M04",
+      "PDES-PJ03-M11"
+    ],
+    "reinforcedIn": [
+      "PDES-W15",
+      "PDES-W22"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W15",
+      "PDES-W22"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C019",
+    "taughtIn": [
+      "PDES-W03",
+      "PDES-W15"
+    ],
+    "practicedIn": [
+      "PDES-W03",
+      "PDES-W15"
+    ],
+    "assessedIn": [
+      "PDES-SC-W03",
+      "PDES-SC-W15"
+    ],
+    "appliedIn": [
+      "PDES-B-W03-01",
+      "PDES-B-W04-01",
+      "PDES-B-W15-01",
+      "PDES-B-W16-01",
+      "PDES-B-W17-01"
+    ],
+    "projectUse": [
+      "PDES-PJ01-M03",
+      "PDES-PJ01-M04",
+      "PDES-PJ03-M04",
+      "PDES-PJ03-M05",
+      "PDES-PJ03-M06"
+    ],
+    "reinforcedIn": [
+      "PDES-W04",
+      "PDES-W15",
+      "PDES-W16",
+      "PDES-W17"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W04",
+      "PDES-W15",
+      "PDES-W16",
+      "PDES-W17"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C020",
+    "taughtIn": [
+      "PDES-W15"
+    ],
+    "practicedIn": [
+      "PDES-W15"
+    ],
+    "assessedIn": [
+      "PDES-SC-W15"
+    ],
+    "appliedIn": [
+      "PDES-B-W15-01",
+      "PDES-B-W16-01",
+      "PDES-B-W19-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M04",
+      "PDES-PJ03-M05",
+      "PDES-PJ03-M08"
+    ],
+    "reinforcedIn": [
+      "PDES-W16",
+      "PDES-W19"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W16",
+      "PDES-W19"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C021",
+    "taughtIn": [
+      "PDES-W16"
+    ],
+    "practicedIn": [
+      "PDES-W16"
+    ],
+    "assessedIn": [
+      "PDES-SC-W16"
+    ],
+    "appliedIn": [
+      "PDES-B-W16-01",
+      "PDES-B-W17-01",
+      "PDES-B-W19-01",
+      "PDES-B-W22-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M05",
+      "PDES-PJ03-M06",
+      "PDES-PJ03-M08",
+      "PDES-PJ03-M11"
+    ],
+    "reinforcedIn": [
+      "PDES-W17",
+      "PDES-W19",
+      "PDES-W22"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W17",
+      "PDES-W19",
+      "PDES-W22"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C022",
+    "taughtIn": [
+      "PDES-W03",
+      "PDES-W17"
+    ],
+    "practicedIn": [
+      "PDES-W03",
+      "PDES-W17"
+    ],
+    "assessedIn": [
+      "PDES-SC-W03",
+      "PDES-SC-W17"
+    ],
+    "appliedIn": [
+      "PDES-B-W03-01",
+      "PDES-B-W04-01",
+      "PDES-B-W17-01",
+      "PDES-B-W18-01",
+      "PDES-B-W19-01"
+    ],
+    "projectUse": [
+      "PDES-PJ01-M03",
+      "PDES-PJ01-M04",
+      "PDES-PJ03-M06",
+      "PDES-PJ03-M07",
+      "PDES-PJ03-M08"
+    ],
+    "reinforcedIn": [
+      "PDES-W04",
+      "PDES-W17",
+      "PDES-W18",
+      "PDES-W19"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W04",
+      "PDES-W17",
+      "PDES-W18",
+      "PDES-W19"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C023",
+    "taughtIn": [
+      "PDES-W17"
+    ],
+    "practicedIn": [
+      "PDES-W17"
+    ],
+    "assessedIn": [
+      "PDES-SC-W17"
+    ],
+    "appliedIn": [
+      "PDES-B-W17-01",
+      "PDES-B-W18-01",
+      "PDES-B-W22-01",
+      "PDES-B-W23-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M06",
+      "PDES-PJ03-M07",
+      "PDES-PJ03-M11",
+      "PDES-PJ03-M12"
+    ],
+    "reinforcedIn": [
+      "PDES-W18",
+      "PDES-W22",
+      "PDES-W23"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W18",
+      "PDES-W22",
+      "PDES-W23"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C024",
+    "taughtIn": [
+      "PDES-W18"
+    ],
+    "practicedIn": [
+      "PDES-W18"
+    ],
+    "assessedIn": [
+      "PDES-SC-W18"
+    ],
+    "appliedIn": [
+      "PDES-B-W18-01",
+      "PDES-B-W19-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M07",
+      "PDES-PJ03-M08"
+    ],
+    "reinforcedIn": [
+      "PDES-W19"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W19"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C025",
+    "taughtIn": [
+      "PDES-W18"
+    ],
+    "practicedIn": [
+      "PDES-W18"
+    ],
+    "assessedIn": [
+      "PDES-SC-W18"
+    ],
+    "appliedIn": [
+      "PDES-B-W18-01",
+      "PDES-B-W19-01",
+      "PDES-B-W20-01",
+      "PDES-B-W23-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M07",
+      "PDES-PJ03-M08",
+      "PDES-PJ03-M09",
+      "PDES-PJ03-M12"
+    ],
+    "reinforcedIn": [
+      "PDES-W19",
+      "PDES-W20",
+      "PDES-W23"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W19",
+      "PDES-W20",
+      "PDES-W23"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C026",
+    "taughtIn": [
+      "PDES-W19"
+    ],
+    "practicedIn": [
+      "PDES-W19"
+    ],
+    "assessedIn": [
+      "PDES-SC-W19"
+    ],
+    "appliedIn": [
+      "PDES-B-W19-01",
+      "PDES-B-W20-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M08",
+      "PDES-PJ03-M09"
+    ],
+    "reinforcedIn": [
+      "PDES-W20"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W20"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C027",
+    "taughtIn": [
+      "PDES-W20"
+    ],
+    "practicedIn": [
+      "PDES-W20"
+    ],
+    "assessedIn": [
+      "PDES-SC-W20"
+    ],
+    "appliedIn": [
+      "PDES-B-W20-01",
+      "PDES-B-W21-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M09",
+      "PDES-PJ03-M10"
+    ],
+    "reinforcedIn": [
+      "PDES-W21"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W21"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C028",
+    "taughtIn": [
+      "PDES-W21"
+    ],
+    "practicedIn": [
+      "PDES-W21"
+    ],
+    "assessedIn": [
+      "PDES-SC-W21"
+    ],
+    "appliedIn": [
+      "PDES-B-W21-01",
+      "PDES-B-W22-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M10",
+      "PDES-PJ03-M11"
+    ],
+    "reinforcedIn": [
+      "PDES-W22"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W22"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C029",
+    "taughtIn": [
+      "PDES-W21"
+    ],
+    "practicedIn": [
+      "PDES-W21"
+    ],
+    "assessedIn": [
+      "PDES-SC-W21"
+    ],
+    "appliedIn": [
+      "PDES-B-W21-01",
+      "PDES-B-W22-01",
+      "PDES-B-W24-01",
+      "PDES-B-W25-01",
+      "PDES-B-W28-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M10",
+      "PDES-PJ03-M11",
+      "PDES-PJ04-M01",
+      "PDES-PJ04-M02",
+      "PDES-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "PDES-W22",
+      "PDES-W24",
+      "PDES-W25",
+      "PDES-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W22",
+      "PDES-W24",
+      "PDES-W25"
+    ],
+    "capstoneIntegration": [
+      "PDES-W28"
+    ]
+  },
+  {
+    "competencyId": "PDES-C030",
+    "taughtIn": [
+      "PDES-W22"
+    ],
+    "practicedIn": [
+      "PDES-W22"
+    ],
+    "assessedIn": [
+      "PDES-SC-W22"
+    ],
+    "appliedIn": [
+      "PDES-B-W22-01",
+      "PDES-B-W23-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M11",
+      "PDES-PJ03-M12"
+    ],
+    "reinforcedIn": [
+      "PDES-W23"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W23"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C031",
+    "taughtIn": [
+      "PDES-W22"
+    ],
+    "practicedIn": [
+      "PDES-W22"
+    ],
+    "assessedIn": [
+      "PDES-SC-W22"
+    ],
+    "appliedIn": [
+      "PDES-B-W22-01",
+      "PDES-B-W23-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M11",
+      "PDES-PJ03-M12"
+    ],
+    "reinforcedIn": [
+      "PDES-W23"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W23"
+    ],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C032",
+    "taughtIn": [
+      "PDES-W23"
+    ],
+    "practicedIn": [
+      "PDES-W23"
+    ],
+    "assessedIn": [
+      "PDES-SC-W23"
+    ],
+    "appliedIn": [
+      "PDES-B-W23-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M12"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C033",
+    "taughtIn": [
+      "PDES-W23"
+    ],
+    "practicedIn": [
+      "PDES-W23"
+    ],
+    "assessedIn": [
+      "PDES-SC-W23"
+    ],
+    "appliedIn": [
+      "PDES-B-W23-01",
+      "PDES-B-W24-01",
+      "PDES-B-W25-01",
+      "PDES-B-W28-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M12",
+      "PDES-PJ04-M01",
+      "PDES-PJ04-M02",
+      "PDES-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "PDES-W24",
+      "PDES-W25",
+      "PDES-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W24",
+      "PDES-W25"
+    ],
+    "capstoneIntegration": [
+      "PDES-W28"
+    ]
+  },
+  {
+    "competencyId": "PDES-C034",
+    "taughtIn": [
+      "PDES-W24"
+    ],
+    "practicedIn": [
+      "PDES-W24"
+    ],
+    "assessedIn": [
+      "PDES-SC-W24"
+    ],
+    "appliedIn": [
+      "PDES-B-W24-01",
+      "PDES-B-W25-01",
+      "PDES-B-W26-01",
+      "PDES-B-W27-01",
+      "PDES-B-W28-01"
+    ],
+    "projectUse": [
+      "PDES-PJ04-M01",
+      "PDES-PJ04-M02",
+      "PDES-PJ04-M03",
+      "PDES-PJ04-M04",
+      "PDES-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "PDES-W25",
+      "PDES-W26",
+      "PDES-W27",
+      "PDES-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W25",
+      "PDES-W26",
+      "PDES-W27"
+    ],
+    "capstoneIntegration": [
+      "PDES-W28"
+    ]
+  },
+  {
+    "competencyId": "PDES-C035",
+    "taughtIn": [
+      "PDES-W23",
+      "PDES-W25"
+    ],
+    "practicedIn": [
+      "PDES-W23",
+      "PDES-W25"
+    ],
+    "assessedIn": [
+      "PDES-SC-W23",
+      "PDES-SC-W25"
+    ],
+    "appliedIn": [
+      "PDES-B-W23-01",
+      "PDES-B-W24-01",
+      "PDES-B-W25-01",
+      "PDES-B-W26-01",
+      "PDES-B-W27-01",
+      "PDES-B-W28-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M12",
+      "PDES-PJ04-M01",
+      "PDES-PJ04-M02",
+      "PDES-PJ04-M03",
+      "PDES-PJ04-M04",
+      "PDES-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "PDES-W24",
+      "PDES-W25",
+      "PDES-W26",
+      "PDES-W27",
+      "PDES-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W24",
+      "PDES-W25",
+      "PDES-W26",
+      "PDES-W27"
+    ],
+    "capstoneIntegration": [
+      "PDES-W28"
+    ]
+  },
+  {
+    "competencyId": "PDES-C036",
+    "taughtIn": [
+      "PDES-W25"
+    ],
+    "practicedIn": [
+      "PDES-W25"
+    ],
+    "assessedIn": [
+      "PDES-SC-W25"
+    ],
+    "appliedIn": [
+      "PDES-B-W25-01"
+    ],
+    "projectUse": [
+      "PDES-PJ04-M02"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C037",
+    "taughtIn": [
+      "PDES-W24"
+    ],
+    "practicedIn": [
+      "PDES-W24"
+    ],
+    "assessedIn": [
+      "PDES-SC-W24"
+    ],
+    "appliedIn": [
+      "PDES-B-W24-01"
+    ],
+    "projectUse": [
+      "PDES-PJ04-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C038",
+    "taughtIn": [
+      "PDES-W16"
+    ],
+    "practicedIn": [
+      "PDES-W16"
+    ],
+    "assessedIn": [
+      "PDES-SC-W16"
+    ],
+    "appliedIn": [
+      "PDES-B-W16-01"
+    ],
+    "projectUse": [
+      "PDES-PJ03-M05"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "PDES-C039",
+    "taughtIn": [
+      "PDES-W25",
+      "PDES-W28"
+    ],
+    "practicedIn": [
+      "PDES-W25",
+      "PDES-W28"
+    ],
+    "assessedIn": [
+      "PDES-SC-W25",
+      "PDES-SC-W28"
+    ],
+    "appliedIn": [
+      "PDES-B-W25-01",
+      "PDES-B-W26-01",
+      "PDES-B-W27-01",
+      "PDES-B-W28-01"
+    ],
+    "projectUse": [
+      "PDES-PJ04-M02",
+      "PDES-PJ04-M03",
+      "PDES-PJ04-M04",
+      "PDES-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "PDES-W26",
+      "PDES-W27",
+      "PDES-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W26",
+      "PDES-W27"
+    ],
+    "capstoneIntegration": [
+      "PDES-W28"
+    ]
+  },
+  {
+    "competencyId": "PDES-C040",
+    "taughtIn": [
+      "PDES-W25",
+      "PDES-W28"
+    ],
+    "practicedIn": [
+      "PDES-W25",
+      "PDES-W28"
+    ],
+    "assessedIn": [
+      "PDES-SC-W25",
+      "PDES-SC-W28"
+    ],
+    "appliedIn": [
+      "PDES-B-W25-01",
+      "PDES-B-W26-01",
+      "PDES-B-W28-01"
+    ],
+    "projectUse": [
+      "PDES-PJ04-M02",
+      "PDES-PJ04-M03",
+      "PDES-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "PDES-W26",
+      "PDES-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W26"
+    ],
+    "capstoneIntegration": [
+      "PDES-W28"
+    ]
+  },
+  {
+    "competencyId": "PDES-C041",
+    "taughtIn": [
+      "PDES-W26",
+      "PDES-W27",
+      "PDES-W28"
+    ],
+    "practicedIn": [
+      "PDES-W26",
+      "PDES-W27",
+      "PDES-W28"
+    ],
+    "assessedIn": [
+      "PDES-SC-W26",
+      "PDES-SC-W27",
+      "PDES-SC-W28"
+    ],
+    "appliedIn": [
+      "PDES-B-W26-01",
+      "PDES-B-W27-01",
+      "PDES-B-W28-01"
+    ],
+    "projectUse": [
+      "PDES-PJ04-M03",
+      "PDES-PJ04-M04",
+      "PDES-PJ04-M05"
+    ],
+    "reinforcedIn": [
+      "PDES-W27",
+      "PDES-W28"
+    ],
+    "intermediateReinforcedIn": [
+      "PDES-W27"
+    ],
+    "capstoneIntegration": [
+      "PDES-W28"
+    ]
+  }
+]

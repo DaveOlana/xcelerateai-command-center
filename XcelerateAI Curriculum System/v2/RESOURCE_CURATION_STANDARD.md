@@ -1273,3 +1273,26 @@ A recovery resource is an alternate use context, not a new `learningRole`. It re
 New curricula and deliberately regenerated future revisions use `content-integrity-audit.json` schema version `1.1`. Version `1.1` adds non-runtime prerequisite-fit evidence, expanded resource-quality judgments, justified modality review, and optional recovery-alternative evidence. Version `1.0` remains accepted for already-published PYAE Revision 3 and is not retroactively tightened.
 
 This evidence is consumed by V020 validation only. It does not add Curriculum Source fields, change compilation, enter learner state, or alter runtime behavior.
+
+---
+
+# 43. Learner Assignment and Focus-Vendor Contract
+
+New curricula and deliberate revisions use content-integrity audit schema `1.2` when a learner-facing resource or Studio experience is authored. Already published `1.0` and `1.1` curricula remain valid until deliberately revised.
+
+If a curriculum has a primary tool or platform vendor, declare that focus vendor in non-runtime audit configuration. A Week may contain no more than one Study card from that vendor. Contextual technical links inside a task do not count as Study cards. The vendor should teach its own tool; broader professional concepts require an intentional search of the Source Registry and independent candidates. This is the only provider quota.
+
+A required Core Learn or Practice assignment must open the assigned lesson, article, video, or exercise directly. Hubs, directories, catalogs, channels, broad playlists, search results, and category pages fail unless the assignment supplies a deterministic click path that requires no learner judgment. Direct links remain preferred.
+
+Every required learner assignment must explicitly state where to start, exactly what to consume, where to stop, whether an account/sign-in/installation/payment is required, the expected outcome, and the immediate next action.
+
+“Relevant sections,” “explore,” “browse,” “what is useful,” and “stop when advanced or unrelated” are not bounded instructions. The author performs the curation, not the beginner. Same-vendor technical references needed only during practice belong beside the relevant step.
+
+The authoritative discovery pool remains the Source Registry in this document. Use its official documentation, standards bodies, universities, professional organizations, open courses, videos, interactive practice, labs, repositories, and books/articles as appropriate. Add current web research when permitted; do not replace this registry with a parallel list.
+# Final-destination and learning-surface integrity
+
+Reachability is not sufficient evidence that a resource is usable. Reviewers must open the final destination, confirm that it contains the assigned content rather than a generic landing page or error state, record redirects and restrictions, and preserve the checked final URL and date. A redirect passes only when the final page is still the exact assigned content. Required progression may not depend on inaccessible, payment-gated, or uninspected content.
+
+Study contains material whose primary learner action is to consume instruction, consult a reference, or interact in order to learn. A curriculum task that requires the learner to create, debug, submit, or prove the Week artifact belongs in Build, even when it is scaffolded. An external exercise can remain Study practice when its output is incidental to learning and it does not replace the required curriculum Build.
+
+Resource format and learning role must describe the inspected experience honestly. They must not be assigned to produce symmetrical counts. Each selected card needs a distinct point-of-use contribution.

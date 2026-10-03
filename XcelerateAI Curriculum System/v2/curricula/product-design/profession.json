@@ -1,0 +1,178 @@
+{
+  "curriculumId": "PDES",
+  "revision": 1,
+  "researchedAt": "2026-09-27",
+  "role": "Product Designer",
+  "roleDefinition": "An entry-level product designer investigates user and product problems, structures and designs usable digital experiences, tests and iterates them, and communicates implementation-ready decisions with cross-functional partners.",
+  "evidenceSummary": "Current junior and early-career roles repeatedly combine portfolio evidence, Figma fluency, research-informed UX, responsive UI craft, accessibility awareness, prototyping, developer collaboration, and clear rationale. Current professional guidance also emphasizes continuous research, ethical evidence, adaptive interfaces, system thinking, and responsible use of AI.",
+  "toolDecision": {
+    "primary": "Figma",
+    "rationale": "Figma is the recurring tool expectation in current junior-role evidence and provides unlimited drafts plus core design, auto-layout, component, and prototyping capability on Starter. The curriculum avoids paid-only Dev Mode and advanced features by teaching explicit specifications and manual handoff.",
+    "alternativeEvaluated": "Penpot",
+    "alternativeFinding": "Penpot is a credible open-source, fully featured, no-paywall option with flex/grid layouts, components, tokens, prototyping, and inspect mode. It is not primary because current entry-level role evidence is materially more Figma-specific, but the concepts and artifacts remain portable.",
+    "paidFeatureBoundary": "Dev Mode, paid libraries, advanced AI, organization controls, and premium prototype features are optional. No assessment requires them."
+  },
+  "capabilityTiers": {
+    "essentialEntryLevel": [
+      "PDES-C001",
+      "PDES-C002",
+      "PDES-C003",
+      "PDES-C004",
+      "PDES-C005",
+      "PDES-C006",
+      "PDES-C007",
+      "PDES-C009",
+      "PDES-C010",
+      "PDES-C011",
+      "PDES-C012",
+      "PDES-C014",
+      "PDES-C015",
+      "PDES-C016",
+      "PDES-C017",
+      "PDES-C018",
+      "PDES-C019",
+      "PDES-C020",
+      "PDES-C021",
+      "PDES-C022",
+      "PDES-C023",
+      "PDES-C024",
+      "PDES-C025",
+      "PDES-C026",
+      "PDES-C027",
+      "PDES-C028",
+      "PDES-C029",
+      "PDES-C030",
+      "PDES-C031",
+      "PDES-C033",
+      "PDES-C034",
+      "PDES-C035",
+      "PDES-C039",
+      "PDES-C040",
+      "PDES-C041"
+    ],
+    "valuable": [
+      "PDES-C008",
+      "PDES-C013",
+      "PDES-C032",
+      "PDES-C036",
+      "PDES-C037",
+      "PDES-C038"
+    ],
+    "advancedLater": [
+      "Organization-wide design-system governance",
+      "Specialist quantitative research",
+      "Production frontend engineering",
+      "Research operations leadership",
+      "Advanced motion design",
+      "Growth experimentation ownership"
+    ]
+  },
+  "practitionerOutputs": [
+    "Research plans and notes",
+    "Synthesized findings",
+    "Problem statements",
+    "Journeys and flows",
+    "Information architecture",
+    "Wireframes",
+    "Responsive interfaces",
+    "Components and small systems",
+    "Interactive prototypes",
+    "Usability-test evidence",
+    "Accessibility reviews",
+    "Handoff specifications",
+    "Portfolio case studies"
+  ],
+  "professionalPractices": [
+    "Clarify briefs",
+    "State uncertainty",
+    "Plan ethical research",
+    "Critique constructively",
+    "Document decisions",
+    "Manage scope",
+    "Estimate and communicate progress",
+    "Collaborate asynchronously",
+    "Negotiate feasibility",
+    "Present rationale",
+    "Handle client revisions and handover"
+  ],
+  "boundaries": [
+    "Does not train a dedicated UX researcher, accessibility specialist, visual brand designer, product manager, or frontend engineer.",
+    "Does not promise employment or treat software fluency as professional capability.",
+    "Does not use fictional users or invented metrics as evidence."
+  ],
+  "graduationBoundary": "Take a reasonably scoped digital-product problem from research and problem definition through interaction and visual design, responsive prototyping, usability testing, iteration, accessibility review, developer handoff, and professional case-study presentation under normal junior supervision.",
+  "sources": [
+    {
+      "title": "Figma Early Career Product Designer role",
+      "url": "https://job-boards.greenhouse.io/figma/jobs/6180053004",
+      "publisher": "Figma",
+      "contribution": "Current early-career collaboration, portfolio, user and business-needs evidence."
+    },
+    {
+      "title": "Junior Product Designer role",
+      "url": "https://jobs.lever.co/masterborn-2/684aad8b-c3bb-48e1-a684-264a83b878ce",
+      "publisher": "MasterBorn",
+      "contribution": "Current Figma, responsive UI, UX, research, requirements, and cross-functional expectations."
+    },
+    {
+      "title": "Junior UX Designer role",
+      "url": "https://careers.capgemini.com/job/London-Junior-UX-Designer-%28SC-Cleared-SC-Eligible%29-Associate-Consultant-Digital-Excellence/1436342133/",
+      "publisher": "Capgemini",
+      "contribution": "Current portfolio, Figma, prototyping, accessibility, and public-service design expectations."
+    },
+    {
+      "title": "What is Product Design?",
+      "url": "https://www.figma.com/resource-library/what-is-product-design/",
+      "publisher": "Figma",
+      "contribution": "Current role boundary connecting research, interaction, business, feasibility, and cross-functional work."
+    },
+    {
+      "title": "The Double Diamond",
+      "url": "https://www.designcouncil.org.uk/resources/the-double-diamond/",
+      "publisher": "Design Council",
+      "contribution": "Evidence-led divergence and convergence across discover, define, develop, and deliver."
+    },
+    {
+      "title": "User Research Service Manual",
+      "url": "https://www.gov.uk/service-manual/user-research",
+      "publisher": "GOV.UK",
+      "contribution": "Research questions, consent, inclusive recruitment, methods, analysis, privacy, and continuous practice."
+    },
+    {
+      "title": "WCAG 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "publisher": "W3C",
+      "contribution": "Current authoritative accessibility baseline."
+    },
+    {
+      "title": "Apple Human Interface Guidelines",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/design-principles",
+      "publisher": "Apple",
+      "contribution": "Current platform principles, adaptable layout, agency, responsibility, inclusion, and established patterns."
+    },
+    {
+      "title": "U.S. Web Design System",
+      "url": "https://designsystem.digital.gov/",
+      "publisher": "U.S. General Services Administration",
+      "contribution": "Accessible components, patterns, design tokens, and implementation-aware system guidance."
+    },
+    {
+      "title": "Figma Starter plan overview",
+      "url": "https://help.figma.com/hc/en-us/articles/13838684089751-Starter-plan-overview",
+      "publisher": "Figma",
+      "contribution": "Verified free-plan boundary and paid Dev Mode exclusion."
+    },
+    {
+      "title": "Penpot pricing",
+      "url": "https://penpot.app/pricing",
+      "publisher": "Penpot",
+      "contribution": "Verified no-paywall alternative, core capabilities, and cloud limits."
+    },
+    {
+      "title": "Penpot prototyping",
+      "url": "https://penpot.app/design/prototyping",
+      "publisher": "Penpot",
+      "contribution": "Alternative tool prototyping, inspect, collaboration, and open-source evidence."
+    }
+  ]
+}

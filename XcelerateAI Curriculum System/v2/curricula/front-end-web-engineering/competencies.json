@@ -1,0 +1,722 @@
+[
+  {
+    "id": "FEWE-C001",
+    "name": "Trace a basic web request",
+    "description": "Explain how a URL leads from a browser request to a server response and rendered page without confusing the browser with the server.",
+    "domain": "Web platform",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "FEWE-C002",
+    "name": "Create and inspect a local webpage",
+    "description": "Create named HTML files in a deliberate folder, open them in a browser, and inspect source and rendered output with browser tools.",
+    "domain": "Development environment",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "FEWE-C003",
+    "name": "Choose semantic HTML elements",
+    "description": "Select elements that express the meaning and relationship of content rather than choosing containers only for appearance.",
+    "domain": "HTML",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C001",
+      "FEWE-C002"
+    ]
+  },
+  {
+    "id": "FEWE-C004",
+    "name": "Create navigable document structure",
+    "description": "Organize headings, landmarks, links, lists, images, and metadata so people and user agents can understand the page.",
+    "domain": "HTML and accessibility",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C001",
+      "FEWE-C002"
+    ]
+  },
+  {
+    "id": "FEWE-C005",
+    "name": "Build an accessible native form",
+    "description": "Use labels, suitable controls, groups, instructions, required states, and error feedback that remain understandable by keyboard and assistive technology users.",
+    "domain": "Forms and accessibility",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C003",
+      "FEWE-C004"
+    ]
+  },
+  {
+    "id": "FEWE-C006",
+    "name": "Represent tabular data semantically",
+    "description": "Use tables only for related row-and-column data and provide headers and captions that expose relationships.",
+    "domain": "HTML",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C003",
+      "FEWE-C004"
+    ]
+  },
+  {
+    "id": "FEWE-C007",
+    "name": "Reason about the CSS cascade",
+    "description": "Use origin, importance, specificity, source order, and inheritance to explain why a declaration wins.",
+    "domain": "CSS",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C005",
+      "FEWE-C006"
+    ]
+  },
+  {
+    "id": "FEWE-C008",
+    "name": "Control boxes and readable type",
+    "description": "Apply box sizing, dimensions, spacing, borders, color, fonts, line height, and measure without breaking content.",
+    "domain": "CSS",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C005",
+      "FEWE-C006"
+    ]
+  },
+  {
+    "id": "FEWE-C009",
+    "name": "Build one-dimensional layouts with Flexbox",
+    "description": "Use axes, wrapping, alignment, growth, shrinkage, and basis to arrange interface groups.",
+    "domain": "CSS layout",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C007",
+      "FEWE-C008"
+    ]
+  },
+  {
+    "id": "FEWE-C010",
+    "name": "Build two-dimensional layouts with Grid",
+    "description": "Define tracks, gaps, placement, and responsive grids while choosing Grid or Flexbox according to the relationship.",
+    "domain": "CSS layout",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C007",
+      "FEWE-C008"
+    ]
+  },
+  {
+    "id": "FEWE-C011",
+    "name": "Implement mobile-first responsive layouts",
+    "description": "Begin from constrained content, add breakpoints when the layout needs them, and preserve priority and operability across viewports.",
+    "domain": "Responsive design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C009",
+      "FEWE-C010"
+    ]
+  },
+  {
+    "id": "FEWE-C012",
+    "name": "Deliver responsive images and touch-friendly controls",
+    "description": "Use fluid media, suitable image sources, viewport configuration, and minimum interaction targets without distorting content.",
+    "domain": "Responsive design",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C009",
+      "FEWE-C010"
+    ]
+  },
+  {
+    "id": "FEWE-C013",
+    "name": "Trace JavaScript execution with basic data",
+    "description": "Predict how values, types, variables, expressions, and operators are evaluated in a short program.",
+    "domain": "JavaScript",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C011",
+      "FEWE-C012"
+    ]
+  },
+  {
+    "id": "FEWE-C014",
+    "name": "Control program flow",
+    "description": "Use conditionals and loops to express bounded decisions and repetition while avoiding accidental infinite work.",
+    "domain": "JavaScript",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C011",
+      "FEWE-C012"
+    ]
+  },
+  {
+    "id": "FEWE-C015",
+    "name": "Design focused JavaScript functions",
+    "description": "Define parameters, return values, and responsibilities so behavior can be reused and tested without relying on hidden global state.",
+    "domain": "JavaScript",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C013",
+      "FEWE-C014"
+    ]
+  },
+  {
+    "id": "FEWE-C016",
+    "name": "Organize browser code with modules",
+    "description": "Export and import named responsibilities while reasoning about local, function, block, and module scope.",
+    "domain": "JavaScript modules",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C013",
+      "FEWE-C014"
+    ]
+  },
+  {
+    "id": "FEWE-C017",
+    "name": "Model frontend data with arrays and objects",
+    "description": "Choose arrays for ordered collections and objects for named properties, then access, update, copy, destructure, and compare them deliberately.",
+    "domain": "JavaScript data",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C015",
+      "FEWE-C016"
+    ]
+  },
+  {
+    "id": "FEWE-C018",
+    "name": "Transform collections with array methods",
+    "description": "Use map, filter, find, some, every, and reduce where their output matches the intended data transformation.",
+    "domain": "JavaScript data",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C015",
+      "FEWE-C016"
+    ]
+  },
+  {
+    "id": "FEWE-C019",
+    "name": "Manipulate the DOM safely",
+    "description": "Select elements, create and remove nodes, update text, attributes, and classes, and avoid unsafe HTML insertion for untrusted content.",
+    "domain": "DOM and browser APIs",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C017",
+      "FEWE-C018"
+    ]
+  },
+  {
+    "id": "FEWE-C020",
+    "name": "Design event-driven interactions",
+    "description": "Handle events, default behavior, propagation, delegation, and small UI state transitions without duplicate or inaccessible controls.",
+    "domain": "Browser events",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C017",
+      "FEWE-C018"
+    ]
+  },
+  {
+    "id": "FEWE-C021",
+    "name": "Implement usable client-side form behavior",
+    "description": "Read form data, validate rules, present field-specific feedback, preserve input after failure, and distinguish client validation from server authority.",
+    "domain": "Forms and JavaScript",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C019",
+      "FEWE-C020"
+    ]
+  },
+  {
+    "id": "FEWE-C022",
+    "name": "Use browser storage deliberately",
+    "description": "Store, parse, update, and remove non-sensitive local data while recognizing origin scope, string serialization, and privacy limits.",
+    "domain": "Browser storage",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C019",
+      "FEWE-C020"
+    ]
+  },
+  {
+    "id": "FEWE-C023",
+    "name": "Interpret frontend HTTP exchanges",
+    "description": "Read URLs, methods, status codes, headers, and JSON response shapes at the depth needed to collaborate from an API contract.",
+    "domain": "HTTP and APIs",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C021",
+      "FEWE-C022"
+    ]
+  },
+  {
+    "id": "FEWE-C024",
+    "name": "Coordinate asynchronous fetch flows",
+    "description": "Use promises and async/await to fetch, parse, validate, cancel or ignore stale work, and surface loading, empty, success, and error states.",
+    "domain": "JavaScript async",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C021",
+      "FEWE-C022"
+    ]
+  },
+  {
+    "id": "FEWE-C025",
+    "name": "Diagnose frontend failures systematically",
+    "description": "Reproduce a defect, reduce its scope, inspect evidence, form a falsifiable hypothesis, and verify the smallest repair.",
+    "domain": "Debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C023",
+      "FEWE-C024"
+    ]
+  },
+  {
+    "id": "FEWE-C026",
+    "name": "Handle expected JavaScript failures",
+    "description": "Use thrown errors and targeted try/catch boundaries while preserving useful messages and avoiding silent failure.",
+    "domain": "JavaScript errors",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C023",
+      "FEWE-C024"
+    ]
+  },
+  {
+    "id": "FEWE-C027",
+    "name": "Architect a small vanilla web application",
+    "description": "Separate data access, state, rendering, and interaction responsibilities while keeping the application explainable without a framework.",
+    "domain": "Frontend architecture",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C025",
+      "FEWE-C026"
+    ]
+  },
+  {
+    "id": "FEWE-C028",
+    "name": "Deliver a resilient API-backed feature",
+    "description": "Implement requirements across responsive, accessible, async, empty, error, persistence, and documentation concerns.",
+    "domain": "Integrated frontend engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C025",
+      "FEWE-C026"
+    ]
+  },
+  {
+    "id": "FEWE-C029",
+    "name": "Manage source history with Git",
+    "description": "Inspect working-tree state, stage intentional changes, write meaningful commits, branch, merge, pull, push, and resolve a basic conflict without discarding work.",
+    "domain": "Version control",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C027",
+      "FEWE-C028"
+    ]
+  },
+  {
+    "id": "FEWE-C030",
+    "name": "Collaborate through GitHub pull requests",
+    "description": "Publish a branch, explain its scope, review a diff, respond to feedback, and merge through a pull-request workflow.",
+    "domain": "Engineering workflow",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C027",
+      "FEWE-C028"
+    ]
+  },
+  {
+    "id": "FEWE-C031",
+    "name": "Operate a Node and npm project",
+    "description": "Explain Node’s tooling role, read package.json, install dependencies, run scripts, and distinguish project dependencies from generated node_modules content.",
+    "domain": "Tooling",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C029",
+      "FEWE-C030"
+    ]
+  },
+  {
+    "id": "FEWE-C032",
+    "name": "Use Vite development and build workflows",
+    "description": "Create, serve, debug, build, preview, and configure a minimal frontend project while understanding bundling, transformation, source maps, and client environment variables conceptually.",
+    "domain": "Build tooling",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C029",
+      "FEWE-C030"
+    ]
+  },
+  {
+    "id": "FEWE-C033",
+    "name": "Model application data with TypeScript",
+    "description": "Use primitive, object, array, union, optional, literal, and reusable types at the boundary where they clarify JavaScript assumptions.",
+    "domain": "TypeScript",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C031",
+      "FEWE-C032"
+    ]
+  },
+  {
+    "id": "FEWE-C034",
+    "name": "Narrow values and type functions",
+    "description": "Type parameters and returns, use control-flow narrowing, and distinguish compile-time checking from runtime validation.",
+    "domain": "TypeScript",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C031",
+      "FEWE-C032"
+    ]
+  },
+  {
+    "id": "FEWE-C035",
+    "name": "Type browser APIs safely",
+    "description": "Handle nullable DOM queries, specific element capabilities, event targets, form data, and reusable generic helpers without unsafe global assertions.",
+    "domain": "TypeScript and DOM",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C033",
+      "FEWE-C034"
+    ]
+  },
+  {
+    "id": "FEWE-C036",
+    "name": "Validate external data at runtime",
+    "description": "Treat parsed JSON as untrusted, check required shapes, and produce typed success/failure results for the rest of the application.",
+    "domain": "TypeScript and APIs",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C033",
+      "FEWE-C034"
+    ]
+  },
+  {
+    "id": "FEWE-C037",
+    "name": "Design valuable automated tests",
+    "description": "Choose test boundaries, arrange inputs, act, assert observable outcomes, and cover normal, boundary, failure, and regression behavior.",
+    "domain": "Testing",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C035",
+      "FEWE-C036"
+    ]
+  },
+  {
+    "id": "FEWE-C038",
+    "name": "Test DOM behavior from the user perspective",
+    "description": "Query by roles and labels, simulate meaningful interactions, await asynchronous outcomes, and avoid coupling tests to private implementation details.",
+    "domain": "Frontend testing",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C035",
+      "FEWE-C036"
+    ]
+  },
+  {
+    "id": "FEWE-C039",
+    "name": "Model interfaces as React components",
+    "description": "Divide a design into purposeful components whose boundaries reflect repeated or independently meaningful UI responsibilities.",
+    "domain": "React",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C037",
+      "FEWE-C038"
+    ]
+  },
+  {
+    "id": "FEWE-C040",
+    "name": "Render declarative UI with JSX and props",
+    "description": "Translate semantic HTML into JSX, pass read-only inputs, compose children, and render data without mutating props.",
+    "domain": "React",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C037",
+      "FEWE-C038"
+    ]
+  },
+  {
+    "id": "FEWE-C041",
+    "name": "Model local React state intentionally",
+    "description": "Choose the minimal state that changes over time and derive everything else during rendering when possible.",
+    "domain": "React state",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C039",
+      "FEWE-C040"
+    ]
+  },
+  {
+    "id": "FEWE-C042",
+    "name": "Update React state safely from events",
+    "description": "Use event handlers and state setters with immutable object/array updates and functional updates when the next value depends on the previous one.",
+    "domain": "React state",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C039",
+      "FEWE-C040"
+    ]
+  },
+  {
+    "id": "FEWE-C043",
+    "name": "Build controlled React forms",
+    "description": "Connect labels, values, change events, constraints, validation feedback, submission states, and recovery without losing native form behavior.",
+    "domain": "React forms",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C041",
+      "FEWE-C042"
+    ]
+  },
+  {
+    "id": "FEWE-C044",
+    "name": "Choose and lift shared state",
+    "description": "Place state at the closest common owner, pass values and handlers explicitly, and avoid contradictory copies across components.",
+    "domain": "React state architecture",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C041",
+      "FEWE-C042"
+    ]
+  },
+  {
+    "id": "FEWE-C045",
+    "name": "Use React Effects for external synchronization",
+    "description": "Distinguish rendering and events from Effects, declare dependencies, clean up subscriptions or requests, and remove Effects that only derive state.",
+    "domain": "React effects",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C043",
+      "FEWE-C044"
+    ]
+  },
+  {
+    "id": "FEWE-C046",
+    "name": "Build resilient React data flows",
+    "description": "Coordinate route/prop inputs, request lifecycles, stale results, cached intent, and accessible loading, empty, error, and retry states.",
+    "domain": "React data fetching",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C043",
+      "FEWE-C044"
+    ]
+  },
+  {
+    "id": "FEWE-C047",
+    "name": "Implement client-side routing",
+    "description": "Define route hierarchies, layouts, parameters, navigation, not-found behavior, and direct-load expectations with a maintained React router.",
+    "domain": "Routing",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C045",
+      "FEWE-C046"
+    ]
+  },
+  {
+    "id": "FEWE-C048",
+    "name": "Use URLs as appropriate application state",
+    "description": "Represent shareable navigation, path parameters, and search/filter state in URLs while distinguishing it from local or server state.",
+    "domain": "Web platform and state",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C045",
+      "FEWE-C046"
+    ]
+  },
+  {
+    "id": "FEWE-C049",
+    "name": "Extract reusable React logic with custom Hooks",
+    "description": "Share stateful synchronization or behavior through Hooks while keeping Hook calls valid, inputs explicit, and component output local.",
+    "domain": "React architecture",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C047",
+      "FEWE-C048"
+    ]
+  },
+  {
+    "id": "FEWE-C050",
+    "name": "Choose local, lifted, and contextual state",
+    "description": "Distinguish local UI, derived, URL, server, and broadly shared state, then choose the smallest ownership mechanism that fits.",
+    "domain": "State management",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C047",
+      "FEWE-C048"
+    ]
+  },
+  {
+    "id": "FEWE-C051",
+    "name": "Translate design artifacts into implementation decisions",
+    "description": "Inspect spacing, type, tokens, components, states, responsiveness, and missing specifications, then ask bounded clarification questions.",
+    "domain": "Design-to-code",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C049",
+      "FEWE-C050"
+    ]
+  },
+  {
+    "id": "FEWE-C052",
+    "name": "Build accessible React components",
+    "description": "Preserve native semantics, keyboard operation, focus, names, states, contrast, motion preferences, and restrained ARIA across reusable components.",
+    "domain": "Accessibility",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C049",
+      "FEWE-C050"
+    ]
+  },
+  {
+    "id": "FEWE-C053",
+    "name": "Test React components through behavior",
+    "description": "Render components with realistic providers, query accessible output, interact as a user, and assert visible outcomes rather than component internals.",
+    "domain": "React testing",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C051",
+      "FEWE-C052"
+    ]
+  },
+  {
+    "id": "FEWE-C054",
+    "name": "Test asynchronous and routed React flows",
+    "description": "Control network boundaries, await state transitions, isolate test state, and verify navigation, errors, retries, and accessibility-relevant behavior.",
+    "domain": "Integration testing",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C051",
+      "FEWE-C052"
+    ]
+  },
+  {
+    "id": "FEWE-C055",
+    "name": "Measure and improve frontend performance",
+    "description": "Use network, performance, Lighthouse, and Core Web Vitals evidence to prioritize images, loading, rendering, caching, and bundle improvements.",
+    "domain": "Performance",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C053",
+      "FEWE-C054"
+    ]
+  },
+  {
+    "id": "FEWE-C056",
+    "name": "Apply frontend security boundaries",
+    "description": "Avoid unsafe HTML, exposed secrets, token myths, untrusted output, careless dependencies, and authentication/authorization confusion.",
+    "domain": "Frontend security",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C053",
+      "FEWE-C054"
+    ]
+  },
+  {
+    "id": "FEWE-C057",
+    "name": "Automate critical browser journeys",
+    "description": "Use Playwright locators, isolated test data, web-first assertions, cross-browser projects, and traces for a small high-value end-to-end suite.",
+    "domain": "End-to-end testing",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C055",
+      "FEWE-C056"
+    ]
+  },
+  {
+    "id": "FEWE-C058",
+    "name": "Deploy and diagnose a frontend application",
+    "description": "Configure a free-enough static host, SPA route fallback, HTTPS/domain concepts, environment values, build logs, and rollback-aware verification.",
+    "domain": "Deployment",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C055",
+      "FEWE-C056"
+    ]
+  },
+  {
+    "id": "FEWE-C059",
+    "name": "Plan and communicate frontend work",
+    "description": "Clarify requirements, identify risks, break scope into tasks, estimate, report progress, document blockers, and negotiate a smaller safe slice when needed.",
+    "domain": "Professional workflow",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C057",
+      "FEWE-C058"
+    ]
+  },
+  {
+    "id": "FEWE-C060",
+    "name": "Collaborate across design and backend boundaries",
+    "description": "Resolve design ambiguity and API contract questions with explicit request, response, error, authentication, state, and responsibility decisions.",
+    "domain": "Cross-functional collaboration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C057",
+      "FEWE-C058"
+    ]
+  },
+  {
+    "id": "FEWE-C061",
+    "name": "Frame and architect an independent frontend product",
+    "description": "Define users, problem, scope, flows, routes, components, data contracts, states, accessibility, testing, performance, and deployment constraints.",
+    "domain": "Capstone architecture",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C059",
+      "FEWE-C060"
+    ]
+  },
+  {
+    "id": "FEWE-C062",
+    "name": "Build a risk-first vertical slice",
+    "description": "Implement one thin production path across UI, state, API, validation, tests, and deployment to validate architecture before expanding scope.",
+    "domain": "Independent engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C059",
+      "FEWE-C060"
+    ]
+  },
+  {
+    "id": "FEWE-C063",
+    "name": "Implement a production-style React application independently",
+    "description": "Deliver planned routes, components, forms, state, API behavior, and responsive states with explainable architecture and controlled scope.",
+    "domain": "Capstone implementation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C061",
+      "FEWE-C062"
+    ]
+  },
+  {
+    "id": "FEWE-C064",
+    "name": "Operate quality gates during delivery",
+    "description": "Use typecheck, lint/format policy, unit/integration/E2E tests, accessibility review, performance measurement, security review, and code review as release evidence.",
+    "domain": "Quality engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C061",
+      "FEWE-C062"
+    ]
+  },
+  {
+    "id": "FEWE-C065",
+    "name": "Release and operate a frontend product",
+    "description": "Complete production validation, deployment, smoke monitoring, rollback/redeploy, documentation, and issue triage for a frontend release.",
+    "domain": "Release engineering",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C063",
+      "FEWE-C064"
+    ]
+  },
+  {
+    "id": "FEWE-C066",
+    "name": "Present and defend frontend engineering evidence",
+    "description": "Explain product scope, architecture, trade-offs, accessibility, testing, performance, debugging, collaboration, and limitations using deployed work and source history.",
+    "domain": "Employability",
+    "importance": "core",
+    "prerequisiteIds": [
+      "FEWE-C063",
+      "FEWE-C064"
+    ]
+  }
+]

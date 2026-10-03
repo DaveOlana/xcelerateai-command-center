@@ -17,6 +17,18 @@ export function validateResourceResearch(records) {
     if (record?.accessStatus !== 'verified') add('V012-B003', `${label}.accessStatus must be "verified" for a selected Core resource.`, [record?.id]);
     if (typeof record?.checkedAt !== 'string' || Number.isNaN(Date.parse(record.checkedAt))) add('V012-B004', `${label}.checkedAt must be a valid ISO-compatible date.`, [record?.id]);
     if (!Array.isArray(record?.competencyIds) || record.competencyIds.length === 0) add('V012-B005', `${label}.competencyIds must be non-empty.`, [record?.id]);
+    if (record?.availability !== undefined) {
+      const availability = record.availability;
+      if (!availability || availability.checked !== true || !availability.checkedAt
+        || availability.requestedUrl !== record.url || !availability.finalUrl
+        || !['success', 'unavailable', 'not-found', 'restricted'].includes(availability.finalDestinationStatus)
+        || typeof availability.redirected !== 'boolean'
+        || typeof availability.finalContentVerified !== 'boolean'
+        || typeof availability.accessRestricted !== 'boolean'
+        || !availability.verificationMethod) {
+        add('V012-B006', `${label}.availability must preserve complete final-destination evidence.`, [record?.id]);
+      }
+    }
   });
   return createValidationReport(null, findings);
 }
