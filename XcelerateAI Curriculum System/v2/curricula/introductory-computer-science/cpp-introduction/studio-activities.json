@@ -1,0 +1,303 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "CPPL",
+  "revision": 1,
+  "activities": [
+    {
+      "weekId": "CPPL-W01",
+      "title": "Microbuild: a console receipt calculator",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a console receipt calculator. Required behavior: demonstrate compiler, main, iostream, type, namespace qualifier; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 1 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a console receipt calculator, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "The setup module and basic computer literacy.",
+        "finished": "A learner can follow the README command and run a console receipt calculator through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 1 concepts: compiler, main, iostream, type, namespace qualifier. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a console receipt calculator: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make compiler, main, iostream visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using type and namespace qualifier. Deliberately reproduce this weekly mistake—add using namespace std everywhere without understanding collisions—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a console receipt calculator through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 1 concepts: compiler, main, iostream, type, namespace qualifier.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CPPL-B-W01-01"
+      }
+    },
+    {
+      "weekId": "CPPL-W02",
+      "title": "Microbuild: a validated fare adviser",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a validated fare adviser. Required behavior: demonstrate cin state, if statement, switch, logical operator, scope block; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 2 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a validated fare adviser, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 1 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a validated fare adviser through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 2 concepts: cin state, if statement, switch, logical operator, scope block. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a validated fare adviser: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make cin state, if statement, switch visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using logical operator and scope block. Deliberately reproduce this weekly mistake—expect a block local later—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a validated fare adviser through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 2 concepts: cin state, if statement, switch, logical operator, scope block.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CPPL-B-W02-01"
+      }
+    },
+    {
+      "weekId": "CPPL-W03",
+      "title": "Microbuild: a reusable number-analysis program",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a reusable number-analysis program. Required behavior: demonstrate for loop, range-for, function, parameter, return value; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 3 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a reusable number-analysis program, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 2 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a reusable number-analysis program through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 3 concepts: for loop, range-for, function, parameter, return value. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a reusable number-analysis program: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make for loop, range-for, function visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using parameter and return value. Deliberately reproduce this weekly mistake—print when a caller needs the value—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a reusable number-analysis program through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 3 concepts: for loop, range-for, function, parameter, return value.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CPPL-B-W03-01"
+      }
+    },
+    {
+      "weekId": "CPPL-W04",
+      "title": "Guided midpoint: a contact search program",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a contact search program. Required behavior: demonstrate std::string, std::vector, size, iterator invalidation, algorithm; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 4 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a contact search program, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 3 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a contact search program through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 4 concepts: std::string, std::vector, size, iterator invalidation, algorithm. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a contact search program: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make std::string, std::vector, size visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using iterator invalidation and algorithm. Deliberately reproduce this weekly mistake—rewrite common searches incorrectly—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a contact search program through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 4 concepts: std::string, std::vector, size, iterator invalidation, algorithm.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CPPL-B-W04-01"
+      }
+    },
+    {
+      "weekId": "CPPL-W05",
+      "title": "Microbuild: a small bank-account or student model",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a small bank-account or student model. Required behavior: demonstrate class, constructor, private member, const method, invariant; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 5 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a small bank-account or student model, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 4 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a small bank-account or student model through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 5 concepts: class, constructor, private member, const method, invariant. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a small bank-account or student model: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make class, constructor, private member visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using const method and invariant. Deliberately reproduce this weekly mistake—repair invalid state only when printing—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a small bank-account or student model through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 5 concepts: class, constructor, private member, const method, invariant.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CPPL-B-W05-01"
+      }
+    },
+    {
+      "weekId": "CPPL-W06",
+      "title": "Microbuild: a safe linked-data demonstration",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a safe linked-data demonstration. Required behavior: demonstrate reference, pointer, automatic storage, RAII, smart pointer; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 6 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a safe linked-data demonstration, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 5 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a safe linked-data demonstration through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 6 concepts: reference, pointer, automatic storage, RAII, smart pointer. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a safe linked-data demonstration: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make reference, pointer, automatic storage visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using RAII and smart pointer. Deliberately reproduce this weekly mistake—use raw new without a deletion strategy—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a safe linked-data demonstration through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 6 concepts: reference, pointer, automatic storage, RAII, smart pointer.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CPPL-B-W06-01"
+      }
+    },
+    {
+      "weekId": "CPPL-W07",
+      "title": "Microbuild: a persistent utility with automated checks",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a persistent utility with automated checks. Required behavior: demonstrate fstream, exception, throw, assertion, warning; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 7 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a persistent utility with automated checks, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 6 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a persistent utility with automated checks through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 7 concepts: fstream, exception, throw, assertion, warning. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a persistent utility with automated checks: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make fstream, exception, throw visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using assertion and warning. Deliberately reproduce this weekly mistake—dismiss warnings after successful linking—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a persistent utility with automated checks through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 7 concepts: fstream, exception, throw, assertion, warning.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CPPL-B-W07-01"
+      }
+    },
+    {
+      "weekId": "CPPL-W08",
+      "title": "Independent final: a polished terminal planner or quiz published to GitHub",
+      "scaffolding": "independent",
+      "contract": {
+        "doing": "Deliverable: a polished terminal planner or quiz published to GitHub. Required behavior: demonstrate separation of concerns, validation, test case, README, remote repository; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 8 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a polished terminal planner or quiz published to GitHub, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 7 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a polished terminal planner or quiz published to GitHub through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 8 concepts: separation of concerns, validation, test case, README, remote repository. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a polished terminal planner or quiz published to GitHub: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make separation of concerns, validation, test case visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using README and remote repository. Deliberately reproduce this weekly mistake—upload build artifacts as the source of truth—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a polished terminal planner or quiz published to GitHub through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 8 concepts: separation of concerns, validation, test case, README, remote repository.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CPPL-B-W08-01"
+      }
+    }
+  ]
+}

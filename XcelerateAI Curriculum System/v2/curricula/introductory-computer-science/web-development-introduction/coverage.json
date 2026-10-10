@@ -1,0 +1,158 @@
+[
+  {
+    "competencyId": "WEBD-C001",
+    "taughtIn": [
+      "WEBD-W01"
+    ],
+    "practicedIn": [
+      "WEBD-W01"
+    ],
+    "assessedIn": [
+      "WEBD-SC-W01"
+    ],
+    "appliedIn": [
+      "WEBD-B-W01-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "WEBD-C002",
+    "taughtIn": [
+      "WEBD-W02"
+    ],
+    "practicedIn": [
+      "WEBD-W02"
+    ],
+    "assessedIn": [
+      "WEBD-SC-W02"
+    ],
+    "appliedIn": [
+      "WEBD-B-W02-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "WEBD-C003",
+    "taughtIn": [
+      "WEBD-W03"
+    ],
+    "practicedIn": [
+      "WEBD-W03"
+    ],
+    "assessedIn": [
+      "WEBD-SC-W03"
+    ],
+    "appliedIn": [
+      "WEBD-B-W03-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "WEBD-C004",
+    "taughtIn": [
+      "WEBD-W04"
+    ],
+    "practicedIn": [
+      "WEBD-W04"
+    ],
+    "assessedIn": [
+      "WEBD-SC-W04"
+    ],
+    "appliedIn": [
+      "WEBD-B-W04-01"
+    ],
+    "projectUse": [
+      "WEBD-PJ01-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "WEBD-C005",
+    "taughtIn": [
+      "WEBD-W05"
+    ],
+    "practicedIn": [
+      "WEBD-W05"
+    ],
+    "assessedIn": [
+      "WEBD-SC-W05"
+    ],
+    "appliedIn": [
+      "WEBD-B-W05-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "WEBD-C006",
+    "taughtIn": [
+      "WEBD-W06"
+    ],
+    "practicedIn": [
+      "WEBD-W06"
+    ],
+    "assessedIn": [
+      "WEBD-SC-W06"
+    ],
+    "appliedIn": [
+      "WEBD-B-W06-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "WEBD-C007",
+    "taughtIn": [
+      "WEBD-W07"
+    ],
+    "practicedIn": [
+      "WEBD-W07"
+    ],
+    "assessedIn": [
+      "WEBD-SC-W07"
+    ],
+    "appliedIn": [
+      "WEBD-B-W07-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "WEBD-C008",
+    "taughtIn": [
+      "WEBD-W08"
+    ],
+    "practicedIn": [
+      "WEBD-W08"
+    ],
+    "assessedIn": [
+      "WEBD-SC-W08"
+    ],
+    "appliedIn": [
+      "WEBD-B-W08-01"
+    ],
+    "projectUse": [
+      "WEBD-PJ02-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  }
+]

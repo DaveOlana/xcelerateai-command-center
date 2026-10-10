@@ -65,3 +65,25 @@ test('compiler adds empty concept structures without inventing educational conte
   assert.equal(runtime.weeks[0].study.resources[0].learningRole, undefined);
   assert.equal(runtime.weeks[0].builds[0].learnerGuide, undefined);
 });
+
+test('compiler preserves optional introductory catalog and setup contracts', () => {
+  const source = fixture();
+  source.catalog = { category: 'Introductory Computer Science', level: 'introductory' };
+  source.setup = {
+    title: 'Development setup',
+    description: 'Prepare a reusable workstation before Week 1.',
+    estimatedMinutes: 120,
+    capabilities: [{
+      id: 'setup.git',
+      title: 'Git and GitHub',
+      description: 'Install Git and verify repository access.',
+      required: true,
+      skippableWhenVerified: true,
+      instructions: ['Install Git from the official Windows package.'],
+      verification: ['Run git --version successfully.'],
+    }],
+  };
+  const runtime = compileCurriculum(source);
+  assert.deepEqual(runtime.metadata.catalog, source.catalog);
+  assert.deepEqual(runtime.setup, source.setup);
+});

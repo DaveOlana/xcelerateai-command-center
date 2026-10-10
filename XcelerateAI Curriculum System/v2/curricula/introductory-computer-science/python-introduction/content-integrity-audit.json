@@ -1,0 +1,2950 @@
+{
+  "schemaVersion": "1.0",
+  "curriculumId": "PYIN",
+  "revision": 1,
+  "auditedAt": "2026-10-10T12:00:00.000Z",
+  "targetLearner": "A tertiary fresher with basic computer literacy and no assumed programming experience.",
+  "resourceAudits": [
+    {
+      "resourceId": "PYIN-R-W01-01",
+      "weekId": "PYIN-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-1",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Programs, Values, and Clear Output learner guide",
+          "url": "/curriculum-guides/python-introduction.html#week-1",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/introduction.html",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "PYIN-R-W01-02",
+      "weekId": "PYIN-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-1-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Programs, Values, and Clear Output concept practice",
+          "url": "/curriculum-guides/python-introduction.html#week-1-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/introduction.html",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "PYIN-R-W02-01",
+      "weekId": "PYIN-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-2",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Input and Decisions learner guide",
+          "url": "/curriculum-guides/python-introduction.html#week-2",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html#if-statements",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "PYIN-R-W02-02",
+      "weekId": "PYIN-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-2-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Input and Decisions concept practice",
+          "url": "/curriculum-guides/python-introduction.html#week-2-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html#if-statements",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "PYIN-R-W03-01",
+      "weekId": "PYIN-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-3",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Loops and Repetition learner guide",
+          "url": "/curriculum-guides/python-introduction.html#week-3",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html#for-statements",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "PYIN-R-W03-02",
+      "weekId": "PYIN-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-3-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Loops and Repetition concept practice",
+          "url": "/curriculum-guides/python-introduction.html#week-3-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html#for-statements",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "PYIN-R-W04-01",
+      "weekId": "PYIN-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-4",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Functions and Decomposition learner guide",
+          "url": "/curriculum-guides/python-introduction.html#week-4",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "PYIN-R-W04-02",
+      "weekId": "PYIN-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-4-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Functions and Decomposition concept practice",
+          "url": "/curriculum-guides/python-introduction.html#week-4-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html#defining-functions",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "PYIN-R-W05-01",
+      "weekId": "PYIN-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-5",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Collections and Structured Data learner guide",
+          "url": "/curriculum-guides/python-introduction.html#week-5",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/datastructures.html",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "PYIN-R-W05-02",
+      "weekId": "PYIN-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-5-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Collections and Structured Data concept practice",
+          "url": "/curriculum-guides/python-introduction.html#week-5-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/datastructures.html",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "PYIN-R-W06-01",
+      "weekId": "PYIN-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-6",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Files, Errors, and Recovery learner guide",
+          "url": "/curriculum-guides/python-introduction.html#week-6",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "PYIN-R-W06-02",
+      "weekId": "PYIN-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-6-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Files, Errors, and Recovery concept practice",
+          "url": "/curriculum-guides/python-introduction.html#week-6-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "PYIN-R-W07-01",
+      "weekId": "PYIN-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-7",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Modules and Tests learner guide",
+          "url": "/curriculum-guides/python-introduction.html#week-7",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/modules.html",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "PYIN-R-W07-02",
+      "weekId": "PYIN-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-7-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Modules and Tests concept practice",
+          "url": "/curriculum-guides/python-introduction.html#week-7-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.python.org/3/tutorial/modules.html",
+          "provider": "docs.python.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "PYIN-R-W08-01",
+      "weekId": "PYIN-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-8",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent CLI Project and GitHub learner guide",
+          "url": "/curriculum-guides/python-introduction.html#week-8",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "PYIN-R-W08-02",
+      "weekId": "PYIN-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/python-introduction.html#week-8-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent CLI Project and GitHub concept practice",
+          "url": "/curriculum-guides/python-introduction.html#week-8-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches PYIN-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    }
+  ],
+  "questionAudits": [
+    {
+      "questionId": "PYIN-Q-W01-01",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W01-02",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W01-03",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W01-04",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "PYIN-Q-W01-05",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W01-06",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W01-07",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W01-08",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W01-09",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W01-10",
+      "weekId": "PYIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-1-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "PYIN-Q-W02-01",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W02-02",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W02-03",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W02-04",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "PYIN-Q-W02-05",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W02-06",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W02-07",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W02-08",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W02-09",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W02-10",
+      "weekId": "PYIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-2-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "PYIN-Q-W03-01",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W03-02",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W03-03",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W03-04",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "PYIN-Q-W03-05",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W03-06",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W03-07",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W03-08",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W03-09",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W03-10",
+      "weekId": "PYIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-3-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "PYIN-Q-W04-01",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W04-02",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W04-03",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W04-04",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "PYIN-Q-W04-05",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W04-06",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W04-07",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W04-08",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W04-09",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W04-10",
+      "weekId": "PYIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-4-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "PYIN-Q-W05-01",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W05-02",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W05-03",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W05-04",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "PYIN-Q-W05-05",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W05-06",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W05-07",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W05-08",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W05-09",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W05-10",
+      "weekId": "PYIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-5-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "PYIN-Q-W06-01",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W06-02",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W06-03",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W06-04",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "PYIN-Q-W06-05",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W06-06",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W06-07",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W06-08",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W06-09",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W06-10",
+      "weekId": "PYIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-6-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "PYIN-Q-W07-01",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W07-02",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W07-03",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W07-04",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "PYIN-Q-W07-05",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W07-06",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W07-07",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W07-08",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W07-09",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W07-10",
+      "weekId": "PYIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-7-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "PYIN-Q-W08-01",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W08-02",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W08-03",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W08-04",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "PYIN-Q-W08-05",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W08-06",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "PYIN-Q-W08-07",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W08-08",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "PYIN-Q-W08-09",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "PYIN-Q-W08-10",
+      "weekId": "PYIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "PYIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "PYIN-AT-8-10",
+      "assessmentType": "error prevention"
+    }
+  ],
+  "buildAudits": [
+    {
+      "buildId": "PYIN-B-W01-01",
+      "weekId": "PYIN-W01",
+      "dependencies": [
+        {
+          "name": "PYIN-C001",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "PYIN-B-W02-01",
+      "weekId": "PYIN-W02",
+      "dependencies": [
+        {
+          "name": "PYIN-C002",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "PYIN-B-W03-01",
+      "weekId": "PYIN-W03",
+      "dependencies": [
+        {
+          "name": "PYIN-C003",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "PYIN-B-W04-01",
+      "weekId": "PYIN-W04",
+      "dependencies": [
+        {
+          "name": "PYIN-C004",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "PYIN-B-W05-01",
+      "weekId": "PYIN-W05",
+      "dependencies": [
+        {
+          "name": "PYIN-C005",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "PYIN-B-W06-01",
+      "weekId": "PYIN-W06",
+      "dependencies": [
+        {
+          "name": "PYIN-C006",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "PYIN-B-W07-01",
+      "weekId": "PYIN-W07",
+      "dependencies": [
+        {
+          "name": "PYIN-C007",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "PYIN-B-W08-01",
+      "weekId": "PYIN-W08",
+      "dependencies": [
+        {
+          "name": "PYIN-C008",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    }
+  ],
+  "weekReadiness": [
+    {
+      "weekId": "PYIN-W01",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "PYIN-W02",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "PYIN-W03",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "PYIN-W04",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "PYIN-W05",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "PYIN-W06",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "PYIN-W07",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "PYIN-W08",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    }
+  ],
+  "semanticReview": {
+    "status": "PASS",
+    "method": "Author-led review of the profession boundary, weekly prerequisite chain, every fact pair, distractor family, Build dependency, proof demand, and official reference. Deterministic validators only verify the serialized evidence; they do not create this approval.",
+    "findingsReviewed": [
+      "Every week teaches before assessing and builds immediately after assessment.",
+      "Ten questions assess explanation and application selection while coding remains in Build.",
+      "The sequence grows from syntax to structured independent work without frameworks or hidden algebra.",
+      "Every course ends with GitHub publication; setup remains outside the 48 instructional hours."
+    ],
+    "adversarialResult": "No untaught assessment dependency or hidden Build prerequisite remains."
+  },
+  "assessmentCoverageMap": {
+    "entries": [
+      {
+        "questionId": "PYIN-Q-W01-01",
+        "targetId": "PYIN-AT-1-1",
+        "learningTarget": "The Week 1 guide defines statement. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-02",
+        "targetId": "PYIN-AT-1-2",
+        "learningTarget": "The learner needs to use print() to display a labelled result. Which concept from the Week 1 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-03",
+        "targetId": "PYIN-AT-1-3",
+        "learningTarget": "During the guide's debugging drill for variable, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-04",
+        "targetId": "PYIN-AT-1-4",
+        "learningTarget": "A classmate is about to put spaces in a variable name. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-05",
+        "targetId": "PYIN-AT-1-5",
+        "learningTarget": "Which activity from the Week 1 guide correctly demonstrates numeric type?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-06",
+        "targetId": "PYIN-AT-1-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: use float for 2.75 and int for 3?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-07",
+        "targetId": "PYIN-AT-1-7",
+        "learningTarget": "A learner must explain expression before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-08",
+        "targetId": "PYIN-AT-1-8",
+        "learningTarget": "The guide describes \"values and operators combined to produce a value\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-09",
+        "targetId": "PYIN-AT-1-9",
+        "learningTarget": "Which mistake would show that f-string was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W01-10",
+        "targetId": "PYIN-AT-1-10",
+        "learningTarget": "To avoid this error—omit the f prefix—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W01",
+          "resourceIds": [
+            "PYIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-01",
+        "targetId": "PYIN-AT-2-1",
+        "learningTarget": "The Week 2 guide defines input. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-02",
+        "targetId": "PYIN-AT-2-2",
+        "learningTarget": "The learner needs to read an age with input(). Which concept from the Week 2 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-03",
+        "targetId": "PYIN-AT-2-3",
+        "learningTarget": "During the guide's debugging drill for conversion, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-04",
+        "targetId": "PYIN-AT-2-4",
+        "learningTarget": "A classmate is about to convert after attempting arithmetic. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-05",
+        "targetId": "PYIN-AT-2-5",
+        "learningTarget": "Which activity from the Week 2 guide correctly demonstrates condition?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-06",
+        "targetId": "PYIN-AT-2-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: compare age >= 18?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-07",
+        "targetId": "PYIN-AT-2-7",
+        "learningTarget": "A learner must explain branch before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-08",
+        "targetId": "PYIN-AT-2-8",
+        "learningTarget": "The guide describes \"one path selected by a condition\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-09",
+        "targetId": "PYIN-AT-2-9",
+        "learningTarget": "Which mistake would show that boolean operator was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W02-10",
+        "targetId": "PYIN-AT-2-10",
+        "learningTarget": "To avoid this error—replace and with a comma—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W02",
+          "resourceIds": [
+            "PYIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-01",
+        "targetId": "PYIN-AT-3-1",
+        "learningTarget": "The Week 3 guide defines for loop. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-02",
+        "targetId": "PYIN-AT-3-2",
+        "learningTarget": "The learner needs to visit every score in a list. Which concept from the Week 3 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-03",
+        "targetId": "PYIN-AT-3-3",
+        "learningTarget": "During the guide's debugging drill for while loop, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-04",
+        "targetId": "PYIN-AT-3-4",
+        "learningTarget": "A classmate is about to forget to change the loop condition. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-05",
+        "targetId": "PYIN-AT-3-5",
+        "learningTarget": "Which activity from the Week 3 guide correctly demonstrates range?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-06",
+        "targetId": "PYIN-AT-3-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: repeat five times with range(5)?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-07",
+        "targetId": "PYIN-AT-3-7",
+        "learningTarget": "A learner must explain accumulator before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-08",
+        "targetId": "PYIN-AT-3-8",
+        "learningTarget": "The guide describes \"a variable updated across iterations\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-09",
+        "targetId": "PYIN-AT-3-9",
+        "learningTarget": "Which mistake would show that loop control was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W03-10",
+        "targetId": "PYIN-AT-3-10",
+        "learningTarget": "To avoid this error—use break when only one item should be skipped—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W03",
+          "resourceIds": [
+            "PYIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-01",
+        "targetId": "PYIN-AT-4-1",
+        "learningTarget": "The Week 4 guide defines function. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-02",
+        "targetId": "PYIN-AT-4-2",
+        "learningTarget": "The learner needs to define celsius_to_fahrenheit. Which concept from the Week 4 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-03",
+        "targetId": "PYIN-AT-4-3",
+        "learningTarget": "During the guide's debugging drill for parameter, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-04",
+        "targetId": "PYIN-AT-4-4",
+        "learningTarget": "A classmate is about to read unrelated global state instead. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-05",
+        "targetId": "PYIN-AT-4-5",
+        "learningTarget": "Which activity from the Week 4 guide correctly demonstrates argument?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-06",
+        "targetId": "PYIN-AT-4-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: call convert(25)?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-07",
+        "targetId": "PYIN-AT-4-7",
+        "learningTarget": "A learner must explain return value before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-08",
+        "targetId": "PYIN-AT-4-8",
+        "learningTarget": "The guide describes \"data sent back to the caller\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-09",
+        "targetId": "PYIN-AT-4-9",
+        "learningTarget": "Which mistake would show that scope was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W04-10",
+        "targetId": "PYIN-AT-4-10",
+        "learningTarget": "To avoid this error—expect every local variable to exist globally—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W04",
+          "resourceIds": [
+            "PYIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-01",
+        "targetId": "PYIN-AT-5-1",
+        "learningTarget": "The Week 5 guide defines list. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-02",
+        "targetId": "PYIN-AT-5-2",
+        "learningTarget": "The learner needs to store several contact names. Which concept from the Week 5 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-03",
+        "targetId": "PYIN-AT-5-3",
+        "learningTarget": "During the guide's debugging drill for dictionary, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-04",
+        "targetId": "PYIN-AT-5-4",
+        "learningTarget": "A classmate is about to look up a missing key without handling it. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-05",
+        "targetId": "PYIN-AT-5-5",
+        "learningTarget": "Which activity from the Week 5 guide correctly demonstrates index?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-06",
+        "targetId": "PYIN-AT-5-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: read the first item at index 0?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-07",
+        "targetId": "PYIN-AT-5-7",
+        "learningTarget": "A learner must explain iteration before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-08",
+        "targetId": "PYIN-AT-5-8",
+        "learningTarget": "The guide describes \"processing collection items one at a time\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-09",
+        "targetId": "PYIN-AT-5-9",
+        "learningTarget": "Which mistake would show that membership was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W05-10",
+        "targetId": "PYIN-AT-5-10",
+        "learningTarget": "To avoid this error—compare the whole collection to one item—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W05",
+          "resourceIds": [
+            "PYIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-01",
+        "targetId": "PYIN-AT-6-1",
+        "learningTarget": "The Week 6 guide defines file mode. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-02",
+        "targetId": "PYIN-AT-6-2",
+        "learningTarget": "The learner needs to use a to append a log entry. Which concept from the Week 6 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-03",
+        "targetId": "PYIN-AT-6-3",
+        "learningTarget": "During the guide's debugging drill for context manager, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-04",
+        "targetId": "PYIN-AT-6-4",
+        "learningTarget": "A classmate is about to leave files open across the program. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-05",
+        "targetId": "PYIN-AT-6-5",
+        "learningTarget": "Which activity from the Week 6 guide correctly demonstrates exception?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-06",
+        "targetId": "PYIN-AT-6-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: catch ValueError for invalid numeric text?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-07",
+        "targetId": "PYIN-AT-6-7",
+        "learningTarget": "A learner must explain try block before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-08",
+        "targetId": "PYIN-AT-6-8",
+        "learningTarget": "The guide describes \"code whose expected failure is handled\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-09",
+        "targetId": "PYIN-AT-6-9",
+        "learningTarget": "Which mistake would show that debug trace was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W06-10",
+        "targetId": "PYIN-AT-6-10",
+        "learningTarget": "To avoid this error—change many lines before reproducing the fault—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W06",
+          "resourceIds": [
+            "PYIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-01",
+        "targetId": "PYIN-AT-7-1",
+        "learningTarget": "The Week 7 guide defines module. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-02",
+        "targetId": "PYIN-AT-7-2",
+        "learningTarget": "The learner needs to import helpers from helpers.py. Which concept from the Week 7 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-03",
+        "targetId": "PYIN-AT-7-3",
+        "learningTarget": "During the guide's debugging drill for import, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-04",
+        "targetId": "PYIN-AT-7-4",
+        "learningTarget": "A classmate is about to duplicate imported source manually. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-05",
+        "targetId": "PYIN-AT-7-5",
+        "learningTarget": "Which activity from the Week 7 guide correctly demonstrates test case?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-06",
+        "targetId": "PYIN-AT-7-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: assert add(2, 3) == 5?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-07",
+        "targetId": "PYIN-AT-7-7",
+        "learningTarget": "A learner must explain boundary case before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-08",
+        "targetId": "PYIN-AT-7-8",
+        "learningTarget": "The guide describes \"input at an important edge\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-09",
+        "targetId": "PYIN-AT-7-9",
+        "learningTarget": "Which mistake would show that regression was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W07-10",
+        "targetId": "PYIN-AT-7-10",
+        "learningTarget": "To avoid this error—delete the failing test after the fix—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W07",
+          "resourceIds": [
+            "PYIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-01",
+        "targetId": "PYIN-AT-8-1",
+        "learningTarget": "The Week 8 guide defines command-line interface. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-02",
+        "targetId": "PYIN-AT-8-2",
+        "learningTarget": "The learner needs to offer clear numbered commands. Which concept from the Week 8 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-03",
+        "targetId": "PYIN-AT-8-3",
+        "learningTarget": "During the guide's debugging drill for validation, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-04",
+        "targetId": "PYIN-AT-8-4",
+        "learningTarget": "A classmate is about to let invalid data corrupt saved state. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-05",
+        "targetId": "PYIN-AT-8-5",
+        "learningTarget": "Which activity from the Week 8 guide correctly demonstrates README?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-06",
+        "targetId": "PYIN-AT-8-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: document install, run, and examples?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-07",
+        "targetId": "PYIN-AT-8-7",
+        "learningTarget": "A learner must explain commit before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-08",
+        "targetId": "PYIN-AT-8-8",
+        "learningTarget": "The guide describes \"a named snapshot of repository changes\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-09",
+        "targetId": "PYIN-AT-8-9",
+        "learningTarget": "Which mistake would show that repository remote was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "PYIN-Q-W08-10",
+        "targetId": "PYIN-AT-8-10",
+        "learningTarget": "To avoid this error—treat push as a replacement for local commits—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "PYIN-W08",
+          "resourceIds": [
+            "PYIN-R-W08-01"
+          ]
+        }
+      }
+    ]
+  }
+}

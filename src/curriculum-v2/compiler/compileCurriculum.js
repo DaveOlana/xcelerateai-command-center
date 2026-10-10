@@ -29,10 +29,12 @@ export function compileCurriculum(source) {
     metadata: {
       title: source.title,
       shortTitle: source.shortTitle,
+      ...(source.catalog ? { catalog: clone(source.catalog) } : {}),
       target: clone(source.target),
       workload: clone(source.workload),
       assumptions: clone(source.assumptions),
     },
+    ...(source.setup ? { setup: clone(source.setup) } : {}),
     phases,
     competencies,
     concepts,

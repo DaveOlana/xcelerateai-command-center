@@ -1,0 +1,754 @@
+[
+  {
+    "id": "CLNG-R-W01-01",
+    "title": "Compile, Run, and Basic Values learner guide",
+    "url": "/curriculum-guides/c-introduction.html#week-1",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 1.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C001"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a labelled arithmetic program without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-1",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-1",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C001.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/main_function."
+  },
+  {
+    "id": "CLNG-R-W01-02",
+    "title": "Compile, Run, and Basic Values concept practice",
+    "url": "/curriculum-guides/c-introduction.html#week-1-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C001"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a labelled arithmetic program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-1-practice",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-1-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C001.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/main_function."
+  },
+  {
+    "id": "CLNG-R-W02-01",
+    "title": "Input, Operators, and Decisions learner guide",
+    "url": "/curriculum-guides/c-introduction.html#week-2",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 2.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C002"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a validated calculator without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-2",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-2",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C002.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/if."
+  },
+  {
+    "id": "CLNG-R-W02-02",
+    "title": "Input, Operators, and Decisions concept practice",
+    "url": "/curriculum-guides/c-introduction.html#week-2-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C002"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a validated calculator.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-2-practice",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-2-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C002.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/if."
+  },
+  {
+    "id": "CLNG-R-W03-01",
+    "title": "Loops and Tracing learner guide",
+    "url": "/curriculum-guides/c-introduction.html#week-3",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 3.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C003"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a number statistics program without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-3",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-3",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C003.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/for."
+  },
+  {
+    "id": "CLNG-R-W03-02",
+    "title": "Loops and Tracing concept practice",
+    "url": "/curriculum-guides/c-introduction.html#week-3-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C003"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a number statistics program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-3-practice",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-3-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C003.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/for."
+  },
+  {
+    "id": "CLNG-R-W04-01",
+    "title": "Functions and Program Structure learner guide",
+    "url": "/curriculum-guides/c-introduction.html#week-4",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 4.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C004"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a multi-file calculation toolkit without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-4",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-4",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C004.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/functions."
+  },
+  {
+    "id": "CLNG-R-W04-02",
+    "title": "Functions and Program Structure concept practice",
+    "url": "/curriculum-guides/c-introduction.html#week-4-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C004"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a multi-file calculation toolkit.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-4-practice",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-4-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C004.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/functions."
+  },
+  {
+    "id": "CLNG-R-W05-01",
+    "title": "Arrays and Strings learner guide",
+    "url": "/curriculum-guides/c-introduction.html#week-5",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 5.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C005"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a text and score analyzer without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-5",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-5",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C005.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/string/byte."
+  },
+  {
+    "id": "CLNG-R-W05-02",
+    "title": "Arrays and Strings concept practice",
+    "url": "/curriculum-guides/c-introduction.html#week-5-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C005"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a text and score analyzer.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-5-practice",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-5-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C005.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/string/byte."
+  },
+  {
+    "id": "CLNG-R-W06-01",
+    "title": "Pointers and Structs learner guide",
+    "url": "/curriculum-guides/c-introduction.html#week-6",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 6.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C006"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a structured contact manager without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-6",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-6",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C006.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/pointer."
+  },
+  {
+    "id": "CLNG-R-W06-02",
+    "title": "Pointers and Structs concept practice",
+    "url": "/curriculum-guides/c-introduction.html#week-6-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C006"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a structured contact manager.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-6-practice",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-6-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C006.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/language/pointer."
+  },
+  {
+    "id": "CLNG-R-W07-01",
+    "title": "Files, Errors, and Debugging learner guide",
+    "url": "/curriculum-guides/c-introduction.html#week-7",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 7.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C007"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a persistent log analyzer without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-7",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-7",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C007.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/io."
+  },
+  {
+    "id": "CLNG-R-W07-02",
+    "title": "Files, Errors, and Debugging concept practice",
+    "url": "/curriculum-guides/c-introduction.html#week-7-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C007"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a persistent log analyzer.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-7-practice",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-7-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C007.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://en.cppreference.com/w/c/io."
+  },
+  {
+    "id": "CLNG-R-W08-01",
+    "title": "Independent C Project and GitHub learner guide",
+    "url": "/curriculum-guides/c-introduction.html#week-8",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 8.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C008"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a robust terminal record or quiz program published to GitHub without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-8",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-8",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C008.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git."
+  },
+  {
+    "id": "CLNG-R-W08-02",
+    "title": "Independent C Project and GitHub concept practice",
+    "url": "/curriculum-guides/c-introduction.html#week-8-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "CLNG-C008"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a robust terminal record or quiz program published to GitHub.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/c-introduction.html#week-8-practice",
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-8-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports CLNG-C008.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git."
+  }
+]

@@ -41,6 +41,8 @@ export function validateCurriculumSource(source) {
   if (!Number.isInteger(source.revision) || source.revision < 1) add('V001-B004', 'revision must be a positive integer.');
   requireString(source.title, 'title', add);
   requireString(source.shortTitle, 'shortTitle', add);
+  validateCatalogMetadata(source.catalog, add);
+  validateSetup(source.setup, add);
 
   findRejectedLegacyFields(source).forEach(({ path, key }) => {
     add('V001-B005', `Legacy field "${key}" is not allowed in Curriculum Source V2 at ${path}.`);
@@ -222,6 +224,39 @@ function validateTarget(target, add) {
   }
 }
 
+function validateCatalogMetadata(catalog, add) {
+  if (catalog === undefined) return;
+  if (!isObject(catalog)) return add('V001-B036', 'catalog must be an object when provided.');
+  rejectUnknownProperties(catalog, ['category', 'level'], 'catalog', add);
+  requireString(catalog.category, 'catalog.category', add);
+  requireString(catalog.level, 'catalog.level', add);
+}
+
+function validateSetup(setup, add) {
+  if (setup === undefined) return;
+  if (!isObject(setup)) return add('V001-B037', 'setup must be an object when provided.');
+  rejectUnknownProperties(setup, ['title', 'description', 'estimatedMinutes', 'capabilities'], 'setup', add);
+  requireString(setup.title, 'setup.title', add);
+  requireString(setup.description, 'setup.description', add);
+  requirePositiveNumber(setup.estimatedMinutes, 'setup.estimatedMinutes', add);
+  const capabilities = validateCollection(setup.capabilities, 'setup.capabilities', add);
+  const ids = new Set();
+  capabilities.forEach((capability, index) => {
+    const label = `setup.capabilities[${index}]`;
+    if (!isObject(capability)) return add('V001-B038', `${label} must be an object.`);
+    rejectUnknownProperties(capability, ['id', 'title', 'description', 'required', 'skippableWhenVerified', 'instructions', 'verification'], label, add);
+    validateId(capability.id, `${label}.id`, add, 'V001-B039');
+    if (ids.has(capability.id)) add('V001-B040', `${label}.id must be unique.`, [capability.id]);
+    ids.add(capability.id);
+    requireString(capability.title, `${label}.title`, add);
+    requireString(capability.description, `${label}.description`, add);
+    if (typeof capability.required !== 'boolean') add('V001-B041', `${label}.required must be boolean.`, [capability.id]);
+    if (typeof capability.skippableWhenVerified !== 'boolean') add('V001-B042', `${label}.skippableWhenVerified must be boolean.`, [capability.id]);
+    if (!Array.isArray(capability.instructions) || capability.instructions.some((item) => !isNonEmptyString(item))) add('V001-B043', `${label}.instructions must contain non-empty steps.`, [capability.id]);
+    if (!Array.isArray(capability.verification) || capability.verification.some((item) => !isNonEmptyString(item))) add('V001-B044', `${label}.verification must contain non-empty checks.`, [capability.id]);
+  });
+}
+
 function validateWorkloadShape(workload, add) {
   if (!isObject(workload)) return add('V001-B032', 'workload must be an object.');
   if (!isObject(workload.weeklyHours)) add('V001-B033', 'workload.weeklyHours must be an object.');
@@ -271,12 +306,16 @@ function validateStudy(study, label, week, resourceIds, competencyIds, resources
 
 function validateSkillCheck(skillCheck, label, week, competencyIds, registerId, skillCheckIds, add) {
   if (!isObject(skillCheck)) return add('V006-B001', `${label}.skillCheck must be an object.`, [week.id]);
+  rejectUnknownProperties(skillCheck, ['id', 'title', 'instructions', 'passingScore', 'optionOrder', 'competencyIds', 'questions'], `${label}.skillCheck`, add);
   registerId(skillCheck.id, `${label}.skillCheck`);
   if (skillCheck.id) skillCheckIds.add(skillCheck.id);
   requireString(skillCheck.title, `${label}.skillCheck.title`, add);
   requireString(skillCheck.instructions, `${label}.skillCheck.instructions`, add);
   if (!Number.isInteger(skillCheck.passingScore) || skillCheck.passingScore < 1 || skillCheck.passingScore > 100) {
     add('V006-B002', `${label}.skillCheck.passingScore must be an integer from 1 to 100.`, [skillCheck.id]);
+  }
+  if (skillCheck.optionOrder !== undefined && !['authored', 'shuffle-per-attempt'].includes(skillCheck.optionOrder)) {
+    add('V006-B016', `${label}.skillCheck.optionOrder must be "authored" or "shuffle-per-attempt".`, [skillCheck.id]);
   }
   requireIdArray(skillCheck.competencyIds, `${label}.skillCheck.competencyIds`, add, false);
   asArray(skillCheck.competencyIds).forEach((id) => validateReference(id, competencyIds, `${label}.skillCheck.competencyIds`, add, skillCheck.id));

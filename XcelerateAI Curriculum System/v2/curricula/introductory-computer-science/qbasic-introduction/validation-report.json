@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "curriculumId": "QBAS",
+  "revision": 1,
+  "candidateOnly": true,
+  "published": false,
+  "blockingFailures": 0,
+  "gates": [
+    "source",
+    "resource-research",
+    "content-integrity",
+    "studio",
+    "skill-check-authoring",
+    "compilation",
+    "runtime"
+  ],
+  "questionCount": 80,
+  "passLogic": "7/10",
+  "studyAlignment": "Each weekly concept card maps to two questions and an inspectable audit anchor.",
+  "questionTypes": [
+    "concept discrimination",
+    "application selection",
+    "error recognition",
+    "error diagnosis",
+    "error prevention"
+  ],
+  "optionOrder": "shuffle-per-attempt",
+  "optionDistribution": "Every ten-question attempt uses all four displayed answer positions and changes each question on the next attempt.",
+  "buildContract": "Every Build declares its deliverable, weekly concepts, normal/boundary/invalid cases, evidence, and definition of finished.",
+  "blockedReason": "Traditional Microsoft QBasic binaries require learner-supplied licensed MS-DOS/Windows media; no current official download was verified."
+}

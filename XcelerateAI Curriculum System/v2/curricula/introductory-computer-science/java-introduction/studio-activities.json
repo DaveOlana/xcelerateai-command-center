@@ -1,0 +1,303 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "JAVA",
+  "revision": 1,
+  "activities": [
+    {
+      "weekId": "JAVA-W01",
+      "title": "Microbuild: a labelled command-line receipt",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a labelled command-line receipt. Required behavior: demonstrate JDK, class, main method, statement terminator, System.out; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 1 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a labelled command-line receipt, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "The setup module and basic computer literacy.",
+        "finished": "A learner can follow the README command and run a labelled command-line receipt through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 1 concepts: JDK, class, main method, statement terminator, System.out. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a labelled command-line receipt: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make JDK, class, main method visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using statement terminator and System.out. Deliberately reproduce this weekly mistake—expect println to read input—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a labelled command-line receipt through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 1 concepts: JDK, class, main method, statement terminator, System.out.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-B-W01-01"
+      }
+    },
+    {
+      "weekId": "JAVA-W02",
+      "title": "Microbuild: an interactive unit converter",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: an interactive unit converter. Required behavior: demonstrate primitive type, String, Scanner, declaration, cast; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 2 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable an interactive unit converter, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 1 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run an interactive unit converter through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 2 concepts: primitive type, String, Scanner, declaration, cast. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for an interactive unit converter: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make primitive type, String, Scanner visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using declaration and cast. Deliberately reproduce this weekly mistake—expect a cast to validate arbitrary text—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run an interactive unit converter through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 2 concepts: primitive type, String, Scanner, declaration, cast.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-B-W02-01"
+      }
+    },
+    {
+      "weekId": "JAVA-W03",
+      "title": "Microbuild: a menu-driven grade adviser",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a menu-driven grade adviser. Required behavior: demonstrate if branch, switch, for loop, while loop, boolean operator; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 3 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a menu-driven grade adviser, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 2 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a menu-driven grade adviser through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 3 concepts: if branch, switch, for loop, while loop, boolean operator. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a menu-driven grade adviser: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make if branch, switch, for loop visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using while loop and boolean operator. Deliberately reproduce this weekly mistake—confuse & with short-circuit &&—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a menu-driven grade adviser through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 3 concepts: if branch, switch, for loop, while loop, boolean operator.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-B-W03-01"
+      }
+    },
+    {
+      "weekId": "JAVA-W04",
+      "title": "Guided midpoint: a reusable calculation library",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a reusable calculation library. Required behavior: demonstrate method, parameter, return type, overload, scope; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 4 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a reusable calculation library, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 3 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a reusable calculation library through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 4 concepts: method, parameter, return type, overload, scope. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a reusable calculation library: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make method, parameter, return type visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using overload and scope. Deliberately reproduce this weekly mistake—expect a method local in main—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a reusable calculation library through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 4 concepts: method, parameter, return type, overload, scope.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-B-W04-01"
+      }
+    },
+    {
+      "weekId": "JAVA-W05",
+      "title": "Microbuild: a contact or score collection manager",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a contact or score collection manager. Required behavior: demonstrate array, ArrayList, index, enhanced for, generic type; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 5 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a contact or score collection manager, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 4 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a contact or score collection manager through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 5 concepts: array, ArrayList, index, enhanced for, generic type. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a contact or score collection manager: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make array, ArrayList, index visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using enhanced for and generic type. Deliberately reproduce this weekly mistake—mix unrelated types intentionally—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a contact or score collection manager through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 5 concepts: array, ArrayList, index, enhanced for, generic type.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-B-W05-01"
+      }
+    },
+    {
+      "weekId": "JAVA-W06",
+      "title": "Microbuild: a small student-record model",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a small student-record model. Required behavior: demonstrate object, constructor, field, encapsulation, toString; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 6 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a small student-record model, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 5 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a small student-record model through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 6 concepts: object, constructor, field, encapsulation, toString. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a small student-record model: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make object, constructor, field visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using encapsulation and toString. Deliberately reproduce this weekly mistake—print the default identity when meaningful output is required—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a small student-record model through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 6 concepts: object, constructor, field, encapsulation, toString.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-B-W06-01"
+      }
+    },
+    {
+      "weekId": "JAVA-W07",
+      "title": "Microbuild: a persistent record tool with automated checks",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a persistent record tool with automated checks. Required behavior: demonstrate checked exception, try-with-resources, Path, unit test, boundary case; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 7 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a persistent record tool with automated checks, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 6 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a persistent record tool with automated checks through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 7 concepts: checked exception, try-with-resources, Path, unit test, boundary case. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a persistent record tool with automated checks: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make checked exception, try-with-resources, Path visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using unit test and boundary case. Deliberately reproduce this weekly mistake—test only the most common record—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a persistent record tool with automated checks through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 7 concepts: checked exception, try-with-resources, Path, unit test, boundary case.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-B-W07-01"
+      }
+    },
+    {
+      "weekId": "JAVA-W08",
+      "title": "Independent final: an IntelliJ command-line student utility published to GitHub",
+      "scaffolding": "independent",
+      "contract": {
+        "doing": "Deliverable: an IntelliJ command-line student utility published to GitHub. Required behavior: demonstrate package, separation of concerns, validation, README, Git remote; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 8 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable an IntelliJ command-line student utility published to GitHub, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 7 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run an IntelliJ command-line student utility published to GitHub through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 8 concepts: package, separation of concerns, validation, README, Git remote. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for an IntelliJ command-line student utility published to GitHub: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make package, separation of concerns, validation visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using README and Git remote. Deliberately reproduce this weekly mistake—commit generated IDE secrets—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run an IntelliJ command-line student utility published to GitHub through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 8 concepts: package, separation of concerns, validation, README, Git remote.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-B-W08-01"
+      }
+    }
+  ]
+}

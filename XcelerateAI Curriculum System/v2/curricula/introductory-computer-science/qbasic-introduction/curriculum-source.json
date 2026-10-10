@@ -1,0 +1,4425 @@
+{
+  "schemaVersion": "2.0",
+  "curriculumId": "QBAS",
+  "revision": 1,
+  "title": "Introduction to QBASIC",
+  "shortTitle": "QBASIC Basics",
+  "catalog": {
+    "category": "Introductory Computer Science",
+    "level": "introductory"
+  },
+  "setup": {
+    "title": "QBASIC Basics workstation setup",
+    "description": "A skippable, verified setup module outside the eight instructional weeks. Prepare Licensed Microsoft QBasic in DOSBox on Ubuntu VM, Git, and GitHub before Week 1.",
+    "estimatedMinutes": 240,
+    "capabilities": [
+      {
+        "id": "setup.virtualbox",
+        "title": "VirtualBox",
+        "description": "VirtualBox is reusable across every introductory course that requires it.",
+        "required": true,
+        "skippableWhenVerified": true,
+        "instructions": [
+          "Install the current supported Windows host package and extension components only from the official site.",
+          "Official download or account page: https://www.virtualbox.org/wiki/Downloads"
+        ],
+        "verification": [
+          "Start a test virtual machine."
+        ]
+      },
+      {
+        "id": "setup.ubuntu",
+        "title": "Ubuntu Desktop VM",
+        "description": "Ubuntu Desktop VM is reusable across every introductory course that requires it.",
+        "required": true,
+        "skippableWhenVerified": true,
+        "instructions": [
+          "Download a supported Ubuntu LTS desktop image and install it as a VirtualBox guest.",
+          "Official download or account page: https://ubuntu.com/download/desktop"
+        ],
+        "verification": [
+          "Boot Ubuntu, sign in, open Terminal, and create a shared learner folder."
+        ]
+      },
+      {
+        "id": "setup.dosbox",
+        "title": "DOSBox in Ubuntu",
+        "description": "DOSBox in Ubuntu is reusable across every introductory course that requires it.",
+        "required": true,
+        "skippableWhenVerified": true,
+        "instructions": [
+          "Install DOSBox from Ubuntu packages inside the Ubuntu guest.",
+          "Official download or account page: https://help.ubuntu.com/community/DOSBox"
+        ],
+        "verification": [
+          "Launch DOSBox and mount the learner folder without exposing the host drive root."
+        ]
+      },
+      {
+        "id": "setup.qbasic-licensed-media",
+        "title": "Licensed Microsoft QBasic media",
+        "description": "Licensed Microsoft QBasic media is reusable across every introductory course that requires it.",
+        "required": true,
+        "skippableWhenVerified": true,
+        "instructions": [
+          "Use learner-owned MS-DOS 5/6 or Windows 95/98 media containing QBasic. XcelerateAI does not provide, mirror, or link to proprietary binaries."
+        ],
+        "verification": [
+          "Mount the licensed files and launch QBASIC.EXE in DOSBox."
+        ]
+      },
+      {
+        "id": "setup.git",
+        "title": "Git for Windows",
+        "description": "Git for Windows is reusable across every introductory course that requires it.",
+        "required": true,
+        "skippableWhenVerified": true,
+        "instructions": [
+          "Install Git, keep the recommended beginner defaults, then configure your name and email.",
+          "Official download or account page: https://git-scm.com/download/win"
+        ],
+        "verification": [
+          "Run git --version, git config user.name, and git config user.email."
+        ]
+      },
+      {
+        "id": "setup.github",
+        "title": "GitHub account",
+        "description": "GitHub account is reusable across every introductory course that requires it.",
+        "required": true,
+        "skippableWhenVerified": true,
+        "instructions": [
+          "Create or reuse a personal GitHub account and configure account recovery.",
+          "Official download or account page: https://github.com/signup"
+        ],
+        "verification": [
+          "Create a private practice repository, connect a local repository, and push one commit."
+        ]
+      }
+    ]
+  },
+  "target": {
+    "role": "beginner QBASIC Basics learner",
+    "learner": "A tertiary fresher with basic computer literacy and no assumed programming experience.",
+    "professionalOutcome": "Recognize QBASIC Basics syntax, write and debug small programs, and complete beginner practical-exam tasks independently.",
+    "specialGoals": [
+      "Build practical exam readiness.",
+      "Develop trace-before-guess debugging habits.",
+      "Publish a final repository with an honest README."
+    ]
+  },
+  "workload": {
+    "weeklyHours": {
+      "min": 6,
+      "max": 6
+    },
+    "estimatedTotalHours": 48,
+    "estimatedWeeks": 8
+  },
+  "assumptions": [
+    "Windows is the primary host operating system.",
+    "The separate setup module is completed or verified before Week 1.",
+    "Essential explanations are bundled for offline-first study.",
+    "Skill Checks allow unlimited attempts while preserving the two-failure recovery lock."
+  ],
+  "phases": [
+    {
+      "id": "QBAS-PH01",
+      "title": "Foundations and Guided Practice",
+      "outcome": "Read, trace, write, and debug small programs with explicit scaffolding."
+    },
+    {
+      "id": "QBAS-PH02",
+      "title": "Independent Programs and Proof",
+      "outcome": "Combine the language foundations into tested, documented beginner projects."
+    }
+  ],
+  "competencies": [
+    {
+      "id": "QBAS-C001",
+      "name": "Editor, Statements, and Output",
+      "description": "Explain, apply, debug, and verify the concepts needed to produce a labelled arithmetic program.",
+      "domain": "QBASIC Basics",
+      "importance": "core",
+      "prerequisiteIds": []
+    },
+    {
+      "id": "QBAS-C002",
+      "name": "Input and Decisions",
+      "description": "Explain, apply, debug, and verify the concepts needed to produce a grade or fare adviser.",
+      "domain": "QBASIC Basics",
+      "importance": "core",
+      "prerequisiteIds": [
+        "QBAS-C001"
+      ]
+    },
+    {
+      "id": "QBAS-C003",
+      "name": "Loops and Counters",
+      "description": "Explain, apply, debug, and verify the concepts needed to produce a number table and score summary.",
+      "domain": "QBASIC Basics",
+      "importance": "core",
+      "prerequisiteIds": [
+        "QBAS-C002"
+      ]
+    },
+    {
+      "id": "QBAS-C004",
+      "name": "SUBs and FUNCTIONs",
+      "description": "Explain, apply, debug, and verify the concepts needed to produce a reusable conversion toolkit.",
+      "domain": "QBASIC Basics",
+      "importance": "core",
+      "prerequisiteIds": [
+        "QBAS-C003"
+      ]
+    },
+    {
+      "id": "QBAS-C005",
+      "name": "Arrays and Strings",
+      "description": "Explain, apply, debug, and verify the concepts needed to produce a simple contact or score manager.",
+      "domain": "QBASIC Basics",
+      "importance": "core",
+      "prerequisiteIds": [
+        "QBAS-C004"
+      ]
+    },
+    {
+      "id": "QBAS-C006",
+      "name": "Files and Debugging",
+      "description": "Explain, apply, debug, and verify the concepts needed to produce a persistent text log.",
+      "domain": "QBASIC Basics",
+      "importance": "core",
+      "prerequisiteIds": [
+        "QBAS-C005"
+      ]
+    },
+    {
+      "id": "QBAS-C007",
+      "name": "Program Structure and Test Cases",
+      "description": "Explain, apply, debug, and verify the concepts needed to produce a tested menu utility.",
+      "domain": "QBASIC Basics",
+      "importance": "core",
+      "prerequisiteIds": [
+        "QBAS-C006"
+      ]
+    },
+    {
+      "id": "QBAS-C008",
+      "name": "Independent QBASIC Project and GitHub",
+      "description": "Explain, apply, debug, and verify the concepts needed to produce a complete menu-driven school utility with source and README pushed to GitHub.",
+      "domain": "QBASIC Basics",
+      "importance": "core",
+      "prerequisiteIds": [
+        "QBAS-C007"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "QBAS-CONCEPT-W01",
+      "term": "statement",
+      "simpleMeaning": "a QBASIC instruction",
+      "example": "use PRINT to show a result",
+      "commonMistake": "type prose as executable code"
+    },
+    {
+      "id": "QBAS-CONCEPT-W02",
+      "term": "INPUT",
+      "simpleMeaning": "reads a value from the learner",
+      "example": "use INPUT \"Age\"; AGE",
+      "commonMistake": "expect INPUT to validate every value"
+    },
+    {
+      "id": "QBAS-CONCEPT-W03",
+      "term": "FOR loop",
+      "simpleMeaning": "counted repetition",
+      "example": "use FOR I = 1 TO 10",
+      "commonMistake": "forget NEXT"
+    },
+    {
+      "id": "QBAS-CONCEPT-W04",
+      "term": "SUB",
+      "simpleMeaning": "a named procedure without a returned expression value",
+      "example": "call a display procedure",
+      "commonMistake": "use it when a calculation result is needed by callers"
+    },
+    {
+      "id": "QBAS-CONCEPT-W05",
+      "term": "array",
+      "simpleMeaning": "indexed values under one name",
+      "example": "DIM SCORE(1 TO 10)",
+      "commonMistake": "read beyond its declared bounds"
+    },
+    {
+      "id": "QBAS-CONCEPT-W06",
+      "term": "file handle",
+      "simpleMeaning": "a numbered connection to an open file",
+      "example": "OPEN path FOR APPEND AS #1",
+      "commonMistake": "reuse a closed or unopened handle"
+    },
+    {
+      "id": "QBAS-CONCEPT-W07",
+      "term": "test case",
+      "simpleMeaning": "input plus expected behavior",
+      "example": "record expected output for choice 1",
+      "commonMistake": "test only by memory"
+    },
+    {
+      "id": "QBAS-CONCEPT-W08",
+      "term": "menu loop",
+      "simpleMeaning": "repeated command selection",
+      "example": "return to menu after an action",
+      "commonMistake": "end after every valid choice"
+    }
+  ],
+  "resources": [
+    {
+      "id": "QBAS-R-W01-01",
+      "title": "Editor, Statements, and Output learner guide",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-1",
+      "provider": "XcelerateAI",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 90,
+      "location": {
+        "start": "Begin at Week 1.",
+        "stop": "Stop before the practice section.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C001"
+      ],
+      "whySelected": "This offline-first guide teaches the exact concepts needed to build a labelled arithmetic program without sending a beginner into unbounded documentation.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "core",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-1",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-1",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W01-02",
+      "title": "Editor, Statements, and Output concept practice",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-1-practice",
+      "provider": "XcelerateAI",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 30,
+      "location": {
+        "start": "Begin at the Predict, reveal, explain section.",
+        "stop": "Stop after explaining every revealed answer in your own words.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C001"
+      ],
+      "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a labelled arithmetic program.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "optional",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-1-practice",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-1-practice",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W02-01",
+      "title": "Input and Decisions learner guide",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-2",
+      "provider": "XcelerateAI",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 90,
+      "location": {
+        "start": "Begin at Week 2.",
+        "stop": "Stop before the practice section.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C002"
+      ],
+      "whySelected": "This offline-first guide teaches the exact concepts needed to build a grade or fare adviser without sending a beginner into unbounded documentation.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "core",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-2",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-2",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W02-02",
+      "title": "Input and Decisions concept practice",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-2-practice",
+      "provider": "XcelerateAI",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 30,
+      "location": {
+        "start": "Begin at the Predict, reveal, explain section.",
+        "stop": "Stop after explaining every revealed answer in your own words.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C002"
+      ],
+      "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a grade or fare adviser.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "optional",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-2-practice",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-2-practice",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W03-01",
+      "title": "Loops and Counters learner guide",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-3",
+      "provider": "XcelerateAI",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 90,
+      "location": {
+        "start": "Begin at Week 3.",
+        "stop": "Stop before the practice section.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C003"
+      ],
+      "whySelected": "This offline-first guide teaches the exact concepts needed to build a number table and score summary without sending a beginner into unbounded documentation.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "core",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-3",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-3",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W03-02",
+      "title": "Loops and Counters concept practice",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-3-practice",
+      "provider": "XcelerateAI",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 30,
+      "location": {
+        "start": "Begin at the Predict, reveal, explain section.",
+        "stop": "Stop after explaining every revealed answer in your own words.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C003"
+      ],
+      "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a number table and score summary.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "optional",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-3-practice",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-3-practice",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W04-01",
+      "title": "SUBs and FUNCTIONs learner guide",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-4",
+      "provider": "XcelerateAI",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 90,
+      "location": {
+        "start": "Begin at Week 4.",
+        "stop": "Stop before the practice section.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C004"
+      ],
+      "whySelected": "This offline-first guide teaches the exact concepts needed to build a reusable conversion toolkit without sending a beginner into unbounded documentation.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "core",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-4",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-4",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W04-02",
+      "title": "SUBs and FUNCTIONs concept practice",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-4-practice",
+      "provider": "XcelerateAI",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 30,
+      "location": {
+        "start": "Begin at the Predict, reveal, explain section.",
+        "stop": "Stop after explaining every revealed answer in your own words.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C004"
+      ],
+      "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a reusable conversion toolkit.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "optional",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-4-practice",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-4-practice",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W05-01",
+      "title": "Arrays and Strings learner guide",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-5",
+      "provider": "XcelerateAI",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 90,
+      "location": {
+        "start": "Begin at Week 5.",
+        "stop": "Stop before the practice section.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C005"
+      ],
+      "whySelected": "This offline-first guide teaches the exact concepts needed to build a simple contact or score manager without sending a beginner into unbounded documentation.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "core",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-5",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-5",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W05-02",
+      "title": "Arrays and Strings concept practice",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-5-practice",
+      "provider": "XcelerateAI",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 30,
+      "location": {
+        "start": "Begin at the Predict, reveal, explain section.",
+        "stop": "Stop after explaining every revealed answer in your own words.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C005"
+      ],
+      "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a simple contact or score manager.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "optional",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-5-practice",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-5-practice",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W06-01",
+      "title": "Files and Debugging learner guide",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-6",
+      "provider": "XcelerateAI",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 90,
+      "location": {
+        "start": "Begin at Week 6.",
+        "stop": "Stop before the practice section.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C006"
+      ],
+      "whySelected": "This offline-first guide teaches the exact concepts needed to build a persistent text log without sending a beginner into unbounded documentation.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "core",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-6",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-6",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W06-02",
+      "title": "Files and Debugging concept practice",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-6-practice",
+      "provider": "XcelerateAI",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 30,
+      "location": {
+        "start": "Begin at the Predict, reveal, explain section.",
+        "stop": "Stop after explaining every revealed answer in your own words.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C006"
+      ],
+      "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a persistent text log.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "optional",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-6-practice",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-6-practice",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W07-01",
+      "title": "Program Structure and Test Cases learner guide",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-7",
+      "provider": "XcelerateAI",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 90,
+      "location": {
+        "start": "Begin at Week 7.",
+        "stop": "Stop before the practice section.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C007"
+      ],
+      "whySelected": "This offline-first guide teaches the exact concepts needed to build a tested menu utility without sending a beginner into unbounded documentation.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "core",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-7",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-7",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W07-02",
+      "title": "Program Structure and Test Cases concept practice",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-7-practice",
+      "provider": "XcelerateAI",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 30,
+      "location": {
+        "start": "Begin at the Predict, reveal, explain section.",
+        "stop": "Stop after explaining every revealed answer in your own words.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C007"
+      ],
+      "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a tested menu utility.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "optional",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-7-practice",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-7-practice",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W08-01",
+      "title": "Independent QBASIC Project and GitHub learner guide",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-8",
+      "provider": "XcelerateAI",
+      "format": "article",
+      "cost": "free",
+      "estimatedMinutes": 90,
+      "location": {
+        "start": "Begin at Week 8.",
+        "stop": "Stop before the practice section.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C008"
+      ],
+      "whySelected": "This offline-first guide teaches the exact concepts needed to build a complete menu-driven school utility with source and README pushed to GitHub without sending a beginner into unbounded documentation.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "core",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-8",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-8",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    },
+    {
+      "id": "QBAS-R-W08-02",
+      "title": "Independent QBASIC Project and GitHub concept practice",
+      "url": "/curriculum-guides/qbasic-introduction.html#week-8-practice",
+      "provider": "XcelerateAI",
+      "format": "exercise",
+      "cost": "free",
+      "estimatedMinutes": 30,
+      "location": {
+        "start": "Begin at the Predict, reveal, explain section.",
+        "stop": "Stop after explaining every revealed answer in your own words.",
+        "note": "Keep the guide available offline, then return for the graded Skill Check."
+      },
+      "competencyIds": [
+        "QBAS-C008"
+      ],
+      "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a complete menu-driven school utility with source and README pushed to GitHub.",
+      "accessStatus": "verified",
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "selectionRole": "optional",
+      "availability": {
+        "checked": true,
+        "checkedAt": "2026-10-10T12:00:00.000Z",
+        "requestedUrl": "/curriculum-guides/qbasic-introduction.html#week-8-practice",
+        "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-8-practice",
+        "redirected": false,
+        "finalDestinationKind": "bundled-guide",
+        "finalDestinationStatus": "success",
+        "finalContentVerified": true,
+        "accessRestricted": false,
+        "verificationMethod": "generated-file-inspection",
+        "notes": "Bundled static guide generated and inspected with the candidate."
+      }
+    }
+  ],
+  "weeks": [
+    {
+      "id": "QBAS-W01",
+      "sequence": 1,
+      "phaseId": "QBAS-PH01",
+      "title": "Editor, Statements, and Output",
+      "outcome": "Build, debug, explain, and verify a labelled arithmetic program.",
+      "competencyIds": [
+        "QBAS-C001"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Learn and actively rehearse statement, variable, numeric expression, string, comment so you can explain, select, debug, and apply them while creating a labelled arithmetic program.",
+        "coreMinimum": 1,
+        "resources": [
+          {
+            "resourceId": "QBAS-R-W01-01",
+            "role": "core",
+            "learningRole": "learn",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "purpose": "Learn the exact definitions, applications, and mistakes assessed by the Week 1 Skill Check, then preview the a labelled arithmetic program contract."
+          },
+          {
+            "resourceId": "QBAS-R-W01-02",
+            "role": "optional",
+            "learningRole": "practice",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "purpose": "Rehearse the same five weekly concepts through prediction, error recognition, and explanation without affecting progression."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "QBAS-SC-W01",
+        "title": "Editor, Statements, and Output Skill Check",
+        "instructions": "Answer ten questions grounded in this week’s five Study concepts. Seven correct answers pass. Answer choices are reshuffled for every new attempt and remain stable while that attempt is in progress.",
+        "passingScore": 70,
+        "optionOrder": "shuffle-per-attempt",
+        "competencyIds": [
+          "QBAS-C001"
+        ],
+        "questions": [
+          {
+            "id": "QBAS-Q-W01-01",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "The Week 1 guide defines statement. Which description matches that definition?",
+            "options": [
+              {
+                "id": "a",
+                "label": "a QBASIC instruction"
+              },
+              {
+                "id": "b",
+                "label": "a named storage location"
+              },
+              {
+                "id": "c",
+                "label": "numbers and operators producing a value"
+              },
+              {
+                "id": "d",
+                "label": "text data"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "statement means a QBASIC instruction; it is used to use PRINT to show a result. Avoid this mistake: type prose as executable code."
+          },
+          {
+            "id": "QBAS-Q-W01-02",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "The learner needs to use PRINT to show a result. Which concept from the Week 1 guide supports that decision?",
+            "options": [
+              {
+                "id": "a",
+                "label": "variable"
+              },
+              {
+                "id": "b",
+                "label": "statement"
+              },
+              {
+                "id": "c",
+                "label": "numeric expression"
+              },
+              {
+                "id": "d",
+                "label": "string"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "statement is the relevant concept. A common mistake is to type prose as executable code."
+          },
+          {
+            "id": "QBAS-Q-W01-03",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "During the guide's debugging drill for variable, which warning identifies the error to avoid?",
+            "options": [
+              {
+                "id": "a",
+                "label": "expect text input to behave as a number"
+              },
+              {
+                "id": "b",
+                "label": "omit the string suffix in traditional QBASIC examples"
+              },
+              {
+                "id": "c",
+                "label": "use spaces in a variable name"
+              },
+              {
+                "id": "d",
+                "label": "comment out required behavior"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "variable means a named storage location; it is used to store TOTAL before printing. Avoid this mistake: use spaces in a variable name."
+          },
+          {
+            "id": "QBAS-Q-W01-04",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "A classmate is about to use spaces in a variable name. Which concept should they review first?",
+            "options": [
+              {
+                "id": "a",
+                "label": "numeric expression"
+              },
+              {
+                "id": "b",
+                "label": "string"
+              },
+              {
+                "id": "c",
+                "label": "comment"
+              },
+              {
+                "id": "d",
+                "label": "variable"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "variable is the relevant concept. A common mistake is to use spaces in a variable name."
+          },
+          {
+            "id": "QBAS-Q-W01-05",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "Which activity from the Week 1 guide correctly demonstrates numeric expression?",
+            "options": [
+              {
+                "id": "a",
+                "label": "store NAME$"
+              },
+              {
+                "id": "b",
+                "label": "calculate PRICE * QUANTITY"
+              },
+              {
+                "id": "c",
+                "label": "use REM to explain intent"
+              },
+              {
+                "id": "d",
+                "label": "use PRINT to show a result"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "numeric expression means numbers and operators producing a value; it is used to calculate PRICE * QUANTITY. Avoid this mistake: expect text input to behave as a number."
+          },
+          {
+            "id": "QBAS-Q-W01-06",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "Which weekly concept is demonstrated by this guide activity: calculate PRICE * QUANTITY?",
+            "options": [
+              {
+                "id": "a",
+                "label": "string"
+              },
+              {
+                "id": "b",
+                "label": "comment"
+              },
+              {
+                "id": "c",
+                "label": "statement"
+              },
+              {
+                "id": "d",
+                "label": "numeric expression"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "numeric expression is the relevant concept. A common mistake is to expect text input to behave as a number."
+          },
+          {
+            "id": "QBAS-Q-W01-07",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "A learner must explain string before coding. Which explanation is accurate?",
+            "options": [
+              {
+                "id": "a",
+                "label": "text data"
+              },
+              {
+                "id": "b",
+                "label": "a note ignored during execution"
+              },
+              {
+                "id": "c",
+                "label": "a QBASIC instruction"
+              },
+              {
+                "id": "d",
+                "label": "a named storage location"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "string means text data; it is used to store NAME$. Avoid this mistake: omit the string suffix in traditional QBASIC examples."
+          },
+          {
+            "id": "QBAS-Q-W01-08",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "The guide describes \"text data\". Which term does it describe?",
+            "options": [
+              {
+                "id": "a",
+                "label": "comment"
+              },
+              {
+                "id": "b",
+                "label": "statement"
+              },
+              {
+                "id": "c",
+                "label": "string"
+              },
+              {
+                "id": "d",
+                "label": "variable"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "string is the relevant concept. A common mistake is to omit the string suffix in traditional QBASIC examples."
+          },
+          {
+            "id": "QBAS-Q-W01-09",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "Which mistake would show that comment was misunderstood?",
+            "options": [
+              {
+                "id": "a",
+                "label": "type prose as executable code"
+              },
+              {
+                "id": "b",
+                "label": "use spaces in a variable name"
+              },
+              {
+                "id": "c",
+                "label": "expect text input to behave as a number"
+              },
+              {
+                "id": "d",
+                "label": "comment out required behavior"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "comment means a note ignored during execution; it is used to use REM to explain intent. Avoid this mistake: comment out required behavior."
+          },
+          {
+            "id": "QBAS-Q-W01-10",
+            "competencyIds": [
+              "QBAS-C001"
+            ],
+            "prompt": "To avoid this error—comment out required behavior—which weekly concept must the learner apply?",
+            "options": [
+              {
+                "id": "a",
+                "label": "statement"
+              },
+              {
+                "id": "b",
+                "label": "comment"
+              },
+              {
+                "id": "c",
+                "label": "variable"
+              },
+              {
+                "id": "d",
+                "label": "numeric expression"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "comment is the relevant concept. A common mistake is to comment out required behavior."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "QBAS-B-W01-01",
+          "title": "Microbuild: a labelled arithmetic program",
+          "required": true,
+          "outcome": "A working, tested a labelled arithmetic program.",
+          "competencyIds": [
+            "QBAS-C001"
+          ],
+          "estimatedMinutes": 240,
+          "brief": "Deliverable: a labelled arithmetic program. Required behavior: demonstrate statement, variable, numeric expression, string, comment; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+          "steps": [
+            {
+              "id": "QBAS-B-W01-01-S01",
+              "text": "Write a three-case contract for a labelled arithmetic program: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding."
+            },
+            {
+              "id": "QBAS-B-W01-01-S02",
+              "text": "Create the runnable source and implement the normal case first. Make statement, variable, numeric expression visible in the code or interface, then run the exact launch command once."
+            },
+            {
+              "id": "QBAS-B-W01-01-S03",
+              "text": "Add the boundary and invalid-case behavior using string and comment. Deliberately reproduce this weekly mistake—comment out required behavior—record the symptom, repair one cause, and rerun the same case."
+            },
+            {
+              "id": "QBAS-B-W01-01-S04",
+              "text": "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "QBAS-B-W01-01-A01",
+              "text": "A learner can follow the README command and run a labelled arithmetic program through its stated normal case without an unexplained error."
+            },
+            {
+              "id": "QBAS-B-W01-01-A02",
+              "text": "The finished work visibly demonstrates the Week 1 concepts: statement, variable, numeric expression, string, comment."
+            },
+            {
+              "id": "QBAS-B-W01-01-A03",
+              "text": "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results."
+            },
+            {
+              "id": "QBAS-B-W01-01-A04",
+              "text": "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+            }
+          ],
+          "hints": [
+            "If the normal case fails, reduce it to the smallest input or action involving statement and inspect the observed value before editing.",
+            "If the boundary or invalid case fails, revisit the guide warning \"comment out required behavior\" and change one cause at a time."
+          ],
+          "templates": [
+            {
+              "id": "QBAS-B-W01-01-T01",
+              "label": "README and test-record scaffold",
+              "content": "# Project\n\n## Environment\n## Exact run command\n## Required behavior\n## Test record\n| Case | Input or action | Expected | Actual | Pass? |\n| --- | --- | --- | --- | --- |\n| Normal | | | | |\n| Boundary | | | | |\n| Invalid | | | | |\n\n## Debugging note\n- Failing case:\n- Symptom:\n- Root cause:\n- Repair:\n- Rerun result:\n\n## Known limits\n"
+            }
+          ],
+          "stretch": "After every required case passes, add one small feature that remains directly related to a labelled arithmetic program; document and test it as a fourth case.",
+          "learnerGuide": {
+            "summary": "Plan, implement, break, repair, and verify a labelled arithmetic program against three named cases.",
+            "whyItMatters": "This converts Week 1 concepts into executable, inspectable evidence instead of a completion claim.",
+            "priorKnowledgeCompetencyIds": [],
+            "finishedResult": "A runnable a labelled arithmetic program, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+            "conceptRefs": [
+              {
+                "conceptId": "QBAS-CONCEPT-W01",
+                "relevance": "The build applies statement in a visible program decision."
+              }
+            ],
+            "sessions": [
+              {
+                "id": "QBAS-B-W01-01-SESSION-01",
+                "title": "Make it work",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W01-01-S01",
+                  "QBAS-B-W01-01-S02"
+                ]
+              },
+              {
+                "id": "QBAS-B-W01-01-SESSION-02",
+                "title": "Break, repair, and prove",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W01-01-S03",
+                  "QBAS-B-W01-01-S04"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "proof": {
+        "id": "QBAS-PF-W01",
+        "prompt": "Prove that a labelled arithmetic program can be reproduced, survives the three required cases, and includes one evidence-backed repair.",
+        "evidence": [
+          {
+            "id": "QBAS-EV-W01-01",
+            "type": "text",
+            "label": "Exact run command, normal/boundary/invalid results, symptom, cause, repair, and rerun result",
+            "required": true
+          },
+          {
+            "id": "QBAS-EV-W01-02",
+            "type": "confirmation",
+            "label": "I reran all three cases after the repair and checked every acceptance criterion",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "QBAS-RF-W01-01",
+            "prompt": "What evidence helped you find the most important mistake this week?"
+          },
+          {
+            "id": "QBAS-RF-W01-02",
+            "prompt": "What will you test first when a similar program fails again?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "QBAS-W02",
+      "sequence": 2,
+      "phaseId": "QBAS-PH01",
+      "title": "Input and Decisions",
+      "outcome": "Build, debug, explain, and verify a grade or fare adviser.",
+      "competencyIds": [
+        "QBAS-C002"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Learn and actively rehearse INPUT, IF block, comparison, boolean operator, branch order so you can explain, select, debug, and apply them while creating a grade or fare adviser.",
+        "coreMinimum": 1,
+        "resources": [
+          {
+            "resourceId": "QBAS-R-W02-01",
+            "role": "core",
+            "learningRole": "learn",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "purpose": "Learn the exact definitions, applications, and mistakes assessed by the Week 2 Skill Check, then preview the a grade or fare adviser contract."
+          },
+          {
+            "resourceId": "QBAS-R-W02-02",
+            "role": "optional",
+            "learningRole": "practice",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "purpose": "Rehearse the same five weekly concepts through prediction, error recognition, and explanation without affecting progression."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "QBAS-SC-W02",
+        "title": "Input and Decisions Skill Check",
+        "instructions": "Answer ten questions grounded in this week’s five Study concepts. Seven correct answers pass. Answer choices are reshuffled for every new attempt and remain stable while that attempt is in progress.",
+        "passingScore": 70,
+        "optionOrder": "shuffle-per-attempt",
+        "competencyIds": [
+          "QBAS-C002"
+        ],
+        "questions": [
+          {
+            "id": "QBAS-Q-W02-01",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "The Week 2 guide defines INPUT. Which description matches that definition?",
+            "options": [
+              {
+                "id": "a",
+                "label": "conditional execution"
+              },
+              {
+                "id": "b",
+                "label": "a true-or-false relationship"
+              },
+              {
+                "id": "c",
+                "label": "reads a value from the learner"
+              },
+              {
+                "id": "d",
+                "label": "combines conditions"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "INPUT means reads a value from the learner; it is used to use INPUT \"Age\"; AGE. Avoid this mistake: expect INPUT to validate every value."
+          },
+          {
+            "id": "QBAS-Q-W02-02",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "The learner needs to use INPUT \"Age\"; AGE. Which concept from the Week 2 guide supports that decision?",
+            "options": [
+              {
+                "id": "a",
+                "label": "INPUT"
+              },
+              {
+                "id": "b",
+                "label": "IF block"
+              },
+              {
+                "id": "c",
+                "label": "comparison"
+              },
+              {
+                "id": "d",
+                "label": "boolean operator"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "INPUT is the relevant concept. A common mistake is to expect INPUT to validate every value."
+          },
+          {
+            "id": "QBAS-Q-W02-03",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "During the guide's debugging drill for IF block, which warning identifies the error to avoid?",
+            "options": [
+              {
+                "id": "a",
+                "label": "use an impossible overlapping range"
+              },
+              {
+                "id": "b",
+                "label": "replace AND with a comma"
+              },
+              {
+                "id": "c",
+                "label": "put the broadest condition first"
+              },
+              {
+                "id": "d",
+                "label": "forget END IF for a block form"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "IF block means conditional execution; it is used to use IF...THEN...ELSE. Avoid this mistake: forget END IF for a block form."
+          },
+          {
+            "id": "QBAS-Q-W02-04",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "A classmate is about to forget END IF for a block form. Which concept should they review first?",
+            "options": [
+              {
+                "id": "a",
+                "label": "comparison"
+              },
+              {
+                "id": "b",
+                "label": "IF block"
+              },
+              {
+                "id": "c",
+                "label": "boolean operator"
+              },
+              {
+                "id": "d",
+                "label": "branch order"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "IF block is the relevant concept. A common mistake is to forget END IF for a block form."
+          },
+          {
+            "id": "QBAS-Q-W02-05",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "Which activity from the Week 2 guide correctly demonstrates comparison?",
+            "options": [
+              {
+                "id": "a",
+                "label": "check SCORE >= 50"
+              },
+              {
+                "id": "b",
+                "label": "use AND for a bounded range"
+              },
+              {
+                "id": "c",
+                "label": "test highest grade threshold first"
+              },
+              {
+                "id": "d",
+                "label": "use INPUT \"Age\"; AGE"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "comparison means a true-or-false relationship; it is used to check SCORE >= 50. Avoid this mistake: use an impossible overlapping range."
+          },
+          {
+            "id": "QBAS-Q-W02-06",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "Which weekly concept is demonstrated by this guide activity: check SCORE >= 50?",
+            "options": [
+              {
+                "id": "a",
+                "label": "boolean operator"
+              },
+              {
+                "id": "b",
+                "label": "branch order"
+              },
+              {
+                "id": "c",
+                "label": "comparison"
+              },
+              {
+                "id": "d",
+                "label": "INPUT"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "comparison is the relevant concept. A common mistake is to use an impossible overlapping range."
+          },
+          {
+            "id": "QBAS-Q-W02-07",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "A learner must explain boolean operator before coding. Which explanation is accurate?",
+            "options": [
+              {
+                "id": "a",
+                "label": "the sequence conditions are tested"
+              },
+              {
+                "id": "b",
+                "label": "combines conditions"
+              },
+              {
+                "id": "c",
+                "label": "reads a value from the learner"
+              },
+              {
+                "id": "d",
+                "label": "conditional execution"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "boolean operator means combines conditions; it is used to use AND for a bounded range. Avoid this mistake: replace AND with a comma."
+          },
+          {
+            "id": "QBAS-Q-W02-08",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "The guide describes \"combines conditions\". Which term does it describe?",
+            "options": [
+              {
+                "id": "a",
+                "label": "branch order"
+              },
+              {
+                "id": "b",
+                "label": "INPUT"
+              },
+              {
+                "id": "c",
+                "label": "IF block"
+              },
+              {
+                "id": "d",
+                "label": "boolean operator"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "boolean operator is the relevant concept. A common mistake is to replace AND with a comma."
+          },
+          {
+            "id": "QBAS-Q-W02-09",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "Which mistake would show that branch order was misunderstood?",
+            "options": [
+              {
+                "id": "a",
+                "label": "expect INPUT to validate every value"
+              },
+              {
+                "id": "b",
+                "label": "put the broadest condition first"
+              },
+              {
+                "id": "c",
+                "label": "forget END IF for a block form"
+              },
+              {
+                "id": "d",
+                "label": "use an impossible overlapping range"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "branch order means the sequence conditions are tested; it is used to test highest grade threshold first. Avoid this mistake: put the broadest condition first."
+          },
+          {
+            "id": "QBAS-Q-W02-10",
+            "competencyIds": [
+              "QBAS-C002"
+            ],
+            "prompt": "To avoid this error—put the broadest condition first—which weekly concept must the learner apply?",
+            "options": [
+              {
+                "id": "a",
+                "label": "INPUT"
+              },
+              {
+                "id": "b",
+                "label": "IF block"
+              },
+              {
+                "id": "c",
+                "label": "branch order"
+              },
+              {
+                "id": "d",
+                "label": "comparison"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "branch order is the relevant concept. A common mistake is to put the broadest condition first."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "QBAS-B-W02-01",
+          "title": "Microbuild: a grade or fare adviser",
+          "required": true,
+          "outcome": "A working, tested a grade or fare adviser.",
+          "competencyIds": [
+            "QBAS-C002"
+          ],
+          "estimatedMinutes": 240,
+          "brief": "Deliverable: a grade or fare adviser. Required behavior: demonstrate INPUT, IF block, comparison, boolean operator, branch order; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+          "steps": [
+            {
+              "id": "QBAS-B-W02-01-S01",
+              "text": "Write a three-case contract for a grade or fare adviser: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding."
+            },
+            {
+              "id": "QBAS-B-W02-01-S02",
+              "text": "Create the runnable source and implement the normal case first. Make INPUT, IF block, comparison visible in the code or interface, then run the exact launch command once."
+            },
+            {
+              "id": "QBAS-B-W02-01-S03",
+              "text": "Add the boundary and invalid-case behavior using boolean operator and branch order. Deliberately reproduce this weekly mistake—put the broadest condition first—record the symptom, repair one cause, and rerun the same case."
+            },
+            {
+              "id": "QBAS-B-W02-01-S04",
+              "text": "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "QBAS-B-W02-01-A01",
+              "text": "A learner can follow the README command and run a grade or fare adviser through its stated normal case without an unexplained error."
+            },
+            {
+              "id": "QBAS-B-W02-01-A02",
+              "text": "The finished work visibly demonstrates the Week 2 concepts: INPUT, IF block, comparison, boolean operator, branch order."
+            },
+            {
+              "id": "QBAS-B-W02-01-A03",
+              "text": "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results."
+            },
+            {
+              "id": "QBAS-B-W02-01-A04",
+              "text": "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+            }
+          ],
+          "hints": [
+            "If the normal case fails, reduce it to the smallest input or action involving INPUT and inspect the observed value before editing.",
+            "If the boundary or invalid case fails, revisit the guide warning \"put the broadest condition first\" and change one cause at a time."
+          ],
+          "templates": [
+            {
+              "id": "QBAS-B-W02-01-T01",
+              "label": "README and test-record scaffold",
+              "content": "# Project\n\n## Environment\n## Exact run command\n## Required behavior\n## Test record\n| Case | Input or action | Expected | Actual | Pass? |\n| --- | --- | --- | --- | --- |\n| Normal | | | | |\n| Boundary | | | | |\n| Invalid | | | | |\n\n## Debugging note\n- Failing case:\n- Symptom:\n- Root cause:\n- Repair:\n- Rerun result:\n\n## Known limits\n"
+            }
+          ],
+          "stretch": "After every required case passes, add one small feature that remains directly related to a grade or fare adviser; document and test it as a fourth case.",
+          "learnerGuide": {
+            "summary": "Plan, implement, break, repair, and verify a grade or fare adviser against three named cases.",
+            "whyItMatters": "This converts Week 2 concepts into executable, inspectable evidence instead of a completion claim.",
+            "priorKnowledgeCompetencyIds": [
+              "QBAS-C001"
+            ],
+            "finishedResult": "A runnable a grade or fare adviser, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+            "conceptRefs": [
+              {
+                "conceptId": "QBAS-CONCEPT-W02",
+                "relevance": "The build applies INPUT in a visible program decision."
+              }
+            ],
+            "sessions": [
+              {
+                "id": "QBAS-B-W02-01-SESSION-01",
+                "title": "Make it work",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W02-01-S01",
+                  "QBAS-B-W02-01-S02"
+                ]
+              },
+              {
+                "id": "QBAS-B-W02-01-SESSION-02",
+                "title": "Break, repair, and prove",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W02-01-S03",
+                  "QBAS-B-W02-01-S04"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "proof": {
+        "id": "QBAS-PF-W02",
+        "prompt": "Prove that a grade or fare adviser can be reproduced, survives the three required cases, and includes one evidence-backed repair.",
+        "evidence": [
+          {
+            "id": "QBAS-EV-W02-01",
+            "type": "text",
+            "label": "Exact run command, normal/boundary/invalid results, symptom, cause, repair, and rerun result",
+            "required": true
+          },
+          {
+            "id": "QBAS-EV-W02-02",
+            "type": "confirmation",
+            "label": "I reran all three cases after the repair and checked every acceptance criterion",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "QBAS-RF-W02-01",
+            "prompt": "What evidence helped you find the most important mistake this week?"
+          },
+          {
+            "id": "QBAS-RF-W02-02",
+            "prompt": "What will you test first when a similar program fails again?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "QBAS-W03",
+      "sequence": 3,
+      "phaseId": "QBAS-PH01",
+      "title": "Loops and Counters",
+      "outcome": "Build, debug, explain, and verify a number table and score summary.",
+      "competencyIds": [
+        "QBAS-C003"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Learn and actively rehearse FOR loop, DO loop, counter, accumulator, trace table so you can explain, select, debug, and apply them while creating a number table and score summary.",
+        "coreMinimum": 1,
+        "resources": [
+          {
+            "resourceId": "QBAS-R-W03-01",
+            "role": "core",
+            "learningRole": "learn",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "purpose": "Learn the exact definitions, applications, and mistakes assessed by the Week 3 Skill Check, then preview the a number table and score summary contract."
+          },
+          {
+            "resourceId": "QBAS-R-W03-02",
+            "role": "optional",
+            "learningRole": "practice",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "purpose": "Rehearse the same five weekly concepts through prediction, error recognition, and explanation without affecting progression."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "QBAS-SC-W03",
+        "title": "Loops and Counters Skill Check",
+        "instructions": "Answer ten questions grounded in this week’s five Study concepts. Seven correct answers pass. Answer choices are reshuffled for every new attempt and remain stable while that attempt is in progress.",
+        "passingScore": 70,
+        "optionOrder": "shuffle-per-attempt",
+        "competencyIds": [
+          "QBAS-C003"
+        ],
+        "questions": [
+          {
+            "id": "QBAS-Q-W03-01",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "The Week 3 guide defines FOR loop. Which description matches that definition?",
+            "options": [
+              {
+                "id": "a",
+                "label": "condition-controlled repetition"
+              },
+              {
+                "id": "b",
+                "label": "counted repetition"
+              },
+              {
+                "id": "c",
+                "label": "tracks event count"
+              },
+              {
+                "id": "d",
+                "label": "stores a running result"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "FOR loop means counted repetition; it is used to use FOR I = 1 TO 10. Avoid this mistake: forget NEXT."
+          },
+          {
+            "id": "QBAS-Q-W03-02",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "The learner needs to use FOR I = 1 TO 10. Which concept from the Week 3 guide supports that decision?",
+            "options": [
+              {
+                "id": "a",
+                "label": "DO loop"
+              },
+              {
+                "id": "b",
+                "label": "counter"
+              },
+              {
+                "id": "c",
+                "label": "accumulator"
+              },
+              {
+                "id": "d",
+                "label": "FOR loop"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "FOR loop is the relevant concept. A common mistake is to forget NEXT."
+          },
+          {
+            "id": "QBAS-Q-W03-03",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "During the guide's debugging drill for DO loop, which warning identifies the error to avoid?",
+            "options": [
+              {
+                "id": "a",
+                "label": "omit an exit condition"
+              },
+              {
+                "id": "b",
+                "label": "reset it inside the loop"
+              },
+              {
+                "id": "c",
+                "label": "leave it uninitialized conceptually"
+              },
+              {
+                "id": "d",
+                "label": "guess the final result"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "DO loop means condition-controlled repetition; it is used to repeat a menu until quit. Avoid this mistake: omit an exit condition."
+          },
+          {
+            "id": "QBAS-Q-W03-04",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "A classmate is about to omit an exit condition. Which concept should they review first?",
+            "options": [
+              {
+                "id": "a",
+                "label": "counter"
+              },
+              {
+                "id": "b",
+                "label": "accumulator"
+              },
+              {
+                "id": "c",
+                "label": "DO loop"
+              },
+              {
+                "id": "d",
+                "label": "trace table"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "DO loop is the relevant concept. A common mistake is to omit an exit condition."
+          },
+          {
+            "id": "QBAS-Q-W03-05",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "Which activity from the Week 3 guide correctly demonstrates counter?",
+            "options": [
+              {
+                "id": "a",
+                "label": "add SCORE to TOTAL"
+              },
+              {
+                "id": "b",
+                "label": "trace I and TOTAL"
+              },
+              {
+                "id": "c",
+                "label": "use FOR I = 1 TO 10"
+              },
+              {
+                "id": "d",
+                "label": "increment VALIDCOUNT"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "counter means tracks event count; it is used to increment VALIDCOUNT. Avoid this mistake: reset it inside the loop."
+          },
+          {
+            "id": "QBAS-Q-W03-06",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "Which weekly concept is demonstrated by this guide activity: increment VALIDCOUNT?",
+            "options": [
+              {
+                "id": "a",
+                "label": "counter"
+              },
+              {
+                "id": "b",
+                "label": "accumulator"
+              },
+              {
+                "id": "c",
+                "label": "trace table"
+              },
+              {
+                "id": "d",
+                "label": "FOR loop"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "counter is the relevant concept. A common mistake is to reset it inside the loop."
+          },
+          {
+            "id": "QBAS-Q-W03-07",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "A learner must explain accumulator before coding. Which explanation is accurate?",
+            "options": [
+              {
+                "id": "a",
+                "label": "records changing values per iteration"
+              },
+              {
+                "id": "b",
+                "label": "counted repetition"
+              },
+              {
+                "id": "c",
+                "label": "stores a running result"
+              },
+              {
+                "id": "d",
+                "label": "condition-controlled repetition"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "accumulator means stores a running result; it is used to add SCORE to TOTAL. Avoid this mistake: leave it uninitialized conceptually."
+          },
+          {
+            "id": "QBAS-Q-W03-08",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "The guide describes \"stores a running result\". Which term does it describe?",
+            "options": [
+              {
+                "id": "a",
+                "label": "trace table"
+              },
+              {
+                "id": "b",
+                "label": "accumulator"
+              },
+              {
+                "id": "c",
+                "label": "FOR loop"
+              },
+              {
+                "id": "d",
+                "label": "DO loop"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "accumulator is the relevant concept. A common mistake is to leave it uninitialized conceptually."
+          },
+          {
+            "id": "QBAS-Q-W03-09",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "Which mistake would show that trace table was misunderstood?",
+            "options": [
+              {
+                "id": "a",
+                "label": "guess the final result"
+              },
+              {
+                "id": "b",
+                "label": "forget NEXT"
+              },
+              {
+                "id": "c",
+                "label": "omit an exit condition"
+              },
+              {
+                "id": "d",
+                "label": "reset it inside the loop"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "trace table means records changing values per iteration; it is used to trace I and TOTAL. Avoid this mistake: guess the final result."
+          },
+          {
+            "id": "QBAS-Q-W03-10",
+            "competencyIds": [
+              "QBAS-C003"
+            ],
+            "prompt": "To avoid this error—guess the final result—which weekly concept must the learner apply?",
+            "options": [
+              {
+                "id": "a",
+                "label": "FOR loop"
+              },
+              {
+                "id": "b",
+                "label": "DO loop"
+              },
+              {
+                "id": "c",
+                "label": "counter"
+              },
+              {
+                "id": "d",
+                "label": "trace table"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "trace table is the relevant concept. A common mistake is to guess the final result."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "QBAS-B-W03-01",
+          "title": "Microbuild: a number table and score summary",
+          "required": true,
+          "outcome": "A working, tested a number table and score summary.",
+          "competencyIds": [
+            "QBAS-C003"
+          ],
+          "estimatedMinutes": 240,
+          "brief": "Deliverable: a number table and score summary. Required behavior: demonstrate FOR loop, DO loop, counter, accumulator, trace table; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+          "steps": [
+            {
+              "id": "QBAS-B-W03-01-S01",
+              "text": "Write a three-case contract for a number table and score summary: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding."
+            },
+            {
+              "id": "QBAS-B-W03-01-S02",
+              "text": "Create the runnable source and implement the normal case first. Make FOR loop, DO loop, counter visible in the code or interface, then run the exact launch command once."
+            },
+            {
+              "id": "QBAS-B-W03-01-S03",
+              "text": "Add the boundary and invalid-case behavior using accumulator and trace table. Deliberately reproduce this weekly mistake—guess the final result—record the symptom, repair one cause, and rerun the same case."
+            },
+            {
+              "id": "QBAS-B-W03-01-S04",
+              "text": "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "QBAS-B-W03-01-A01",
+              "text": "A learner can follow the README command and run a number table and score summary through its stated normal case without an unexplained error."
+            },
+            {
+              "id": "QBAS-B-W03-01-A02",
+              "text": "The finished work visibly demonstrates the Week 3 concepts: FOR loop, DO loop, counter, accumulator, trace table."
+            },
+            {
+              "id": "QBAS-B-W03-01-A03",
+              "text": "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results."
+            },
+            {
+              "id": "QBAS-B-W03-01-A04",
+              "text": "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+            }
+          ],
+          "hints": [
+            "If the normal case fails, reduce it to the smallest input or action involving FOR loop and inspect the observed value before editing.",
+            "If the boundary or invalid case fails, revisit the guide warning \"guess the final result\" and change one cause at a time."
+          ],
+          "templates": [
+            {
+              "id": "QBAS-B-W03-01-T01",
+              "label": "README and test-record scaffold",
+              "content": "# Project\n\n## Environment\n## Exact run command\n## Required behavior\n## Test record\n| Case | Input or action | Expected | Actual | Pass? |\n| --- | --- | --- | --- | --- |\n| Normal | | | | |\n| Boundary | | | | |\n| Invalid | | | | |\n\n## Debugging note\n- Failing case:\n- Symptom:\n- Root cause:\n- Repair:\n- Rerun result:\n\n## Known limits\n"
+            }
+          ],
+          "stretch": "After every required case passes, add one small feature that remains directly related to a number table and score summary; document and test it as a fourth case.",
+          "learnerGuide": {
+            "summary": "Plan, implement, break, repair, and verify a number table and score summary against three named cases.",
+            "whyItMatters": "This converts Week 3 concepts into executable, inspectable evidence instead of a completion claim.",
+            "priorKnowledgeCompetencyIds": [
+              "QBAS-C002"
+            ],
+            "finishedResult": "A runnable a number table and score summary, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+            "conceptRefs": [
+              {
+                "conceptId": "QBAS-CONCEPT-W03",
+                "relevance": "The build applies FOR loop in a visible program decision."
+              }
+            ],
+            "sessions": [
+              {
+                "id": "QBAS-B-W03-01-SESSION-01",
+                "title": "Make it work",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W03-01-S01",
+                  "QBAS-B-W03-01-S02"
+                ]
+              },
+              {
+                "id": "QBAS-B-W03-01-SESSION-02",
+                "title": "Break, repair, and prove",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W03-01-S03",
+                  "QBAS-B-W03-01-S04"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "proof": {
+        "id": "QBAS-PF-W03",
+        "prompt": "Prove that a number table and score summary can be reproduced, survives the three required cases, and includes one evidence-backed repair.",
+        "evidence": [
+          {
+            "id": "QBAS-EV-W03-01",
+            "type": "text",
+            "label": "Exact run command, normal/boundary/invalid results, symptom, cause, repair, and rerun result",
+            "required": true
+          },
+          {
+            "id": "QBAS-EV-W03-02",
+            "type": "confirmation",
+            "label": "I reran all three cases after the repair and checked every acceptance criterion",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "QBAS-RF-W03-01",
+            "prompt": "What evidence helped you find the most important mistake this week?"
+          },
+          {
+            "id": "QBAS-RF-W03-02",
+            "prompt": "What will you test first when a similar program fails again?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "QBAS-W04",
+      "sequence": 4,
+      "phaseId": "QBAS-PH01",
+      "title": "SUBs and FUNCTIONs",
+      "outcome": "Build, debug, explain, and verify a reusable conversion toolkit.",
+      "competencyIds": [
+        "QBAS-C004"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Learn and actively rehearse SUB, FUNCTION, parameter, local variable, decomposition so you can explain, select, debug, and apply them while creating a reusable conversion toolkit.",
+        "coreMinimum": 1,
+        "resources": [
+          {
+            "resourceId": "QBAS-R-W04-01",
+            "role": "core",
+            "learningRole": "learn",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "purpose": "Learn the exact definitions, applications, and mistakes assessed by the Week 4 Skill Check, then preview the a reusable conversion toolkit contract."
+          },
+          {
+            "resourceId": "QBAS-R-W04-02",
+            "role": "optional",
+            "learningRole": "practice",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "purpose": "Rehearse the same five weekly concepts through prediction, error recognition, and explanation without affecting progression."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "QBAS-SC-W04",
+        "title": "SUBs and FUNCTIONs Skill Check",
+        "instructions": "Answer ten questions grounded in this week’s five Study concepts. Seven correct answers pass. Answer choices are reshuffled for every new attempt and remain stable while that attempt is in progress.",
+        "passingScore": 70,
+        "optionOrder": "shuffle-per-attempt",
+        "competencyIds": [
+          "QBAS-C004"
+        ],
+        "questions": [
+          {
+            "id": "QBAS-Q-W04-01",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "The Week 4 guide defines SUB. Which description matches that definition?",
+            "options": [
+              {
+                "id": "a",
+                "label": "a named calculation returning a value"
+              },
+              {
+                "id": "b",
+                "label": "a declared routine input"
+              },
+              {
+                "id": "c",
+                "label": "temporary state inside a routine"
+              },
+              {
+                "id": "d",
+                "label": "a named procedure without a returned expression value"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "SUB means a named procedure without a returned expression value; it is used to call a display procedure. Avoid this mistake: use it when a calculation result is needed by callers."
+          },
+          {
+            "id": "QBAS-Q-W04-02",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "The learner needs to call a display procedure. Which concept from the Week 4 guide supports that decision?",
+            "options": [
+              {
+                "id": "a",
+                "label": "FUNCTION"
+              },
+              {
+                "id": "b",
+                "label": "parameter"
+              },
+              {
+                "id": "c",
+                "label": "SUB"
+              },
+              {
+                "id": "d",
+                "label": "local variable"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "SUB is the relevant concept. A common mistake is to use it when a calculation result is needed by callers."
+          },
+          {
+            "id": "QBAS-Q-W04-03",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "During the guide's debugging drill for FUNCTION, which warning identifies the error to avoid?",
+            "options": [
+              {
+                "id": "a",
+                "label": "depend on unrelated shared variables"
+              },
+              {
+                "id": "b",
+                "label": "forget to assign the function name"
+              },
+              {
+                "id": "c",
+                "label": "expect it in the main program"
+              },
+              {
+                "id": "d",
+                "label": "keep the entire program in one block"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "FUNCTION means a named calculation returning a value; it is used to write FUNCTION Average. Avoid this mistake: forget to assign the function name."
+          },
+          {
+            "id": "QBAS-Q-W04-04",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "A classmate is about to forget to assign the function name. Which concept should they review first?",
+            "options": [
+              {
+                "id": "a",
+                "label": "FUNCTION"
+              },
+              {
+                "id": "b",
+                "label": "parameter"
+              },
+              {
+                "id": "c",
+                "label": "local variable"
+              },
+              {
+                "id": "d",
+                "label": "decomposition"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "FUNCTION is the relevant concept. A common mistake is to forget to assign the function name."
+          },
+          {
+            "id": "QBAS-Q-W04-05",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "Which activity from the Week 4 guide correctly demonstrates parameter?",
+            "options": [
+              {
+                "id": "a",
+                "label": "keep intermediate result local"
+              },
+              {
+                "id": "b",
+                "label": "separate input, calculation, and display"
+              },
+              {
+                "id": "c",
+                "label": "pass a temperature value"
+              },
+              {
+                "id": "d",
+                "label": "call a display procedure"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "parameter means a declared routine input; it is used to pass a temperature value. Avoid this mistake: depend on unrelated shared variables."
+          },
+          {
+            "id": "QBAS-Q-W04-06",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "Which weekly concept is demonstrated by this guide activity: pass a temperature value?",
+            "options": [
+              {
+                "id": "a",
+                "label": "local variable"
+              },
+              {
+                "id": "b",
+                "label": "parameter"
+              },
+              {
+                "id": "c",
+                "label": "decomposition"
+              },
+              {
+                "id": "d",
+                "label": "SUB"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "parameter is the relevant concept. A common mistake is to depend on unrelated shared variables."
+          },
+          {
+            "id": "QBAS-Q-W04-07",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "A learner must explain local variable before coding. Which explanation is accurate?",
+            "options": [
+              {
+                "id": "a",
+                "label": "splitting a problem into focused routines"
+              },
+              {
+                "id": "b",
+                "label": "a named procedure without a returned expression value"
+              },
+              {
+                "id": "c",
+                "label": "a named calculation returning a value"
+              },
+              {
+                "id": "d",
+                "label": "temporary state inside a routine"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "local variable means temporary state inside a routine; it is used to keep intermediate result local. Avoid this mistake: expect it in the main program."
+          },
+          {
+            "id": "QBAS-Q-W04-08",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "The guide describes \"temporary state inside a routine\". Which term does it describe?",
+            "options": [
+              {
+                "id": "a",
+                "label": "local variable"
+              },
+              {
+                "id": "b",
+                "label": "decomposition"
+              },
+              {
+                "id": "c",
+                "label": "SUB"
+              },
+              {
+                "id": "d",
+                "label": "FUNCTION"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "local variable is the relevant concept. A common mistake is to expect it in the main program."
+          },
+          {
+            "id": "QBAS-Q-W04-09",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "Which mistake would show that decomposition was misunderstood?",
+            "options": [
+              {
+                "id": "a",
+                "label": "use it when a calculation result is needed by callers"
+              },
+              {
+                "id": "b",
+                "label": "forget to assign the function name"
+              },
+              {
+                "id": "c",
+                "label": "keep the entire program in one block"
+              },
+              {
+                "id": "d",
+                "label": "depend on unrelated shared variables"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "decomposition means splitting a problem into focused routines; it is used to separate input, calculation, and display. Avoid this mistake: keep the entire program in one block."
+          },
+          {
+            "id": "QBAS-Q-W04-10",
+            "competencyIds": [
+              "QBAS-C004"
+            ],
+            "prompt": "To avoid this error—keep the entire program in one block—which weekly concept must the learner apply?",
+            "options": [
+              {
+                "id": "a",
+                "label": "decomposition"
+              },
+              {
+                "id": "b",
+                "label": "SUB"
+              },
+              {
+                "id": "c",
+                "label": "FUNCTION"
+              },
+              {
+                "id": "d",
+                "label": "parameter"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "decomposition is the relevant concept. A common mistake is to keep the entire program in one block."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "QBAS-B-W04-01",
+          "title": "Guided midpoint: a reusable conversion toolkit",
+          "required": true,
+          "outcome": "A working, tested a reusable conversion toolkit.",
+          "competencyIds": [
+            "QBAS-C004"
+          ],
+          "estimatedMinutes": 240,
+          "brief": "Deliverable: a reusable conversion toolkit. Required behavior: demonstrate SUB, FUNCTION, parameter, local variable, decomposition; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+          "steps": [
+            {
+              "id": "QBAS-B-W04-01-S01",
+              "text": "Write a three-case contract for a reusable conversion toolkit: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding."
+            },
+            {
+              "id": "QBAS-B-W04-01-S02",
+              "text": "Create the runnable source and implement the normal case first. Make SUB, FUNCTION, parameter visible in the code or interface, then run the exact launch command once."
+            },
+            {
+              "id": "QBAS-B-W04-01-S03",
+              "text": "Add the boundary and invalid-case behavior using local variable and decomposition. Deliberately reproduce this weekly mistake—keep the entire program in one block—record the symptom, repair one cause, and rerun the same case."
+            },
+            {
+              "id": "QBAS-B-W04-01-S04",
+              "text": "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "QBAS-B-W04-01-A01",
+              "text": "A learner can follow the README command and run a reusable conversion toolkit through its stated normal case without an unexplained error."
+            },
+            {
+              "id": "QBAS-B-W04-01-A02",
+              "text": "The finished work visibly demonstrates the Week 4 concepts: SUB, FUNCTION, parameter, local variable, decomposition."
+            },
+            {
+              "id": "QBAS-B-W04-01-A03",
+              "text": "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results."
+            },
+            {
+              "id": "QBAS-B-W04-01-A04",
+              "text": "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+            }
+          ],
+          "hints": [
+            "If the normal case fails, reduce it to the smallest input or action involving SUB and inspect the observed value before editing.",
+            "If the boundary or invalid case fails, revisit the guide warning \"keep the entire program in one block\" and change one cause at a time."
+          ],
+          "templates": [
+            {
+              "id": "QBAS-B-W04-01-T01",
+              "label": "README and test-record scaffold",
+              "content": "# Project\n\n## Environment\n## Exact run command\n## Required behavior\n## Test record\n| Case | Input or action | Expected | Actual | Pass? |\n| --- | --- | --- | --- | --- |\n| Normal | | | | |\n| Boundary | | | | |\n| Invalid | | | | |\n\n## Debugging note\n- Failing case:\n- Symptom:\n- Root cause:\n- Repair:\n- Rerun result:\n\n## Known limits\n"
+            }
+          ],
+          "stretch": "After every required case passes, add one small feature that remains directly related to a reusable conversion toolkit; document and test it as a fourth case.",
+          "learnerGuide": {
+            "summary": "Plan, implement, break, repair, and verify a reusable conversion toolkit against three named cases.",
+            "whyItMatters": "This converts Week 4 concepts into executable, inspectable evidence instead of a completion claim.",
+            "priorKnowledgeCompetencyIds": [
+              "QBAS-C003"
+            ],
+            "finishedResult": "A runnable a reusable conversion toolkit, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+            "conceptRefs": [
+              {
+                "conceptId": "QBAS-CONCEPT-W04",
+                "relevance": "The build applies SUB in a visible program decision."
+              }
+            ],
+            "sessions": [
+              {
+                "id": "QBAS-B-W04-01-SESSION-01",
+                "title": "Make it work",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W04-01-S01",
+                  "QBAS-B-W04-01-S02"
+                ]
+              },
+              {
+                "id": "QBAS-B-W04-01-SESSION-02",
+                "title": "Break, repair, and prove",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W04-01-S03",
+                  "QBAS-B-W04-01-S04"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "proof": {
+        "id": "QBAS-PF-W04",
+        "prompt": "Prove that a reusable conversion toolkit can be reproduced, survives the three required cases, and includes one evidence-backed repair.",
+        "evidence": [
+          {
+            "id": "QBAS-EV-W04-01",
+            "type": "text",
+            "label": "Exact run command, normal/boundary/invalid results, symptom, cause, repair, and rerun result",
+            "required": true
+          },
+          {
+            "id": "QBAS-EV-W04-02",
+            "type": "confirmation",
+            "label": "I reran all three cases after the repair and checked every acceptance criterion",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "QBAS-RF-W04-01",
+            "prompt": "What evidence helped you find the most important mistake this week?"
+          },
+          {
+            "id": "QBAS-RF-W04-02",
+            "prompt": "What will you test first when a similar program fails again?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "QBAS-W05",
+      "sequence": 5,
+      "phaseId": "QBAS-PH02",
+      "title": "Arrays and Strings",
+      "outcome": "Build, debug, explain, and verify a simple contact or score manager.",
+      "competencyIds": [
+        "QBAS-C005"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Learn and actively rehearse array, index, string function, linear search, sentinel so you can explain, select, debug, and apply them while creating a simple contact or score manager.",
+        "coreMinimum": 1,
+        "resources": [
+          {
+            "resourceId": "QBAS-R-W05-01",
+            "role": "core",
+            "learningRole": "learn",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "purpose": "Learn the exact definitions, applications, and mistakes assessed by the Week 5 Skill Check, then preview the a simple contact or score manager contract."
+          },
+          {
+            "resourceId": "QBAS-R-W05-02",
+            "role": "optional",
+            "learningRole": "practice",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "purpose": "Rehearse the same five weekly concepts through prediction, error recognition, and explanation without affecting progression."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "QBAS-SC-W05",
+        "title": "Arrays and Strings Skill Check",
+        "instructions": "Answer ten questions grounded in this week’s five Study concepts. Seven correct answers pass. Answer choices are reshuffled for every new attempt and remain stable while that attempt is in progress.",
+        "passingScore": 70,
+        "optionOrder": "shuffle-per-attempt",
+        "competencyIds": [
+          "QBAS-C005"
+        ],
+        "questions": [
+          {
+            "id": "QBAS-Q-W05-01",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "The Week 5 guide defines array. Which description matches that definition?",
+            "options": [
+              {
+                "id": "a",
+                "label": "indexed values under one name"
+              },
+              {
+                "id": "b",
+                "label": "the position selecting an array element"
+              },
+              {
+                "id": "c",
+                "label": "a built-in text operation"
+              },
+              {
+                "id": "d",
+                "label": "checking items one after another"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "array means indexed values under one name; it is used to DIM SCORE(1 TO 10). Avoid this mistake: read beyond its declared bounds."
+          },
+          {
+            "id": "QBAS-Q-W05-02",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "The learner needs to DIM SCORE(1 TO 10). Which concept from the Week 5 guide supports that decision?",
+            "options": [
+              {
+                "id": "a",
+                "label": "index"
+              },
+              {
+                "id": "b",
+                "label": "string function"
+              },
+              {
+                "id": "c",
+                "label": "array"
+              },
+              {
+                "id": "d",
+                "label": "linear search"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "array is the relevant concept. A common mistake is to read beyond its declared bounds."
+          },
+          {
+            "id": "QBAS-Q-W05-03",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "During the guide's debugging drill for index, which warning identifies the error to avoid?",
+            "options": [
+              {
+                "id": "a",
+                "label": "expect numeric addition from text"
+              },
+              {
+                "id": "b",
+                "label": "confuse value with its index"
+              },
+              {
+                "id": "c",
+                "label": "assume sorted order without creating it"
+              },
+              {
+                "id": "d",
+                "label": "choose a sentinel that is valid data"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "index means the position selecting an array element; it is used to use SCORE(I). Avoid this mistake: confuse value with its index."
+          },
+          {
+            "id": "QBAS-Q-W05-04",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "A classmate is about to confuse value with its index. Which concept should they review first?",
+            "options": [
+              {
+                "id": "a",
+                "label": "string function"
+              },
+              {
+                "id": "b",
+                "label": "linear search"
+              },
+              {
+                "id": "c",
+                "label": "sentinel"
+              },
+              {
+                "id": "d",
+                "label": "index"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "index is the relevant concept. A common mistake is to confuse value with its index."
+          },
+          {
+            "id": "QBAS-Q-W05-05",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "Which activity from the Week 5 guide correctly demonstrates string function?",
+            "options": [
+              {
+                "id": "a",
+                "label": "stop when a matching name is found"
+              },
+              {
+                "id": "b",
+                "label": "use DONE as a menu choice"
+              },
+              {
+                "id": "c",
+                "label": "use LEN to find length"
+              },
+              {
+                "id": "d",
+                "label": "DIM SCORE(1 TO 10)"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "string function means a built-in text operation; it is used to use LEN to find length. Avoid this mistake: expect numeric addition from text."
+          },
+          {
+            "id": "QBAS-Q-W05-06",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "Which weekly concept is demonstrated by this guide activity: use LEN to find length?",
+            "options": [
+              {
+                "id": "a",
+                "label": "string function"
+              },
+              {
+                "id": "b",
+                "label": "linear search"
+              },
+              {
+                "id": "c",
+                "label": "sentinel"
+              },
+              {
+                "id": "d",
+                "label": "array"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "string function is the relevant concept. A common mistake is to expect numeric addition from text."
+          },
+          {
+            "id": "QBAS-Q-W05-07",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "A learner must explain linear search before coding. Which explanation is accurate?",
+            "options": [
+              {
+                "id": "a",
+                "label": "a special value ending input"
+              },
+              {
+                "id": "b",
+                "label": "indexed values under one name"
+              },
+              {
+                "id": "c",
+                "label": "the position selecting an array element"
+              },
+              {
+                "id": "d",
+                "label": "checking items one after another"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "linear search means checking items one after another; it is used to stop when a matching name is found. Avoid this mistake: assume sorted order without creating it."
+          },
+          {
+            "id": "QBAS-Q-W05-08",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "The guide describes \"checking items one after another\". Which term does it describe?",
+            "options": [
+              {
+                "id": "a",
+                "label": "sentinel"
+              },
+              {
+                "id": "b",
+                "label": "linear search"
+              },
+              {
+                "id": "c",
+                "label": "array"
+              },
+              {
+                "id": "d",
+                "label": "index"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "linear search is the relevant concept. A common mistake is to assume sorted order without creating it."
+          },
+          {
+            "id": "QBAS-Q-W05-09",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "Which mistake would show that sentinel was misunderstood?",
+            "options": [
+              {
+                "id": "a",
+                "label": "read beyond its declared bounds"
+              },
+              {
+                "id": "b",
+                "label": "confuse value with its index"
+              },
+              {
+                "id": "c",
+                "label": "expect numeric addition from text"
+              },
+              {
+                "id": "d",
+                "label": "choose a sentinel that is valid data"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "sentinel means a special value ending input; it is used to use DONE as a menu choice. Avoid this mistake: choose a sentinel that is valid data."
+          },
+          {
+            "id": "QBAS-Q-W05-10",
+            "competencyIds": [
+              "QBAS-C005"
+            ],
+            "prompt": "To avoid this error—choose a sentinel that is valid data—which weekly concept must the learner apply?",
+            "options": [
+              {
+                "id": "a",
+                "label": "array"
+              },
+              {
+                "id": "b",
+                "label": "index"
+              },
+              {
+                "id": "c",
+                "label": "sentinel"
+              },
+              {
+                "id": "d",
+                "label": "string function"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "sentinel is the relevant concept. A common mistake is to choose a sentinel that is valid data."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "QBAS-B-W05-01",
+          "title": "Microbuild: a simple contact or score manager",
+          "required": true,
+          "outcome": "A working, tested a simple contact or score manager.",
+          "competencyIds": [
+            "QBAS-C005"
+          ],
+          "estimatedMinutes": 240,
+          "brief": "Deliverable: a simple contact or score manager. Required behavior: demonstrate array, index, string function, linear search, sentinel; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+          "steps": [
+            {
+              "id": "QBAS-B-W05-01-S01",
+              "text": "Write a three-case contract for a simple contact or score manager: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding."
+            },
+            {
+              "id": "QBAS-B-W05-01-S02",
+              "text": "Create the runnable source and implement the normal case first. Make array, index, string function visible in the code or interface, then run the exact launch command once."
+            },
+            {
+              "id": "QBAS-B-W05-01-S03",
+              "text": "Add the boundary and invalid-case behavior using linear search and sentinel. Deliberately reproduce this weekly mistake—choose a sentinel that is valid data—record the symptom, repair one cause, and rerun the same case."
+            },
+            {
+              "id": "QBAS-B-W05-01-S04",
+              "text": "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "QBAS-B-W05-01-A01",
+              "text": "A learner can follow the README command and run a simple contact or score manager through its stated normal case without an unexplained error."
+            },
+            {
+              "id": "QBAS-B-W05-01-A02",
+              "text": "The finished work visibly demonstrates the Week 5 concepts: array, index, string function, linear search, sentinel."
+            },
+            {
+              "id": "QBAS-B-W05-01-A03",
+              "text": "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results."
+            },
+            {
+              "id": "QBAS-B-W05-01-A04",
+              "text": "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+            }
+          ],
+          "hints": [
+            "If the normal case fails, reduce it to the smallest input or action involving array and inspect the observed value before editing.",
+            "If the boundary or invalid case fails, revisit the guide warning \"choose a sentinel that is valid data\" and change one cause at a time."
+          ],
+          "templates": [
+            {
+              "id": "QBAS-B-W05-01-T01",
+              "label": "README and test-record scaffold",
+              "content": "# Project\n\n## Environment\n## Exact run command\n## Required behavior\n## Test record\n| Case | Input or action | Expected | Actual | Pass? |\n| --- | --- | --- | --- | --- |\n| Normal | | | | |\n| Boundary | | | | |\n| Invalid | | | | |\n\n## Debugging note\n- Failing case:\n- Symptom:\n- Root cause:\n- Repair:\n- Rerun result:\n\n## Known limits\n"
+            }
+          ],
+          "stretch": "After every required case passes, add one small feature that remains directly related to a simple contact or score manager; document and test it as a fourth case.",
+          "learnerGuide": {
+            "summary": "Plan, implement, break, repair, and verify a simple contact or score manager against three named cases.",
+            "whyItMatters": "This converts Week 5 concepts into executable, inspectable evidence instead of a completion claim.",
+            "priorKnowledgeCompetencyIds": [
+              "QBAS-C004"
+            ],
+            "finishedResult": "A runnable a simple contact or score manager, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+            "conceptRefs": [
+              {
+                "conceptId": "QBAS-CONCEPT-W05",
+                "relevance": "The build applies array in a visible program decision."
+              }
+            ],
+            "sessions": [
+              {
+                "id": "QBAS-B-W05-01-SESSION-01",
+                "title": "Make it work",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W05-01-S01",
+                  "QBAS-B-W05-01-S02"
+                ]
+              },
+              {
+                "id": "QBAS-B-W05-01-SESSION-02",
+                "title": "Break, repair, and prove",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W05-01-S03",
+                  "QBAS-B-W05-01-S04"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "proof": {
+        "id": "QBAS-PF-W05",
+        "prompt": "Prove that a simple contact or score manager can be reproduced, survives the three required cases, and includes one evidence-backed repair.",
+        "evidence": [
+          {
+            "id": "QBAS-EV-W05-01",
+            "type": "text",
+            "label": "Exact run command, normal/boundary/invalid results, symptom, cause, repair, and rerun result",
+            "required": true
+          },
+          {
+            "id": "QBAS-EV-W05-02",
+            "type": "confirmation",
+            "label": "I reran all three cases after the repair and checked every acceptance criterion",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "QBAS-RF-W05-01",
+            "prompt": "What evidence helped you find the most important mistake this week?"
+          },
+          {
+            "id": "QBAS-RF-W05-02",
+            "prompt": "What will you test first when a similar program fails again?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "QBAS-W06",
+      "sequence": 6,
+      "phaseId": "QBAS-PH02",
+      "title": "Files and Debugging",
+      "outcome": "Build, debug, explain, and verify a persistent text log.",
+      "competencyIds": [
+        "QBAS-C006"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Learn and actively rehearse file handle, file mode, LINE INPUT, syntax error, runtime error so you can explain, select, debug, and apply them while creating a persistent text log.",
+        "coreMinimum": 1,
+        "resources": [
+          {
+            "resourceId": "QBAS-R-W06-01",
+            "role": "core",
+            "learningRole": "learn",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "purpose": "Learn the exact definitions, applications, and mistakes assessed by the Week 6 Skill Check, then preview the a persistent text log contract."
+          },
+          {
+            "resourceId": "QBAS-R-W06-02",
+            "role": "optional",
+            "learningRole": "practice",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "purpose": "Rehearse the same five weekly concepts through prediction, error recognition, and explanation without affecting progression."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "QBAS-SC-W06",
+        "title": "Files and Debugging Skill Check",
+        "instructions": "Answer ten questions grounded in this week’s five Study concepts. Seven correct answers pass. Answer choices are reshuffled for every new attempt and remain stable while that attempt is in progress.",
+        "passingScore": 70,
+        "optionOrder": "shuffle-per-attempt",
+        "competencyIds": [
+          "QBAS-C006"
+        ],
+        "questions": [
+          {
+            "id": "QBAS-Q-W06-01",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "The Week 6 guide defines file handle. Which description matches that definition?",
+            "options": [
+              {
+                "id": "a",
+                "label": "the intended read or write behavior"
+              },
+              {
+                "id": "b",
+                "label": "a numbered connection to an open file"
+              },
+              {
+                "id": "c",
+                "label": "reads a complete text line"
+              },
+              {
+                "id": "d",
+                "label": "a form the interpreter cannot parse"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "file handle means a numbered connection to an open file; it is used to OPEN path FOR APPEND AS #1. Avoid this mistake: reuse a closed or unopened handle."
+          },
+          {
+            "id": "QBAS-Q-W06-02",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "The learner needs to OPEN path FOR APPEND AS #1. Which concept from the Week 6 guide supports that decision?",
+            "options": [
+              {
+                "id": "a",
+                "label": "file handle"
+              },
+              {
+                "id": "b",
+                "label": "file mode"
+              },
+              {
+                "id": "c",
+                "label": "LINE INPUT"
+              },
+              {
+                "id": "d",
+                "label": "syntax error"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "file handle is the relevant concept. A common mistake is to reuse a closed or unopened handle."
+          },
+          {
+            "id": "QBAS-Q-W06-03",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "During the guide's debugging drill for file mode, which warning identifies the error to avoid?",
+            "options": [
+              {
+                "id": "a",
+                "label": "mix console and file syntax carelessly"
+              },
+              {
+                "id": "b",
+                "label": "change data files before parsing succeeds"
+              },
+              {
+                "id": "c",
+                "label": "assume RUN success once proves every input"
+              },
+              {
+                "id": "d",
+                "label": "use OUTPUT when old content must remain"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "file mode means the intended read or write behavior; it is used to use APPEND to preserve entries. Avoid this mistake: use OUTPUT when old content must remain."
+          },
+          {
+            "id": "QBAS-Q-W06-04",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "A classmate is about to use OUTPUT when old content must remain. Which concept should they review first?",
+            "options": [
+              {
+                "id": "a",
+                "label": "LINE INPUT"
+              },
+              {
+                "id": "b",
+                "label": "syntax error"
+              },
+              {
+                "id": "c",
+                "label": "file mode"
+              },
+              {
+                "id": "d",
+                "label": "runtime error"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "file mode is the relevant concept. A common mistake is to use OUTPUT when old content must remain."
+          },
+          {
+            "id": "QBAS-Q-W06-05",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "Which activity from the Week 6 guide correctly demonstrates LINE INPUT?",
+            "options": [
+              {
+                "id": "a",
+                "label": "read from #1 into ENTRY$"
+              },
+              {
+                "id": "b",
+                "label": "repair a missing quote"
+              },
+              {
+                "id": "c",
+                "label": "handle a missing file path"
+              },
+              {
+                "id": "d",
+                "label": "OPEN path FOR APPEND AS #1"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "LINE INPUT means reads a complete text line; it is used to read from #1 into ENTRY$. Avoid this mistake: mix console and file syntax carelessly."
+          },
+          {
+            "id": "QBAS-Q-W06-06",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "Which weekly concept is demonstrated by this guide activity: read from #1 into ENTRY$?",
+            "options": [
+              {
+                "id": "a",
+                "label": "syntax error"
+              },
+              {
+                "id": "b",
+                "label": "runtime error"
+              },
+              {
+                "id": "c",
+                "label": "file handle"
+              },
+              {
+                "id": "d",
+                "label": "LINE INPUT"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "LINE INPUT is the relevant concept. A common mistake is to mix console and file syntax carelessly."
+          },
+          {
+            "id": "QBAS-Q-W06-07",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "A learner must explain syntax error before coding. Which explanation is accurate?",
+            "options": [
+              {
+                "id": "a",
+                "label": "a failure during execution"
+              },
+              {
+                "id": "b",
+                "label": "a numbered connection to an open file"
+              },
+              {
+                "id": "c",
+                "label": "a form the interpreter cannot parse"
+              },
+              {
+                "id": "d",
+                "label": "the intended read or write behavior"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "syntax error means a form the interpreter cannot parse; it is used to repair a missing quote. Avoid this mistake: change data files before parsing succeeds."
+          },
+          {
+            "id": "QBAS-Q-W06-08",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "The guide describes \"a form the interpreter cannot parse\". Which term does it describe?",
+            "options": [
+              {
+                "id": "a",
+                "label": "runtime error"
+              },
+              {
+                "id": "b",
+                "label": "syntax error"
+              },
+              {
+                "id": "c",
+                "label": "file handle"
+              },
+              {
+                "id": "d",
+                "label": "file mode"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "syntax error is the relevant concept. A common mistake is to change data files before parsing succeeds."
+          },
+          {
+            "id": "QBAS-Q-W06-09",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "Which mistake would show that runtime error was misunderstood?",
+            "options": [
+              {
+                "id": "a",
+                "label": "assume RUN success once proves every input"
+              },
+              {
+                "id": "b",
+                "label": "reuse a closed or unopened handle"
+              },
+              {
+                "id": "c",
+                "label": "use OUTPUT when old content must remain"
+              },
+              {
+                "id": "d",
+                "label": "mix console and file syntax carelessly"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "runtime error means a failure during execution; it is used to handle a missing file path. Avoid this mistake: assume RUN success once proves every input."
+          },
+          {
+            "id": "QBAS-Q-W06-10",
+            "competencyIds": [
+              "QBAS-C006"
+            ],
+            "prompt": "To avoid this error—assume RUN success once proves every input—which weekly concept must the learner apply?",
+            "options": [
+              {
+                "id": "a",
+                "label": "file handle"
+              },
+              {
+                "id": "b",
+                "label": "file mode"
+              },
+              {
+                "id": "c",
+                "label": "runtime error"
+              },
+              {
+                "id": "d",
+                "label": "LINE INPUT"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "runtime error is the relevant concept. A common mistake is to assume RUN success once proves every input."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "QBAS-B-W06-01",
+          "title": "Microbuild: a persistent text log",
+          "required": true,
+          "outcome": "A working, tested a persistent text log.",
+          "competencyIds": [
+            "QBAS-C006"
+          ],
+          "estimatedMinutes": 240,
+          "brief": "Deliverable: a persistent text log. Required behavior: demonstrate file handle, file mode, LINE INPUT, syntax error, runtime error; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+          "steps": [
+            {
+              "id": "QBAS-B-W06-01-S01",
+              "text": "Write a three-case contract for a persistent text log: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding."
+            },
+            {
+              "id": "QBAS-B-W06-01-S02",
+              "text": "Create the runnable source and implement the normal case first. Make file handle, file mode, LINE INPUT visible in the code or interface, then run the exact launch command once."
+            },
+            {
+              "id": "QBAS-B-W06-01-S03",
+              "text": "Add the boundary and invalid-case behavior using syntax error and runtime error. Deliberately reproduce this weekly mistake—assume RUN success once proves every input—record the symptom, repair one cause, and rerun the same case."
+            },
+            {
+              "id": "QBAS-B-W06-01-S04",
+              "text": "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "QBAS-B-W06-01-A01",
+              "text": "A learner can follow the README command and run a persistent text log through its stated normal case without an unexplained error."
+            },
+            {
+              "id": "QBAS-B-W06-01-A02",
+              "text": "The finished work visibly demonstrates the Week 6 concepts: file handle, file mode, LINE INPUT, syntax error, runtime error."
+            },
+            {
+              "id": "QBAS-B-W06-01-A03",
+              "text": "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results."
+            },
+            {
+              "id": "QBAS-B-W06-01-A04",
+              "text": "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+            }
+          ],
+          "hints": [
+            "If the normal case fails, reduce it to the smallest input or action involving file handle and inspect the observed value before editing.",
+            "If the boundary or invalid case fails, revisit the guide warning \"assume RUN success once proves every input\" and change one cause at a time."
+          ],
+          "templates": [
+            {
+              "id": "QBAS-B-W06-01-T01",
+              "label": "README and test-record scaffold",
+              "content": "# Project\n\n## Environment\n## Exact run command\n## Required behavior\n## Test record\n| Case | Input or action | Expected | Actual | Pass? |\n| --- | --- | --- | --- | --- |\n| Normal | | | | |\n| Boundary | | | | |\n| Invalid | | | | |\n\n## Debugging note\n- Failing case:\n- Symptom:\n- Root cause:\n- Repair:\n- Rerun result:\n\n## Known limits\n"
+            }
+          ],
+          "stretch": "After every required case passes, add one small feature that remains directly related to a persistent text log; document and test it as a fourth case.",
+          "learnerGuide": {
+            "summary": "Plan, implement, break, repair, and verify a persistent text log against three named cases.",
+            "whyItMatters": "This converts Week 6 concepts into executable, inspectable evidence instead of a completion claim.",
+            "priorKnowledgeCompetencyIds": [
+              "QBAS-C005"
+            ],
+            "finishedResult": "A runnable a persistent text log, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+            "conceptRefs": [
+              {
+                "conceptId": "QBAS-CONCEPT-W06",
+                "relevance": "The build applies file handle in a visible program decision."
+              }
+            ],
+            "sessions": [
+              {
+                "id": "QBAS-B-W06-01-SESSION-01",
+                "title": "Make it work",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W06-01-S01",
+                  "QBAS-B-W06-01-S02"
+                ]
+              },
+              {
+                "id": "QBAS-B-W06-01-SESSION-02",
+                "title": "Break, repair, and prove",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W06-01-S03",
+                  "QBAS-B-W06-01-S04"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "proof": {
+        "id": "QBAS-PF-W06",
+        "prompt": "Prove that a persistent text log can be reproduced, survives the three required cases, and includes one evidence-backed repair.",
+        "evidence": [
+          {
+            "id": "QBAS-EV-W06-01",
+            "type": "text",
+            "label": "Exact run command, normal/boundary/invalid results, symptom, cause, repair, and rerun result",
+            "required": true
+          },
+          {
+            "id": "QBAS-EV-W06-02",
+            "type": "confirmation",
+            "label": "I reran all three cases after the repair and checked every acceptance criterion",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "QBAS-RF-W06-01",
+            "prompt": "What evidence helped you find the most important mistake this week?"
+          },
+          {
+            "id": "QBAS-RF-W06-02",
+            "prompt": "What will you test first when a similar program fails again?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "QBAS-W07",
+      "sequence": 7,
+      "phaseId": "QBAS-PH02",
+      "title": "Program Structure and Test Cases",
+      "outcome": "Build, debug, explain, and verify a tested menu utility.",
+      "competencyIds": [
+        "QBAS-C007"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Learn and actively rehearse test case, boundary case, dry run, regression, user message so you can explain, select, debug, and apply them while creating a tested menu utility.",
+        "coreMinimum": 1,
+        "resources": [
+          {
+            "resourceId": "QBAS-R-W07-01",
+            "role": "core",
+            "learningRole": "learn",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "purpose": "Learn the exact definitions, applications, and mistakes assessed by the Week 7 Skill Check, then preview the a tested menu utility contract."
+          },
+          {
+            "resourceId": "QBAS-R-W07-02",
+            "role": "optional",
+            "learningRole": "practice",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "purpose": "Rehearse the same five weekly concepts through prediction, error recognition, and explanation without affecting progression."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "QBAS-SC-W07",
+        "title": "Program Structure and Test Cases Skill Check",
+        "instructions": "Answer ten questions grounded in this week’s five Study concepts. Seven correct answers pass. Answer choices are reshuffled for every new attempt and remain stable while that attempt is in progress.",
+        "passingScore": 70,
+        "optionOrder": "shuffle-per-attempt",
+        "competencyIds": [
+          "QBAS-C007"
+        ],
+        "questions": [
+          {
+            "id": "QBAS-Q-W07-01",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "The Week 7 guide defines test case. Which description matches that definition?",
+            "options": [
+              {
+                "id": "a",
+                "label": "input at the edge of allowed data"
+              },
+              {
+                "id": "b",
+                "label": "manual execution on paper"
+              },
+              {
+                "id": "c",
+                "label": "input plus expected behavior"
+              },
+              {
+                "id": "d",
+                "label": "a repaired fault returning"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "test case means input plus expected behavior; it is used to record expected output for choice 1. Avoid this mistake: test only by memory."
+          },
+          {
+            "id": "QBAS-Q-W07-02",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "The learner needs to record expected output for choice 1. Which concept from the Week 7 guide supports that decision?",
+            "options": [
+              {
+                "id": "a",
+                "label": "boundary case"
+              },
+              {
+                "id": "b",
+                "label": "dry run"
+              },
+              {
+                "id": "c",
+                "label": "regression"
+              },
+              {
+                "id": "d",
+                "label": "test case"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "test case is the relevant concept. A common mistake is to test only by memory."
+          },
+          {
+            "id": "QBAS-Q-W07-03",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "During the guide's debugging drill for boundary case, which warning identifies the error to avoid?",
+            "options": [
+              {
+                "id": "a",
+                "label": "test only the middle value"
+              },
+              {
+                "id": "b",
+                "label": "skip state changes"
+              },
+              {
+                "id": "c",
+                "label": "discard old tests after repair"
+              },
+              {
+                "id": "d",
+                "label": "show only a numeric error code"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "boundary case means input at the edge of allowed data; it is used to test score 0 and 100. Avoid this mistake: test only the middle value."
+          },
+          {
+            "id": "QBAS-Q-W07-04",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "A classmate is about to test only the middle value. Which concept should they review first?",
+            "options": [
+              {
+                "id": "a",
+                "label": "dry run"
+              },
+              {
+                "id": "b",
+                "label": "boundary case"
+              },
+              {
+                "id": "c",
+                "label": "regression"
+              },
+              {
+                "id": "d",
+                "label": "user message"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "boundary case is the relevant concept. A common mistake is to test only the middle value."
+          },
+          {
+            "id": "QBAS-Q-W07-05",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "Which activity from the Week 7 guide correctly demonstrates dry run?",
+            "options": [
+              {
+                "id": "a",
+                "label": "repeat the test that exposed it"
+              },
+              {
+                "id": "b",
+                "label": "state valid choices after an error"
+              },
+              {
+                "id": "c",
+                "label": "record expected output for choice 1"
+              },
+              {
+                "id": "d",
+                "label": "trace variables through a branch"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "dry run means manual execution on paper; it is used to trace variables through a branch. Avoid this mistake: skip state changes."
+          },
+          {
+            "id": "QBAS-Q-W07-06",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "Which weekly concept is demonstrated by this guide activity: trace variables through a branch?",
+            "options": [
+              {
+                "id": "a",
+                "label": "regression"
+              },
+              {
+                "id": "b",
+                "label": "dry run"
+              },
+              {
+                "id": "c",
+                "label": "user message"
+              },
+              {
+                "id": "d",
+                "label": "test case"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "dry run is the relevant concept. A common mistake is to skip state changes."
+          },
+          {
+            "id": "QBAS-Q-W07-07",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "A learner must explain regression before coding. Which explanation is accurate?",
+            "options": [
+              {
+                "id": "a",
+                "label": "a repaired fault returning"
+              },
+              {
+                "id": "b",
+                "label": "clear output guiding the next action"
+              },
+              {
+                "id": "c",
+                "label": "input plus expected behavior"
+              },
+              {
+                "id": "d",
+                "label": "input at the edge of allowed data"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "regression means a repaired fault returning; it is used to repeat the test that exposed it. Avoid this mistake: discard old tests after repair."
+          },
+          {
+            "id": "QBAS-Q-W07-08",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "The guide describes \"a repaired fault returning\". Which term does it describe?",
+            "options": [
+              {
+                "id": "a",
+                "label": "user message"
+              },
+              {
+                "id": "b",
+                "label": "test case"
+              },
+              {
+                "id": "c",
+                "label": "regression"
+              },
+              {
+                "id": "d",
+                "label": "boundary case"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "regression is the relevant concept. A common mistake is to discard old tests after repair."
+          },
+          {
+            "id": "QBAS-Q-W07-09",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "Which mistake would show that user message was misunderstood?",
+            "options": [
+              {
+                "id": "a",
+                "label": "test only by memory"
+              },
+              {
+                "id": "b",
+                "label": "show only a numeric error code"
+              },
+              {
+                "id": "c",
+                "label": "test only the middle value"
+              },
+              {
+                "id": "d",
+                "label": "skip state changes"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "user message means clear output guiding the next action; it is used to state valid choices after an error. Avoid this mistake: show only a numeric error code."
+          },
+          {
+            "id": "QBAS-Q-W07-10",
+            "competencyIds": [
+              "QBAS-C007"
+            ],
+            "prompt": "To avoid this error—show only a numeric error code—which weekly concept must the learner apply?",
+            "options": [
+              {
+                "id": "a",
+                "label": "test case"
+              },
+              {
+                "id": "b",
+                "label": "boundary case"
+              },
+              {
+                "id": "c",
+                "label": "dry run"
+              },
+              {
+                "id": "d",
+                "label": "user message"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "user message is the relevant concept. A common mistake is to show only a numeric error code."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "QBAS-B-W07-01",
+          "title": "Microbuild: a tested menu utility",
+          "required": true,
+          "outcome": "A working, tested a tested menu utility.",
+          "competencyIds": [
+            "QBAS-C007"
+          ],
+          "estimatedMinutes": 240,
+          "brief": "Deliverable: a tested menu utility. Required behavior: demonstrate test case, boundary case, dry run, regression, user message; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+          "steps": [
+            {
+              "id": "QBAS-B-W07-01-S01",
+              "text": "Write a three-case contract for a tested menu utility: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding."
+            },
+            {
+              "id": "QBAS-B-W07-01-S02",
+              "text": "Create the runnable source and implement the normal case first. Make test case, boundary case, dry run visible in the code or interface, then run the exact launch command once."
+            },
+            {
+              "id": "QBAS-B-W07-01-S03",
+              "text": "Add the boundary and invalid-case behavior using regression and user message. Deliberately reproduce this weekly mistake—show only a numeric error code—record the symptom, repair one cause, and rerun the same case."
+            },
+            {
+              "id": "QBAS-B-W07-01-S04",
+              "text": "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "QBAS-B-W07-01-A01",
+              "text": "A learner can follow the README command and run a tested menu utility through its stated normal case without an unexplained error."
+            },
+            {
+              "id": "QBAS-B-W07-01-A02",
+              "text": "The finished work visibly demonstrates the Week 7 concepts: test case, boundary case, dry run, regression, user message."
+            },
+            {
+              "id": "QBAS-B-W07-01-A03",
+              "text": "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results."
+            },
+            {
+              "id": "QBAS-B-W07-01-A04",
+              "text": "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+            }
+          ],
+          "hints": [
+            "If the normal case fails, reduce it to the smallest input or action involving test case and inspect the observed value before editing.",
+            "If the boundary or invalid case fails, revisit the guide warning \"show only a numeric error code\" and change one cause at a time."
+          ],
+          "templates": [
+            {
+              "id": "QBAS-B-W07-01-T01",
+              "label": "README and test-record scaffold",
+              "content": "# Project\n\n## Environment\n## Exact run command\n## Required behavior\n## Test record\n| Case | Input or action | Expected | Actual | Pass? |\n| --- | --- | --- | --- | --- |\n| Normal | | | | |\n| Boundary | | | | |\n| Invalid | | | | |\n\n## Debugging note\n- Failing case:\n- Symptom:\n- Root cause:\n- Repair:\n- Rerun result:\n\n## Known limits\n"
+            }
+          ],
+          "stretch": "After every required case passes, add one small feature that remains directly related to a tested menu utility; document and test it as a fourth case.",
+          "learnerGuide": {
+            "summary": "Plan, implement, break, repair, and verify a tested menu utility against three named cases.",
+            "whyItMatters": "This converts Week 7 concepts into executable, inspectable evidence instead of a completion claim.",
+            "priorKnowledgeCompetencyIds": [
+              "QBAS-C006"
+            ],
+            "finishedResult": "A runnable a tested menu utility, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+            "conceptRefs": [
+              {
+                "conceptId": "QBAS-CONCEPT-W07",
+                "relevance": "The build applies test case in a visible program decision."
+              }
+            ],
+            "sessions": [
+              {
+                "id": "QBAS-B-W07-01-SESSION-01",
+                "title": "Make it work",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W07-01-S01",
+                  "QBAS-B-W07-01-S02"
+                ]
+              },
+              {
+                "id": "QBAS-B-W07-01-SESSION-02",
+                "title": "Break, repair, and prove",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W07-01-S03",
+                  "QBAS-B-W07-01-S04"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "proof": {
+        "id": "QBAS-PF-W07",
+        "prompt": "Prove that a tested menu utility can be reproduced, survives the three required cases, and includes one evidence-backed repair.",
+        "evidence": [
+          {
+            "id": "QBAS-EV-W07-01",
+            "type": "text",
+            "label": "Exact run command, normal/boundary/invalid results, symptom, cause, repair, and rerun result",
+            "required": true
+          },
+          {
+            "id": "QBAS-EV-W07-02",
+            "type": "confirmation",
+            "label": "I reran all three cases after the repair and checked every acceptance criterion",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "QBAS-RF-W07-01",
+            "prompt": "What evidence helped you find the most important mistake this week?"
+          },
+          {
+            "id": "QBAS-RF-W07-02",
+            "prompt": "What will you test first when a similar program fails again?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "QBAS-W08",
+      "sequence": 8,
+      "phaseId": "QBAS-PH02",
+      "title": "Independent QBASIC Project and GitHub",
+      "outcome": "Build, debug, explain, and verify a complete menu-driven school utility with source and README pushed to GitHub.",
+      "competencyIds": [
+        "QBAS-C008"
+      ],
+      "estimatedHours": 6,
+      "study": {
+        "objective": "Learn and actively rehearse menu loop, validation, source file, README, Git commit so you can explain, select, debug, and apply them while creating a complete menu-driven school utility with source and README pushed to GitHub.",
+        "coreMinimum": 1,
+        "resources": [
+          {
+            "resourceId": "QBAS-R-W08-01",
+            "role": "core",
+            "learningRole": "learn",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "purpose": "Learn the exact definitions, applications, and mistakes assessed by the Week 8 Skill Check, then preview the a complete menu-driven school utility with source and README pushed to GitHub contract."
+          },
+          {
+            "resourceId": "QBAS-R-W08-02",
+            "role": "optional",
+            "learningRole": "practice",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "purpose": "Rehearse the same five weekly concepts through prediction, error recognition, and explanation without affecting progression."
+          }
+        ]
+      },
+      "skillCheck": {
+        "id": "QBAS-SC-W08",
+        "title": "Independent QBASIC Project and GitHub Skill Check",
+        "instructions": "Answer ten questions grounded in this week’s five Study concepts. Seven correct answers pass. Answer choices are reshuffled for every new attempt and remain stable while that attempt is in progress.",
+        "passingScore": 70,
+        "optionOrder": "shuffle-per-attempt",
+        "competencyIds": [
+          "QBAS-C008"
+        ],
+        "questions": [
+          {
+            "id": "QBAS-Q-W08-01",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "The Week 8 guide defines menu loop. Which description matches that definition?",
+            "options": [
+              {
+                "id": "a",
+                "label": "rejecting unacceptable input"
+              },
+              {
+                "id": "b",
+                "label": "the editable BAS program"
+              },
+              {
+                "id": "c",
+                "label": "setup and run guidance"
+              },
+              {
+                "id": "d",
+                "label": "repeated command selection"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "menu loop means repeated command selection; it is used to return to menu after an action. Avoid this mistake: end after every valid choice."
+          },
+          {
+            "id": "QBAS-Q-W08-02",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "The learner needs to return to menu after an action. Which concept from the Week 8 guide supports that decision?",
+            "options": [
+              {
+                "id": "a",
+                "label": "validation"
+              },
+              {
+                "id": "b",
+                "label": "menu loop"
+              },
+              {
+                "id": "c",
+                "label": "source file"
+              },
+              {
+                "id": "d",
+                "label": "README"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "menu loop is the relevant concept. A common mistake is to end after every valid choice."
+          },
+          {
+            "id": "QBAS-Q-W08-03",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "During the guide's debugging drill for validation, which warning identifies the error to avoid?",
+            "options": [
+              {
+                "id": "a",
+                "label": "commit only screenshots"
+              },
+              {
+                "id": "b",
+                "label": "link to unlicensed binary archives"
+              },
+              {
+                "id": "c",
+                "label": "store invalid values"
+              },
+              {
+                "id": "d",
+                "label": "put unrelated files in one commit"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "validation means rejecting unacceptable input; it is used to re-prompt for an invalid range. Avoid this mistake: store invalid values."
+          },
+          {
+            "id": "QBAS-Q-W08-04",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "A classmate is about to store invalid values. Which concept should they review first?",
+            "options": [
+              {
+                "id": "a",
+                "label": "validation"
+              },
+              {
+                "id": "b",
+                "label": "source file"
+              },
+              {
+                "id": "c",
+                "label": "README"
+              },
+              {
+                "id": "d",
+                "label": "Git commit"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "validation is the relevant concept. A common mistake is to store invalid values."
+          },
+          {
+            "id": "QBAS-Q-W08-05",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "Which activity from the Week 8 guide correctly demonstrates source file?",
+            "options": [
+              {
+                "id": "a",
+                "label": "explain VM, DOSBox, licensed media, and RUN steps"
+              },
+              {
+                "id": "b",
+                "label": "commit the .BAS file"
+              },
+              {
+                "id": "c",
+                "label": "commit after a working feature"
+              },
+              {
+                "id": "d",
+                "label": "return to menu after an action"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "source file means the editable BAS program; it is used to commit the .BAS file. Avoid this mistake: commit only screenshots."
+          },
+          {
+            "id": "QBAS-Q-W08-06",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "Which weekly concept is demonstrated by this guide activity: commit the .BAS file?",
+            "options": [
+              {
+                "id": "a",
+                "label": "README"
+              },
+              {
+                "id": "b",
+                "label": "Git commit"
+              },
+              {
+                "id": "c",
+                "label": "source file"
+              },
+              {
+                "id": "d",
+                "label": "menu loop"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "source file is the relevant concept. A common mistake is to commit only screenshots."
+          },
+          {
+            "id": "QBAS-Q-W08-07",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "A learner must explain README before coding. Which explanation is accurate?",
+            "options": [
+              {
+                "id": "a",
+                "label": "setup and run guidance"
+              },
+              {
+                "id": "b",
+                "label": "a meaningful source snapshot"
+              },
+              {
+                "id": "c",
+                "label": "repeated command selection"
+              },
+              {
+                "id": "d",
+                "label": "rejecting unacceptable input"
+              }
+            ],
+            "correctOptionId": "a",
+            "explanation": "README means setup and run guidance; it is used to explain VM, DOSBox, licensed media, and RUN steps. Avoid this mistake: link to unlicensed binary archives."
+          },
+          {
+            "id": "QBAS-Q-W08-08",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "The guide describes \"setup and run guidance\". Which term does it describe?",
+            "options": [
+              {
+                "id": "a",
+                "label": "Git commit"
+              },
+              {
+                "id": "b",
+                "label": "menu loop"
+              },
+              {
+                "id": "c",
+                "label": "validation"
+              },
+              {
+                "id": "d",
+                "label": "README"
+              }
+            ],
+            "correctOptionId": "d",
+            "explanation": "README is the relevant concept. A common mistake is to link to unlicensed binary archives."
+          },
+          {
+            "id": "QBAS-Q-W08-09",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "Which mistake would show that Git commit was misunderstood?",
+            "options": [
+              {
+                "id": "a",
+                "label": "end after every valid choice"
+              },
+              {
+                "id": "b",
+                "label": "store invalid values"
+              },
+              {
+                "id": "c",
+                "label": "put unrelated files in one commit"
+              },
+              {
+                "id": "d",
+                "label": "commit only screenshots"
+              }
+            ],
+            "correctOptionId": "c",
+            "explanation": "Git commit means a meaningful source snapshot; it is used to commit after a working feature. Avoid this mistake: put unrelated files in one commit."
+          },
+          {
+            "id": "QBAS-Q-W08-10",
+            "competencyIds": [
+              "QBAS-C008"
+            ],
+            "prompt": "To avoid this error—put unrelated files in one commit—which weekly concept must the learner apply?",
+            "options": [
+              {
+                "id": "a",
+                "label": "menu loop"
+              },
+              {
+                "id": "b",
+                "label": "Git commit"
+              },
+              {
+                "id": "c",
+                "label": "validation"
+              },
+              {
+                "id": "d",
+                "label": "source file"
+              }
+            ],
+            "correctOptionId": "b",
+            "explanation": "Git commit is the relevant concept. A common mistake is to put unrelated files in one commit."
+          }
+        ]
+      },
+      "builds": [
+        {
+          "id": "QBAS-B-W08-01",
+          "title": "Independent final: a complete menu-driven school utility with source and README pushed to GitHub",
+          "required": true,
+          "outcome": "A working, tested a complete menu-driven school utility with source and README pushed to GitHub.",
+          "competencyIds": [
+            "QBAS-C008"
+          ],
+          "estimatedMinutes": 240,
+          "brief": "Deliverable: a complete menu-driven school utility with source and README pushed to GitHub. Required behavior: demonstrate menu loop, validation, source file, README, Git commit; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+          "steps": [
+            {
+              "id": "QBAS-B-W08-01-S01",
+              "text": "Write a three-case contract for a complete menu-driven school utility with source and README pushed to GitHub: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding."
+            },
+            {
+              "id": "QBAS-B-W08-01-S02",
+              "text": "Create the runnable source and implement the normal case first. Make menu loop, validation, source file visible in the code or interface, then run the exact launch command once."
+            },
+            {
+              "id": "QBAS-B-W08-01-S03",
+              "text": "Add the boundary and invalid-case behavior using README and Git commit. Deliberately reproduce this weekly mistake—put unrelated files in one commit—record the symptom, repair one cause, and rerun the same case."
+            },
+            {
+              "id": "QBAS-B-W08-01-S04",
+              "text": "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+            }
+          ],
+          "acceptanceCriteria": [
+            {
+              "id": "QBAS-B-W08-01-A01",
+              "text": "A learner can follow the README command and run a complete menu-driven school utility with source and README pushed to GitHub through its stated normal case without an unexplained error."
+            },
+            {
+              "id": "QBAS-B-W08-01-A02",
+              "text": "The finished work visibly demonstrates the Week 8 concepts: menu loop, validation, source file, README, Git commit."
+            },
+            {
+              "id": "QBAS-B-W08-01-A03",
+              "text": "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results."
+            },
+            {
+              "id": "QBAS-B-W08-01-A04",
+              "text": "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+            }
+          ],
+          "hints": [
+            "If the normal case fails, reduce it to the smallest input or action involving menu loop and inspect the observed value before editing.",
+            "If the boundary or invalid case fails, revisit the guide warning \"put unrelated files in one commit\" and change one cause at a time."
+          ],
+          "templates": [
+            {
+              "id": "QBAS-B-W08-01-T01",
+              "label": "README and test-record scaffold",
+              "content": "# Project\n\n## Environment\n## Exact run command\n## Required behavior\n## Test record\n| Case | Input or action | Expected | Actual | Pass? |\n| --- | --- | --- | --- | --- |\n| Normal | | | | |\n| Boundary | | | | |\n| Invalid | | | | |\n\n## Debugging note\n- Failing case:\n- Symptom:\n- Root cause:\n- Repair:\n- Rerun result:\n\n## Known limits\n"
+            }
+          ],
+          "stretch": "After every required case passes, add one small feature that remains directly related to a complete menu-driven school utility with source and README pushed to GitHub; document and test it as a fourth case.",
+          "learnerGuide": {
+            "summary": "Plan, implement, break, repair, and verify a complete menu-driven school utility with source and README pushed to GitHub against three named cases.",
+            "whyItMatters": "This converts Week 8 concepts into executable, inspectable evidence instead of a completion claim.",
+            "priorKnowledgeCompetencyIds": [
+              "QBAS-C007"
+            ],
+            "finishedResult": "A runnable a complete menu-driven school utility with source and README pushed to GitHub, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+            "conceptRefs": [
+              {
+                "conceptId": "QBAS-CONCEPT-W08",
+                "relevance": "The build applies menu loop in a visible program decision."
+              }
+            ],
+            "sessions": [
+              {
+                "id": "QBAS-B-W08-01-SESSION-01",
+                "title": "Make it work",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W08-01-S01",
+                  "QBAS-B-W08-01-S02"
+                ]
+              },
+              {
+                "id": "QBAS-B-W08-01-SESSION-02",
+                "title": "Break, repair, and prove",
+                "estimatedMinutes": 120,
+                "stepIds": [
+                  "QBAS-B-W08-01-S03",
+                  "QBAS-B-W08-01-S04"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "proof": {
+        "id": "QBAS-PF-W08",
+        "prompt": "Prove that a complete menu-driven school utility with source and README pushed to GitHub can be reproduced, survives the three required cases, and includes one evidence-backed repair.",
+        "evidence": [
+          {
+            "id": "QBAS-EV-W08-01",
+            "type": "link",
+            "label": "Public or private GitHub repository URL containing source and README",
+            "required": true
+          },
+          {
+            "id": "QBAS-EV-W08-02",
+            "type": "text",
+            "label": "Exact run command, three expected-versus-actual results, and repaired defect",
+            "required": true
+          }
+        ]
+      },
+      "reflection": {
+        "minimumResponses": 1,
+        "prompts": [
+          {
+            "id": "QBAS-RF-W08-01",
+            "prompt": "What evidence helped you find the most important mistake this week?"
+          },
+          {
+            "id": "QBAS-RF-W08-02",
+            "prompt": "What will you test first when a similar program fails again?"
+          }
+        ]
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "QBAS-PJ01",
+      "title": "Guided Midpoint Project",
+      "outcome": "Complete the Week 4 guided QBASIC Basics program.",
+      "competencyIds": [
+        "QBAS-C001",
+        "QBAS-C002",
+        "QBAS-C003",
+        "QBAS-C004"
+      ],
+      "milestones": [
+        {
+          "id": "QBAS-PJ01-M01",
+          "title": "Guided midpoint build",
+          "weekId": "QBAS-W04",
+          "buildId": "QBAS-B-W04-01"
+        }
+      ]
+    },
+    {
+      "id": "QBAS-PJ02",
+      "title": "Independent Final Project",
+      "outcome": "Design, test, document, and publish a beginner QBASIC Basics program.",
+      "competencyIds": [
+        "QBAS-C001",
+        "QBAS-C002",
+        "QBAS-C003",
+        "QBAS-C004",
+        "QBAS-C005",
+        "QBAS-C006",
+        "QBAS-C007",
+        "QBAS-C008"
+      ],
+      "milestones": [
+        {
+          "id": "QBAS-PJ02-M01",
+          "title": "Independent final build",
+          "weekId": "QBAS-W08",
+          "buildId": "QBAS-B-W08-01"
+        }
+      ]
+    }
+  ],
+  "graduation": {
+    "outcome": "Create, debug, test, explain, and publish a small QBASIC Basics program without step-by-step copying.",
+    "requiredCompetencyIds": [
+      "QBAS-C001",
+      "QBAS-C002",
+      "QBAS-C003",
+      "QBAS-C004",
+      "QBAS-C005",
+      "QBAS-C006",
+      "QBAS-C007",
+      "QBAS-C008"
+    ],
+    "requiredProjectIds": [
+      "QBAS-PJ02"
+    ]
+  }
+}

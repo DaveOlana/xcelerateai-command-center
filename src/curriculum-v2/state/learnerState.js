@@ -6,7 +6,7 @@ import {
 import { getV2WeekProgress, isMeaningfulReflection, isProofEvidenceComplete } from '../runtime/progression.js';
 
 export const V2_LEARNER_STATE_VERSION = 1;
-export const EMPTY_V2_STATE_STORE = Object.freeze({ version: V2_LEARNER_STATE_VERSION, curricula: {} });
+export const EMPTY_V2_STATE_STORE = Object.freeze({ version: V2_LEARNER_STATE_VERSION, curricula: {}, setupCapabilities: {} });
 
 const clone = (value) => structuredClone(value);
 const nowIso = (value) => value || new Date().toISOString();
@@ -24,6 +24,7 @@ export function createCurriculumLearnerState(runtime) {
     builds: {},
     proofs: {},
     reflections: {},
+    setupCapabilities: {},
   };
 }
 
@@ -33,6 +34,7 @@ export function reconcileCurriculumState(storeValue, runtime) {
   const state = existing ? clone(existing) : createCurriculumLearnerState(runtime);
   state.curriculumId = runtime.curriculumId;
   state.lastSeenRevision = runtime.revision;
+  state.setupCapabilities = { ...(state.setupCapabilities || {}), ...store.setupCapabilities };
   const activeStillExists = runtime.indexes.weeksById[state.activeWeekId];
   if (!activeStillExists) {
     state.activeWeekId = runtime.weeks.find((week) => !asArray(state.completedWeekIds).includes(week.id))?.id || runtime.weeks[0]?.id || null;
@@ -45,10 +47,51 @@ export function reconcileCurriculumState(storeValue, runtime) {
 
 export function normalizeV2StateStore(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return clone(EMPTY_V2_STATE_STORE);
+  const curricula = value.curricula && typeof value.curricula === 'object' && !Array.isArray(value.curricula) ? clone(value.curricula) : {};
+  const setupCapabilities = value.setupCapabilities && typeof value.setupCapabilities === 'object' && !Array.isArray(value.setupCapabilities) ? clone(value.setupCapabilities) : {};
+  Object.values(curricula).forEach((state) => Object.assign(setupCapabilities, state?.setupCapabilities || {}));
   return {
     version: V2_LEARNER_STATE_VERSION,
-    curricula: value.curricula && typeof value.curricula === 'object' && !Array.isArray(value.curricula) ? clone(value.curricula) : {},
+    curricula,
+    setupCapabilities,
   };
+}
+
+export function verifySetupCapability(storeValue, capabilityId, options = {}) {
+  if (!capabilityId) return normalizeV2StateStore(storeValue);
+  const store = normalizeV2StateStore(storeValue);
+  const record = {
+    verifiedAt: nowIso(options.verifiedAt),
+    sourceCurriculumId: options.sourceCurriculumId || null,
+    verification: options.verification || 'learner-confirmed',
+  };
+  return {
+    ...store,
+    curricula: Object.fromEntries(Object.entries(store.curricula).map(([id, state]) => [id, {
+      ...state,
+      setupCapabilities: { ...(state.setupCapabilities || {}), [capabilityId]: record },
+    }])),
+    setupCapabilities: {
+      ...store.setupCapabilities,
+      [capabilityId]: record,
+    },
+  };
+}
+
+export function revokeSetupCapability(storeValue, capabilityId) {
+  const store = normalizeV2StateStore(storeValue);
+  const setupCapabilities = { ...store.setupCapabilities };
+  delete setupCapabilities[capabilityId];
+  const curricula = Object.fromEntries(Object.entries(store.curricula).map(([id, state]) => {
+    const next = { ...(state.setupCapabilities || {}) };
+    delete next[capabilityId];
+    return [id, { ...state, setupCapabilities: next }];
+  }));
+  return { ...store, curricula, setupCapabilities };
+}
+
+export function isSetupCapabilityVerified(storeValue, capabilityId) {
+  return Boolean(normalizeV2StateStore(storeValue).setupCapabilities[capabilityId]?.verifiedAt);
 }
 
 export function getCurriculumState(store, curriculumId) {

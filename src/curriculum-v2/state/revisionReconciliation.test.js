@@ -13,6 +13,9 @@ import {
   setV2ReflectionResponse,
   submitV2SkillCheckAttempt,
   resetCurriculumState,
+  isSetupCapabilityVerified,
+  revokeSetupCapability,
+  verifySetupCapability,
 } from './learnerState.js';
 import { createSubmittedAttempt } from '../../utils/skillCheckUtils.js';
 import { getV2ProjectProgress } from '../runtime/projects.js';
@@ -148,4 +151,18 @@ test('V2 learner state survives JSON backup round-trip before revision reconcili
   const state = getCurriculumState(reconciled, 'GOLDEN');
   assert.equal(state.lastSeenRevision, 2);
   assert.equal(state.stageSatisfaction['GOLDEN-W01'].study.satisfied, true);
+});
+
+test('shared setup capability survives course reset and backup-shaped JSON round-trip', () => {
+  const runtime = compileCurriculum(fixture());
+  let store = reconcileCurriculumState(EMPTY_V2_STATE_STORE, runtime);
+  store = verifySetupCapability(store, 'setup.git', {
+    sourceCurriculumId: runtime.curriculumId,
+    verifiedAt: '2026-10-10T10:00:00.000Z',
+  });
+  store = resetCurriculumState(store, runtime.curriculumId);
+  store = JSON.parse(JSON.stringify(store));
+  assert.equal(isSetupCapabilityVerified(store, 'setup.git'), true);
+  store = revokeSetupCapability(store, 'setup.git');
+  assert.equal(isSetupCapabilityVerified(store, 'setup.git'), false);
 });

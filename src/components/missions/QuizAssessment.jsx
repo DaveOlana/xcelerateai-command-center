@@ -40,7 +40,7 @@ export default React.memo(function QuizAssessment({ definition, onSubmit, onLeav
         <fieldset>
           <legend className="max-w-3xl font-heading text-lg font-bold leading-relaxed text-text-primary sm:text-xl">{question.prompt}</legend>
           <div className="mt-6 grid gap-3">
-            {question.options.map((option) => {
+            {question.options.map((option, optionIndex) => {
               const selected = answers[question.id] === option.id;
               return (
                 <label key={option.id} className={`flex cursor-pointer items-center gap-3 rounded-2xl border p-4 transition-all duration-200 focus-within:ring-2 focus-within:ring-brand-violet ${selected ? 'border-brand-violet bg-brand-violet/10' : 'border-border-default bg-bg-surface hover:border-border-strong'}`}>
@@ -53,7 +53,7 @@ export default React.memo(function QuizAssessment({ definition, onSubmit, onLeav
                     className="h-4 w-4 accent-brand-violet"
                   />
                   <span className="flex-1 text-sm font-medium text-text-primary">{option.label}</span>
-                  <span className="text-xs font-bold uppercase text-text-muted">{option.id}</span>
+                  <span className="text-xs font-bold uppercase text-text-muted">{String.fromCharCode(65 + optionIndex)}</span>
                 </label>
               );
             })}

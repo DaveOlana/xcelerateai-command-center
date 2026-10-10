@@ -121,6 +121,22 @@ test('three-way merge enforces reset generation barrier', () => {
   assert.equal(result.unresolvedConflicts[0].type, 'reset_generation_barrier');
 });
 
+test('three-way merge preserves independently verified reusable setup capabilities', () => {
+  const base = envelope();
+  const local = envelope();
+  const remote = envelope();
+  local.curriculumState.setupCapabilities = {
+    'setup.git': { verifiedAt: '2026-10-10T10:00:00.000Z', sourceCurriculumId: 'PYAE', verification: 'learner-confirmed' },
+  };
+  remote.curriculumState.setupCapabilities = {
+    'setup.vscode': { verifiedAt: '2026-10-10T11:00:00.000Z', sourceCurriculumId: 'FEWE', verification: 'learner-confirmed' },
+  };
+
+  const result = mergeCloudStates({ base, local, remote, baseGeneration: 0, localGeneration: 0, remoteGeneration: 0 });
+
+  assert.deepEqual(Object.keys(result.mergedState.curriculumState.setupCapabilities).sort(), ['setup.git', 'setup.vscode']);
+});
+
 test('stage satisfaction and completed resources cannot regress inside one generation', () => {
   const base = envelope();
   const local = envelope();

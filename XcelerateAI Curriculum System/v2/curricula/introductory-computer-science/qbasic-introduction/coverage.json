@@ -1,0 +1,158 @@
+[
+  {
+    "competencyId": "QBAS-C001",
+    "taughtIn": [
+      "QBAS-W01"
+    ],
+    "practicedIn": [
+      "QBAS-W01"
+    ],
+    "assessedIn": [
+      "QBAS-SC-W01"
+    ],
+    "appliedIn": [
+      "QBAS-B-W01-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "QBAS-C002",
+    "taughtIn": [
+      "QBAS-W02"
+    ],
+    "practicedIn": [
+      "QBAS-W02"
+    ],
+    "assessedIn": [
+      "QBAS-SC-W02"
+    ],
+    "appliedIn": [
+      "QBAS-B-W02-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "QBAS-C003",
+    "taughtIn": [
+      "QBAS-W03"
+    ],
+    "practicedIn": [
+      "QBAS-W03"
+    ],
+    "assessedIn": [
+      "QBAS-SC-W03"
+    ],
+    "appliedIn": [
+      "QBAS-B-W03-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "QBAS-C004",
+    "taughtIn": [
+      "QBAS-W04"
+    ],
+    "practicedIn": [
+      "QBAS-W04"
+    ],
+    "assessedIn": [
+      "QBAS-SC-W04"
+    ],
+    "appliedIn": [
+      "QBAS-B-W04-01"
+    ],
+    "projectUse": [
+      "QBAS-PJ01-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "QBAS-C005",
+    "taughtIn": [
+      "QBAS-W05"
+    ],
+    "practicedIn": [
+      "QBAS-W05"
+    ],
+    "assessedIn": [
+      "QBAS-SC-W05"
+    ],
+    "appliedIn": [
+      "QBAS-B-W05-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "QBAS-C006",
+    "taughtIn": [
+      "QBAS-W06"
+    ],
+    "practicedIn": [
+      "QBAS-W06"
+    ],
+    "assessedIn": [
+      "QBAS-SC-W06"
+    ],
+    "appliedIn": [
+      "QBAS-B-W06-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "QBAS-C007",
+    "taughtIn": [
+      "QBAS-W07"
+    ],
+    "practicedIn": [
+      "QBAS-W07"
+    ],
+    "assessedIn": [
+      "QBAS-SC-W07"
+    ],
+    "appliedIn": [
+      "QBAS-B-W07-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "QBAS-C008",
+    "taughtIn": [
+      "QBAS-W08"
+    ],
+    "practicedIn": [
+      "QBAS-W08"
+    ],
+    "assessedIn": [
+      "QBAS-SC-W08"
+    ],
+    "appliedIn": [
+      "QBAS-B-W08-01"
+    ],
+    "projectUse": [
+      "QBAS-PJ02-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  }
+]

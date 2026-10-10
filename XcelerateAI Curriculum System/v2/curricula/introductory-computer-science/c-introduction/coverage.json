@@ -1,0 +1,158 @@
+[
+  {
+    "competencyId": "CLNG-C001",
+    "taughtIn": [
+      "CLNG-W01"
+    ],
+    "practicedIn": [
+      "CLNG-W01"
+    ],
+    "assessedIn": [
+      "CLNG-SC-W01"
+    ],
+    "appliedIn": [
+      "CLNG-B-W01-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "CLNG-C002",
+    "taughtIn": [
+      "CLNG-W02"
+    ],
+    "practicedIn": [
+      "CLNG-W02"
+    ],
+    "assessedIn": [
+      "CLNG-SC-W02"
+    ],
+    "appliedIn": [
+      "CLNG-B-W02-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "CLNG-C003",
+    "taughtIn": [
+      "CLNG-W03"
+    ],
+    "practicedIn": [
+      "CLNG-W03"
+    ],
+    "assessedIn": [
+      "CLNG-SC-W03"
+    ],
+    "appliedIn": [
+      "CLNG-B-W03-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "CLNG-C004",
+    "taughtIn": [
+      "CLNG-W04"
+    ],
+    "practicedIn": [
+      "CLNG-W04"
+    ],
+    "assessedIn": [
+      "CLNG-SC-W04"
+    ],
+    "appliedIn": [
+      "CLNG-B-W04-01"
+    ],
+    "projectUse": [
+      "CLNG-PJ01-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "CLNG-C005",
+    "taughtIn": [
+      "CLNG-W05"
+    ],
+    "practicedIn": [
+      "CLNG-W05"
+    ],
+    "assessedIn": [
+      "CLNG-SC-W05"
+    ],
+    "appliedIn": [
+      "CLNG-B-W05-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "CLNG-C006",
+    "taughtIn": [
+      "CLNG-W06"
+    ],
+    "practicedIn": [
+      "CLNG-W06"
+    ],
+    "assessedIn": [
+      "CLNG-SC-W06"
+    ],
+    "appliedIn": [
+      "CLNG-B-W06-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "CLNG-C007",
+    "taughtIn": [
+      "CLNG-W07"
+    ],
+    "practicedIn": [
+      "CLNG-W07"
+    ],
+    "assessedIn": [
+      "CLNG-SC-W07"
+    ],
+    "appliedIn": [
+      "CLNG-B-W07-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "CLNG-C008",
+    "taughtIn": [
+      "CLNG-W08"
+    ],
+    "practicedIn": [
+      "CLNG-W08"
+    ],
+    "assessedIn": [
+      "CLNG-SC-W08"
+    ],
+    "appliedIn": [
+      "CLNG-B-W08-01"
+    ],
+    "projectUse": [
+      "CLNG-PJ02-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  }
+]

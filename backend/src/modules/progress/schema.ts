@@ -68,6 +68,11 @@ const buildRecord = z.object({ completedAt: timestamp, competencyIds: idArray.op
 const proofValue = z.union([z.boolean(), z.string().max(50_000)]);
 const proofRecord = z.object({ evidence: limitedRecord(z.object({ value: proofValue, updatedAt: timestamp }).strict(), 500) }).strict();
 const reflectionRecord = z.object({ response: z.string().max(50_000), savedAt: timestamp }).strict();
+const setupCapabilityRecord = z.object({
+  verifiedAt: timestamp,
+  sourceCurriculumId: identifier.nullable(),
+  verification: z.string().min(1).max(100),
+}).strict();
 
 const curriculumState = z.object({
   curriculumId: identifier,
@@ -80,6 +85,7 @@ const curriculumState = z.object({
   builds: limitedRecord(buildRecord, 500),
   proofs: limitedRecord(proofRecord, 250),
   reflections: limitedRecord(limitedRecord(reflectionRecord, 100), 250),
+  setupCapabilities: limitedRecord(setupCapabilityRecord, 100).optional().default({}),
 }).strict();
 
 const artifactScalar = z.union([z.string().max(50_000), z.number().finite(), z.boolean(), z.null()]);

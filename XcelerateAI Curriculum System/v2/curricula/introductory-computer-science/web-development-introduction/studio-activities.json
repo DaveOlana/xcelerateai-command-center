@@ -1,0 +1,303 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "WEBD",
+  "revision": 1,
+  "activities": [
+    {
+      "weekId": "WEBD-W01",
+      "title": "Microbuild: a semantic personal profile page",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a semantic personal profile page. Required behavior: demonstrate HTML element, attribute, document outline, link, validator; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 1 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a semantic personal profile page, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "The setup module and basic computer literacy.",
+        "finished": "A learner can follow the README command and run a semantic personal profile page through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 1 concepts: HTML element, attribute, document outline, link, validator. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a semantic personal profile page: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make HTML element, attribute, document outline visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using link and validator. Deliberately reproduce this weekly mistake—treat a rendered page as proof of valid structure—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a semantic personal profile page through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 1 concepts: HTML element, attribute, document outline, link, validator.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-B-W01-01"
+      }
+    },
+    {
+      "weekId": "WEBD-W02",
+      "title": "Microbuild: a styled profile with a coherent visual system",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a styled profile with a coherent visual system. Required behavior: demonstrate selector, cascade, box model, custom property, contrast; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 2 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a styled profile with a coherent visual system, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 1 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a styled profile with a coherent visual system through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 2 concepts: selector, cascade, box model, custom property, contrast. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a styled profile with a coherent visual system: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make selector, cascade, box model visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using custom property and contrast. Deliberately reproduce this weekly mistake—use low opacity for essential labels—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a styled profile with a coherent visual system through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 2 concepts: selector, cascade, box model, custom property, contrast.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-B-W02-01"
+      }
+    },
+    {
+      "weekId": "WEBD-W03",
+      "title": "Microbuild: a mobile-first responsive information page",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a mobile-first responsive information page. Required behavior: demonstrate viewport, media query, flexbox, grid, mobile first; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 3 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a mobile-first responsive information page, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 2 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a mobile-first responsive information page through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 3 concepts: viewport, media query, flexbox, grid, mobile first. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a mobile-first responsive information page: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make viewport, media query, flexbox visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using grid and mobile first. Deliberately reproduce this weekly mistake—hide core content on small screens—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a mobile-first responsive information page through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 3 concepts: viewport, media query, flexbox, grid, mobile first.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-B-W03-01"
+      }
+    },
+    {
+      "weekId": "WEBD-W04",
+      "title": "Guided midpoint: an interactive tip or score calculator",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: an interactive tip or score calculator. Required behavior: demonstrate DOM, event, function, value conversion, textContent; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 4 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable an interactive tip or score calculator, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 3 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run an interactive tip or score calculator through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 4 concepts: DOM, event, function, value conversion, textContent. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for an interactive tip or score calculator: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make DOM, event, function visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using value conversion and textContent. Deliberately reproduce this weekly mistake—insert user text with innerHTML—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run an interactive tip or score calculator through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 4 concepts: DOM, event, function, value conversion, textContent.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-B-W04-01"
+      }
+    },
+    {
+      "weekId": "WEBD-W05",
+      "title": "Microbuild: a filterable task list",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a filterable task list. Required behavior: demonstrate state, render, dataset, array method, event delegation; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 5 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a filterable task list, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 4 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a filterable task list through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 5 concepts: state, render, dataset, array method, event delegation. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a filterable task list: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make state, render, dataset visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using array method and event delegation. Deliberately reproduce this weekly mistake—attach duplicate handlers after every render—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a filterable task list through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 5 concepts: state, render, dataset, array method, event delegation.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-B-W05-01"
+      }
+    },
+    {
+      "weekId": "WEBD-W06",
+      "title": "Microbuild: an accessible registration form",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: an accessible registration form. Required behavior: demonstrate label association, native validation, focus order, error message, submit event; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 6 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable an accessible registration form, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 5 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run an accessible registration form through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 6 concepts: label association, native validation, focus order, error message, submit event. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for an accessible registration form: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make label association, native validation, focus order visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using error message and submit event. Deliberately reproduce this weekly mistake—listen only for button clicks—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run an accessible registration form through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 6 concepts: label association, native validation, focus order, error message, submit event.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-B-W06-01"
+      }
+    },
+    {
+      "weekId": "WEBD-W07",
+      "title": "Microbuild: a small data viewer with loading and error states",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a small data viewer with loading and error states. Required behavior: demonstrate HTTP response, promise, JSON parsing, loading state, DevTools network panel; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 7 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a small data viewer with loading and error states, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 6 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a small data viewer with loading and error states through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 7 concepts: HTTP response, promise, JSON parsing, loading state, DevTools network panel. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a small data viewer with loading and error states: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make HTTP response, promise, JSON parsing visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using loading state and DevTools network panel. Deliberately reproduce this weekly mistake—guess whether the request ran—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a small data viewer with loading and error states through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 7 concepts: HTTP response, promise, JSON parsing, loading state, DevTools network panel.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-B-W07-01"
+      }
+    },
+    {
+      "weekId": "WEBD-W08",
+      "title": "Independent final: an accessible responsive interactive site deployed with GitHub Pages",
+      "scaffolding": "independent",
+      "contract": {
+        "doing": "Deliverable: an accessible responsive interactive site deployed with GitHub Pages. Required behavior: demonstrate relative URL, deployment, accessibility audit, README, commit history; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 8 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable an accessible responsive interactive site deployed with GitHub Pages, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 7 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run an accessible responsive interactive site deployed with GitHub Pages through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 8 concepts: relative URL, deployment, accessibility audit, README, commit history. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for an accessible responsive interactive site deployed with GitHub Pages: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make relative URL, deployment, accessibility audit visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using README and commit history. Deliberately reproduce this weekly mistake—make one unexplained final upload—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run an accessible responsive interactive site deployed with GitHub Pages through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 8 concepts: relative URL, deployment, accessibility audit, README, commit history.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-B-W08-01"
+      }
+    }
+  ]
+}

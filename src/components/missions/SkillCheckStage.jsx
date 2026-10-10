@@ -6,6 +6,7 @@ import {
   getAssessmentRecord,
   isQuizSkillCheck,
   isRecoveryLocked,
+  prepareSkillCheckAttempt,
 } from '../../utils/skillCheckUtils.js';
 import QuizAssessment from './QuizAssessment';
 import SkillCheckResults from './SkillCheckResults';
@@ -76,6 +77,11 @@ export default function SkillCheckStage({
     : null;
   const latestAttempt = record?.attempts?.[record.attempts.length - 1] || null;
   const locked = isRecoveryLocked(record);
+  const attemptNumber = (record?.attempts?.length || 0) + 1;
+  const attemptDefinition = React.useMemo(
+    () => prepareSkillCheckAttempt(definition, attemptNumber),
+    [definition, attemptNumber],
+  );
 
   React.useEffect(() => () => onAssessmentStateChange?.(false), [onAssessmentStateChange]);
 
@@ -101,9 +107,9 @@ export default function SkillCheckStage({
 
   const submit = (answers) => {
     const attempt = createSubmittedAttempt({
-      definition,
+      definition: attemptDefinition,
       answers,
-      attemptNumber: (record?.attempts?.length || 0) + 1,
+      attemptNumber,
     });
     if (onSubmitAttempt) onSubmitAttempt(attempt);
     else submitQuizAttempt({ roadmapId, skillCheckId: definition.skillCheckId, attempt });
@@ -112,7 +118,7 @@ export default function SkillCheckStage({
     setActive(false);
   };
 
-  if (assessmentActive) return <QuizAssessment definition={definition} onSubmit={submit} onLeave={leave} />;
+  if (assessmentActive) return <QuizAssessment definition={attemptDefinition} onSubmit={submit} onLeave={leave} />;
 
   if (selectedAttempt) {
     const isAlreadyPersisted = record?.attempts?.some((attempt) => attempt.attemptId === selectedAttempt.attemptId);

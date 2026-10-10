@@ -1,0 +1,303 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "CLNG",
+  "revision": 1,
+  "activities": [
+    {
+      "weekId": "CLNG-W01",
+      "title": "Microbuild: a labelled arithmetic program",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a labelled arithmetic program. Required behavior: demonstrate compiler, main, header, variable type, printf format; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 1 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a labelled arithmetic program, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "The setup module and basic computer literacy.",
+        "finished": "A learner can follow the README command and run a labelled arithmetic program through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 1 concepts: compiler, main, header, variable type, printf format. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a labelled arithmetic program: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make compiler, main, header visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using variable type and printf format. Deliberately reproduce this weekly mistake—supply fewer arguments than placeholders—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a labelled arithmetic program through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 1 concepts: compiler, main, header, variable type, printf format.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-B-W01-01"
+      }
+    },
+    {
+      "weekId": "CLNG-W02",
+      "title": "Microbuild: a validated calculator",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a validated calculator. Required behavior: demonstrate scanf result, address operator, integer division, if statement, logical operator; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 2 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a validated calculator, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 1 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a validated calculator through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 2 concepts: scanf result, address operator, integer division, if statement, logical operator. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a validated calculator: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make scanf result, address operator, integer division visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using if statement and logical operator. Deliberately reproduce this weekly mistake—confuse bitwise & with logical &&—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a validated calculator through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 2 concepts: scanf result, address operator, integer division, if statement, logical operator.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-B-W02-01"
+      }
+    },
+    {
+      "weekId": "CLNG-W03",
+      "title": "Microbuild: a number statistics program",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a number statistics program. Required behavior: demonstrate for loop, while loop, accumulator, counter, trace table; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 3 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a number statistics program, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 2 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a number statistics program through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 3 concepts: for loop, while loop, accumulator, counter, trace table. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a number statistics program: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make for loop, while loop, accumulator visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using counter and trace table. Deliberately reproduce this weekly mistake—guess loop output without following state—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a number statistics program through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 3 concepts: for loop, while loop, accumulator, counter, trace table.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-B-W03-01"
+      }
+    },
+    {
+      "weekId": "CLNG-W04",
+      "title": "Guided midpoint: a multi-file calculation toolkit",
+      "scaffolding": "guided",
+      "contract": {
+        "doing": "Deliverable: a multi-file calculation toolkit. Required behavior: demonstrate function prototype, parameter, return value, translation unit, linker; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 4 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a multi-file calculation toolkit, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 3 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a multi-file calculation toolkit through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 4 concepts: function prototype, parameter, return value, translation unit, linker. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a multi-file calculation toolkit: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make function prototype, parameter, return value visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using translation unit and linker. Deliberately reproduce this weekly mistake—debug a missing symbol as a syntax error—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a multi-file calculation toolkit through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 4 concepts: function prototype, parameter, return value, translation unit, linker.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-B-W04-01"
+      }
+    },
+    {
+      "weekId": "CLNG-W05",
+      "title": "Microbuild: a text and score analyzer",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a text and score analyzer. Required behavior: demonstrate array, array length, C string, fgets, off-by-one; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 5 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a text and score analyzer, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 4 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a text and score analyzer through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 5 concepts: array, array length, C string, fgets, off-by-one. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a text and score analyzer: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make array, array length, C string visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using fgets and off-by-one. Deliberately reproduce this weekly mistake—loop through index <= length—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a text and score analyzer through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 5 concepts: array, array length, C string, fgets, off-by-one.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-B-W05-01"
+      }
+    },
+    {
+      "weekId": "CLNG-W06",
+      "title": "Microbuild: a structured contact manager",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a structured contact manager. Required behavior: demonstrate pointer, dereference, struct, member operator, lifetime; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 6 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a structured contact manager, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 5 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a structured contact manager through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 6 concepts: pointer, dereference, struct, member operator, lifetime. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a structured contact manager: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make pointer, dereference, struct visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using member operator and lifetime. Deliberately reproduce this weekly mistake—keep pointers after their object expires—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a structured contact manager through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 6 concepts: pointer, dereference, struct, member operator, lifetime.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-B-W06-01"
+      }
+    },
+    {
+      "weekId": "CLNG-W07",
+      "title": "Microbuild: a persistent log analyzer",
+      "scaffolding": "supported",
+      "contract": {
+        "doing": "Deliverable: a persistent log analyzer. Required behavior: demonstrate FILE pointer, file mode, EOF handling, stderr, warning; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 7 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a persistent log analyzer, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 6 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a persistent log analyzer through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 7 concepts: FILE pointer, file mode, EOF handling, stderr, warning. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a persistent log analyzer: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make FILE pointer, file mode, EOF handling visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using stderr and warning. Deliberately reproduce this weekly mistake—ignore warnings because compilation succeeded—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a persistent log analyzer through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 7 concepts: FILE pointer, file mode, EOF handling, stderr, warning.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-B-W07-01"
+      }
+    },
+    {
+      "weekId": "CLNG-W08",
+      "title": "Independent final: a robust terminal record or quiz program published to GitHub",
+      "scaffolding": "independent",
+      "contract": {
+        "doing": "Deliverable: a robust terminal record or quiz program published to GitHub. Required behavior: demonstrate interface contract, input validation, test fixture, README, commit; complete one normal, one boundary, and one invalid case; and keep a short expected-versus-actual test record. Evidence: the exact run command, the repaired defect, the three final results, and an honest README.",
+        "why": "This converts Week 8 concepts into executable, inspectable evidence instead of a completion claim.",
+        "output": "A runnable a robust terminal record or quiz program published to GitHub, a three-case expected-versus-actual test record, a specific debugging note, and reproducible README instructions.",
+        "tools": "The verified course environment, terminal, editor or IDE, Git, and the visible Build instructions.",
+        "estimatedMinutes": 240,
+        "prerequisites": "Completed Week 7 or equivalent verified knowledge.",
+        "finished": "A learner can follow the README command and run a robust terminal record or quiz program published to GitHub through its stated normal case without an unexplained error. The finished work visibly demonstrates the Week 8 concepts: interface contract, input validation, test fixture, README, commit. The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results. The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit.",
+        "submission": "Complete the Week Proof only after every acceptance criterion passes."
+      },
+      "steps": [
+        "Write a three-case contract for a robust terminal record or quiz program published to GitHub: one normal case, one boundary case, and one invalid case. For each, record the input or action and the expected result before coding.",
+        "Create the runnable source and implement the normal case first. Make interface contract, input validation, test fixture visible in the code or interface, then run the exact launch command once.",
+        "Add the boundary and invalid-case behavior using README and commit. Deliberately reproduce this weekly mistake—commit compiler binaries and secrets—record the symptom, repair one cause, and rerun the same case.",
+        "Run all three contract cases again. In README, record the environment, exact run command, expected versus actual results, repaired defect, and one known limit."
+      ],
+      "contextualReferences": [],
+      "checklist": [
+        "A learner can follow the README command and run a robust terminal record or quiz program published to GitHub through its stated normal case without an unexplained error.",
+        "The finished work visibly demonstrates the Week 8 concepts: interface contract, input validation, test fixture, README, commit.",
+        "The test record lists normal, boundary, and invalid inputs or actions with both expected and actual results.",
+        "The debugging note names the failing case, observed symptom, root cause, single repair, successful rerun, and one known limit."
+      ],
+      "stuck": "Reproduce the smallest failure, inspect values or diagnostics, return to the exact Core section, and change one cause at a time.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "All language terms appear in the Core guide before this Build."
+      },
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-B-W08-01"
+      }
+    }
+  ]
+}

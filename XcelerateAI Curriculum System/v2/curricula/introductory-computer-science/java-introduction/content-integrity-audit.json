@@ -1,0 +1,2950 @@
+{
+  "schemaVersion": "1.0",
+  "curriculumId": "JAVA",
+  "revision": 1,
+  "auditedAt": "2026-10-10T12:00:00.000Z",
+  "targetLearner": "A tertiary fresher with basic computer literacy and no assumed programming experience.",
+  "resourceAudits": [
+    {
+      "resourceId": "JAVA-R-W01-01",
+      "weekId": "JAVA-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-1",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "JDK, Classes, and First Output learner guide",
+          "url": "/curriculum-guides/java-introduction.html#week-1",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/getting-started/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JAVA-R-W01-02",
+      "weekId": "JAVA-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-1-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "JDK, Classes, and First Output concept practice",
+          "url": "/curriculum-guides/java-introduction.html#week-1-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/getting-started/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JAVA-R-W02-01",
+      "weekId": "JAVA-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-2",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Types, Variables, and Input learner guide",
+          "url": "/curriculum-guides/java-introduction.html#week-2",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/language-basics/variables/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JAVA-R-W02-02",
+      "weekId": "JAVA-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-2-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Types, Variables, and Input concept practice",
+          "url": "/curriculum-guides/java-introduction.html#week-2-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/language-basics/variables/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JAVA-R-W03-01",
+      "weekId": "JAVA-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-3",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Conditions and Loops learner guide",
+          "url": "/curriculum-guides/java-introduction.html#week-3",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/language-basics/controlling-flow/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JAVA-R-W03-02",
+      "weekId": "JAVA-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-3-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Conditions and Loops concept practice",
+          "url": "/curriculum-guides/java-introduction.html#week-3-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/language-basics/controlling-flow/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JAVA-R-W04-01",
+      "weekId": "JAVA-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-4",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Methods and Decomposition learner guide",
+          "url": "/curriculum-guides/java-introduction.html#week-4",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/classes-objects/more-on-methods/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JAVA-R-W04-02",
+      "weekId": "JAVA-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-4-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Methods and Decomposition concept practice",
+          "url": "/curriculum-guides/java-introduction.html#week-4-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/classes-objects/more-on-methods/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JAVA-R-W05-01",
+      "weekId": "JAVA-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-5",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Arrays and ArrayList learner guide",
+          "url": "/curriculum-guides/java-introduction.html#week-5",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/api/collections-framework/array-list/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JAVA-R-W05-02",
+      "weekId": "JAVA-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-5-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Arrays and ArrayList concept practice",
+          "url": "/curriculum-guides/java-introduction.html#week-5-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/api/collections-framework/array-list/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JAVA-R-W06-01",
+      "weekId": "JAVA-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-6",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Classes and Objects learner guide",
+          "url": "/curriculum-guides/java-introduction.html#week-6",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/classes-objects/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JAVA-R-W06-02",
+      "weekId": "JAVA-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-6-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Classes and Objects concept practice",
+          "url": "/curriculum-guides/java-introduction.html#week-6-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/classes-objects/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JAVA-R-W07-01",
+      "weekId": "JAVA-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-7",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Exceptions, Files, and Tests learner guide",
+          "url": "/curriculum-guides/java-introduction.html#week-7",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/java-io/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JAVA-R-W07-02",
+      "weekId": "JAVA-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-7-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Exceptions, Files, and Tests concept practice",
+          "url": "/curriculum-guides/java-introduction.html#week-7-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://dev.java/learn/java-io/",
+          "provider": "dev.java",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JAVA-R-W08-01",
+      "weekId": "JAVA-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-8",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent Java Project and GitHub learner guide",
+          "url": "/curriculum-guides/java-introduction.html#week-8",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JAVA-R-W08-02",
+      "weekId": "JAVA-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-8-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent Java Project and GitHub concept practice",
+          "url": "/curriculum-guides/java-introduction.html#week-8-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JAVA-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    }
+  ],
+  "questionAudits": [
+    {
+      "questionId": "JAVA-Q-W01-01",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W01-02",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W01-03",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W01-04",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JAVA-Q-W01-05",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W01-06",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W01-07",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W01-08",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W01-09",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W01-10",
+      "weekId": "JAVA-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-1-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JAVA-Q-W02-01",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W02-02",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W02-03",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W02-04",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JAVA-Q-W02-05",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W02-06",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W02-07",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W02-08",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W02-09",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W02-10",
+      "weekId": "JAVA-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-2-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JAVA-Q-W03-01",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W03-02",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W03-03",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W03-04",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JAVA-Q-W03-05",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W03-06",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W03-07",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W03-08",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W03-09",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W03-10",
+      "weekId": "JAVA-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-3-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JAVA-Q-W04-01",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W04-02",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W04-03",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W04-04",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JAVA-Q-W04-05",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W04-06",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W04-07",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W04-08",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W04-09",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W04-10",
+      "weekId": "JAVA-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-4-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JAVA-Q-W05-01",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W05-02",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W05-03",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W05-04",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JAVA-Q-W05-05",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W05-06",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W05-07",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W05-08",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W05-09",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W05-10",
+      "weekId": "JAVA-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-5-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JAVA-Q-W06-01",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W06-02",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W06-03",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W06-04",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JAVA-Q-W06-05",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W06-06",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W06-07",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W06-08",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W06-09",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W06-10",
+      "weekId": "JAVA-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-6-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JAVA-Q-W07-01",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W07-02",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W07-03",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W07-04",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JAVA-Q-W07-05",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W07-06",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W07-07",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W07-08",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W07-09",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W07-10",
+      "weekId": "JAVA-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-7-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JAVA-Q-W08-01",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W08-02",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W08-03",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W08-04",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JAVA-Q-W08-05",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W08-06",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JAVA-Q-W08-07",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W08-08",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JAVA-Q-W08-09",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JAVA-Q-W08-10",
+      "weekId": "JAVA-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JAVA-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JAVA-AT-8-10",
+      "assessmentType": "error prevention"
+    }
+  ],
+  "buildAudits": [
+    {
+      "buildId": "JAVA-B-W01-01",
+      "weekId": "JAVA-W01",
+      "dependencies": [
+        {
+          "name": "JAVA-C001",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JAVA-B-W02-01",
+      "weekId": "JAVA-W02",
+      "dependencies": [
+        {
+          "name": "JAVA-C002",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JAVA-B-W03-01",
+      "weekId": "JAVA-W03",
+      "dependencies": [
+        {
+          "name": "JAVA-C003",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JAVA-B-W04-01",
+      "weekId": "JAVA-W04",
+      "dependencies": [
+        {
+          "name": "JAVA-C004",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JAVA-B-W05-01",
+      "weekId": "JAVA-W05",
+      "dependencies": [
+        {
+          "name": "JAVA-C005",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JAVA-B-W06-01",
+      "weekId": "JAVA-W06",
+      "dependencies": [
+        {
+          "name": "JAVA-C006",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JAVA-B-W07-01",
+      "weekId": "JAVA-W07",
+      "dependencies": [
+        {
+          "name": "JAVA-C007",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JAVA-B-W08-01",
+      "weekId": "JAVA-W08",
+      "dependencies": [
+        {
+          "name": "JAVA-C008",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    }
+  ],
+  "weekReadiness": [
+    {
+      "weekId": "JAVA-W01",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JAVA-W02",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JAVA-W03",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JAVA-W04",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JAVA-W05",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JAVA-W06",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JAVA-W07",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JAVA-W08",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    }
+  ],
+  "semanticReview": {
+    "status": "PASS",
+    "method": "Author-led review of the profession boundary, weekly prerequisite chain, every fact pair, distractor family, Build dependency, proof demand, and official reference. Deterministic validators only verify the serialized evidence; they do not create this approval.",
+    "findingsReviewed": [
+      "Every week teaches before assessing and builds immediately after assessment.",
+      "Ten questions assess explanation and application selection while coding remains in Build.",
+      "The sequence grows from syntax to structured independent work without frameworks or hidden algebra.",
+      "Every course ends with GitHub publication; setup remains outside the 48 instructional hours."
+    ],
+    "adversarialResult": "No untaught assessment dependency or hidden Build prerequisite remains."
+  },
+  "assessmentCoverageMap": {
+    "entries": [
+      {
+        "questionId": "JAVA-Q-W01-01",
+        "targetId": "JAVA-AT-1-1",
+        "learningTarget": "The Week 1 guide defines JDK. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-02",
+        "targetId": "JAVA-AT-1-2",
+        "learningTarget": "The learner needs to use javac and java through the IDE. Which concept from the Week 1 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-03",
+        "targetId": "JAVA-AT-1-3",
+        "learningTarget": "During the guide's debugging drill for class, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-04",
+        "targetId": "JAVA-AT-1-4",
+        "learningTarget": "A classmate is about to save a public Main class in Other.java. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-05",
+        "targetId": "JAVA-AT-1-5",
+        "learningTarget": "Which activity from the Week 1 guide correctly demonstrates main method?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-06",
+        "targetId": "JAVA-AT-1-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: run public static void main?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-07",
+        "targetId": "JAVA-AT-1-7",
+        "learningTarget": "A learner must explain statement terminator before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-08",
+        "targetId": "JAVA-AT-1-8",
+        "learningTarget": "The guide describes \"the semicolon ending most statements\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-09",
+        "targetId": "JAVA-AT-1-9",
+        "learningTarget": "Which mistake would show that System.out was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W01-10",
+        "targetId": "JAVA-AT-1-10",
+        "learningTarget": "To avoid this error—expect println to read input—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W01",
+          "resourceIds": [
+            "JAVA-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-01",
+        "targetId": "JAVA-AT-2-1",
+        "learningTarget": "The Week 2 guide defines primitive type. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-02",
+        "targetId": "JAVA-AT-2-2",
+        "learningTarget": "The learner needs to use int for whole counts. Which concept from the Week 2 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-03",
+        "targetId": "JAVA-AT-2-3",
+        "learningTarget": "During the guide's debugging drill for String, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-04",
+        "targetId": "JAVA-AT-2-4",
+        "learningTarget": "A classmate is about to compare content with ==. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-05",
+        "targetId": "JAVA-AT-2-5",
+        "learningTarget": "Which activity from the Week 2 guide correctly demonstrates Scanner?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-06",
+        "targetId": "JAVA-AT-2-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: read a number from System.in?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-07",
+        "targetId": "JAVA-AT-2-7",
+        "learningTarget": "A learner must explain declaration before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-08",
+        "targetId": "JAVA-AT-2-8",
+        "learningTarget": "The guide describes \"introducing a typed variable\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-09",
+        "targetId": "JAVA-AT-2-9",
+        "learningTarget": "Which mistake would show that cast was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W02-10",
+        "targetId": "JAVA-AT-2-10",
+        "learningTarget": "To avoid this error—expect a cast to validate arbitrary text—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W02",
+          "resourceIds": [
+            "JAVA-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-01",
+        "targetId": "JAVA-AT-3-1",
+        "learningTarget": "The Week 3 guide defines if branch. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-02",
+        "targetId": "JAVA-AT-3-2",
+        "learningTarget": "The learner needs to choose feedback from a score. Which concept from the Week 3 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-03",
+        "targetId": "JAVA-AT-3-3",
+        "learningTarget": "During the guide's debugging drill for switch, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-04",
+        "targetId": "JAVA-AT-3-4",
+        "learningTarget": "A classmate is about to use switch for unrelated range checks without care. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-05",
+        "targetId": "JAVA-AT-3-5",
+        "learningTarget": "Which activity from the Week 3 guide correctly demonstrates for loop?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-06",
+        "targetId": "JAVA-AT-3-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: process fixed attempts?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-07",
+        "targetId": "JAVA-AT-3-7",
+        "learningTarget": "A learner must explain while loop before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-08",
+        "targetId": "JAVA-AT-3-8",
+        "learningTarget": "The guide describes \"condition-controlled repetition\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-09",
+        "targetId": "JAVA-AT-3-9",
+        "learningTarget": "Which mistake would show that boolean operator was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W03-10",
+        "targetId": "JAVA-AT-3-10",
+        "learningTarget": "To avoid this error—confuse & with short-circuit &&—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W03",
+          "resourceIds": [
+            "JAVA-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-01",
+        "targetId": "JAVA-AT-4-1",
+        "learningTarget": "The Week 4 guide defines method. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-02",
+        "targetId": "JAVA-AT-4-2",
+        "learningTarget": "The learner needs to write calculateTotal. Which concept from the Week 4 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-03",
+        "targetId": "JAVA-AT-4-3",
+        "learningTarget": "During the guide's debugging drill for parameter, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-04",
+        "targetId": "JAVA-AT-4-4",
+        "learningTarget": "A classmate is about to read console input inside every calculation. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-05",
+        "targetId": "JAVA-AT-4-5",
+        "learningTarget": "Which activity from the Week 4 guide correctly demonstrates return type?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-06",
+        "targetId": "JAVA-AT-4-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: return double from an average?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-07",
+        "targetId": "JAVA-AT-4-7",
+        "learningTarget": "A learner must explain overload before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-08",
+        "targetId": "JAVA-AT-4-8",
+        "learningTarget": "The guide describes \"same method name with different parameter lists\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-09",
+        "targetId": "JAVA-AT-4-9",
+        "learningTarget": "Which mistake would show that scope was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W04-10",
+        "targetId": "JAVA-AT-4-10",
+        "learningTarget": "To avoid this error—expect a method local in main—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W04",
+          "resourceIds": [
+            "JAVA-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-01",
+        "targetId": "JAVA-AT-5-1",
+        "learningTarget": "The Week 5 guide defines array. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-02",
+        "targetId": "JAVA-AT-5-2",
+        "learningTarget": "The learner needs to store exactly twelve monthly values. Which concept from the Week 5 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-03",
+        "targetId": "JAVA-AT-5-3",
+        "learningTarget": "During the guide's debugging drill for ArrayList, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-04",
+        "targetId": "JAVA-AT-5-4",
+        "learningTarget": "A classmate is about to use a primitive directly as its type argument. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-05",
+        "targetId": "JAVA-AT-5-5",
+        "learningTarget": "Which activity from the Week 5 guide correctly demonstrates index?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-06",
+        "targetId": "JAVA-AT-5-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: read list.get(0)?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-07",
+        "targetId": "JAVA-AT-5-7",
+        "learningTarget": "A learner must explain enhanced for before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-08",
+        "targetId": "JAVA-AT-5-8",
+        "learningTarget": "The guide describes \"iteration over collection values\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-09",
+        "targetId": "JAVA-AT-5-9",
+        "learningTarget": "Which mistake would show that generic type was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W05-10",
+        "targetId": "JAVA-AT-5-10",
+        "learningTarget": "To avoid this error—mix unrelated types intentionally—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W05",
+          "resourceIds": [
+            "JAVA-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-01",
+        "targetId": "JAVA-AT-6-1",
+        "learningTarget": "The Week 6 guide defines object. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-02",
+        "targetId": "JAVA-AT-6-2",
+        "learningTarget": "The learner needs to create new Student(...). Which concept from the Week 6 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-03",
+        "targetId": "JAVA-AT-6-3",
+        "learningTarget": "During the guide's debugging drill for constructor, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-04",
+        "targetId": "JAVA-AT-6-4",
+        "learningTarget": "A classmate is about to declare a return type on a constructor. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-05",
+        "targetId": "JAVA-AT-6-5",
+        "learningTarget": "Which activity from the Week 6 guide correctly demonstrates field?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-06",
+        "targetId": "JAVA-AT-6-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: keep name private?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-07",
+        "targetId": "JAVA-AT-6-7",
+        "learningTarget": "A learner must explain encapsulation before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-08",
+        "targetId": "JAVA-AT-6-8",
+        "learningTarget": "The guide describes \"controlling access to representation\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-09",
+        "targetId": "JAVA-AT-6-9",
+        "learningTarget": "Which mistake would show that toString was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W06-10",
+        "targetId": "JAVA-AT-6-10",
+        "learningTarget": "To avoid this error—print the default identity when meaningful output is required—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W06",
+          "resourceIds": [
+            "JAVA-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-01",
+        "targetId": "JAVA-AT-7-1",
+        "learningTarget": "The Week 7 guide defines checked exception. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-02",
+        "targetId": "JAVA-AT-7-2",
+        "learningTarget": "The learner needs to handle IOException. Which concept from the Week 7 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-03",
+        "targetId": "JAVA-AT-7-3",
+        "learningTarget": "During the guide's debugging drill for try-with-resources, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-04",
+        "targetId": "JAVA-AT-7-4",
+        "learningTarget": "A classmate is about to leave file streams open. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-05",
+        "targetId": "JAVA-AT-7-5",
+        "learningTarget": "Which activity from the Week 7 guide correctly demonstrates Path?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-06",
+        "targetId": "JAVA-AT-7-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: create a Path with Path.of?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-07",
+        "targetId": "JAVA-AT-7-7",
+        "learningTarget": "A learner must explain unit test before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-08",
+        "targetId": "JAVA-AT-7-8",
+        "learningTarget": "The guide describes \"an isolated behavior check\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-09",
+        "targetId": "JAVA-AT-7-9",
+        "learningTarget": "Which mistake would show that boundary case was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W07-10",
+        "targetId": "JAVA-AT-7-10",
+        "learningTarget": "To avoid this error—test only the most common record—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W07",
+          "resourceIds": [
+            "JAVA-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-01",
+        "targetId": "JAVA-AT-8-1",
+        "learningTarget": "The Week 8 guide defines package. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-02",
+        "targetId": "JAVA-AT-8-2",
+        "learningTarget": "The learner needs to place classes in a named package. Which concept from the Week 8 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-03",
+        "targetId": "JAVA-AT-8-3",
+        "learningTarget": "During the guide's debugging drill for separation of concerns, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-04",
+        "targetId": "JAVA-AT-8-4",
+        "learningTarget": "A classmate is about to put all logic in main. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-05",
+        "targetId": "JAVA-AT-8-5",
+        "learningTarget": "Which activity from the Week 8 guide correctly demonstrates validation?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-06",
+        "targetId": "JAVA-AT-8-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: reject impossible scores?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-07",
+        "targetId": "JAVA-AT-8-7",
+        "learningTarget": "A learner must explain README before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-08",
+        "targetId": "JAVA-AT-8-8",
+        "learningTarget": "The guide describes \"instructions for building and running\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-09",
+        "targetId": "JAVA-AT-8-9",
+        "learningTarget": "Which mistake would show that Git remote was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JAVA-Q-W08-10",
+        "targetId": "JAVA-AT-8-10",
+        "learningTarget": "To avoid this error—commit generated IDE secrets—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JAVA-W08",
+          "resourceIds": [
+            "JAVA-R-W08-01"
+          ]
+        }
+      }
+    ]
+  }
+}

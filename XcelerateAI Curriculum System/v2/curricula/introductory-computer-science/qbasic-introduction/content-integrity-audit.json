@@ -1,0 +1,2950 @@
+{
+  "schemaVersion": "1.0",
+  "curriculumId": "QBAS",
+  "revision": 1,
+  "auditedAt": "2026-10-10T12:00:00.000Z",
+  "targetLearner": "A tertiary fresher with basic computer literacy and no assumed programming experience.",
+  "resourceAudits": [
+    {
+      "resourceId": "QBAS-R-W01-01",
+      "weekId": "QBAS-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-1",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Editor, Statements, and Output learner guide",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-1",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://www.dosbox.com/wiki/Basic_Setup_and_Installation_of_DosBox",
+          "provider": "www.dosbox.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "QBAS-R-W01-02",
+      "weekId": "QBAS-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-1-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Editor, Statements, and Output concept practice",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-1-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://www.dosbox.com/wiki/Basic_Setup_and_Installation_of_DosBox",
+          "provider": "www.dosbox.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "QBAS-R-W02-01",
+      "weekId": "QBAS-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-2",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Input and Decisions learner guide",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-2",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Basic_math",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "QBAS-R-W02-02",
+      "weekId": "QBAS-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-2-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Input and Decisions concept practice",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-2-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Basic_math",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "QBAS-R-W03-01",
+      "weekId": "QBAS-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-3",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Loops and Counters learner guide",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-3",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Loops",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "QBAS-R-W03-02",
+      "weekId": "QBAS-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-3-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Loops and Counters concept practice",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-3-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Loops",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "QBAS-R-W04-01",
+      "weekId": "QBAS-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-4",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "SUBs and FUNCTIONs learner guide",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-4",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Subroutines_and_Functions",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "QBAS-R-W04-02",
+      "weekId": "QBAS-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-4-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "SUBs and FUNCTIONs concept practice",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-4-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Subroutines_and_Functions",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "QBAS-R-W05-01",
+      "weekId": "QBAS-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-5",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Arrays and Strings learner guide",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-5",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Arrays",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "QBAS-R-W05-02",
+      "weekId": "QBAS-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-5-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Arrays and Strings concept practice",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-5-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Arrays",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "QBAS-R-W06-01",
+      "weekId": "QBAS-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-6",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Files and Debugging learner guide",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-6",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Files",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "QBAS-R-W06-02",
+      "weekId": "QBAS-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-6-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Files and Debugging concept practice",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-6-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Files",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "QBAS-R-W07-01",
+      "weekId": "QBAS-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-7",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Program Structure and Test Cases learner guide",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-7",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Debugging",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "QBAS-R-W07-02",
+      "weekId": "QBAS-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-7-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Program Structure and Test Cases concept practice",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-7-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.wikibooks.org/wiki/QBasic/Debugging",
+          "provider": "en.wikibooks.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "QBAS-R-W08-01",
+      "weekId": "QBAS-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-8",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent QBASIC Project and GitHub learner guide",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-8",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "QBAS-R-W08-02",
+      "weekId": "QBAS-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/qbasic-introduction.html#week-8-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent QBASIC Project and GitHub concept practice",
+          "url": "/curriculum-guides/qbasic-introduction.html#week-8-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches QBAS-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    }
+  ],
+  "questionAudits": [
+    {
+      "questionId": "QBAS-Q-W01-01",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W01-02",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W01-03",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W01-04",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "QBAS-Q-W01-05",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W01-06",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W01-07",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W01-08",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W01-09",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W01-10",
+      "weekId": "QBAS-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-1-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "QBAS-Q-W02-01",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W02-02",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W02-03",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W02-04",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "QBAS-Q-W02-05",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W02-06",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W02-07",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W02-08",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W02-09",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W02-10",
+      "weekId": "QBAS-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-2-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "QBAS-Q-W03-01",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W03-02",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W03-03",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W03-04",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "QBAS-Q-W03-05",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W03-06",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W03-07",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W03-08",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W03-09",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W03-10",
+      "weekId": "QBAS-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-3-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "QBAS-Q-W04-01",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W04-02",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W04-03",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W04-04",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "QBAS-Q-W04-05",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W04-06",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W04-07",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W04-08",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W04-09",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W04-10",
+      "weekId": "QBAS-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-4-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "QBAS-Q-W05-01",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W05-02",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W05-03",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W05-04",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "QBAS-Q-W05-05",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W05-06",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W05-07",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W05-08",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W05-09",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W05-10",
+      "weekId": "QBAS-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-5-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "QBAS-Q-W06-01",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W06-02",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W06-03",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W06-04",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "QBAS-Q-W06-05",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W06-06",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W06-07",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W06-08",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W06-09",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W06-10",
+      "weekId": "QBAS-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-6-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "QBAS-Q-W07-01",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W07-02",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W07-03",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W07-04",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "QBAS-Q-W07-05",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W07-06",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W07-07",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W07-08",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W07-09",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W07-10",
+      "weekId": "QBAS-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-7-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "QBAS-Q-W08-01",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W08-02",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W08-03",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W08-04",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "QBAS-Q-W08-05",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W08-06",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "QBAS-Q-W08-07",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W08-08",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "QBAS-Q-W08-09",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "QBAS-Q-W08-10",
+      "weekId": "QBAS-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "QBAS-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "QBAS-AT-8-10",
+      "assessmentType": "error prevention"
+    }
+  ],
+  "buildAudits": [
+    {
+      "buildId": "QBAS-B-W01-01",
+      "weekId": "QBAS-W01",
+      "dependencies": [
+        {
+          "name": "QBAS-C001",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "QBAS-B-W02-01",
+      "weekId": "QBAS-W02",
+      "dependencies": [
+        {
+          "name": "QBAS-C002",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "QBAS-B-W03-01",
+      "weekId": "QBAS-W03",
+      "dependencies": [
+        {
+          "name": "QBAS-C003",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "QBAS-B-W04-01",
+      "weekId": "QBAS-W04",
+      "dependencies": [
+        {
+          "name": "QBAS-C004",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "QBAS-B-W05-01",
+      "weekId": "QBAS-W05",
+      "dependencies": [
+        {
+          "name": "QBAS-C005",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "QBAS-B-W06-01",
+      "weekId": "QBAS-W06",
+      "dependencies": [
+        {
+          "name": "QBAS-C006",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "QBAS-B-W07-01",
+      "weekId": "QBAS-W07",
+      "dependencies": [
+        {
+          "name": "QBAS-C007",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "QBAS-B-W08-01",
+      "weekId": "QBAS-W08",
+      "dependencies": [
+        {
+          "name": "QBAS-C008",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    }
+  ],
+  "weekReadiness": [
+    {
+      "weekId": "QBAS-W01",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "QBAS-W02",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "QBAS-W03",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "QBAS-W04",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "QBAS-W05",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "QBAS-W06",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "QBAS-W07",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "QBAS-W08",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    }
+  ],
+  "semanticReview": {
+    "status": "PASS",
+    "method": "Author-led review of the profession boundary, weekly prerequisite chain, every fact pair, distractor family, Build dependency, proof demand, and official reference. Deterministic validators only verify the serialized evidence; they do not create this approval.",
+    "findingsReviewed": [
+      "Every week teaches before assessing and builds immediately after assessment.",
+      "Ten questions assess explanation and application selection while coding remains in Build.",
+      "The sequence grows from syntax to structured independent work without frameworks or hidden algebra.",
+      "Every course ends with GitHub publication; setup remains outside the 48 instructional hours."
+    ],
+    "adversarialResult": "Traditional Microsoft QBasic binaries require learner-supplied licensed MS-DOS/Windows media; no current official download was verified."
+  },
+  "assessmentCoverageMap": {
+    "entries": [
+      {
+        "questionId": "QBAS-Q-W01-01",
+        "targetId": "QBAS-AT-1-1",
+        "learningTarget": "The Week 1 guide defines statement. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-02",
+        "targetId": "QBAS-AT-1-2",
+        "learningTarget": "The learner needs to use PRINT to show a result. Which concept from the Week 1 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-03",
+        "targetId": "QBAS-AT-1-3",
+        "learningTarget": "During the guide's debugging drill for variable, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-04",
+        "targetId": "QBAS-AT-1-4",
+        "learningTarget": "A classmate is about to use spaces in a variable name. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-05",
+        "targetId": "QBAS-AT-1-5",
+        "learningTarget": "Which activity from the Week 1 guide correctly demonstrates numeric expression?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-06",
+        "targetId": "QBAS-AT-1-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: calculate PRICE * QUANTITY?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-07",
+        "targetId": "QBAS-AT-1-7",
+        "learningTarget": "A learner must explain string before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-08",
+        "targetId": "QBAS-AT-1-8",
+        "learningTarget": "The guide describes \"text data\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-09",
+        "targetId": "QBAS-AT-1-9",
+        "learningTarget": "Which mistake would show that comment was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W01-10",
+        "targetId": "QBAS-AT-1-10",
+        "learningTarget": "To avoid this error—comment out required behavior—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W01",
+          "resourceIds": [
+            "QBAS-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-01",
+        "targetId": "QBAS-AT-2-1",
+        "learningTarget": "The Week 2 guide defines INPUT. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-02",
+        "targetId": "QBAS-AT-2-2",
+        "learningTarget": "The learner needs to use INPUT \"Age\"; AGE. Which concept from the Week 2 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-03",
+        "targetId": "QBAS-AT-2-3",
+        "learningTarget": "During the guide's debugging drill for IF block, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-04",
+        "targetId": "QBAS-AT-2-4",
+        "learningTarget": "A classmate is about to forget END IF for a block form. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-05",
+        "targetId": "QBAS-AT-2-5",
+        "learningTarget": "Which activity from the Week 2 guide correctly demonstrates comparison?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-06",
+        "targetId": "QBAS-AT-2-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: check SCORE >= 50?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-07",
+        "targetId": "QBAS-AT-2-7",
+        "learningTarget": "A learner must explain boolean operator before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-08",
+        "targetId": "QBAS-AT-2-8",
+        "learningTarget": "The guide describes \"combines conditions\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-09",
+        "targetId": "QBAS-AT-2-9",
+        "learningTarget": "Which mistake would show that branch order was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W02-10",
+        "targetId": "QBAS-AT-2-10",
+        "learningTarget": "To avoid this error—put the broadest condition first—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W02",
+          "resourceIds": [
+            "QBAS-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-01",
+        "targetId": "QBAS-AT-3-1",
+        "learningTarget": "The Week 3 guide defines FOR loop. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-02",
+        "targetId": "QBAS-AT-3-2",
+        "learningTarget": "The learner needs to use FOR I = 1 TO 10. Which concept from the Week 3 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-03",
+        "targetId": "QBAS-AT-3-3",
+        "learningTarget": "During the guide's debugging drill for DO loop, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-04",
+        "targetId": "QBAS-AT-3-4",
+        "learningTarget": "A classmate is about to omit an exit condition. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-05",
+        "targetId": "QBAS-AT-3-5",
+        "learningTarget": "Which activity from the Week 3 guide correctly demonstrates counter?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-06",
+        "targetId": "QBAS-AT-3-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: increment VALIDCOUNT?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-07",
+        "targetId": "QBAS-AT-3-7",
+        "learningTarget": "A learner must explain accumulator before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-08",
+        "targetId": "QBAS-AT-3-8",
+        "learningTarget": "The guide describes \"stores a running result\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-09",
+        "targetId": "QBAS-AT-3-9",
+        "learningTarget": "Which mistake would show that trace table was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W03-10",
+        "targetId": "QBAS-AT-3-10",
+        "learningTarget": "To avoid this error—guess the final result—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W03",
+          "resourceIds": [
+            "QBAS-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-01",
+        "targetId": "QBAS-AT-4-1",
+        "learningTarget": "The Week 4 guide defines SUB. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-02",
+        "targetId": "QBAS-AT-4-2",
+        "learningTarget": "The learner needs to call a display procedure. Which concept from the Week 4 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-03",
+        "targetId": "QBAS-AT-4-3",
+        "learningTarget": "During the guide's debugging drill for FUNCTION, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-04",
+        "targetId": "QBAS-AT-4-4",
+        "learningTarget": "A classmate is about to forget to assign the function name. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-05",
+        "targetId": "QBAS-AT-4-5",
+        "learningTarget": "Which activity from the Week 4 guide correctly demonstrates parameter?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-06",
+        "targetId": "QBAS-AT-4-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: pass a temperature value?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-07",
+        "targetId": "QBAS-AT-4-7",
+        "learningTarget": "A learner must explain local variable before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-08",
+        "targetId": "QBAS-AT-4-8",
+        "learningTarget": "The guide describes \"temporary state inside a routine\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-09",
+        "targetId": "QBAS-AT-4-9",
+        "learningTarget": "Which mistake would show that decomposition was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W04-10",
+        "targetId": "QBAS-AT-4-10",
+        "learningTarget": "To avoid this error—keep the entire program in one block—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W04",
+          "resourceIds": [
+            "QBAS-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-01",
+        "targetId": "QBAS-AT-5-1",
+        "learningTarget": "The Week 5 guide defines array. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-02",
+        "targetId": "QBAS-AT-5-2",
+        "learningTarget": "The learner needs to DIM SCORE(1 TO 10). Which concept from the Week 5 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-03",
+        "targetId": "QBAS-AT-5-3",
+        "learningTarget": "During the guide's debugging drill for index, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-04",
+        "targetId": "QBAS-AT-5-4",
+        "learningTarget": "A classmate is about to confuse value with its index. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-05",
+        "targetId": "QBAS-AT-5-5",
+        "learningTarget": "Which activity from the Week 5 guide correctly demonstrates string function?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-06",
+        "targetId": "QBAS-AT-5-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: use LEN to find length?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-07",
+        "targetId": "QBAS-AT-5-7",
+        "learningTarget": "A learner must explain linear search before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-08",
+        "targetId": "QBAS-AT-5-8",
+        "learningTarget": "The guide describes \"checking items one after another\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-09",
+        "targetId": "QBAS-AT-5-9",
+        "learningTarget": "Which mistake would show that sentinel was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W05-10",
+        "targetId": "QBAS-AT-5-10",
+        "learningTarget": "To avoid this error—choose a sentinel that is valid data—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W05",
+          "resourceIds": [
+            "QBAS-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-01",
+        "targetId": "QBAS-AT-6-1",
+        "learningTarget": "The Week 6 guide defines file handle. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-02",
+        "targetId": "QBAS-AT-6-2",
+        "learningTarget": "The learner needs to OPEN path FOR APPEND AS #1. Which concept from the Week 6 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-03",
+        "targetId": "QBAS-AT-6-3",
+        "learningTarget": "During the guide's debugging drill for file mode, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-04",
+        "targetId": "QBAS-AT-6-4",
+        "learningTarget": "A classmate is about to use OUTPUT when old content must remain. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-05",
+        "targetId": "QBAS-AT-6-5",
+        "learningTarget": "Which activity from the Week 6 guide correctly demonstrates LINE INPUT?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-06",
+        "targetId": "QBAS-AT-6-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: read from #1 into ENTRY$?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-07",
+        "targetId": "QBAS-AT-6-7",
+        "learningTarget": "A learner must explain syntax error before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-08",
+        "targetId": "QBAS-AT-6-8",
+        "learningTarget": "The guide describes \"a form the interpreter cannot parse\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-09",
+        "targetId": "QBAS-AT-6-9",
+        "learningTarget": "Which mistake would show that runtime error was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W06-10",
+        "targetId": "QBAS-AT-6-10",
+        "learningTarget": "To avoid this error—assume RUN success once proves every input—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W06",
+          "resourceIds": [
+            "QBAS-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-01",
+        "targetId": "QBAS-AT-7-1",
+        "learningTarget": "The Week 7 guide defines test case. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-02",
+        "targetId": "QBAS-AT-7-2",
+        "learningTarget": "The learner needs to record expected output for choice 1. Which concept from the Week 7 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-03",
+        "targetId": "QBAS-AT-7-3",
+        "learningTarget": "During the guide's debugging drill for boundary case, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-04",
+        "targetId": "QBAS-AT-7-4",
+        "learningTarget": "A classmate is about to test only the middle value. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-05",
+        "targetId": "QBAS-AT-7-5",
+        "learningTarget": "Which activity from the Week 7 guide correctly demonstrates dry run?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-06",
+        "targetId": "QBAS-AT-7-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: trace variables through a branch?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-07",
+        "targetId": "QBAS-AT-7-7",
+        "learningTarget": "A learner must explain regression before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-08",
+        "targetId": "QBAS-AT-7-8",
+        "learningTarget": "The guide describes \"a repaired fault returning\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-09",
+        "targetId": "QBAS-AT-7-9",
+        "learningTarget": "Which mistake would show that user message was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W07-10",
+        "targetId": "QBAS-AT-7-10",
+        "learningTarget": "To avoid this error—show only a numeric error code—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W07",
+          "resourceIds": [
+            "QBAS-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-01",
+        "targetId": "QBAS-AT-8-1",
+        "learningTarget": "The Week 8 guide defines menu loop. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-02",
+        "targetId": "QBAS-AT-8-2",
+        "learningTarget": "The learner needs to return to menu after an action. Which concept from the Week 8 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-03",
+        "targetId": "QBAS-AT-8-3",
+        "learningTarget": "During the guide's debugging drill for validation, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-04",
+        "targetId": "QBAS-AT-8-4",
+        "learningTarget": "A classmate is about to store invalid values. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-05",
+        "targetId": "QBAS-AT-8-5",
+        "learningTarget": "Which activity from the Week 8 guide correctly demonstrates source file?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-06",
+        "targetId": "QBAS-AT-8-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: commit the .BAS file?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-07",
+        "targetId": "QBAS-AT-8-7",
+        "learningTarget": "A learner must explain README before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-08",
+        "targetId": "QBAS-AT-8-8",
+        "learningTarget": "The guide describes \"setup and run guidance\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-09",
+        "targetId": "QBAS-AT-8-9",
+        "learningTarget": "Which mistake would show that Git commit was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "QBAS-Q-W08-10",
+        "targetId": "QBAS-AT-8-10",
+        "learningTarget": "To avoid this error—put unrelated files in one commit—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "QBAS-W08",
+          "resourceIds": [
+            "QBAS-R-W08-01"
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -180,6 +180,7 @@ export function mergeCloudStates({ base, local, remote, baseGeneration, localGen
     reflections: mergeMap(baseState.reflections, localState.reflections, remoteState.reflections, 'curriculumState.reflections', conflicts, (baseWeek = {}, localWeek = {}, remoteWeek = {}, weekPath) => (
       mergeMap(baseWeek, localWeek, remoteWeek, weekPath, conflicts)
     )),
+    setupCapabilities: { ...(remoteState.setupCapabilities || {}), ...(localState.setupCapabilities || {}) },
   };
   return {
     mergedState: {

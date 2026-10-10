@@ -10,6 +10,7 @@ import {
   getQuizValidationErrors,
   getSkillCheckDefinition,
   isRecoveryLocked,
+  prepareSkillCheckAttempt,
   scoreQuiz,
 } from './skillCheckUtils.js';
 import {
@@ -227,4 +228,37 @@ test('open-before-complete applies only to the new study requirement mode', () =
     openedAt: '2026-01-01T00:00:01.000Z',
   });
   assert.equal(canMarkResourceComplete({ week: modernWeek, resource, roadmapId: 'roadmap', resourceActivity: activity }), true);
+});
+
+test('opt-in option shuffling is stable within an attempt and changes on a later attempt', () => {
+  const definition = { ...quizPreviewFixture, optionOrder: 'shuffle-per-attempt' };
+  const first = prepareSkillCheckAttempt(definition, 1);
+  const restoredFirst = prepareSkillCheckAttempt(definition, 1);
+  const second = prepareSkillCheckAttempt(definition, 2);
+  const orders = (value) => value.questions.map((question) => question.options.map((option) => option.id).join(''));
+
+  assert.deepEqual(orders(first), orders(restoredFirst));
+  assert.ok(orders(first).every((order, index) => order !== orders(definition)[index]));
+  assert.ok(orders(first).every((order, index) => order !== orders(second)[index]));
+  assert.deepEqual(first.questions.map((question) => question.correctOptionId), definition.questions.map((question) => question.correctOptionId));
+  const correctPositions = first.questions.map((question) => question.options.findIndex((option) => option.id === question.correctOptionId));
+  assert.deepEqual(new Set(correctPositions), new Set([0, 1, 2, 3]));
+});
+
+test('option shuffling remains opt-in and scoring uses stable option IDs', () => {
+  assert.equal(prepareSkillCheckAttempt(quizPreviewFixture, 1), quizPreviewFixture);
+  const prepared = prepareSkillCheckAttempt({ ...quizPreviewFixture, optionOrder: 'shuffle-per-attempt' }, 3);
+  const attempt = createSubmittedAttempt({
+    definition: prepared,
+    answers: correctAnswers,
+    attemptNumber: 3,
+    submittedAt: '2026-01-01T00:00:03.000Z',
+  });
+
+  assert.equal(attempt.score, 10);
+  assert.equal(attempt.passed, true);
+  assert.deepEqual(
+    attempt.questionSnapshot.map((question) => question.options.map((option) => option.id)),
+    prepared.questions.map((question) => question.options.map((option) => option.id)),
+  );
 });

@@ -1,0 +1,158 @@
+[
+  {
+    "competencyId": "JAVA-C001",
+    "taughtIn": [
+      "JAVA-W01"
+    ],
+    "practicedIn": [
+      "JAVA-W01"
+    ],
+    "assessedIn": [
+      "JAVA-SC-W01"
+    ],
+    "appliedIn": [
+      "JAVA-B-W01-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JAVA-C002",
+    "taughtIn": [
+      "JAVA-W02"
+    ],
+    "practicedIn": [
+      "JAVA-W02"
+    ],
+    "assessedIn": [
+      "JAVA-SC-W02"
+    ],
+    "appliedIn": [
+      "JAVA-B-W02-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JAVA-C003",
+    "taughtIn": [
+      "JAVA-W03"
+    ],
+    "practicedIn": [
+      "JAVA-W03"
+    ],
+    "assessedIn": [
+      "JAVA-SC-W03"
+    ],
+    "appliedIn": [
+      "JAVA-B-W03-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JAVA-C004",
+    "taughtIn": [
+      "JAVA-W04"
+    ],
+    "practicedIn": [
+      "JAVA-W04"
+    ],
+    "assessedIn": [
+      "JAVA-SC-W04"
+    ],
+    "appliedIn": [
+      "JAVA-B-W04-01"
+    ],
+    "projectUse": [
+      "JAVA-PJ01-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JAVA-C005",
+    "taughtIn": [
+      "JAVA-W05"
+    ],
+    "practicedIn": [
+      "JAVA-W05"
+    ],
+    "assessedIn": [
+      "JAVA-SC-W05"
+    ],
+    "appliedIn": [
+      "JAVA-B-W05-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JAVA-C006",
+    "taughtIn": [
+      "JAVA-W06"
+    ],
+    "practicedIn": [
+      "JAVA-W06"
+    ],
+    "assessedIn": [
+      "JAVA-SC-W06"
+    ],
+    "appliedIn": [
+      "JAVA-B-W06-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JAVA-C007",
+    "taughtIn": [
+      "JAVA-W07"
+    ],
+    "practicedIn": [
+      "JAVA-W07"
+    ],
+    "assessedIn": [
+      "JAVA-SC-W07"
+    ],
+    "appliedIn": [
+      "JAVA-B-W07-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JAVA-C008",
+    "taughtIn": [
+      "JAVA-W08"
+    ],
+    "practicedIn": [
+      "JAVA-W08"
+    ],
+    "assessedIn": [
+      "JAVA-SC-W08"
+    ],
+    "appliedIn": [
+      "JAVA-B-W08-01"
+    ],
+    "projectUse": [
+      "JAVA-PJ02-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  }
+]

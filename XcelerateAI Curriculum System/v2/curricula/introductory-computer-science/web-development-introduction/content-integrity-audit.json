@@ -1,0 +1,2950 @@
+{
+  "schemaVersion": "1.0",
+  "curriculumId": "WEBD",
+  "revision": 1,
+  "auditedAt": "2026-10-10T12:00:00.000Z",
+  "targetLearner": "A tertiary fresher with basic computer literacy and no assumed programming experience.",
+  "resourceAudits": [
+    {
+      "resourceId": "WEBD-R-W01-01",
+      "weekId": "WEBD-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-1",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "HTML Structure and the Browser learner guide",
+          "url": "/curriculum-guides/web-development-introduction.html#week-1",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "WEBD-R-W01-02",
+      "weekId": "WEBD-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-1-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "HTML Structure and the Browser concept practice",
+          "url": "/curriculum-guides/web-development-introduction.html#week-1-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "WEBD-R-W02-01",
+      "weekId": "WEBD-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-2",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "CSS Foundations learner guide",
+          "url": "/curriculum-guides/web-development-introduction.html#week-2",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "WEBD-R-W02-02",
+      "weekId": "WEBD-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-2-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "CSS Foundations concept practice",
+          "url": "/curriculum-guides/web-development-introduction.html#week-2-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "WEBD-R-W03-01",
+      "weekId": "WEBD-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-3",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Responsive Layout learner guide",
+          "url": "/curriculum-guides/web-development-introduction.html#week-3",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "WEBD-R-W03-02",
+      "weekId": "WEBD-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-3-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Responsive Layout concept practice",
+          "url": "/curriculum-guides/web-development-introduction.html#week-3-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "WEBD-R-W04-01",
+      "weekId": "WEBD-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-4",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "JavaScript and Events learner guide",
+          "url": "/curriculum-guides/web-development-introduction.html#week-4",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "WEBD-R-W04-02",
+      "weekId": "WEBD-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-4-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "JavaScript and Events concept practice",
+          "url": "/curriculum-guides/web-development-introduction.html#week-4-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "WEBD-R-W05-01",
+      "weekId": "WEBD-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-5",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "DOM State and Collections learner guide",
+          "url": "/curriculum-guides/web-development-introduction.html#week-5",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "WEBD-R-W05-02",
+      "weekId": "WEBD-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-5-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "DOM State and Collections concept practice",
+          "url": "/curriculum-guides/web-development-introduction.html#week-5-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "WEBD-R-W06-01",
+      "weekId": "WEBD-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-6",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Forms and Accessibility learner guide",
+          "url": "/curriculum-guides/web-development-introduction.html#week-6",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "WEBD-R-W06-02",
+      "weekId": "WEBD-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-6-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Forms and Accessibility concept practice",
+          "url": "/curriculum-guides/web-development-introduction.html#week-6-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "WEBD-R-W07-01",
+      "weekId": "WEBD-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-7",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Fetch, Failure, and Debugging learner guide",
+          "url": "/curriculum-guides/web-development-introduction.html#week-7",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "WEBD-R-W07-02",
+      "weekId": "WEBD-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-7-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Fetch, Failure, and Debugging concept practice",
+          "url": "/curriculum-guides/web-development-introduction.html#week-7-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "WEBD-R-W08-01",
+      "weekId": "WEBD-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-8",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent Website and GitHub Pages learner guide",
+          "url": "/curriculum-guides/web-development-introduction.html#week-8",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "WEBD-R-W08-02",
+      "weekId": "WEBD-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-8-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent Website and GitHub Pages concept practice",
+          "url": "/curriculum-guides/web-development-introduction.html#week-8-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches WEBD-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    }
+  ],
+  "questionAudits": [
+    {
+      "questionId": "WEBD-Q-W01-01",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W01-02",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W01-03",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W01-04",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "WEBD-Q-W01-05",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W01-06",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W01-07",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W01-08",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W01-09",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W01-10",
+      "weekId": "WEBD-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-1-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "WEBD-Q-W02-01",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W02-02",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W02-03",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W02-04",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "WEBD-Q-W02-05",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W02-06",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W02-07",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W02-08",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W02-09",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W02-10",
+      "weekId": "WEBD-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-2-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "WEBD-Q-W03-01",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W03-02",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W03-03",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W03-04",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "WEBD-Q-W03-05",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W03-06",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W03-07",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W03-08",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W03-09",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W03-10",
+      "weekId": "WEBD-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-3-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "WEBD-Q-W04-01",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W04-02",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W04-03",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W04-04",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "WEBD-Q-W04-05",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W04-06",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W04-07",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W04-08",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W04-09",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W04-10",
+      "weekId": "WEBD-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-4-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "WEBD-Q-W05-01",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W05-02",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W05-03",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W05-04",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "WEBD-Q-W05-05",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W05-06",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W05-07",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W05-08",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W05-09",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W05-10",
+      "weekId": "WEBD-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-5-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "WEBD-Q-W06-01",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W06-02",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W06-03",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W06-04",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "WEBD-Q-W06-05",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W06-06",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W06-07",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W06-08",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W06-09",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W06-10",
+      "weekId": "WEBD-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-6-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "WEBD-Q-W07-01",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W07-02",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W07-03",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W07-04",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "WEBD-Q-W07-05",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W07-06",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W07-07",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W07-08",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W07-09",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W07-10",
+      "weekId": "WEBD-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-7-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "WEBD-Q-W08-01",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W08-02",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W08-03",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W08-04",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "WEBD-Q-W08-05",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W08-06",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "WEBD-Q-W08-07",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W08-08",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "WEBD-Q-W08-09",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "WEBD-Q-W08-10",
+      "weekId": "WEBD-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "WEBD-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "WEBD-AT-8-10",
+      "assessmentType": "error prevention"
+    }
+  ],
+  "buildAudits": [
+    {
+      "buildId": "WEBD-B-W01-01",
+      "weekId": "WEBD-W01",
+      "dependencies": [
+        {
+          "name": "WEBD-C001",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "WEBD-B-W02-01",
+      "weekId": "WEBD-W02",
+      "dependencies": [
+        {
+          "name": "WEBD-C002",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "WEBD-B-W03-01",
+      "weekId": "WEBD-W03",
+      "dependencies": [
+        {
+          "name": "WEBD-C003",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "WEBD-B-W04-01",
+      "weekId": "WEBD-W04",
+      "dependencies": [
+        {
+          "name": "WEBD-C004",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "WEBD-B-W05-01",
+      "weekId": "WEBD-W05",
+      "dependencies": [
+        {
+          "name": "WEBD-C005",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "WEBD-B-W06-01",
+      "weekId": "WEBD-W06",
+      "dependencies": [
+        {
+          "name": "WEBD-C006",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "WEBD-B-W07-01",
+      "weekId": "WEBD-W07",
+      "dependencies": [
+        {
+          "name": "WEBD-C007",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "WEBD-B-W08-01",
+      "weekId": "WEBD-W08",
+      "dependencies": [
+        {
+          "name": "WEBD-C008",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    }
+  ],
+  "weekReadiness": [
+    {
+      "weekId": "WEBD-W01",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "WEBD-W02",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "WEBD-W03",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "WEBD-W04",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "WEBD-W05",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "WEBD-W06",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "WEBD-W07",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "WEBD-W08",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    }
+  ],
+  "semanticReview": {
+    "status": "PASS",
+    "method": "Author-led review of the profession boundary, weekly prerequisite chain, every fact pair, distractor family, Build dependency, proof demand, and official reference. Deterministic validators only verify the serialized evidence; they do not create this approval.",
+    "findingsReviewed": [
+      "Every week teaches before assessing and builds immediately after assessment.",
+      "Ten questions assess explanation and application selection while coding remains in Build.",
+      "The sequence grows from syntax to structured independent work without frameworks or hidden algebra.",
+      "Every course ends with GitHub publication; setup remains outside the 48 instructional hours."
+    ],
+    "adversarialResult": "No untaught assessment dependency or hidden Build prerequisite remains."
+  },
+  "assessmentCoverageMap": {
+    "entries": [
+      {
+        "questionId": "WEBD-Q-W01-01",
+        "targetId": "WEBD-AT-1-1",
+        "learningTarget": "The Week 1 guide defines HTML element. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-02",
+        "targetId": "WEBD-AT-1-2",
+        "learningTarget": "The learner needs to use a heading element for the page heading. Which concept from the Week 1 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-03",
+        "targetId": "WEBD-AT-1-3",
+        "learningTarget": "During the guide's debugging drill for attribute, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-04",
+        "targetId": "WEBD-AT-1-4",
+        "learningTarget": "A classmate is about to place every value outside quotes. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-05",
+        "targetId": "WEBD-AT-1-5",
+        "learningTarget": "Which activity from the Week 1 guide correctly demonstrates document outline?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-06",
+        "targetId": "WEBD-AT-1-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: follow h1 with section h2 headings?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-07",
+        "targetId": "WEBD-AT-1-7",
+        "learningTarget": "A learner must explain link before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-08",
+        "targetId": "WEBD-AT-1-8",
+        "learningTarget": "The guide describes \"navigation to another resource\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-09",
+        "targetId": "WEBD-AT-1-9",
+        "learningTarget": "Which mistake would show that validator was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W01-10",
+        "targetId": "WEBD-AT-1-10",
+        "learningTarget": "To avoid this error—treat a rendered page as proof of valid structure—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W01",
+          "resourceIds": [
+            "WEBD-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-01",
+        "targetId": "WEBD-AT-2-1",
+        "learningTarget": "The Week 2 guide defines selector. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-02",
+        "targetId": "WEBD-AT-2-2",
+        "learningTarget": "The learner needs to target .card. Which concept from the Week 2 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-03",
+        "targetId": "WEBD-AT-2-3",
+        "learningTarget": "During the guide's debugging drill for cascade, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-04",
+        "targetId": "WEBD-AT-2-4",
+        "learningTarget": "A classmate is about to add !important before finding the cause. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-05",
+        "targetId": "WEBD-AT-2-5",
+        "learningTarget": "Which activity from the Week 2 guide correctly demonstrates box model?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-06",
+        "targetId": "WEBD-AT-2-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: add inner space with padding?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-07",
+        "targetId": "WEBD-AT-2-7",
+        "learningTarget": "A learner must explain custom property before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-08",
+        "targetId": "WEBD-AT-2-8",
+        "learningTarget": "The guide describes \"a reusable CSS value\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-09",
+        "targetId": "WEBD-AT-2-9",
+        "learningTarget": "Which mistake would show that contrast was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W02-10",
+        "targetId": "WEBD-AT-2-10",
+        "learningTarget": "To avoid this error—use low opacity for essential labels—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W02",
+          "resourceIds": [
+            "WEBD-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-01",
+        "targetId": "WEBD-AT-3-1",
+        "learningTarget": "The Week 3 guide defines viewport. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-02",
+        "targetId": "WEBD-AT-3-2",
+        "learningTarget": "The learner needs to include the viewport meta tag. Which concept from the Week 3 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-03",
+        "targetId": "WEBD-AT-3-3",
+        "learningTarget": "During the guide's debugging drill for media query, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-04",
+        "targetId": "WEBD-AT-3-4",
+        "learningTarget": "A classmate is about to create device-specific breakpoints for every model. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-05",
+        "targetId": "WEBD-AT-3-5",
+        "learningTarget": "Which activity from the Week 3 guide correctly demonstrates flexbox?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-06",
+        "targetId": "WEBD-AT-3-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: align a navigation row?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-07",
+        "targetId": "WEBD-AT-3-7",
+        "learningTarget": "A learner must explain grid before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-08",
+        "targetId": "WEBD-AT-3-8",
+        "learningTarget": "The guide describes \"two-dimensional track layout\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-09",
+        "targetId": "WEBD-AT-3-9",
+        "learningTarget": "Which mistake would show that mobile first was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W03-10",
+        "targetId": "WEBD-AT-3-10",
+        "learningTarget": "To avoid this error—hide core content on small screens—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W03",
+          "resourceIds": [
+            "WEBD-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-01",
+        "targetId": "WEBD-AT-4-1",
+        "learningTarget": "The Week 4 guide defines DOM. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-02",
+        "targetId": "WEBD-AT-4-2",
+        "learningTarget": "The learner needs to select a result element. Which concept from the Week 4 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-03",
+        "targetId": "WEBD-AT-4-3",
+        "learningTarget": "During the guide's debugging drill for event, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-04",
+        "targetId": "WEBD-AT-4-4",
+        "learningTarget": "A classmate is about to call the handler while registering it accidentally. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-05",
+        "targetId": "WEBD-AT-4-5",
+        "learningTarget": "Which activity from the Week 4 guide correctly demonstrates function?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-06",
+        "targetId": "WEBD-AT-4-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: calculate a total from inputs?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-07",
+        "targetId": "WEBD-AT-4-7",
+        "learningTarget": "A learner must explain value conversion before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-08",
+        "targetId": "WEBD-AT-4-8",
+        "learningTarget": "The guide describes \"changing input text into a number\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-09",
+        "targetId": "WEBD-AT-4-9",
+        "learningTarget": "Which mistake would show that textContent was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W04-10",
+        "targetId": "WEBD-AT-4-10",
+        "learningTarget": "To avoid this error—insert user text with innerHTML—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W04",
+          "resourceIds": [
+            "WEBD-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-01",
+        "targetId": "WEBD-AT-5-1",
+        "learningTarget": "The Week 5 guide defines state. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-02",
+        "targetId": "WEBD-AT-5-2",
+        "learningTarget": "The learner needs to store task objects in an array. Which concept from the Week 5 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-03",
+        "targetId": "WEBD-AT-5-3",
+        "learningTarget": "During the guide's debugging drill for render, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-04",
+        "targetId": "WEBD-AT-5-4",
+        "learningTarget": "A classmate is about to patch unrelated DOM without updating state. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-05",
+        "targetId": "WEBD-AT-5-5",
+        "learningTarget": "Which activity from the Week 5 guide correctly demonstrates dataset?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-06",
+        "targetId": "WEBD-AT-5-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: store a stable task id?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-07",
+        "targetId": "WEBD-AT-5-7",
+        "learningTarget": "A learner must explain array method before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-08",
+        "targetId": "WEBD-AT-5-8",
+        "learningTarget": "The guide describes \"a reusable collection transformation\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-09",
+        "targetId": "WEBD-AT-5-9",
+        "learningTarget": "Which mistake would show that event delegation was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W05-10",
+        "targetId": "WEBD-AT-5-10",
+        "learningTarget": "To avoid this error—attach duplicate handlers after every render—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W05",
+          "resourceIds": [
+            "WEBD-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-01",
+        "targetId": "WEBD-AT-6-1",
+        "learningTarget": "The Week 6 guide defines label association. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-02",
+        "targetId": "WEBD-AT-6-2",
+        "learningTarget": "The learner needs to match for and id. Which concept from the Week 6 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-03",
+        "targetId": "WEBD-AT-6-3",
+        "learningTarget": "During the guide's debugging drill for native validation, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-04",
+        "targetId": "WEBD-AT-6-4",
+        "learningTarget": "A classmate is about to replace every native control with a div. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-05",
+        "targetId": "WEBD-AT-6-5",
+        "learningTarget": "Which activity from the Week 6 guide correctly demonstrates focus order?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-06",
+        "targetId": "WEBD-AT-6-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: keep DOM order logical?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-07",
+        "targetId": "WEBD-AT-6-7",
+        "learningTarget": "A learner must explain error message before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-08",
+        "targetId": "WEBD-AT-6-8",
+        "learningTarget": "The guide describes \"clear feedback identifying the problem and repair\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-09",
+        "targetId": "WEBD-AT-6-9",
+        "learningTarget": "Which mistake would show that submit event was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W06-10",
+        "targetId": "WEBD-AT-6-10",
+        "learningTarget": "To avoid this error—listen only for button clicks—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W06",
+          "resourceIds": [
+            "WEBD-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-01",
+        "targetId": "WEBD-AT-7-1",
+        "learningTarget": "The Week 7 guide defines HTTP response. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-02",
+        "targetId": "WEBD-AT-7-2",
+        "learningTarget": "The learner needs to check response.ok. Which concept from the Week 7 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-03",
+        "targetId": "WEBD-AT-7-3",
+        "learningTarget": "During the guide's debugging drill for promise, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-04",
+        "targetId": "WEBD-AT-7-4",
+        "learningTarget": "A classmate is about to read asynchronous data synchronously. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-05",
+        "targetId": "WEBD-AT-7-5",
+        "learningTarget": "Which activity from the Week 7 guide correctly demonstrates JSON parsing?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-06",
+        "targetId": "WEBD-AT-7-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: await response.json()?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-07",
+        "targetId": "WEBD-AT-7-7",
+        "learningTarget": "A learner must explain loading state before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-08",
+        "targetId": "WEBD-AT-7-8",
+        "learningTarget": "The guide describes \"UI feedback while work is pending\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-09",
+        "targetId": "WEBD-AT-7-9",
+        "learningTarget": "Which mistake would show that DevTools network panel was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W07-10",
+        "targetId": "WEBD-AT-7-10",
+        "learningTarget": "To avoid this error—guess whether the request ran—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W07",
+          "resourceIds": [
+            "WEBD-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-01",
+        "targetId": "WEBD-AT-8-1",
+        "learningTarget": "The Week 8 guide defines relative URL. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-02",
+        "targetId": "WEBD-AT-8-2",
+        "learningTarget": "The learner needs to link ./styles.css. Which concept from the Week 8 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-03",
+        "targetId": "WEBD-AT-8-3",
+        "learningTarget": "During the guide's debugging drill for deployment, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-04",
+        "targetId": "WEBD-AT-8-4",
+        "learningTarget": "A classmate is about to assume local success proves hosted paths. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-05",
+        "targetId": "WEBD-AT-8-5",
+        "learningTarget": "Which activity from the Week 8 guide correctly demonstrates accessibility audit?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-06",
+        "targetId": "WEBD-AT-8-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: test keyboard and contrast?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-07",
+        "targetId": "WEBD-AT-8-7",
+        "learningTarget": "A learner must explain README before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-08",
+        "targetId": "WEBD-AT-8-8",
+        "learningTarget": "The guide describes \"project purpose and use instructions\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-09",
+        "targetId": "WEBD-AT-8-9",
+        "learningTarget": "Which mistake would show that commit history was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "WEBD-Q-W08-10",
+        "targetId": "WEBD-AT-8-10",
+        "learningTarget": "To avoid this error—make one unexplained final upload—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "WEBD-W08",
+          "resourceIds": [
+            "WEBD-R-W08-01"
+          ]
+        }
+      }
+    ]
+  }
+}

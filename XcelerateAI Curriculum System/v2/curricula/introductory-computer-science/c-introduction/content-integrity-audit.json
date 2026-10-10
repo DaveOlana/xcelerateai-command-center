@@ -1,0 +1,2950 @@
+{
+  "schemaVersion": "1.0",
+  "curriculumId": "CLNG",
+  "revision": 1,
+  "auditedAt": "2026-10-10T12:00:00.000Z",
+  "targetLearner": "A tertiary fresher with basic computer literacy and no assumed programming experience.",
+  "resourceAudits": [
+    {
+      "resourceId": "CLNG-R-W01-01",
+      "weekId": "CLNG-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-1",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Compile, Run, and Basic Values learner guide",
+          "url": "/curriculum-guides/c-introduction.html#week-1",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/main_function",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "CLNG-R-W01-02",
+      "weekId": "CLNG-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-1-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Compile, Run, and Basic Values concept practice",
+          "url": "/curriculum-guides/c-introduction.html#week-1-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/main_function",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "CLNG-R-W02-01",
+      "weekId": "CLNG-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-2",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Input, Operators, and Decisions learner guide",
+          "url": "/curriculum-guides/c-introduction.html#week-2",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/if",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "CLNG-R-W02-02",
+      "weekId": "CLNG-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-2-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Input, Operators, and Decisions concept practice",
+          "url": "/curriculum-guides/c-introduction.html#week-2-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/if",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "CLNG-R-W03-01",
+      "weekId": "CLNG-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-3",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Loops and Tracing learner guide",
+          "url": "/curriculum-guides/c-introduction.html#week-3",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/for",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "CLNG-R-W03-02",
+      "weekId": "CLNG-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-3-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Loops and Tracing concept practice",
+          "url": "/curriculum-guides/c-introduction.html#week-3-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/for",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "CLNG-R-W04-01",
+      "weekId": "CLNG-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-4",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Functions and Program Structure learner guide",
+          "url": "/curriculum-guides/c-introduction.html#week-4",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/functions",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "CLNG-R-W04-02",
+      "weekId": "CLNG-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-4-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Functions and Program Structure concept practice",
+          "url": "/curriculum-guides/c-introduction.html#week-4-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/functions",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "CLNG-R-W05-01",
+      "weekId": "CLNG-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-5",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Arrays and Strings learner guide",
+          "url": "/curriculum-guides/c-introduction.html#week-5",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/string/byte",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "CLNG-R-W05-02",
+      "weekId": "CLNG-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-5-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Arrays and Strings concept practice",
+          "url": "/curriculum-guides/c-introduction.html#week-5-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/string/byte",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "CLNG-R-W06-01",
+      "weekId": "CLNG-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-6",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Pointers and Structs learner guide",
+          "url": "/curriculum-guides/c-introduction.html#week-6",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/pointer",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "CLNG-R-W06-02",
+      "weekId": "CLNG-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-6-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Pointers and Structs concept practice",
+          "url": "/curriculum-guides/c-introduction.html#week-6-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/language/pointer",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "CLNG-R-W07-01",
+      "weekId": "CLNG-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-7",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Files, Errors, and Debugging learner guide",
+          "url": "/curriculum-guides/c-introduction.html#week-7",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/io",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "CLNG-R-W07-02",
+      "weekId": "CLNG-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-7-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Files, Errors, and Debugging concept practice",
+          "url": "/curriculum-guides/c-introduction.html#week-7-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://en.cppreference.com/w/c/io",
+          "provider": "en.cppreference.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "CLNG-R-W08-01",
+      "weekId": "CLNG-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-8",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent C Project and GitHub learner guide",
+          "url": "/curriculum-guides/c-introduction.html#week-8",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "CLNG-R-W08-02",
+      "weekId": "CLNG-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/c-introduction.html#week-8-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent C Project and GitHub concept practice",
+          "url": "/curriculum-guides/c-introduction.html#week-8-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches CLNG-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    }
+  ],
+  "questionAudits": [
+    {
+      "questionId": "CLNG-Q-W01-01",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W01-02",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W01-03",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W01-04",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "CLNG-Q-W01-05",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W01-06",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W01-07",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W01-08",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W01-09",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W01-10",
+      "weekId": "CLNG-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-1-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "CLNG-Q-W02-01",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W02-02",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W02-03",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W02-04",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "CLNG-Q-W02-05",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W02-06",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W02-07",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W02-08",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W02-09",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W02-10",
+      "weekId": "CLNG-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-2-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "CLNG-Q-W03-01",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W03-02",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W03-03",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W03-04",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "CLNG-Q-W03-05",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W03-06",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W03-07",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W03-08",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W03-09",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W03-10",
+      "weekId": "CLNG-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-3-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "CLNG-Q-W04-01",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W04-02",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W04-03",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W04-04",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "CLNG-Q-W04-05",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W04-06",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W04-07",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W04-08",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W04-09",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W04-10",
+      "weekId": "CLNG-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-4-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "CLNG-Q-W05-01",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W05-02",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W05-03",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W05-04",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "CLNG-Q-W05-05",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W05-06",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W05-07",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W05-08",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W05-09",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W05-10",
+      "weekId": "CLNG-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-5-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "CLNG-Q-W06-01",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W06-02",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W06-03",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W06-04",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "CLNG-Q-W06-05",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W06-06",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W06-07",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W06-08",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W06-09",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W06-10",
+      "weekId": "CLNG-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-6-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "CLNG-Q-W07-01",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W07-02",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W07-03",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W07-04",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "CLNG-Q-W07-05",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W07-06",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W07-07",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W07-08",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W07-09",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W07-10",
+      "weekId": "CLNG-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-7-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "CLNG-Q-W08-01",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W08-02",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W08-03",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W08-04",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "CLNG-Q-W08-05",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W08-06",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "CLNG-Q-W08-07",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W08-08",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "CLNG-Q-W08-09",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "CLNG-Q-W08-10",
+      "weekId": "CLNG-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "CLNG-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "CLNG-AT-8-10",
+      "assessmentType": "error prevention"
+    }
+  ],
+  "buildAudits": [
+    {
+      "buildId": "CLNG-B-W01-01",
+      "weekId": "CLNG-W01",
+      "dependencies": [
+        {
+          "name": "CLNG-C001",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "CLNG-B-W02-01",
+      "weekId": "CLNG-W02",
+      "dependencies": [
+        {
+          "name": "CLNG-C002",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "CLNG-B-W03-01",
+      "weekId": "CLNG-W03",
+      "dependencies": [
+        {
+          "name": "CLNG-C003",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "CLNG-B-W04-01",
+      "weekId": "CLNG-W04",
+      "dependencies": [
+        {
+          "name": "CLNG-C004",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "CLNG-B-W05-01",
+      "weekId": "CLNG-W05",
+      "dependencies": [
+        {
+          "name": "CLNG-C005",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "CLNG-B-W06-01",
+      "weekId": "CLNG-W06",
+      "dependencies": [
+        {
+          "name": "CLNG-C006",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "CLNG-B-W07-01",
+      "weekId": "CLNG-W07",
+      "dependencies": [
+        {
+          "name": "CLNG-C007",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "CLNG-B-W08-01",
+      "weekId": "CLNG-W08",
+      "dependencies": [
+        {
+          "name": "CLNG-C008",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    }
+  ],
+  "weekReadiness": [
+    {
+      "weekId": "CLNG-W01",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "CLNG-W02",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "CLNG-W03",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "CLNG-W04",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "CLNG-W05",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "CLNG-W06",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "CLNG-W07",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "CLNG-W08",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    }
+  ],
+  "semanticReview": {
+    "status": "PASS",
+    "method": "Author-led review of the profession boundary, weekly prerequisite chain, every fact pair, distractor family, Build dependency, proof demand, and official reference. Deterministic validators only verify the serialized evidence; they do not create this approval.",
+    "findingsReviewed": [
+      "Every week teaches before assessing and builds immediately after assessment.",
+      "Ten questions assess explanation and application selection while coding remains in Build.",
+      "The sequence grows from syntax to structured independent work without frameworks or hidden algebra.",
+      "Every course ends with GitHub publication; setup remains outside the 48 instructional hours."
+    ],
+    "adversarialResult": "No untaught assessment dependency or hidden Build prerequisite remains."
+  },
+  "assessmentCoverageMap": {
+    "entries": [
+      {
+        "questionId": "CLNG-Q-W01-01",
+        "targetId": "CLNG-AT-1-1",
+        "learningTarget": "The Week 1 guide defines compiler. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-02",
+        "targetId": "CLNG-AT-1-2",
+        "learningTarget": "The learner needs to run gcc source.c -o app. Which concept from the Week 1 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-03",
+        "targetId": "CLNG-AT-1-3",
+        "learningTarget": "During the guide's debugging drill for main, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-04",
+        "targetId": "CLNG-AT-1-4",
+        "learningTarget": "A classmate is about to write executable statements outside functions. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-05",
+        "targetId": "CLNG-AT-1-5",
+        "learningTarget": "Which activity from the Week 1 guide correctly demonstrates header?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-06",
+        "targetId": "CLNG-AT-1-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: include stdio.h for printf?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-07",
+        "targetId": "CLNG-AT-1-7",
+        "learningTarget": "A learner must explain variable type before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-08",
+        "targetId": "CLNG-AT-1-8",
+        "learningTarget": "The guide describes \"the representation and operations of a value\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-09",
+        "targetId": "CLNG-AT-1-9",
+        "learningTarget": "Which mistake would show that printf format was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W01-10",
+        "targetId": "CLNG-AT-1-10",
+        "learningTarget": "To avoid this error—supply fewer arguments than placeholders—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W01",
+          "resourceIds": [
+            "CLNG-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-01",
+        "targetId": "CLNG-AT-2-1",
+        "learningTarget": "The Week 2 guide defines scanf result. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-02",
+        "targetId": "CLNG-AT-2-2",
+        "learningTarget": "The learner needs to check scanf returns 1. Which concept from the Week 2 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-03",
+        "targetId": "CLNG-AT-2-3",
+        "learningTarget": "During the guide's debugging drill for address operator, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-04",
+        "targetId": "CLNG-AT-2-4",
+        "learningTarget": "A classmate is about to use & with an array name in basic string input. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-05",
+        "targetId": "CLNG-AT-2-5",
+        "learningTarget": "Which activity from the Week 2 guide correctly demonstrates integer division?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-06",
+        "targetId": "CLNG-AT-2-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: 7 / 2 produces 3?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-07",
+        "targetId": "CLNG-AT-2-7",
+        "learningTarget": "A learner must explain if statement before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-08",
+        "targetId": "CLNG-AT-2-8",
+        "learningTarget": "The guide describes \"conditional execution\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-09",
+        "targetId": "CLNG-AT-2-9",
+        "learningTarget": "Which mistake would show that logical operator was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W02-10",
+        "targetId": "CLNG-AT-2-10",
+        "learningTarget": "To avoid this error—confuse bitwise & with logical &&—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W02",
+          "resourceIds": [
+            "CLNG-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-01",
+        "targetId": "CLNG-AT-3-1",
+        "learningTarget": "The Week 3 guide defines for loop. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-02",
+        "targetId": "CLNG-AT-3-2",
+        "learningTarget": "The learner needs to read five measurements. Which concept from the Week 3 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-03",
+        "targetId": "CLNG-AT-3-3",
+        "learningTarget": "During the guide's debugging drill for while loop, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-04",
+        "targetId": "CLNG-AT-3-4",
+        "learningTarget": "A classmate is about to forget to update the sentinel. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-05",
+        "targetId": "CLNG-AT-3-5",
+        "learningTarget": "Which activity from the Week 3 guide correctly demonstrates accumulator?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-06",
+        "targetId": "CLNG-AT-3-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: sum valid readings?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-07",
+        "targetId": "CLNG-AT-3-7",
+        "learningTarget": "A learner must explain counter before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-08",
+        "targetId": "CLNG-AT-3-8",
+        "learningTarget": "The guide describes \"tracks how many qualifying events occurred\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-09",
+        "targetId": "CLNG-AT-3-9",
+        "learningTarget": "Which mistake would show that trace table was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W03-10",
+        "targetId": "CLNG-AT-3-10",
+        "learningTarget": "To avoid this error—guess loop output without following state—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W03",
+          "resourceIds": [
+            "CLNG-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-01",
+        "targetId": "CLNG-AT-4-1",
+        "learningTarget": "The Week 4 guide defines function prototype. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-02",
+        "targetId": "CLNG-AT-4-2",
+        "learningTarget": "The learner needs to declare double average(...);. Which concept from the Week 4 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-03",
+        "targetId": "CLNG-AT-4-3",
+        "learningTarget": "During the guide's debugging drill for parameter, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-04",
+        "targetId": "CLNG-AT-4-4",
+        "learningTarget": "A classmate is about to expect value parameters to update caller variables. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-05",
+        "targetId": "CLNG-AT-4-5",
+        "learningTarget": "Which activity from the Week 4 guide correctly demonstrates return value?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-06",
+        "targetId": "CLNG-AT-4-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: return a calculated result?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-07",
+        "targetId": "CLNG-AT-4-7",
+        "learningTarget": "A learner must explain translation unit before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-08",
+        "targetId": "CLNG-AT-4-8",
+        "learningTarget": "The guide describes \"one source file after preprocessing\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-09",
+        "targetId": "CLNG-AT-4-9",
+        "learningTarget": "Which mistake would show that linker was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W04-10",
+        "targetId": "CLNG-AT-4-10",
+        "learningTarget": "To avoid this error—debug a missing symbol as a syntax error—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W04",
+          "resourceIds": [
+            "CLNG-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-01",
+        "targetId": "CLNG-AT-5-1",
+        "learningTarget": "The Week 5 guide defines array. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-02",
+        "targetId": "CLNG-AT-5-2",
+        "learningTarget": "The learner needs to store ten scores. Which concept from the Week 5 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-03",
+        "targetId": "CLNG-AT-5-3",
+        "learningTarget": "During the guide's debugging drill for array length, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-04",
+        "targetId": "CLNG-AT-5-4",
+        "learningTarget": "A classmate is about to expect a function parameter to retain array size. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-05",
+        "targetId": "CLNG-AT-5-5",
+        "learningTarget": "Which activity from the Week 5 guide correctly demonstrates C string?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-06",
+        "targetId": "CLNG-AT-5-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: reserve space for the terminator?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-07",
+        "targetId": "CLNG-AT-5-7",
+        "learningTarget": "A learner must explain fgets before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-08",
+        "targetId": "CLNG-AT-5-8",
+        "learningTarget": "The guide describes \"bounded line input\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-09",
+        "targetId": "CLNG-AT-5-9",
+        "learningTarget": "Which mistake would show that off-by-one was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W05-10",
+        "targetId": "CLNG-AT-5-10",
+        "learningTarget": "To avoid this error—loop through index <= length—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W05",
+          "resourceIds": [
+            "CLNG-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-01",
+        "targetId": "CLNG-AT-6-1",
+        "learningTarget": "The Week 6 guide defines pointer. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-02",
+        "targetId": "CLNG-AT-6-2",
+        "learningTarget": "The learner needs to point to an int with int *p. Which concept from the Week 6 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-03",
+        "targetId": "CLNG-AT-6-3",
+        "learningTarget": "During the guide's debugging drill for dereference, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-04",
+        "targetId": "CLNG-AT-6-4",
+        "learningTarget": "A classmate is about to confuse declaration * with multiplication in reasoning. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-05",
+        "targetId": "CLNG-AT-6-5",
+        "learningTarget": "Which activity from the Week 6 guide correctly demonstrates struct?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-06",
+        "targetId": "CLNG-AT-6-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: store name and score together?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-07",
+        "targetId": "CLNG-AT-6-7",
+        "learningTarget": "A learner must explain member operator before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-08",
+        "targetId": "CLNG-AT-6-8",
+        "learningTarget": "The guide describes \"access to a struct field\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-09",
+        "targetId": "CLNG-AT-6-9",
+        "learningTarget": "Which mistake would show that lifetime was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W06-10",
+        "targetId": "CLNG-AT-6-10",
+        "learningTarget": "To avoid this error—keep pointers after their object expires—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W06",
+          "resourceIds": [
+            "CLNG-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-01",
+        "targetId": "CLNG-AT-7-1",
+        "learningTarget": "The Week 7 guide defines FILE pointer. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-02",
+        "targetId": "CLNG-AT-7-2",
+        "learningTarget": "The learner needs to check fopen result. Which concept from the Week 7 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-03",
+        "targetId": "CLNG-AT-7-3",
+        "learningTarget": "During the guide's debugging drill for file mode, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-04",
+        "targetId": "CLNG-AT-7-4",
+        "learningTarget": "A classmate is about to use w when old content must remain. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-05",
+        "targetId": "CLNG-AT-7-5",
+        "learningTarget": "Which activity from the Week 7 guide correctly demonstrates EOF handling?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-06",
+        "targetId": "CLNG-AT-7-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: test fgets return value?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-07",
+        "targetId": "CLNG-AT-7-7",
+        "learningTarget": "A learner must explain stderr before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-08",
+        "targetId": "CLNG-AT-7-8",
+        "learningTarget": "The guide describes \"the diagnostic output stream\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-09",
+        "targetId": "CLNG-AT-7-9",
+        "learningTarget": "Which mistake would show that warning was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W07-10",
+        "targetId": "CLNG-AT-7-10",
+        "learningTarget": "To avoid this error—ignore warnings because compilation succeeded—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W07",
+          "resourceIds": [
+            "CLNG-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-01",
+        "targetId": "CLNG-AT-8-1",
+        "learningTarget": "The Week 8 guide defines interface contract. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-02",
+        "targetId": "CLNG-AT-8-2",
+        "learningTarget": "The learner needs to write a clear header declaration. Which concept from the Week 8 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-03",
+        "targetId": "CLNG-AT-8-3",
+        "learningTarget": "During the guide's debugging drill for input validation, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-04",
+        "targetId": "CLNG-AT-8-4",
+        "learningTarget": "A classmate is about to continue with an unchanged variable. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-05",
+        "targetId": "CLNG-AT-8-5",
+        "learningTarget": "Which activity from the Week 8 guide correctly demonstrates test fixture?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-06",
+        "targetId": "CLNG-AT-8-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: keep sample input files?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-07",
+        "targetId": "CLNG-AT-8-7",
+        "learningTarget": "A learner must explain README before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-08",
+        "targetId": "CLNG-AT-8-8",
+        "learningTarget": "The guide describes \"build and usage instructions\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-09",
+        "targetId": "CLNG-AT-8-9",
+        "learningTarget": "Which mistake would show that commit was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "CLNG-Q-W08-10",
+        "targetId": "CLNG-AT-8-10",
+        "learningTarget": "To avoid this error—commit compiler binaries and secrets—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "CLNG-W08",
+          "resourceIds": [
+            "CLNG-R-W08-01"
+          ]
+        }
+      }
+    ]
+  }
+}

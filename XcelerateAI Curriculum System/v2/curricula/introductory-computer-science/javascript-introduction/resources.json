@@ -1,0 +1,754 @@
+[
+  {
+    "id": "JSIN-R-W01-01",
+    "title": "Node, Values, and Output learner guide",
+    "url": "/curriculum-guides/javascript-introduction.html#week-1",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 1.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C001"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a Node receipt calculator without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-1",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-1",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C001.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types."
+  },
+  {
+    "id": "JSIN-R-W01-02",
+    "title": "Node, Values, and Output concept practice",
+    "url": "/curriculum-guides/javascript-introduction.html#week-1-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C001"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a Node receipt calculator.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-1-practice",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-1-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C001.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types."
+  },
+  {
+    "id": "JSIN-R-W02-01",
+    "title": "Input and Decisions learner guide",
+    "url": "/curriculum-guides/javascript-introduction.html#week-2",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 2.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C002"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a command-line fare adviser without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-2",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-2",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C002.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling."
+  },
+  {
+    "id": "JSIN-R-W02-02",
+    "title": "Input and Decisions concept practice",
+    "url": "/curriculum-guides/javascript-introduction.html#week-2-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C002"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a command-line fare adviser.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-2-practice",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-2-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C002.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling."
+  },
+  {
+    "id": "JSIN-R-W03-01",
+    "title": "Loops and Arrays learner guide",
+    "url": "/curriculum-guides/javascript-introduction.html#week-3",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 3.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C003"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a score-summary program without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-3",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-3",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C003.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections."
+  },
+  {
+    "id": "JSIN-R-W03-02",
+    "title": "Loops and Arrays concept practice",
+    "url": "/curriculum-guides/javascript-introduction.html#week-3-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C003"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a score-summary program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-3-practice",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-3-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C003.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections."
+  },
+  {
+    "id": "JSIN-R-W04-01",
+    "title": "Functions and Objects learner guide",
+    "url": "/curriculum-guides/javascript-introduction.html#week-4",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 4.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C004"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a reusable student-record toolkit without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-4",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-4",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C004.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects."
+  },
+  {
+    "id": "JSIN-R-W04-02",
+    "title": "Functions and Objects concept practice",
+    "url": "/curriculum-guides/javascript-introduction.html#week-4-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C004"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a reusable student-record toolkit.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-4-practice",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-4-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C004.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects."
+  },
+  {
+    "id": "JSIN-R-W05-01",
+    "title": "Debugging and Defensive Code learner guide",
+    "url": "/curriculum-guides/javascript-introduction.html#week-5",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 5.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C005"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a resilient calculator with useful errors without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-5",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-5",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C005.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#exception_handling_statements."
+  },
+  {
+    "id": "JSIN-R-W05-02",
+    "title": "Debugging and Defensive Code concept practice",
+    "url": "/curriculum-guides/javascript-introduction.html#week-5-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C005"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a resilient calculator with useful errors.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-5-practice",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-5-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C005.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#exception_handling_statements."
+  },
+  {
+    "id": "JSIN-R-W06-01",
+    "title": "JSON and File Persistence learner guide",
+    "url": "/curriculum-guides/javascript-introduction.html#week-6",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 6.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C006"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a persistent task-list program without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-6",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-6",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C006.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://nodejs.org/api/fs.html."
+  },
+  {
+    "id": "JSIN-R-W06-02",
+    "title": "JSON and File Persistence concept practice",
+    "url": "/curriculum-guides/javascript-introduction.html#week-6-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C006"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a persistent task-list program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-6-practice",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-6-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C006.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://nodejs.org/api/fs.html."
+  },
+  {
+    "id": "JSIN-R-W07-01",
+    "title": "Modules and Tests learner guide",
+    "url": "/curriculum-guides/javascript-introduction.html#week-7",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 7.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C007"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a tested CommonJS utility package without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-7",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-7",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C007.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://nodejs.org/api/test.html."
+  },
+  {
+    "id": "JSIN-R-W07-02",
+    "title": "Modules and Tests concept practice",
+    "url": "/curriculum-guides/javascript-introduction.html#week-7-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C007"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a tested CommonJS utility package.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-7-practice",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-7-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C007.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://nodejs.org/api/test.html."
+  },
+  {
+    "id": "JSIN-R-W08-01",
+    "title": "Independent Node Project and GitHub learner guide",
+    "url": "/curriculum-guides/javascript-introduction.html#week-8",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 8.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C008"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a polished command-line quiz or tracker published to GitHub without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-8",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-8",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C008.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git."
+  },
+  {
+    "id": "JSIN-R-W08-02",
+    "title": "Independent Node Project and GitHub concept practice",
+    "url": "/curriculum-guides/javascript-introduction.html#week-8-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C008"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a polished command-line quiz or tracker published to GitHub.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/javascript-introduction.html#week-8-practice",
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-8-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JSIN-C008.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git."
+  }
+]

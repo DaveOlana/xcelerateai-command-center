@@ -1,0 +1,754 @@
+[
+  {
+    "id": "JAVA-R-W01-01",
+    "title": "JDK, Classes, and First Output learner guide",
+    "url": "/curriculum-guides/java-introduction.html#week-1",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 1.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C001"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a labelled command-line receipt without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-1",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-1",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C001.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/getting-started/."
+  },
+  {
+    "id": "JAVA-R-W01-02",
+    "title": "JDK, Classes, and First Output concept practice",
+    "url": "/curriculum-guides/java-introduction.html#week-1-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C001"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a labelled command-line receipt.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-1-practice",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-1-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C001.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/getting-started/."
+  },
+  {
+    "id": "JAVA-R-W02-01",
+    "title": "Types, Variables, and Input learner guide",
+    "url": "/curriculum-guides/java-introduction.html#week-2",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 2.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C002"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build an interactive unit converter without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-2",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-2",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C002.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/language-basics/variables/."
+  },
+  {
+    "id": "JAVA-R-W02-02",
+    "title": "Types, Variables, and Input concept practice",
+    "url": "/curriculum-guides/java-introduction.html#week-2-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C002"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for an interactive unit converter.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-2-practice",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-2-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C002.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/language-basics/variables/."
+  },
+  {
+    "id": "JAVA-R-W03-01",
+    "title": "Conditions and Loops learner guide",
+    "url": "/curriculum-guides/java-introduction.html#week-3",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 3.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C003"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a menu-driven grade adviser without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-3",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-3",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C003.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/language-basics/controlling-flow/."
+  },
+  {
+    "id": "JAVA-R-W03-02",
+    "title": "Conditions and Loops concept practice",
+    "url": "/curriculum-guides/java-introduction.html#week-3-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C003"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a menu-driven grade adviser.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-3-practice",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-3-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C003.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/language-basics/controlling-flow/."
+  },
+  {
+    "id": "JAVA-R-W04-01",
+    "title": "Methods and Decomposition learner guide",
+    "url": "/curriculum-guides/java-introduction.html#week-4",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 4.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C004"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a reusable calculation library without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-4",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-4",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C004.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/classes-objects/more-on-methods/."
+  },
+  {
+    "id": "JAVA-R-W04-02",
+    "title": "Methods and Decomposition concept practice",
+    "url": "/curriculum-guides/java-introduction.html#week-4-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C004"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a reusable calculation library.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-4-practice",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-4-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C004.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/classes-objects/more-on-methods/."
+  },
+  {
+    "id": "JAVA-R-W05-01",
+    "title": "Arrays and ArrayList learner guide",
+    "url": "/curriculum-guides/java-introduction.html#week-5",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 5.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C005"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a contact or score collection manager without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-5",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-5",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C005.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/api/collections-framework/array-list/."
+  },
+  {
+    "id": "JAVA-R-W05-02",
+    "title": "Arrays and ArrayList concept practice",
+    "url": "/curriculum-guides/java-introduction.html#week-5-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C005"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a contact or score collection manager.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-5-practice",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-5-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C005.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/api/collections-framework/array-list/."
+  },
+  {
+    "id": "JAVA-R-W06-01",
+    "title": "Classes and Objects learner guide",
+    "url": "/curriculum-guides/java-introduction.html#week-6",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 6.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C006"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a small student-record model without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-6",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-6",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C006.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/classes-objects/."
+  },
+  {
+    "id": "JAVA-R-W06-02",
+    "title": "Classes and Objects concept practice",
+    "url": "/curriculum-guides/java-introduction.html#week-6-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C006"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a small student-record model.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-6-practice",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-6-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C006.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/classes-objects/."
+  },
+  {
+    "id": "JAVA-R-W07-01",
+    "title": "Exceptions, Files, and Tests learner guide",
+    "url": "/curriculum-guides/java-introduction.html#week-7",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 7.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C007"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a persistent record tool with automated checks without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-7",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-7",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C007.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/java-io/."
+  },
+  {
+    "id": "JAVA-R-W07-02",
+    "title": "Exceptions, Files, and Tests concept practice",
+    "url": "/curriculum-guides/java-introduction.html#week-7-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C007"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a persistent record tool with automated checks.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-7-practice",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-7-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C007.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://dev.java/learn/java-io/."
+  },
+  {
+    "id": "JAVA-R-W08-01",
+    "title": "Independent Java Project and GitHub learner guide",
+    "url": "/curriculum-guides/java-introduction.html#week-8",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 8.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C008"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build an IntelliJ command-line student utility published to GitHub without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-8",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-8",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C008.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git."
+  },
+  {
+    "id": "JAVA-R-W08-02",
+    "title": "Independent Java Project and GitHub concept practice",
+    "url": "/curriculum-guides/java-introduction.html#week-8-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "JAVA-C008"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for an IntelliJ command-line student utility published to GitHub.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/java-introduction.html#week-8-practice",
+      "finalUrl": "/curriculum-guides/java-introduction.html#week-8-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports JAVA-C008.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git."
+  }
+]

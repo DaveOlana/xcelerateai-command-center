@@ -1,0 +1,158 @@
+[
+  {
+    "competencyId": "JSIN-C001",
+    "taughtIn": [
+      "JSIN-W01"
+    ],
+    "practicedIn": [
+      "JSIN-W01"
+    ],
+    "assessedIn": [
+      "JSIN-SC-W01"
+    ],
+    "appliedIn": [
+      "JSIN-B-W01-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JSIN-C002",
+    "taughtIn": [
+      "JSIN-W02"
+    ],
+    "practicedIn": [
+      "JSIN-W02"
+    ],
+    "assessedIn": [
+      "JSIN-SC-W02"
+    ],
+    "appliedIn": [
+      "JSIN-B-W02-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JSIN-C003",
+    "taughtIn": [
+      "JSIN-W03"
+    ],
+    "practicedIn": [
+      "JSIN-W03"
+    ],
+    "assessedIn": [
+      "JSIN-SC-W03"
+    ],
+    "appliedIn": [
+      "JSIN-B-W03-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JSIN-C004",
+    "taughtIn": [
+      "JSIN-W04"
+    ],
+    "practicedIn": [
+      "JSIN-W04"
+    ],
+    "assessedIn": [
+      "JSIN-SC-W04"
+    ],
+    "appliedIn": [
+      "JSIN-B-W04-01"
+    ],
+    "projectUse": [
+      "JSIN-PJ01-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JSIN-C005",
+    "taughtIn": [
+      "JSIN-W05"
+    ],
+    "practicedIn": [
+      "JSIN-W05"
+    ],
+    "assessedIn": [
+      "JSIN-SC-W05"
+    ],
+    "appliedIn": [
+      "JSIN-B-W05-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JSIN-C006",
+    "taughtIn": [
+      "JSIN-W06"
+    ],
+    "practicedIn": [
+      "JSIN-W06"
+    ],
+    "assessedIn": [
+      "JSIN-SC-W06"
+    ],
+    "appliedIn": [
+      "JSIN-B-W06-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JSIN-C007",
+    "taughtIn": [
+      "JSIN-W07"
+    ],
+    "practicedIn": [
+      "JSIN-W07"
+    ],
+    "assessedIn": [
+      "JSIN-SC-W07"
+    ],
+    "appliedIn": [
+      "JSIN-B-W07-01"
+    ],
+    "projectUse": [],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  },
+  {
+    "competencyId": "JSIN-C008",
+    "taughtIn": [
+      "JSIN-W08"
+    ],
+    "practicedIn": [
+      "JSIN-W08"
+    ],
+    "assessedIn": [
+      "JSIN-SC-W08"
+    ],
+    "appliedIn": [
+      "JSIN-B-W08-01"
+    ],
+    "projectUse": [
+      "JSIN-PJ02-M01"
+    ],
+    "reinforcedIn": [],
+    "intermediateReinforcedIn": [],
+    "capstoneIntegration": []
+  }
+]

@@ -14,6 +14,13 @@
     "revision": { "type": "integer", "minimum": 1 },
     "title": { "$ref": "#/$defs/nonEmptyString" },
     "shortTitle": { "$ref": "#/$defs/nonEmptyString" },
+    "catalog": {
+      "type": "object",
+      "required": ["category", "level"],
+      "properties": { "category": { "$ref": "#/$defs/nonEmptyString" }, "level": { "$ref": "#/$defs/nonEmptyString" } },
+      "additionalProperties": false
+    },
+    "setup": { "$ref": "#/$defs/setup" },
     "target": {
       "type": "object",
       "required": ["role", "learner", "professionalOutcome", "specialGoals"],
@@ -56,6 +63,27 @@
   "$defs": {
     "id": { "type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$" },
     "nonEmptyString": { "type": "string", "minLength": 1 },
+    "setupCapability": {
+      "type": "object",
+      "required": ["id", "title", "description", "required", "skippableWhenVerified", "instructions", "verification"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "description": { "$ref": "#/$defs/nonEmptyString" },
+        "required": { "type": "boolean" }, "skippableWhenVerified": { "type": "boolean" },
+        "instructions": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "verification": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmptyString" } }
+      },
+      "additionalProperties": false
+    },
+    "setup": {
+      "type": "object",
+      "required": ["title", "description", "estimatedMinutes", "capabilities"],
+      "properties": {
+        "title": { "$ref": "#/$defs/nonEmptyString" }, "description": { "$ref": "#/$defs/nonEmptyString" },
+        "estimatedMinutes": { "type": "number", "exclusiveMinimum": 0 },
+        "capabilities": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/setupCapability" } }
+      },
+      "additionalProperties": false
+    },
     "idArray": { "type": "array", "items": { "$ref": "#/$defs/id" } },
     "phase": {
       "type": "object",
@@ -131,7 +159,7 @@
     },
     "skillCheck": {
       "type": "object", "required": ["id", "title", "instructions", "passingScore", "competencyIds", "questions"],
-      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "instructions": { "$ref": "#/$defs/nonEmptyString" }, "passingScore": { "type": "integer", "minimum": 1, "maximum": 100 }, "competencyIds": { "$ref": "#/$defs/idArray" }, "questions": { "type": "array", "minItems": 10, "maxItems": 10, "items": { "$ref": "#/$defs/question" } } },
+      "properties": { "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/nonEmptyString" }, "instructions": { "$ref": "#/$defs/nonEmptyString" }, "passingScore": { "type": "integer", "minimum": 1, "maximum": 100 }, "optionOrder": { "enum": ["authored", "shuffle-per-attempt"] }, "competencyIds": { "$ref": "#/$defs/idArray" }, "questions": { "type": "array", "minItems": 10, "maxItems": 10, "items": { "$ref": "#/$defs/question" } } },
       "additionalProperties": false
     },
     "textItem": {

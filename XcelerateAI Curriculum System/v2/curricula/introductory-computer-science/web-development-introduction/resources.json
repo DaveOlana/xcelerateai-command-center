@@ -1,0 +1,754 @@
+[
+  {
+    "id": "WEBD-R-W01-01",
+    "title": "HTML Structure and the Browser learner guide",
+    "url": "/curriculum-guides/web-development-introduction.html#week-1",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 1.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C001"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a semantic personal profile page without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-1",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-1",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C001.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content."
+  },
+  {
+    "id": "WEBD-R-W01-02",
+    "title": "HTML Structure and the Browser concept practice",
+    "url": "/curriculum-guides/web-development-introduction.html#week-1-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C001"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a semantic personal profile page.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-1-practice",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-1-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C001.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content."
+  },
+  {
+    "id": "WEBD-R-W02-01",
+    "title": "CSS Foundations learner guide",
+    "url": "/curriculum-guides/web-development-introduction.html#week-2",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 2.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C002"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a styled profile with a coherent visual system without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-2",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-2",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C002.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics."
+  },
+  {
+    "id": "WEBD-R-W02-02",
+    "title": "CSS Foundations concept practice",
+    "url": "/curriculum-guides/web-development-introduction.html#week-2-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C002"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a styled profile with a coherent visual system.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-2-practice",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-2-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C002.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics."
+  },
+  {
+    "id": "WEBD-R-W03-01",
+    "title": "Responsive Layout learner guide",
+    "url": "/curriculum-guides/web-development-introduction.html#week-3",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 3.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C003"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a mobile-first responsive information page without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-3",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-3",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C003.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design."
+  },
+  {
+    "id": "WEBD-R-W03-02",
+    "title": "Responsive Layout concept practice",
+    "url": "/curriculum-guides/web-development-introduction.html#week-3-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C003"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a mobile-first responsive information page.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-3-practice",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-3-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C003.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design."
+  },
+  {
+    "id": "WEBD-R-W04-01",
+    "title": "JavaScript and Events learner guide",
+    "url": "/curriculum-guides/web-development-introduction.html#week-4",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 4.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C004"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build an interactive tip or score calculator without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-4",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-4",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C004.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting."
+  },
+  {
+    "id": "WEBD-R-W04-02",
+    "title": "JavaScript and Events concept practice",
+    "url": "/curriculum-guides/web-development-introduction.html#week-4-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C004"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for an interactive tip or score calculator.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-4-practice",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-4-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C004.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting."
+  },
+  {
+    "id": "WEBD-R-W05-01",
+    "title": "DOM State and Collections learner guide",
+    "url": "/curriculum-guides/web-development-introduction.html#week-5",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 5.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C005"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a filterable task list without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-5",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-5",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C005.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model."
+  },
+  {
+    "id": "WEBD-R-W05-02",
+    "title": "DOM State and Collections concept practice",
+    "url": "/curriculum-guides/web-development-introduction.html#week-5-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C005"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a filterable task list.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-5-practice",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-5-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C005.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model."
+  },
+  {
+    "id": "WEBD-R-W06-01",
+    "title": "Forms and Accessibility learner guide",
+    "url": "/curriculum-guides/web-development-introduction.html#week-6",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 6.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C006"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build an accessible registration form without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-6",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-6",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C006.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms."
+  },
+  {
+    "id": "WEBD-R-W06-02",
+    "title": "Forms and Accessibility concept practice",
+    "url": "/curriculum-guides/web-development-introduction.html#week-6-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C006"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for an accessible registration form.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-6-practice",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-6-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C006.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms."
+  },
+  {
+    "id": "WEBD-R-W07-01",
+    "title": "Fetch, Failure, and Debugging learner guide",
+    "url": "/curriculum-guides/web-development-introduction.html#week-7",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 7.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C007"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build a small data viewer with loading and error states without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-7",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-7",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C007.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch."
+  },
+  {
+    "id": "WEBD-R-W07-02",
+    "title": "Fetch, Failure, and Debugging concept practice",
+    "url": "/curriculum-guides/web-development-introduction.html#week-7-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C007"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for a small data viewer with loading and error states.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-7-practice",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-7-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C007.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch."
+  },
+  {
+    "id": "WEBD-R-W08-01",
+    "title": "Independent Website and GitHub Pages learner guide",
+    "url": "/curriculum-guides/web-development-introduction.html#week-8",
+    "provider": "XcelerateAI",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 90,
+    "location": {
+      "start": "Begin at Week 8.",
+      "stop": "Stop before the practice section.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C008"
+    ],
+    "whySelected": "This offline-first guide teaches the exact concepts needed to build an accessible responsive interactive site deployed with GitHub Pages without sending a beginner into unbounded documentation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "core",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-8",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-8",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A bounded bundled article provides coherent beginner teaching and remains available after initial setup.",
+    "purpose": [
+      "learn the mapped competency",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C008.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site."
+  },
+  {
+    "id": "WEBD-R-W08-02",
+    "title": "Independent Website and GitHub Pages concept practice",
+    "url": "/curriculum-guides/web-development-introduction.html#week-8-practice",
+    "provider": "XcelerateAI",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the Predict, reveal, explain section.",
+      "stop": "Stop after explaining every revealed answer in your own words.",
+      "note": "Keep the guide available offline, then return for the graded Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-C008"
+    ],
+    "whySelected": "This optional offline exercise adds prediction and error recognition before the graded check for an accessible responsive interactive site deployed with GitHub Pages.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-10T12:00:00.000Z",
+    "selectionRole": "optional",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-10T12:00:00.000Z",
+      "requestedUrl": "/curriculum-guides/web-development-introduction.html#week-8-practice",
+      "finalUrl": "/curriculum-guides/web-development-introduction.html#week-8-practice",
+      "redirected": false,
+      "finalDestinationKind": "bundled-guide",
+      "finalDestinationStatus": "success",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "generated-file-inspection",
+      "notes": "Bundled static guide generated and inspected with the candidate."
+    },
+    "formatRationale": "A short predict-and-reveal exercise provides a second offline learning mode without adding another required task.",
+    "purpose": [
+      "practice concept discrimination",
+      "prepare the required microbuild"
+    ],
+    "evaluation": {
+      "competencyFit": "Directly supports WEBD-C008.",
+      "clarity": "Defines every new term before use.",
+      "correctnessAndCurrency": "Reviewed against the listed official reference during generation.",
+      "accessibility": "Bundled HTML has headings, lists, code text, and no login or payment requirement."
+    },
+    "accessNotes": "Bundled with the application candidate and inspected locally.",
+    "alternativeNotes": "Compared with https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site."
+  }
+]

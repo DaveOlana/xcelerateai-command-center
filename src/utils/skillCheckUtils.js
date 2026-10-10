@@ -117,6 +117,91 @@ export function isQuizSkillCheck(definition) {
   return definition?.mode === 'quiz' && getQuizValidationErrors(definition).length === 0;
 }
 
+function hashString(value) {
+  let hash = 2166136261;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function sameOptionOrder(left, right) {
+  return left.length === right.length && left.every((option, index) => option.id === right[index]?.id);
+}
+
+function seededRandom(seed) {
+  let state = seed >>> 0;
+  return () => {
+    state += 0x6D2B79F5;
+    let value = state;
+    value = Math.imul(value ^ (value >>> 15), value | 1);
+    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
+    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffledValues(items, seedText) {
+  const result = [...items];
+  const random = seededRandom(hashString(seedText));
+  for (let index = result.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(random() * (index + 1));
+    [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
+  }
+  return result;
+}
+
+function optionPermutations(items) {
+  if (items.length <= 1) return [items.map((item) => ({ ...item }))];
+  return items.flatMap((item, index) => optionPermutations([
+    ...items.slice(0, index),
+    ...items.slice(index + 1),
+  ]).map((tail) => [{ ...item }, ...tail]));
+}
+
+function optionsForAttempt(items, seedText, attemptNumber) {
+  const permutations = optionPermutations(items);
+  let startIndex = hashString(seedText) % permutations.length;
+  if (sameOptionOrder(permutations[startIndex], items)) startIndex = (startIndex + 1) % permutations.length;
+  return permutations[(startIndex + attemptNumber - 1) % permutations.length];
+}
+
+function correctPositionSchedule(questionCount, seedText, attemptNumber) {
+  const balanced = Array.from({ length: questionCount }, (_, index) => index % 4);
+  const base = shuffledValues(balanced, seedText);
+  return base.map((position) => (position + attemptNumber - 1) % 4);
+}
+
+function placeCorrectOption(options, correctOptionId, targetPosition, authoredOptions) {
+  const correct = options.find((option) => option.id === String(correctOptionId));
+  if (!correct) return options;
+  const arranged = options.filter((option) => option.id !== correct.id);
+  arranged.splice(Math.min(targetPosition, arranged.length), 0, correct);
+  if (sameOptionOrder(arranged, authoredOptions)) {
+    const distractorIndexes = arranged.map((option, index) => option.id === correct.id ? -1 : index).filter((index) => index >= 0);
+    [arranged[distractorIndexes[0]], arranged[distractorIndexes[1]]] = [arranged[distractorIndexes[1]], arranged[distractorIndexes[0]]];
+  }
+  return arranged;
+}
+
+export function prepareSkillCheckAttempt(definition, attemptNumber) {
+  if (definition?.optionOrder !== 'shuffle-per-attempt') return definition;
+  const stableAttemptNumber = Number.isInteger(attemptNumber) && attemptNumber > 0 ? attemptNumber : 1;
+  const skillCheckId = definition.skillCheckId || definition.id || 'skill-check';
+  const correctPositions = correctPositionSchedule(definition.questions.length, skillCheckId, stableAttemptNumber);
+  return {
+    ...definition,
+    questions: definition.questions.map((question, questionIndex) => ({
+      ...question,
+      options: placeCorrectOption(optionsForAttempt(
+        question.options,
+        `${skillCheckId}:${question.id}`,
+        stableAttemptNumber,
+      ), question.correctOptionId, correctPositions[questionIndex], question.options),
+    })),
+  };
+}
+
 export function getAssessmentRecord(store, roadmapId, skillCheckId) {
   return store?.[roadmapId]?.[skillCheckId] || { attempts: [], consecutiveFailures: 0, recovery: null };
 }

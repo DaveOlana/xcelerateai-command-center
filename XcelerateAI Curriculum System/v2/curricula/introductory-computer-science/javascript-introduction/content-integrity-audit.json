@@ -1,0 +1,2950 @@
+{
+  "schemaVersion": "1.0",
+  "curriculumId": "JSIN",
+  "revision": 1,
+  "auditedAt": "2026-10-10T12:00:00.000Z",
+  "targetLearner": "A tertiary fresher with basic computer literacy and no assumed programming experience.",
+  "resourceAudits": [
+    {
+      "resourceId": "JSIN-R-W01-01",
+      "weekId": "JSIN-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-1",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Node, Values, and Output learner guide",
+          "url": "/curriculum-guides/javascript-introduction.html#week-1",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JSIN-R-W01-02",
+      "weekId": "JSIN-W01",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-1-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Node, Values, and Output concept practice",
+          "url": "/curriculum-guides/javascript-introduction.html#week-1-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C001.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JSIN-R-W02-01",
+      "weekId": "JSIN-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-2",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Input and Decisions learner guide",
+          "url": "/curriculum-guides/javascript-introduction.html#week-2",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JSIN-R-W02-02",
+      "weekId": "JSIN-W02",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-2-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Input and Decisions concept practice",
+          "url": "/curriculum-guides/javascript-introduction.html#week-2-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C002.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JSIN-R-W03-01",
+      "weekId": "JSIN-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-3",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Loops and Arrays learner guide",
+          "url": "/curriculum-guides/javascript-introduction.html#week-3",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JSIN-R-W03-02",
+      "weekId": "JSIN-W03",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-3-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Loops and Arrays concept practice",
+          "url": "/curriculum-guides/javascript-introduction.html#week-3-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C003.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JSIN-R-W04-01",
+      "weekId": "JSIN-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-4",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Functions and Objects learner guide",
+          "url": "/curriculum-guides/javascript-introduction.html#week-4",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JSIN-R-W04-02",
+      "weekId": "JSIN-W04",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-4-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Functions and Objects concept practice",
+          "url": "/curriculum-guides/javascript-introduction.html#week-4-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C004.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JSIN-R-W05-01",
+      "weekId": "JSIN-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-5",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Debugging and Defensive Code learner guide",
+          "url": "/curriculum-guides/javascript-introduction.html#week-5",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#exception_handling_statements",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JSIN-R-W05-02",
+      "weekId": "JSIN-W05",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-5-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Debugging and Defensive Code concept practice",
+          "url": "/curriculum-guides/javascript-introduction.html#week-5-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling#exception_handling_statements",
+          "provider": "developer.mozilla.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C005.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JSIN-R-W06-01",
+      "weekId": "JSIN-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-6",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "JSON and File Persistence learner guide",
+          "url": "/curriculum-guides/javascript-introduction.html#week-6",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://nodejs.org/api/fs.html",
+          "provider": "nodejs.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JSIN-R-W06-02",
+      "weekId": "JSIN-W06",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-6-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "JSON and File Persistence concept practice",
+          "url": "/curriculum-guides/javascript-introduction.html#week-6-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://nodejs.org/api/fs.html",
+          "provider": "nodejs.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C006.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JSIN-R-W07-01",
+      "weekId": "JSIN-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-7",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Modules and Tests learner guide",
+          "url": "/curriculum-guides/javascript-introduction.html#week-7",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://nodejs.org/api/test.html",
+          "provider": "nodejs.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JSIN-R-W07-02",
+      "weekId": "JSIN-W07",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-7-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Modules and Tests concept practice",
+          "url": "/curriculum-guides/javascript-introduction.html#week-7-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://nodejs.org/api/test.html",
+          "provider": "nodejs.org",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C007.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    },
+    {
+      "resourceId": "JSIN-R-W08-01",
+      "weekId": "JSIN-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-8",
+      "learningRole": "learn",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent Node Project and GitHub learner guide",
+          "url": "/curriculum-guides/javascript-introduction.html#week-8",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Bounded, offline-first, prerequisite-matched instruction for this exact week."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Ninety minutes leaves most weekly time for active work.",
+        "practiceQuality": "Feeds the immediate required microbuild.",
+        "redundancy": "It is the sole core explanation for this week."
+      },
+      "rationale": "Added as the essential bounded offline lesson; external documentation remains optional."
+    },
+    {
+      "resourceId": "JSIN-R-W08-02",
+      "weekId": "JSIN-W08",
+      "decision": "added",
+      "previousUrl": null,
+      "finalUrl": "/curriculum-guides/javascript-introduction.html#week-8-practice",
+      "learningRole": "practice",
+      "actualContentInspected": true,
+      "inspectedAt": "2026-10-10T12:00:00.000Z",
+      "access": {
+        "status": "verified",
+        "free": true,
+        "loginRequired": false,
+        "sectionVerified": true
+      },
+      "candidateComparisons": [
+        {
+          "title": "Independent Node Project and GitHub concept practice",
+          "url": "/curriculum-guides/javascript-introduction.html#week-8-practice",
+          "provider": "XcelerateAI",
+          "disposition": "selected",
+          "reason": "Short offline prediction practice provides a distinct mode without blocking progress."
+        },
+        {
+          "title": "Official language reference",
+          "url": "https://docs.github.com/en/get-started/learning-to-code/getting-started-with-git",
+          "provider": "docs.github.com",
+          "disposition": "rejected",
+          "reason": "Kept as an optional authority reference; its broader scope is less suitable as the primary beginner route."
+        }
+      ],
+      "judgment": {
+        "beginnerClarity": "New terms are defined with examples and common mistakes.",
+        "competencyFit": "Directly teaches JSIN-C008.",
+        "correctness": "Claims were checked against the linked official reference.",
+        "currency": "Reviewed 2026-10-10.",
+        "pacing": "Thirty optional minutes fit inside the weekly practice allowance.",
+        "practiceQuality": "Adds prediction, retrieval, and error explanation before the graded check.",
+        "redundancy": "Complements the core explanation without repeating a required task."
+      },
+      "rationale": "Added as optional retrieval practice distinct from the required Build."
+    }
+  ],
+  "questionAudits": [
+    {
+      "questionId": "JSIN-Q-W01-01",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W01-02",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W01-03",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W01-04",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JSIN-Q-W01-05",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W01-06",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W01-07",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W01-08",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W01-09",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W01-10",
+      "weekId": "JSIN-W01",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W01-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-1-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-1-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JSIN-Q-W02-01",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W02-02",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W02-03",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W02-04",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JSIN-Q-W02-05",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W02-06",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W02-07",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W02-08",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W02-09",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W02-10",
+      "weekId": "JSIN-W02",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W02-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-2-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-2-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JSIN-Q-W03-01",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W03-02",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W03-03",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W03-04",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JSIN-Q-W03-05",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W03-06",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W03-07",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W03-08",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W03-09",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W03-10",
+      "weekId": "JSIN-W03",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W03-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-3-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-3-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JSIN-Q-W04-01",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W04-02",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W04-03",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W04-04",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JSIN-Q-W04-05",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W04-06",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W04-07",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W04-08",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W04-09",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W04-10",
+      "weekId": "JSIN-W04",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W04-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-4-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-4-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JSIN-Q-W05-01",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W05-02",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W05-03",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W05-04",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JSIN-Q-W05-05",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W05-06",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W05-07",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W05-08",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W05-09",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W05-10",
+      "weekId": "JSIN-W05",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W05-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-5-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-5-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JSIN-Q-W06-01",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W06-02",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W06-03",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W06-04",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JSIN-Q-W06-05",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W06-06",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W06-07",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W06-08",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W06-09",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W06-10",
+      "weekId": "JSIN-W06",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W06-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-6-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-6-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JSIN-Q-W07-01",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W07-02",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W07-03",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W07-04",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JSIN-Q-W07-05",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W07-06",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W07-07",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W07-08",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W07-09",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W07-10",
+      "weekId": "JSIN-W07",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W07-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-7-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-7-10",
+      "assessmentType": "error prevention"
+    },
+    {
+      "questionId": "JSIN-Q-W08-01",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-1",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W08-02",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-1: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-2",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W08-03",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-3",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W08-04",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-2: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-4",
+      "assessmentType": "error diagnosis"
+    },
+    {
+      "questionId": "JSIN-Q-W08-05",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-5",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W08-06",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-3: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-6",
+      "assessmentType": "application selection"
+    },
+    {
+      "questionId": "JSIN-Q-W08-07",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-7",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W08-08",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-4: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-8",
+      "assessmentType": "concept discrimination"
+    },
+    {
+      "questionId": "JSIN-Q-W08-09",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-9",
+      "assessmentType": "error recognition"
+    },
+    {
+      "questionId": "JSIN-Q-W08-10",
+      "weekId": "JSIN-W08",
+      "classification": "A",
+      "supportingResourceIds": [
+        "JSIN-R-W08-01"
+      ],
+      "evidence": "Directly taught in the Core guide at #week-8-concept-5: the card contains the assessed term, meaning, application, and mistake before the quiz.",
+      "repair": "rewritten",
+      "targetId": "JSIN-AT-8-10",
+      "assessmentType": "error prevention"
+    }
+  ],
+  "buildAudits": [
+    {
+      "buildId": "JSIN-B-W01-01",
+      "weekId": "JSIN-W01",
+      "dependencies": [
+        {
+          "name": "JSIN-C001",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JSIN-B-W02-01",
+      "weekId": "JSIN-W02",
+      "dependencies": [
+        {
+          "name": "JSIN-C002",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JSIN-B-W03-01",
+      "weekId": "JSIN-W03",
+      "dependencies": [
+        {
+          "name": "JSIN-C003",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JSIN-B-W04-01",
+      "weekId": "JSIN-W04",
+      "dependencies": [
+        {
+          "name": "JSIN-C004",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JSIN-B-W05-01",
+      "weekId": "JSIN-W05",
+      "dependencies": [
+        {
+          "name": "JSIN-C005",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JSIN-B-W06-01",
+      "weekId": "JSIN-W06",
+      "dependencies": [
+        {
+          "name": "JSIN-C006",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JSIN-B-W07-01",
+      "weekId": "JSIN-W07",
+      "dependencies": [
+        {
+          "name": "JSIN-C007",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    },
+    {
+      "buildId": "JSIN-B-W08-01",
+      "weekId": "JSIN-W08",
+      "dependencies": [
+        {
+          "name": "JSIN-C008",
+          "classification": "taught-this-week",
+          "evidence": "Five anchored Core-guide concept cards define the terms, applications, and mistakes before Build."
+        },
+        {
+          "name": "Three-case test contract",
+          "classification": "contextually-explained",
+          "evidence": "Build Step 1 defines normal, boundary, and invalid cases before implementation."
+        },
+        {
+          "name": "README and proof expectations",
+          "classification": "contextually-explained",
+          "evidence": "The copyable README test table, acceptance criteria, and Proof labels state the exact required evidence."
+        }
+      ],
+      "hiddenPrerequisitesFound": [],
+      "hiddenPrerequisitesRepaired": [],
+      "hiddenPrerequisitesRemaining": [],
+      "readiness": "YES",
+      "rationale": "The Build states its deliverable, five weekly concepts, three test cases, exact evidence, four ordered steps, and a reproducible definition of finished."
+    }
+  ],
+  "weekReadiness": [
+    {
+      "weekId": "JSIN-W01",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JSIN-W02",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JSIN-W03",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JSIN-W04",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JSIN-W05",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JSIN-W06",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JSIN-W07",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    },
+    {
+      "weekId": "JSIN-W08",
+      "answer": "YES",
+      "evidence": "A bounded lesson precedes a mapped quiz and a four-step microbuild with observable acceptance criteria."
+    }
+  ],
+  "semanticReview": {
+    "status": "PASS",
+    "method": "Author-led review of the profession boundary, weekly prerequisite chain, every fact pair, distractor family, Build dependency, proof demand, and official reference. Deterministic validators only verify the serialized evidence; they do not create this approval.",
+    "findingsReviewed": [
+      "Every week teaches before assessing and builds immediately after assessment.",
+      "Ten questions assess explanation and application selection while coding remains in Build.",
+      "The sequence grows from syntax to structured independent work without frameworks or hidden algebra.",
+      "Every course ends with GitHub publication; setup remains outside the 48 instructional hours."
+    ],
+    "adversarialResult": "No untaught assessment dependency or hidden Build prerequisite remains."
+  },
+  "assessmentCoverageMap": {
+    "entries": [
+      {
+        "questionId": "JSIN-Q-W01-01",
+        "targetId": "JSIN-AT-1-1",
+        "learningTarget": "The Week 1 guide defines const. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-02",
+        "targetId": "JSIN-AT-1-2",
+        "learningTarget": "The learner needs to store an unchanged tax rate. Which concept from the Week 1 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-03",
+        "targetId": "JSIN-AT-1-3",
+        "learningTarget": "During the guide's debugging drill for let, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-04",
+        "targetId": "JSIN-AT-1-4",
+        "learningTarget": "A classmate is about to use var by habit in new beginner code. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-05",
+        "targetId": "JSIN-AT-1-5",
+        "learningTarget": "Which activity from the Week 1 guide correctly demonstrates number?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-06",
+        "targetId": "JSIN-AT-1-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: calculate price * quantity?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-07",
+        "targetId": "JSIN-AT-1-7",
+        "learningTarget": "A learner must explain template literal before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-08",
+        "targetId": "JSIN-AT-1-8",
+        "learningTarget": "The guide describes \"backtick text with embedded expressions\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-09",
+        "targetId": "JSIN-AT-1-9",
+        "learningTarget": "Which mistake would show that strict equality was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W01-10",
+        "targetId": "JSIN-AT-1-10",
+        "learningTarget": "To avoid this error—use = or rely on coercing equality—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W01",
+          "resourceIds": [
+            "JSIN-R-W01-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-01",
+        "targetId": "JSIN-AT-2-1",
+        "learningTarget": "The Week 2 guide defines process.argv. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-02",
+        "targetId": "JSIN-AT-2-2",
+        "learningTarget": "The learner needs to read a fare zone argument. Which concept from the Week 2 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-03",
+        "targetId": "JSIN-AT-2-3",
+        "learningTarget": "During the guide's debugging drill for Number conversion, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-04",
+        "targetId": "JSIN-AT-2-4",
+        "learningTarget": "A classmate is about to add numeric text before conversion. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-05",
+        "targetId": "JSIN-AT-2-5",
+        "learningTarget": "Which activity from the Week 2 guide correctly demonstrates if statement?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-06",
+        "targetId": "JSIN-AT-2-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: choose adult or child fare?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-07",
+        "targetId": "JSIN-AT-2-7",
+        "learningTarget": "A learner must explain logical operator before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-08",
+        "targetId": "JSIN-AT-2-8",
+        "learningTarget": "The guide describes \"combining boolean conditions\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-09",
+        "targetId": "JSIN-AT-2-9",
+        "learningTarget": "Which mistake would show that NaN check was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W02-10",
+        "targetId": "JSIN-AT-2-10",
+        "learningTarget": "To avoid this error—compare value === NaN—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W02",
+          "resourceIds": [
+            "JSIN-R-W02-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-01",
+        "targetId": "JSIN-AT-3-1",
+        "learningTarget": "The Week 3 guide defines array. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-02",
+        "targetId": "JSIN-AT-3-2",
+        "learningTarget": "The learner needs to store weekly scores. Which concept from the Week 3 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-03",
+        "targetId": "JSIN-AT-3-3",
+        "learningTarget": "During the guide's debugging drill for for...of, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-04",
+        "targetId": "JSIN-AT-3-4",
+        "learningTarget": "A classmate is about to use for...in when values are needed. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-05",
+        "targetId": "JSIN-AT-3-5",
+        "learningTarget": "Which activity from the Week 3 guide correctly demonstrates index?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-06",
+        "targetId": "JSIN-AT-3-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: read scores[0]?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-07",
+        "targetId": "JSIN-AT-3-7",
+        "learningTarget": "A learner must explain accumulator before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-08",
+        "targetId": "JSIN-AT-3-8",
+        "learningTarget": "The guide describes \"state updated through a loop\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-09",
+        "targetId": "JSIN-AT-3-9",
+        "learningTarget": "Which mistake would show that array method was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W03-10",
+        "targetId": "JSIN-AT-3-10",
+        "learningTarget": "To avoid this error—expect push to return the new array—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W03",
+          "resourceIds": [
+            "JSIN-R-W03-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-01",
+        "targetId": "JSIN-AT-4-1",
+        "learningTarget": "The Week 4 guide defines function. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-02",
+        "targetId": "JSIN-AT-4-2",
+        "learningTarget": "The learner needs to write calculateAverage(scores). Which concept from the Week 4 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-03",
+        "targetId": "JSIN-AT-4-3",
+        "learningTarget": "During the guide's debugging drill for parameter, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-04",
+        "targetId": "JSIN-AT-4-4",
+        "learningTarget": "A classmate is about to read an unrelated outer variable. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-05",
+        "targetId": "JSIN-AT-4-5",
+        "learningTarget": "Which activity from the Week 4 guide correctly demonstrates return?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-06",
+        "targetId": "JSIN-AT-4-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: return the calculated average?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-07",
+        "targetId": "JSIN-AT-4-7",
+        "learningTarget": "A learner must explain object before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-08",
+        "targetId": "JSIN-AT-4-8",
+        "learningTarget": "The guide describes \"named properties grouped as one value\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-09",
+        "targetId": "JSIN-AT-4-9",
+        "learningTarget": "Which mistake would show that method was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W04-10",
+        "targetId": "JSIN-AT-4-10",
+        "learningTarget": "To avoid this error—invoke a method without parentheses and expect execution—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W04",
+          "resourceIds": [
+            "JSIN-R-W04-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-01",
+        "targetId": "JSIN-AT-5-1",
+        "learningTarget": "The Week 5 guide defines syntax error. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-02",
+        "targetId": "JSIN-AT-5-2",
+        "learningTarget": "The learner needs to fix an unmatched bracket. Which concept from the Week 5 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-03",
+        "targetId": "JSIN-AT-5-3",
+        "learningTarget": "During the guide's debugging drill for runtime error, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-04",
+        "targetId": "JSIN-AT-5-4",
+        "learningTarget": "A classmate is about to assume successful parsing guarantees success. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-05",
+        "targetId": "JSIN-AT-5-5",
+        "learningTarget": "Which activity from the Week 5 guide correctly demonstrates throw?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-06",
+        "targetId": "JSIN-AT-5-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: throw Error for an unsupported operation?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-07",
+        "targetId": "JSIN-AT-5-7",
+        "learningTarget": "A learner must explain try...catch before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-08",
+        "targetId": "JSIN-AT-5-8",
+        "learningTarget": "The guide describes \"handling an expected runtime failure\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-09",
+        "targetId": "JSIN-AT-5-9",
+        "learningTarget": "Which mistake would show that breakpoint was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W05-10",
+        "targetId": "JSIN-AT-5-10",
+        "learningTarget": "To avoid this error—add random logging without isolating a hypothesis—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W05",
+          "resourceIds": [
+            "JSIN-R-W05-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-01",
+        "targetId": "JSIN-AT-6-1",
+        "learningTarget": "The Week 6 guide defines JSON. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-02",
+        "targetId": "JSIN-AT-6-2",
+        "learningTarget": "The learner needs to save an array of task objects. Which concept from the Week 6 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-03",
+        "targetId": "JSIN-AT-6-3",
+        "learningTarget": "During the guide's debugging drill for serialization, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-04",
+        "targetId": "JSIN-AT-6-4",
+        "learningTarget": "A classmate is about to assume functions survive JSON. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-05",
+        "targetId": "JSIN-AT-6-5",
+        "learningTarget": "Which activity from the Week 6 guide correctly demonstrates parsing?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-06",
+        "targetId": "JSIN-AT-6-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: use JSON.parse(text)?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-07",
+        "targetId": "JSIN-AT-6-7",
+        "learningTarget": "A learner must explain filesystem module before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-08",
+        "targetId": "JSIN-AT-6-8",
+        "learningTarget": "The guide describes \"Node APIs for file operations\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-09",
+        "targetId": "JSIN-AT-6-9",
+        "learningTarget": "Which mistake would show that atomic update was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W06-10",
+        "targetId": "JSIN-AT-6-10",
+        "learningTarget": "To avoid this error—overwrite the only good file before validation—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W06",
+          "resourceIds": [
+            "JSIN-R-W06-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-01",
+        "targetId": "JSIN-AT-7-1",
+        "learningTarget": "The Week 7 guide defines module boundary. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-02",
+        "targetId": "JSIN-AT-7-2",
+        "learningTarget": "The learner needs to export only public helpers. Which concept from the Week 7 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-03",
+        "targetId": "JSIN-AT-7-3",
+        "learningTarget": "During the guide's debugging drill for require, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-04",
+        "targetId": "JSIN-AT-7-4",
+        "learningTarget": "A classmate is about to omit the relative prefix for a local file. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-05",
+        "targetId": "JSIN-AT-7-5",
+        "learningTarget": "Which activity from the Week 7 guide correctly demonstrates assertion?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-06",
+        "targetId": "JSIN-AT-7-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: assert.equal(add(2,3),5)?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-07",
+        "targetId": "JSIN-AT-7-7",
+        "learningTarget": "A learner must explain test isolation before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-08",
+        "targetId": "JSIN-AT-7-8",
+        "learningTarget": "The guide describes \"each test controls its own state\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-09",
+        "targetId": "JSIN-AT-7-9",
+        "learningTarget": "Which mistake would show that edge case was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W07-10",
+        "targetId": "JSIN-AT-7-10",
+        "learningTarget": "To avoid this error—test only typical input—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W07",
+          "resourceIds": [
+            "JSIN-R-W07-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-01",
+        "targetId": "JSIN-AT-8-1",
+        "learningTarget": "The Week 8 guide defines CLI contract. Which description matches that definition?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-02",
+        "targetId": "JSIN-AT-8-2",
+        "learningTarget": "The learner needs to show usage for missing arguments. Which concept from the Week 8 guide supports that decision?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-03",
+        "targetId": "JSIN-AT-8-3",
+        "learningTarget": "During the guide's debugging drill for data validation, which warning identifies the error to avoid?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-04",
+        "targetId": "JSIN-AT-8-4",
+        "learningTarget": "A classmate is about to trust persisted data forever. Which concept should they review first?",
+        "assessmentType": "error diagnosis",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-05",
+        "targetId": "JSIN-AT-8-5",
+        "learningTarget": "Which activity from the Week 8 guide correctly demonstrates README?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-06",
+        "targetId": "JSIN-AT-8-6",
+        "learningTarget": "Which weekly concept is demonstrated by this guide activity: include setup, run, examples, and limits?",
+        "assessmentType": "application selection",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-07",
+        "targetId": "JSIN-AT-8-7",
+        "learningTarget": "A learner must explain commit history before coding. Which explanation is accurate?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-08",
+        "targetId": "JSIN-AT-8-8",
+        "learningTarget": "The guide describes \"ordered snapshots explaining progress\". Which term does it describe?",
+        "assessmentType": "concept discrimination",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-09",
+        "targetId": "JSIN-AT-8-9",
+        "learningTarget": "Which mistake would show that remote repository was misunderstood?",
+        "assessmentType": "error recognition",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      },
+      {
+        "questionId": "JSIN-Q-W08-10",
+        "targetId": "JSIN-AT-8-10",
+        "learningTarget": "To avoid this error—upload files without preserving history—which weekly concept must the learner apply?",
+        "assessmentType": "error prevention",
+        "quizAppropriate": "The item checks explanation, error recognition, or selection; executable behavior remains in Build.",
+        "whereTaught": {
+          "weekId": "JSIN-W08",
+          "resourceIds": [
+            "JSIN-R-W08-01"
+          ]
+        }
+      }
+    ]
+  }
+}

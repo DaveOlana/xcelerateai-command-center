@@ -1,0 +1,91 @@
+{
+  "generatedAt": "2026-10-10T12:00:00.000Z",
+  "category": "Introductory Computer Science",
+  "publicationPolicy": "candidate-only-until-owner-review",
+  "courses": [
+    {
+      "curriculumId": "PYIN",
+      "title": "Introduction to Python",
+      "slug": "python-introduction",
+      "revision": 1,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 180,
+      "status": "review-candidate",
+      "blockedReason": null,
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/python-introduction"
+    },
+    {
+      "curriculumId": "JSIN",
+      "title": "Introduction to JavaScript",
+      "slug": "javascript-introduction",
+      "revision": 1,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 180,
+      "status": "review-candidate",
+      "blockedReason": null,
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/javascript-introduction"
+    },
+    {
+      "curriculumId": "JAVA",
+      "title": "Introduction to Java",
+      "slug": "java-introduction",
+      "revision": 1,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 240,
+      "status": "review-candidate",
+      "blockedReason": null,
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/java-introduction"
+    },
+    {
+      "curriculumId": "CLNG",
+      "title": "Introduction to C",
+      "slug": "c-introduction",
+      "revision": 1,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 210,
+      "status": "review-candidate",
+      "blockedReason": null,
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/c-introduction"
+    },
+    {
+      "curriculumId": "CPPL",
+      "title": "Introduction to C++",
+      "slug": "cpp-introduction",
+      "revision": 1,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 210,
+      "status": "review-candidate",
+      "blockedReason": null,
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/cpp-introduction"
+    },
+    {
+      "curriculumId": "WEBD",
+      "title": "Introduction to Web Development",
+      "slug": "web-development-introduction",
+      "revision": 1,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 150,
+      "status": "review-candidate",
+      "blockedReason": null,
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/web-development-introduction"
+    },
+    {
+      "curriculumId": "QBAS",
+      "title": "Introduction to QBASIC",
+      "slug": "qbasic-introduction",
+      "revision": 1,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 240,
+      "status": "blocked-candidate",
+      "blockedReason": "Traditional Microsoft QBasic binaries require learner-supplied licensed MS-DOS/Windows media; no current official download was verified.",
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/qbasic-introduction"
+    }
+  ]
+}
