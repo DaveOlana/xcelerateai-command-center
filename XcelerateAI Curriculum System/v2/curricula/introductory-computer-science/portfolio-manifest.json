@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-10-10T12:00:00.000Z",
   "category": "Introductory Computer Science",
-  "publicationPolicy": "candidate-only-until-owner-review",
+  "publicationPolicy": "owner-approved-six-production",
   "courses": [
     {
       "curriculumId": "PYIN",
@@ -11,7 +11,7 @@
       "weeks": 8,
       "instructionalHours": 48,
       "setupMinutes": 180,
-      "status": "review-candidate",
+      "status": "published",
       "blockedReason": null,
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/python-introduction"
     },
@@ -23,7 +23,7 @@
       "weeks": 8,
       "instructionalHours": 48,
       "setupMinutes": 180,
-      "status": "review-candidate",
+      "status": "published",
       "blockedReason": null,
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/javascript-introduction"
     },
@@ -35,7 +35,7 @@
       "weeks": 8,
       "instructionalHours": 48,
       "setupMinutes": 240,
-      "status": "review-candidate",
+      "status": "published",
       "blockedReason": null,
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/java-introduction"
     },
@@ -47,7 +47,7 @@
       "weeks": 8,
       "instructionalHours": 48,
       "setupMinutes": 210,
-      "status": "review-candidate",
+      "status": "published",
       "blockedReason": null,
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/c-introduction"
     },
@@ -59,7 +59,7 @@
       "weeks": 8,
       "instructionalHours": 48,
       "setupMinutes": 210,
-      "status": "review-candidate",
+      "status": "published",
       "blockedReason": null,
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/cpp-introduction"
     },
@@ -71,7 +71,7 @@
       "weeks": 8,
       "instructionalHours": 48,
       "setupMinutes": 150,
-      "status": "review-candidate",
+      "status": "published",
       "blockedReason": null,
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/web-development-introduction"
     },

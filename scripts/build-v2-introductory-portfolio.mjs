@@ -15,6 +15,15 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const portfolioRoot = path.join(root, 'XcelerateAI Curriculum System', 'v2', 'curricula', 'introductory-computer-science');
 const guideRoot = path.join(root, 'public', 'curriculum-guides');
 const checkedAt = '2026-10-10T12:00:00.000Z';
+const shouldPublish = process.argv.includes('--publish');
+const publishedModuleNames = Object.freeze({
+  PYIN: 'pythonIntroduction',
+  JSIN: 'javascriptIntroduction',
+  JAVA: 'javaIntroduction',
+  CLNG: 'cIntroduction',
+  CPPL: 'cppIntroduction',
+  WEBD: 'webDevelopmentIntroduction',
+});
 const optionIds = ['a', 'b', 'c', 'd'];
 const answerPatterns = [
   [0,1,2,3,1,3,0,2,3,1],
@@ -258,7 +267,8 @@ function handbook(course, source) {
 
 fs.mkdirSync(portfolioRoot, { recursive: true });
 fs.mkdirSync(guideRoot, { recursive: true });
-const manifest = { generatedAt: checkedAt, category: 'Introductory Computer Science', publicationPolicy: 'candidate-only-until-owner-review', courses: [] };
+const manifest = { generatedAt: checkedAt, category: 'Introductory Computer Science', publicationPolicy: shouldPublish ? 'owner-approved-six-production' : 'candidate-only-until-owner-review', courses: [] };
+const publicationCandidates = [];
 
 for (const course of portfolio) {
   const source = makeCourse(course);
@@ -275,12 +285,30 @@ for (const course of portfolio) {
   fs.mkdirSync(dir, { recursive: true });
   const writeJson = (name, value) => fs.writeFileSync(path.join(dir, name), `${JSON.stringify(value, null, 2)}\n`);
   writeJson('curriculum-source.json', source); writeJson('resources.json', research); writeJson('content-integrity-audit.json', audit); writeJson('studio-activities.json', studio); writeJson('coverage.json', generateCoverage(source)); writeJson('curriculum.json', runtime);
-  writeJson('validation-report.json', { status: 'PASS', curriculumId: course.id, revision: 1, candidateOnly: true, published: false, blockingFailures: 0, gates: ['source','resource-research','content-integrity','studio','skill-check-authoring','compilation','runtime'], questionCount: 80, passLogic: '7/10', studyAlignment: 'Each weekly concept card maps to two questions and an inspectable audit anchor.', questionTypes: [...new Set(assessmentTypes)], optionOrder: 'shuffle-per-attempt', optionDistribution: 'Every ten-question attempt uses all four displayed answer positions and changes each question on the next attempt.', buildContract: 'Every Build declares its deliverable, weekly concepts, normal/boundary/invalid cases, evidence, and definition of finished.', blockedReason: course.blockedReason || null });
-  fs.writeFileSync(path.join(dir, 'generation-summary.md'), `# ${course.title} — Candidate Summary\n\n- Status: ${course.blockedReason ? 'VALID CANDIDATE; PUBLICATION BLOCKED' : 'VALID CANDIDATE; OWNER REVIEW REQUIRED'}\n- Instruction: 8 weeks × 6 hours = 48 hours\n- Setup: ${course.setupMinutes} minutes outside instructional weeks; verified capabilities are reusable\n- Assessments: 8 ten-question checks mapped two-per-concept; 7/10 pass; balanced stable-ID reshuffle per attempt\n- Study modes: 8 bounded core guides with anchored concept cards plus 8 optional predict/reveal exercises\n- Practice: 8 required Builds with explicit deliverables, three-case tests, repair evidence, guided midpoint, independent final, and GitHub proof\n- Publication: not present in the learner catalog\n${course.blockedReason ? `- Blocker: ${course.blockedReason}\n` : ''}`);
+  const published = shouldPublish && !course.blockedReason;
+  writeJson('validation-report.json', { status: 'PASS', curriculumId: course.id, revision: 1, candidateOnly: !published, published, blockingFailures: 0, gates: ['source','resource-research','content-integrity','studio','skill-check-authoring','compilation','runtime'], questionCount: 80, passLogic: '7/10', studyAlignment: 'Each weekly concept card maps to two questions and an inspectable audit anchor.', questionTypes: [...new Set(assessmentTypes)], optionOrder: 'shuffle-per-attempt', optionDistribution: 'Every ten-question attempt uses all four displayed answer positions and changes each question on the next attempt.', buildContract: 'Every Build declares its deliverable, weekly concepts, normal/boundary/invalid cases, evidence, and definition of finished.', blockedReason: course.blockedReason || null });
+  fs.writeFileSync(path.join(dir, 'generation-summary.md'), `# ${course.title} — ${published ? 'Production' : 'Candidate'} Summary\n\n- Status: ${course.blockedReason ? 'VALID CANDIDATE; PUBLICATION BLOCKED' : published ? 'PUBLISHED AFTER OWNER APPROVAL' : 'VALID CANDIDATE; OWNER REVIEW REQUIRED'}\n- Instruction: 8 weeks × 6 hours = 48 hours\n- Setup: ${course.setupMinutes} minutes outside instructional weeks; verified capabilities are reusable\n- Assessments: 8 ten-question checks mapped two-per-concept; 7/10 pass; balanced stable-ID reshuffle per attempt\n- Study modes: 8 bounded core guides with anchored concept cards plus 8 optional predict/reveal exercises\n- Practice: 8 required Builds with explicit deliverables, three-case tests, repair evidence, guided midpoint, independent final, and GitHub proof\n- Publication: ${published ? 'present in the learner catalog' : 'not present in the learner catalog'}\n${course.blockedReason ? `- Blocker: ${course.blockedReason}\n` : ''}`);
   fs.writeFileSync(path.join(guideRoot, `${course.slug}.html`), handbook(course, source));
-  manifest.courses.push({ curriculumId: course.id, title: course.title, slug: course.slug, revision: 1, weeks: 8, instructionalHours: 48, setupMinutes: course.setupMinutes, status: course.blockedReason ? 'blocked-candidate' : 'review-candidate', blockedReason: course.blockedReason || null, artifactPath: `XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/${course.slug}` });
+  manifest.courses.push({ curriculumId: course.id, title: course.title, slug: course.slug, revision: 1, weeks: 8, instructionalHours: 48, setupMinutes: course.setupMinutes, status: course.blockedReason ? 'blocked-candidate' : published ? 'published' : 'review-candidate', blockedReason: course.blockedReason || null, artifactPath: `XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/${course.slug}` });
+  if (published) publicationCandidates.push({ course, runtime });
+}
+
+if (shouldPublish) {
+  const publishedDir = path.join(root, 'src', 'curriculum-v2', 'catalog', 'published');
+  fs.mkdirSync(publishedDir, { recursive: true });
+  for (const { course, runtime } of publicationCandidates) {
+    const moduleName = publishedModuleNames[course.id];
+    const candidatePath = path.join(publishedDir, `.${moduleName}.candidate.js`);
+    fs.writeFileSync(candidatePath, `// Generated by npm run curriculum:v2:introductory:publish. Do not edit manually.\nexport default ${JSON.stringify(runtime, null, 2)};\n`);
+  }
+  for (const { course } of publicationCandidates) {
+    const moduleName = publishedModuleNames[course.id];
+    fs.renameSync(path.join(publishedDir, `.${moduleName}.candidate.js`), path.join(publishedDir, `${moduleName}.js`));
+  }
 }
 
 fs.writeFileSync(path.join(portfolioRoot, 'portfolio-manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
-fs.writeFileSync(path.join(portfolioRoot, 'README.md'), `# Introductory Computer Science Portfolio\n\nSeven independent eight-week V2 course candidates. None is imported by the production catalog. Each candidate must receive owner review and pass its own publication run. QBASIC additionally requires a lawful traditional-QBasic media decision.\n`);
-console.log(`Built ${manifest.courses.length} candidate curricula; production catalog unchanged.`);
+fs.writeFileSync(path.join(portfolioRoot, 'README.md'), `# Introductory Computer Science Portfolio\n\nSix independent eight-week V2 courses are owner-approved and published to the production catalog. QBASIC remains a valid blocked candidate pending a lawful traditional-QBasic media decision.\n`);
+console.log(shouldPublish
+  ? `Published ${publicationCandidates.length} introductory curricula; QBASIC remains blocked.`
+  : `Built ${manifest.courses.length} candidate curricula; production catalog unchanged.`);

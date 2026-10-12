@@ -3,17 +3,25 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { prepareSkillCheckAttempt } from '../src/utils/skillCheckUtils.js';
+import { curriculumCatalog } from '../src/curriculum-v2/catalog/catalog.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const portfolioRoot = path.join(root, 'XcelerateAI Curriculum System', 'v2', 'curricula', 'introductory-computer-science');
 const guideRoot = path.join(root, 'public', 'curriculum-guides');
-const catalogPath = path.join(root, 'src', 'curriculum-v2', 'catalog', 'catalog.js');
 const readJson = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf8'));
 const manifest = readJson(path.join(portfolioRoot, 'portfolio-manifest.json'));
 const candidateIds = new Set(['QBAS', 'JAVA', 'CLNG', 'CPPL', 'JSIN', 'PYIN', 'WEBD']);
+const publishedModules = new Map([
+  ['PYIN', 'pythonIntroduction.js'],
+  ['JSIN', 'javascriptIntroduction.js'],
+  ['JAVA', 'javaIntroduction.js'],
+  ['CLNG', 'cIntroduction.js'],
+  ['CPPL', 'cppIntroduction.js'],
+  ['WEBD', 'webDevelopmentIntroduction.js'],
+]);
 const escapeHtml = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 
-assert.equal(manifest.publicationPolicy, 'candidate-only-until-owner-review');
+assert.equal(manifest.publicationPolicy, 'owner-approved-six-production');
 assert.equal(manifest.courses.length, 7);
 assert.deepEqual(new Set(manifest.courses.map((course) => course.curriculumId)), candidateIds);
 
@@ -87,8 +95,6 @@ for (const course of manifest.courses) {
   assert.equal(audit.weekReadiness.length, 8);
   assert.equal(audit.semanticReview.status, 'PASS');
   assert.equal(report.status, 'PASS');
-  assert.equal(report.candidateOnly, true);
-  assert.equal(report.published, false);
   assert.equal((guide.match(/<section id="setup">/g) || []).length, 1);
   assert.equal((guide.match(/<section id="week-/g) || []).length, 8);
   assert.equal((guide.match(/id="week-\d+-concept-\d+"/g) || []).length, 40);
@@ -98,14 +104,21 @@ for (const course of manifest.courses) {
 
   if (course.curriculumId === 'QBAS') {
     assert.equal(course.status, 'blocked-candidate');
+    assert.equal(report.candidateOnly, true);
+    assert.equal(report.published, false);
     assert.match(course.blockedReason, /learner-supplied licensed/i);
   } else {
-    assert.equal(course.status, 'review-candidate');
+    assert.equal(course.status, 'published');
+    assert.equal(report.candidateOnly, false);
+    assert.equal(report.published, true);
     assert.equal(course.blockedReason, null);
+    const modulePath = path.join(root, 'src', 'curriculum-v2', 'catalog', 'published', publishedModules.get(course.curriculumId));
+    assert.equal(fs.existsSync(modulePath), true, `${course.curriculumId} published module`);
+    assert.match(fs.readFileSync(modulePath, 'utf8'), new RegExp(`"curriculumId": "${course.curriculumId}"`));
   }
 }
 
-const catalog = fs.readFileSync(catalogPath, 'utf8');
-for (const id of candidateIds) assert.doesNotMatch(catalog, new RegExp(`['\"]${id}['\"]`));
+for (const id of publishedModules.keys()) assert.equal(curriculumCatalog.has(id), true, `${id} production catalog entry`);
+assert.equal(curriculumCatalog.has('QBAS'), false);
 
-console.log('Introductory portfolio audit: 7/7 candidates passed; production catalog unchanged; QBASIC remains blocked.');
+console.log('Introductory portfolio audit: 6/6 approved courses published; QBASIC remains blocked.');

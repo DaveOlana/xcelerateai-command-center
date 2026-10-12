@@ -2,8 +2,8 @@
   "status": "PASS",
   "curriculumId": "CLNG",
   "revision": 1,
-  "candidateOnly": true,
-  "published": false,
+  "candidateOnly": false,
+  "published": true,
   "blockingFailures": 0,
   "gates": [
     "source",

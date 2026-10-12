@@ -1,3 +1,3 @@
 # Introductory Computer Science Portfolio
 
-Seven independent eight-week V2 course candidates. None is imported by the production catalog. Each candidate must receive owner review and pass its own publication run. QBASIC additionally requires a lawful traditional-QBasic media decision.
+Six independent eight-week V2 courses are owner-approved and published to the production catalog. QBASIC remains a valid blocked candidate pending a lawful traditional-QBasic media decision.

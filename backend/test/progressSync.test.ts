@@ -4,6 +4,7 @@ import { buildApp } from '../src/app.js';
 import type { BackendEnvironment } from '../src/config/env.js';
 import type { Database, TransactionDatabase } from '../src/db/database.js';
 import { canonicalStringify, sha256Canonical } from '../src/modules/progress/canonical.js';
+import { CLOUD_ENABLED_CURRICULA } from '../src/modules/progress/schema.js';
 
 const config: BackendEnvironment = {
   NODE_ENV: 'test', HOST: '127.0.0.1', PORT: 3001,
@@ -32,6 +33,13 @@ const mutation = (overrides: Record<string, unknown> = {}) => ({
   learnerState: emptyCloudState(),
   ...overrides,
 });
+const mutationFor = (curriculumId: string, revision: number) => {
+  const learnerState = emptyCloudState();
+  learnerState.curriculumState.curriculumId = curriculumId;
+  learnerState.curriculumState.lastSeenRevision = revision;
+  learnerState.curriculumState.activeWeekId = `${curriculumId}-W01`;
+  return mutation({ curriculumRevision: revision, learnerState });
+};
 
 interface StoredInstance extends QueryResultRow {
   id: string; user_id: string; curriculum_id: string; curriculum_revision: number; state_schema_version: number;
@@ -139,6 +147,30 @@ describe('deterministic progress hashing', () => {
 });
 
 describe('V2 progress synchronization API', () => {
+  test('enables the complete production curriculum catalog and keeps QBASIC blocked', () => {
+    expect(CLOUD_ENABLED_CURRICULA).toEqual({
+      CLNG: { revision: 1 }, CPPL: { revision: 1 }, FEWE: { revision: 1 },
+      JAVA: { revision: 1 }, JSIN: { revision: 1 }, PDES: { revision: 1 },
+      PYAE: { revision: 3 }, PYIN: { revision: 1 }, WEBD: { revision: 1 },
+    });
+    expect('QBAS' in CLOUD_ENABLED_CURRICULA).toBe(false);
+  });
+
+  test('creates isolated cloud progress for every enabled production curriculum', async () => {
+    const { app, database } = await setup();
+    for (const [curriculumId, { revision }] of Object.entries(CLOUD_ENABLED_CURRICULA)) {
+      const response = await app.inject({
+        method: 'PUT',
+        url: `/api/v1/v2/learning-instances/${curriculumId}`,
+        headers: auth(),
+        payload: mutationFor(curriculumId, revision),
+      });
+      expect(response.statusCode, curriculumId).toBe(201);
+      expect(response.json().instance).toMatchObject({ curriculumId, curriculumRevision: revision });
+    }
+    expect(database.instances.size).toBe(Object.keys(CLOUD_ENABLED_CURRICULA).length);
+  });
+
   test('creates and fetches an instance for the JWT subject', async () => {
     const database = new ProgressMemoryDatabase();
     const { app } = await setup(database);
