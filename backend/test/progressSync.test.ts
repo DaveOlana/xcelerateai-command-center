@@ -147,13 +147,13 @@ describe('deterministic progress hashing', () => {
 });
 
 describe('V2 progress synchronization API', () => {
-  test('enables the complete production curriculum catalog and keeps QBASIC blocked', () => {
+  test('enables only established production curricula while introductory R1 courses are withdrawn', () => {
     expect(CLOUD_ENABLED_CURRICULA).toEqual({
-      CLNG: { revision: 1 }, CPPL: { revision: 1 }, FEWE: { revision: 1 },
-      JAVA: { revision: 1 }, JSIN: { revision: 1 }, PDES: { revision: 1 },
-      PYAE: { revision: 3 }, PYIN: { revision: 1 }, WEBD: { revision: 1 },
+      FEWE: { revision: 1 }, PDES: { revision: 1 }, PYAE: { revision: 3 },
     });
-    expect('QBAS' in CLOUD_ENABLED_CURRICULA).toBe(false);
+    for (const curriculumId of ['QBAS', 'CLNG', 'CPPL', 'JAVA', 'JSIN', 'PYIN', 'WEBD']) {
+      expect(curriculumId in CLOUD_ENABLED_CURRICULA).toBe(false);
+    }
   });
 
   test('creates isolated cloud progress for every enabled production curriculum', async () => {

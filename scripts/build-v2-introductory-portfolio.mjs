@@ -11,6 +11,8 @@ import { validateRuntimeCurriculum } from '../src/curriculum-v2/validation/valid
 import { validateStudioActivities } from '../src/curriculum-v2/validation/validateStudioActivities.js';
 import { validateSkillCheckAuthoring } from '../src/curriculum-v2/validation/validateSkillCheckAuthoring.js';
 
+throw new Error('The mass introductory-course generator is retired. Preserve these Revision 1 artifacts for comparison and author each replacement course independently under the V2 standards.');
+
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const portfolioRoot = path.join(root, 'XcelerateAI Curriculum System', 'v2', 'curricula', 'introductory-computer-science');
 const guideRoot = path.join(root, 'public', 'curriculum-guides');

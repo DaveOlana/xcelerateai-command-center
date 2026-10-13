@@ -1,15 +1,9 @@
 import { z } from 'zod';
 
 export const CLOUD_ENABLED_CURRICULA = Object.freeze({
-  CLNG: { revision: 1 },
-  CPPL: { revision: 1 },
   FEWE: { revision: 1 },
-  JAVA: { revision: 1 },
-  JSIN: { revision: 1 },
   PDES: { revision: 1 },
   PYAE: { revision: 3 },
-  PYIN: { revision: 1 },
-  WEBD: { revision: 1 },
 });
 export const SUPPORTED_STATE_SCHEMA_VERSION = 1;
 export const SYNC_BODY_LIMIT = 1024 * 1024;

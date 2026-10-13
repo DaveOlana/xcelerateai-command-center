@@ -34,16 +34,10 @@ test('no selected V2 curriculum resolves to catalog mode and ignores stale bundl
   assert.equal(getCurrentCourseDefinition({ curriculumMode: mode, activeV2Curriculum: null, roadmap: staleLegacyRoadmap }), null);
   assert.deepEqual(curriculumCatalog.listPublished().map((item) => item.title), [
     'Front-End Web Engineering',
-    'Introduction to C',
-    'Introduction to C++',
-    'Introduction to Java',
-    'Introduction to JavaScript',
-    'Introduction to Python',
-    'Introduction to Web Development',
     'Product Design',
     'Python Agent Engineering',
   ]);
-  assert.equal(curriculumCatalog.listPublished().some((item) => item.title === 'Introduction to JavaScript'), true);
+  assert.equal(curriculumCatalog.listPublished().some((item) => item.title === 'Introduction to JavaScript'), false);
 });
 
 test('selecting PYAE establishes the V2 course even when stale V1 state exists', () => {
