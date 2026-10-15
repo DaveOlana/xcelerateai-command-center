@@ -3,6 +3,7 @@ import { createFinding, createValidationReport, SEVERITIES } from './findings.js
 const asArray=value=>Array.isArray(value)?value:[];
 const text=value=>typeof value==='string'?value.trim():'';
 const normalize=value=>text(value).toLowerCase().replace(/[“”]/g,'"').replace(/[^a-z0-9]+/g,' ').trim();
+const normalizeOptionLabel=value=>text(value).toLowerCase().replace(/[“”]/g,'"').replace(/\s+/g,' ').trim();
 const policyLeak=/\b(?:xcelerateai|this curriculum|provider cap|paid dev mode|free figma plan|validator behavior|learning path)\b/i;
 
 export function validateSkillCheckAuthoring(audit,source){
@@ -35,7 +36,9 @@ export function validateSkillCheckAuthoring(audit,source){
       const opening=normalize(text(question?.prompt).split(/[.?!]/)[0]);
       if(opening&&seenScenarioOpenings.has(opening)) add('V022-B007',`${week.id} repeats a scenario opening across questions.`,[week.id,question?.id]);
       seenScenarioOpenings.add(opening);
-      const labels=asArray(question?.options).map(option=>normalize(option?.label));
+      // Operators and identifier punctuation carry meaning in programming answers
+      // (`&&` versus `||`, `_name` versus `$name`), so preserve them here.
+      const labels=asArray(question?.options).map(option=>normalizeOptionLabel(option?.label));
       if(labels.length!==4||new Set(labels).size!==4) add('V022-B008',`${question?.id} must have four distinct options.`,[question?.id]);
       const learnerText=[question?.prompt,...asArray(question?.options).map(option=>option?.label),question?.explanation].join(' ');
       if(policyLeak.test(learnerText)) add('V022-B009',`${question?.id} leaks platform or curriculum policy.`,[question?.id]);

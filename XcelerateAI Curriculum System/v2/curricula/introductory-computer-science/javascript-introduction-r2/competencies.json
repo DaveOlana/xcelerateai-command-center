@@ -1,0 +1,231 @@
+[
+  {
+    "id": "JSIN-C001",
+    "name": "Prepare and verify a JavaScript workspace",
+    "description": "Create a project folder, edit a JavaScript file in VS Code, and run it with a supported Node.js LTS release from PowerShell.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "JSIN-C002",
+    "name": "Distinguish expressions, output, scripts, and the REPL",
+    "description": "Choose between a saved script and a temporary REPL experiment, predict simple expression values, and explain visible console output.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C001"
+    ]
+  },
+  {
+    "id": "JSIN-C003",
+    "name": "Repair a basic execution or syntax failure",
+    "description": "Use the command, file path, error line, and message to repair a wrong-folder run or a small JavaScript syntax error.",
+    "domain": "Debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C001"
+    ]
+  },
+  {
+    "id": "JSIN-C004",
+    "name": "Declare and update named values deliberately",
+    "description": "Use const for bindings that are not reassigned and let for values that must change during a program.",
+    "domain": "Language foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C002"
+    ]
+  },
+  {
+    "id": "JSIN-C005",
+    "name": "Recognize and inspect JavaScript value types",
+    "description": "Work with strings, numbers, Booleans, undefined, and null, and use typeof while accounting for its documented null quirk.",
+    "domain": "Language foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C002"
+    ]
+  },
+  {
+    "id": "JSIN-C006",
+    "name": "Calculate and convert values predictably",
+    "description": "Apply arithmetic precedence, numeric conversion, concatenation, and template literals without accidental string coercion.",
+    "domain": "Language foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C004",
+      "JSIN-C005"
+    ]
+  },
+  {
+    "id": "JSIN-C007",
+    "name": "Compare values without accidental coercion",
+    "description": "Use relational operators and strict equality to produce and explain Boolean results.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C005"
+    ]
+  },
+  {
+    "id": "JSIN-C008",
+    "name": "Express decisions with Boolean logic",
+    "description": "Use if, else if, else, AND, OR, and NOT to select one appropriate branch.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C007"
+    ]
+  },
+  {
+    "id": "JSIN-C009",
+    "name": "Reject invalid numeric input",
+    "description": "Convert an input deliberately and use Number.isFinite before performing a calculation or comparison.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C006",
+      "JSIN-C008"
+    ]
+  },
+  {
+    "id": "JSIN-C010",
+    "name": "Manage an ordered collection with an array",
+    "description": "Create, inspect, update, search, and safely address an array using indexes and length.",
+    "domain": "Collections and iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C004"
+    ]
+  },
+  {
+    "id": "JSIN-C011",
+    "name": "Process a collection with a bounded loop",
+    "description": "Use for or for...of to visit intended values, accumulate a result, and avoid off-by-one boundaries.",
+    "domain": "Collections and iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C008",
+      "JSIN-C010"
+    ]
+  },
+  {
+    "id": "JSIN-C012",
+    "name": "Define and call a focused function",
+    "description": "Write a named function with clear parameters and call it with appropriate arguments.",
+    "domain": "Functions and decomposition",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C004"
+    ]
+  },
+  {
+    "id": "JSIN-C013",
+    "name": "Return and compose useful values",
+    "description": "Return a result from a function and use that result in another calculation or output operation.",
+    "domain": "Functions and decomposition",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C012"
+    ]
+  },
+  {
+    "id": "JSIN-C014",
+    "name": "Reason about local and outer scope",
+    "description": "Keep temporary bindings local, identify an out-of-scope access, and avoid unintended dependence on mutable outer state.",
+    "domain": "Functions and decomposition",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C004",
+      "JSIN-C012"
+    ]
+  },
+  {
+    "id": "JSIN-C015",
+    "name": "Model one record with an object",
+    "description": "Group related named properties, read and update them, and choose dot or bracket access intentionally.",
+    "domain": "Structured data",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C010"
+    ]
+  },
+  {
+    "id": "JSIN-C016",
+    "name": "Create simple instances with a class",
+    "description": "Define a constructor and method, create instances with new, and distinguish shared class behavior from instance data.",
+    "domain": "Structured data",
+    "importance": "supporting",
+    "prerequisiteIds": [
+      "JSIN-C012",
+      "JSIN-C015"
+    ]
+  },
+  {
+    "id": "JSIN-C017",
+    "name": "Convert data to and from JSON safely",
+    "description": "Explain JSON restrictions and use JSON.stringify and JSON.parse without confusing JSON text with live JavaScript objects.",
+    "domain": "Structured data",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C015"
+    ]
+  },
+  {
+    "id": "JSIN-C018",
+    "name": "Separate a program into ECMAScript modules",
+    "description": "Export focused functions or classes, import them with matching names, and run the program in Node.js module mode.",
+    "domain": "Program structure",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C012",
+      "JSIN-C013"
+    ]
+  },
+  {
+    "id": "JSIN-C019",
+    "name": "Persist a small JSON data file defensively",
+    "description": "Read and write UTF-8 JSON with Node.js while distinguishing a missing file from malformed existing data.",
+    "domain": "Files and persistence",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C017",
+      "JSIN-C018"
+    ]
+  },
+  {
+    "id": "JSIN-C020",
+    "name": "Verify and debug deterministic behavior",
+    "description": "Use the Node.js debugger and built-in test runner with strict assertions to locate and prevent a small defect.",
+    "domain": "Testing and debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C013",
+      "JSIN-C018"
+    ]
+  },
+  {
+    "id": "JSIN-C021",
+    "name": "Dispatch a command from process arguments",
+    "description": "Read process.argv, separate the command from its values, and route supported and unsupported CLI commands clearly.",
+    "domain": "Command-line interfaces",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C008",
+      "JSIN-C010",
+      "JSIN-C012"
+    ]
+  },
+  {
+    "id": "JSIN-C023",
+    "name": "Document and publish a safe Git repository",
+    "description": "Write reproducible run and test instructions, inspect staged files, commit locally, and push a secret-free project to GitHub.",
+    "domain": "Git and project delivery",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JSIN-C001",
+      "JSIN-C020"
+    ]
+  }
+]

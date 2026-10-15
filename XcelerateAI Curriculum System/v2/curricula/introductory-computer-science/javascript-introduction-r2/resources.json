@@ -1,0 +1,1697 @@
+[
+  {
+    "id": "JSIN-R2-SETUP-01",
+    "title": "Install the latest Node.js LTS release",
+    "url": "https://nodejs.org/en/download",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "At “Download Node.js”, select the latest LTS release and Windows installer for your computer.",
+      "stop": "Stop as soon as both commands print version numbers; do not install the Current or EOL release.",
+      "note": "Do: Install the latest LTS build, reopen PowerShell, then run `node --version` and `npm --version`.\n\nFinished when: Node.js and npm run from a fresh Windows terminal.\n\nNext: Open the VS Code setup card, or skip it if `code .` already opens VS Code."
+    },
+    "competencyIds": [
+      "JSIN-C001"
+    ],
+    "whySelected": "The official download page identifies the supported LTS release without relying on a stale third-party installer.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/en/download",
+      "finalUrl": "https://nodejs.org/en/download",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-SETUP-02",
+    "title": "Install Visual Studio Code on Windows",
+    "url": "https://code.visualstudio.com/docs/setup/windows",
+    "provider": "Microsoft",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at “Installing Visual Studio Code on Windows”.",
+      "stop": "Stop before “System setup”. Run `code .` from a practice folder to verify the installation.",
+      "note": "Do: Read “Install VS Code on Windows” through “Install with the Windows installer”; choose User setup, install it, and restart PowerShell.\n\nFinished when: VS Code opens the folder selected in PowerShell and shows the same files in Explorer.\n\nNext: Open the Git setup card, or continue if `git --version` already works."
+    },
+    "competencyIds": [
+      "JSIN-C001"
+    ],
+    "whySelected": "The official Windows instructions recommend a user-scoped installer and explain how to verify the `code` command.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://code.visualstudio.com/docs/setup/windows",
+      "finalUrl": "https://code.visualstudio.com/docs/setup/windows",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-SETUP-03",
+    "title": "Install and identify yourself to Git",
+    "url": "https://docs.github.com/en/get-started/git-basics/set-up-git",
+    "provider": "GitHub",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "start": "Begin at “Using Git”.",
+      "stop": "Stop before “Authenticating with GitHub from Git”. Verify `git --version` and both `git config` values.",
+      "note": "Do: Complete “Using Git” and “Setting up Git”: install Git for Windows, set your username, and set your commit email.\n\nFinished when: Git runs in PowerShell and new commits can record the learner’s chosen name and email.\n\nNext: Open the GitHub account card if you do not already have a verified account."
+    },
+    "competencyIds": [
+      "JSIN-C001"
+    ],
+    "whySelected": "GitHub’s maintained setup page links the official Git installer and the exact username/email configuration steps.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/get-started/git-basics/set-up-git",
+      "finalUrl": "https://docs.github.com/en/get-started/git-basics/set-up-git",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-SETUP-04",
+    "title": "Create or verify a free GitHub account",
+    "url": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+    "provider": "GitHub",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “About your personal account on GitHub”.",
+      "stop": "Stop once you can sign in and see your profile; do not choose a paid plan.",
+      "note": "Do: Read “About your personal account” and “Signing up for a new personal account”; create the account and verify its email.\n\nFinished when: The learner can sign in to a verified free GitHub account for weekly repositories.\n\nAccess: A free GitHub personal account is the outcome of this setup task; no paid plan is required.\n\nNext: Return to Week 1 and begin the first Core video."
+    },
+    "competencyIds": [
+      "JSIN-C001"
+    ],
+    "whySelected": "The official account guide states the free-account and verified-email requirements without requiring a paid plan.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+      "finalUrl": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W01-01",
+    "title": "Creating your first JavaScript application",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/creating-your-first-application-6-of-51",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 8,
+    "location": {
+      "start": "Play “Creating your first application [6 of 51]” from 00:00.",
+      "stop": "Stop when the episode ends; do not continue into the archived companion repository.",
+      "note": "Do: Watch the complete 4:19 episode, pausing to create a `week-01` folder and `hello.js` file.\n\nFinished when: You can distinguish a project folder, JavaScript source file, editor, terminal, and Node runtime.\n\nNext: Read the Node command-line page and run the file yourself."
+    },
+    "competencyIds": [
+      "JSIN-C001",
+      "JSIN-C002"
+    ],
+    "whySelected": "A four-minute beginner demonstration of the folder-editor-file-run path, with a readable page description as fallback.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/creating-your-first-application-6-of-51",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/creating-your-first-application-6-of-51",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W01-02",
+    "title": "Run Node.js scripts from PowerShell",
+    "url": "https://nodejs.org/en/learn/command-line/run-nodejs-scripts-from-the-command-line",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Begin at “Run Node.js scripts from the command line”.",
+      "stop": "Stop before “Restart the application automatically”; shebangs and watch mode are outside this week.",
+      "note": "Do: Read through the `node app.js` example. In PowerShell, begin in the parent folder and run this exact practice sequence: `cd ./week-01`; `node ./hello.js`; `cd ..`; `node ./hello.js` and read the missing-module path; `cd ./week-01`; `node ./hello.js` again. Use `pwd` and `dir` after either `cd` command if you need to confirm the current folder and visible file.\n\nFinished when: You can explain that `cd ./week-01` changes the current folder, use `cd ..` to return to its parent, run the intended file, and use the path in an error to repair a wrong-folder command.\n\nNext: Open the REPL reference and compare a temporary experiment with a saved script."
+    },
+    "competencyIds": [
+      "JSIN-C001",
+      "JSIN-C003"
+    ],
+    "whySelected": "The official Node page gives the exact `node app.js` execution model without a framework or account.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/en/learn/command-line/run-nodejs-scripts-from-the-command-line",
+      "finalUrl": "https://nodejs.org/learn/command-line/run-nodejs-scripts-from-the-command-line",
+      "finalDestinationStatus": "success",
+      "redirected": true,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W01-03",
+    "title": "Use the Node.js REPL for tiny experiments",
+    "url": "https://nodejs.org/en/learn/command-line/how-to-use-the-nodejs-repl",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Begin at “What is the Node.js REPL?”.",
+      "stop": "Stop before multiline functions and special REPL commands beyond `.exit`.",
+      "note": "Do: Read through the first `console.log(\"test\")` result. Start `node`, try `2 + 3`, `\"Hi\" + \"!\"`, and `console.log(\"test\")`, then exit with `.exit`.\n\nFinished when: You can choose the REPL for a disposable expression and a `.js` file for a repeatable program.\n\nNext: Take the Week 1 Skill Check, then build the Campus Welcome Card."
+    },
+    "competencyIds": [
+      "JSIN-C002",
+      "JSIN-C003"
+    ],
+    "whySelected": "The official interactive shell makes expressions, values, and errors immediately visible before a learner edits a full program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible practice route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/en/learn/command-line/how-to-use-the-nodejs-repl",
+      "finalUrl": "https://nodejs.org/learn/command-line/how-to-use-the-nodejs-repl",
+      "finalDestinationStatus": "success",
+      "redirected": true,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W02-01",
+    "title": "Demo: data types in JavaScript",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-data-types-in-javascript-16-of-51",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Play “Demo: Data types in JavaScript [16 of 51]” from 00:00.",
+      "stop": "Stop when the episode ends; do not continue into dates or error handling.",
+      "note": "Do: Watch the complete 5:44 episode and reproduce the number, string, boolean, and undefined examples in `values.js`.\n\nFinished when: You can name the value type you stored and verify it with `typeof`.\n\nNext: Read the bounded variables and types assignments."
+    },
+    "competencyIds": [
+      "JSIN-C004",
+      "JSIN-C005"
+    ],
+    "whySelected": "A short visual introduction to JavaScript values and changing types, paired with current readable references.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-data-types-in-javascript-16-of-51",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-data-types-in-javascript-16-of-51",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W02-02",
+    "title": "Variables and constants",
+    "url": "https://javascript.info/variables",
+    "provider": "JavaScript.info",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 22,
+    "location": {
+      "start": "Begin at “A variable”.",
+      "stop": "Skip “The old var”; `var` is not part of this week’s assessed path.",
+      "note": "Do: Read “A variable” through “Variable naming”, then “Constants” through “Name things right”, and the Summary. Run equivalent Node examples.\n\nFinished when: You can use `const` by default, use `let` for intended reassignment, and choose readable camelCase names.\n\nNext: Read the bounded data-types assignment."
+    },
+    "competencyIds": [
+      "JSIN-C004"
+    ],
+    "whySelected": "A current, example-led explanation of `let`, `const`, naming, and intention without requiring an account.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://javascript.info/variables",
+      "finalUrl": "https://javascript.info/variables",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W02-03",
+    "title": "JavaScript value types",
+    "url": "https://javascript.info/types",
+    "provider": "JavaScript.info",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at the introduction and “Number”.",
+      "stop": "After the `typeof` table and its `typeof null` explanation, stop before the later object-detail material; Symbol, BigInt operations, and object internals are outside this Week.",
+      "note": "Do: Read Number; skip BigInt; continue through String, Boolean, null, undefined, and the `typeof` operator. Run one example for each assigned value and include the page’s `typeof null` note.\n\nFinished when: You can distinguish a value from its type, predict the assigned `typeof` results, and explain that `typeof null` returning `\"object\"` is a historical language quirk rather than evidence that null is a usable record object.\n\nNext: Use the operators article to calculate with numbers and convert string input deliberately."
+    },
+    "competencyIds": [
+      "JSIN-C005"
+    ],
+    "whySelected": "A current lookup for number, string, boolean, null, undefined, and `typeof`, with the BigInt, Symbol, and object detail explicitly skipped.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://javascript.info/types",
+      "finalUrl": "https://javascript.info/types",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W02-04",
+    "title": "Arithmetic, precedence, and numeric conversion",
+    "url": "https://javascript.info/operators",
+    "provider": "JavaScript.info",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at “Maths”.",
+      "stop": "Stop before increment/decrement, bitwise operators, and the comma operator.",
+      "note": "Do: Read Maths through string concatenation, numeric conversion with unary plus, operator precedence, assignment, and modify-in-place.\n\nFinished when: You can calculate with +, -, *, /, and %, explain precedence, and convert text before numeric addition.\n\nNext: Learn the bounded template-literal form used to label calculated output."
+    },
+    "competencyIds": [
+      "JSIN-C006"
+    ],
+    "whySelected": "A bounded explanation of arithmetic, string concatenation, unary numeric conversion, precedence, and assignment.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://javascript.info/operators",
+      "finalUrl": "https://javascript.info/operators",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W02-06",
+    "title": "Label calculated output with template literals",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals",
+    "provider": "MDN",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at “Syntax”.",
+      "stop": "Stop before nesting templates and tagged templates; multiline strings, tag functions, raw strings, and escape edge cases are outside this Week.",
+      "note": "Do: Read the untagged single-line syntax, the description through placeholders, and “String interpolation” through its first template-literal example. In Node, run ``const remaining = 8500; console.log(`Remaining: ${remaining}`);``.\n\nFinished when: You can use backticks and `${expression}` to insert a calculated value into readable output, and explain why ordinary quotes do not interpolate the placeholder.\n\nNext: Trace the supplied Week 2 snippet in the visualizer, then take the Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C006"
+    ],
+    "whySelected": "The official reference gives the exact backtick and `${expression}` form required by the budget summary, without making learners infer it from course metadata.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-15T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-15T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-15 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W02-05",
+    "title": "JavaScript visual trace: Trace values, reassignment, types, and conversion",
+    "url": "https://pythontutor.com/javascript.html",
+    "provider": "Python Tutor",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Open the JavaScript visualizer and clear any sample code.",
+      "stop": "Stop after you can explain every highlighted line and value change without advancing the visualizer first.",
+      "note": "Do: Paste this exact snippet and choose Visualize Execution: const raw = \"12\";\nconst converted = Number(raw);\nlet total = converted + 3;\ntotal = total * 2;\nconsole.log(typeof raw, typeof converted, total);\n\nFinished when: You can explain why `raw` stays a string, `converted` is a number, and `total` ends at 30.\n\nNext: Return to the Week 2 Skill Check, then use the same predict-run-explain habit in the Build."
+    },
+    "competencyIds": [
+      "JSIN-C004",
+      "JSIN-C005",
+      "JSIN-C006"
+    ],
+    "whySelected": "A no-account visual stepper that makes trace values, reassignment, types, and conversion observable before the learner writes the weekly program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://pythontutor.com/javascript.html",
+      "finalUrl": "https://pythontutor.com/javascript.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W03-01",
+    "title": "Demo: Boolean logic with if statements",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-boolean-logic-with-if-statements-26-of-51",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Play “Demo: Boolean logic with if statements [26 of 51]” from 00:00.",
+      "stop": "Stop when the episode ends; switch statements and compact conditional syntax are not assessed.",
+      "note": "Do: Watch the complete 7:27 episode and reproduce one `if/else` example in `decisions.js`.\n\nFinished when: You can trace a boolean condition to exactly one selected branch.\n\nNext: Read strict comparisons and the bounded conditional article."
+    },
+    "competencyIds": [
+      "JSIN-C007",
+      "JSIN-C008"
+    ],
+    "whySelected": "A short Node-oriented demonstration of booleans and branching, paired with precise current text references.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-boolean-logic-with-if-statements-26-of-51",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-boolean-logic-with-if-statements-26-of-51",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W03-02",
+    "title": "Comparisons and strict equality",
+    "url": "https://javascript.info/comparison",
+    "provider": "JavaScript.info",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 18,
+    "location": {
+      "start": "Begin at “Boolean is the result”.",
+      "stop": "Stop before “Comparison with null and undefined”.",
+      "note": "Do: Read through “Strict equality” and run the number/string comparison examples with `console.log`.\n\nFinished when: You can use relational operators plus `===` and `!==` without relying on coercing equality.\n\nNext: Read the `if`, `else if`, and `else` assignment."
+    },
+    "competencyIds": [
+      "JSIN-C007"
+    ],
+    "whySelected": "A current explanation of comparison results and strict equality, bounded before coercion edge cases.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://javascript.info/comparison",
+      "finalUrl": "https://javascript.info/comparison",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W03-03",
+    "title": "Conditional branching with braces",
+    "url": "https://javascript.info/ifelse",
+    "provider": "JavaScript.info",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “The if statement”.",
+      "stop": "Stop before the conditional `?` operator.",
+      "note": "Do: Read “The if statement”, Boolean conversion, `else`, and several `else if` branches; run adapted Node examples.\n\nFinished when: You can order mutually exclusive branches and explain why only the first true branch runs.\n\nNext: Read the bounded logical-operator assignment."
+    },
+    "competencyIds": [
+      "JSIN-C008"
+    ],
+    "whySelected": "A clear progression from `if` to `else` and `else if` that can be translated directly to Node variables.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://javascript.info/ifelse",
+      "finalUrl": "https://javascript.info/ifelse",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W03-04",
+    "title": "Combine conditions with AND, OR, and NOT",
+    "url": "https://javascript.info/logical-operators",
+    "provider": "JavaScript.info",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “|| (OR)”.",
+      "stop": "Skip both first-truthy/first-falsy value-returning sections, short-circuit side-effect patterns, replacing `if` with logical operators, double-NOT conversion, and every task except “Check the range between”.",
+      "note": "Do: Use the page navigation rather than reading straight through: in “|| (OR)”, read through the office-hours examples and stop before “OR finds the first truthy value”; jump to “&& (AND)” and read through the hour-and-minute example, stopping before “AND finds the first falsy value”; jump to “! (NOT)” and read through the single-NOT examples, stopping before double NOT. Finish with only the “Check the range between” task.\n\nFinished when: You can combine and negate boolean conditions without changing their intended grouping.\n\nNext: Check numeric input with `Number.isFinite`."
+    },
+    "competencyIds": [
+      "JSIN-C007",
+      "JSIN-C008"
+    ],
+    "whySelected": "A bounded source for `&&`, `||`, and `!` before advanced value-returning shortcuts.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://javascript.info/logical-operators",
+      "finalUrl": "https://javascript.info/logical-operators",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W03-05",
+    "title": "Validate converted numbers with Number.isFinite",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite",
+    "provider": "MDN",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Begin at the introduction and “Try it”.",
+      "stop": "Stop before the detailed comparison with global `isFinite()`.",
+      "note": "Do: Read the introduction, Try it, Syntax, Parameters, and Return value; run the supplied pattern in Node.\n\nFinished when: You can convert first, reject non-finite results, then apply range rules.\n\nNext: Take the Week 3 Skill Check and build the Event Check-in Validator."
+    },
+    "competencyIds": [
+      "JSIN-C009"
+    ],
+    "whySelected": "An authoritative reference for rejecting `NaN` and infinities after explicit input conversion.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W04-01",
+    "title": "Creating arrays",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/creating-arrays-29-of-51",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 5,
+    "location": {
+      "start": "Play “Creating arrays [29 of 51]” from 00:00.",
+      "stop": "Stop when the episode ends.",
+      "note": "Do: Watch the complete 1:29 episode and recreate its basic array pattern in `collections.js`.\n\nFinished when: You can explain why an array is better than five separately named variables for one ordered list.\n\nNext: Read the bounded MDN arrays sections."
+    },
+    "competencyIds": [
+      "JSIN-C010"
+    ],
+    "whySelected": "A 1:29 visual introduction to storing multiple values under one name before reading the fuller reference.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/creating-arrays-29-of-51",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/creating-arrays-29-of-51",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W04-02",
+    "title": "Array basics: index, length, push, pop, and indexOf",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at “What is an array?”.",
+      "stop": "Stop before converting strings/arrays and the later product/search projects.",
+      "note": "Do: Read Creating arrays through Adding items, then Removing items with `pop()`; include `length`, indexed access, `indexOf()`, `push()`, and `pop()`.\n\nFinished when: You can create, inspect, append, remove, and search a one-dimensional array without an off-by-one error.\n\nNext: Watch the loops demonstration and then read `for...of` and counted `for`."
+    },
+    "competencyIds": [
+      "JSIN-C010"
+    ],
+    "whySelected": "An example-led beginner article with exactly the list operations needed by the weekly program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W04-03",
+    "title": "Demo: loops",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-loops-36-of-51",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Play “Demo: Loops [36 of 51]” from 00:00.",
+      "stop": "Stop when the episode ends; nested loops are not required this week.",
+      "note": "Do: Watch the complete episode and reproduce the `for...of` example with your task array.\n\nFinished when: You can choose `for...of` for every item and a counted `for` when the index or repeat count matters.\n\nNext: Read the bounded looping article and repair one off-by-one condition."
+    },
+    "competencyIds": [
+      "JSIN-C011"
+    ],
+    "whySelected": "A short demonstration comparing `for`, `for...of`, and `while` in a Node-oriented series.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-loops-36-of-51",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-loops-36-of-51",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W04-04",
+    "title": "Loop through collections safely",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Loops",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 28,
+    "location": {
+      "start": "Begin at “Why are loops useful?”.",
+      "stop": "Skip `map`, `filter`, DOM projects, `break`, `continue`, and `do...while` for this week.",
+      "note": "Do: Read “Looping through a collection” through `for...of`, then “The standard for loop”. Review the final loop-choice summary.\n\nFinished when: You can state the initializer, continuation condition, update, and values visited by a loop.\n\nNext: Trace a Week 4 accumulator in the JavaScript visualizer."
+    },
+    "competencyIds": [
+      "JSIN-C011"
+    ],
+    "whySelected": "A current article that explains loop purpose, `for...of`, counted `for`, and stopping conditions with worked examples.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Loops",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Loops",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W04-05",
+    "title": "JavaScript visual trace: Trace an array accumulator and loop boundary",
+    "url": "https://pythontutor.com/javascript.html",
+    "provider": "Python Tutor",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Open the JavaScript visualizer and clear any sample code.",
+      "stop": "Stop after you can explain every highlighted line and value change without advancing the visualizer first.",
+      "note": "Do: Paste this exact snippet and choose Visualize Execution: const scores = [8, 6, 10];\nlet total = 0;\nfor (const score of scores) {\n  total = total + score;\n}\nconsole.log(total, scores.length);\n\nFinished when: You can explain the three accumulator changes and why the final total is 24.\n\nNext: Return to the Week 4 Skill Check, then use the same predict-run-explain habit in the Build."
+    },
+    "competencyIds": [
+      "JSIN-C010",
+      "JSIN-C011"
+    ],
+    "whySelected": "A no-account visual stepper that makes trace an array accumulator and loop boundary observable before the learner writes the weekly program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://pythontutor.com/javascript.html",
+      "finalUrl": "https://pythontutor.com/javascript.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W05-01",
+    "title": "Demo: functions",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-functions-38-of-51",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Play “Demo: Functions [38 of 51]” from 00:00.",
+      "stop": "Stop when the episode ends; arrow functions and callbacks are outside this week’s required path.",
+      "note": "Do: Watch the complete episode and create a `formatMessage(name)` function in `functions.js`.\n\nFinished when: You can identify a declaration, call, parameter, argument, and returned result.\n\nNext: Read the bounded MDN function and return-value sections."
+    },
+    "competencyIds": [
+      "JSIN-C012",
+      "JSIN-C013"
+    ],
+    "whySelected": "A concise demonstration of naming and calling reusable blocks before the learner decomposes a program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-functions-38-of-51",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-functions-38-of-51",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W05-02",
+    "title": "Functions, parameters, calls, and scope",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 28,
+    "location": {
+      "start": "Begin at the introduction and “Where do I find functions?”.",
+      "stop": "Stop before anonymous functions, arrow functions, callbacks, and browser event-handler examples.",
+      "note": "Do: Read through custom functions, invoking functions, function parameters, and function scope; use function declarations in the Node examples.\n\nFinished when: You can create and call a focused named function and explain where its local names exist.\n\nNext: Read how returned values differ from printed output."
+    },
+    "competencyIds": [
+      "JSIN-C012",
+      "JSIN-C014"
+    ],
+    "whySelected": "An authoritative beginner explanation of reusable functions, parameters/arguments, and local scope.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W05-03",
+    "title": "Return useful values from functions",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Return_values",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “What are return values?”.",
+      "stop": "Stop before the browser-based function-library exercise.",
+      "note": "Do: Read “What are return values?” and “How to return a value”; run the `replace()` and custom-return examples in Node.\n\nFinished when: You can predict `undefined` from a missing `return` and use a returned value elsewhere.\n\nNext: Trace a function call and local scope in the visualizer."
+    },
+    "competencyIds": [
+      "JSIN-C013"
+    ],
+    "whySelected": "A focused explanation of return values and the common mistake of printing instead of returning.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Return_values",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Return_values",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W05-04",
+    "title": "JavaScript visual trace: Trace parameters, local scope, and a returned value",
+    "url": "https://pythontutor.com/javascript.html",
+    "provider": "Python Tutor",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Open the JavaScript visualizer and clear any sample code.",
+      "stop": "Stop after you can explain every highlighted line and value change without advancing the visualizer first.",
+      "note": "Do: Paste this exact snippet and choose Visualize Execution: function addFee(amount, fee) {\n  const total = amount + fee;\n  return total;\n}\nconst first = addFee(10, 2);\nconst second = addFee(first, 3);\nconsole.log(second);\n\nFinished when: You can explain both call frames, why each `total` is local, and why `second` is 15.\n\nNext: Return to the Week 5 Skill Check, then use the same predict-run-explain habit in the Build."
+    },
+    "competencyIds": [
+      "JSIN-C012",
+      "JSIN-C013",
+      "JSIN-C014"
+    ],
+    "whySelected": "A no-account visual stepper that makes trace parameters, local scope, and a returned value observable before the learner writes the weekly program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://pythontutor.com/javascript.html",
+      "finalUrl": "https://pythontutor.com/javascript.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W06-01",
+    "title": "JavaScript Object Notation (JSON)",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/javascript-object-notation-json-41-of-51",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 8,
+    "location": {
+      "start": "Play “JavaScript Object Notation (JSON) [41 of 51]” from 00:00.",
+      "stop": "Stop when the episode ends; network APIs are outside this course.",
+      "note": "Do: Watch the complete episode and type one object with `title`, `borrower`, and `returned` properties.\n\nFinished when: You can distinguish a JavaScript object in memory from JSON text used to store or exchange its data.\n\nNext: Continue to the bounded class declaration, constructor, instance, and method resource."
+    },
+    "competencyIds": [
+      "JSIN-C015",
+      "JSIN-C017"
+    ],
+    "whySelected": "A short visual bridge from JavaScript objects to a portable data format, paired with deeper object and JSON reading.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/javascript-object-notation-json-41-of-51",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/javascript-object-notation-json-41-of-51",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W06-02",
+    "title": "JavaScript object basics",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Begin at the first object-literal example.",
+      "stop": "Stop before “What is this?” and constructors; class-specific behavior is taught in the next bounded resource.",
+      "note": "Do: Read through object literals, dot notation, bracket notation, and setting object members.\n\nFinished when: You can choose an object for related named fields and retrieve or update a property deliberately.\n\nNext: Watch the short JSON bridge, then continue to the bounded class declaration, constructor, instance, and method resource."
+    },
+    "competencyIds": [
+      "JSIN-C015"
+    ],
+    "whySelected": "An example-led source for object literals, named properties, dot notation, bracket notation, and updating values.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W06-03",
+    "title": "Classes, constructors, instances, and methods",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at “Classes and constructors”.",
+      "stop": "Stop before the `Student extends Person` example; inheritance, private fields, and polymorphism are not assessed.",
+      "note": "Do: Read the first `Person` class declaration and explanation of its property, constructor, method, `this`, and instance creation.\n\nFinished when: You can declare a simple class, initialize instance properties, and call an instance method using `this`.\n\nNext: Read the JSON restrictions and conversion methods."
+    },
+    "competencyIds": [
+      "JSIN-C016"
+    ],
+    "whySelected": "A readable, concrete `Person` class example that can be bounded before inheritance and private fields.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W06-04",
+    "title": "JSON structure, restrictions, parse, and stringify",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 28,
+    "location": {
+      "start": "Begin at “No, really, what is JSON?”.",
+      "stop": "Skip the network `fetch()` and DOM card-building example.",
+      "note": "Do: Read JSON structure, Arrays as JSON, JSON syntax restrictions, and “Converting between objects and text”.\n\nFinished when: You can identify invalid JSON, convert supported JavaScript data to text, and parse valid text back to data.\n\nNext: Trace the supplied object-to-JSON round trip in the visualizer."
+    },
+    "competencyIds": [
+      "JSIN-C017"
+    ],
+    "whySelected": "An authoritative explanation of valid JSON and the exact `JSON.parse`/`JSON.stringify` round trip used by the Build.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W06-05",
+    "title": "JavaScript visual trace: Trace an object update and JSON round trip",
+    "url": "https://pythontutor.com/javascript.html",
+    "provider": "Python Tutor",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Open the JavaScript visualizer and clear any sample code.",
+      "stop": "Stop after you can explain every highlighted line and value change without advancing the visualizer first.",
+      "note": "Do: Paste this exact snippet and choose Visualize Execution: const book = { title: \"Orbit\", returned: false };\nbook.returned = true;\nconst text = JSON.stringify(book);\nconst copy = JSON.parse(text);\nconsole.log(copy.title, copy.returned);\n\nFinished when: You can explain the object mutation, the string boundary, and the separate parsed object.\n\nNext: Return to the Week 6 Skill Check, then use the same predict-run-explain habit in the Build."
+    },
+    "competencyIds": [
+      "JSIN-C015",
+      "JSIN-C017"
+    ],
+    "whySelected": "A no-account visual stepper that makes trace an object update and json round trip observable before the learner writes the weekly program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://pythontutor.com/javascript.html",
+      "finalUrl": "https://pythontutor.com/javascript.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-01",
+    "title": "Run code step by step in the Node.js debugger",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-nodejs/how-to-run-your-code-step-by-step-in-nodejs-built-in-debugger-22-of-26",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Play the complete built-in Node debugger episode from 00:00.",
+      "stop": "Stop when the episode ends; remote debugging and launch configurations are optional.",
+      "note": "Do: Watch all 5:57. If captions are unavailable, use the complete written route in W07-10. Practice only with the exact `debug-search.js` file supplied there.\n\nFinished when: You can pause execution, inspect a value, step to the next line, and state where the defect becomes visible.\n\nNext: Continue directly to the paired readable debugger exercise; it supplies the exact practice file and commands."
+    },
+    "competencyIds": [
+      "JSIN-C020"
+    ],
+    "whySelected": "A 5:57 demonstration of breakpoints and stepwise inspection in the actual Node environment.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-nodejs/how-to-run-your-code-step-by-step-in-nodejs-built-in-debugger-22-of-26",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-nodejs/how-to-run-your-code-step-by-step-in-nodejs-built-in-debugger-22-of-26",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-10",
+    "title": "Pause, inspect, and step with the Node.js debugger",
+    "url": "https://nodejs.org/api/debugger.html",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Begin at “Debugger” and read the “Interactive mode” example through “Watchers”.",
+      "stop": "Stop after the Interactive mode and Watchers sections. Do not use setBreakpoint, conditional breakpoints, remote debugging, probe mode, or V8 inspector integration.",
+      "note": "Do: Create `debug-search.js` with these exact lines: `const title = \"  Review Functions  \";` `const query = \"review\";` `const normalizedTitle = title.trim().toLowerCase();` `const normalizedQuery = query.trim().toLowerCase();` `debugger;` `const matches = normalizedTitle === normalizedQuery;` `console.log(matches);`. Run `node inspect debug-search.js`; at the first pause type `cont`; at the `debugger;` pause add `watch(\"normalizedTitle\")` and `watch(\"normalizedQuery\")`, use `repl` to read either value, then leave the REPL with Ctrl+C. Type `next` twice so the comparison executes, enter `repl` again, and read `matches`. Record that equality asks whether the full strings match, whereas the intended substring rule needs `normalizedTitle.includes(normalizedQuery)`. Repair the comparison, rerun, and remove the `debugger;` statement after recording the result.\n\nFinished when: You can use a deliberate `debugger;` statement, `cont`, `watch()`, `repl`, and `next` to observe both operands and the false result, explain the wrong comparison, and verify the repaired substring match.\n\nNext: Take the Week 7 Skill Check, then build and verify the Persistent Study Task Tracker."
+    },
+    "competencyIds": [
+      "JSIN-C020"
+    ],
+    "whySelected": "The official readable debugger guide provides the same essential pause, inspect, and step path as the optional video without requiring audio or captions.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-15T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-15T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/api/debugger.html",
+      "finalUrl": "https://nodejs.org/api/debugger.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-15 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-02",
+    "title": "ECMAScript modules in Node.js",
+    "url": "https://nodejs.org/api/esm.html",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “Introduction”.",
+      "stop": "Stop before URLs, import attributes, interoperability, loaders, and advanced resolution behavior.",
+      "note": "Do: Read “Introduction”, “Enabling”, and the first “Import specifiers” subsections covering relative paths.\n\nFinished when: You can enable ESM and connect two local files with a named export and explicit relative `.js` import.\n\nNext: Read the bounded file read/write pages."
+    },
+    "competencyIds": [
+      "JSIN-C018"
+    ],
+    "whySelected": "The official current contract for `.js` ESM, `type: module`, named exports, and relative import specifiers.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/api/esm.html",
+      "finalUrl": "https://nodejs.org/api/esm.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-03",
+    "title": "Read a small UTF-8 file with Node.js",
+    "url": "https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Begin at “Reading files with Node.js”.",
+      "stop": "Stop before asynchronous callbacks and promise-based APIs; they are beyond this introductory project.",
+      "note": "Do: Read the synchronous `readFileSync` example and its encoding explanation; use `node:fs` and `utf8` in the Build.\n\nFinished when: You can read a small text file and state why an encoding is supplied before parsing JSON.\n\nNext: Read the matching synchronous write section."
+    },
+    "competencyIds": [
+      "JSIN-C019"
+    ],
+    "whySelected": "A short official explanation of `readFileSync` and text encoding for a deliberately small local CLI data file.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs",
+      "finalUrl": "https://nodejs.org/learn/manipulating-files/reading-files-with-nodejs",
+      "finalDestinationStatus": "success",
+      "redirected": true,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-04",
+    "title": "Write a small UTF-8 file with Node.js",
+    "url": "https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Begin at “Writing files with Node.js”.",
+      "stop": "Stop before streams and large-file patterns.",
+      "note": "Do: Read the synchronous `writeFileSync` example and error-handling note; adapt it to JSON text.\n\nFinished when: You can write valid JSON text intentionally and avoid overwriting data after a parse failure.\n\nNext: Learn how to recover only an expected missing-file error and rethrow every other failure."
+    },
+    "competencyIds": [
+      "JSIN-C019"
+    ],
+    "whySelected": "The official companion page shows the exact small-file write needed after safe JSON serialization.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs",
+      "finalUrl": "https://nodejs.org/learn/manipulating-files/writing-files-with-nodejs",
+      "finalDestinationStatus": "success",
+      "redirected": true,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-07",
+    "title": "Handle one expected failure and rethrow the rest",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch",
+    "provider": "MDN",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Begin at the `try...catch` description.",
+      "stop": "Stop before nested try blocks, finally return behavior, and asynchronous error handling.",
+      "note": "Do: Read the basic `try...catch` flow and the “Conditional catch blocks” example through the final `throw e` branch. Recreate the pattern with one supplied Error.\n\nFinished when: You can explain why catching every failure as “missing data” is unsafe and why an unrecognized error must be rethrown.\n\nNext: Use the Node system-error entry to identify the one missing-file code the loader may recover from."
+    },
+    "competencyIds": [
+      "JSIN-C019"
+    ],
+    "whySelected": "The bounded MDN conditional-catch example teaches the exact defensive rule needed here: handle only a known expected failure and rethrow everything else.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-15T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-15T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-15 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-08",
+    "title": "Recognize the Node.js ENOENT missing-file code",
+    "url": "https://nodejs.org/api/errors.html#common-system-errors",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 8,
+    "location": {
+      "start": "Open directly at “Common system errors”.",
+      "stop": "Stop after `ENOENT`; networking, permissions, sockets, and other system errors are outside this Build.",
+      "note": "Do: Read the short system-error property introduction and the `ENOENT` entry only; inspect one real missing-file error’s code in Node.\n\nFinished when: You can distinguish a genuinely absent data file from malformed JSON or another unexpected failure without parsing an error message.\n\nNext: Read the short lowercase-string reference used by the task search contract."
+    },
+    "competencyIds": [
+      "JSIN-C019"
+    ],
+    "whySelected": "The official common-system-errors table defines ENOENT as the filesystem missing-path condition, providing a precise discriminator instead of message matching.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-15T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-15T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/api/errors.html#common-system-errors",
+      "finalUrl": "https://nodejs.org/api/errors.html#common-system-errors",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-15 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-09",
+    "title": "Normalize search text with toLowerCase",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase",
+    "provider": "MDN",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 5,
+    "location": {
+      "start": "Begin at the `toLowerCase()` description.",
+      "stop": "Stop before locale-specific case conversion and Unicode edge cases.",
+      "note": "Do: Read the syntax, return value, and first example, then compare the output of `\"Review Functions\".toLowerCase()` with the unchanged original string in Node.\n\nFinished when: You can lowercase both operands for a simple case-insensitive comparison and explain that toLowerCase returns a new string.\n\nNext: Learn the two remaining string operations in the search contract: trim and includes."
+    },
+    "competencyIds": [
+      "JSIN-C018"
+    ],
+    "whySelected": "This short authoritative reference supplies the one string operation needed for a predictable case-insensitive beginner search.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-15T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-15T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-15 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-11",
+    "title": "Remove surrounding spaces with trim",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim",
+    "provider": "MDN",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 4,
+    "location": {
+      "start": "Begin at the `trim()` description.",
+      "stop": "Stop before trimStart, trimEnd, Unicode whitespace details, and browser-compatibility tables.",
+      "note": "Do: Read the description, syntax, return value, and single `Using trim()` example. Run `\"  Review functions  \".trim()` and `\"   \".trim()` in Node.\n\nFinished when: You can remove leading and trailing whitespace, detect a blank trimmed title or query, and explain that the original string is unchanged.\n\nNext: Read the bounded includes reference and combine the three taught string operations."
+    },
+    "competencyIds": [
+      "JSIN-C018"
+    ],
+    "whySelected": "The official reference teaches the exact non-mutating operation used to reject blank titles and ignore accidental spaces around a search query.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-15T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-15T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-15 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-12",
+    "title": "Check for a substring with includes",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes",
+    "provider": "MDN",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 5,
+    "location": {
+      "start": "Begin at the `includes()` description.",
+      "stop": "Stop before the optional position argument, coercion edge cases, regular expressions, and browser-compatibility tables.",
+      "note": "Do: Read the description, one-argument syntax, return value, and case-sensitivity example. Test `\"blue backpack\".includes(\"blue\")` and one non-match in Node.\n\nFinished when: You can obtain a true-or-false substring result and explain why both operands must be lowercased before a case-insensitive search.\n\nNext: Combine `trim().toLowerCase()` with `includes()` in one tiny search check, then continue to the built-in test runner."
+    },
+    "competencyIds": [
+      "JSIN-C018"
+    ],
+    "whySelected": "The official reference supplies the boolean substring operation required by the task-search contract and explicitly exposes its case sensitivity.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-15T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-15T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-15 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-05",
+    "title": "Write a synchronous test with node:test",
+    "url": "https://nodejs.org/api/test.html",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 18,
+    "location": {
+      "start": "Open directly at the “Test runner” heading and begin with the `node:test` import.",
+      "stop": "Stop before Subtests; asynchronous tests, reruns, mocks, coverage, watch mode, concurrency, and hooks are outside this course.",
+      "note": "Do: Read the stable-module introduction and only the synchronous passing and failing examples. Put one example in a `.test.js` file and run `node --test`.\n\nFinished when: You can structure and run a small synchronous test and use its failure message to find an expected/actual mismatch.\n\nNext: Use `node:assert/strict` as the assertion reference during the Build."
+    },
+    "competencyIds": [
+      "JSIN-C020"
+    ],
+    "whySelected": "The official stable API introduction contains the exact import, synchronous pass/fail rule, and first assertion examples needed without third-party packages.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/api/test.html",
+      "finalUrl": "https://nodejs.org/api/test.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W07-06",
+    "title": "Assert values, structures, and expected errors",
+    "url": "https://nodejs.org/api/assert.html",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Begin at “Strict assertion mode”.",
+      "stop": "Stop after those three methods and the validation-object form; rejects, callbacks beyond the supplied synchronous function, custom assertion classes, and partial matching are outside this course.",
+      "note": "Do: Read the strict-mode example, then locate `assert.strictEqual()`, `assert.deepStrictEqual()`, and `assert.throws()`. For `throws`, use only the validation-object example with `name` and `message`; call a separately named synchronous function so no arrow syntax is required.\n\nFinished when: You can choose strict equality for primitives, deep strict equality for arrays or plain objects, and assert the exact type and message of an expected synchronous error.\n\nNext: Watch the optional debugger demonstration if useful, then complete the required readable debugger exercise before the Skill Check."
+    },
+    "competencyIds": [
+      "JSIN-C020"
+    ],
+    "whySelected": "The official lookup defines the three assertion forms required by the supplied tests: primitive equality, structural equality, and a deliberately thrown validation error.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/api/assert.html",
+      "finalUrl": "https://nodejs.org/api/assert.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W08-04",
+    "title": "Read command-line arguments with process.argv",
+    "url": "https://nodejs.org/api/process.html#processargv",
+    "provider": "Node.js",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Open the page directly at the `process.argv` heading.",
+      "stop": "Stop before `process.argv0`, `process.execArgv`, environment variables, signals, and other process APIs.",
+      "note": "Do: Read the `process.argv` definition and the first example. Run a tiny script once with `node argv.js add umbrella library` and print `process.argv.slice(2)`.\n\nFinished when: You can explain why the first two entries are not learner commands and dispatch `add`, `list`, `search`, `claim`, or `help` from the remaining strings.\n\nNext: Use the same argument boundary in FoundIt, then continue to the GitHub publication resources."
+    },
+    "competencyIds": [
+      "JSIN-C021"
+    ],
+    "whySelected": "The official Node.js reference defines the exact array that supplies a command name and values to a small command-line program.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://nodejs.org/api/process.html#processargv",
+      "finalUrl": "https://nodejs.org/api/process.html#processargv",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W08-01",
+    "title": "GitHub for beginners: create and publish a repository",
+    "url": "https://www.youtube.com/watch?v=-RZ03WHqkaY",
+    "provider": "GitHub",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 8,
+    "location": {
+      "start": "Start at 00:00.",
+      "stop": "Stop at 08:31; pull requests, collaboration, and GitHub features outside local publication are optional.",
+      "note": "Do: Watch 00:00–02:48, then 05:20–08:31. Use the paired written GitHub docs if captions are unavailable.\n\nFinished when: You can explain the local repository, remote repository, commit, and push used for final proof.\n\nNext: Read the README requirements and the exact existing-project publication steps."
+    },
+    "competencyIds": [
+      "JSIN-C023"
+    ],
+    "whySelected": "An official GitHub video with bounded repository-creation and local-publish segments, paired with written docs.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://www.youtube.com/watch?v=-RZ03WHqkaY",
+      "finalUrl": "https://www.youtube.com/watch?v=-RZ03WHqkaY",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W08-02",
+    "title": "Write a README another learner can follow",
+    "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "provider": "GitHub",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Begin at “About READMEs”.",
+      "stop": "Stop before badges, profile READMEs, and repository-template features.",
+      "note": "Do: Read the introduction and “About READMEs” guidance describing what a README communicates and where it is displayed.\n\nFinished when: A new reader can run the final program and its tests without guessing a command or file location.\n\nNext: Read the secret warning and command sequence for publishing existing local code."
+    },
+    "competencyIds": [
+      "JSIN-C023"
+    ],
+    "whySelected": "GitHub’s official description of README placement and purpose supports a concrete, honest project handoff.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "finalUrl": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  },
+  {
+    "id": "JSIN-R2-W08-03",
+    "title": "Publish an existing local project safely",
+    "url": "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+    "provider": "GitHub",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 22,
+    "location": {
+      "start": "Begin with the warning about sensitive information.",
+      "stop": "Stop after the first successful push and repository refresh.",
+      "note": "Do: Read the warning and the command-line steps for adding locally hosted code through the first push. Before `git add .`, copy the supplied `.gitignore`, replace `data/items.json` with `[]` or a sanitized sample, and run `git status --short`. After staging, run `git status --short` again and inspect every listed path. If a secret, personal record, log, or unrelated file is staged, do not commit: run `git rm --cached -- <path>` to keep it locally, correct the ignore/data choice, and inspect again. At the first push, use Git Credential Manager or the browser sign-in for the verified free GitHub account from Setup; never paste a credential into source or README.\n\nFinished when: You can show the final `git status --short` review and a public or shareable repository containing intended source, tests, package metadata, README, and sanitized sample data—but no secret or private learner data.\n\nAccess: A free verified GitHub account is required to publish. If setup already verified one, no new account is needed.\n\nNext: Run the final acceptance checklist, submit proof, and complete the final reflection."
+    },
+    "competencyIds": [
+      "JSIN-C023"
+    ],
+    "whySelected": "The official command-line route includes the warning not to publish secrets and the exact init/add/commit/remote/push flow.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-13T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible practice route for this exact point in the course, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-13T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+      "finalUrl": "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The assigned destination and named boundary were opened and inspected during the 2026-10-13 production research pass."
+    }
+  }
+]

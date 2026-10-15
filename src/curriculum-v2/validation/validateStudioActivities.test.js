@@ -35,3 +35,14 @@ test('schema 1.1 rejects a separate Study Studio and mismatched Build steps', ()
   assert.ok(report.findings.some((finding) => finding.code === 'V021-B011'));
   assert.ok(report.findings.some((finding) => finding.code === 'V021-B012'));
 });
+
+test('schema 1.1 does not mistake external Visual Studio documentation for a Study Studio', () => {
+  const { source, studio } = fixture();
+  source.resources[0] = {
+    id: 'R1',
+    provider: 'Microsoft',
+    format: 'documentation',
+    url: 'https://code.visualstudio.com/docs/setup/windows',
+  };
+  assert.equal(validateStudioActivities(studio, source).status, 'PASS');
+});

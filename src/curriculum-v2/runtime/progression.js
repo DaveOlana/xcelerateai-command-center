@@ -3,6 +3,10 @@ import { isRecoveryLocked } from '../../utils/skillCheckUtils.js';
 export const V2_STAGES = Object.freeze(['study', 'skillCheck', 'builds', 'proof', 'reflection', 'complete']);
 export const REFLECTION_MEANINGFUL_MIN_LENGTH = 11;
 
+export function requiresServerProofSubmission(runtime) {
+  return runtime?.curriculumId === 'PYAE' && Number(runtime?.revision) >= 3;
+}
+
 const asArray = (value) => Array.isArray(value) ? value : [];
 const stageRecord = (state, weekId, stage) => state?.stageSatisfaction?.[weekId]?.[stage] || null;
 
@@ -46,7 +50,7 @@ export function getV2WeekProgress(runtime, curriculumState, weekId, evidenceStat
 
   const requiredEvidence = asArray(week.proof.evidence).filter((item) => item.required);
   const proofRecord = curriculumState?.proofs?.[week.proof.id]?.evidence || {};
-  const serverSubmissionRequired = runtime.curriculumId === 'PYAE' && runtime.revision >= 3;
+  const serverSubmissionRequired = requiresServerProofSubmission(runtime);
   const currentSubmission = evidenceState?.currentByProof?.[week.proof.id];
   const proofDone = serverSubmissionRequired
     ? currentSubmission?.status === 'submitted'

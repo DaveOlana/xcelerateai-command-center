@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "curriculumId": "JSIN",
+  "revision": 2,
+  "candidateOnly": false,
+  "published": true,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 2,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "phases": 3,
+        "competencies": 22,
+        "concepts": 28,
+        "resources": 48,
+        "weeks": 8,
+        "projects": 2
+      }
+    },
+    {
+      "validator": "V012",
+      "name": "Live resource research evidence",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "selectedResources": 48,
+        "checkedAt": "2026-10-15T00:00:00.000Z"
+      }
+    },
+    {
+      "validator": "V020",
+      "name": "Evidence-backed content integrity",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "resourceAudits": 48,
+        "questionAudits": 80,
+        "buildAudits": 8,
+        "weekReadiness": 8,
+        "classificationTotals": {
+          "A": 63,
+          "B": 3,
+          "C": 14,
+          "D": 0
+        }
+      }
+    },
+    {
+      "validator": "V021",
+      "name": "Build-integrated Studio learner contracts",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V022",
+      "name": "Skill Check authoring and assessment coverage",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "questions": 80,
+        "coverageEntries": 80,
+        "distinctTargets": 80
+      }
+    },
+    {
+      "validator": "V018",
+      "name": "Compiled runtime validation",
+      "status": "PASS",
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "NOTE",
+      "message": "The withdrawn JSIN Revision 1 artifact remains preserved for comparison and is not a learner-catalog entry."
+    },
+    {
+      "severity": "NOTE",
+      "message": "External resource access and exact boundaries must be rechecked before a future curriculum revision."
+    }
+  ],
+  "semanticValidation": {
+    "status": "PASS",
+    "method": "Two independent adversarial passes inspected the authored source, question mappings, bounded assignments, Build dependencies, repository integration, and workload. They reported concrete blockers rather than approving by default. The primary final pass repaired every reported item, re-imported all authored modules, reread the changed contracts, and reran deterministic source, resource, content, Studio, Skill Check, workload, syntax, and diff checks. The compiler did not create or change this decision.",
+    "findingsReviewed": [
+      "Rejected the withdrawn definition-card learning route and required externally inspectable teaching before every Build.",
+      "Found and repaired the Week 8 workload overflow rather than treating two-hour session caps as sufficient evidence.",
+      "Found and repaired missing try/catch, ENOENT, trim/lowercase/includes, exact thrown-error assertions, test-body, and executable debugger-practice bridges in Week 7.",
+      "Found and repaired the invalid chained-range explanation, omitted Week 3 list case, Week 4 loop-style contradiction, untaught destructuring assessment, Week 2 type and interpolation boundaries, Week 6 ordering error, Week 5 fee double-counting contract, and ambiguous Week 7/8 contracts.",
+      "Found and repaired an untaught Week 1 `cd` dependency, obsolete Week 6 navigation, Week 5 semantic question duplication, Week 7 book/item vocabulary drift and unsupported architecture questions, and a pre-check Week 8 policy question that was defined only in the later Build.",
+      "Found and repaired the Week 8 `.gitignore`, staged-path inspection, accidental-file removal, sanitized-data, and first-push authentication scaffolding instead of assuming prior Git knowledge.",
+      "Reviewed all 80 answer keys, evidence mappings, distractors, explanations, assessment targets, and shuffled key distribution."
+    ],
+    "adversarialResult": "PASS after repair. Independent reviewers surfaced hidden prerequisites and mapping drift through the final sweep; every reported blocker has an inspectable repair, no D-class question remains, all eight Builds have zero unresolved hidden prerequisites, and the final primary recheck found no remaining learner-facing release blocker."
+  }
+}

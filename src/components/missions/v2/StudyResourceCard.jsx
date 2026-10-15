@@ -60,7 +60,7 @@ export default function StudyResourceCard({ assignment, resource, record, inspec
             <div className="flex items-center gap-2 font-bold text-text-primary"><BookOpen className="h-3.5 w-3.5" aria-hidden="true" /> Assigned section or activity</div>
             {resource.location.start && <p className="mt-2"><strong>Start:</strong> {resource.location.start}</p>}
             {resource.location.stop && <p className="mt-1"><strong>Stop:</strong> {resource.location.stop}</p>}
-            {resource.location.note && <p className="mt-2">{resource.location.note}</p>}
+            {resource.location.note && <p className="mt-2 whitespace-pre-line">{resource.location.note}</p>}
           </section>
         )}
 

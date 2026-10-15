@@ -1,0 +1,57 @@
+{
+  "curriculumId": "JSIN",
+  "revision": 2,
+  "designPrinciple": "A beginner first sees a bounded explanation or demonstration, predicts and traces behavior, then writes, breaks, repairs, tests, explains, and proves a progressively less scaffolded program.",
+  "targetLearner": "A tertiary fresher or independent beginner with basic computer literacy and no assumed programming experience",
+  "technologySequence": [
+    "Windows toolchain setup",
+    "execution and output",
+    "values and conversion",
+    "decisions and validation",
+    "arrays and loops",
+    "functions and scope",
+    "objects, classes, and JSON",
+    "modules, files, tests, and debugging",
+    "CLI integration, Git, README, and GitHub"
+  ],
+  "learningRhythm": [
+    "bounded Learn or demonstration",
+    "active trace or precise reference",
+    "10-target shuffled Skill Check",
+    "required Build in sessions of at most two hours",
+    "human-reviewable Proof",
+    "specific reflection"
+  ],
+  "resourceRoleStrategy": {
+    "learn": "A short first explanation or demonstration.",
+    "practice": "An observable prediction, trace, or action.",
+    "reference": "A precise bounded lookup used beside immediate work, never an unscoped documentation dump."
+  },
+  "progressionPolicy": [
+    "Weeks 1–3 are heavily scaffolded.",
+    "Weeks 4–6 combine earlier syntax in distinct small programs.",
+    "Week 7 introduces reliability boundaries.",
+    "Week 8 integrates earlier competencies into one larger independently inspectable project."
+  ],
+  "workloadPrinciples": [
+    "Eight instructional Weeks at six hours each.",
+    "Setup is separate and skippable only through explicit verification.",
+    "No session exceeds two hours.",
+    "Most time is reserved for coding, debugging, tests, evidence, and explanation rather than passive consumption."
+  ],
+  "assessmentPolicy": "Each Week has ten independently authored, source-mapped questions; 7/10 passes; attempts are unlimited; option order reshuffles per attempt; code and project competence is judged through Build and Proof, not quiz score alone.",
+  "projectArchitecture": [
+    {
+      "projectId": "JSIN-R2-PJ01",
+      "title": "JavaScript Practice Portfolio",
+      "milestoneCount": 7,
+      "outcome": "Produce seven progressively stronger programs demonstrating execution, values, decisions, collections, functions, structured data, persistence, tests, and debugging."
+    },
+    {
+      "projectId": "JSIN-R2-PJ02",
+      "title": "FoundIt CLI",
+      "milestoneCount": 1,
+      "outcome": "Deliver and publish a tested, persistent lost-and-found command-line program with a reproducible README and human-reviewable evidence."
+    }
+  ]
+}

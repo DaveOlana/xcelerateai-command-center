@@ -1,18 +1,28 @@
 {
-  "generatedAt": "2026-10-10T12:00:00.000Z",
+  "updatedAt": "2026-10-15T00:00:00.000Z",
   "category": "Introductory Computer Science",
-  "publicationPolicy": "owner-approved-six-production",
-  "courses": [
+  "publicationPolicy": "individually-reviewed-replacements-only",
+  "activeCourses": [
+    {
+      "curriculumId": "JSIN",
+      "title": "JavaScript Programming Foundations",
+      "slug": "javascript-programming-foundations",
+      "revision": 2,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 105,
+      "status": "published",
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/javascript-introduction-r2",
+      "catalogModule": "src/curriculum-v2/catalog/published/javascriptProgrammingFoundations.js"
+    }
+  ],
+  "historicalRevisions": [
     {
       "curriculumId": "PYIN",
       "title": "Introduction to Python",
       "slug": "python-introduction",
       "revision": 1,
-      "weeks": 8,
-      "instructionalHours": 48,
-      "setupMinutes": 180,
-      "status": "published",
-      "blockedReason": null,
+      "status": "withdrawn-reference-only",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/python-introduction"
     },
     {
@@ -20,23 +30,16 @@
       "title": "Introduction to JavaScript",
       "slug": "javascript-introduction",
       "revision": 1,
-      "weeks": 8,
-      "instructionalHours": 48,
-      "setupMinutes": 180,
-      "status": "published",
-      "blockedReason": null,
-      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/javascript-introduction"
+      "status": "withdrawn-reference-only",
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/javascript-introduction",
+      "catalogModule": "src/curriculum-v2/catalog/published/javascriptIntroduction.js"
     },
     {
       "curriculumId": "JAVA",
       "title": "Introduction to Java",
       "slug": "java-introduction",
       "revision": 1,
-      "weeks": 8,
-      "instructionalHours": 48,
-      "setupMinutes": 240,
-      "status": "published",
-      "blockedReason": null,
+      "status": "withdrawn-reference-only",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/java-introduction"
     },
     {
@@ -44,11 +47,7 @@
       "title": "Introduction to C",
       "slug": "c-introduction",
       "revision": 1,
-      "weeks": 8,
-      "instructionalHours": 48,
-      "setupMinutes": 210,
-      "status": "published",
-      "blockedReason": null,
+      "status": "withdrawn-reference-only",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/c-introduction"
     },
     {
@@ -56,11 +55,7 @@
       "title": "Introduction to C++",
       "slug": "cpp-introduction",
       "revision": 1,
-      "weeks": 8,
-      "instructionalHours": 48,
-      "setupMinutes": 210,
-      "status": "published",
-      "blockedReason": null,
+      "status": "withdrawn-reference-only",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/cpp-introduction"
     },
     {
@@ -68,11 +63,7 @@
       "title": "Introduction to Web Development",
       "slug": "web-development-introduction",
       "revision": 1,
-      "weeks": 8,
-      "instructionalHours": 48,
-      "setupMinutes": 150,
-      "status": "published",
-      "blockedReason": null,
+      "status": "withdrawn-reference-only",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/web-development-introduction"
     },
     {
@@ -80,10 +71,7 @@
       "title": "Introduction to QBASIC",
       "slug": "qbasic-introduction",
       "revision": 1,
-      "weeks": 8,
-      "instructionalHours": 48,
-      "setupMinutes": 240,
-      "status": "blocked-candidate",
+      "status": "blocked-reference-only",
       "blockedReason": "Traditional Microsoft QBasic binaries require learner-supplied licensed MS-DOS/Windows media; no current official download was verified.",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/qbasic-introduction"
     }

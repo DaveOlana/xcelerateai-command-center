@@ -2,6 +2,7 @@ import React from 'react';
 import { Archive, CheckCircle2, Cloud, CloudOff, Code2, FileText, Link2, Loader2, RotateCcw, Upload, X } from 'lucide-react';
 import { useEvidence } from '../../../context/EvidenceContext.jsx';
 import { EVIDENCE_TOTAL_FILE_LIMIT } from '../../../evidence/evidenceStore.js';
+import { isProofEvidenceComplete, requiresServerProofSubmission } from '../../../curriculum-v2/runtime/progression.js';
 import { browserPythonSpecFor } from '../../../verification/registry.js';
 import { runBrowserPythonVerification, sourceSha256 } from '../../../verification/browserPythonRunner.js';
 
@@ -15,7 +16,57 @@ const kindOptions = (evidence) => {
   return [{ id: 'text', label: 'Text' }, { id: 'file', label: 'File' }];
 };
 
-export default function EvidenceProofStage({ curriculum, week, learner, status, inspectionOnly, onDraftChange }) {
+export default function EvidenceProofStage(props) {
+  return requiresServerProofSubmission(props.curriculum)
+    ? <ServerEvidenceProofStage {...props} />
+    : <LocalProofStage {...props} />;
+}
+
+function LocalProofStage({ week, learner, status, inspectionOnly, onDraftChange }) {
+  const proofRecord = learner?.proofs?.[week.proof.id]?.evidence || {};
+  const requiredEvidence = week.proof.evidence.filter((item) => item.required);
+  const proofComplete = requiredEvidence.every((item) => isProofEvidenceComplete(item, proofRecord[item.id]));
+  const disabled = inspectionOnly || !status.proof.unlocked;
+  const draftValue = (item) => proofRecord[item.id]?.value ?? (item.type === 'confirmation' ? false : '');
+
+  return (
+    <section className="surface-card p-6 sm:p-8">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div><p className="text-xs font-bold uppercase tracking-wider text-brand-violet">Stage 4</p><h2 className="mt-2 font-heading text-2xl font-extrabold text-text-primary">Proof</h2><p className="mt-2 max-w-3xl text-sm leading-relaxed text-text-secondary">{week.proof.prompt}</p></div>
+        <LocalProofStatus complete={proofComplete} />
+      </div>
+
+      <div className="mt-6 rounded-2xl border border-brand-blue/20 bg-brand-blue/5 p-4 text-sm leading-relaxed text-text-secondary">
+        Record the requested proof here. It is saved with your learning progress and is ready for a person to review. When cloud sync is enabled it can sync with that progress, but it is not sent to the separate evidence-submission service or automatically verified.
+      </div>
+
+      <div className="mt-6 space-y-5">
+        {week.proof.evidence.map((item) => {
+          const value = draftValue(item);
+          return <div key={item.id} className="rounded-2xl border border-border-default bg-bg-soft p-5">
+            <p className="text-sm font-bold text-text-primary">{item.label}{item.required && <span className="text-brand-amber"> *</span>}</p>
+            <p className="mt-1 text-xs text-text-muted">Saved automatically as part of your learning record.</p>
+            {item.type === 'confirmation' && <label className="mt-4 flex items-start gap-3"><input type="checkbox" checked={value === true} disabled={disabled} onChange={(event) => onDraftChange(week.id, week.proof.id, item.id, event.target.checked)} className="mt-0.5 h-4 w-4 accent-brand-violet" /><span className="text-sm text-text-secondary">I confirm this statement is accurate.</span></label>}
+            {item.type === 'link' && <div className="relative mt-4"><Link2 className="pointer-events-none absolute left-3 top-3.5 h-4 w-4 text-text-muted" /><input type="url" value={typeof value === 'string' ? value : ''} disabled={disabled} onChange={(event) => onDraftChange(week.id, week.proof.id, item.id, event.target.value)} placeholder="https://…" className="input-base w-full pl-10 text-sm" /></div>}
+            {item.type !== 'confirmation' && item.type !== 'link' && <textarea rows={4} value={typeof value === 'string' ? value : ''} disabled={disabled} onChange={(event) => onDraftChange(week.id, week.proof.id, item.id, event.target.value)} placeholder="Describe the artifact, result, or evidence…" className="input-base mt-4 w-full text-sm" />}
+          </div>;
+        })}
+      </div>
+
+      <div className={`mt-6 rounded-xl border p-4 text-sm font-semibold ${proofComplete ? 'border-brand-green/25 bg-brand-green/5 text-brand-green' : 'border-border-default bg-bg-soft text-text-muted'}`}>
+        {proofComplete ? 'Proof recorded · Ready for human review' : 'Complete every required proof item to unlock Reflection.'}
+      </div>
+    </section>
+  );
+}
+
+function LocalProofStatus({ complete }) {
+  return complete
+    ? <span className="inline-flex items-center gap-2 rounded-full border border-brand-green/25 bg-brand-green/5 px-3 py-1.5 text-xs font-bold text-brand-green"><CheckCircle2 className="h-3.5 w-3.5" /> Recorded · Human review</span>
+    : <span className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-soft px-3 py-1.5 text-xs font-bold text-text-muted"><FileText className="h-3.5 w-3.5" /> Draft</span>;
+}
+
+function ServerEvidenceProofStage({ curriculum, week, learner, status, inspectionOnly, onDraftChange }) {
   const evidence = useEvidence();
   const context = React.useMemo(() => ({
     curriculumId: curriculum.curriculumId,

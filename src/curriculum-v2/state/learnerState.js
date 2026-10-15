@@ -3,7 +3,7 @@ import {
   applyRecoveryResourceReview,
   applySubmittedAttempt,
 } from '../../utils/skillCheckUtils.js';
-import { getV2WeekProgress, isMeaningfulReflection, isProofEvidenceComplete } from '../runtime/progression.js';
+import { getV2WeekProgress, isMeaningfulReflection, isProofEvidenceComplete, requiresServerProofSubmission } from '../runtime/progression.js';
 
 export const V2_LEARNER_STATE_VERSION = 1;
 export const EMPTY_V2_STATE_STORE = Object.freeze({ version: V2_LEARNER_STATE_VERSION, curricula: {}, setupCapabilities: {} });
@@ -179,7 +179,7 @@ export function setV2ProofEvidence(storeValue, runtime, weekId, proofId, evidenc
     const next = clone(state);
     next.proofs[proofId] = next.proofs[proofId] || { evidence: {} };
     next.proofs[proofId].evidence[evidenceId] = { value, updatedAt: nowIso(timestamp) };
-    return runtime.curriculumId === 'PYAE' && runtime.revision >= 3
+    return requiresServerProofSubmission(runtime)
       ? next
       : latchStageIfSatisfied(runtime, next, weekId, 'proof', nowIso(timestamp));
   });

@@ -1,11 +1,41 @@
 import React from 'react';
 import { Archive, CheckCircle2, Download, ExternalLink, FileText, Loader2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import { useEvidence } from '../../context/EvidenceContext.jsx';
+import { requiresServerProofSubmission } from '../../curriculum-v2/runtime/progression.js';
+import { getLocalProofEntries } from '../../curriculum-v2/runtime/proofPresentation.js';
 import { WorkspaceEmptyState, WorkspaceSectionHeader } from '../../components/workspace/WorkspacePrimitives';
 
 export default function V2ProofLibrary() {
-  const { activeV2Curriculum: curriculum } = useApp();
+  const { activeV2Curriculum: curriculum, activeV2Learner: learner } = useApp();
+  return requiresServerProofSubmission(curriculum)
+    ? <ServerProofLibrary curriculum={curriculum} />
+    : <LocalProofLibrary curriculum={curriculum} learner={learner} />;
+}
+
+function LocalProofLibrary({ curriculum, learner }) {
+  const entries = getLocalProofEntries(curriculum, learner);
+  return <div className="space-y-7">
+    <WorkspaceSectionHeader title="Proof" description="Proof recorded with learning progress for human review. These records are not separate evidence submissions or automatic verification." />
+    {entries.length === 0
+      ? <div className="space-y-4"><WorkspaceEmptyState title="No proof recorded yet" description="Complete the Proof stage in Missions to save the requested text, links, and confirmations here." /><Link to="/missions?stage=proof" className="btn-primary inline-flex px-5 py-2.5 text-sm">Go to Missions Proof</Link></div>
+      : <div className="grid gap-5">{entries.map(({ week, items, complete, updatedAt }) => <article key={week.proof.id} className="surface-card p-5 sm:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3"><div><p className="text-xs font-bold uppercase tracking-wider text-text-muted">Week {week.sequence} · Learning record</p><h2 className="mt-1 text-base font-bold text-text-primary">{week.title}</h2></div><span className={`rounded-full border px-3 py-1.5 text-xs font-bold ${complete ? 'border-brand-green/25 bg-brand-green/5 text-brand-green' : 'border-brand-amber/25 bg-brand-amber/5 text-brand-amber'}`}>{complete ? 'Proof recorded · Ready for human review' : 'Draft · In progress'}</span></div>
+        <div className="mt-5 grid gap-3">{items.map(({ definition, record }) => <div key={definition.id} className="rounded-xl border border-border-default bg-bg-soft p-4"><div className="flex items-start gap-3"><span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-border-default bg-bg-surface text-text-secondary">{definition.type === 'confirmation' ? <CheckCircle2 className="h-4 w-4" /> : <FileText className="h-4 w-4" />}</span><div className="min-w-0 flex-1"><p className="text-xs font-bold uppercase tracking-wide text-text-muted">{definition.label}</p><LocalEvidenceItem definition={definition} record={record} /></div></div></div>)}</div>
+        {updatedAt && <p className="mt-4 text-xs text-text-muted">Last saved {new Date(updatedAt).toLocaleString()} · Curriculum revision {curriculum.revision}</p>}
+      </article>)}</div>}
+  </div>;
+}
+
+function LocalEvidenceItem({ definition, record }) {
+  const value = record?.value;
+  if (definition.type === 'confirmation') return <p className="mt-1 text-sm text-text-secondary">{value === true ? 'Learner confirmation recorded.' : 'Not confirmed.'}</p>;
+  if (definition.type === 'link' && typeof value === 'string' && value.trim()) return <a href={value.trim()} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center gap-1 break-all text-sm text-brand-blue">{value.trim()}<ExternalLink className="h-3.5 w-3.5 shrink-0" /></a>;
+  return <p className="mt-1 whitespace-pre-wrap text-sm text-text-secondary">{String(value || '')}</p>;
+}
+
+function ServerProofLibrary({ curriculum }) {
   const evidence = useEvidence();
   const [loading, setLoading] = React.useState(true);
   const [feedback, setFeedback] = React.useState('');
@@ -27,7 +57,6 @@ export default function V2ProofLibrary() {
     setFeedback('');
     try {
       if (!evidence.enabled) throw new Error('A verified account is required.');
-      // Access goes through an account-scoped backend authorization and returns a short-lived URL.
       const response = await evidence.accessAsset(assetId);
       window.open(response.download.url, '_blank', 'noopener,noreferrer');
     } catch (error) { setFeedback(error.message || 'The private file could not be opened.'); }

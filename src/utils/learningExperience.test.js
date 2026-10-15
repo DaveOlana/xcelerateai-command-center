@@ -34,6 +34,7 @@ test('no selected V2 curriculum resolves to catalog mode and ignores stale bundl
   assert.equal(getCurrentCourseDefinition({ curriculumMode: mode, activeV2Curriculum: null, roadmap: staleLegacyRoadmap }), null);
   assert.deepEqual(curriculumCatalog.listPublished().map((item) => item.title), [
     'Front-End Web Engineering',
+    'JavaScript Programming Foundations',
     'Product Design',
     'Python Agent Engineering',
   ]);

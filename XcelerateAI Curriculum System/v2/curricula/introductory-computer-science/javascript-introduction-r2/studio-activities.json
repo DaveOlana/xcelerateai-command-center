@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "JSIN",
+  "revision": 2,
+  "activities": [
+    {
+      "weekId": "JSIN-R2-W01",
+      "title": "Campus Welcome Card CLI guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JSIN-R2-B-W01-01"
+      },
+      "contract": {
+        "doing": "Create `campus-welcome/welcome.js`. Print a heading, your chosen name, programme, study goal, and one encouraging closing line. Run it from PowerShell, change one line and rerun it, then deliberately remove one quote, read the error location, and repair the file.",
+        "why": "Your first program should make the edit-save-run cycle visible and repeatable. The welcome card proves that a saved file, a terminal command, and Node.js each have a distinct job before later Weeks add calculations or input rules.",
+        "output": "A `campus-welcome` folder containing a runnable `welcome.js` and `evidence.txt` that documents one real syntax repair.",
+        "tools": "Windows, VS Code, PowerShell, and Node.js LTS",
+        "estimatedMinutes": 180,
+        "prerequisites": "Only the verified setup capabilities and this Week’s Core Study are required.",
+        "finished": "`node welcome.js` prints one heading and four clear labelled lines in the intended order. The file can be closed and rerun without retyping its JavaScript. `evidence.txt` records the deliberate missing-quote failure and the exact clue used to repair it. The learner can explain the roles of VS Code, the `.js` file, PowerShell, Node.js, and the REPL.",
+        "submission": "Exact folder path, source-file name, and `node welcome.js` run command | Final five-line terminal output | Missing-quote error clue and the repaired line | Confirmation that the saved file reruns after the terminal is closed"
+      },
+      "steps": [
+        "Create a `campus-welcome` folder and `welcome.js`. Add five labelled `console.log` lines, save the file, and run `node welcome.js` from that folder.",
+        "Predict the exact output on paper or in a note. Compare it with the terminal, correct spelling or punctuation differences, change the closing line, save, and rerun.",
+        "Remove one closing quote from a string. Run the same command, record the file and line shown by Node, restore the quote, and confirm a clean rerun.",
+        "Run two expressions in the Node REPL, leave with `.exit`, then explain in one sentence why the welcome card belongs in a saved file.",
+        "Create `evidence.txt` with the run command, final output, broken line, error clue, repair, and the successful rerun result."
+      ],
+      "checklist": [
+        "`node welcome.js` prints one heading and four clear labelled lines in the intended order.",
+        "The file can be closed and rerun without retyping its JavaScript.",
+        "`evidence.txt` records the deliberate missing-quote failure and the exact clue used to repair it.",
+        "The learner can explain the roles of VS Code, the `.js` file, PowerShell, Node.js, and the REPL."
+      ],
+      "stuck": "Return to the exact cited Core section for the failing concept, reduce the program to the smallest failing case, read the first error or actual-versus-expected difference, then rerun the unchanged case after one repair. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output used here is taught earlier, taught in the current bounded Study, or explained directly in the Build step and starter."
+      }
+    },
+    {
+      "weekId": "JSIN-R2-W02",
+      "title": "Study Budget Estimator guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JSIN-R2-B-W02-01"
+      },
+      "contract": {
+        "doing": "Build `study-budget/budget.js` for one student’s weekly transport, food, data, and printing costs. Store the budget and cost inputs as clearly named values, convert numeric text before arithmetic, calculate the remainder, and print a readable summary.",
+        "why": "A budget estimate exposes the difference between numeric values and numeric-looking text. It gives the learner a concrete reason to choose bindings, inspect types, convert deliberately, and explain a calculation instead of memorizing syntax in isolation.",
+        "output": "A `study-budget` folder containing `budget.js` and a case record with correct normal and zero-remainder arithmetic plus one coercion repair.",
+        "tools": "Windows, VS Code, PowerShell, and Node.js LTS",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JSIN-C001, JSIN-C002, JSIN-C003. New Week concepts are taught in Core Study before this Build.",
+        "finished": "All displayed money values result from numeric arithmetic, not accidental concatenation. The program uses const and let according to whether a binding is reassigned. At least one `typeof` observation distinguishes a numeric string from its converted number. The evidence records a normal case, zero-remainder case, and repaired concatenation defect.",
+        "submission": "Run command and final summary for the normal case | Zero-remainder expected-versus-actual row | typeof observation before and after conversion | Concatenation symptom, cause, and verified repair"
+      },
+      "steps": [
+        "Create the folder and script. Add `const` bindings for the weekly budget and four cost inputs; make at least two inputs numeric strings so conversion is visible.",
+        "Before running, write the expected subtotal, remainder, and `typeof` results in `evidence.txt`. Convert each numeric string with `Number` and calculate the actual values.",
+        "Print the budget, subtotal, and remainder with template literals. Use `let` only for one value you intentionally update, and explain why the other bindings remain const.",
+        "Deliberately add one unconverted numeric string so `+` concatenates. Record the unexpected output, restore explicit conversion, and rerun.",
+        "Test a normal budget and a zero-remainder boundary case by changing only the configured input values; record expected and actual results for both."
+      ],
+      "checklist": [
+        "All displayed money values result from numeric arithmetic, not accidental concatenation.",
+        "The program uses const and let according to whether a binding is reassigned.",
+        "At least one `typeof` observation distinguishes a numeric string from its converted number.",
+        "The evidence records a normal case, zero-remainder case, and repaired concatenation defect."
+      ],
+      "stuck": "Return to the exact cited Core section for the failing concept, reduce the program to the smallest failing case, read the first error or actual-versus-expected difference, then rerun the unchanged case after one repair. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output used here is taught earlier, taught in the current bounded Study, or explained directly in the Build step and starter."
+      }
+    },
+    {
+      "weekId": "JSIN-R2-W03",
+      "title": "Campus Event Check-in Validator guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JSIN-R2-B-W03-01"
+      },
+      "contract": {
+        "doing": "Create `event-checkin/checkin.js` with configurable `ageText`, `hasTicket`, and `isOnList` values. Convert and validate age first. Then apply the event rules: a finite age of at least 16, a Boolean ticket, and list membership are all required.",
+        "why": "Check-in rules turn comparison and Boolean syntax into one accountable decision. Testing accepted, rejected, boundary, and invalid cases shows why validation order matters before a program trusts input.",
+        "output": "An `event-checkin` folder containing a runnable validator and a six-case expected-versus-actual record with a coercion repair note.",
+        "tools": "Windows, VS Code, PowerShell, and Node.js LTS",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JSIN-C004, JSIN-C005, JSIN-C006. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Invalid numeric text is reported before event eligibility rules run. Every run prints exactly one final decision. All six required cases match their stated expected outcomes, including the age-16 boundary and not-on-list rejection. The repair note explains why explicit conversion and strict comparison make the rule easier to trust.",
+        "submission": "Source path and run command | Six-case expected-versus-actual table including age 16 and not-on-list | One output showing invalid text is not treated as an ordinary age | Coercing-equality defect and repaired condition"
+      },
+      "steps": [
+        "Create the configured inputs and convert `ageText` with `Number`. Print the converted value and whether `Number.isFinite` accepts it.",
+        "Write the invalid-input branch first, then use `else if` / `else` to produce exactly one decision message for all remaining cases.",
+        "Use strict equality only where an explicit value-and-type comparison improves clarity; use direct Boolean conditions for actual Boolean bindings.",
+        "Run and record six cases: ordinary acceptance at 18, lower-boundary acceptance at 16, under-age rejection at 15, missing-ticket rejection, not-on-list rejection, and invalid age text.",
+        "Deliberately compare `ageText` with `==` in one temporary branch, observe how coercion hides the type boundary, restore the explicit conversion and strict logic, then rerun all six cases."
+      ],
+      "checklist": [
+        "Invalid numeric text is reported before event eligibility rules run.",
+        "Every run prints exactly one final decision.",
+        "All six required cases match their stated expected outcomes, including the age-16 boundary and not-on-list rejection.",
+        "The repair note explains why explicit conversion and strict comparison make the rule easier to trust."
+      ],
+      "stuck": "Return to the exact cited Core section for the failing concept, reduce the program to the smallest failing case, read the first error or actual-versus-expected difference, then rerun the unchanged case after one repair. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output used here is taught earlier, taught in the current bounded Study, or explained directly in the Build step and starter."
+      }
+    },
+    {
+      "weekId": "JSIN-R2-W04",
+      "title": "Class Scoreboard guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JSIN-R2-B-W04-01"
+      },
+      "contract": {
+        "doing": "Build `class-scoreboard/scoreboard.js` around one array of numeric scores. Print each numbered score, then calculate the count, total, average, number at or above 50, and highest score without hard-coding a list position.",
+        "why": "A scoreboard is the first program that must reason about a whole collection rather than one configured value. It makes array boundaries, loop state, and empty-data behavior observable through totals and summaries.",
+        "output": "A `class-scoreboard` folder containing `scoreboard.js`, `boundary-demo.js`, and three case results, including an explicit empty-list response and off-by-one repair.",
+        "tools": "Windows, VS Code, PowerShell, and Node.js LTS",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JSIN-C004, JSIN-C006, JSIN-C007, JSIN-C008. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Every stored score appears once and in order. Count, total, average, pass count, and highest score are correct for the normal list. The empty list does not produce a misleading NaN or invented highest score. The separate boundary demo shows the extra index and `undefined` caused by `<=`, then shows the repaired `<` rerun.",
+        "submission": "Normal-list summary and numbered output | One-score and empty-list results | Boundary-demo extra index/undefined symptom and repaired condition | Explanation of total, pass-count, and highest accumulators"
+      },
+      "steps": [
+        "Create a scores array with at least six values. Print the length, first score, last score, and the result of searching for one known score.",
+        "Loop through the values to print a numbered list and update total, pass count, and highest-score accumulators. Use either the taught `for...of` form or a counted index loop and state which one you chose.",
+        "Calculate the average only when the array is not empty; provide a clear empty-list result instead of dividing by zero.",
+        "Run the supplied separate `boundary-demo.js` with its correct `< labels.length` condition. Temporarily change only that condition to `<= labels.length`, capture the one extra index and `undefined` value, restore `<`, and verify the repaired rerun. This defect exercise does not require rewriting a valid `for...of` scoreboard.",
+        "Verify a normal list, a one-score boundary list, and an empty list. Record expected and actual count, average, and highest behavior."
+      ],
+      "checklist": [
+        "Every stored score appears once and in order.",
+        "Count, total, average, pass count, and highest score are correct for the normal list.",
+        "The empty list does not produce a misleading NaN or invented highest score.",
+        "The separate boundary demo shows the extra index and `undefined` caused by `<=`, then shows the repaired `<` rerun."
+      ],
+      "stuck": "Return to the exact cited Core section for the failing concept, reduce the program to the smallest failing case, read the first error or actual-versus-expected difference, then rerun the unchanged case after one repair. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output used here is taught earlier, taught in the current bounded Study, or explained directly in the Build step and starter."
+      }
+    },
+    {
+      "weekId": "JSIN-R2-W05",
+      "title": "Campus Café Order Quote guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JSIN-R2-B-W05-01"
+      },
+      "contract": {
+        "doing": "Create `cafe-quote/quote.js` with the fixed practice contract: item prices `[1200, 800, 500]` naira, a 10% student discount, and a 200-naira packaging fee for a non-empty order. The empty order costs 0. Use focused functions to calculate and return each result; keep calculation helpers independent from printing.",
+        "why": "The café quote is small enough to calculate by hand but rich enough to expose weak function boundaries. Fixed prices and totals let the learner prove that parameters, local values, and returned results compose correctly.",
+        "output": "A `cafe-quote` folder containing a function-based quote program and three expected-versus-actual cases with a missing-return repair.",
+        "tools": "Windows, VS Code, PowerShell, and Node.js LTS",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JSIN-C006, JSIN-C008, JSIN-C010, JSIN-C011. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Each helper has a focused job, named parameters, and a useful return value. Calculation helpers do not depend on mutable outer total variables. All three cases match their expected totals. The evidence traces an undefined result to the missing return and confirms the repair.",
+        "submission": "Function names with one-sentence contracts | Three expected-versus-actual totals | Missing-return symptom, traced undefined value, and repair | One example showing a local binding is unavailable outside its helper"
+      },
+      "steps": [
+        "Write `calculateSubtotal(prices)` with a local accumulator and a returned number. Prove that `[1200, 800, 500]` returns 2500 and `[]` returns 0.",
+        "Write `calculateStudentDiscount(subtotal, isStudent)` so it returns a 10% discount amount for a student and 0 otherwise. Write `calculatePackagingFee(subtotal, fee)` so it returns only the 200-naira fee for a non-empty order and 0 for an empty order.",
+        "Call the helpers as `subtotal`, `discountAmount`, and `feeApplied`, then calculate `total = subtotal - discountAmount + feeApplied`. Write `formatQuote(subtotal, discountAmount, feeApplied, total)` so it returns one readable string, and let only the main program print it.",
+        "Temporarily remove one return statement and record the undefined value that reaches the next calculation. Restore the return and rerun the same case.",
+        "Verify the fixed cases before changing any values: student order 2450, non-student order 2700, and empty student order 0. Record expected and actual totals."
+      ],
+      "checklist": [
+        "Each helper has a focused job, named parameters, and a useful return value.",
+        "Calculation helpers do not depend on mutable outer total variables.",
+        "All three cases match their expected totals.",
+        "The evidence traces an undefined result to the missing return and confirms the repair."
+      ],
+      "stuck": "Return to the exact cited Core section for the failing concept, reduce the program to the smallest failing case, read the first error or actual-versus-expected difference, then rerun the unchanged case after one repair. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output used here is taught earlier, taught in the current bounded Study, or explained directly in the Build step and starter."
+      }
+    },
+    {
+      "weekId": "JSIN-R2-W06",
+      "title": "Personal Library Tracker guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JSIN-R2-B-W06-01"
+      },
+      "contract": {
+        "doing": "Create `library-tracker/library.js`. Define a `Book` class with title, author, and status properties plus a `markRead()` method. Store at least three instances in an array, update one, convert the array to formatted JSON text, parse it, and inspect the resulting plain records.",
+        "why": "Library records show why named properties are easier to understand than parallel array positions. Comparing live Book instances with parsed JSON makes the boundary between data and class behavior concrete before file persistence is introduced.",
+        "output": "A `library-tracker` folder containing `library.js`, valid sample JSON, and evidence that distinguishes live Book instances from parsed plain records.",
+        "tools": "Windows, VS Code, PowerShell, and Node.js LTS",
+        "estimatedMinutes": 180,
+        "prerequisites": "Previously completed competencies: JSIN-C010, JSIN-C011, JSIN-C012, JSIN-C013. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Three separate Book instances contain clear named properties. markRead changes the intended instance without altering unrelated records. The JSON output is valid and parses back to equivalent plain data. The evidence explains why a parsed record is not automatically a Book instance.",
+        "submission": "Three-instance listing before and after one markRead call | Formatted JSON text and successful parsed values | Parsed-method failure and explanation | Confirmation that the JSON file was created manually rather than by unstudied filesystem code"
+      },
+      "steps": [
+        "Define the Book constructor and `markRead()` method, create three instances with `new`, and store them in an array.",
+        "Loop through the instances and print title, author, and status using named properties. Mark one book read and confirm only that instance changes.",
+        "Use `JSON.stringify(books, null, 2)` and print the JSON text. Parse it and confirm the resulting array and property values.",
+        "Attempt to call `markRead()` on one parsed record, capture the failure, and explain why JSON preserved data but not the class method.",
+        "Verify three cases: initial records, one status update, and the JSON round trip. Save the formatted JSON output as `sample-books.json` manually for inspection; do not add filesystem code yet."
+      ],
+      "checklist": [
+        "Three separate Book instances contain clear named properties.",
+        "markRead changes the intended instance without altering unrelated records.",
+        "The JSON output is valid and parses back to equivalent plain data.",
+        "The evidence explains why a parsed record is not automatically a Book instance."
+      ],
+      "stuck": "Return to the exact cited Core section for the failing concept, reduce the program to the smallest failing case, read the first error or actual-versus-expected difference, then rerun the unchanged case after one repair. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output used here is taught earlier, taught in the current bounded Study, or explained directly in the Build step and starter."
+      }
+    },
+    {
+      "weekId": "JSIN-R2-W07",
+      "title": "Persistent Study Task Tracker guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JSIN-R2-B-W07-01"
+      },
+      "contract": {
+        "doing": "Build `study-task-tracker` with `src/tasks.js`, `src/storage.js`, `src/cli.js`, `test/tasks.test.js`, `data/tasks.json`, and `package.json`. A task is exactly `{ id: number, title: string, completed: boolean }`. On success, pure functions return new arrays without changing their input. `addTask` trims the title, throws `TypeError(\"Task title is required.\")` before mutation when it is blank, uses ID 1 for an empty list or one above the highest existing numeric ID, and appends an incomplete task. For an unknown ID, `completeTask` throws a `RangeError` whose message substitutes that ID—for example, ID 99 produces exactly `Task 99 was not found.`—before mutation; otherwise it marks only the match complete. `findTasks` performs a trimmed case-insensitive title search and returns `[]` for blank search text. Missing storage may initialize safely, but malformed existing JSON must remain untouched.",
+        "why": "A task tracker introduces the reliability boundaries that make a multi-file program trustworthy: pure rules, explicit storage behavior, repeatable tests, and debugger evidence. The supplied contracts prevent the learner from guessing architecture while still leaving the rule implementations to them.",
+        "output": "A `study-task-tracker` folder with three ESM source modules, a protected JSON data file, at least six passing built-in tests, and a debugger-backed repair note.",
+        "tools": "Windows, VS Code, PowerShell, Node.js LTS, node:test, and local JSON files",
+        "estimatedMinutes": 195,
+        "prerequisites": "Previously completed competencies: JSIN-C012, JSIN-C013, JSIN-C015, JSIN-C017. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Module imports resolve and each file has one clear responsibility. The task operations use the exact ID, error type, error message, search, and no-mutation contracts supplied in the brief. A missing data file can initialize, but malformed existing JSON is never silently replaced. At least six meaningful tests pass with `node --test`, including exact TypeError and RangeError assertions. The debug note ties one failure to an inspected value and a verified repair.",
+        "submission": "Folder tree and exact run/test commands | Passing result for at least six named tests | Malformed-JSON run showing the original corrupt text was not overwritten | Debugger location, inspected value, root cause, and passing repair"
+      },
+      "steps": [
+        "Create the folder structure and `package.json` with `\"type\": \"module\"`. Export `addTask`, `completeTask`, and `findTasks` from `src/tasks.js`. Copy the supplied task contract beside the functions: numeric IDs begin at 1, blank add throws the exact TypeError, unknown completion throws the exact RangeError, and every successful result is a new array.",
+        "Implement synchronous UTF-8 `loadTasks(path)` and `saveTasks(path, tasks)` in `src/storage.js`. In `loadTasks`, return `[]` only when the caught error has code `ENOENT`; rethrow every other read or parse error. Save only validated results as two-space JSON.",
+        "Use `src/cli.js` only as a small demonstration entry: load records, add or complete one supplied sample task in code, save after success, and print the resulting list. Command-line argument parsing begins next Week.",
+        "Write at least six `node:test` cases covering normal add with first/next ID, blank-title TypeError and unchanged input, completing an existing task, unknown-ID RangeError and unchanged input, case-insensitive search, and no mutation after a successful operation. Use the supplied named synchronous functions with `assert.throws`; asynchronous tests are outside this course.",
+        "Reproduce the Study debugger defect inside `findTasks`: temporarily replace the working `normalizedTitle.includes(normalizedQuery)` comparison with `normalizedTitle === normalizedQuery`, add `debugger;` immediately before that comparison, and run the Review Functions/review case with `node inspect`. Use `cont`, `watch()` or `repl`, and two `next` commands exactly as practiced; record both normalized operands and the false result. Restore `includes`, remove `debugger;`, and rerun the focused test and full suite.",
+        "Copy the data file, corrupt the working JSON, run the program, confirm the corrupt text remains unchanged, restore the valid copy, then rerun all tests."
+      ],
+      "checklist": [
+        "Module imports resolve and each file has one clear responsibility.",
+        "The task operations use the exact ID, error type, error message, search, and no-mutation contracts supplied in the brief.",
+        "A missing data file can initialize, but malformed existing JSON is never silently replaced.",
+        "At least six meaningful tests pass with `node --test`, including exact TypeError and RangeError assertions.",
+        "The debug note ties one failure to an inspected value and a verified repair."
+      ],
+      "stuck": "Return to the exact cited Core section for the failing concept, reduce the program to the smallest failing case, read the first error or actual-versus-expected difference, then rerun the unchanged case after one repair. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output used here is taught earlier, taught in the current bounded Study, or explained directly in the Build step and starter."
+      }
+    },
+    {
+      "weekId": "JSIN-R2-W08",
+      "title": "FoundIt CLI — Campus Lost-and-Found Manager guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JSIN-R2-B-W08-01"
+      },
+      "contract": {
+        "doing": "Build `foundit-cli` as the main course project. Each saved record is exactly `{ id: number, description: string, location: string, category: string, status: \"open\" | \"claimed\" }`; IDs begin at 1 and remain stable. The five commands are `add`, `list`, `search`, `claim`, and `help`. Search checks description, location, and category with trimmed case-insensitive substring matching. Keep pure item rules in `src/items.js`, the Week 7 persistence contract in `src/storage.js`, argument validation and messages in `src/cli.js`, tests in `test/items.test.js`, and a JSON array in `data/items.json`. Use the supplied command/output contract exactly so the learner and human reviewer test the same program.",
+        "why": "FoundIt integrates the course into a program another learner can actually run. A command contract, persistent state, focused tests, and an honest repository turn isolated exercises into one reviewable beginner project without introducing a framework.",
+        "output": "A GitHub repository containing a runnable FoundIt CLI with five commands, durable JSON storage, at least eight passing tests, an honest README, and recorded normal, boundary, invalid, and repaired-defect evidence.",
+        "tools": "Windows, VS Code, PowerShell, Node.js LTS, Git, a free verified GitHub account, and local JSON files",
+        "estimatedMinutes": 240,
+        "prerequisites": "Previously completed competencies: JSIN-C007, JSIN-C008, JSIN-C010, JSIN-C012, JSIN-C013, JSIN-C015, JSIN-C017, JSIN-C018, JSIN-C019, JSIN-C020. New Week concepts are taught in Core Study before this Build.",
+        "finished": "All five exact commands behave as supplied; unsupported or incomplete commands print a stable error plus help and never write data. Records use numeric IDs and only `open` or `claimed`; list/search output uses the supplied line format and search checks only description, location, and category. Item state survives a restart through valid JSON, while malformed existing JSON is not destroyed. At least eight named tests pass and cover the exact normal, boundary, error, and no-mutation contracts. The README gives exact run and test commands plus honest known limits. The GitHub repository contains intended source, tests, metadata, README, a sanitized empty/sample data file, and no credentials or unrelated learner data.",
+        "submission": "GitHub repository link and final commit identifier | Exact `node src/cli.js help` and `node --test` results | Normal, boundary, and invalid acceptance table | Malformed-data preservation result and one repaired-defect record | Confirmation that staged files were inspected and no secret or private data was published"
+      },
+      "steps": [
+        "Copy the supplied FoundIt contract into the README before coding. Run each exact command example on paper: quoted `add` values remain separate arguments, `list` takes no values, `search` takes one quoted query, `claim` takes one positive whole-number ID, and `help` prints the supplied usage.",
+        "Create the required folder tree and package metadata. Implement `addItem`, `searchItems`, and `claimItem` in `src/items.js`. Successful operations return new arrays; blank add/search values, an unknown ID, or a repeated claim throw the exact supplied errors before input can change. Use numeric IDs, with 1 for the first record and highest existing ID plus 1 thereafter.",
+        "Reuse the proven Week 7 storage contract: a missing file may start with an empty list, `error.code === \"ENOENT\"` is the only recovered read failure, and malformed JSON must be rethrown without a write.",
+        "Set `const args = process.argv.slice(2)` in `src/cli.js`, read the command from `args[0]`, and read later values by index. Convert a claim ID with `Number`; reject it unless it is finite, at least 1, and has no remainder after `% 1`. Dispatch only the five documented commands, print the exact supplied messages, and save only after a successful `add` or `claim`.",
+        "Write at least eight named built-in tests: first/next numeric ID on valid add, exact incomplete-add TypeError, search across the three named fields, exact blank-search TypeError, successful claim, exact unknown-ID RangeError, exact repeated-claim Error, and no input mutation. Keep empty-list display and storage corruption as manual acceptance cases unless you deliberately add separate formatter or storage tests.",
+        "Run the supplied normal journey, empty-list boundary, blank-search or invalid-ID case, repeated-claim case, and malformed-JSON case from the terminal. Deliberately reproduce one defect, use a test failure or debugger inspection to locate it, repair it, and rerun every acceptance case.",
+        "Complete the README sections for purpose, prerequisites, setup, the unchanged command contract, tests, data behavior, known limits, and project structure. Copy the supplied `.gitignore` exactly, replace `data/items.json` with `[]` or a sanitized sample, and run `git status --short` before and after `git add .`. Inspect every staged path. If a secret, personal record, log, or unrelated file appears, stop before committing, run `git rm --cached -- <path>`, correct the ignore/data choice, and inspect again.",
+        "Initialize Git if needed, make meaningful commits, create a new GitHub repository, and push the project. If Git Credential Manager or a browser sign-in opens, use the verified free GitHub account from Setup; never store a credential in the project. Open the repository page and follow the README from a fresh terminal view before submitting proof."
+      ],
+      "checklist": [
+        "All five exact commands behave as supplied; unsupported or incomplete commands print a stable error plus help and never write data.",
+        "Records use numeric IDs and only `open` or `claimed`; list/search output uses the supplied line format and search checks only description, location, and category.",
+        "Item state survives a restart through valid JSON, while malformed existing JSON is not destroyed.",
+        "At least eight named tests pass and cover the exact normal, boundary, error, and no-mutation contracts.",
+        "The README gives exact run and test commands plus honest known limits.",
+        "The GitHub repository contains intended source, tests, metadata, README, a sanitized empty/sample data file, and no credentials or unrelated learner data."
+      ],
+      "stuck": "Return to the exact cited Core section for the failing concept, reduce the program to the smallest failing case, read the first error or actual-versus-expected difference, then rerun the unchanged case after one repair. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output used here is taught earlier, taught in the current bounded Study, or explained directly in the Build step and starter."
+      }
+    }
+  ]
+}

@@ -37,7 +37,9 @@ const mutationFor = (curriculumId: string, revision: number) => {
   const learnerState = emptyCloudState();
   learnerState.curriculumState.curriculumId = curriculumId;
   learnerState.curriculumState.lastSeenRevision = revision;
-  learnerState.curriculumState.activeWeekId = `${curriculumId}-W01`;
+  learnerState.curriculumState.activeWeekId = curriculumId === 'JSIN' && revision === 2
+    ? 'JSIN-R2-W01'
+    : `${curriculumId}-W01`;
   return mutation({ curriculumRevision: revision, learnerState });
 };
 
@@ -147,11 +149,11 @@ describe('deterministic progress hashing', () => {
 });
 
 describe('V2 progress synchronization API', () => {
-  test('enables only established production curricula while introductory R1 courses are withdrawn', () => {
+  test('enables only established production curricula and the approved JSIN R2 replacement', () => {
     expect(CLOUD_ENABLED_CURRICULA).toEqual({
-      FEWE: { revision: 1 }, PDES: { revision: 1 }, PYAE: { revision: 3 },
+      FEWE: { revision: 1 }, JSIN: { revision: 2 }, PDES: { revision: 1 }, PYAE: { revision: 3 },
     });
-    for (const curriculumId of ['QBAS', 'CLNG', 'CPPL', 'JAVA', 'JSIN', 'PYIN', 'WEBD']) {
+    for (const curriculumId of ['QBAS', 'CLNG', 'CPPL', 'JAVA', 'PYIN', 'WEBD']) {
       expect(curriculumId in CLOUD_ENABLED_CURRICULA).toBe(false);
     }
   });
@@ -270,7 +272,7 @@ describe('V2 progress synchronization API', () => {
   });
 
   test('rejects curriculum content, unsupported metadata, and unverified access', async () => {
-    const { app } = await setup();
+    const { app, database } = await setup();
     const content = mutation();
     content.learnerState.curriculumState.skillChecks = {
       'PYAE-SC-W01': { attempts: [{ attemptId: 'a1', attemptNumber: 1, questionIds: ['q1'], answers: { q1: 'a' }, score: 1, total: 1, percentage: 100, passed: true, submittedAt: new Date().toISOString(), questionSnapshot: [] }], consecutiveFailures: 0, recovery: null },
@@ -280,6 +282,15 @@ describe('V2 progress synchronization API', () => {
     expect((await put(app, { ...mutation(), user_id: userB })).statusCode).toBe(400);
     expect((await put(app, mutation({ stateSchemaVersion: 99 }))).json().error.code).toBe('UNSUPPORTED_STATE_SCHEMA');
     expect((await put(app, mutation({ curriculumRevision: 4 }))).json().error.code).toBe('CURRICULUM_METADATA_MISMATCH');
+    const withdrawnJavaScriptR1 = await app.inject({
+      method: 'PUT',
+      url: '/api/v1/v2/learning-instances/JSIN',
+      headers: auth(),
+      payload: mutationFor('JSIN', 1),
+    });
+    expect(withdrawnJavaScriptR1.statusCode).toBe(400);
+    expect(withdrawnJavaScriptR1.json().error.code).toBe('CURRICULUM_METADATA_MISMATCH');
+    expect(database.instances.has(`${userA}:JSIN`)).toBe(false);
     const wrongArtifactScope = mutation();
     wrongArtifactScope.learnerState.notes.records.push({ id: 'n1', roadmapId: 'OTHER' });
     expect((await put(app, wrongArtifactScope)).statusCode).toBe(400);

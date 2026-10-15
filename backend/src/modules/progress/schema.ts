@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 export const CLOUD_ENABLED_CURRICULA = Object.freeze({
   FEWE: { revision: 1 },
+  JSIN: { revision: 2 },
   PDES: { revision: 1 },
   PYAE: { revision: 3 },
 });

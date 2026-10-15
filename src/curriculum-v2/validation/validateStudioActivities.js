@@ -37,7 +37,9 @@ export function validateStudioActivities(studio, source) {
       }
       const hasStudyStudioLink = asArray(week?.study?.resources).some((assignment) => {
         const resource = asArray(source?.resources).find((item) => item?.id === assignment?.resourceId);
-        return /studio/i.test(text(resource?.url)) || (text(resource?.provider).toLowerCase() === 'xcelerateai' && resource?.format === 'lab');
+        const resourceUrl = text(resource?.url);
+        const isCourseOwnedStudioUrl = /^\/curriculum\/[^?#]*studio(?:\.html|\/|$)/i.test(resourceUrl);
+        return isCourseOwnedStudioUrl || (text(resource?.provider).toLowerCase() === 'xcelerateai' && resource?.format === 'lab');
       });
       if (hasStudyStudioLink) add('V021-B012', `${week.id} exposes a curriculum Build task as a Study resource.`, [week.id]);
     }

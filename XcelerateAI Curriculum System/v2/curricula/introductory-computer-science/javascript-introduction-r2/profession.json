@@ -1,0 +1,101 @@
+{
+  "curriculumId": "JSIN",
+  "revision": 2,
+  "researchedAt": "2026-10-15T00:00:00.000Z",
+  "role": "Beginning JavaScript programmer",
+  "roleDefinition": "A learner who can independently produce and explain small dependency-free Node.js programs using core syntax, structured data, modules, files, tests, debugging, Git, and clear run instructions.",
+  "evidenceSummary": "The capability boundary was triangulated across current Node.js, MDN, Microsoft Learn, JavaScript.info, GitHub, VS Code, and Python Tutor materials and constrained to eight six-hour instructional Weeks.",
+  "capabilityTiers": [
+    {
+      "tier": "Foundational",
+      "weeks": "1–3",
+      "outcome": "Run code, reason about values, repair basic failures, and make validated decisions."
+    },
+    {
+      "tier": "Program construction",
+      "weeks": "4–6",
+      "outcome": "Use collections, functions, objects, classes, and JSON in smaller projects."
+    },
+    {
+      "tier": "Reliable delivery",
+      "weeks": "7–8",
+      "outcome": "Modularize, persist, test, debug, document, and publish a coherent CLI."
+    }
+  ],
+  "practitionerOutputs": [
+    "Campus Welcome Card CLI",
+    "Study Budget Estimator",
+    "Campus Event Check-in Validator",
+    "Class Scoreboard",
+    "Campus Café Order Quote",
+    "Personal Library Tracker",
+    "Persistent Study Task Tracker",
+    "FoundIt CLI — Campus Lost-and-Found Manager"
+  ],
+  "professionalPractices": [
+    "predict before running",
+    "read evidence before editing",
+    "separate pure logic from I/O",
+    "test normal, boundary, and invalid cases",
+    "preserve malformed data for diagnosis",
+    "document exact commands",
+    "inspect staged files before publishing"
+  ],
+  "boundaries": [
+    "No browser DOM or frontend framework",
+    "No asynchronous JavaScript",
+    "No database or web server",
+    "No third-party runtime packages",
+    "No advanced object-oriented patterns",
+    "No CI/CD requirement"
+  ],
+  "graduationBoundary": "Write, run, debug, test, document, and publish small dependency-free JavaScript programs with enough fluency for introductory practical examinations and beginner projects.",
+  "technologyDecision": "Node.js LTS, VS Code, PowerShell, built-in JavaScript/Node APIs, Git, and GitHub minimize setup burden while preserving practical-exam and project value.",
+  "sources": [
+    "https://nodejs.org/en/download",
+    "https://code.visualstudio.com/docs/setup/windows",
+    "https://docs.github.com/en/get-started/git-basics/set-up-git",
+    "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+    "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/creating-your-first-application-6-of-51",
+    "https://nodejs.org/en/learn/command-line/run-nodejs-scripts-from-the-command-line",
+    "https://nodejs.org/en/learn/command-line/how-to-use-the-nodejs-repl",
+    "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-data-types-in-javascript-16-of-51",
+    "https://javascript.info/variables",
+    "https://javascript.info/types",
+    "https://javascript.info/operators",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals",
+    "https://pythontutor.com/javascript.html",
+    "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-boolean-logic-with-if-statements-26-of-51",
+    "https://javascript.info/comparison",
+    "https://javascript.info/ifelse",
+    "https://javascript.info/logical-operators",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite",
+    "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/creating-arrays-29-of-51",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+    "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-loops-36-of-51",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Loops",
+    "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-functions-38-of-51",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Return_values",
+    "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/javascript-object-notation-json-41-of-51",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Advanced_JavaScript_objects/Classes_in_JavaScript",
+    "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON",
+    "https://learn.microsoft.com/en-us/shows/beginners-series-to-nodejs/how-to-run-your-code-step-by-step-in-nodejs-built-in-debugger-22-of-26",
+    "https://nodejs.org/api/debugger.html",
+    "https://nodejs.org/api/esm.html",
+    "https://nodejs.org/en/learn/manipulating-files/reading-files-with-nodejs",
+    "https://nodejs.org/en/learn/manipulating-files/writing-files-with-nodejs",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch",
+    "https://nodejs.org/api/errors.html#common-system-errors",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes",
+    "https://nodejs.org/api/test.html",
+    "https://nodejs.org/api/assert.html",
+    "https://nodejs.org/api/process.html#processargv",
+    "https://www.youtube.com/watch?v=-RZ03WHqkaY",
+    "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github"
+  ]
+}
