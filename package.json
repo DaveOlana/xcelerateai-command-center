@@ -17,6 +17,8 @@
     "curriculum:v2:javascript:publish": "node scripts/build-v2-javascript-introduction.mjs --publish",
     "curriculum:v2:python": "node scripts/build-v2-python-introduction.mjs",
     "curriculum:v2:python:publish": "node scripts/build-v2-python-introduction.mjs --publish",
+    "curriculum:v2:java": "node scripts/build-v2-java-introduction.mjs",
+    "curriculum:v2:java:publish": "node scripts/build-v2-java-introduction.mjs --publish",
     "curriculum:v2:introductory:audit": "node scripts/audit-v2-introductory-portfolio.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

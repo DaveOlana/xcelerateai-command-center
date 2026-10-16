@@ -1,0 +1,314 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "JAVA",
+  "revision": 2,
+  "activities": [
+    {
+      "weekId": "JAVA-R2-W01",
+      "title": "Student Introduction and Study-Time Card guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-R2-B-W01-01"
+      },
+      "contract": {
+        "doing": "Create a plain IntelliJ Java project named `student-introduction`. In `Main.java`, print a learner name, course, planned weekly minutes, and calculated hours/remainder from supplied values. Run the same saved class from IntelliJ and PowerShell, then deliberately reproduce and repair one missing-semicolon compile error and one zero-divisor runtime error using the first useful diagnostic.",
+        "why": "Every later practical depends on knowing which source class ran, whether it compiled, and how to repair one reported cause instead of guessing.",
+        "output": "A `student-introduction` project with Main.java and evidence.md proving two run routes and two evidence-led repairs.",
+        "tools": "Windows, a current supported JDK, IntelliJ IDEA, and PowerShell",
+        "estimatedMinutes": 180,
+        "prerequisites": "Only verified setup capabilities and this Week's Core Study are required.",
+        "finished": "The intended saved Main.java runs from IntelliJ and the documented PowerShell command. 95 minutes produces 1 hour and 35 minutes in labelled output. The compile record names the diagnostic and repaired source line. The runtime record names ArithmeticException, the application line, and the repaired divisor. No input, branches, loops, or calculator interface are introduced yet.",
+        "submission": "Project/JDK identity plus IntelliJ and PowerShell run commands | Final labelled 95-minute output | Missing-semicolon compiler diagnostic and repair | ArithmeticException stack-frame evidence and repair"
+      },
+      "steps": [
+        "Create the project with the verified JDK and IntelliJ build system, create `src/Main.java`, paste the starter, save, and run it once from the gutter.",
+        "Replace the starter values with a learner name, course, and `int minutes = 95`; calculate hours with `/ 60` and remaining minutes with `% 60`, then print four labelled lines.",
+        "Open IntelliJ Terminal in the project, compile to `out` with the supplied command, run the class, and record how source, compiler output, class output, and JVM execution differ.",
+        "Delete one semicolon, rebuild, record the first compiler message and location, repair only that line, and rerun.",
+        "Use the supplied `int divisor = 0` line to reproduce ArithmeticException, record the first application stack-frame line, restore 60, and rerun.",
+        "Create `evidence.md` with both commands, expected/actual output, the two diagnostics, cause, one-line repair, and final clean rerun."
+      ],
+      "checklist": [
+        "The intended saved Main.java runs from IntelliJ and the documented PowerShell command.",
+        "95 minutes produces 1 hour and 35 minutes in labelled output.",
+        "The compile record names the diagnostic and repaired source line.",
+        "The runtime record names ArithmeticException, the application line, and the repaired divisor.",
+        "No input, branches, loops, or calculator interface are introduced yet."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the first useful compiler diagnostic, stack-trace location, or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "JAVA-R2-W02",
+      "title": "Campus Profile Collector guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-R2-B-W02-01"
+      },
+      "contract": {
+        "doing": "Build a console profile collector using one Scanner and `nextLine()` for every prompt: name, programme, level, age text, and commuter yes/no. Parse age with `Integer.parseInt`, normalize the commuter answer, and print an exact summary. In a disposable comparison block, create two equal-content Strings and prove why `.equals` is the decision operation.",
+        "why": "Introductory practicals repeatedly combine typed values, console input, conversion, and exact String decisions; one stable input pattern prevents confusing newline bugs.",
+        "output": "A Campus Profile Collector with predictable Scanner use, typed values, four valid cases, one recorded invalid conversion, and correct String comparison.",
+        "tools": "Windows, a current supported JDK, IntelliJ IDEA, and PowerShell",
+        "estimatedMinutes": 200,
+        "prerequisites": "Previously completed competencies: JAVA-C001, JAVA-C002, JAVA-C003. New Week concepts are taught in Core Study before this Build.",
+        "finished": "All five prompts accept the supplied cases without a skipped field. Age is stored as int only after parsing and the invalid-age exception is recorded. Commuter decisions use equals or equalsIgnoreCase rather than ==. The output labels and boolean result match all four valid cases. The String demonstration explains content versus reference comparison in the learner’s own words.",
+        "submission": "Five-prompt transcript with a spaced name | Four-case expected-versus-actual table | Invalid-age exception evidence | == versus equals output and corrected decision line"
+      },
+      "steps": [
+        "Copy the five-prompt contract and expected summary before coding; identify the intended type of every stored value.",
+        "Create one Scanner, read all five inputs with nextLine, trim values, and parse age only after its text has been collected.",
+        "Normalize commuter text with trim and equalsIgnoreCase; store one boolean and print the supplied labelled summary.",
+        "Run a normal case, a name containing a space, age 0, and upper-case YES. Record predicted and actual values/types.",
+        "Run the supplied String comparison demonstration using `new String(\"yes\")`; record == and equals results and replace any content decision that uses ==.",
+        "Document the four cases and one intentionally invalid age; record NumberFormatException without adding try/catch until Week 3."
+      ],
+      "checklist": [
+        "All five prompts accept the supplied cases without a skipped field.",
+        "Age is stored as int only after parsing and the invalid-age exception is recorded.",
+        "Commuter decisions use equals or equalsIgnoreCase rather than ==.",
+        "The output labels and boolean result match all four valid cases.",
+        "The String demonstration explains content versus reference comparison in the learner’s own words."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the first useful compiler diagnostic, stack-trace location, or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "JAVA-R2-W03",
+      "title": "Course Registration Eligibility Checker guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-R2-B-W03-01"
+      },
+      "contract": {
+        "doing": "Ask for age text, prior-course yes/no, and entrance score text. Convert age and score inside the smallest useful try block. Apply rules in this order: age must be 16–120 inclusive; prerequisite must be yes; score must be 50–100 inclusive. Print exactly one outcome and preserve seven fixed cases.",
+        "why": "Practical exam questions often hide their difficulty in rule order and boundaries; this program makes every rule and rejection observable.",
+        "output": "A narrow-recovery eligibility checker with seven fixed cases, explicit boundaries, and one evidence-led Boolean repair.",
+        "tools": "Windows, a current supported JDK, IntelliJ IDEA, and PowerShell",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JAVA-C004, JAVA-C005. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Each valid input reaches exactly one specified outcome. 16/50 and 120/100 are accepted boundaries; outside values are rejected. Only NumberFormatException produces INVALID NUMBER. String decisions do not use ==. The Boolean repair record shows the failing values and corrected operator.",
+        "submission": "Seven-case expected-versus-actual table | Invalid numeric input and narrow catch block | Boundary output for 16/50 and 120/100 | Truth-table-led &&/|| repair"
+      },
+      "steps": [
+        "Write the ordered rule table and predict all seven supplied cases before coding.",
+        "Collect three lines, parse age and score in a narrow method or try block, and print `INVALID NUMBER` only for NumberFormatException.",
+        "Normalize prerequisite text and implement invalid range, prerequisite, score, and eligible branches in the supplied order.",
+        "Run the minimum and maximum valid boundaries plus below/above cases; record the first matching condition.",
+        "Deliberately replace one && with || in the range check, reproduce its failing case, use a truth table to repair it, and rerun.",
+        "Record seven expected/actual outcomes and explain why catch(Exception) would hide a programming defect."
+      ],
+      "checklist": [
+        "Each valid input reaches exactly one specified outcome.",
+        "16/50 and 120/100 are accepted boundaries; outside values are rejected.",
+        "Only NumberFormatException produces INVALID NUMBER.",
+        "String decisions do not use ==.",
+        "The Boolean repair record shows the failing values and corrected operator."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the first useful compiler diagnostic, stack-trace location, or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "JAVA-R2-W04",
+      "title": "Classroom Score Tracker guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-R2-B-W04-01"
+      },
+      "contract": {
+        "doing": "Collect score lines until `done` or five valid scores. Valid scores are 0–100; invalid numeric/range entries do not count. Store accepted values in `ArrayList<Integer>`, summarize with an enhanced for loop, and separately reproduce one fixed-array off-by-one failure in a disposable method.",
+        "why": "Arrays, lists, loops, counters, totals, and boundary checks are central to introductory Java practicals.",
+        "output": "A bounded score tracker with correct summaries, rejected-input evidence, and an explicit fixed-array boundary repair.",
+        "tools": "Windows, a current supported JDK, IntelliJ IDEA, and PowerShell",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JAVA-C007, JAVA-C008. New Week concepts are taught in Core Study before this Build.",
+        "finished": "At most five valid scores are stored and done stops immediately. Invalid numeric and range entries never change accepted count. Empty input prints `NO SCORES`; other summaries are correct. Average uses floating-point division. The fixed-array probe records and repairs the length/index boundary.",
+        "submission": "Five session transcripts and list sizes | Empty, boundary, and invalid-input results | Average/min/max/pass calculations | ArrayIndexOutOfBoundsException and repaired loop condition"
+      },
+      "steps": [
+        "Write the stop, acceptance, and summary rules; predict the five supplied sessions.",
+        "Create the collection while-loop with a condition based on accepted size; handle done before parsing and add only valid scores.",
+        "Traverse accepted values to compute total, minimum, maximum, average as double, and count at least 50; handle the empty collection explicitly.",
+        "Run early stop, exactly five, invalid retry, boundary 0/100, and empty cases.",
+        "Run the supplied three-element array probe with `index <= values.length`, record ArrayIndexOutOfBoundsException, repair to `<`, and rerun.",
+        "Document every list state change and the off-by-one cause; confirm rejected inputs never changed size."
+      ],
+      "checklist": [
+        "At most five valid scores are stored and done stops immediately.",
+        "Invalid numeric and range entries never change accepted count.",
+        "Empty input prints `NO SCORES`; other summaries are correct.",
+        "Average uses floating-point division.",
+        "The fixed-array probe records and repairs the length/index boundary."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the first useful compiler diagnostic, stack-trace location, or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "JAVA-R2-W05",
+      "title": "Campus Cafe Order Quote guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-R2-B-W05-01"
+      },
+      "contract": {
+        "doing": "Refactor a supplied cafe quote into `subtotal`, `studentDiscount`, `serviceFee`, `finalTotal`, and `formatQuote`. Prices are integer naira; orders of 5000 or more receive 10% student discount only when student is true, then every order receives a 5% service fee calculated after discount. Return numeric values and keep Scanner/printing in main.",
+        "why": "This is the first calculator-like integration because values, decisions, loops, and collections are already established; the real lesson is method design.",
+        "output": "A method-based cafe quote with exact intermediate results and documented return, scope, and overload reasoning.",
+        "tools": "Windows, a current supported JDK, IntelliJ IDEA, and PowerShell",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JAVA-C006, JAVA-C007, JAVA-C009, JAVA-C011. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Every helper matches the supplied parameter and return contract. All four cases match exact intermediate and final values. Calculation methods do not read Scanner or print. The missing-return/scope diagnostic and repair are recorded. The overload record explains why return type alone is insufficient.",
+        "submission": "Method signatures and responsibilities | Four-case intermediate/final table | Missing-return or scope diagnostic and repair | Invalid return-type-only overload and corrected signature"
+      },
+      "steps": [
+        "Copy each method signature, formula, and four expected intermediate-value rows before implementation.",
+        "Implement subtotal with a loop and return int; implement discount and fee as double-returning methods with no printing.",
+        "Compose finalTotal from returned values and format one labelled quote at the edge.",
+        "Run all four cases and record subtotal, discount, discounted amount, fee, and final result before formatting.",
+        "Delete one return statement or change a result variable’s scope, compile, record the diagnostic, and repair the contract.",
+        "Try to declare two methods differing only by return type, record the duplicate-signature diagnostic, then repair the overload by changing its parameter list."
+      ],
+      "checklist": [
+        "Every helper matches the supplied parameter and return contract.",
+        "All four cases match exact intermediate and final values.",
+        "Calculation methods do not read Scanner or print.",
+        "The missing-return/scope diagnostic and repair are recorded.",
+        "The overload record explains why return type alone is insufficient."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the first useful compiler diagnostic, stack-trace location, or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "JAVA-R2-W06",
+      "title": "Library Loan Desk guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-R2-B-W06-01"
+      },
+      "contract": {
+        "doing": "Create `Book.java` with private title, borrower, and available fields. The constructor accepts a nonblank title and begins available with no borrower. Implement getters, `checkout(String borrower)`, `returnBook()`, and `statusLine()`. Main stores three books in `ArrayList<Book>` and runs five supplied state cases.",
+        "why": "A small loan model gives classes a concrete purpose without burying beginners in inheritance or frameworks.",
+        "output": "A two-file library desk with independent Book objects, protected transitions, and two object-state repair records.",
+        "tools": "Windows, a current supported JDK, IntelliJ IDEA, and PowerShell",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JAVA-C011, JAVA-C012, JAVA-C013. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Each object begins with its own correct state. Blank titles/borrowers and invalid transitions are rejected before mutation. Changing one book never changes another. Fields remain private and collection code uses public behavior. Both this-shadowing and static-shared-state repairs are documented.",
+        "submission": "Book field/constructor/method contract | Five-case state transcript | this-shadowing debugger evidence and repair | Static shared-state evidence and repaired independent instances"
+      },
+      "steps": [
+        "Copy the field, constructor, method, message, and five-case contracts before creating the class.",
+        "Implement constructor validation and getters; create two instances and print their independent initial status.",
+        "Implement checkout validation before mutation and returnBook validation before mutation; keep fields private.",
+        "Store three books in ArrayList, traverse them through statusLine, and run success, repeated checkout, independent-instance, successful return, and repeated return cases.",
+        "Temporarily replace `this.title = title` with `title = title`, inspect the unchanged field through the debugger/status output, then repair it.",
+        "Temporarily make availability static, demonstrate unintended shared state across two books, restore an instance field, and rerun all cases."
+      ],
+      "checklist": [
+        "Each object begins with its own correct state.",
+        "Blank titles/borrowers and invalid transitions are rejected before mutation.",
+        "Changing one book never changes another.",
+        "Fields remain private and collection code uses public behavior.",
+        "Both this-shadowing and static-shared-state repairs are documented."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the first useful compiler diagnostic, stack-trace location, or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "JAVA-R2-W07",
+      "title": "Persistent Study Notes guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-R2-B-W07-01"
+      },
+      "contract": {
+        "doing": "Persist records as `id|topic|text` UTF-8 lines in `data/notes.txt`. IDs start at 1 and use highest loaded ID plus 1. A missing file means first run; any non-three-part line or nonnumeric ID is malformed and stops the load without writing. Implement add/list/topic filtering and a `Checks.java` harness with six named cases.",
+        "why": "A dependable program must preserve learner data, make failure types visible, and provide a repeatable way to prove repairs.",
+        "output": "A persistent notes tool with six passing dependency-free checks, restart evidence, malformed-data preservation, and one debugger-led repair.",
+        "tools": "Windows, a current supported JDK, IntelliJ IDEA, PowerShell, and Java standard-library APIs",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: JAVA-C008, JAVA-C011, JAVA-C012, JAVA-C013, JAVA-C015. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Valid records round-trip through UTF-8 and survive restart. Only a missing file creates empty state; malformed existing data is not overwritten. Blank and malformed values fail before save. Six named checks cover first/next ID, parsing, formatting, filtering, and malformed preservation. Debugger evidence connects inspected highest/newId values to one repaired cause.",
+        "submission": "File/record contract and valid restart result | Malformed file before/after evidence | Complete six-check output | Focused failing check, breakpoint values, repair, and full rerun"
+      },
+      "steps": [
+        "Copy the record grammar, file path, errors, and six checks; create a known-good two-line sample.",
+        "Implement parseLine and formatLine as focused methods; reject blank topic/text and malformed IDs/parts with exact exceptions.",
+        "Implement load/save with Path/Files and UTF-8. Recover from NoSuchFileException as empty, but let malformed data stop before any save.",
+        "Implement add/list/filter through returned collections; run first-run, restart, filter, invalid input, and malformed-file preservation cases.",
+        "Create Checks.java with six named check methods and an exact summary; deliberately introduce `highest + 0`, reproduce the failing ID check, and debug that one method.",
+        "Record breakpoint values, repair to highest + 1, rerun the focused check then all checks, and confirm malformed bytes are unchanged."
+      ],
+      "checklist": [
+        "Valid records round-trip through UTF-8 and survive restart.",
+        "Only a missing file creates empty state; malformed existing data is not overwritten.",
+        "Blank and malformed values fail before save.",
+        "Six named checks cover first/next ID, parsing, formatting, filtering, and malformed preservation.",
+        "Debugger evidence connects inspected highest/newId values to one repaired cause."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the first useful compiler diagnostic, stack-trace location, or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "JAVA-R2-W08",
+      "title": "StudySprint CLI — Campus Task Companion guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "JAVA-R2-B-W08-01"
+      },
+      "contract": {
+        "doing": "Build `studysprint-cli` with `Task`, `TaskService`, `TaskStore`, `Main`, and `Checks`. Records are `id|status|course|title`; allowed statuses are OPEN/DONE. Commands are `add <course> <title>`, `list [open|done|all]`, `complete <id>`, and `help`. Validate args before indexing, reuse Week 7 defensive storage, and follow the supplied outputs.",
+        "why": "StudySprint turns separate exercises into one small, inspectable product with a stable interface, durable data, checks, recovery behavior, and reproducible handoff.",
+        "output": "A GitHub repository containing a runnable StudySprint CLI with persistent data, eight checks, an honest README, and normal/boundary/invalid/restart/malformed/repair evidence.",
+        "tools": "Windows, a current supported JDK, IntelliJ IDEA, PowerShell, Git, a free verified GitHub account, and Java standard-library APIs",
+        "estimatedMinutes": 240,
+        "prerequisites": "Previously completed competencies: JAVA-C007, JAVA-C011, JAVA-C012, JAVA-C013, JAVA-C015, JAVA-C016, JAVA-C018, JAVA-C019, JAVA-C020, JAVA-C021. New Week concepts are taught in Core Study before this Build.",
+        "finished": "All supplied commands/messages behave exactly and invalid operations never write. Task IDs/status follow the canonical record contract. Valid data survives restart while malformed existing data remains unchanged. At least eight named checks pass across normal, boundary, invalid, persistence, and no-mutation contracts. README documents both IntelliJ and PowerShell routes without an unstated dependency. The repository contains intended source/checks/README/sanitized data and no credentials, caches, class files, or private records.",
+        "submission": "GitHub repository link and final commit identifier | Exact help and complete check-harness output | Normal, boundary, invalid, restart, and malformed-data acceptance record | One debugger/check-led defect repair | Confirmation that every staged path was inspected and no class file, private data, or credential was published"
+      },
+      "steps": [
+        "Copy the exact file tree, record, command, message, and check contracts into README before coding; identify which class owns each rule.",
+        "Implement Task construction/state and TaskService pure add/filter/complete behavior with copied lists, stable highest+1 IDs, exact errors, and no mutation on failure.",
+        "Reuse the defensive UTF-8 TaskStore: only a missing file produces empty state, malformed lines stop without write, and successful add/complete saves once.",
+        "Validate args length and command values before indexing, route the four commands in Main, print supplied output, and keep help available without a data file.",
+        "Write at least eight named checks for first/next ID, blank fields, filtering, complete/unknown/repeated complete, malformed preservation, and input-list non-mutation.",
+        "Run the required normal, boundary, invalid, restart, malformed, and repaired-defect cases; debug one failing check from a breakpoint and rerun all checks.",
+        "Finish README prerequisites, IntelliJ and PowerShell compile/run/check commands, data behavior, structure, examples, known limits, and evidence; use the supplied .gitignore and sanitized empty data file.",
+        "Initialize Git, make meaningful commits, create an empty free GitHub repository, inspect `git status --short` before and after staging, remove any secret/private/cache path, push normally, and follow README from a fresh folder view."
+      ],
+      "checklist": [
+        "All supplied commands/messages behave exactly and invalid operations never write.",
+        "Task IDs/status follow the canonical record contract.",
+        "Valid data survives restart while malformed existing data remains unchanged.",
+        "At least eight named checks pass across normal, boundary, invalid, persistence, and no-mutation contracts.",
+        "README documents both IntelliJ and PowerShell routes without an unstated dependency.",
+        "The repository contains intended source/checks/README/sanitized data and no credentials, caches, class files, or private records."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the first useful compiler diagnostic, stack-trace location, or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    }
+  ]
+}

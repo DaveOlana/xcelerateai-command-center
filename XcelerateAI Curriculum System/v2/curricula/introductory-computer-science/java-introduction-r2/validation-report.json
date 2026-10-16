@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "curriculumId": "JAVA",
+  "revision": 2,
+  "candidateOnly": true,
+  "published": false,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 2,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "phases": 3,
+        "competencies": 23,
+        "concepts": 28,
+        "resources": 42,
+        "weeks": 8,
+        "projects": 2
+      }
+    },
+    {
+      "validator": "V012",
+      "name": "Live resource research evidence",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "selectedResources": 42,
+        "checkedAt": "2026-10-16T00:00:00.000Z"
+      }
+    },
+    {
+      "validator": "V020",
+      "name": "Evidence-backed content integrity",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "resourceAudits": 42,
+        "questionAudits": 80,
+        "buildAudits": 8,
+        "weekReadiness": 8,
+        "classificationTotals": {
+          "A": 79,
+          "B": 1,
+          "C": 0,
+          "D": 0
+        }
+      }
+    },
+    {
+      "validator": "V021",
+      "name": "Build-integrated Studio learner contracts",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V022",
+      "name": "Skill Check authoring and assessment coverage",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "questions": 80,
+        "coverageEntries": 80,
+        "distinctTargets": 80
+      }
+    },
+    {
+      "validator": "V018",
+      "name": "Compiled runtime validation",
+      "status": "PASS",
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "NOTE",
+      "message": "The withdrawn JAVA Revision 1 artifact remains preserved for comparison and is not a learner-catalog entry."
+    },
+    {
+      "severity": "NOTE",
+      "message": "External resource access and exact consumption boundaries must be rechecked before a future curriculum revision."
+    }
+  ],
+  "semanticValidation": {
+    "status": "PASS",
+    "method": "Human-led adversarial review examined the tertiary-fresher target, all 23 competencies and 28 concepts, the eight Build contracts, prerequisite edges, deliberate failures, session limits, Proof requirements, and the intended Study-to-assessment mapping. Deterministic validation may consume this judgment but does not create it.",
+    "findingsReviewed": [
+      "Rejected Revision 1’s repeated generated definition-card approach as insufficient instruction and required bounded external teaching plus active rehearsal before each assessment.",
+      "Removed the calculator-first jump: Week 1 is a fixed student card, input begins in Week 2, decisions in Week 3, collections in Week 4, and the first calculator-like composition appears only with methods in Week 5.",
+      "Chose one predictable Scanner pattern before exposing token/line mixing, then introduced narrow NumberFormatException recovery only after the learner has observed the failure.",
+      "Separated fixed arrays from growable ArrayList and made rejected-attempt count, empty state, and off-by-one behavior explicit.",
+      "Constrained the cafe example to supplied integer-naira rules and intermediate results; it does not claim production-grade currency precision.",
+      "Constrained OOP to one observable class and independent state before adding persistence, checks, or CLI integration.",
+      "Separated missing-file recovery from malformed-record preservation and required before/after evidence so failure paths cannot silently erase data.",
+      "Avoided hidden Maven, Gradle, and JUnit prerequisites by using javac/java-compatible source trees and dependency-free check harnesses.",
+      "Required every graded question to map to a named assigned resource and assessment target, to have one defensible answer with plausible Java-specific distractors, and to use varied authored answer positions before runtime reshuffling.",
+      "Kept every Build session at or below 105 minutes and the final capstone sessions at 90, 90, and 60 minutes; setup remains separate from the eight instructional Weeks."
+    ],
+    "adversarialResult": "PASS after the recorded repairs. The remaining simplifications—integer-naira arithmetic, unescaped pipe-delimited records, and a plain-Java check harness—are explicit beginner constraints rather than hidden production claims. No Build requires an unresolved competency outside the established or currently taught path."
+  }
+}

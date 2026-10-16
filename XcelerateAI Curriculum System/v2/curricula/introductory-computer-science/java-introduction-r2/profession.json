@@ -1,0 +1,92 @@
+{
+  "curriculumId": "JAVA",
+  "revision": 2,
+  "researchedAt": "2026-10-16T00:00:00.000Z",
+  "role": "Beginning Java programmer",
+  "roleDefinition": "A learner who can independently produce and explain small dependency-free Java programs using core syntax, typed values, collections, methods, classes, objects, files, narrow exception handling, debugging, checks, Git, and clear run instructions.",
+  "evidenceSummary": "The capability boundary was triangulated across current Java and IntelliJ learning material plus GitHub guidance and constrained to eight six-hour instructional Weeks.",
+  "capabilityTiers": [
+    {
+      "tier": "Foundational",
+      "weeks": "1-4",
+      "outcome": "Compile and run code, reason about typed values, repair basic failures, make validated decisions, and process arrays and lists."
+    },
+    {
+      "tier": "Program construction",
+      "weeks": "5-7",
+      "outcome": "Decompose behavior, model independent object state, persist text defensively, debug, and run dependency-free checks."
+    },
+    {
+      "tier": "Reliable delivery",
+      "weeks": "8",
+      "outcome": "Integrate proven Java competencies into a documented, verified, persistent command-line application."
+    }
+  ],
+  "practitionerOutputs": [
+    "Student Introduction and Study-Time Card",
+    "Campus Profile Collector",
+    "Course Registration Eligibility Checker",
+    "Classroom Score Tracker",
+    "Campus Cafe Order Quote",
+    "Library Loan Desk",
+    "Persistent Study Notes",
+    "StudySprint CLI — Campus Task Companion"
+  ],
+  "professionalPractices": [
+    "predict before running",
+    "read compiler and stack-trace evidence before editing",
+    "validate before mutation or saving",
+    "separate domain logic from input/output",
+    "test normal, boundary, and invalid cases",
+    "preserve malformed data for diagnosis",
+    "document exact commands",
+    "inspect staged files before publishing"
+  ],
+  "boundaries": [
+    "No GUI or web framework",
+    "No Maven or Gradle requirement",
+    "No third-party runtime dependencies",
+    "No database or network API",
+    "No inheritance or concurrency",
+    "No automated cloud deployment"
+  ],
+  "graduationBoundary": "Write, run, debug, verify, document, and publish small dependency-free Java programs with enough fluency for introductory practical examinations and beginner projects.",
+  "technologyDecision": "A current supported JDK, IntelliJ IDEA, PowerShell, Java standard-library APIs, Git, and GitHub minimize setup burden while preserving practical-exam and beginner-project value.",
+  "sources": [
+    "https://www.jetbrains.com/help/idea/installation-guide.html",
+    "https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html",
+    "https://docs.github.com/en/get-started/git-basics/set-up-git",
+    "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+    "https://blog.jetbrains.com/idea/2020/04/tutorial-your-first-java-application/",
+    "https://dev.java/learn/jvm/tools/core/javac/",
+    "https://dev.java/learn/jvm/tools/core/java/",
+    "https://dev.java/learn/language/constructs/basics/primitive-types/",
+    "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Scanner.html#nextLine()",
+    "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#equals(java.lang.Object)",
+    "https://dev.java/learn/jshell-tool/",
+    "https://dev.java/learn/language-basics/using-operators/",
+    "https://dev.java/learn/language-basics/controlling-flow/",
+    "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String)",
+    "https://dev.java/learn/exceptions/catching-handling/",
+    "https://dev.java/learn/language/constructs/basics/arrays/",
+    "https://dev.java/learn/api/collections-framework/lists/",
+    "https://dev.java/learn/api/collections-framework/collection-interface/",
+    "https://dev.java/learn/language/oop/classes-objects/defining-methods/",
+    "https://dev.java/learn/language/oop/classes-objects/calling-methods-constructors/",
+    "https://dev.java/learn/language/oop/classes-objects/creating-classes/",
+    "https://dev.java/learn/classes-objects/creating-objects/",
+    "https://dev.java/learn/language/oop/classes-objects/more-on-classes/",
+    "https://dev.java/learn/java-io/reading-writing/small-files/",
+    "https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html",
+    "https://blog.jetbrains.com/idea/2025/04/debugging-java-code-in-intellij-idea/",
+    "https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories",
+    "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+    "https://learn.microsoft.com/en-us/shows/java-for-beginners/working-with-strings-in-java",
+    "https://learn.microsoft.com/en-us/shows/java-for-beginners/conditional-logic-in-java",
+    "https://learn.microsoft.com/en-us/shows/java-for-beginners/working-with-loops-in-java",
+    "https://learn.microsoft.com/en-us/shows/java-for-beginners/java-methods-part-1",
+    "https://learn.microsoft.com/en-us/shows/java-for-beginners/java-classes-and-packages-part-1",
+    "https://blog.jetbrains.com/idea/2020/05/debugger-basics-in-intellij-idea/"
+  ]
+}

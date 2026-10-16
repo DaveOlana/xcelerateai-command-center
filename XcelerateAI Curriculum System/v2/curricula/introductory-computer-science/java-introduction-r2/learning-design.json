@@ -1,0 +1,56 @@
+{
+  "curriculumId": "JAVA",
+  "revision": 2,
+  "designPrinciple": "A beginner first receives a bounded explanation or demonstration, predicts and traces behavior, then writes, compiles, breaks, repairs, verifies, explains, and proves a progressively less scaffolded program.",
+  "targetLearner": "A tertiary fresher or independent beginner with basic computer literacy and no assumed programming experience",
+  "technologySequence": [
+    "Windows JDK/IntelliJ setup",
+    "source, compiler, JVM, main, and diagnostics",
+    "types, Strings, Scanner, and conversion",
+    "branches and narrow recovery",
+    "loops, arrays, and ArrayList",
+    "methods, returns, and scope",
+    "classes, objects, and encapsulation",
+    "Path, Files, exceptions, debugger, and check harness",
+    "args, Git, README, and GitHub"
+  ],
+  "learningRhythm": [
+    "bounded external Learn or demonstration",
+    "active trace or precise reference",
+    "10-target shuffled Skill Check",
+    "required Build in sessions of at most two hours",
+    "human-reviewable Proof",
+    "specific reflection"
+  ],
+  "resourceRoleStrategy": {
+    "learn": "A short first explanation or visual demonstration.",
+    "practice": "An observable prediction, trace, compile, run, or comparison.",
+    "reference": "A precise bounded lookup beside immediate work, never an unscoped documentation dump."
+  },
+  "progressionPolicy": [
+    "Weeks 1-4 establish execution, typed values, decisions, and iteration without a calculator-first jump.",
+    "Weeks 5-7 combine earlier syntax through methods, objects, persistence, debugging, and checks.",
+    "Week 8 integrates proven competencies into one larger independently inspectable project."
+  ],
+  "workloadPrinciples": [
+    "Eight instructional Weeks at six hours each.",
+    "Setup is separate and skippable only through explicit verification.",
+    "No Build session exceeds two hours.",
+    "Most time is reserved for coding, compiling, debugging, checks, evidence, and explanation rather than passive consumption."
+  ],
+  "assessmentPolicy": "Each Week has ten independently authored, source-mapped questions; 7/10 passes; attempts are unlimited; option order reshuffles per attempt; program competence is judged through Build and Proof, not quiz score alone.",
+  "projectArchitecture": [
+    {
+      "projectId": "JAVA-R2-PJ01",
+      "title": "Java Practice Portfolio",
+      "milestoneCount": 7,
+      "outcome": "Produce seven progressively stronger programs demonstrating execution, typed values, decisions, collections, methods, objects, persistence, debugging, and checks."
+    },
+    {
+      "projectId": "JAVA-R2-PJ02",
+      "title": "StudySprint CLI",
+      "milestoneCount": 1,
+      "outcome": "Deliver and publish a verified, persistent campus-task command-line program with a reproducible README and human-reviewable evidence."
+    }
+  ]
+}

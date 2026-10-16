@@ -37,7 +37,7 @@ const mutationFor = (curriculumId: string, revision: number) => {
   const learnerState = emptyCloudState();
   learnerState.curriculumState.curriculumId = curriculumId;
   learnerState.curriculumState.lastSeenRevision = revision;
-  learnerState.curriculumState.activeWeekId = revision === 2 && ['JSIN', 'PYIN'].includes(curriculumId)
+  learnerState.curriculumState.activeWeekId = revision === 2 && ['JAVA', 'JSIN', 'PYIN'].includes(curriculumId)
     ? `${curriculumId}-R2-W01`
     : `${curriculumId}-W01`;
   return mutation({ curriculumRevision: revision, learnerState });
@@ -151,9 +151,9 @@ describe('deterministic progress hashing', () => {
 describe('V2 progress synchronization API', () => {
   test('enables only established production curricula and the approved introductory R2 replacements', () => {
     expect(CLOUD_ENABLED_CURRICULA).toEqual({
-      FEWE: { revision: 1 }, JSIN: { revision: 2 }, PDES: { revision: 1 }, PYAE: { revision: 3 }, PYIN: { revision: 2 },
+      FEWE: { revision: 1 }, JAVA: { revision: 2 }, JSIN: { revision: 2 }, PDES: { revision: 1 }, PYAE: { revision: 3 }, PYIN: { revision: 2 },
     });
-    for (const curriculumId of ['QBAS', 'CLNG', 'CPPL', 'JAVA', 'WEBD']) {
+    for (const curriculumId of ['QBAS', 'CLNG', 'CPPL', 'WEBD']) {
       expect(curriculumId in CLOUD_ENABLED_CURRICULA).toBe(false);
     }
   });
@@ -300,6 +300,15 @@ describe('V2 progress synchronization API', () => {
     expect(withdrawnPythonR1.statusCode).toBe(400);
     expect(withdrawnPythonR1.json().error.code).toBe('CURRICULUM_METADATA_MISMATCH');
     expect(database.instances.has(`${userA}:PYIN`)).toBe(false);
+    const withdrawnJavaR1 = await app.inject({
+      method: 'PUT',
+      url: '/api/v1/v2/learning-instances/JAVA',
+      headers: auth(),
+      payload: mutationFor('JAVA', 1),
+    });
+    expect(withdrawnJavaR1.statusCode).toBe(400);
+    expect(withdrawnJavaR1.json().error.code).toBe('CURRICULUM_METADATA_MISMATCH');
+    expect(database.instances.has(`${userA}:JAVA`)).toBe(false);
     const wrongArtifactScope = mutation();
     wrongArtifactScope.learnerState.notes.records.push({ id: 'n1', roadmapId: 'OTHER' });
     expect((await put(app, wrongArtifactScope)).statusCode).toBe(400);

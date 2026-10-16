@@ -1,0 +1,1498 @@
+[
+  {
+    "id": "JAVA-R2-SETUP-01",
+    "title": "Install the free core of IntelliJ IDEA on Windows",
+    "url": "https://www.jetbrains.com/help/idea/installation-guide.html",
+    "provider": "JetBrains",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at Install IntelliJ IDEA and read the unified-product note plus Windows system requirements.",
+      "stop": "Stop at the working Welcome screen; do not buy Ultimate, install optional plugins, alter the bundled runtime, or enable remote development.",
+      "note": "Do: Install the current Windows release for the current user, launch it, choose the free core after any Ultimate-trial prompt, and reach the Welcome screen. Record the installed version from Help | About.\n\nFinished when: IntelliJ IDEA opens on Windows and its free Java core remains usable without payment.\n\nNext: Create the verification project and obtain the standalone JDK inside the IDE."
+    },
+    "competencyIds": [
+      "JAVA-C001"
+    ],
+    "whySelected": "The current unified-product guide explicitly confirms that core Java functionality remains free and documents supported Windows installation without requiring an Ultimate subscription.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://www.jetbrains.com/help/idea/installation-guide.html",
+      "finalUrl": "https://www.jetbrains.com/help/idea/installation-guide.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-SETUP-02",
+    "title": "Create a Java project and download JDK 25 in IntelliJ",
+    "url": "https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html",
+    "provider": "JetBrains",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 35,
+    "location": {
+      "start": "Begin at Create a new Java project.",
+      "stop": "Stop after the regular Main class runs; compact source files, packages, JAR artifacts, Maven, Gradle, and paid IDE features are outside Setup.",
+      "note": "Do: Create `java-setup-check` with Java, the IntelliJ build system, and JDK 25; use Download JDK if needed. Under `src`, create a regular `Main` class with `public static void main(String[] args)`, print `Java setup ready`, run from the gutter, and locate the output plus exit code 0.\n\nFinished when: A saved regular Main.java runs with JDK 25 and the learner can point to src, the Run window, program output, and exit code.\n\nNext: Open PowerShell and run `java --version` and `javac --version`; both should report 25 before continuing."
+    },
+    "competencyIds": [
+      "JAVA-C001",
+      "JAVA-C002"
+    ],
+    "whySelected": "The current IntelliJ tutorial joins project creation, the standalone JDK 25 download, source-root recognition, build, run, bytecode output, and exit code in one maintained route.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "course was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html",
+      "finalUrl": "https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-SETUP-03",
+    "title": "Install Git and configure commit identity",
+    "url": "https://docs.github.com/en/get-started/git-basics/set-up-git",
+    "provider": "GitHub",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at Using Git.",
+      "stop": "Stop before GitHub authentication, repository creation, commits, or pushes; those actions are taught when the final project is ready.",
+      "note": "Do: Install Git for Windows if needed, configure the intended global name and email, then verify `git --version`, `git config --global user.name`, and `git config --global user.email` in PowerShell.\n\nFinished when: Git runs in PowerShell and can attribute a later local commit to the intended learner identity.\n\nNext: Verify or create the free GitHub account."
+    },
+    "competencyIds": [
+      "JAVA-C001"
+    ],
+    "whySelected": "GitHub maintains the Windows installation and local identity checklist required before the Week 8 repository is published.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/get-started/git-basics/set-up-git",
+      "finalUrl": "https://docs.github.com/en/get-started/git-basics/set-up-git",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-SETUP-04",
+    "title": "Create or verify a free GitHub account",
+    "url": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+    "provider": "GitHub",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at About your personal account on GitHub.",
+      "stop": "Stop at the working profile page; do not select a paid plan, organization product, Copilot subscription, or repository yet.",
+      "note": "Do: Create a free personal account if needed, verify the email address, sign out, and sign in once. Store no password or token in a course project.\n\nFinished when: The learner can sign in to a verified free GitHub account for Week 8 publication.\n\nAccess: Creating a verified free personal GitHub account is the outcome; no paid plan is required.\n\nNext: Begin the first Core Week 1 resource."
+    },
+    "competencyIds": [
+      "JAVA-C001"
+    ],
+    "whySelected": "The official guide documents a verified free personal account without making a paid plan part of the learning contract.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+      "finalUrl": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W01-01",
+    "title": "See IntelliJ build and run a regular Java class",
+    "url": "https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html",
+    "provider": "JetBrains",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 28,
+    "location": {
+      "start": "Begin at Build and run the application, then use Convert the compact source file into a regular class only to see the regular form.",
+      "stop": "Stop before packages and JAR packaging; do not use compact source syntax in the weekly Build.",
+      "note": "Do: Read Build and run, create the course-required regular `public class Main` and standard main signature directly, run it, find the generated `out` directory, and write one sentence each for source, compiler, bytecode, JVM, output, and exit code.\n\nFinished when: You can distinguish Main.java, compilation, Main.class bytecode, JVM execution, output, and exit code.\n\nNext: Watch the visual first-application walkthrough and reproduce its project navigation actions."
+    },
+    "competencyIds": [
+      "JAVA-C001",
+      "JAVA-C002"
+    ],
+    "whySelected": "The current official tutorial visibly connects a saved source file, javac compilation, generated bytecode, the JVM run, output, and exit code inside the course IDE.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html",
+      "finalUrl": "https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W01-02",
+    "title": "Video walkthrough: your first Java application",
+    "url": "https://blog.jetbrains.com/idea/2020/04/tutorial-your-first-java-application/",
+    "provider": "JetBrains",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 24,
+    "location": {
+      "start": "Start the embedded Your First Java Application video at the beginning.",
+      "stop": "Stop once the class runs from the gutter and the Run window shows the expected labelled output; do not package a JAR.",
+      "note": "Do: Watch through creating the project/class, writing main, running, and locating output. Pause after each action and repeat it in a disposable `video-practice` class; ignore packaging/JAR work if it appears later.\n\nFinished when: You can navigate to src, create a regular class, identify main, run it, and locate output without copying a complete project.\n\nNext: Use the compiler page to prove what javac creates outside the IDE."
+    },
+    "competencyIds": [
+      "JAVA-C001",
+      "JAVA-C002"
+    ],
+    "whySelected": "JetBrains’ free visual walkthrough demonstrates project navigation, class creation, main, run controls, and the Run window; those stable fundamentals still match the current IDE workflow.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://blog.jetbrains.com/idea/2020/04/tutorial-your-first-java-application/",
+      "finalUrl": "https://blog.jetbrains.com/idea/2020/04/tutorial-your-first-java-application/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W01-03",
+    "title": "Compile source into bytecode with javac",
+    "url": "https://dev.java/learn/jvm/tools/core/javac/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 22,
+    "location": {
+      "start": "Begin at Introducing javac and Description.",
+      "stop": "Stop after repairing the semicolon and obtaining a clean compile; modules, annotation processing, cross-compilation, class paths, and extra options are outside this course.",
+      "note": "Do: Read through the .java/.class naming explanation and the `-d` option only. From the project root run `javac -d out src/Main.java`, confirm `out/Main.class`, delete one semicolon, rerun the same command, and record the first message plus location.\n\nFinished when: You can identify the compiler input/output and use the first reported source location for one minimal repair.\n\nNext: Read how the java launcher finds main and reports a runtime stack frame."
+    },
+    "competencyIds": [
+      "JAVA-C002",
+      "JAVA-C003"
+    ],
+    "whySelected": "The official compiler page states exactly how .java source becomes .class bytecode and explains the `-d` destination option used by the Week 1 PowerShell route.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/jvm/tools/core/javac/",
+      "finalUrl": "https://dev.java/learn/jvm/tools/core/javac/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W01-04",
+    "title": "Launch main and read runtime evidence",
+    "url": "https://dev.java/learn/jvm/tools/core/java/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 22,
+    "location": {
+      "start": "Begin at Introducing the Java Tool and read Description through the main-method declaration.",
+      "stop": "Stop after the repaired terminal run; source-file mode, JARs, modules, VM tuning, and advanced launcher options are outside Week 1.",
+      "note": "Do: Run `java -cp out Main`, compare it with the javac step, set the supplied divisor to zero, rebuild, rerun, and annotate exception type, message, and the first `Main.java` frame before restoring the divisor.\n\nFinished when: You can explain that javac reports compile failures while java/JVM execution can produce a runtime exception and stack frame.\n\nNext: Take the Week 1 Skill Check, then create the Student Introduction and Study-Time Card."
+    },
+    "competencyIds": [
+      "JAVA-C002",
+      "JAVA-C003"
+    ],
+    "whySelected": "The official launcher page defines the required main signature, JVM launch step, and argument boundary without collapsing compilation and execution into one unexplained button.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/jvm/tools/core/java/",
+      "finalUrl": "https://dev.java/learn/jvm/tools/core/java/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W02-01",
+    "title": "Declare Java primitive values and Strings",
+    "url": "https://dev.java/learn/language/constructs/basics/primitive-types/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 28,
+    "location": {
+      "start": "Begin at Primitive Types.",
+      "stop": "Stop before numeric ranges beyond int/double, unsigned operations, hexadecimal/binary literals, underscores, arrays, var, and wrapper-class detail.",
+      "note": "Do: Read static typing, int/double/boolean/char, the String note, local-variable initialization, and character/String literals. Type a small `TypesPractice` class; predict then print every value and record the two rejected assignments.\n\nFinished when: You can choose among int, double, boolean, char, and String and explain why String is not a primitive.\n\nNext: Learn the exact line-oriented Scanner boundary used by the Campus Profile Collector."
+    },
+    "competencyIds": [
+      "JAVA-C004"
+    ],
+    "whySelected": "The official bounded page defines static typing, primitive values, String’s reference-type status, literals, local initialization, and the exact quote rules needed this Week.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language/constructs/basics/primitive-types/",
+      "finalUrl": "https://dev.java/learn/language/constructs/basics/primitive-types/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W02-02",
+    "title": "Read complete console lines with Scanner",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Scanner.html#nextLine()",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Read the Scanner class summary, then jump directly to nextLine().",
+      "stop": "Stop after restoring the all-nextLine version; delimiters, regex searching, locales, streams, and multiple Scanners are outside Week 2.",
+      "note": "Do: Create one `Scanner scanner = new Scanner(System.in)`, read three complete lines, echo them with labels, and run with a two-word name. In a disposable copy, call `nextInt()` before `nextLine()` once and record why the apparently skipped line occurs.\n\nFinished when: You can explain why nextLine returns the rest of the current line and why consistent line reads prevent a pending-newline surprise.\n\nNext: Convert the age text and then learn content-safe String comparison."
+    },
+    "competencyIds": [
+      "JAVA-C005"
+    ],
+    "whySelected": "The JDK 25 API defines Scanner token versus line behavior precisely, letting beginners avoid the common nextInt/nextLine pending-newline trap by reading lines consistently.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Scanner.html#nextLine()",
+      "finalUrl": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Scanner.html#nextLine()",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W02-03",
+    "title": "Compare String content with equals",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#equals(java.lang.Object)",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 18,
+    "location": {
+      "start": "Open the String API at equals(Object).",
+      "stop": "Stop before compareTo, Collator, regex, locale-aware comparison, and overriding equals in custom classes.",
+      "note": "Do: Read the equals contract and its return condition only. Run a small example comparing the same input with `==` and `.equals`, predict both results first, and replace the incorrect comparison in the profile program.\n\nFinished when: You can select `.equals` for user-entered text and explain why `==` is not a content comparison for String references.\n\nNext: Use JShell to trace typed declarations, parsing, and two comparison forms."
+    },
+    "competencyIds": [
+      "JAVA-C006"
+    ],
+    "whySelected": "The official JDK contract states exactly that String.equals compares the character sequence, supporting the Week 2 repair without introducing custom object equality.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#equals(java.lang.Object)",
+      "finalUrl": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/String.html#equals(java.lang.Object)",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W02-04",
+    "title": "Interactive trace: input text, parsed number, and equality",
+    "url": "https://dev.java/learn/jshell-tool/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 24,
+    "location": {
+      "start": "Begin at Example of Starting and Stopping a jshell session and Example of Entering Snippets.",
+      "stop": "Stop after the five predictions are corrected; saved scripts, external libraries, startup configuration, JavaFX, and replacing the weekly project with JShell are outside this course.",
+      "note": "Do: Start `jshell` in IntelliJ Terminal, enter `String ageText = \"19\"`, `int age = Integer.parseInt(ageText)`, `age + 1`, `new String(\"yes\").equals(\"yes\")`, and `new String(\"yes\") == \"yes\"`. Predict each type/value before Enter, use `/list`, then `/exit`.\n\nFinished when: You can distinguish quoted text, parsed numeric value, arithmetic, content equality, and reference equality from observed results.\n\nNext: Take the Week 2 Skill Check, then build the Campus Profile Collector."
+    },
+    "competencyIds": [
+      "JAVA-C004",
+      "JAVA-C005",
+      "JAVA-C006"
+    ],
+    "whySelected": "JShell is included with the JDK and provides a no-account feedback loop for inspecting expression types and values without replacing the saved IntelliJ project.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/jshell-tool/",
+      "finalUrl": "https://dev.java/learn/jshell-tool/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W03-01",
+    "title": "Combine comparisons with short-circuit Boolean operators",
+    "url": "https://dev.java/learn/language-basics/using-operators/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at The Equality and Relational Operators, then read The Conditional Operators.",
+      "stop": "Stop before ternary, instanceof, bitwise, shift, and operator-precedence detail not used by the Build.",
+      "note": "Do: Run the comparison example and a three-part eligibility expression. Predict each Boolean result; add a small method call on the right of && to observe that it is skipped when the left side is false.\n\nFinished when: You can write readable range/eligibility conditions and explain why && or || may not evaluate its right operand.\n\nNext: Put invalid, boundary, and successful cases in an intentional if/else-if order."
+    },
+    "competencyIds": [
+      "JAVA-C006",
+      "JAVA-C007"
+    ],
+    "whySelected": "The official operators lesson joins relational, equality, logical complement, and short-circuit &&/|| behavior in runnable examples that match the eligibility rules.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language-basics/using-operators/",
+      "finalUrl": "https://dev.java/learn/language-basics/using-operators/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W03-02",
+    "title": "Order if, else-if, and else branches",
+    "url": "https://dev.java/learn/language-basics/controlling-flow/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 24,
+    "location": {
+      "start": "Begin at The If-Then Statement and continue through The If-Then-Else Statement.",
+      "stop": "Stop before while, for, break, continue, return, and switch; loops arrive in Week 4.",
+      "note": "Do: Run `IfElseDemo`, predict the grade before execution, then adapt it to check invalid age first, missing prerequisite second, low score third, and eligible last. Exercise ages 15, 16, 120, and 121.\n\nFinished when: You can justify the branch order and show that one input produces exactly one result.\n\nNext: Learn how parseInt reports invalid numeric text."
+    },
+    "competencyIds": [
+      "JAVA-C007"
+    ],
+    "whySelected": "The official grade example demonstrates that the first true branch wins, the exact model needed to reject invalid input before testing success.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language-basics/controlling-flow/",
+      "finalUrl": "https://dev.java/learn/language-basics/controlling-flow/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W03-03",
+    "title": "Convert numeric text and identify NumberFormatException",
+    "url": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String)",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 18,
+    "location": {
+      "start": "Open Integer.parseInt(String) and read its Parameters, Returns, and Throws contract.",
+      "stop": "Stop before radix overloads, unsigned parsing, decoding, boxing caches, and other Integer methods.",
+      "note": "Do: Run parseInt with `\"50\"`, `\"-1\"`, `\"\"`, `\"4.5\"`, and `\"fifty\"` one at a time. Record which produce an int and which throw NumberFormatException; preserve the original text in the record.\n\nFinished when: You can predict parseInt outcomes and name NumberFormatException as the expected failure for invalid integer text.\n\nNext: Wrap only that expected conversion in a matching catch."
+    },
+    "competencyIds": [
+      "JAVA-C008"
+    ],
+    "whySelected": "The JDK 25 method contract explicitly names the successful result and NumberFormatException conditions, grounding recovery in the actual conversion boundary.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String)",
+      "finalUrl": "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html#parseInt(java.lang.String)",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W03-04",
+    "title": "Catch an expected conversion failure narrowly",
+    "url": "https://dev.java/learn/exceptions/catching-handling/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 28,
+    "location": {
+      "start": "Begin at Catching and Handling Exceptions, then jump to Practicing Basic Try-Catch.",
+      "stop": "Stop before multi-catch, finally, try-with-resources, custom exceptions, and catching `Exception`; those are not required by this Week.",
+      "note": "Do: Run the basic example, adapt it to catch only NumberFormatException around `Integer.parseInt`, print one clear invalid-input result, and prove a separate programming defect is still visible. Sketch the call stack from the thrown conversion to main.\n\nFinished when: You can recover from expected invalid numeric text without hiding unrelated compile or runtime defects.\n\nNext: Take the Week 3 Skill Check, then build the Course Registration Eligibility Checker."
+    },
+    "competencyIds": [
+      "JAVA-C008",
+      "JAVA-C003"
+    ],
+    "whySelected": "The official try/catch lesson includes runnable basic and multiple-handler practice while supporting the course rule that unrelated defects must not be swallowed.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/exceptions/catching-handling/",
+      "finalUrl": "https://dev.java/learn/exceptions/catching-handling/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W04-01",
+    "title": "Repeat deliberately with while, for, for-each, and break",
+    "url": "https://dev.java/learn/language-basics/controlling-flow/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at The While and Do-while Statements, then read The for Statement and The break Statement.",
+      "stop": "Stop before labeled break/continue, return, switch, and nested-loop exercises; do-while is recognition only and is not required in the Build.",
+      "note": "Do: Run one while loop with an explicit counter, one indexed for loop, and one enhanced for loop. Create a three-column trace for condition, body effect, and update; use an unlabeled break only for a documented sentinel.\n\nFinished when: You can select a loop form, show its progress, and explain how its stopping rule becomes false or reaches break.\n\nNext: Store a fixed probe set in an array and respect zero-based boundaries."
+    },
+    "competencyIds": [
+      "JAVA-C009"
+    ],
+    "whySelected": "The official control-flow page demonstrates loop conditions, updates, enhanced for, infinite-loop risk, and unlabeled break in one maintained source.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language-basics/controlling-flow/",
+      "finalUrl": "https://dev.java/learn/language-basics/controlling-flow/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W04-02",
+    "title": "Create, index, and traverse fixed arrays",
+    "url": "https://dev.java/learn/language/constructs/basics/arrays/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Arrays and read through Using the Length of an Array, then open Practicing Array Creation and Manipulation.",
+      "stop": "Stop before multidimensional arrays, arraycopy, copyOfRange, sorting, and advanced array calculations.",
+      "note": "Do: Create `int[] scores = {55, 70, 85, 100}`, print first and last using `0` and `length - 1`, total with for-each, and deliberately inspect the failure at `scores[scores.length]` before repairing it.\n\nFinished when: You can traverse a fixed array and state that its valid indexes are zero through length minus one.\n\nNext: Compare the fixed array with a typed list that grows as scores are accepted."
+    },
+    "competencyIds": [
+      "JAVA-C010"
+    ],
+    "whySelected": "The official array lesson explicitly teaches fixed length, zero-based indexing, length, initialization, and both indexed and for-each traversal with runnable practice.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language/constructs/basics/arrays/",
+      "finalUrl": "https://dev.java/learn/language/constructs/basics/arrays/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W04-03",
+    "title": "Use a typed ArrayList for a growing ordered list",
+    "url": "https://dev.java/learn/api/collections-framework/lists/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Exploring the List Interface and Choosing your Implementation of the List Interface.",
+      "stop": "Stop before sorting, subList, immutable factories, LinkedList performance, iterators, streams, and concurrent modification detail.",
+      "note": "Do: Read through the basic indexed List operations and Practicing List Operations. Recreate only add, get, set, remove, size, and for-each with four Integer scores; predict the list after every change.\n\nFinished when: You can explain why ArrayList can grow, why size is not a valid last index, and when a fixed array remains sufficient.\n\nNext: Practice collection membership and mutation while keeping loop indexes valid."
+    },
+    "competencyIds": [
+      "JAVA-C011"
+    ],
+    "whySelected": "The official List lesson explains ordered indexed data, why ArrayList is the beginner default, and common get/set/add/remove operations without requiring streams.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/api/collections-framework/lists/",
+      "finalUrl": "https://dev.java/learn/api/collections-framework/lists/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W04-04",
+    "title": "Practice safe ArrayList operations and summary loops",
+    "url": "https://dev.java/learn/api/collections-framework/collection-interface/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Methods That Handle Individual Elements.",
+      "stop": "Stop before bulk operations, removeIf, toArray, predicates, lambdas, streams, sets, maps, and implementation performance.",
+      "note": "Do: Run the add/remove/contains examples with Integer scores. Then traverse an unchanged list to calculate count, total, min, and max; test an empty list separately before any division or first-element read.\n\nFinished when: You can mutate a typed list intentionally, summarize it safely, and avoid using size as an element index.\n\nNext: Take the Week 4 Skill Check, then build the Classroom Score Tracker."
+    },
+    "competencyIds": [
+      "JAVA-C009",
+      "JAVA-C011"
+    ],
+    "whySelected": "The official practice examples make add, remove, contains, size, and iteration observable before the learner combines input validation and summaries.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/api/collections-framework/collection-interface/",
+      "finalUrl": "https://dev.java/learn/api/collections-framework/collection-interface/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W05-01",
+    "title": "Define focused methods and valid overloads",
+    "url": "https://dev.java/learn/language/oop/classes-objects/defining-methods/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 28,
+    "location": {
+      "start": "Begin at Defining a Method and continue through Overloading Methods.",
+      "stop": "Stop before arbitrary arguments, command-line parameters, and reference-type mutation; Week 5 needs only ordinary typed parameters and restrained overloads.",
+      "note": "Do: Read the declaration components, naming guidance, and overload section. Write `static double subtotal(double price, int quantity)` and `static double subtotal(double price, int quantity, double discountRate)`, then prove a return-type-only duplicate fails to compile.\n\nFinished when: You can identify a method signature, choose a return type, and explain why changed return type alone is not overloading.\n\nNext: Trace how arguments enter parameters and why local variables do not escape their method."
+    },
+    "competencyIds": [
+      "JAVA-C012",
+      "JAVA-C014"
+    ],
+    "whySelected": "The official method lesson decomposes modifiers, return type, name, parameter list, body, signature, and overload rules, including why return type alone cannot distinguish an overload.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language/oop/classes-objects/defining-methods/",
+      "finalUrl": "https://dev.java/learn/language/oop/classes-objects/defining-methods/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W05-02",
+    "title": "Pass arguments into typed parameters",
+    "url": "https://dev.java/learn/language/oop/classes-objects/calling-methods-constructors/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Passing Information to a Method or a Constructor and read Parameter Types, Parameter Names, and Passing Primitive Data Type Arguments.",
+      "stop": "Stop before varargs, reference data type arguments, constructors, inheritance, and object mutation; those arrive when objects are introduced.",
+      "note": "Do: Recreate the primitive pass-by-value example with a cafe quantity. Draw caller and callee boxes, predict the values before running, and rename any shadowing local that makes the trace unclear.\n\nFinished when: You can distinguish argument from parameter and explain why reassigning an int parameter does not change the caller variable.\n\nNext: Return values to the caller and compose small calculations."
+    },
+    "competencyIds": [
+      "JAVA-C012",
+      "JAVA-C014"
+    ],
+    "whySelected": "The official lesson distinguishes parameters from arguments and shows Java pass-by-value behavior, giving beginners a concrete model for local method state.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language/oop/classes-objects/calling-methods-constructors/",
+      "finalUrl": "https://dev.java/learn/language/oop/classes-objects/calling-methods-constructors/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W05-03",
+    "title": "Return values and keep local scope visible",
+    "url": "https://dev.java/learn/language/oop/classes-objects/creating-classes/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 24,
+    "location": {
+      "start": "Begin at Declaring Classes and focus only on the class body, fields versus method bodies, method declarations, and returned values in the Bicycle example.",
+      "stop": "Stop before inheritance, interfaces, nested classes, access-control design, and constructors; objects begin in Week 6.",
+      "note": "Do: In a disposable class, write `subtotal`, `discountAmount`, and `finalTotal` methods that return double values. Compose them in main; then try to print a method-local variable from main, record the compiler error, and repair the design by using the return value.\n\nFinished when: You can compose returned values and keep each local variable within its declaring method/block.\n\nNext: Trace a complete cafe quote through four small method calls."
+    },
+    "competencyIds": [
+      "JAVA-C012",
+      "JAVA-C013",
+      "JAVA-C014"
+    ],
+    "whySelected": "The official class declaration example places fields, methods, parameters, returns, and method bodies together, allowing a bounded exercise that contrasts returned results with block-local variables.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language/oop/classes-objects/creating-classes/",
+      "finalUrl": "https://dev.java/learn/language/oop/classes-objects/creating-classes/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W05-04",
+    "title": "Interactive trace: decompose a cafe quote",
+    "url": "https://dev.java/learn/jshell-tool/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Review Example of Entering Snippets, then start a clean `jshell` session.",
+      "stop": "Stop after `/methods` shows the intended contracts and `/exit` closes the session; varargs, lambdas, classes, external dependencies, and production use of JShell are outside Week 5.",
+      "note": "Do: Define `subtotal(double,int)`, `discountRate(boolean)`, `discountAmount(double,double)`, and `finalTotal(double,double)`. Predict and run one normal, one zero-quantity, and one discount case; use `/methods` and attempt to access one method-local name from the shell.\n\nFinished when: You can follow a value from arguments through focused methods to one final returned total and identify a scope boundary.\n\nNext: Take the Week 5 Skill Check, then build the Campus Cafe Order Quote."
+    },
+    "competencyIds": [
+      "JAVA-C012",
+      "JAVA-C013",
+      "JAVA-C014"
+    ],
+    "whySelected": "The installed JShell can define and invoke methods interactively, making parameters, returned values, overload resolution, and local visibility observable before the larger Build.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/jshell-tool/",
+      "finalUrl": "https://dev.java/learn/jshell-tool/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W06-01",
+    "title": "Model state and behavior in a Java class",
+    "url": "https://dev.java/learn/language/oop/classes-objects/creating-classes/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Declaring Classes.",
+      "stop": "Stop before extends, interfaces, generic types, inheritance, nested classes, and packages.",
+      "note": "Do: Read the overview of class declarations, fields, constructors, and methods. Rewrite the Bicycle outline as a Book outline with `title` and `available` fields plus `checkout`, `returnBook`, and `summary` methods; do not copy the full Bicycle implementation.\n\nFinished when: You can separate one object’s state from the methods that read or change it.\n\nNext: Create independent instances through an explicit constructor."
+    },
+    "competencyIds": [
+      "JAVA-C015",
+      "JAVA-C016"
+    ],
+    "whySelected": "The official class lesson presents a class body as fields for state, constructors for initialization, and methods for behavior—the smallest useful object model for Book.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language/oop/classes-objects/creating-classes/",
+      "finalUrl": "https://dev.java/learn/language/oop/classes-objects/creating-classes/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W06-02",
+    "title": "Construct and use independent objects",
+    "url": "https://dev.java/learn/classes-objects/creating-objects/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Creating Objects and continue through Calling an Object’s Methods.",
+      "stop": "Stop before garbage collection detail, aliases beyond recognition, inheritance, and advanced lifecycle topics.",
+      "note": "Do: Read declaration/instantiation/initialization, constructor calls, per-instance fields, and method calls. Adapt the pattern to two books, call checkout on only the second, and record why the first remains available.\n\nFinished when: You can explain that two instances share a class definition but keep independent instance field values.\n\nNext: Use a constructor and this to protect valid initial state."
+    },
+    "competencyIds": [
+      "JAVA-C015",
+      "JAVA-C016"
+    ],
+    "whySelected": "The official object lesson distinguishes declaration, instantiation with new, constructor initialization, object references, per-instance fields, and method calls with diagrams and runnable code.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/classes-objects/creating-objects/",
+      "finalUrl": "https://dev.java/learn/classes-objects/creating-objects/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W06-03",
+    "title": "Initialize private fields with constructors and this",
+    "url": "https://dev.java/learn/language/oop/classes-objects/more-on-classes/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Using the this Keyword and read Using this with a Field; then read only the access-level and instance-versus-static summary relevant to private fields.",
+      "stop": "Stop before constructor chaining/prologues, initialization blocks, final methods, nested classes, inheritance, and subclass access.",
+      "note": "Do: Create a Book constructor with a same-named parameter, reproduce the shadowing defect, repair it with `this.title`, make fields private, and compare two instance `available` values. Temporarily make available static to observe the shared-state defect, then restore it.\n\nFinished when: You can use this to assign a shadowed field and explain why per-book availability must be an instance field rather than static.\n\nNext: Store Book objects in a typed ArrayList and invoke their public behavior."
+    },
+    "competencyIds": [
+      "JAVA-C015",
+      "JAVA-C016"
+    ],
+    "whySelected": "The official `this` and access-control sections expose the exact shadowing repair and instance-versus-static distinction required by the Library Loan Desk.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/language/oop/classes-objects/more-on-classes/",
+      "finalUrl": "https://dev.java/learn/language/oop/classes-objects/more-on-classes/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W06-04",
+    "title": "Manage Book objects in a typed ArrayList",
+    "url": "https://dev.java/learn/api/collections-framework/lists/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Jump to Practicing List Operations and review add, get, size, and iteration only.",
+      "stop": "Stop before sorting, streams, predicates, parallel arrays, maps, inheritance, and exposing private fields.",
+      "note": "Do: Replace the simple values in the practice with three Book instances. Traverse the typed list to print summaries, find a title with `.equals`, checkout exactly one book through its public method, and print all summaries again.\n\nFinished when: You can store typed objects and work through public behavior while each object preserves its own state.\n\nNext: Take the Week 6 Skill Check, then build the Library Loan Desk."
+    },
+    "competencyIds": [
+      "JAVA-C017",
+      "JAVA-C016"
+    ],
+    "whySelected": "Reusing the official List operations with a newly learned object type connects earlier collection knowledge to object behavior without introducing maps, streams, or persistence prematurely.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/api/collections-framework/lists/",
+      "finalUrl": "https://dev.java/learn/api/collections-framework/lists/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W07-01",
+    "title": "Use Path and Files for small UTF-8 text data",
+    "url": "https://dev.java/learn/java-io/reading-writing/small-files/",
+    "provider": "Oracle Java",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Choosing the Right Method for Reading, then read Choosing the Right Method for Writing and the readAllLines/write portion of Commonly Used Methods for Small Files.",
+      "stop": "Stop before bytes, streams, channels, random access, temporary files, binary data, serialization, and large-file optimization.",
+      "note": "Do: Create `Path path = Path.of(\"data\", \"notes.txt\")`; ensure its parent directory exists, write three `id|topic|text` lines with `Files.write(..., StandardCharsets.UTF_8)`, read them with `Files.readAllLines(..., StandardCharsets.UTF_8)`, and print `path.toAbsolutePath()`.\n\nFinished when: You can distinguish a Path value from the Files operation and reproduce the same small UTF-8 records at a documented project-relative location.\n\nNext: Distinguish a legitimate missing first-run file from malformed stored content and I/O failure."
+    },
+    "competencyIds": [
+      "JAVA-C018"
+    ],
+    "whySelected": "The official small-files lesson identifies readAllLines and write as the direct APIs for bounded text files and accepts an explicit Charset, avoiding legacy File and unnecessary stream machinery.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/java-io/reading-writing/small-files/",
+      "finalUrl": "https://dev.java/learn/java-io/reading-writing/small-files/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W07-02",
+    "title": "Separate missing, malformed, and I/O failures",
+    "url": "https://dev.java/learn/exceptions/catching-handling/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at The try Block and The catch Blocks, then use Practicing the Catching of Several Exceptions.",
+      "stop": "Stop before finally, try-with-resources, multi-catch, custom exception classes, blanket `catch (Exception)`, and automatic overwrite/recovery.",
+      "note": "Do: Catch `NoSuchFileException` only around the initial read and return an empty list for that first-run case. Parse each existing line separately and throw/propagate a clear malformed-record error when fields are missing. Let other `IOException` outcomes stop with their message; record the file before and after every case.\n\nFinished when: You can justify why only a truly absent first-run file becomes empty state and why malformed or unreadable existing data must remain untouched.\n\nNext: Use IntelliJ’s debugger on one reproducible failing record."
+    },
+    "competencyIds": [
+      "JAVA-C019",
+      "JAVA-C018"
+    ],
+    "whySelected": "The official handler walkthrough and multiple-catch practice support distinct exception responses while warning against one vague recovery path for unrelated failures.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/exceptions/catching-handling/",
+      "finalUrl": "https://dev.java/learn/exceptions/catching-handling/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W07-03",
+    "title": "Debug one stable failure in IntelliJ IDEA",
+    "url": "https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html",
+    "provider": "JetBrains",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at What Is Debugging? and continue through Set breakpoints, Run the program in debug mode, Analyze the program state, and Step through the program.",
+      "stop": "Stop after the same case and the normal case both pass; watches, expression mutation, conditional breakpoints, remote debugging, hot swap, and concurrency tools are outside this course.",
+      "note": "Do: Set one line breakpoint immediately before record conversion, run the same failing fixture in Debug mode, inspect `line`, `parts`, `parts.length`, and current index, step over once, record the actual value that disproves your expectation, repair one cause, and rerun the identical fixture.\n\nFinished when: You can connect one observed variable/frame to one repaired cause and prove the repair by rerunning the same input.\n\nNext: Encode expected-versus-actual cases in a dependency-free check harness."
+    },
+    "competencyIds": [
+      "JAVA-C020"
+    ],
+    "whySelected": "The current Java 25 tutorial teaches the exact breakpoint, Debug mode, step, variable, frame, repair, and rerun workflow in the course IDE.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html",
+      "finalUrl": "https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W07-04",
+    "title": "Compare expected and actual, repair, then rerun every check",
+    "url": "https://blog.jetbrains.com/idea/2025/04/debugging-java-code-in-intellij-idea/",
+    "provider": "JetBrains",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 26,
+    "location": {
+      "start": "Begin at Debug a failing test and continue through Apply fix and rerun tests.",
+      "stop": "Stop when all six dependency-free checks pass from a normal main method; do not add JUnit, build tools, test generators, mocks, coverage, or change an expected result merely to hide a defect.",
+      "note": "Do: Read the expected/actual, breakpoint, state inspection, fix, and rerun sequence. In `Checks.java`, implement `checkEquals(String name, Object expected, Object actual)` using `Objects.equals`; print PASS when equal and throw `AssertionError(name + \" expected=\" + expected + \" actual=\" + actual)` otherwise. Add six named normal/boundary/invalid cases, make one expected value fail deliberately, debug the cause, restore the honest expectation or implementation, rerun that case, then rerun all six.\n\nFinished when: You can explain expected versus actual, make mismatch visible, repair one cause, rerun the same case, and rerun the complete harness for regression evidence.\n\nNext: Take the Week 7 Skill Check, then build Persistent Study Notes with defensive storage and six checks."
+    },
+    "competencyIds": [
+      "JAVA-C020",
+      "JAVA-C021"
+    ],
+    "whySelected": "The maintained JetBrains walkthrough begins from a visible expected-versus-actual failure, debugs the implementation, applies one fix, reruns the failed case, and explicitly recommends rerunning all tests for unintended effects.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://blog.jetbrains.com/idea/2025/04/debugging-java-code-in-intellij-idea/",
+      "finalUrl": "https://blog.jetbrains.com/idea/2025/04/debugging-java-code-in-intellij-idea/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W08-01",
+    "title": "Read and validate command-line arguments",
+    "url": "https://dev.java/learn/jvm/tools/core/java/",
+    "provider": "Oracle Java",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 24,
+    "location": {
+      "start": "Begin at Introducing the Java Tool and focus on `[args...]`, Description, and the main method signature.",
+      "stop": "Stop before VM options, @-files, JAR packaging, modules, environment variables, shell parsing tricks, and third-party CLI libraries.",
+      "note": "Do: Compile a tiny Main and run `java -cp out Main help`, `list`, `add \"Finish lab\"`, `complete 2`, an empty command, and an unknown command. Print every index/value once; then replace that trace with length-first validation and usable help.\n\nFinished when: You can describe the args token contract, guard every index read, and return clear help for missing or unknown commands.\n\nNext: Create the empty free GitHub repository only after the local project is ready."
+    },
+    "competencyIds": [
+      "JAVA-C022"
+    ],
+    "whySelected": "The official launcher contract states that tokens after the class name enter the main String array, grounding help and length checks in the actual execution model.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://dev.java/learn/jvm/tools/core/java/",
+      "finalUrl": "https://dev.java/learn/jvm/tools/core/java/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W08-02",
+    "title": "Create an empty free GitHub repository",
+    "url": "https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories",
+    "provider": "GitHub",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 14,
+    "location": {
+      "start": "Begin at Creating a repository.",
+      "stop": "Stop when GitHub displays the existing-project command block; do not add collaborators, Actions, Pages, packages, branch protection, or paid products.",
+      "note": "Do: Read the name and visibility guidance, then create one empty public repository matching the local project; leave README, license, and .gitignore initialization unchecked to avoid conflicting history.\n\nFinished when: You have one empty remote repository with no initial commit to conflict with the reviewed local history.\n\nAccess: A verified free GitHub personal account from Setup is required to create and push the final repository; no paid plan is required.\n\nNext: Finish and dry-run the README before staging anything."
+    },
+    "competencyIds": [
+      "JAVA-C023"
+    ],
+    "whySelected": "The official quickstart documents repository name, visibility, and the free personal-account path without making paid features part of delivery.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories",
+      "finalUrl": "https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W08-03",
+    "title": "Write a reproducible Java README",
+    "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "provider": "GitHub",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 16,
+    "location": {
+      "start": "Begin at About READMEs and What should I write in my README?",
+      "stop": "Stop before badges, social preview, wikis, GitHub Pages, sponsorship, and elaborate documentation tooling.",
+      "note": "Do: Read those sections, then document JDK 25, IntelliJ/free-core setup, folder structure, compile/run/check commands, command examples, data location/format, missing versus malformed behavior, acceptance results, and known limits. Follow every command yourself and repair any hidden step.\n\nFinished when: Another beginner can compile, run, verify, and understand the storage contract without guessing a prerequisite or working directory.\n\nNext: Inspect every staged path and publish the existing local repository safely."
+    },
+    "competencyIds": [
+      "JAVA-C023"
+    ],
+    "whySelected": "The official README guidance names purpose, setup, use, support, and maintenance information while leaving the course free to require exact JDK, compile, run, check, and data behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "finalUrl": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W08-04",
+    "title": "Inspect and publish an existing local Java project",
+    "url": "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+    "provider": "GitHub",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at Adding locally hosted code to GitHub and read the secret warning before running a command.",
+      "stop": "Stop after the repository page shows source, Checks.java, README, .gitignore, and safe sample data; never commit credentials, IDE caches, compiled classes, private learner records, or use force push.",
+      "note": "Do: Use the supplied .gitignore for `.idea/`, `out/`, `*.class`, logs, and private data. Sanitize the sample notes/tasks file, run `git status --short`, initialize if needed, stage intended paths, run `git status --short` again, inspect the list, commit, add the remote, and push. Open the remote README and verify the intended files only.\n\nFinished when: The public repository contains only reviewed, reproducible, secret-free project material and its README commands work.\n\nAccess: A verified free GitHub account is required for the final push; authenticate through the browser or Git Credential Manager and never save credentials in project files.\n\nNext: Take the Week 8 Skill Check, complete StudySprint, and submit the existing human-review Proof."
+    },
+    "competencyIds": [
+      "JAVA-C023"
+    ],
+    "whySelected": "The official existing-code route gives the init/add/commit/remote/push sequence and prominently warns against publishing credentials or other sensitive material.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+      "finalUrl": "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W02-05",
+    "title": "Optional video: see how Java Strings behave",
+    "url": "https://learn.microsoft.com/en-us/shows/java-for-beginners/working-with-strings-in-java",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 14,
+    "location": {
+      "start": "Start the Working with Strings in Java episode at 00:00.",
+      "stop": "Stop when the episode ends; do not open the full series, formatting episodes, records, or unrelated Azure material.",
+      "note": "Do: Watch the complete 10-minute episode once. Pause at one String example, predict its result, then reproduce that single example in IntelliJ and compare the output.\n\nFinished when: You can point to a concrete String value in code and describe how the visual example connects to the required `.equals` comparison.\n\nNext: Return to the Core equals card and complete its content-versus-reference trace."
+    },
+    "competencyIds": [
+      "JAVA-C004",
+      "JAVA-C006"
+    ],
+    "whySelected": "A short free episode from Microsoft Java practitioners gives visual reinforcement for String creation and use before the learner runs the required equality trace.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/working-with-strings-in-java",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/working-with-strings-in-java",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W03-05",
+    "title": "Optional video: watch conditional logic in Java",
+    "url": "https://learn.microsoft.com/en-us/shows/java-for-beginners/conditional-logic-in-java",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 14,
+    "location": {
+      "start": "Start the Conditional Logic in Java episode at 00:00.",
+      "stop": "Stop when the episode ends; do not follow the full series or introduce switch, records, Maven, or advanced material.",
+      "note": "Do: Watch the complete episode. Pause before one shown condition resolves, write your predicted Boolean/outcome, then reproduce one comparable if/else decision in IntelliJ.\n\nFinished when: You can narrate how a Boolean condition selects one branch and connect it to the Week 3 ordered rule table.\n\nNext: Return to the Core operator and branch-order cards and run their boundary cases."
+    },
+    "competencyIds": [
+      "JAVA-C006",
+      "JAVA-C007"
+    ],
+    "whySelected": "The focused Microsoft beginner episode demonstrates conditional and logical operators, giving a second modality for learners who need to see branch decisions unfold.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/conditional-logic-in-java",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/conditional-logic-in-java",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W04-05",
+    "title": "Optional video: compare Java loop shapes",
+    "url": "https://learn.microsoft.com/en-us/shows/java-for-beginners/working-with-loops-in-java",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 14,
+    "location": {
+      "start": "Start the Working with Loops in Java episode at 00:00.",
+      "stop": "Stop when the episode ends; do not adopt do-while merely because it appears in the video or continue into collections/Maven episodes.",
+      "note": "Do: Watch the complete episode. Draw each shown loop as initialize, test, body, update; then identify which shape best matches a changing stop rule and explain why.\n\nFinished when: You can compare common loop shapes and justify the while loop chosen for input with two stopping conditions.\n\nNext: Return to the Core loop card and prove progress plus the reachable `break` case."
+    },
+    "competencyIds": [
+      "JAVA-C009"
+    ],
+    "whySelected": "The Microsoft beginner episode visually compares loop choices and their use cases, complementing the precise Core control-flow exercises.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/working-with-loops-in-java",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/working-with-loops-in-java",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W05-05",
+    "title": "Optional video: see a Java method contract",
+    "url": "https://learn.microsoft.com/en-us/shows/java-for-beginners/java-methods-part-1",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 14,
+    "location": {
+      "start": "Start Java Methods - Part 1 at 00:00.",
+      "stop": "Stop when Part 1 ends; Part 2, modules, Maven, frameworks, and advanced method features are outside this optional bridge.",
+      "note": "Do: Watch the complete episode. Pause at one method declaration, label its name, parameters, and result in your notes, then write the equivalent small static method in IntelliJ.\n\nFinished when: You can identify a method call and declaration and explain how arguments lead to a returned result.\n\nNext: Return to the Core method card for signature, overload, return, and scope rules."
+    },
+    "competencyIds": [
+      "JAVA-C012",
+      "JAVA-C013"
+    ],
+    "whySelected": "A Java Champion introduces methods visually in a short Microsoft episode, providing an accessible first pass before the exact declaration and overload rules.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/java-methods-part-1",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/java-methods-part-1",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W06-05",
+    "title": "Optional video: distinguish a class from its objects",
+    "url": "https://learn.microsoft.com/en-us/shows/java-for-beginners/java-classes-and-packages-part-1",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 16,
+    "location": {
+      "start": "Start Java Classes and Packages - Part 1 at 00:00.",
+      "stop": "Stop at the end of Part 1; do not continue into packages, namespaces, modules, inheritance, or frameworks.",
+      "note": "Do: Watch Part 1 only. Draw one box for the class and two boxes for objects, then annotate which field values may differ. Recreate the smallest shown class/object relationship in IntelliJ.\n\nFinished when: You can distinguish the Book class definition from two independently constructed Book objects.\n\nNext: Return to the Core class, object, constructor, and `this` cards."
+    },
+    "competencyIds": [
+      "JAVA-C015",
+      "JAVA-C016"
+    ],
+    "whySelected": "The short Microsoft episode gives a visual introduction to Java classes from a Java Champion before the learner implements independent Book instances.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/java-classes-and-packages-part-1",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/java-for-beginners/java-classes-and-packages-part-1",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  },
+  {
+    "id": "JAVA-R2-W07-05",
+    "title": "Optional video: watch IntelliJ debugger state change",
+    "url": "https://blog.jetbrains.com/idea/2020/05/debugger-basics-in-intellij-idea/",
+    "provider": "JetBrains",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Start the embedded Debugger Basics video and focus on starting Debug, the Debug window, a line breakpoint, variables, and Step Over.",
+      "stop": "Stop before conditional/logging breakpoints, Force Step Into, watches, value mutation, custom equals/hashCode, or other advanced debugger actions.",
+      "note": "Do: Watch only through the basic breakpoint and step-action demonstration. Record one observation for frame, line, and variable value, then reproduce those three observations in the Week 7 fixture.\n\nFinished when: You can locate the current line, selected frame, and local variable value and use that evidence before editing source.\n\nNext: Complete the current IntelliJ first-debug Core card with the same failing input and a verified repair."
+    },
+    "competencyIds": [
+      "JAVA-C020"
+    ],
+    "whySelected": "The JetBrains video-backed walkthrough makes breakpoints, frames, variables, and stepping visible before the learner applies the maintained current debugger tutorial to the Week 7 failure.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-16T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point, not to satisfy a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-16T00:00:00.000Z",
+      "requestedUrl": "https://blog.jetbrains.com/idea/2020/05/debugger-basics-in-intellij-idea/",
+      "finalUrl": "https://blog.jetbrains.com/idea/2020/05/debugger-basics-in-intellij-idea/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, title, public access, and assigned boundary were inspected during the 2026-10-16 production research pass."
+    }
+  }
+]

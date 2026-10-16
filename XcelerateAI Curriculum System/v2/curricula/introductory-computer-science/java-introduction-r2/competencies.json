@@ -1,0 +1,239 @@
+[
+  {
+    "id": "JAVA-C001",
+    "name": "Prepare and verify a Java workspace",
+    "description": "Create an IntelliJ Java project with the intended JDK, identify the source root, and run a saved class.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "JAVA-C002",
+    "name": "Explain source, compilation, and execution",
+    "description": "Distinguish a .java source file, compiler feedback, bytecode, the JVM, a class, and a main entry point at beginner depth.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C001"
+    ]
+  },
+  {
+    "id": "JAVA-C003",
+    "name": "Read and repair early Java errors",
+    "description": "Use IntelliJ/compiler messages, file and line evidence, and a stack trace to repair syntax, name, type, or runtime failures.",
+    "domain": "Debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C001"
+    ]
+  },
+  {
+    "id": "JAVA-C004",
+    "name": "Represent values with Java types",
+    "description": "Declare readable int, double, boolean, char, and String variables; distinguish primitives from references at beginner depth.",
+    "domain": "Language foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C002"
+    ]
+  },
+  {
+    "id": "JAVA-C005",
+    "name": "Read and convert console input",
+    "description": "Use one Scanner deliberately, read text and numeric input without newline surprises, and parse numeric text when appropriate.",
+    "domain": "Input and values",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C004"
+    ]
+  },
+  {
+    "id": "JAVA-C006",
+    "name": "Compare Java values correctly",
+    "description": "Use numeric comparisons, boolean operators, and String.equals instead of reference equality for text decisions.",
+    "domain": "Decisions",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C004"
+    ]
+  },
+  {
+    "id": "JAVA-C007",
+    "name": "Express ordered decisions",
+    "description": "Use if/else-if/else in a deliberate order so invalid, boundary, and successful cases produce one explainable result.",
+    "domain": "Decisions",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C006"
+    ]
+  },
+  {
+    "id": "JAVA-C008",
+    "name": "Recover from invalid numeric text",
+    "description": "Catch NumberFormatException only around the expected conversion boundary without hiding unrelated defects.",
+    "domain": "Validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C003",
+      "JAVA-C005",
+      "JAVA-C007"
+    ]
+  },
+  {
+    "id": "JAVA-C009",
+    "name": "Repeat with progress and stopping rules",
+    "description": "Use for and while loops, deliberate updates, break, and traceable stopping conditions without accidental infinite loops.",
+    "domain": "Iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C007"
+    ]
+  },
+  {
+    "id": "JAVA-C010",
+    "name": "Process fixed arrays",
+    "description": "Create, index, update, and traverse a fixed-length array while respecting zero-based boundaries.",
+    "domain": "Collections",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C004",
+      "JAVA-C009"
+    ]
+  },
+  {
+    "id": "JAVA-C011",
+    "name": "Manage a growing ArrayList",
+    "description": "Create a typed ArrayList, add/get/remove values, inspect size, and traverse without unsafe index changes.",
+    "domain": "Collections",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C009",
+      "JAVA-C010"
+    ]
+  },
+  {
+    "id": "JAVA-C012",
+    "name": "Define focused static methods",
+    "description": "Write static methods with purposeful names, parameters, return types, and one understandable responsibility.",
+    "domain": "Methods",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C004"
+    ]
+  },
+  {
+    "id": "JAVA-C013",
+    "name": "Return and compose values",
+    "description": "Return values rather than relying on incidental printing and combine focused methods into a larger result.",
+    "domain": "Methods",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C012"
+    ]
+  },
+  {
+    "id": "JAVA-C014",
+    "name": "Reason about local scope and overloads",
+    "description": "Keep local variables inside their method boundary and distinguish a changed argument list from a changed return type.",
+    "domain": "Methods",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C012"
+    ]
+  },
+  {
+    "id": "JAVA-C015",
+    "name": "Create simple Java objects",
+    "description": "Define a class, constructor, private instance fields, and independent instances with valid initial state.",
+    "domain": "Object-oriented foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C012"
+    ]
+  },
+  {
+    "id": "JAVA-C016",
+    "name": "Encapsulate object behavior",
+    "description": "Expose focused methods that validate and change one object while preserving its invariants and unrelated instances.",
+    "domain": "Object-oriented foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C015"
+    ]
+  },
+  {
+    "id": "JAVA-C017",
+    "name": "Use object collections",
+    "description": "Store typed objects in an ArrayList and query or summarize them through public methods.",
+    "domain": "Object-oriented foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C011",
+      "JAVA-C016"
+    ]
+  },
+  {
+    "id": "JAVA-C018",
+    "name": "Read and write UTF-8 text with Files",
+    "description": "Use Path and Files with a stable project-relative location, explicit UTF-8, and predictable line records.",
+    "domain": "Files and persistence",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C011"
+    ]
+  },
+  {
+    "id": "JAVA-C019",
+    "name": "Handle file and conversion failures narrowly",
+    "description": "Distinguish a missing first-run file, malformed stored record, and I/O failure without erasing existing data.",
+    "domain": "Files and persistence",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C008",
+      "JAVA-C018"
+    ]
+  },
+  {
+    "id": "JAVA-C020",
+    "name": "Debug one failing case in IntelliJ",
+    "description": "Set a breakpoint, step through one reproducible failure, inspect local values, repair one cause, and rerun the same case.",
+    "domain": "Testing and debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C003"
+    ]
+  },
+  {
+    "id": "JAVA-C021",
+    "name": "Verify behavior with a dependency-free check harness",
+    "description": "Run deterministic normal, boundary, and invalid cases through small check methods without adding a build framework.",
+    "domain": "Verification",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C013",
+      "JAVA-C020"
+    ]
+  },
+  {
+    "id": "JAVA-C022",
+    "name": "Parse a small command-line contract",
+    "description": "Read command-line arguments, validate command shape and values, and provide usable help without ambiguous input.",
+    "domain": "Command-line interfaces",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C007",
+      "JAVA-C012"
+    ]
+  },
+  {
+    "id": "JAVA-C023",
+    "name": "Document and publish a safe Java repository",
+    "description": "Write reproducible JDK/IntelliJ/run instructions, inspect staged paths, commit locally, and push a secret-free project to GitHub.",
+    "domain": "Git and delivery",
+    "importance": "core",
+    "prerequisiteIds": [
+      "JAVA-C001",
+      "JAVA-C021"
+    ]
+  }
+]
