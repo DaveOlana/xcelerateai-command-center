@@ -79,7 +79,7 @@ The authenticated progress surface is:
 
 Phase 2 adds `learning_instances` and `learning_instance_mutations`. Each instance is uniquely owned by a JWT subject and curriculum, uses an optimistic `version`, and has a separate `generation` barrier so stale pre-reset progress cannot merge automatically after a reset. Mutation UUIDs are retained for exact idempotent retries. Progress writes use a transaction and conditional version/generation checks. Direct `anon` and `authenticated` database-table access is revoked; browser application data continues to flow through Fastify.
 
-The progress PUT route alone accepts up to 1 MiB. The global API body limit remains 64 KiB. Cloud synchronization accepts the established production catalog: FEWE Revision 1, JSIN Revision 2, PDES Revision 1, and PYAE Revision 3 with learner-state schema version 1. JSIN Revision 1 and the other withdrawn introductory Revision 1 curricula remain excluded. `npm run verify:schema` verifies both Phase 1 and Phase 2 tables plus every applied migration checksum.
+The progress PUT route alone accepts up to 1 MiB. The global API body limit remains 64 KiB. Cloud synchronization accepts the established production catalog: FEWE Revision 1, JSIN Revision 2, PDES Revision 1, PYAE Revision 3, and PYIN Revision 2 with learner-state schema version 1. JSIN Revision 1, PYIN Revision 1, and the other withdrawn introductory Revision 1 curricula remain excluded. `npm run verify:schema` verifies both Phase 1 and Phase 2 tables plus every applied migration checksum.
 
 ## Phase 3 evidence submission and storage
 

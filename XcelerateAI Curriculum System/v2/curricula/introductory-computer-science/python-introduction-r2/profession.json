@@ -1,0 +1,90 @@
+{
+  "curriculumId": "PYIN",
+  "revision": 2,
+  "researchedAt": "2026-10-15T00:00:00.000Z",
+  "role": "Beginning Python programmer",
+  "roleDefinition": "A learner who can independently produce and explain small dependency-free Python programs using core syntax, collections, functions, classes, modules, files, JSON, tests, debugging, Git, and clear run instructions.",
+  "evidenceSummary": "The capability boundary was triangulated across current Python, Microsoft Learn, Harvard CS50P, University of Helsinki, Python Tutor, VS Code, and GitHub material and constrained to eight six-hour instructional Weeks.",
+  "capabilityTiers": [
+    {
+      "tier": "Foundational",
+      "weeks": "1–3",
+      "outcome": "Run code, reason about values, repair basic failures, make validated decisions, and process collections."
+    },
+    {
+      "tier": "Program construction",
+      "weeks": "4–6",
+      "outcome": "Decompose behavior, persist structured data defensively, and model simple object state."
+    },
+    {
+      "tier": "Reliable delivery",
+      "weeks": "7–8",
+      "outcome": "Modularize, test, debug, document, and publish a coherent command-line application."
+    }
+  ],
+  "practitionerOutputs": [
+    "Student Profile and Study-Time Card",
+    "Course Registration Eligibility Checker",
+    "Campus Club Attendance Tracker",
+    "Campus Cafe Order Quote",
+    "Personal Expense Log",
+    "Library Loan Desk",
+    "Tested Revision Flashcard Engine",
+    "TaskTrail CLI — Campus Task Companion"
+  ],
+  "professionalPractices": [
+    "predict before running",
+    "read traceback evidence before editing",
+    "validate before mutation or saving",
+    "separate pure logic from input/output",
+    "test normal, boundary, and invalid cases",
+    "preserve malformed data for diagnosis",
+    "document exact commands",
+    "inspect staged files before publishing"
+  ],
+  "boundaries": [
+    "No web framework or GUI",
+    "No third-party runtime packages",
+    "No database or network API",
+    "No inheritance or advanced metaprogramming",
+    "No async programming",
+    "No CI/CD requirement"
+  ],
+  "graduationBoundary": "Write, run, debug, test, document, and publish small dependency-free Python programs with enough fluency for introductory practical examinations and beginner projects.",
+  "technologyDecision": "Stable Python 3, VS Code, PowerShell, standard-library modules, Git, and GitHub minimize setup burden while preserving practical-exam and project value.",
+  "sources": [
+    "https://www.python.org/downloads/windows/",
+    "https://code.visualstudio.com/docs/python/python-tutorial",
+    "https://docs.github.com/en/get-started/git-basics/set-up-git",
+    "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+    "https://learn.microsoft.com/en-us/training/modules/write-first-python-code/",
+    "https://learn.microsoft.com/en-us/training/modules/work-with-data-python/",
+    "https://video.cs50.io/JP7ITIXGpHk",
+    "https://docs.python.org/3.15/tutorial/errors.html",
+    "https://learn.microsoft.com/en-us/training/modules/add-decision-making-python/",
+    "https://video.cs50.io/_b6NgY_pMdw",
+    "https://docs.python.org/3.15/tutorial/errors.html#handling-exceptions",
+    "https://pythontutor.com/python-compiler.html",
+    "https://learn.microsoft.com/en-us/training/modules/repeat-actions-loops-python/",
+    "https://learn.microsoft.com/en-us/training/modules/organize-data-with-collections-python/",
+    "https://docs.python.org/3.15/tutorial/datastructures.html",
+    "https://learn.microsoft.com/en-us/training/modules/write-reusable-code-python/",
+    "https://docs.python.org/3.15/tutorial/controlflow.html#defining-functions",
+    "https://learn.microsoft.com/en-us/training/modules/read-write-files-python/",
+    "https://video.cs50.io/KD-Yoel6EVQ",
+    "https://docs.python.org/3.15/library/pathlib.html",
+    "https://docs.python.org/3.15/tutorial/inputoutput.html#saving-structured-data-with-json",
+    "https://docs.python.org/3.15/library/json.html#json.JSONDecodeError",
+    "https://video.cs50.io/e4fwY9ZsxPw",
+    "https://docs.python.org/3.15/tutorial/classes.html#a-first-look-at-classes",
+    "https://docs.python.org/3.15/tutorial/classes.html#class-and-instance-variables",
+    "https://docs.python.org/3.15/tutorial/modules.html#executing-modules-as-scripts",
+    "https://docs.python.org/3.15/library/unittest.html#basic-example",
+    "https://docs.python.org/3.15/library/unittest.html#unittest.TestCase.assertRaisesRegex",
+    "https://code.visualstudio.com/docs/python/debugging",
+    "https://docs.python.org/3.15/howto/argparse.html",
+    "https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories",
+    "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github"
+  ]
+}

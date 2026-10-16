@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "curriculumId": "PYIN",
+  "revision": 2,
+  "candidateOnly": false,
+  "published": true,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 2,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "phases": 3,
+        "competencies": 23,
+        "concepts": 28,
+        "resources": 38,
+        "weeks": 8,
+        "projects": 2
+      }
+    },
+    {
+      "validator": "V012",
+      "name": "Live resource research evidence",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "selectedResources": 38,
+        "checkedAt": "2026-10-15T00:00:00.000Z"
+      }
+    },
+    {
+      "validator": "V020",
+      "name": "Evidence-backed content integrity",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "resourceAudits": 38,
+        "questionAudits": 80,
+        "buildAudits": 8,
+        "weekReadiness": 8,
+        "classificationTotals": {
+          "A": 78,
+          "B": 2,
+          "C": 0,
+          "D": 0
+        }
+      }
+    },
+    {
+      "validator": "V021",
+      "name": "Build-integrated Studio learner contracts",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V022",
+      "name": "Skill Check authoring and assessment coverage",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "questions": 80,
+        "coverageEntries": 80,
+        "distinctTargets": 80
+      }
+    },
+    {
+      "validator": "V018",
+      "name": "Compiled runtime validation",
+      "status": "PASS",
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "NOTE",
+      "message": "The withdrawn PYIN Revision 1 artifact remains preserved for comparison and is not a learner-catalog entry."
+    },
+    {
+      "severity": "NOTE",
+      "message": "External resource access and exact consumption boundaries must be rechecked before a future curriculum revision."
+    }
+  ],
+  "semanticValidation": {
+    "status": "PASS",
+    "method": "Human-led authoring and adversarial review checked the target learner, progression, every bounded resource assignment, all 80 answer keys and evidence mappings, each Build dependency, session workload, failure recovery, and publication integration. Deterministic validation consumes but does not create this judgment.",
+    "findingsReviewed": [
+      "Rejected the withdrawn generated definition-card route and required externally inspectable teaching before every Build.",
+      "Moved calculator-like work to Week 4 after values, decisions, loops, collections, and function contracts are established.",
+      "Replaced vague weekly tasks with exact file trees, state/data contracts, normal/boundary/invalid cases, deliberate defects, and human-reviewable evidence.",
+      "Separated missing-file recovery from malformed-data preservation and kept storage writes after successful validation only.",
+      "Constrained classes to observable instance state and delayed module/test/debug integration until Week 7.",
+      "Reviewed all 80 questions for source grounding, one defensible answer, plausible distractors, substantive feedback, target uniqueness, and balanced authored answer positions; runtime still reshuffles options each attempt.",
+      "Kept every Build session under two hours and every Week within six hours, with setup outside the eight instructional Weeks."
+    ],
+    "adversarialResult": "PASS after repair. No untaught D-class question remains, all eight Builds have zero unresolved hidden prerequisites, all resources have precise consumption boundaries, and the final learner path is comprehensive without becoming an unbounded external course dump."
+  }
+}

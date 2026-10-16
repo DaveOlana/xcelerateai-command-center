@@ -1,0 +1,311 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "PYIN",
+  "revision": 2,
+  "activities": [
+    {
+      "weekId": "PYIN-R2-W01",
+      "title": "Student Profile and Study-Time Card guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "PYIN-R2-B-W01-01"
+      },
+      "contract": {
+        "doing": "Create `student-profile/profile_card.py` from the supplied starter. Ask for a name and planned weekly study minutes, convert the minutes to an integer, calculate hours and remaining minutes, and print a labelled profile card with f-strings. Then deliberately reproduce and repair one NameError and one indentation or missing-colon failure.",
+        "why": "This first program establishes the habits every later practical requires: save the intended file, run the exact command, inspect values, and use a traceback rather than guessing.",
+        "output": "A `student-profile` folder containing a runnable `profile_card.py` and `evidence.md` with three successful cases and two evidence-led repairs.",
+        "tools": "Windows, stable Python 3, VS Code, and PowerShell",
+        "estimatedMinutes": 180,
+        "prerequisites": "Only verified setup capabilities and this Week’s Core Study are required.",
+        "finished": "The same saved file runs from PowerShell with the documented command. The program converts minutes and reports correct hour/remainder values for 360, 95, and 0. Output uses labelled f-strings and the learner can identify string versus integer values. Evidence records distinct NameError and syntax/indentation failures and the clue used to repair each.",
+        "submission": "Exact folder path, Python run command, and final source filename | Three-case expected-versus-actual table | NameError traceback clue and repaired line | Syntax or indentation clue and final clean rerun"
+      },
+      "steps": [
+        "Create the folder and file, paste the starter exactly, save it, run `py profile_card.py`, and record the initial output before adding input.",
+        "Add the supplied name and minutes prompts. Convert minutes with `int`, calculate `hours = minutes // 60` and `remaining_minutes = minutes % 60`, and print a four-line card with f-strings.",
+        "Run three cases: 360 minutes, 95 minutes, and 0 minutes. Record the input, predicted card, and actual card before changing any code.",
+        "Change one use of `name` to `student_name` without changing the assignment. Run the unchanged command, record the last traceback line and highlighted name, then repair it.",
+        "Use the supplied tiny if block to reproduce one missing-colon or indentation error. Record the exception type and caret/line clue, repair it, then rerun all three cases.",
+        "Create `evidence.md` with the exact command, three-case table, two broken lines, traceback clues, repairs, and final clean output."
+      ],
+      "checklist": [
+        "The same saved file runs from PowerShell with the documented command.",
+        "The program converts minutes and reports correct hour/remainder values for 360, 95, and 0.",
+        "Output uses labelled f-strings and the learner can identify string versus integer values.",
+        "Evidence records distinct NameError and syntax/indentation failures and the clue used to repair each."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the last traceback entry or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "PYIN-R2-W02",
+      "title": "Course Registration Eligibility Checker guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "PYIN-R2-B-W02-01"
+      },
+      "contract": {
+        "doing": "Create `registration-checker/check_registration.py`. Ask for age, entrance score, and whether the prerequisite course is complete. Convert the two numeric fields narrowly, normalize the yes/no value, and apply the supplied ordered contract: valid ages are 16–120, scores are 0–100, a score of at least 50 and completed prerequisite are required.",
+        "why": "Practical exams frequently combine conversion, comparisons, Boolean logic, and ordered branches. A registration decision makes boundary values and invalid text visible without hiding errors.",
+        "output": "A registration checker with a stable rule order, seven-case record, narrow ValueError handling, and one documented Boolean repair.",
+        "tools": "Windows, stable Python 3, VS Code, and PowerShell",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: PYIN-C001, PYIN-C002, PYIN-C003. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Numeric conversion catches ValueError without a broad catch-all. The supplied age and score ranges include their boundary values. Only normalized yes or no values are accepted for the prerequisite. All seven cases produce exactly one documented message, and the Boolean-operator defect is repaired.",
+        "submission": "Source path and exact run command | Seven-case expected-versus-actual table | ValueError result for nonnumeric input | Incorrect and repaired Boolean condition with the same rerun case"
+      },
+      "steps": [
+        "Copy the supplied decision contract into `README.md` and predict all seven cases before coding.",
+        "Collect the three inputs and use one small try block for `int(age_text)` and `int(score_text)`. On ValueError, print `INVALID: age and score must be whole numbers.` and do not evaluate eligibility.",
+        "Normalize the prerequisite answer with `strip().lower()` and accept only yes or no. Then order the remaining checks: yes/no validity, numeric ranges, missing prerequisite, score below 50, success.",
+        "Run the seven supplied cases and record exactly one output per case. Confirm age 16, score 50 is accepted when the prerequisite is yes.",
+        "Deliberately replace one `and` with `or` in the success condition. Record the misclassified case, restore the operator, and rerun the same case.",
+        "Keep the source, README contract, case table, and defect note together in the project folder."
+      ],
+      "checklist": [
+        "Numeric conversion catches ValueError without a broad catch-all.",
+        "The supplied age and score ranges include their boundary values.",
+        "Only normalized yes or no values are accepted for the prerequisite.",
+        "All seven cases produce exactly one documented message, and the Boolean-operator defect is repaired."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the last traceback entry or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "PYIN-R2-W03",
+      "title": "Campus Club Attendance Tracker guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "PYIN-R2-B-W03-01"
+      },
+      "contract": {
+        "doing": "Create `club-attendance/attendance.py`. Repeatedly accept a member name and present/absent status until `done` or five valid unique records. Store each record as a dictionary in a list. Reject blank or duplicate names and statuses other than present/absent, then print numbered records and summary totals.",
+        "why": "Attendance data is simple enough to trace but rich enough to practise repetition, collection boundaries, named records, and summary calculations used in practical exams.",
+        "output": "A loop-driven attendance tracker with list-of-dictionary storage, stable validation, correct summaries, and boundary evidence.",
+        "tools": "Windows, stable Python 3, VS Code, and PowerShell",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: PYIN-C004, PYIN-C005, PYIN-C006. New Week concepts are taught in Core Study before this Build.",
+        "finished": "The tracker stops on done or after exactly five valid unique records. Rejected records are not appended and do not consume a valid slot. Every stored record is a dictionary with clear name and status keys. The roster and summary agree for empty, mixed, and five-record cases. The off-by-one failure and repair are documented.",
+        "submission": "Run command and source tree | Normal, empty, duplicate, invalid-status, and five-record results | Completed loop trace for at least four attempts | Off-by-one symptom and repaired condition"
+      },
+      "steps": [
+        "Start with the supplied `records = []` scaffold and trace the loop condition for an empty list, one record, and five records.",
+        "Collect name first. Stop on `done`; otherwise strip it, reject blank or duplicate names case-insensitively, and ask for present/absent.",
+        "Append only a fully valid dictionary with `name` and `status` keys. Ensure every rejected entry returns to the next loop attempt without increasing the valid-record count.",
+        "Use a for loop and enumerate starting at 1 to print the roster. Use a dictionary summary with present and absent counts.",
+        "Run normal, duplicate-name, invalid-status, early-done, and five-record-boundary cases. Deliberately change `< 5` to `<= 5`, observe the extra prompt, repair it, and rerun the boundary.",
+        "Complete the supplied trace table and README instructions."
+      ],
+      "checklist": [
+        "The tracker stops on done or after exactly five valid unique records.",
+        "Rejected records are not appended and do not consume a valid slot.",
+        "Every stored record is a dictionary with clear name and status keys.",
+        "The roster and summary agree for empty, mixed, and five-record cases.",
+        "The off-by-one failure and repair are documented."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the last traceback entry or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "PYIN-R2-W04",
+      "title": "Campus Cafe Order Quote guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "PYIN-R2-B-W04-01"
+      },
+      "contract": {
+        "doing": "Create `cafe-quote/quote.py`. Use the fixed menu and order cases. Implement `calculate_subtotal(prices)`, `calculate_discount(subtotal, is_student)`, `calculate_service_fee(subtotal)`, and `calculate_total(subtotal, discount, fee)`. Student discount is 10%; fee is 200 only when subtotal is below 2000 and greater than zero.",
+        "why": "A quote program is the right place for calculator-like work because learners now have values, decisions, loops, collections, and the ability to separate rules instead of producing one unexplained formula.",
+        "output": "A function-based quote program with exact intermediate results, three passing cases, and documented return/scope reasoning.",
+        "tools": "Windows, stable Python 3, VS Code, and PowerShell",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: PYIN-C004, PYIN-C005, PYIN-C008. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Four named functions each have a single stated responsibility. The functions return amounts that the caller can compose; calculation helpers do not request input. All intermediate and final values match the three supplied cases. Evidence explains the missing-return failure and one local-scope decision.",
+        "submission": "Source and exact run command | Three-case intermediate/final table | Missing-return symptom and repair | One explanation of a local name and why it is not global"
+      },
+      "steps": [
+        "Copy the function contracts and three expected cases before implementation.",
+        "Implement `calculate_subtotal` with a loop and return the sum. Implement the discount and fee functions as amount-returning rules.",
+        "Compose the returned amounts with `subtotal - discount + fee`; keep formatting and printing outside the calculation helpers.",
+        "Run the three supplied cases and compare exact intermediate and final values.",
+        "Delete one return temporarily. Observe the resulting None-related failure or wrong value, record it, restore the return, and rerun all cases.",
+        "Move any accidental global price dependence into parameters and explain which names are local to each call."
+      ],
+      "checklist": [
+        "Four named functions each have a single stated responsibility.",
+        "The functions return amounts that the caller can compose; calculation helpers do not request input.",
+        "All intermediate and final values match the three supplied cases.",
+        "Evidence explains the missing-return failure and one local-scope decision."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the last traceback entry or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "PYIN-R2-W05",
+      "title": "Personal Expense Log guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "PYIN-R2-B-W05-01"
+      },
+      "contract": {
+        "doing": "Create `expense-log/expense_log.py` and `data/expenses.json`. Each record is `{date: \"YYYY-MM-DD\", category: str, amount: float}`. Use a Path based on `__file__`, load with UTF-8 and json, return an empty list only for FileNotFoundError, and let JSONDecodeError stop the program without saving.",
+        "why": "Persistent records are useful only when the program can find its data reliably and refuses to erase evidence it cannot understand.",
+        "output": "A restart-safe JSON expense log with project-relative paths, explicit encoding, and proof that malformed learner data is preserved.",
+        "tools": "Windows, stable Python 3, VS Code, PowerShell, and Python standard-library modules",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: PYIN-C006, PYIN-C009, PYIN-C010, PYIN-C011. New Week concepts are taught in Core Study before this Build.",
+        "finished": "The data path works when the program is launched from its project folder and its parent folder. Only a missing file becomes an empty list; malformed JSON is reported and not overwritten. Every valid record has date, category, and nonnegative numeric amount fields. A saved valid record survives restart and contributes to the correct total. All file handles use with blocks and explicit UTF-8.",
+        "submission": "Project tree and two launch locations | Valid add/restart/list/total result | Five-case persistence record | Malformed JSON before/after comparison and reported exception"
+      },
+      "steps": [
+        "Create the supplied project tree and load/save function scaffolds. Explain what path is produced from `Path(__file__).parent`.",
+        "Implement `load_expenses`: return `[]` only on FileNotFoundError; otherwise load JSON and verify the root value is a list.",
+        "Implement `save_expenses` with parent-folder creation, UTF-8, indentation, and a with block. Save only after a fully valid new record is appended.",
+        "Add one valid expense, restart the program, list records, and compute a total from loaded amounts.",
+        "Run missing-file, valid-file, zero-amount, invalid-amount, and malformed-JSON cases. Before the malformed case, copy the exact file text; after the error, prove it is byte-for-byte unchanged.",
+        "Deliberately remove `encoding=\"utf-8\"`, explain why platform-default encoding is an unreliable contract, then restore it before final evidence."
+      ],
+      "checklist": [
+        "The data path works when the program is launched from its project folder and its parent folder.",
+        "Only a missing file becomes an empty list; malformed JSON is reported and not overwritten.",
+        "Every valid record has date, category, and nonnegative numeric amount fields.",
+        "A saved valid record survives restart and contributes to the correct total.",
+        "All file handles use with blocks and explicit UTF-8."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the last traceback entry or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "PYIN-R2-W06",
+      "title": "Library Loan Desk guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "PYIN-R2-B-W06-01"
+      },
+      "contract": {
+        "doing": "Create `library-desk/library.py`. Define `Book(title, author)` with `available = True`. `checkout()` changes available to False but raises `ValueError(\"book is already checked out\")` when repeated. `return_book()` changes it to True but raises `ValueError(\"book is not checked out\")` when repeated. Create three books and print a labelled catalog.",
+        "why": "A tiny loan model gives classes a real purpose: each book owns separate data while shared methods enforce the same borrowing rules.",
+        "output": "An in-memory library desk whose instances keep independent state and whose methods enforce clear transitions.",
+        "tools": "Windows, stable Python 3, VS Code, PowerShell, and Python standard-library modules",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: PYIN-C008, PYIN-C009, PYIN-C010, PYIN-C011. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Every Book instance has title, author, and its own available attribute. Methods validate before changing state and emit the exact required errors. A change to one book does not alter the other two. The catalog output reflects current instance state. Evidence explains self and the repaired class-versus-instance state defect.",
+        "submission": "Source path and catalog output | Five-case state-transition record | Exact repeated-action errors | Class-level state symptom and instance-level repair explanation"
+      },
+      "steps": [
+        "Copy the supplied class scaffold and predict the attributes of two different instances.",
+        "Implement `__init__`, `checkout`, `return_book`, and `display_line` using self. Validate before changing available.",
+        "Create three instances, checkout only the second, and prove the first and third stay available.",
+        "Run valid checkout/return, repeated checkout, repeated return, and independent-instance cases. Record expected and actual state/message.",
+        "Deliberately assign `Book.available = False` instead of changing one instance. Observe the confusing shared/default behavior, remove the class-level assignment, and restore instance state.",
+        "Explain in README why a class is useful here and why the Week 5 JSON file would need plain dictionaries rather than automatic method storage."
+      ],
+      "checklist": [
+        "Every Book instance has title, author, and its own available attribute.",
+        "Methods validate before changing state and emit the exact required errors.",
+        "A change to one book does not alter the other two.",
+        "The catalog output reflects current instance state.",
+        "Evidence explains self and the repaired class-versus-instance state defect."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the last traceback entry or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "PYIN-R2-W07",
+      "title": "Tested Revision Flashcard Engine guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "PYIN-R2-B-W07-01"
+      },
+      "contract": {
+        "doing": "Create `flashcard-engine/` with `flashcards.py`, `app.py`, and `test_flashcards.py`. A card is `{question: str, answer: str}`. Implement `normalize_answer`, `is_correct`, and `score_answers`; reject unequal card/answer lengths with `ValueError(\"cards and answers must have the same length\")`. Keep interactive flow behind `main()` and the __name__ guard.",
+        "why": "A practical program becomes easier to trust when pure rules can be imported without prompting, tested repeatedly, and inspected at a known failing line.",
+        "output": "A three-file flashcard engine with six passing tests, safe imports, a guarded demo, and debugger evidence for one repaired defect.",
+        "tools": "Windows, stable Python 3, VS Code, PowerShell, and Python standard-library modules",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: PYIN-C009, PYIN-C010, PYIN-C011, PYIN-C015. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Importing flashcards or app does not request input or print an application session. Normalization and scoring match the exact supplied contracts. Six named tests pass and include the exact ValueError case. The debugger record identifies the incorrect increment from inspected values. The main guard runs the demo only when app.py is the entry file.",
+        "submission": "Project tree and import-without-prompt result | Complete verbose output for six passing tests | Failing mixed-score test plus breakpoint values and repair | Direct app run compared with app import behavior"
+      },
+      "steps": [
+        "Create the supplied tree and module scaffold. Import the three functions in a short scratch file and confirm no input prompt starts.",
+        "Implement normalization as `strip().casefold()`, exact normalized comparison, and a score loop that returns an integer.",
+        "Write six named unittest methods for exact match, case/space normalization, wrong answer, empty lists, mixed score, and mismatched lengths with assertRaisesRegex.",
+        "Run `py -m unittest -v` and preserve the first complete passing output.",
+        "Introduce `score += 2` for correct answers so the mixed-score test fails. Set a VS Code breakpoint on the update, run that one test under the debugger, inspect index/answer/score, repair to `+= 1`, and rerun all tests.",
+        "Implement a minimal `main()` that demonstrates three supplied cards. Import app.py again to prove the guard prevents an unsolicited session."
+      ],
+      "checklist": [
+        "Importing flashcards or app does not request input or print an application session.",
+        "Normalization and scoring match the exact supplied contracts.",
+        "Six named tests pass and include the exact ValueError case.",
+        "The debugger record identifies the incorrect increment from inspected values.",
+        "The main guard runs the demo only when app.py is the entry file."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the last traceback entry or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "PYIN-R2-W08",
+      "title": "TaskTrail CLI — Campus Task Companion guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "PYIN-R2-B-W08-01"
+      },
+      "contract": {
+        "doing": "Build `tasktrail-cli`. Each record is exactly `{id: int, title: str, course: str, status: \"open\" | \"done\"}`; IDs start at 1 and use highest existing ID plus 1. Commands are `add \"<title>\" --course \"<course>\"`, `list [--status open|done]`, `complete <id>`, and `--help`. Use argparse subparsers, pure task functions, Week 5 defensive storage, unittest, and the supplied outputs.",
+        "why": "TaskTrail turns separate exercises into a small program with a stable interface, durable data, tests, recovery behavior, and a reproducible handoff.",
+        "output": "A GitHub repository containing a runnable TaskTrail CLI with persistent JSON, at least eight tests, an honest README, and recorded normal, boundary, invalid, restart, malformed-data, and repaired-defect evidence.",
+        "tools": "Windows, stable Python 3, VS Code, PowerShell, Git, a free verified GitHub account, and Python standard-library modules",
+        "estimatedMinutes": 240,
+        "prerequisites": "Previously completed competencies: PYIN-C005, PYIN-C009, PYIN-C010, PYIN-C011, PYIN-C013, PYIN-C014, PYIN-C015, PYIN-C018, PYIN-C019, PYIN-C020, PYIN-C021. New Week concepts are taught in Core Study before this Build.",
+        "finished": "All exact commands and messages behave as supplied; invalid operations never write data. Task IDs and status values follow the canonical record contract. Valid data survives restart while malformed existing JSON remains unchanged. At least eight named tests pass across normal, boundary, invalid, and no-mutation contracts. The README gives exact run/test commands and honest limits. The published repository contains intended source, tests, metadata, README, sanitized data, and no credentials, caches, or private learner records.",
+        "submission": "GitHub repository link and final commit identifier | Exact help and verbose unittest results | Normal, boundary, invalid, restart, and malformed-data acceptance record | One debugger/test-led defect repair | Confirmation that every staged path was inspected and no private data or credential was published"
+      },
+      "steps": [
+        "Copy the exact record, command, message, and file contracts into README before coding. Run each command on paper and identify which layer owns validation, storage, and output.",
+        "Create the project tree. Implement pure `add_task`, `filter_tasks`, and `complete_task` functions with copied lists/records, exact validation errors, stable integer IDs, and no mutation of failed inputs.",
+        "Reuse the defensive JSON storage contract: only FileNotFoundError produces an empty list, malformed JSON stops without a write, and a successful add/complete saves once.",
+        "Declare argparse subparsers for add, list, and complete. Route parsed values in cli.py, print the supplied output, and keep execution behind main and the __name__ guard.",
+        "Write at least eight named tests: first/next ID, blank title/course, open/done filter, unknown status rejected by argparse or pure function as specified, successful complete, unknown ID, repeated complete, and no input mutation.",
+        "Run the normal journey, empty list, filtered list, invalid blank add, unknown ID, repeated complete, restart persistence, and malformed-JSON protection cases. Deliberately reproduce and repair one test-visible defect.",
+        "Finish README prerequisites, setup, exact commands, tests, data behavior, structure, known limits, and evidence. Copy the supplied .gitignore and replace the data file with `[]` or a sanitized sample.",
+        "Initialize Git, make meaningful commits, create a free GitHub repository, inspect `git status --short` before and after `git add .`, remove any secret/private/cache path from staging, push normally, and follow the README from a fresh folder view before proof."
+      ],
+      "checklist": [
+        "All exact commands and messages behave as supplied; invalid operations never write data.",
+        "Task IDs and status values follow the canonical record contract.",
+        "Valid data survives restart while malformed existing JSON remains unchanged.",
+        "At least eight named tests pass across normal, boundary, invalid, and no-mutation contracts.",
+        "The README gives exact run/test commands and honest limits.",
+        "The published repository contains intended source, tests, metadata, README, sanitized data, and no credentials, caches, or private learner records."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest failing case, read the last traceback entry or actual-versus-expected difference, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    }
+  ]
+}

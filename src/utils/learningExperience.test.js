@@ -37,6 +37,7 @@ test('no selected V2 curriculum resolves to catalog mode and ignores stale bundl
     'JavaScript Programming Foundations',
     'Product Design',
     'Python Agent Engineering',
+    'Python Programming Foundations',
   ]);
   assert.equal(curriculumCatalog.listPublished().some((item) => item.title === 'Introduction to JavaScript'), false);
 });

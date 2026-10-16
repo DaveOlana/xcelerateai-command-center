@@ -1,0 +1,240 @@
+[
+  {
+    "id": "PYIN-C001",
+    "name": "Prepare and verify a Python workspace",
+    "description": "Create a project folder, edit a Python file in VS Code, select the intended interpreter, and run it from PowerShell.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "PYIN-C002",
+    "name": "Run scripts and communicate with text",
+    "description": "Use print, input, strings, numeric conversion, and formatted strings in a repeatable saved program.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C001"
+    ]
+  },
+  {
+    "id": "PYIN-C003",
+    "name": "Read and repair an early Python failure",
+    "description": "Use the command, traceback, exception type, line, and caret to repair a wrong path, syntax error, name error, or indentation error.",
+    "domain": "Debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C001"
+    ]
+  },
+  {
+    "id": "PYIN-C004",
+    "name": "Represent and calculate with Python values",
+    "description": "Use readable variables, integers, floats, strings, Booleans, arithmetic operators, precedence, and explicit conversion.",
+    "domain": "Language foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C002"
+    ]
+  },
+  {
+    "id": "PYIN-C005",
+    "name": "Express ordered decisions",
+    "description": "Use comparisons, Boolean operators, and if/elif/else in an order that produces one explainable result.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C004"
+    ]
+  },
+  {
+    "id": "PYIN-C006",
+    "name": "Recover from invalid numeric input",
+    "description": "Use try/except ValueError around the smallest conversion boundary without hiding unrelated defects.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C003",
+      "PYIN-C005"
+    ]
+  },
+  {
+    "id": "PYIN-C007",
+    "name": "Repeat until a condition changes",
+    "description": "Use while, a deliberate state update, break, and a defensible loop condition without creating an accidental infinite loop.",
+    "domain": "Iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C005"
+    ]
+  },
+  {
+    "id": "PYIN-C008",
+    "name": "Process ordered data with lists and for loops",
+    "description": "Create, index, update, append, and traverse a list while respecting zero-based boundaries.",
+    "domain": "Collections and iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C004"
+    ]
+  },
+  {
+    "id": "PYIN-C009",
+    "name": "Model named records with dictionaries",
+    "description": "Create, read, update, test, and iterate dictionary keys and values for understandable records and summaries.",
+    "domain": "Collections and iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C008"
+    ]
+  },
+  {
+    "id": "PYIN-C010",
+    "name": "Define and call focused functions",
+    "description": "Write functions with purposeful names and parameters, then call them with appropriate arguments.",
+    "domain": "Functions and decomposition",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C004"
+    ]
+  },
+  {
+    "id": "PYIN-C011",
+    "name": "Return and compose useful values",
+    "description": "Return values rather than relying on incidental printing, and combine focused functions into a larger calculation.",
+    "domain": "Functions and decomposition",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C010"
+    ]
+  },
+  {
+    "id": "PYIN-C012",
+    "name": "Reason about local scope and mutation",
+    "description": "Distinguish local names from outer names and avoid hidden dependence on mutable global state.",
+    "domain": "Functions and decomposition",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C010"
+    ]
+  },
+  {
+    "id": "PYIN-C013",
+    "name": "Address files with pathlib",
+    "description": "Build a project-relative Path, inspect whether it exists, and avoid depending on an unexplained working-directory assumption.",
+    "domain": "Files and persistence",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C001"
+    ]
+  },
+  {
+    "id": "PYIN-C014",
+    "name": "Read and write text defensively",
+    "description": "Use with blocks and explicit UTF-8 encoding while distinguishing a missing file from an existing unreadable or malformed file.",
+    "domain": "Files and persistence",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C003",
+      "PYIN-C013"
+    ]
+  },
+  {
+    "id": "PYIN-C015",
+    "name": "Round-trip JSON data safely",
+    "description": "Serialize supported Python data to JSON text and load it back without confusing JSON data with executable Python objects.",
+    "domain": "Files and persistence",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C009",
+      "PYIN-C014"
+    ]
+  },
+  {
+    "id": "PYIN-C016",
+    "name": "Create simple class instances",
+    "description": "Define a class initializer, construct independent instances, and distinguish instance attributes from local variables.",
+    "domain": "Object-oriented foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C009",
+      "PYIN-C010"
+    ]
+  },
+  {
+    "id": "PYIN-C017",
+    "name": "Change object state through methods",
+    "description": "Write and call a small instance method that validates and changes the intended object without altering unrelated instances.",
+    "domain": "Object-oriented foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C016"
+    ]
+  },
+  {
+    "id": "PYIN-C018",
+    "name": "Separate a program into modules",
+    "description": "Import focused functions or classes from local modules and avoid accidentally executing application code during import.",
+    "domain": "Program structure",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C010",
+      "PYIN-C011"
+    ]
+  },
+  {
+    "id": "PYIN-C019",
+    "name": "Protect an application entry point",
+    "description": "Use a main function and the __name__ guard so a file behaves deliberately when run and when imported.",
+    "domain": "Program structure",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C018"
+    ]
+  },
+  {
+    "id": "PYIN-C020",
+    "name": "Verify behavior with unittest",
+    "description": "Write deterministic tests with assertEqual, assertRaises, and isolated temporary data for normal, boundary, and invalid behavior.",
+    "domain": "Testing and debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C011",
+      "PYIN-C018"
+    ]
+  },
+  {
+    "id": "PYIN-C021",
+    "name": "Inspect a failing case with the debugger",
+    "description": "Set a breakpoint, step through one failing case, inspect local values, repair one cause, and rerun the same test.",
+    "domain": "Testing and debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C003",
+      "PYIN-C020"
+    ]
+  },
+  {
+    "id": "PYIN-C022",
+    "name": "Parse a small command-line interface",
+    "description": "Use argparse to define commands or options, validate supplied values, and provide usable help without hand-parsing fragile strings.",
+    "domain": "Command-line interfaces",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C005",
+      "PYIN-C010",
+      "PYIN-C019"
+    ]
+  },
+  {
+    "id": "PYIN-C023",
+    "name": "Document and publish a safe Git repository",
+    "description": "Write reproducible setup, run, and test instructions, inspect staged paths, commit locally, and push a secret-free project to GitHub.",
+    "domain": "Git and project delivery",
+    "importance": "core",
+    "prerequisiteIds": [
+      "PYIN-C001",
+      "PYIN-C020"
+    ]
+  }
+]

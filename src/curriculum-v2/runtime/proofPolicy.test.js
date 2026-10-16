@@ -14,6 +14,7 @@ test('only PYAE revision 3 and later use the server Proof submission experience'
   assert.equal(requiresServerProofSubmission({ curriculumId: 'PYAE', revision: 4 }), true);
   assert.equal(requiresServerProofSubmission({ curriculumId: 'PYAE', revision: 2 }), false);
   assert.equal(requiresServerProofSubmission({ curriculumId: 'JSIN', revision: 2 }), false);
+  assert.equal(requiresServerProofSubmission({ curriculumId: 'PYIN', revision: 2 }), false);
   assert.equal(requiresServerProofSubmission({ curriculumId: 'FEWE', revision: 1 }), false);
   assert.equal(requiresServerProofSubmission(null), false);
 });

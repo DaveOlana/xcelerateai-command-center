@@ -14,6 +14,18 @@
       "status": "published",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/javascript-introduction-r2",
       "catalogModule": "src/curriculum-v2/catalog/published/javascriptProgrammingFoundations.js"
+    },
+    {
+      "curriculumId": "PYIN",
+      "title": "Python Programming Foundations",
+      "slug": "python-programming-foundations",
+      "revision": 2,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 105,
+      "status": "published",
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/python-introduction-r2",
+      "catalogModule": "src/curriculum-v2/catalog/published/pythonProgrammingFoundations.js"
     }
   ],
   "historicalRevisions": [
