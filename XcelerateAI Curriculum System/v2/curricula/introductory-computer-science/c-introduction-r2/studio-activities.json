@@ -1,0 +1,319 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "CLNG",
+  "revision": 2,
+  "activities": [
+    {
+      "weekId": "CLNG-R2-W01",
+      "title": "Student Profile Card guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-R2-B-W01-01"
+      },
+      "contract": {
+        "doing": "Create a `student-profile` folder with `profile.c` and `evidence.md`. The program stores an integer student ID, integer weekly minutes, double planned hours, and one char study level, then prints a five-line card. Compile as C17 with `-Wall -Wextra -Wpedantic`, run the exact executable, and repair two deliberate compiler findings without adding input, branches, loops, or calculator behavior.",
+        "why": "Every later C practical depends on knowing which saved source was compiled, which executable ran, how values occupy typed objects, and why serious warnings must be repaired before execution.",
+        "output": "A `student-profile` folder containing warning-free profile.c and evidence.md that reproduces the build, run, warning repair, and syntax repair.",
+        "tools": "Windows, MSYS2 UCRT64 GCC/GDB, VS Code, PowerShell, and the C standard library",
+        "estimatedMinutes": 180,
+        "prerequisites": "Only verified setup capabilities and this Week's Core Study are required.",
+        "finished": "The documented C17 command builds `profile.exe` with zero warnings and the documented run command prints the intended saved version. The final output contains one heading plus correctly labelled ID, weekly minutes, decimal planned hours, and study level. The record distinguishes source, compiler/linker work, executable, and process output in the learner’s own words. The format mismatch is compiled but not run, and its warning, type cause, repair, and clean rebuild are recorded. The missing-semicolon error, source location, repair, and successful rerun are recorded. No input, branching, loop, array, or calculator interface is introduced in Week 1.",
+        "submission": "Exact C17 compile and PowerShell run commands with final output | Explanation of source, build stages, executable, and process output | Compile-only format warning and repaired type match | Missing-semicolon diagnostic and successful clean rerun"
+      },
+      "steps": [
+        "Create `student-profile/profile.c` from the supplied starter, save it, and identify the source file before any executable exists.",
+        "From the project folder, run the supplied C17 GCC command, confirm `profile.exe` is created, run `.\\profile.exe`, and record which step compiled, linked, and executed.",
+        "Set student ID to 24017, weekly minutes to 360, planned hours to `weekly_minutes / 60.0`, and study level to `1`; predict the exact five output lines before rerunning.",
+        "Change weekly minutes to 450, predict the changed hours, save, rebuild, and confirm the executable now prints 7.5 hours rather than old output.",
+        "Temporarily change the student-ID conversion from `%d` to `%f`, compile only, record the warning and expected/supplied types, do not run that mismatched build, restore `%d`, and rebuild cleanly.",
+        "Delete one semicolon, compile, record the first relevant error and source line, restore the semicolon, rebuild with zero warnings, rerun, and complete `evidence.md`."
+      ],
+      "checklist": [
+        "The documented C17 command builds `profile.exe` with zero warnings and the documented run command prints the intended saved version.",
+        "The final output contains one heading plus correctly labelled ID, weekly minutes, decimal planned hours, and study level.",
+        "The record distinguishes source, compiler/linker work, executable, and process output in the learner’s own words.",
+        "The format mismatch is compiled but not run, and its warning, type cause, repair, and clean rebuild are recorded.",
+        "The missing-semicolon error, source location, repair, and successful rerun are recorded.",
+        "No input, branching, loop, array, or calculator interface is introduced in Week 1."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest warning or failing case, read the first relevant compiler, linker, debugger, parse, or actual-versus-expected evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, buffer, record, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "CLNG-R2-W02",
+      "title": "Study-Time Planner guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-R2-B-W02-01"
+      },
+      "contract": {
+        "doing": "Create `study-time-planner/planner.c`. Prompt once for planned study days and minutes per session, require exactly two successful integer conversions, then print total minutes, whole hours, remaining minutes, and decimal hours. Run supplied normal, zero-day boundary, and nonnumeric cases. Range rules belong to Week 3, so record negative or unrealistic values as a known limit rather than inventing hidden validation.",
+        "why": "Small practical programs become unreliable when failed input or integer truncation is invisible; this planner makes both boundaries inspectable before multi-branch validation begins.",
+        "output": "A warning-free one-shot planner with three recorded cases and a type-traced integer-division repair.",
+        "tools": "Windows, MSYS2 UCRT64 GCC/GDB, VS Code, PowerShell, and the C standard library",
+        "estimatedMinutes": 180,
+        "prerequisites": "Previously completed competencies: CLNG-R2-C001, CLNG-R2-C003, CLNG-R2-C004. New Week concepts are taught in Core Study before this Build.",
+        "finished": "`5 90` produces 450 total minutes, 7 hours 30 minutes, and 7.5 decimal hours. `0 90` produces zero in every result without an unexplained error. Nonnumeric input produces the exact error and returns failure without using unconverted objects. Every scanf numeric destination uses its address and the return value is checked before calculation. The integer-truncation defect and conversion-before-division repair are recorded. Negative and unrealistic values are explicitly documented as not yet range-validated rather than silently claimed as supported.",
+        "submission": "Final source plus exact compile/run commands | Normal, zero-day, and nonnumeric case record | scanf conversion-count and address explanation | Integer-truncation reproduction, operand trace, and repair"
+      },
+      "steps": [
+        "Copy the exact prompts, output labels, three cases, and supported one-shot input boundary into `evidence.md` before coding.",
+        "Declare and initialize `days` and `minutes_per_session`; call `scanf(\"%d %d\", &days, &minutes_per_session)` once and store its conversion count.",
+        "If the conversion count is not 2, print the supplied input error to stderr and return 1 before any calculation; otherwise calculate total minutes.",
+        "Calculate whole hours and remainder with `/ 60` and `% 60`, then calculate decimal hours with floating-point division and print all three forms.",
+        "Run `5 90`, `0 90`, and `five 90`; record exit status, output, and whether any calculation ran after invalid input.",
+        "Temporarily calculate decimal hours with `/ 60`, reproduce the 7.0 result for 450 minutes, trace the operand types, repair to `/ 60.0`, and rerun all three cases."
+      ],
+      "checklist": [
+        "`5 90` produces 450 total minutes, 7 hours 30 minutes, and 7.5 decimal hours.",
+        "`0 90` produces zero in every result without an unexplained error.",
+        "Nonnumeric input produces the exact error and returns failure without using unconverted objects.",
+        "Every scanf numeric destination uses its address and the return value is checked before calculation.",
+        "The integer-truncation defect and conversion-before-division repair are recorded.",
+        "Negative and unrealistic values are explicitly documented as not yet range-validated rather than silently claimed as supported."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest warning or failing case, read the first relevant compiler, linker, debugger, parse, or actual-versus-expected evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, buffer, record, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "CLNG-R2-W03",
+      "title": "Practical Exam Eligibility Checker guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-R2-B-W03-01"
+      },
+      "contract": {
+        "doing": "Create `exam-eligibility/eligibility.c`. Read three integers: registered flag (0 or 1), classes held (1–200), and classes attended (0 through held). Reject incomplete scans and invalid ranges before calculating attendance. A learner is eligible only when registered equals 1 and attendance is at least 75.0 percent.",
+        "why": "Practical exams often require several rules at once; reliable C code must reject impossible state before arithmetic and keep invalid input separate from a valid not-eligible result.",
+        "output": "A six-case eligibility checker with a proven zero-divisor guard and truth-table-led logical-operator repair.",
+        "tools": "Windows, MSYS2 UCRT64 GCC/GDB, VS Code, PowerShell, and the C standard library",
+        "estimatedMinutes": 195,
+        "prerequisites": "Previously completed competencies: CLNG-R2-C005, CLNG-R2-C006. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Every incomplete or out-of-range input stops with the documented error before attendance calculation. Classes held equal to zero is rejected without division. Exactly 75.0 percent is eligible when registered; a lower result is not eligible. An unregistered learner remains not eligible even with 100 percent attendance. Each supplied case prints exactly one terminal result. The &&/|| defect is explained with actual truth values and repaired without changing unrelated branches.",
+        "submission": "Written branch order and six-case expected-versus-actual table | Zero-held result proving no percentage calculation ran | 75-percent and registration boundary results | &&/|| truth table, defect result, repair, and full rerun"
+      },
+      "steps": [
+        "Write the rule order and predict the six supplied cases before writing an if statement.",
+        "Read the three integers and reject a conversion count other than 3; then reject a registration flag outside 0/1.",
+        "Reject held outside 1–200 and attended outside 0–held before the percentage expression appears in the executed path.",
+        "Calculate attendance as floating point, then print ELIGIBLE only when registered and percentage rules both pass; otherwise print NOT ELIGIBLE.",
+        "Run registered eligible, unregistered, exactly-75, below-75, zero-held, and attended-greater-than-held cases; record one and only one result per case.",
+        "Temporarily replace the invalid attendance range `attended < 0 || attended > held` with &&, show from a truth table why the invalid case escapes, restore ||, and rerun the focused and full case set."
+      ],
+      "checklist": [
+        "Every incomplete or out-of-range input stops with the documented error before attendance calculation.",
+        "Classes held equal to zero is rejected without division.",
+        "Exactly 75.0 percent is eligible when registered; a lower result is not eligible.",
+        "An unregistered learner remains not eligible even with 100 percent attendance.",
+        "Each supplied case prints exactly one terminal result.",
+        "The &&/|| defect is explained with actual truth values and repaired without changing unrelated branches."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest warning or failing case, read the first relevant compiler, linker, debugger, parse, or actual-versus-expected evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, buffer, record, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "CLNG-R2-W04",
+      "title": "Classroom Score Tracker guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-R2-B-W04-01"
+      },
+      "contract": {
+        "doing": "Create `score-tracker/tracker.c` with `int scores[5] = {0}`. Read a count from 1 through 5, then exactly that many scores from 0 through 100. Stop on invalid input without summarizing partial data. Traverse only the initialized prefix and print total, floating average, minimum, maximum, and scores at least 50.",
+        "why": "Arrays make repeated values practical but remove automatic bounds protection; explicit count, index, and initialized-state reasoning is central to safe C.",
+        "output": "A five-case score tracker with a complete trace table and a safe missing-last-element boundary repair.",
+        "tools": "Windows, MSYS2 UCRT64 GCC/GDB, VS Code, PowerShell, and the C standard library",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: CLNG-R2-C005, CLNG-R2-C007, CLNG-R2-C009. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Count outside 1–5 and score outside 0–100 stops with an error and no partial summary. The program stores and traverses exactly count initialized elements. For `[50, 0, 100, 49, 75]`, total, average, minimum, maximum, and pass count match the supplied contract. Average is floating point and minimum does not incorrectly begin at zero. The omitted-last-element defect is reproduced without out-of-bounds access and then repaired. The evidence explains why index equal to count is outside the initialized collection.",
+        "submission": "Source plus exact warning-enabled compile command | Five-case results with no partial invalid summary | Completed five-row trace table | Safe omitted-last-element defect, repair, and out-of-bounds explanation"
+      },
+      "steps": [
+        "Write the fixed capacity, valid index range, input loop state, summary loop state, and five expected cases in `evidence.md`.",
+        "Read and validate count, then use a for loop to read exactly count scores; reject a failed conversion or value outside 0–100 before storing it.",
+        "Use a second loop over indexes less than count to update total, minimum, maximum, and pass count; calculate average only after a valid nonempty collection.",
+        "Run one score, exactly five scores, 0/100 boundaries, invalid count, and invalid score cases; record whether any unused array element was read.",
+        "Trace indexes and summaries for `[50, 0, 100, 49, 75]` in a row-by-row table and compare the predicted final values with output.",
+        "Temporarily change the summary stop condition from `index < count` to `index < count - 1`, reproduce the missing-last-score result safely, repair it, and explain why `index <= count` would instead be an out-of-bounds defect that must not be run."
+      ],
+      "checklist": [
+        "Count outside 1–5 and score outside 0–100 stops with an error and no partial summary.",
+        "The program stores and traverses exactly count initialized elements.",
+        "For `[50, 0, 100, 49, 75]`, total, average, minimum, maximum, and pass count match the supplied contract.",
+        "Average is floating point and minimum does not incorrectly begin at zero.",
+        "The omitted-last-element defect is reproduced without out-of-bounds access and then repaired.",
+        "The evidence explains why index equal to count is outside the initialized collection."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest warning or failing case, read the first relevant compiler, linker, debugger, parse, or actual-versus-expected evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, buffer, record, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "CLNG-R2-W05",
+      "title": "Campus Utility Calculator guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-R2-B-W05-01"
+      },
+      "contract": {
+        "doing": "Create `campus-calculator/main.c`, `calc.c`, and `calc.h`. Read an operation character and two doubles, validate all three conversions, route only `+`, `-`, `*`, and `/`, and reject division by zero before calling the division helper. Every helper returns a value and performs no console I/O. Compile both translation units with C17 warnings.",
+        "why": "This is the first calculator-like Build because the learner can now validate input and division before composing typed operations behind functions instead of placing every concern in main.",
+        "output": "A seven-case, warning-clean calculator whose arithmetic, console boundary, header contract, and multi-file build can each be explained. ",
+        "tools": "Windows, MSYS2 UCRT64 GCC/GDB, VS Code, PowerShell, and the C standard library",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: CLNG-R2-C005, CLNG-R2-C006, CLNG-R2-C007. New Week concepts are taught in Core Study before this Build.",
+        "finished": "The header is guarded and every declared signature matches its definition. All four valid operations return the expected result and the helpers contain no scanf or printf calls. Invalid input and unsupported operations fail before any result is presented. Division by zero is rejected before the divide helper is called. The recorded missing-object linker failure is correctly distinguished from a compiler syntax failure. The pass-by-value probe and final warning-clean full rerun are recorded.",
+        "submission": "Final three source/header files and exact warning-enabled build command | Seven-case expected-versus-actual record | Captured undefined-reference linker failure and corrected command | Pass-by-value probe plus explanation and final warning-free rerun"
+      },
+      "steps": [
+        "Copy the four-operation contract, exact messages, file responsibilities, and seven supplied cases into `evidence.md` before coding.",
+        "Declare guarded prototypes in `calc.h`; define focused add, subtract, multiply, and divide functions in `calc.c` with signatures that exactly match the header.",
+        "In `main.c`, read the operation and operands, check conversion success, reject unsupported operations, and guard zero before division.",
+        "Compile `main.c calc.c` together, run add, subtract, multiply, divide, zero-divisor, unsupported-operation, and invalid-input cases, and record exact results and exit statuses.",
+        "Temporarily omit `calc.c` from the build command, capture the undefined-reference linker failure, restore the complete command, and explain why editing a semicolon would not solve it.",
+        "Temporarily assign a new value to one ordinary function parameter, prove the caller value does not change, remove the probe, and rerun the seven cases warning-free."
+      ],
+      "checklist": [
+        "The header is guarded and every declared signature matches its definition.",
+        "All four valid operations return the expected result and the helpers contain no scanf or printf calls.",
+        "Invalid input and unsupported operations fail before any result is presented.",
+        "Division by zero is rejected before the divide helper is called.",
+        "The recorded missing-object linker failure is correctly distinguished from a compiler syntax failure.",
+        "The pass-by-value probe and final warning-clean full rerun are recorded."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest warning or failing case, read the first relevant compiler, linker, debugger, parse, or actual-versus-expected evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, buffer, record, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "CLNG-R2-W06",
+      "title": "Student Directory guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-R2-B-W06-01"
+      },
+      "contract": {
+        "doing": "Create `student-directory/directory.c`. Define `Student` with integer id, `char name[40]`, and integer score. Keep at most five initialized records. Use `fgets` for names, reject truncated/empty names, remove one trailing newline when present, and use a focused search function that returns a pointer to a matching live element or NULL. Demonstrate add, list, find, and validated score update through the pointer.",
+        "why": "C gives direct control over storage but no automatic string or pointer guardrails; a small directory makes capacity, lifetime, search failure, and in-place mutation observable.",
+        "output": "A bounded in-memory directory with six safety cases, a live-element search pointer, and an explained string-comparison repair.",
+        "tools": "Windows, MSYS2 UCRT64 GCC/GDB, VS Code, PowerShell, and the C standard library",
+        "estimatedMinutes": 220,
+        "prerequisites": "Previously completed competencies: CLNG-R2-C010, CLNG-R2-C011, CLNG-R2-C013, CLNG-R2-C014. New Week concepts are taught in Core Study before this Build.",
+        "finished": "No accepted name exceeds 39 visible one-byte characters and every accepted name is NUL-terminated. Only initialized records from index zero through count minus one are listed or searched. A missing ID produces a clear not-found result and no dereference or mutation. A found record is updated through a valid Student pointer and the changed value appears on the next list. The full-capacity and overlong-name cases reject safely without changing existing records. The array-identity/string-content defect and strcmp repair are explained and all cases finish warning-free.",
+        "submission": "Final source plus capacity and lifetime notes | Six-case results including full and overlong rejection | Successful pointer update and missing-ID no-mutation evidence | String identity defect, strcmp repair, and warning-clean rerun"
+      },
+      "steps": [
+        "Write the struct, capacity, valid count, line-input policy, pointer lifetime, and six supplied cases before implementation.",
+        "Define Student and a five-element initialized array; add records only while count is below capacity and every field passes validation.",
+        "Read names with a bounded line call, detect a missing newline when extra input remains, remove an optional newline, and reject an empty name.",
+        "Write `Student *find_student(Student records[], size_t count, int id)`; traverse only count elements and return either the matching live element address or NULL.",
+        "Implement list, successful find/update, missing find, full-capacity, longest accepted name, and overlong-name cases; never dereference the result before its NULL check.",
+        "Temporarily compare two name arrays with `==`, capture the warning or incorrect reasoning without relying on the result, replace it with `strcmp`, and rerun all cases."
+      ],
+      "checklist": [
+        "No accepted name exceeds 39 visible one-byte characters and every accepted name is NUL-terminated.",
+        "Only initialized records from index zero through count minus one are listed or searched.",
+        "A missing ID produces a clear not-found result and no dereference or mutation.",
+        "A found record is updated through a valid Student pointer and the changed value appears on the next list.",
+        "The full-capacity and overlong-name cases reject safely without changing existing records.",
+        "The array-identity/string-content defect and strcmp repair are explained and all cases finish warning-free."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest warning or failing case, read the first relevant compiler, linker, debugger, parse, or actual-versus-expected evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, buffer, record, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "CLNG-R2-W07",
+      "title": "Persistent Study Log guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-R2-B-W07-01"
+      },
+      "contract": {
+        "doing": "Create `study-log/` with `main.c`, `study_log.c`, `study_log.h`, and `checks.c`. Store up to 20 records as `id|minutes|subject`, where id is positive, minutes is 1–600, subject is nonempty and contains no pipe, and each line fits a 160-byte buffer. A missing `study-log.txt` begins empty; another open failure or any malformed existing line stops without writing. The normal add path appends one valid record.",
+        "why": "Useful programs survive restarts, but safe persistence means a malformed or unreadable existing file must never be mistaken for empty state and overwritten.",
+        "output": "A six-check persistent study log with a debugger record and byte-preservation evidence for malformed storage.",
+        "tools": "Windows, MSYS2 UCRT64 GCC/GDB, VS Code debugger, PowerShell, and the C standard library",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: CLNG-R2-C016, CLNG-R2-C017, CLNG-R2-C018, CLNG-R2-C019. New Week concepts are taught in Core Study before this Build.",
+        "finished": "A confirmed missing first-run file starts empty, while another open failure stops with an error. Every accepted line has all fields, valid ranges, allowed delimiter content, and fits bounded storage. A malformed existing file causes no append, truncation, replacement, or silent partial load. The normal append remains after restart and receives a unique positive ID. The debugger record shows the failing values before the one-cause repair. All six named checks pass warning-free and the malformed-file before/after comparison matches.",
+        "submission": "Source/header/check files and exact debug/release build commands | Six named check results plus normal restart evidence | Debugger values for duplicate-ID failure and focused repair | Malformed-file before/after hash or byte comparison proving no mutation"
+      },
+      "steps": [
+        "Copy the line grammar, capacity, error categories, six checks, and failure-preservation rule into `evidence.md` before opening a file.",
+        "Implement checked load: open for reading, treat only a confirmed missing file as empty, use a bounded successful-read loop, require complete parsing and ranges, and stop on malformed, read, or close failure.",
+        "Implement append only after a complete valid load and valid new record; list only initialized records and never open existing data in truncating mode.",
+        "Write six named checks for missing first run, valid two-record load, malformed-line rejection, capacity boundary, valid append/reload, and no mutation after malformed input.",
+        "Seed the supplied defect `next_id = highest_id`, reproduce the duplicate-ID check failure, compile with debug symbols, pause before assignment in VS Code/GDB, record highest_id and next_id, repair to highest_id + 1, and rerun the same check.",
+        "Run all six checks and the normal, missing, malformed, and append/restart scenarios; compare the malformed file before and after to prove byte-for-byte preservation."
+      ],
+      "checklist": [
+        "A confirmed missing first-run file starts empty, while another open failure stops with an error.",
+        "Every accepted line has all fields, valid ranges, allowed delimiter content, and fits bounded storage.",
+        "A malformed existing file causes no append, truncation, replacement, or silent partial load.",
+        "The normal append remains after restart and receives a unique positive ID.",
+        "The debugger record shows the failing values before the one-cause repair.",
+        "All six named checks pass warning-free and the malformed-file before/after comparison matches."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest warning or failing case, read the first relevant compiler, linker, debugger, parse, or actual-versus-expected evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, buffer, record, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    },
+    {
+      "weekId": "CLNG-R2-W08",
+      "title": "LabTrack CLI guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "CLNG-R2-B-W08-01"
+      },
+      "contract": {
+        "doing": "Build `LabTrack`, a dependency-free C17 command-line lab-task tracker. Use five files—`main.c`, `task.c`, `task.h`, `store.c`, and `checks.c`—plus README, `.gitignore`, and safe sample data. Commands are `add <course> <task>`, `list`, `complete <id>`, and `help`. Store `id|status|course|task`; reject missing/extra arguments, unknown commands, invalid IDs, duplicate completion, capacity overflow, forbidden delimiters, and malformed existing storage before any write.",
+        "why": "The capstone proves practical-exam syntax and dependable beginner-project delivery together: a reviewer can clone, build, test, run, and inspect the program without hidden tools or private data.",
+        "output": "A source-only public LabTrack repository that another learner can clone, build, check, and run from its README, with human-reviewable acceptance evidence.",
+        "tools": "Windows, MSYS2 UCRT64 GCC/GDB, VS Code debugger, PowerShell, Git, a free verified GitHub account, and the C standard library",
+        "estimatedMinutes": 240,
+        "prerequisites": "Previously completed competencies: CLNG-R2-C013, CLNG-R2-C015, CLNG-R2-C016, CLNG-R2-C019, CLNG-R2-C022. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Every command validates its exact argument count before reading the corresponding argv element. The four-command contract and all twelve acceptance cases produce one documented result and meaningful exit status. Malformed existing data and rejected operations produce no persistent mutation. All eight dependency-free checks pass after the recorded debugger-led repair. README commands rebuild and run from a fresh clone with C17 warnings enabled. The public repository contains no executable/object output, secrets, editor-specific machine paths, or real learner records.",
+        "submission": "Public GitHub repository link | Eight-check output and twelve-case acceptance record | Malformed-storage no-mutation and debugger repair evidence | Fresh-clone README verification plus confirmation that staged/published paths contain no private or generated files"
+      },
+      "steps": [
+        "Create the supplied tree, command/result table, record grammar, eight-check list, README headings, `.gitignore`, and twelve acceptance cases before implementation.",
+        "Implement the Task model and focused add/list/complete operations; keep command parsing in main and validate argc before every argv index.",
+        "Reuse Week 7 load/save rules in Store: fixed capacities, complete parse, missing-only empty state, temporary-file replacement only after full validation, and no mutation after a rejected command.",
+        "Run eight named checks covering argument count, unknown command, valid add, list, complete, missing ID, malformed storage preservation, and restart persistence; debug one reproducible failure without changing a valid expectation.",
+        "Write README prerequisites, exact warning-enabled build/check commands, command examples, storage contract, known limits, and troubleshooting; add generated executables, objects, editor caches, secrets, and real learner data to `.gitignore`.",
+        "Initialize Git, inspect `git status --short` before and after staging, make focused local commits, create an empty GitHub repository, push, clone into a fresh folder, follow the README, rerun checks and twelve cases, and inspect the published file list."
+      ],
+      "checklist": [
+        "Every command validates its exact argument count before reading the corresponding argv element.",
+        "The four-command contract and all twelve acceptance cases produce one documented result and meaningful exit status.",
+        "Malformed existing data and rejected operations produce no persistent mutation.",
+        "All eight dependency-free checks pass after the recorded debugger-led repair.",
+        "README commands rebuild and run from a fresh clone with C17 warnings enabled.",
+        "The public repository contains no executable/object output, secrets, editor-specific machine paths, or real learner records."
+      ],
+      "stuck": "Return to the exact cited Core boundary for the failing concept, reduce the program to the smallest warning or failing case, read the first relevant compiler, linker, debugger, parse, or actual-versus-expected evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every tool, command, concept, file, buffer, record, and output is taught earlier, taught in current bounded Study, or supplied directly by the Build contract and starter."
+      }
+    }
+  ]
+}

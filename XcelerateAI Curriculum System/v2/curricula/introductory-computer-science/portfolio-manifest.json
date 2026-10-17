@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T00:00:00.000Z",
+  "updatedAt": "2026-10-17T00:00:00.000Z",
   "category": "Introductory Computer Science",
   "publicationPolicy": "individually-reviewed-replacements-only",
   "activeCourses": [
@@ -38,6 +38,18 @@
       "status": "published",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/java-introduction-r2",
       "catalogModule": "src/curriculum-v2/catalog/published/javaProgrammingFoundations.js"
+    },
+    {
+      "curriculumId": "CLNG",
+      "title": "C Programming Foundations",
+      "slug": "c-programming-foundations",
+      "revision": 2,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 150,
+      "status": "published",
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/c-introduction-r2",
+      "catalogModule": "src/curriculum-v2/catalog/published/cProgrammingFoundations.js"
     }
   ],
   "historicalRevisions": [

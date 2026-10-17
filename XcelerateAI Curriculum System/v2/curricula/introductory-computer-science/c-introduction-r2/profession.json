@@ -1,0 +1,83 @@
+{
+  "curriculumId": "CLNG",
+  "revision": 2,
+  "researchedAt": "2026-10-17T00:00:00.000Z",
+  "role": "Beginning C programmer",
+  "roleDefinition": "A learner who can independently produce and explain small warning-clean C17 programs using core syntax, typed values, formatted I/O, validation, loops, arrays, functions, bounded strings, pointers to live objects, structs, checked text files, debugging, dependency-free checks, Git, and clear build instructions.",
+  "evidenceSummary": "The capability boundary was triangulated across current C teaching, compiler/library documentation, debugger guidance, and GitHub safety material, then constrained to eight six-hour instructional Weeks.",
+  "capabilityTiers": [
+    {
+      "tier": "Foundational",
+      "weeks": "1-4",
+      "outcome": "Compile and run code, reason about typed values, repair diagnostics, validate numeric input, make decisions, and process fixed arrays within bounds."
+    },
+    {
+      "tier": "Program construction",
+      "weeks": "5-7",
+      "outcome": "Decompose multi-file behavior, manage bounded text and live-object pointers, model records, persist defensively, debug, and run dependency-free checks."
+    },
+    {
+      "tier": "Reliable delivery",
+      "weeks": "8",
+      "outcome": "Integrate proven C competencies into a documented, verified, persistent command-line application and publish source safely."
+    }
+  ],
+  "practitionerOutputs": [
+    "Student Profile Card",
+    "Study-Time Planner",
+    "Practical Exam Eligibility Checker",
+    "Classroom Score Tracker",
+    "Campus Utility Calculator",
+    "Student Directory",
+    "Persistent Study Log",
+    "LabTrack CLI"
+  ],
+  "professionalPractices": [
+    "predict before compiling or running",
+    "keep warnings enabled",
+    "read the first relevant diagnostic before editing",
+    "validate conversions, ranges, capacities, and divisors before use",
+    "keep pointers tied to live objects",
+    "test normal, boundary, invalid, missing, and malformed cases",
+    "preserve failed input and existing files for diagnosis",
+    "document exact build and run commands",
+    "inspect staged files before publishing"
+  ],
+  "boundaries": [
+    "No GUI or web framework",
+    "No third-party runtime dependencies",
+    "No dynamic-memory allocation requirement",
+    "No pointer arithmetic curriculum",
+    "No database or network API",
+    "No concurrency",
+    "No automated cloud deployment",
+    "No claim of production security"
+  ],
+  "graduationBoundary": "Write, compile, debug, verify, document, and publish small warning-clean C17 programs with enough fluency for introductory practical examinations and beginner projects.",
+  "technologyDecision": "MSYS2 UCRT64 GCC/GDB, VS Code, PowerShell, the C standard library, Git, and GitHub provide a maintained Windows route with high practical-exam value and no paid IDE requirement.",
+  "sources": [
+    "https://www.msys2.org/docs/installer/",
+    "https://www.msys2.org/docs/environments/",
+    "https://code.visualstudio.com/docs/cpp/config-mingw",
+    "https://docs.github.com/en/get-started/git-basics/set-up-git",
+    "https://onecompiler.org/courses/c/first-c-program",
+    "https://gcc.sourceware.org/onlinedocs/gcc/Warning-Options.html",
+    "https://en.cppreference.com/c/io/printf",
+    "https://en.cppreference.com/c/io/fscanf",
+    "https://onecompiler.org/c",
+    "https://beej.us/guide/bgc/html/index.html",
+    "https://onecompiler.org/courses/c",
+    "https://cs50.harvard.edu/x/shorts/operators/",
+    "https://cs50.harvard.edu/x/shorts/loops/",
+    "https://cs50.harvard.edu/x/shorts/arrays/",
+    "https://cs50.harvard.edu/x/shorts/functions/",
+    "https://en.cppreference.com/c/io/fgets",
+    "https://cs50.harvard.edu/x/shorts/pointers/",
+    "https://en.cppreference.com/c/io/fopen",
+    "https://code.visualstudio.com/docs/cpp/cpp-debug",
+    "https://github.com/ThrowTheSwitch/unity",
+    "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+    "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+  ]
+}

@@ -1,0 +1,265 @@
+[
+  {
+    "id": "CLNG-R2-C001",
+    "name": "Verify a Windows C workspace",
+    "description": "Open a C project in VS Code, verify the intended GCC and GDB executables, compile a saved C17 source file with warnings enabled, and run the resulting executable from PowerShell.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "CLNG-R2-C002",
+    "name": "Explain how C source becomes a running program",
+    "description": "Distinguish source, preprocessing, compilation, linking, an executable file, and process output at beginner depth.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C001"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C003",
+    "name": "Read and repair early C diagnostics",
+    "description": "Use the command, diagnostic severity, source location, and first relevant message to repair a syntax, declaration, or format-specifier problem without guessing.",
+    "domain": "Debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C001"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C004",
+    "name": "Represent and print typed C values",
+    "description": "Declare initialized int, double, and char objects and match each value to a correct printf conversion specifier.",
+    "domain": "Values and memory",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C002"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C005",
+    "name": "Read one-shot numeric input safely",
+    "description": "Use scanf for a bounded beginner input contract, supply writable object addresses, and check the conversion count before using any result.",
+    "domain": "Input and memory",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C004"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C006",
+    "name": "Evaluate arithmetic and conversions predictably",
+    "description": "Apply precedence, integer division, remainder, explicit conversion, and floating-point arithmetic so calculated output matches the stated value model.",
+    "domain": "Expressions",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C004"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C007",
+    "name": "Express ordered decisions",
+    "description": "Use if, else if, and else in a deliberate order so invalid, boundary, unsuccessful, and successful cases take one explainable path.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C005"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C008",
+    "name": "Combine comparisons with logical operators",
+    "description": "Use relational, equality, &&, ||, and ! expressions with short-circuit behavior to state a complete decision rule.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C007"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C009",
+    "name": "Validate before unsafe arithmetic or state changes",
+    "description": "Reject invalid ranges and zero divisors before performing dependent calculations, then preserve a clear error path without using invalid values.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C006",
+      "CLNG-R2-C008"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C010",
+    "name": "Repeat work with traceable progress",
+    "description": "Use for and while loops with an intentional starting state, update, and stopping condition, and trace changing values without guessing.",
+    "domain": "Iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C007"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C011",
+    "name": "Process fixed arrays within bounds",
+    "description": "Declare initialized fixed-size arrays, distinguish element count from the last valid index, and traverse only initialized elements.",
+    "domain": "Arrays and memory",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C004",
+      "CLNG-R2-C010"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C012",
+    "name": "Summarize a bounded set of values",
+    "description": "Use counters and accumulators to compute total, average, minimum, maximum, and threshold counts while handling the empty case deliberately.",
+    "domain": "Arrays and iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C006",
+      "CLNG-R2-C011"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C013",
+    "name": "Define focused functions and prototypes",
+    "description": "Declare and define functions with purposeful names, parameter types, return types, and one understandable responsibility.",
+    "domain": "Functions and program structure",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C006"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C014",
+    "name": "Return values and reason about pass-by-value",
+    "description": "Compose returned results, keep temporary objects in local scope, and explain why changing a value parameter does not change the caller object.",
+    "domain": "Functions and memory",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C013"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C015",
+    "name": "Build and link a small multi-file C program",
+    "description": "Place declarations in a guarded header, definitions in source files, compile all required translation units, and distinguish compiler errors from linker errors.",
+    "domain": "Program structure",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C003",
+      "CLNG-R2-C013"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C016",
+    "name": "Handle bounded C strings",
+    "description": "Treat a string as a NUL-terminated char array, measure capacity separately from text length, and copy or inspect text without reading or writing past its array.",
+    "domain": "Strings and memory",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C011"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C017",
+    "name": "Use pointers with a valid object and lifetime",
+    "description": "Take an address, dereference only a valid pointer, check for NULL where required, and avoid returning or retaining an address after its object lifetime ends.",
+    "domain": "Pointers and memory",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C014",
+      "CLNG-R2-C016"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C018",
+    "name": "Model one record with a struct",
+    "description": "Define a struct type whose members represent one coherent record, initialize independent objects, and access members with the appropriate operator.",
+    "domain": "Structured data",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C004",
+      "CLNG-R2-C016"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C019",
+    "name": "Process fixed struct arrays through pointers",
+    "description": "Search a bounded array of records, return a pointer to a matching live element or NULL, and update one record through a validated struct pointer.",
+    "domain": "Structured data and memory",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C011",
+      "CLNG-R2-C017",
+      "CLNG-R2-C018"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C020",
+    "name": "Persist and parse bounded text records",
+    "description": "Read and write a documented line format with FILE operations, bounded buffers, checked parse results, and capacity protection.",
+    "domain": "Files and persistence",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C016",
+      "CLNG-R2-C019"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C021",
+    "name": "Handle file failures without destroying data",
+    "description": "Distinguish a missing first-run file, another open failure, malformed existing content, end of file, and a read or close failure before any replacement write.",
+    "domain": "Files and error handling",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C009",
+      "CLNG-R2-C020"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C022",
+    "name": "Debug one reproducible C failure",
+    "description": "Build with warnings and debug symbols, reproduce one failing case, pause in VS Code or GDB, inspect relevant values and memory, repair one cause, and rerun the same case.",
+    "domain": "Debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C003",
+      "CLNG-R2-C017"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C023",
+    "name": "Verify behavior with a dependency-free check harness",
+    "description": "Use small check functions to compare actual and expected normal, boundary, invalid, persistence, and no-mutation behavior with a visible final result.",
+    "domain": "Verification",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C014",
+      "CLNG-R2-C022"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C024",
+    "name": "Parse a small command-line contract",
+    "description": "Check argc before reading argv, parse bounded command values, route supported commands, and show usable help for missing or unsupported input.",
+    "domain": "Command-line interfaces",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C007",
+      "CLNG-R2-C013",
+      "CLNG-R2-C016"
+    ]
+  },
+  {
+    "id": "CLNG-R2-C025",
+    "name": "Document and publish a safe C repository",
+    "description": "Write reproducible setup, compile, run, and check instructions; inspect staged paths; commit locally; and push source without executables, credentials, private data, or editor caches.",
+    "domain": "Git and delivery",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CLNG-R2-C001",
+      "CLNG-R2-C023"
+    ]
+  }
+]

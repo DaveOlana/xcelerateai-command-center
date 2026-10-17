@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "curriculumId": "CLNG",
+  "revision": 2,
+  "candidateOnly": false,
+  "published": true,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 2,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "phases": 3,
+        "competencies": 25,
+        "concepts": 34,
+        "resources": 36,
+        "weeks": 8,
+        "projects": 2
+      }
+    },
+    {
+      "validator": "V012",
+      "name": "Live resource research evidence",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "selectedResources": 36,
+        "checkedAt": "2026-10-17T00:00:00.000Z"
+      }
+    },
+    {
+      "validator": "V020",
+      "name": "Evidence-backed content integrity",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "resourceAudits": 36,
+        "questionAudits": 80,
+        "buildAudits": 8,
+        "weekReadiness": 8,
+        "classificationTotals": {
+          "A": 78,
+          "B": 2,
+          "C": 0,
+          "D": 0
+        }
+      }
+    },
+    {
+      "validator": "V021",
+      "name": "Build-integrated Studio learner contracts",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V022",
+      "name": "Skill Check authoring and assessment coverage",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "questions": 80,
+        "coverageEntries": 80,
+        "distinctTargets": 80
+      }
+    },
+    {
+      "validator": "V018",
+      "name": "Compiled runtime validation",
+      "status": "PASS",
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "NOTE",
+      "message": "The withdrawn CLNG Revision 1 artifact remains preserved for comparison and is not a learner-catalog entry."
+    },
+    {
+      "severity": "NOTE",
+      "message": "External resource access and exact consumption boundaries must be rechecked before a future curriculum revision."
+    }
+  ],
+  "semanticValidation": {
+    "status": "PASS",
+    "method": "Human-led adversarial review examined the complete-beginner target, all 25 competencies and 34 concepts, every weekly Study assignment and question mapping, eight Build contracts, prerequisite edges, C-specific safety failures, session limits, and human-review Proof. Deterministic validation consumes this judgment but does not create it.",
+    "findingsReviewed": [
+      "Rejected Revision 1's repeated generated definition-card route and required bounded current external teaching plus active prediction, compilation, tracing, or inspection before each Skill Check.",
+      "Kept Week 1 to source, compilation, execution, typed fixed values, printf, and diagnostics; scanf begins in Week 2 and the first calculator-like work appears only in Week 5.",
+      "Made conversion counts, address-of, integer truncation, zero-divisor validation, short-circuit rules, and inclusive boundaries observable before they are assessed.",
+      "Avoided undefined-behavior demonstrations where a safe omission defect can teach the same boundary lesson; warning-clean C17 builds remain mandatory.",
+      "Separated declarations, definitions, translation units, and linker failures before asking the learner to maintain a multi-file program.",
+      "Constrained strings and pointers to fixed-capacity arrays and live objects; dynamic allocation, pointer arithmetic, and production parsing remain outside this beginner boundary.",
+      "Distinguished missing first-run data from malformed or unreadable existing data and required byte/hash evidence that failure paths preserve the file.",
+      "Used a plain-C check harness so verification adds no hidden framework, package-manager, or network prerequisite.",
+      "Mapped every graded item to inspected Study resources, wrote language-specific distractors, distributed authored correct positions, and retained runtime reshuffling.",
+      "Kept all Build sessions at or below 110 minutes, separated setup from the 48 instructional hours, and reserved Week 8 for integration rather than a surge of untaught concepts."
+    ],
+    "adversarialResult": "PASS after the recorded repairs. Fixed capacities, a simple text grammar, scanf for bounded numeric input, and dependency-free checks are explicit instructional constraints rather than production-safety claims. No required Build depends on an unresolved competency."
+  }
+}

@@ -10,13 +10,13 @@ const guideRoot = path.join(root, 'public', 'curriculum-guides');
 const readJson = (filePath) => JSON.parse(fs.readFileSync(filePath, 'utf8'));
 const manifest = readJson(path.join(portfolioRoot, 'portfolio-manifest.json'));
 const historicalIds = ['QBAS', 'JAVA', 'CLNG', 'CPPL', 'JSIN', 'PYIN', 'WEBD'];
-const activeIds = ['JAVA', 'JSIN', 'PYIN'];
-const withdrawnIds = ['QBAS', 'CLNG', 'CPPL', 'WEBD'];
+const activeIds = ['CLNG', 'JAVA', 'JSIN', 'PYIN'];
+const withdrawnIds = ['QBAS', 'CPPL', 'WEBD'];
 
 assert.equal(manifest.publicationPolicy, 'individually-reviewed-replacements-only');
 assert.equal(manifest.historicalRevisions.length, 7);
 assert.deepEqual(new Set(manifest.historicalRevisions.map((course) => course.curriculumId)), new Set(historicalIds));
-assert.equal(manifest.activeCourses.length, 3);
+assert.equal(manifest.activeCourses.length, 4);
 assert.deepEqual(new Set(manifest.activeCourses.map((course) => course.curriculumId)), new Set(activeIds));
 
 for (const course of manifest.historicalRevisions) {
@@ -61,4 +61,4 @@ for (const filename of [
   assert.equal(fs.existsSync(path.join(root, 'src', 'curriculum-v2', 'catalog', 'published', filename)), true, `${filename} retained`);
 }
 
-console.log('Introductory portfolio audit: seven R1 references retained; JAVA R2, JSIN R2, and PYIN R2 are published; four other introductory IDs remain withdrawn.');
+console.log('Introductory portfolio audit: seven R1 references retained; CLNG R2, JAVA R2, JSIN R2, and PYIN R2 are published; three other introductory IDs remain withdrawn.');
