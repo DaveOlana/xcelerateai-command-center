@@ -1,0 +1,259 @@
+[
+  {
+    "id": "CPPL-R2-C001",
+    "name": "Verify a Windows C++ workspace",
+    "description": "Open a C++ project in VS Code, verify the intended GCC and GDB executables, compile a saved C++20 source file with warnings enabled, and run the resulting executable from PowerShell.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "CPPL-R2-C002",
+    "name": "Explain how C++ source becomes a running program",
+    "description": "Distinguish source, preprocessing, compilation, linking, an executable, and process output at beginner depth.",
+    "domain": "Environment and execution",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C001"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C003",
+    "name": "Read and repair early C++ diagnostics",
+    "description": "Use diagnostic severity, source location, and the first relevant compiler or linker message to repair one cause without guessing.",
+    "domain": "Debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C001"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C004",
+    "name": "Represent and display typed C++ values",
+    "description": "Create initialized int, double, bool, char, and std::string values and produce readable labelled output with std::cout.",
+    "domain": "Values and output",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C002"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C005",
+    "name": "Read complete console lines",
+    "description": "Use std::getline for text input, preserve spaces deliberately, and distinguish an empty line from a stream failure.",
+    "domain": "Input and strings",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C004"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C006",
+    "name": "Parse numeric text with full validation",
+    "description": "Convert a complete input line to a number, reject trailing text and out-of-range values, and keep failed input from changing valid state.",
+    "domain": "Input and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C005"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C007",
+    "name": "Express ordered decisions",
+    "description": "Use comparisons, short-circuit Boolean operators, and ordered if/else-if/else branches so invalid, boundary, and successful cases take one explainable path.",
+    "domain": "Decisions and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C006"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C008",
+    "name": "Repeat work with a visible stopping rule",
+    "description": "Use for and while loops with intentional starting state, progress, and termination, then trace changing values without guessing.",
+    "domain": "Iteration",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C007"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C009",
+    "name": "Manage an ordered std::vector",
+    "description": "Add, inspect, traverse, and query values in a vector while distinguishing size from the last valid index.",
+    "domain": "Containers",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C008"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C010",
+    "name": "Summarize a collection safely",
+    "description": "Compute count, total, average, minimum, maximum, and threshold results while handling an empty vector before dependent operations.",
+    "domain": "Containers and algorithms",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C009"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C011",
+    "name": "Define focused functions",
+    "description": "Write functions with purposeful names, explicit parameter and return types, and one understandable responsibility.",
+    "domain": "Functions and decomposition",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C007"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C012",
+    "name": "Choose value and const-reference parameters",
+    "description": "Pass small values by value, read larger objects through const references, return owned results by value, and avoid dangling references.",
+    "domain": "Functions and ownership",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C011"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C013",
+    "name": "Build a namespaced multi-file program",
+    "description": "Place declarations in guarded headers, definitions in source files, use a small namespace, compile every translation unit, and distinguish compiler from linker failures.",
+    "domain": "Program structure",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C003",
+      "CPPL-R2-C011"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C014",
+    "name": "Construct valid class objects",
+    "description": "Define a class with private fields and a constructor that establishes one valid object from its first observable state.",
+    "domain": "Classes and objects",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C011"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C015",
+    "name": "Protect invariants through member functions",
+    "description": "Expose const observations and validated commands so an object rejects invalid state transitions before mutation.",
+    "domain": "Classes and objects",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C014"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C016",
+    "name": "Reason about value ownership and RAII",
+    "description": "Explain object lifetime, automatic cleanup, copy independence, and why standard-library values remove the need for beginner manual memory management.",
+    "domain": "Ownership and lifetime",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C012",
+      "CPPL-R2-C014"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C017",
+    "name": "Apply standard algorithms to ranges",
+    "description": "Use find_if, count_if, sort, and transform with valid iterator ranges rather than rewriting every traversal by hand.",
+    "domain": "Algorithms and iterators",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C009",
+      "CPPL-R2-C012"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C018",
+    "name": "Write narrow lambdas with explicit capture",
+    "description": "Use short predicates and projections whose parameters, return behavior, and captured values are visible and intentional.",
+    "domain": "Algorithms and lambdas",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C017"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C019",
+    "name": "Use associative containers for keyed summaries",
+    "description": "Store and query keyed counts with std::map without relying on an absent key or accidental insertion during read-only work.",
+    "domain": "Containers",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C009"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C020",
+    "name": "Persist line records with file streams",
+    "description": "Read and write a documented text format through ifstream and ofstream using a stable project-relative path and complete record validation.",
+    "domain": "Files and persistence",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C012",
+      "CPPL-R2-C019"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C021",
+    "name": "Preserve data across stream failures",
+    "description": "Distinguish a missing first-run file, open failure, malformed content, normal end of file, and write failure before replacing existing data.",
+    "domain": "Files and error handling",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C007",
+      "CPPL-R2-C020"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C022",
+    "name": "Debug one reproducible C++ failure",
+    "description": "Build with warnings and debug symbols, reproduce one case, pause in VS Code or GDB, inspect relevant values and object state, repair one cause, and rerun the same case.",
+    "domain": "Debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C003",
+      "CPPL-R2-C015"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C023",
+    "name": "Verify behavior with dependency-free checks",
+    "description": "Use small check functions to compare actual and expected normal, boundary, invalid, persistence, and no-mutation behavior with a visible summary.",
+    "domain": "Verification",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C011",
+      "CPPL-R2-C022"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C024",
+    "name": "Parse a small command-line contract",
+    "description": "Validate argc before reading argv, parse bounded values, route supported commands, and show useful help for missing or unsupported input.",
+    "domain": "Command-line interfaces",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C007",
+      "CPPL-R2-C011"
+    ]
+  },
+  {
+    "id": "CPPL-R2-C025",
+    "name": "Document and publish a safe C++ repository",
+    "description": "Write reproducible setup, compile, run, and check instructions; inspect staged paths; commit locally; and push source without binaries, credentials, private data, or editor caches.",
+    "domain": "Git and delivery",
+    "importance": "core",
+    "prerequisiteIds": [
+      "CPPL-R2-C001",
+      "CPPL-R2-C023"
+    ]
+  }
+]

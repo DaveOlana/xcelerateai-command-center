@@ -1,0 +1,101 @@
+{
+  "curriculumId": "CPPL",
+  "revision": 2,
+  "researchedAt": "2026-10-23T00:00:00.000Z",
+  "role": "Beginning C++ programmer",
+  "roleDefinition": "A learner who can independently produce and explain small warning-clean C++20 programs using core syntax, typed values, strings, vectors, full-line parsing, functions, const references, classes, RAII, algorithms, associative containers, checked text files, debugging, dependency-free checks, Git, and clear build instructions.",
+  "evidenceSummary": "The capability boundary was triangulated across current C++ teaching, compiler and standard-library references, debugger guidance, and GitHub safety material, then constrained to eight six-hour instructional Weeks.",
+  "capabilityTiers": [
+    {
+      "tier": "Foundational",
+      "weeks": "1-3",
+      "outcome": "Compile and run code, reason about typed values, repair diagnostics, validate complete input lines, make decisions, iterate, and summarize vectors safely."
+    },
+    {
+      "tier": "Program construction",
+      "weeks": "4-7",
+      "outcome": "Decompose multi-file behavior, use const references, protect class invariants, reason about value ownership, transform ranges, summarize keyed data, persist defensively, debug, and run dependency-free checks."
+    },
+    {
+      "tier": "Reliable delivery",
+      "weeks": "8",
+      "outcome": "Integrate proven modern C++ competencies into a documented, verified, persistent command-line application and publish source safely."
+    }
+  ],
+  "practitionerOutputs": [
+    "Campus Identity Banner",
+    "Enrollment Eligibility Assistant",
+    "Study Session Analyzer",
+    "Module Planner Library",
+    "Equipment Loan Desk",
+    "Campus Club Roster",
+    "Persistent Revision Tracker",
+    "CoursePilot CLI"
+  ],
+  "professionalPractices": [
+    "predict before compiling or running",
+    "keep warnings enabled",
+    "read the first relevant diagnostic before editing",
+    "validate complete input lines and ranges before state change",
+    "prefer standard-library value types and automatic lifetime",
+    "protect object invariants",
+    "test normal, boundary, invalid, missing, and malformed cases",
+    "preserve failed input and existing files for diagnosis",
+    "document exact build and run commands",
+    "inspect staged files before publishing"
+  ],
+  "boundaries": [
+    "No GUI or web framework",
+    "No third-party runtime dependencies",
+    "No raw new/delete or manual ownership requirement",
+    "No advanced templates or metaprogramming",
+    "No database or network API",
+    "No concurrency",
+    "No automated cloud deployment",
+    "No claim of production security"
+  ],
+  "graduationBoundary": "Write, compile, debug, verify, document, and publish small modern C++20 programs using safe value ownership and the standard library, with enough fluency for introductory practical examinations and beginner projects.",
+  "technologyDecision": "MSYS2 UCRT64 GCC/GDB, VS Code, PowerShell, the C++20 standard library, Git, and GitHub provide a maintained Windows route with high practical-exam value and no paid IDE requirement.",
+  "sources": [
+    "https://www.msys2.org/docs/installer/",
+    "https://www.msys2.org/docs/environments/",
+    "https://code.visualstudio.com/docs/cpp/config-mingw",
+    "https://docs.github.com/en/get-started/git-basics/set-up-git",
+    "https://www.learncpp.com/cpp-tutorial/compiling-your-first-program/",
+    "https://www.youtube.com/watch?v=8jLOx1hD3_o",
+    "https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html",
+    "https://www.learncpp.com/cpp-tutorial/variable-assignment-and-initialization/",
+    "https://www.learncpp.com/cpp-tutorial/introduction-to-fundamental-data-types/",
+    "https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring/",
+    "https://en.cppreference.com/cpp/string/basic_string/getline",
+    "https://en.cppreference.com/cpp/io/basic_istringstream",
+    "https://www.learncpp.com/cpp-tutorial/if-statements-and-blocks/",
+    "https://www.learncpp.com/cpp-tutorial/logical-operators/",
+    "https://www.youtube.com/watch?v=-TkoO8Z07hI",
+    "https://www.learncpp.com/cpp-tutorial/introduction-to-stdvector-and-list-constructors/",
+    "https://en.cppreference.com/cpp/container/vector",
+    "https://www.learncpp.com/cpp-tutorial/range-based-for-loops-for-each/",
+    "https://en.cppreference.com/cpp/algorithm",
+    "https://www.learncpp.com/cpp-tutorial/pass-by-const-lvalue-reference/",
+    "https://www.learncpp.com/cpp-tutorial/programs-with-multiple-code-files/",
+    "https://www.learncpp.com/cpp-tutorial/header-guards/",
+    "https://www.learncpp.com/cpp-tutorial/user-defined-namespaces-and-the-scope-resolution-operator/",
+    "https://www.learncpp.com/cpp-tutorial/public-and-private-members-and-access-specifiers/",
+    "https://www.learncpp.com/cpp-tutorial/constructor-member-initializer-lists/",
+    "https://www.learncpp.com/cpp-tutorial/basic-exception-handling/",
+    "https://en.cppreference.com/cpp/language/raii",
+    "https://www.learncpp.com/cpp-tutorial/introduction-to-iterators/",
+    "https://www.learncpp.com/cpp-tutorial/introduction-to-standard-library-algorithms/",
+    "https://en.cppreference.com/cpp/container/map",
+    "https://en.cppreference.com/cpp/algorithm/transform",
+    "https://en.cppreference.com/w/cpp/named_req/Compare.html",
+    "https://www.learncpp.com/cpp-tutorial/basic-file-io/",
+    "https://en.cppreference.com/cpp/io/basic_fstream",
+    "https://github.com/catchorg/Catch2",
+    "https://en.cppreference.com/w/cpp/filesystem.html",
+    "https://en.cppreference.com/cpp/language/main_function",
+    "https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github",
+    "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+  ]
+}

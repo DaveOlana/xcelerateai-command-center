@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T00:00:00.000Z",
+  "updatedAt": "2026-10-21T00:00:00.000Z",
   "category": "Introductory Computer Science",
   "publicationPolicy": "individually-reviewed-replacements-only",
   "activeCourses": [
@@ -50,6 +50,18 @@
       "status": "published",
       "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/c-introduction-r2",
       "catalogModule": "src/curriculum-v2/catalog/published/cProgrammingFoundations.js"
+    },
+    {
+      "curriculumId": "CPPL",
+      "title": "C++ Programming Foundations",
+      "slug": "cpp-programming-foundations",
+      "revision": 2,
+      "weeks": 8,
+      "instructionalHours": 48,
+      "setupMinutes": 150,
+      "status": "published",
+      "artifactPath": "XcelerateAI Curriculum System/v2/curricula/introductory-computer-science/cpp-introduction-r2",
+      "catalogModule": "src/curriculum-v2/catalog/published/cppProgrammingFoundations.js"
     }
   ],
   "historicalRevisions": [

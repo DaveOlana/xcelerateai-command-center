@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 export const CLOUD_ENABLED_CURRICULA = Object.freeze({
   CLNG: { revision: 2 },
+  CPPL: { revision: 2 },
   FEWE: { revision: 1 },
   JAVA: { revision: 2 },
   JSIN: { revision: 2 },

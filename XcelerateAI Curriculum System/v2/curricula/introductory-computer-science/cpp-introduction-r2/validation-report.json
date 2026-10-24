@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "curriculumId": "CPPL",
+  "revision": 2,
+  "candidateOnly": false,
+  "published": true,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 2,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "phases": 3,
+        "competencies": 25,
+        "concepts": 34,
+        "resources": 44,
+        "weeks": 8,
+        "projects": 2
+      }
+    },
+    {
+      "validator": "V012",
+      "name": "Live resource research evidence",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "selectedResources": 44,
+        "checkedAt": "2026-10-23T00:00:00.000Z"
+      }
+    },
+    {
+      "validator": "V020",
+      "name": "Evidence-backed content integrity",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "resourceAudits": 44,
+        "questionAudits": 80,
+        "buildAudits": 8,
+        "weekReadiness": 8,
+        "classificationTotals": {
+          "A": 79,
+          "B": 0,
+          "C": 1,
+          "D": 0
+        }
+      }
+    },
+    {
+      "validator": "V021",
+      "name": "Build-integrated Studio learner contracts",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V022",
+      "name": "Skill Check authoring and assessment coverage",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "questions": 80,
+        "coverageEntries": 80,
+        "distinctTargets": 80
+      }
+    },
+    {
+      "validator": "V018",
+      "name": "Compiled runtime validation",
+      "status": "PASS",
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "NOTE",
+      "message": "The withdrawn CPPL Revision 1 artifact remains preserved for comparison and is not a learner-catalog entry."
+    },
+    {
+      "severity": "NOTE",
+      "message": "External resource access and exact consumption boundaries must be rechecked before a future curriculum revision."
+    }
+  ],
+  "semanticValidation": {
+    "status": "PASS",
+    "method": "Human-led adversarial review examined the complete-beginner target, all 25 competencies and 34 concepts, every weekly Study assignment and source-mapped question, eight Build contracts, prerequisite edges, modern C++ ownership and failure boundaries, session limits, and human-review Proof. Deterministic validation consumes this judgment but does not manufacture it.",
+    "findingsReviewed": [
+      "Rejected Revision 1's repeated generated concept-card route and required bounded, inspected external teaching plus prediction, compilation, tracing, debugging, or verification before each Skill Check.",
+      "Kept Week 1 deliberately gentle: a supplied banner scaffold, fixed initialized values, output, compilation, execution, one compile-stopping error, and one genuine warning under the stated flags; there is no input, decision, loop, collection, class, or calculator.",
+      "Standardized beginner input on getline plus a supplied istringstream full-parse helper, avoiding the formatted-input/newline trap, prefix-accepting conversions, and unexplained exception-based parsing.",
+      "Used std::string, std::vector, value returns, const references, private class state, standard algorithms, std::map, and scoped streams as the main path; raw arrays, new/delete, pointer ownership, and manual cleanup are outside this course.",
+      "Bounded Week 5 exceptions to one inspected throw/try/catch lesson, a visible scaffold, four named construction/transition failures, and pre-mutation checks while keeping inheritance, custom destructors, and raw pointers out.",
+      "Made iterator end checks, value capture, source-backed strict comparator rules, copied sorting, pre-sized transform output, and non-inserting map lookup observable before assessing them.",
+      "Supplied exact file fixtures and a std::error_code filesystem helper; learner code completes and checks the candidate before promotion, retains .bak until success, handles rollback results, and proves no mutation on malformed or failed storage paths.",
+      "Used dependency-free C++ check functions so verification adds no package manager, test framework, account, or network prerequisite.",
+      "Required every graded item to map to an inspected resource assigned in the same Week, cover a distinct learning target, use one defensible answer and C++-specific distractors, distribute authored positions, and retain runtime option reshuffling.",
+      "Kept every Build session between 60 and 105 minutes, below the two-hour cap; setup remains separate and capability-skippable, and Week 8 integrates established behavior instead of introducing a second technology stack."
+    ],
+    "adversarialResult": "PASS after the recorded repairs. The course teaches modern standard-library C++ value ownership and RAII rather than translating the C course or introducing raw-memory mechanics. The .tmp/.bak protocol is explicitly a bounded instructional recovery contract, not a claim of universal transactional durability. No required Build depends on an unresolved competency."
+  }
+}

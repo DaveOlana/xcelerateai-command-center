@@ -37,7 +37,7 @@ const mutationFor = (curriculumId: string, revision: number) => {
   const learnerState = emptyCloudState();
   learnerState.curriculumState.curriculumId = curriculumId;
   learnerState.curriculumState.lastSeenRevision = revision;
-  learnerState.curriculumState.activeWeekId = revision === 2 && ['CLNG', 'JAVA', 'JSIN', 'PYIN'].includes(curriculumId)
+  learnerState.curriculumState.activeWeekId = revision === 2 && ['CLNG', 'CPPL', 'JAVA', 'JSIN', 'PYIN'].includes(curriculumId)
     ? `${curriculumId}-R2-W01`
     : `${curriculumId}-W01`;
   return mutation({ curriculumRevision: revision, learnerState });
@@ -151,16 +151,17 @@ describe('deterministic progress hashing', () => {
 describe('V2 progress synchronization API', () => {
   test('enables only established production curricula and the approved introductory R2 replacements', () => {
     expect(CLOUD_ENABLED_CURRICULA).toEqual({
-      CLNG: { revision: 2 }, FEWE: { revision: 1 }, JAVA: { revision: 2 }, JSIN: { revision: 2 }, PDES: { revision: 1 }, PYAE: { revision: 3 }, PYIN: { revision: 2 },
+      CLNG: { revision: 2 }, CPPL: { revision: 2 }, FEWE: { revision: 1 }, JAVA: { revision: 2 }, JSIN: { revision: 2 }, PDES: { revision: 1 }, PYAE: { revision: 3 }, PYIN: { revision: 2 },
     });
-    for (const curriculumId of ['QBAS', 'CPPL', 'WEBD']) {
+    for (const curriculumId of ['QBAS', 'WEBD']) {
       expect(curriculumId in CLOUD_ENABLED_CURRICULA).toBe(false);
     }
   });
 
-  test('creates isolated cloud progress for every enabled production curriculum', async () => {
-    const { app, database } = await setup();
-    for (const [curriculumId, { revision }] of Object.entries(CLOUD_ENABLED_CURRICULA)) {
+  test.each(Object.entries(CLOUD_ENABLED_CURRICULA))(
+    'creates isolated cloud progress for enabled production curriculum %s',
+    async (curriculumId, { revision }) => {
+      const { app, database } = await setup();
       const response = await app.inject({
         method: 'PUT',
         url: `/api/v1/v2/learning-instances/${curriculumId}`,
@@ -169,9 +170,9 @@ describe('V2 progress synchronization API', () => {
       });
       expect(response.statusCode, curriculumId).toBe(201);
       expect(response.json().instance).toMatchObject({ curriculumId, curriculumRevision: revision });
-    }
-    expect(database.instances.size).toBe(Object.keys(CLOUD_ENABLED_CURRICULA).length);
-  });
+      expect(database.instances.size).toBe(1);
+    },
+  );
 
   test('creates and fetches an instance for the JWT subject', async () => {
     const database = new ProgressMemoryDatabase();
@@ -318,6 +319,15 @@ describe('V2 progress synchronization API', () => {
     expect(withdrawnCR1.statusCode).toBe(400);
     expect(withdrawnCR1.json().error.code).toBe('CURRICULUM_METADATA_MISMATCH');
     expect(database.instances.has(`${userA}:CLNG`)).toBe(false);
+    const withdrawnCppR1 = await app.inject({
+      method: 'PUT',
+      url: '/api/v1/v2/learning-instances/CPPL',
+      headers: auth(),
+      payload: mutationFor('CPPL', 1),
+    });
+    expect(withdrawnCppR1.statusCode).toBe(400);
+    expect(withdrawnCppR1.json().error.code).toBe('CURRICULUM_METADATA_MISMATCH');
+    expect(database.instances.has(`${userA}:CPPL`)).toBe(false);
     const wrongArtifactScope = mutation();
     wrongArtifactScope.learnerState.notes.records.push({ id: 'n1', roadmapId: 'OTHER' });
     expect((await put(app, wrongArtifactScope)).statusCode).toBe(400);
