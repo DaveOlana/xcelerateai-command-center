@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "curriculumId": "WEBD",
+  "revision": 2,
+  "candidateOnly": false,
+  "published": true,
+  "blockingFailures": 0,
+  "warningCount": 0,
+  "noteCount": 2,
+  "passes": [
+    {
+      "validator": "V001-V014",
+      "name": "Deterministic source validation",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "phases": 3,
+        "competencies": 25,
+        "concepts": 32,
+        "resources": 47,
+        "weeks": 8,
+        "projects": 2
+      }
+    },
+    {
+      "validator": "V012",
+      "name": "Live resource research evidence",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "selectedResources": 47,
+        "checkedAt": "2026-10-24T00:00:00.000Z"
+      }
+    },
+    {
+      "validator": "V020",
+      "name": "Evidence-backed content integrity",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "resourceAudits": 47,
+        "questionAudits": 80,
+        "buildAudits": 8,
+        "weekReadiness": 8,
+        "classificationTotals": {
+          "A": 77,
+          "B": 0,
+          "C": 3,
+          "D": 0
+        }
+      }
+    },
+    {
+      "validator": "V021",
+      "name": "Build-integrated Studio learner contracts",
+      "status": "PASS",
+      "findings": []
+    },
+    {
+      "validator": "V022",
+      "name": "Skill Check authoring and assessment coverage",
+      "status": "PASS",
+      "findings": [],
+      "summary": {
+        "questions": 80,
+        "coverageEntries": 80,
+        "distinctTargets": 80
+      }
+    },
+    {
+      "validator": "V018",
+      "name": "Compiled runtime validation",
+      "status": "PASS",
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "severity": "NOTE",
+      "message": "The withdrawn WEBD Revision 1 artifact remains preserved for comparison and is not a learner-catalog entry."
+    },
+    {
+      "severity": "NOTE",
+      "message": "External resource access and exact boundaries must be rechecked before a future curriculum revision."
+    }
+  ],
+  "semanticValidation": {
+    "status": "PASS",
+    "method": "Human-led adversarial review examined all 25 competency dependencies, 32 contextual concepts, bounded external Study assignments, 80 assessment targets, eight Build contracts, setup assumptions, session limits, accessibility progression, state/storage/network failure paths, Git safety, deployment boundaries, and required human evidence. Deterministic validators consume this judgment but do not create it.",
+    "findingsReviewed": [
+      "Rejected Revision 1 generated concept-card pages and repeated microbuild wording as the primary learning route; Revision 2 uses inspected external instruction followed by observable browser practice.",
+      "Kept Week 1 deliberately gentle with no CSS, JavaScript, arithmetic, calculator, blank-page design, or repository publication.",
+      "Established localhost preview during setup so later relative paths and fetch do not rely on file URLs or an undisclosed server prerequisite.",
+      "Separated HTML semantics, CSS systems, responsive layout, small JavaScript behavior, canonical state, forms/accessibility, and network states into a dependency-respecting sequence.",
+      "Required actual validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, zoom, reload, and live-deployment evidence rather than unsupported quality claims.",
+      "Used local sanitized JSON fixtures rather than an external API, key, paid service, changing endpoint, or CORS-sensitive dependency.",
+      "Required all graded items to map to bounded Core instruction from the current or earlier Week, assess distinct decisions, and use plausible web-development distractors with shuffled runtime order.",
+      "Kept every instructional Build session at 105 minutes or less and every capstone segment at 90 minutes or less; setup is separate and capability-skippable after verification."
+    ],
+    "adversarialResult": "PASS after recorded repairs. A basic-computer-literate learner receives the environment, content, data, scaffolds, failure cases, review procedure, and deployment boundary needed to complete each artifact without inventing hidden architecture or relying on generic course-owned definition cards."
+  }
+}

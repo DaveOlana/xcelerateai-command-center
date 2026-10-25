@@ -9,6 +9,7 @@ export const CLOUD_ENABLED_CURRICULA = Object.freeze({
   PDES: { revision: 1 },
   PYAE: { revision: 3 },
   PYIN: { revision: 2 },
+  WEBD: { revision: 2 },
 });
 export const SUPPORTED_STATE_SCHEMA_VERSION = 1;
 export const SYNC_BODY_LIMIT = 1024 * 1024;

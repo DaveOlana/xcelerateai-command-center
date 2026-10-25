@@ -9,6 +9,7 @@ import javascriptProgrammingFoundationsRuntime from './published/javascriptProgr
 import productDesignRuntime from './published/productDesign.js';
 import publishedRuntime from './published/pythonAgentEngineering.js';
 import pythonProgrammingFoundationsRuntime from './published/pythonProgrammingFoundations.js';
+import webDevelopmentFoundationsRuntime from './published/webDevelopmentFoundations.js';
 
 test('production catalog contains only established curricula while withdrawn introductory R1 courses stay out of learner choices', () => {
   const runtimes = [
@@ -20,6 +21,7 @@ test('production catalog contains only established curricula while withdrawn int
     productDesignRuntime,
     publishedRuntime,
     pythonProgrammingFoundationsRuntime,
+    webDevelopmentFoundationsRuntime,
   ];
   const expectedIds = runtimes
     .toSorted((left, right) => left.metadata.title.localeCompare(right.metadata.title))
@@ -32,9 +34,6 @@ test('production catalog contains only established curricula while withdrawn int
   });
   assert.equal(curriculumCatalog.has('GOLDEN'), false);
   assert.equal(curriculumCatalog.has('QBAS'), false);
-  ['WEBD'].forEach((curriculumId) => {
-    assert.equal(curriculumCatalog.has(curriculumId), false, `${curriculumId} is withdrawn`);
-  });
   assert.equal(frontEndWebEngineeringRuntime.weeks.length, 33);
   assert.equal(cProgrammingFoundationsRuntime.weeks.length, 8);
   assert.equal(cProgrammingFoundationsRuntime.revision, 2);
@@ -48,4 +47,6 @@ test('production catalog contains only established curricula while withdrawn int
   assert.equal(publishedRuntime.weeks.length, 24);
   assert.equal(pythonProgrammingFoundationsRuntime.weeks.length, 8);
   assert.equal(pythonProgrammingFoundationsRuntime.revision, 2);
+  assert.equal(webDevelopmentFoundationsRuntime.weeks.length, 8);
+  assert.equal(webDevelopmentFoundationsRuntime.revision, 2);
 });

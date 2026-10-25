@@ -1,0 +1,258 @@
+[
+  {
+    "id": "WEBD-R2-C001",
+    "name": "Verify a local web workspace",
+    "description": "Create and reopen a small HTML/CSS/JavaScript folder in VS Code, serve it through the approved localhost preview route, and inspect the exact URL in a modern browser.",
+    "domain": "Environment",
+    "importance": "core",
+    "prerequisiteIds": []
+  },
+  {
+    "id": "WEBD-R2-C002",
+    "name": "Explain the browser page pipeline",
+    "description": "Distinguish source files, an HTTP request and response, parsed DOM/CSSOM, rendered pixels, console output, and a saved-file refresh at beginner depth.",
+    "domain": "Browser foundations",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C001"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C003",
+    "name": "Structure semantic HTML",
+    "description": "Use document metadata, landmarks, headings, paragraphs, and lists so content order and meaning remain useful without CSS.",
+    "domain": "HTML",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C002"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C004",
+    "name": "Create usable links and images",
+    "description": "Use correct relative paths, descriptive link text, and purposeful alternative text while avoiding private or remote-only assets.",
+    "domain": "HTML",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C003"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C005",
+    "name": "Inspect and repair HTML evidence",
+    "description": "Use the Elements panel, Console, keyboard traversal, and an HTML validator to connect a visible defect to source and repair one cause.",
+    "domain": "Browser debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C003"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C006",
+    "name": "Predict the CSS cascade",
+    "description": "Apply selectors, source order, specificity, inheritance, and explicit states without relying on !important.",
+    "domain": "CSS",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C003"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C007",
+    "name": "Build a readable box system",
+    "description": "Use custom properties, box sizing, padding, border, margin, typography, color, and constrained widths to create a coherent visual system.",
+    "domain": "CSS",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C006"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C008",
+    "name": "Debug CSS with computed evidence",
+    "description": "Inspect matched and overridden declarations, computed values, the box model, contrast, and focus styles before changing one CSS cause.",
+    "domain": "CSS debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C006"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C009",
+    "name": "Arrange one-dimensional content with Flexbox",
+    "description": "Choose a main axis, cross axis, wrapping, gap, alignment, and flexible growth for navigation and card rows.",
+    "domain": "Responsive layout",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C007"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C010",
+    "name": "Arrange two-dimensional content with Grid",
+    "description": "Define responsive tracks, gaps, spans, and placement without fixed offsets or accidental overflow.",
+    "domain": "Responsive layout",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C007"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C011",
+    "name": "Implement mobile-first responsiveness",
+    "description": "Start from a narrow layout, add content-driven breakpoints and fluid media, and verify zoom and target viewport cases without horizontal scrolling.",
+    "domain": "Responsive layout",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C009",
+      "WEBD-R2-C010"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C012",
+    "name": "Represent browser interaction state",
+    "description": "Use const and let, strings, booleans, comparisons, conditions, and focused named functions to model a small interface state.",
+    "domain": "JavaScript",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C002"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C013",
+    "name": "Select and update the DOM",
+    "description": "Use querySelector or querySelectorAll, textContent, classList, and attributes while distinguishing source HTML from the live DOM.",
+    "domain": "DOM",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C012"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C014",
+    "name": "Handle browser events predictably",
+    "description": "Register event listeners on native controls, read the event target deliberately, and update state before rendering a new view.",
+    "domain": "Events",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C013"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C015",
+    "name": "Model a collection with arrays and objects",
+    "description": "Represent records with stable identifiers and fields, then find, map, filter, and update values without confusing an item with its displayed element.",
+    "domain": "JavaScript data",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C012"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C016",
+    "name": "Render one canonical UI state",
+    "description": "Derive the displayed collection from current state, clear and rebuild the owned region safely, and use data attributes plus event delegation for generated controls.",
+    "domain": "DOM state",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C014",
+      "WEBD-R2-C015"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C017",
+    "name": "Persist non-sensitive state locally",
+    "description": "Serialize appropriate data with JSON, load it from localStorage through a checked fallback, and keep malformed storage from replacing known-good state.",
+    "domain": "Browser storage",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C015"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C018",
+    "name": "Build a semantic form",
+    "description": "Use labels, fieldsets, legends, suitable input types, instructions, buttons, and deliberate submit behavior.",
+    "domain": "Forms",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C003",
+      "WEBD-R2-C014"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C019",
+    "name": "Validate and report form input",
+    "description": "Combine native constraints with a bounded custom rule, reject invalid input without false success, and connect clear feedback to the affected control.",
+    "domain": "Forms and validation",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C018"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C020",
+    "name": "Verify keyboard and focus accessibility",
+    "description": "Check meaningful order, visible focus, native keyboard operation, error focus, status announcements, contrast, and 200 percent zoom without claiming automated perfection.",
+    "domain": "Accessibility",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C008",
+      "WEBD-R2-C018"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C021",
+    "name": "Fetch and parse JSON through HTTP",
+    "description": "Use async and await with fetch, check response.ok, parse JSON only after a successful response, and use a project-relative localhost URL.",
+    "domain": "Network data",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C001",
+      "WEBD-R2-C015"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C022",
+    "name": "Represent request states honestly",
+    "description": "Show distinct loading, success, empty, HTTP failure, malformed-data, and retry states while preserving the last valid data until replacement succeeds.",
+    "domain": "Network resilience",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C021"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C023",
+    "name": "Debug browser and network failures",
+    "description": "Reproduce one case and use Console, Network, Sources breakpoints, status, stack, and inspected values to repair one cause before rerunning it.",
+    "domain": "Browser debugging",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C005",
+      "WEBD-R2-C022"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C024",
+    "name": "Verify an integrated static application",
+    "description": "Trace requirements to normal, boundary, invalid, responsive, keyboard, storage, network, and reload checks and record expected versus actual evidence.",
+    "domain": "Verification",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C011",
+      "WEBD-R2-C020",
+      "WEBD-R2-C023"
+    ]
+  },
+  {
+    "id": "WEBD-R2-C025",
+    "name": "Document and publish a safe static site",
+    "description": "Write reproducible local-preview instructions, inspect staged paths, commit source, deploy with GitHub Pages, and verify the live URL without exposing secrets or personal data.",
+    "domain": "Git and delivery",
+    "importance": "core",
+    "prerequisiteIds": [
+      "WEBD-R2-C024"
+    ]
+  }
+]

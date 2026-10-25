@@ -1,0 +1,343 @@
+{
+  "schemaVersion": "1.1",
+  "curriculumId": "WEBD",
+  "revision": 2,
+  "activities": [
+    {
+      "weekId": "WEBD-R2-W01",
+      "title": "Semantic Semester Guide guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-R2-B-W01-01"
+      },
+      "contract": {
+        "doing": "Create `semester-guide/index.html` from the supplied document shell and use the supplied `assets/campus-study.svg`. Build a fictional first-semester guide with `header`, labelled `nav`, `main`, at least two `section` elements, and `footer`; use exactly one `h1`, ordered `h2`/`h3` headings, one list, descriptive links, and purposeful image alternative text. Preview only through the verified localhost route. Inspect the request and DOM, test keyboard links and a missing-image boundary, then repair a missing closing anchor in a disposable debug copy from browser and validator evidence. Do not add CSS, JavaScript, personal data, a calculator, or an unrelated README.",
+        "why": "Every later interface depends on a learner being able to save the intended file, request it from localhost, understand its structure before styling, and repair evidence rather than guessing at browser output.",
+        "output": "A `semester-guide` folder containing a valid semantic index.html, a restored packaged SVG, a repaired disposable debug copy, and human-reviewed evidence for localhost, structure, links, alternative text, and validation.",
+        "tools": "Windows, VS Code, the verified localhost preview route, a current browser, and browser development tools",
+        "estimatedMinutes": 180,
+        "prerequisites": "Only verified setup capabilities and this Week's bounded Core Study are required.",
+        "finished": "The recorded preview URL begins with http://localhost or http://127.0.0.1, index.html and the restored SVG return HTTP 200, and the learner can explain why file:// is not the approved route. The final document includes lang, charset, viewport, a useful title, header, labelled navigation, main, two or more sections, footer, exactly one h1, and no skipped heading level. Link text communicates destination or action without relying on `click here`, every href is valid for its purpose, and no Windows drive path appears in source. The supplied informative image has purpose-specific alt text that remains useful when the file is unavailable. Keyboard traversal reaches and activates each link in a meaningful order, and the final validator run contains zero HTML errors. The debug record connects the missing closing anchor to a visible or DOM symptom, a validator clue, a focused repair, and a successful rerun. No CSS, script, form, arithmetic tool, calculator behavior, real student record, or untaught publishing task appears in the Week 1 artifact.",
+        "submission": "Exact localhost URL plus index.html and restored SVG HTTP statuses | Final landmark/heading outline, descriptive-link keyboard walk, and missing-image alternative-text result | Missing-anchor symptom, validator clue, focused repair, and final zero-error validation | Reviewer identifier/date and pass-or-revise result from opening the exact artifact and repeating two named spot checks"
+      },
+      "steps": [
+        "Before authoring, run the setup capability checks: open the course folder with VS Code, serve the supplied setup page over localhost, confirm index.html returns HTTP 200 in Network, and record only the checks that actually pass; use the setup card to repair any failed capability rather than marking it complete.",
+        "Create the supplied folder tree, save the document shell as index.html, preview that exact file, change the title text once, save, refresh, and record the difference between the saved source, Network response, live DOM, and rendered page.",
+        "Add the fictional semester-guide content using the required landmarks, one logical heading outline, a list, an internal page link, one descriptive learning-resource link, and the supplied local image with purpose-specific alt text.",
+        "Use the Elements panel to record the final landmark and heading outline, traverse every interactive element using Tab and Enter, and confirm that visible link text still identifies its destination out of context.",
+        "Temporarily rename the local SVG, refresh, record what remains available from the alt text, restore the exact filename, and confirm the image request returns HTTP 200 again.",
+        "Copy index.html to debug-anchor.html, remove the closing tag from the learning-resource anchor, record the visible/DOM symptom and first useful validator finding, repair only that tag, rerun validation to zero errors, and complete the human-review record."
+      ],
+      "checklist": [
+        "The recorded preview URL begins with http://localhost or http://127.0.0.1, index.html and the restored SVG return HTTP 200, and the learner can explain why file:// is not the approved route.",
+        "The final document includes lang, charset, viewport, a useful title, header, labelled navigation, main, two or more sections, footer, exactly one h1, and no skipped heading level.",
+        "Link text communicates destination or action without relying on `click here`, every href is valid for its purpose, and no Windows drive path appears in source.",
+        "The supplied informative image has purpose-specific alt text that remains useful when the file is unavailable.",
+        "Keyboard traversal reaches and activates each link in a meaningful order, and the final validator run contains zero HTML errors.",
+        "The debug record connects the missing closing anchor to a visible or DOM symptom, a validator clue, a focused repair, and a successful rerun.",
+        "No CSS, script, form, arithmetic tool, calculator behavior, real student record, or untaught publishing task appears in the Week 1 artifact."
+      ],
+      "stuck": "Reproduce one failing case, return to the exact cited Core boundary, inspect the smallest relevant validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, reload, Git, or live-URL evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every file, element, selector, state, event, record, fixture, test input, error message, command, and deployment route is taught earlier, taught in current bounded Study, or supplied by the Build contract."
+      }
+    },
+    {
+      "weekId": "WEBD-R2-W02",
+      "title": "Study Space Card Gallery guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-R2-B-W02-01"
+      },
+      "contract": {
+        "doing": "Create `study-space-cards` from the supplied semantic HTML and stylesheet sections. Style three fictional study-space cards through one external `styles.css`, the supplied accessible base palette, reusable custom properties, class selectors, global border-box sizing, intentional padding/border/gap, readable typography, and a constrained page width. A featured modifier may change only the named accent properties. Verify a long title, focus visibility, normal-text contrast, and computed box values. Then enable the supplied over-specific transparent-border rule, identify why it wins in DevTools, and remove or simplify that cause. Do not use inline style, IDs for repeated components, `!important`, Grid, media queries, or absolute positioning.",
+        "why": "A visual system is maintainable only when repeated decisions have names and a learner can explain the winning declaration instead of accumulating overrides until the page happens to look right.",
+        "output": "A `study-space-cards` folder whose semantic HTML, reusable external CSS, measured contrast, long-title boundary, specificity repair, and human review are independently inspectable.",
+        "tools": "Windows, VS Code, the verified localhost preview route, a current browser, and browser development tools",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: WEBD-R2-C001, WEBD-R2-C003, WEBD-R2-C004, WEBD-R2-C005. New Week concepts are taught in Core Study before this Build.",
+        "finished": "index.html loads exactly one project-relative external stylesheet and contains no inline style attribute or style element. One small custom-property set controls repeated color, spacing, radius, and readable-width decisions, and all cards share a reusable component class. Border-box sizing, padding, border, gap, and constrained measure are used for their intended box-model roles. The featured modifier changes only the documented accent treatment and does not duplicate the base card declaration block. Normal text and action text meet or exceed 4.5:1 against their actual backgrounds, and keyboard focus is clearly visible. The long-title case wraps without clipping, overlap, or a fixed-height dependency. The cascade record identifies both candidate selectors, the winning specificity/source order, the computed border color, and a focused repair with no !important. A human reviewer opens the exact page, compares all three cards, repeats the long-title and focus spot checks, and records pass or a specific revision.",
+        "submission": "Project files plus the exact localhost URL and stylesheet relative path | Completed computed-style and contrast table with winning selector/file locations | Long-title result and over-specific border defect before/after repair | Reviewer identifier/date and explicit consistency, focus, boundary, and explanation verdicts"
+      },
+      "steps": [
+        "Open the briefing and map each supplied HTML class to Reset, Tokens, Base, Layout, Components, or States before adding declarations; keep all fictional card copy unchanged so reviewer expectations stay stable.",
+        "Link styles.css with a relative URL; add global border-box sizing, body typography and colors, a constrained centered container, and the supplied custom-property palette and spacing scale.",
+        "Style `.space-list`, `.space-card`, `.space-card--featured`, headings, metadata, and action links using reusable class rules, padding, border, margin or gap, and visible hover/focus states; do not add inline declarations or !important.",
+        "At normal zoom, record the computed width, padding, border, text color, background color, and winning source rule for the first card; verify normal text and action text meet the stated 4.5:1 contrast threshold.",
+        "Replace one card title with `Engineering Collaboration Studio for Project Teams`, confirm it wraps without clipping or leaving its border, then restore the supplied title.",
+        "Uncomment the supplied `main .space-card { border-color: transparent; }` rule, record its winning specificity and overridden declaration, repair the cause without increasing specificity or using !important, rerun every visual check, and complete human review."
+      ],
+      "checklist": [
+        "index.html loads exactly one project-relative external stylesheet and contains no inline style attribute or style element.",
+        "One small custom-property set controls repeated color, spacing, radius, and readable-width decisions, and all cards share a reusable component class.",
+        "Border-box sizing, padding, border, gap, and constrained measure are used for their intended box-model roles.",
+        "The featured modifier changes only the documented accent treatment and does not duplicate the base card declaration block.",
+        "Normal text and action text meet or exceed 4.5:1 against their actual backgrounds, and keyboard focus is clearly visible.",
+        "The long-title case wraps without clipping, overlap, or a fixed-height dependency.",
+        "The cascade record identifies both candidate selectors, the winning specificity/source order, the computed border color, and a focused repair with no !important.",
+        "A human reviewer opens the exact page, compares all three cards, repeats the long-title and focus spot checks, and records pass or a specific revision."
+      ],
+      "stuck": "Reproduce one failing case, return to the exact cited Core boundary, inspect the smallest relevant validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, reload, Git, or live-URL evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every file, element, selector, state, event, record, fixture, test input, error message, command, and deployment route is taught earlier, taught in current bounded Study, or supplied by the Build contract."
+      }
+    },
+    {
+      "weekId": "WEBD-R2-W03",
+      "title": "Campus Events Board guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-R2-B-W03-01"
+      },
+      "contract": {
+        "doing": "Create `campus-events-board` using the supplied semantic six-card content and local decorative SVG. Keep the narrow base as one column. Use Flexbox with wrapping for the category navigation and Grid for the event cards; enhance to exactly two columns from 42rem and three columns from 64rem. Keep images fluid, the page container constrained, long text wrapping, and focus visible. Test 320, 768, and 1280 CSS-pixel viewports plus 200 percent browser zoom. Then add the supplied 32rem card-width defect at 320, identify the overflowing element and computed width in DevTools, and remove that cause. Do not add JavaScript, fixed card heights, absolute positioning, device-name breakpoints, or hidden essential content.",
+        "why": "A page is not responsive because it happened to fit one laptop; its content must remain readable and operable as available width, text scale, and wrapping conditions change.",
+        "output": "A `campus-events-board` folder with semantic six-event content, local responsive media, intentional Flexbox and Grid roles, a complete width/zoom matrix, a repaired overflow, and signed human review.",
+        "tools": "Windows, VS Code, the verified localhost preview route, a current browser, and browser development tools",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: WEBD-R2-C003, WEBD-R2-C004, WEBD-R2-C006, WEBD-R2-C007, WEBD-R2-C008. New Week concepts are taught in Core Study before this Build.",
+        "finished": "The source order remains meaningful before layout and keyboard focus follows that same logical order. The category navigation uses Flexbox with an intentional main axis, gap, and wrapping; the event collection uses Grid rather than Flexbox or positioned offsets. The base layout is one column, the 42rem query produces two columns, and the 64rem query produces three columns at the named test widths. Local images remain within their cards through intrinsic or max-width sizing and preserve proportions. The 320, 768, and 1280 rows have no horizontal page scrolling, overlap, clipped long title, or hidden essential content. At 200 percent zoom all content and controls remain available in a sensible order with visible focus and no two-dimensional scrolling requirement. The overflow record names the exact 32rem declaration, computed element width versus viewport, focused removal, and passing full rerun. A human reviewer resizes the exact artifact, repeats one narrow, one wide, and the zoom spot check, and records pass or a specific revision.",
+        "submission": "Final files and exact Flexbox, Grid, fluid-media, and breakpoint rules | Completed 320/768/1280/200-percent viewport matrix | 32rem overflow symptom, computed evidence, focused repair, and full rerun | Reviewer identifier/date with narrow, wide, zoom, keyboard, and pass-or-revise results"
+      },
+      "steps": [
+        "Create the supplied tree and semantic HTML with the exact six event records, category navigation links, decorative local event image, and viewport metadata; confirm the unstyled reading and focus order before layout.",
+        "Write narrow base CSS first: constrained page padding/measure, a one-column event grid, fluid images, wrapping text, and no width that assumes a desktop viewport.",
+        "Turn only the category navigation into a wrapping Flexbox row, then turn only the card collection into Grid; add the 42rem two-column and 64rem three-column min-width enhancements.",
+        "Complete the viewport matrix at 320, 768, and 1280 CSS pixels, recording expected and actual column count, navigation wrapping, image containment, long-title wrapping, and horizontal overflow.",
+        "At 200 percent browser zoom, repeat navigation, focus, reading order, and horizontal-scroll checks; do not hide content to make the test pass.",
+        "Temporarily add `.event-card { width: 32rem; }`, reproduce horizontal overflow at 320, use Elements/Layout/Computed evidence to name the offending rule and width, remove the fixed width, rerun every matrix row, and obtain human review."
+      ],
+      "checklist": [
+        "The source order remains meaningful before layout and keyboard focus follows that same logical order.",
+        "The category navigation uses Flexbox with an intentional main axis, gap, and wrapping; the event collection uses Grid rather than Flexbox or positioned offsets.",
+        "The base layout is one column, the 42rem query produces two columns, and the 64rem query produces three columns at the named test widths.",
+        "Local images remain within their cards through intrinsic or max-width sizing and preserve proportions.",
+        "The 320, 768, and 1280 rows have no horizontal page scrolling, overlap, clipped long title, or hidden essential content.",
+        "At 200 percent zoom all content and controls remain available in a sensible order with visible focus and no two-dimensional scrolling requirement.",
+        "The overflow record names the exact 32rem declaration, computed element width versus viewport, focused removal, and passing full rerun.",
+        "A human reviewer resizes the exact artifact, repeats one narrow, one wide, and the zoom spot check, and records pass or a specific revision."
+      ],
+      "stuck": "Reproduce one failing case, return to the exact cited Core boundary, inspect the smallest relevant validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, reload, Git, or live-URL evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every file, element, selector, state, event, record, fixture, test input, error message, command, and deployment route is taught earlier, taught in current bounded Study, or supplied by the Build contract."
+      }
+    },
+    {
+      "weekId": "WEBD-R2-W04",
+      "title": "Campus Notice Switcher guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-R2-B-W04-01"
+      },
+      "contract": {
+        "doing": "Create `campus-notice-switcher` from the finished semantic HTML and CSS scaffold. Three native buttons contain exact `data-mode`, `data-title`, and `data-message` values for Academic, Community, and Wellbeing; a Reset button restores the default. In `app.js`, store the selected mode, select the required elements once, register named listeners, read `event.currentTarget.dataset`, and render title, message, tone class, active button state, and status using textContent, classList, and attributes. Use no inline onclick, prompt, form, storage, fetch, framework, calculator, or user-text innerHTML. Deliberately misspell the title selector, use the first useful Console file/line and null value to repair it, and rerun all interactions.",
+        "why": "A bounded switcher makes the browser interaction loop visible—event, state change, render—without hiding the model inside a framework, form, persistence layer, or calculator.",
+        "output": "A `campus-notice-switcher` folder with exact notice states, native button behavior, named browser JavaScript, a completed interaction trace, one Console-led selector repair, and human review.",
+        "tools": "Windows, VS Code, the verified localhost preview route, a current browser, and browser development tools",
+        "estimatedMinutes": 195,
+        "prerequisites": "Previously completed competencies: WEBD-R2-C001, WEBD-R2-C003, WEBD-R2-C006, WEBD-R2-C011. New Week concepts are taught in Core Study before this Build.",
+        "finished": "The script is loaded with defer or at the end of body, selects existing elements once, and finishes a normal load with no Console error. selectedMode is the canonical current choice, changes before render, and accepts only none, academic, community, or wellbeing. Named functions have focused responsibilities and are passed to addEventListener rather than called during registration. Each notice button uses currentTarget data to produce the exact contracted title, message, tone class, pressed state, and status; Reset restores the exact default. User-visible text uses textContent, style changes use named classes, and there is no inline onclick or user-text innerHTML. Native buttons operate with mouse, Enter, and Space in logical focus order without custom keyboard simulation. The debug record connects the misspelled selector to a null binding, first useful Console file/line, one source repair, and a clean full rerun. A human reviewer repeats one mouse route, the full keyboard route, Reset, and the selector explanation and records pass or a specific revision.",
+        "submission": "Final HTML/CSS/JavaScript and the completed five-state interaction table | Keyboard focus, Enter, Space, and Reset results | Misspelled selector, Console message/file/line, null binding, focused repair, and clean rerun | Reviewer identifier/date with mouse, keyboard, reset, explanation, and pass-or-revise verdicts"
+      },
+      "steps": [
+        "Copy the exact interaction table and inspect the supplied native-button HTML, default output, script defer attribute, CSS tone classes, and data attributes before writing JavaScript.",
+        "Create cached element bindings and `let selectedMode = \"none\"`; write the focused named functions `selectMode`, `renderNotice`, `handleNoticeClick`, and `handleResetClick` from their supplied contracts.",
+        "Register click listeners with addEventListener, iterate the supplied notice button collection, read currentTarget data, update state before render, and keep output updates in textContent/classList/setAttribute.",
+        "Run and record default, Academic, Community, Wellbeing, and Reset cases; check exact title/message/tone/pressed state and confirm the Console is clear after each case.",
+        "Using only the keyboard, Tab to every button, activate the three notice buttons with Enter and Space, reset, and record focus and output results without adding custom key handlers to native buttons.",
+        "Temporarily change `#notice-title` to `#notce-title`, reproduce the null failure, record Console message/file/line and the inspected binding, restore the selector, rerun the full interaction table, and complete human review."
+      ],
+      "checklist": [
+        "The script is loaded with defer or at the end of body, selects existing elements once, and finishes a normal load with no Console error.",
+        "selectedMode is the canonical current choice, changes before render, and accepts only none, academic, community, or wellbeing.",
+        "Named functions have focused responsibilities and are passed to addEventListener rather than called during registration.",
+        "Each notice button uses currentTarget data to produce the exact contracted title, message, tone class, pressed state, and status; Reset restores the exact default.",
+        "User-visible text uses textContent, style changes use named classes, and there is no inline onclick or user-text innerHTML.",
+        "Native buttons operate with mouse, Enter, and Space in logical focus order without custom keyboard simulation.",
+        "The debug record connects the misspelled selector to a null binding, first useful Console file/line, one source repair, and a clean full rerun.",
+        "A human reviewer repeats one mouse route, the full keyboard route, Reset, and the selector explanation and records pass or a specific revision."
+      ],
+      "stuck": "Reproduce one failing case, return to the exact cited Core boundary, inspect the smallest relevant validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, reload, Git, or live-URL evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every file, element, selector, state, event, record, fixture, test input, error message, command, and deployment route is taught earlier, taught in current bounded Study, or supplied by the Build contract."
+      }
+    },
+    {
+      "weekId": "WEBD-R2-W05",
+      "title": "Weekly Study Checklist guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-R2-B-W05-01"
+      },
+      "contract": {
+        "doing": "Create weekly-study-checklist with the supplied five fixed records. Keep one items array and one currentFilter value as canonical state. Render All, Remaining, and Done views with createElement and textContent; generated toggle buttons carry stable data-id values and one list listener handles them through delegation. Save only the items array as JSON under the exact key web-foundations.study-checklist.v1. A missing key starts from fresh defaults. Valid records load. Malformed JSON or a wrong record shape must remain untouched, block writes, show a specific recovery message, and require the supplied Reset saved data button to remove only that key. After the passing version works, reproduce a v0/v1 key mismatch, diagnose it in the Application panel, and repair all access through the one constant. Do not add a form, server, fetch, timer, framework, array-index identity, duplicate listeners, or user-text innerHTML.",
+        "why": "Interactive pages become fragile when the DOM, filters, and saved data each act as competing truths. A small fixed checklist makes stable identity, derived display, persistence, and corruption recovery visible before a learner adds form-created records.",
+        "output": "A weekly-study-checklist folder with five stable records, three derived filters, delegated generated controls, durable valid state, protected malformed state, explicit recovery, a key-mismatch repair, and signed human review.",
+        "tools": "Windows, VS Code, the verified localhost preview route, a current browser, and browser development tools",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: WEBD-R2-C001, WEBD-R2-C012, WEBD-R2-C013, WEBD-R2-C014. New Week concepts are taught in Core Study before this Build.",
+        "finished": "The canonical state is one array of exactly five record objects with stable string IDs plus one currentFilter value; displayed position is never used as identity. All, Remaining, and Done are derived views and never mutate or replace the master collection merely to change visibility. One render function owns the generated list region and uses createElement, textContent, attributes, and one delegated ancestor listener without duplicate handlers or user-text innerHTML. Toggling Practice Grid changes progress from 0/5 to 1/5, survives reload, appears alone in Done, and leaves four items in Remaining. A filter with zero matches displays its contracted empty message instead of an unexplained blank region. Only a missing storage key silently uses fresh defaults; valid JSON with the exact record shape loads, while malformed JSON or invalid shape remains byte-for-byte unchanged and blocks every save. Reset saved data removes only web-foundations.study-checklist.v1, restores five incomplete defaults, clears the warning, and permits later saves. The deliberate v0/v1 mismatch is diagnosed from the Application panel and repaired through one shared STORAGE_KEY constant. A human reviewer repeats hard reload, one Done/Remaining comparison, malformed-data preservation, and explicit recovery and records pass or a specific revision.",
+        "submission": "Final source and completed normal/filter/reload acceptance rows | Exact v1 key and stored JSON before and after a successful reload | Malformed and invalid-shape values preserved while writes are blocked, followed by explicit reset evidence | v0/v1 mismatch symptom, Application-panel clue, one-constant repair, and full rerun | Reviewer identifier/date with reload, filter, corruption, reset, and pass-or-revise verdicts"
+      },
+      "steps": [
+        "Copy the exact five-record and filter contracts into evidence.md. Create the supplied HTML regions for filters, progress, list, empty message, storage warning, and Reset saved data; confirm the default semantic and keyboard order before JavaScript.",
+        "Create the default record array, items state, currentFilter state, and one STORAGE_KEY constant. Implement small record validation and loadItems so missing storage returns fresh defaults, valid JSON records load, and malformed or invalid-shaped data sets storageBlocked without changing the stored text.",
+        "Implement deriveVisibleItems and renderChecklist. Clear only the owned list region, create safe text and toggle controls, set each data-id and pressed/state label from its record, report completed count, and show a specific empty message for a filter with no matches.",
+        "Register one delegated list click handler and one handler for each fixed filter control. Find the stable record ID, create the updated items array, save only when storage is not blocked, then render. Implement explicit Reset saved data to remove only STORAGE_KEY, restore fresh defaults, unblock writes, and render.",
+        "Run the exact first-load, toggle, reload, filter, no-match, toggle-twice, missing-key, malformed-JSON, invalid-shape, and explicit-reset cases. Record state, DOM result, stored string, and whether the original malformed value remained unchanged.",
+        "After a valid completed item is stored under v1, temporarily read a literal v0 key. Observe the apparent lost state while Application still shows the v1 value, restore all reads to STORAGE_KEY, rerun every case, and ask a human reviewer to repeat reload, filters, corruption block, and explicit reset."
+      ],
+      "checklist": [
+        "The canonical state is one array of exactly five record objects with stable string IDs plus one currentFilter value; displayed position is never used as identity.",
+        "All, Remaining, and Done are derived views and never mutate or replace the master collection merely to change visibility.",
+        "One render function owns the generated list region and uses createElement, textContent, attributes, and one delegated ancestor listener without duplicate handlers or user-text innerHTML.",
+        "Toggling Practice Grid changes progress from 0/5 to 1/5, survives reload, appears alone in Done, and leaves four items in Remaining.",
+        "A filter with zero matches displays its contracted empty message instead of an unexplained blank region.",
+        "Only a missing storage key silently uses fresh defaults; valid JSON with the exact record shape loads, while malformed JSON or invalid shape remains byte-for-byte unchanged and blocks every save.",
+        "Reset saved data removes only web-foundations.study-checklist.v1, restores five incomplete defaults, clears the warning, and permits later saves.",
+        "The deliberate v0/v1 mismatch is diagnosed from the Application panel and repaired through one shared STORAGE_KEY constant.",
+        "A human reviewer repeats hard reload, one Done/Remaining comparison, malformed-data preservation, and explicit recovery and records pass or a specific revision."
+      ],
+      "stuck": "Reproduce one failing case, return to the exact cited Core boundary, inspect the smallest relevant validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, reload, Git, or live-URL evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every file, element, selector, state, event, record, fixture, test input, error message, command, and deployment route is taught earlier, taught in current bounded Study, or supplied by the Build contract."
+      }
+    },
+    {
+      "weekId": "WEBD-R2-W06",
+      "title": "Accessible Workshop Seat Request guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-R2-B-W06-01"
+      },
+      "contract": {
+        "doing": "Create workshop-seat-request from the supplied semantic and responsive shell. The exact fields are Full name, Student email, one required Morning or Afternoon workshop session, optional Access needs, and required agreement to the fictional attendance terms. Keep visible labels, a fieldset and legend, instructions, native types and constraints, linked error elements, a submit button, and one role=status region. Use novalidate only so the supplied JavaScript can display consistent messages from native ValidityState; do not remove the constraints. On submit, prevent navigation, clear stale errors, test fields in document order, apply the custom trimmed-name length rule, associate text errors, set aria-invalid, focus the first invalid control, and announce success only when every rule passes. Use fictional inputs only and do not save or send them. Break and repair the Student email label association, then complete keyboard, 320-pixel, 200-percent, contrast, and human checks.",
+        "why": "A form can look complete while its controls are unnamed, errors are invisible to keyboard or assistive-technology users, and invalid input still produces false success. This bounded request form makes structure, validation order, focus, and truthful status observable without requiring a backend.",
+        "output": "A workshop-seat-request folder with semantic controls, exact native/custom validation, associated messages, first-error focus, truthful local status, complete keyboard/reflow evidence, a repaired label association, and signed human review.",
+        "tools": "Windows, VS Code, the verified localhost preview route, a current browser, and browser development tools",
+        "estimatedMinutes": 210,
+        "prerequisites": "Previously completed competencies: WEBD-R2-C003, WEBD-R2-C006, WEBD-R2-C008, WEBD-R2-C011, WEBD-R2-C013, WEBD-R2-C014. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Full name and Student email have persistent visible labels; the two session radios share one fieldset and legend; Access needs is explicitly optional; agreement and submit use native controls. Native required, email, minlength, radio, and checkbox constraints remain in markup even though novalidate permits consistent authored feedback. Whitespace-only or one-character trimmed names fail the bounded custom rule, malformed email fails type validation, and missing session or agreement cannot produce success. Each invalid control receives specific visible text linked through aria-describedby, aria-invalid becomes true only while invalid, and focus moves to the first invalid control in document order. The role=status region announces one local preparation success only after all rules pass; the page does not reload, append submitted data to the URL, save it, or send a request. Tab/Shift+Tab order is logical, native radio arrow and checkbox Space behavior works, Enter submits, and every focus indicator remains visible. At 320 CSS pixels and 200 percent zoom, labels, controls, errors, and status reflow without overlap, clipping, hidden essential content, or horizontal page scrolling; required text contrast is measured at 4.5 to 1 or better. The label defect record proves the mismatched for/id pair, failed click or accessible-name result, exact repair, and passing rerun. A human reviewer repeats blank, malformed-email, valid, keyboard, label, and zoom spot checks and records pass or a specific revision.",
+        "submission": "Final semantic form and completed blank, malformed, missing-choice, agreement, and valid-case matrix | Associated-error and first-focus evidence plus exact status result with no reload, storage, or network submission | Keyboard order, native radio/checkbox behavior, focus visibility, contrast, 320-pixel, and 200-percent results | Broken label association, inspection evidence, exact repair, and full rerun | Reviewer identifier/date with named validation, keyboard, label, zoom, and pass-or-revise verdicts"
+      },
+      "steps": [
+        "Create the supplied form structure and error/status regions. Inspect the accessible names in the browser accessibility view, click every visible label, and record the initial document and focus order before JavaScript.",
+        "Add required, type=email, minlength, and the radio/checkbox requirements. Implement clearFieldError, showFieldError, messageForField, validateForm, and the one submit handler from the supplied responsibility contract.",
+        "Apply the exact validation order: trimmed Full name, Student email, workshop session, agreement. Associate each message, set or remove aria-invalid, move focus only to the first invalid control, and write success to the status region without reload or network activity.",
+        "Run blank submission, whitespace-only name, malformed email, missing session, missing agreement, and fully valid fictional cases. Record the first focused control, every visible message, status text, URL/reload behavior, and whether success appeared truthfully.",
+        "Complete the keyboard route with Tab and Shift+Tab, arrow keys within the radio group, Space on the checkbox, and Enter on submit. Verify visible focus, measured normal-text contrast, 320-pixel reflow, and 200-percent zoom without clipping or horizontal page scrolling.",
+        "Temporarily change the Student email label for value so it no longer matches the input id. Detect the failure by clicking the label and inspecting its accessible name relationship, restore the exact association, rerun the full matrix, and obtain human review."
+      ],
+      "checklist": [
+        "Full name and Student email have persistent visible labels; the two session radios share one fieldset and legend; Access needs is explicitly optional; agreement and submit use native controls.",
+        "Native required, email, minlength, radio, and checkbox constraints remain in markup even though novalidate permits consistent authored feedback.",
+        "Whitespace-only or one-character trimmed names fail the bounded custom rule, malformed email fails type validation, and missing session or agreement cannot produce success.",
+        "Each invalid control receives specific visible text linked through aria-describedby, aria-invalid becomes true only while invalid, and focus moves to the first invalid control in document order.",
+        "The role=status region announces one local preparation success only after all rules pass; the page does not reload, append submitted data to the URL, save it, or send a request.",
+        "Tab/Shift+Tab order is logical, native radio arrow and checkbox Space behavior works, Enter submits, and every focus indicator remains visible.",
+        "At 320 CSS pixels and 200 percent zoom, labels, controls, errors, and status reflow without overlap, clipping, hidden essential content, or horizontal page scrolling; required text contrast is measured at 4.5 to 1 or better.",
+        "The label defect record proves the mismatched for/id pair, failed click or accessible-name result, exact repair, and passing rerun.",
+        "A human reviewer repeats blank, malformed-email, valid, keyboard, label, and zoom spot checks and records pass or a specific revision."
+      ],
+      "stuck": "Reproduce one failing case, return to the exact cited Core boundary, inspect the smallest relevant validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, reload, Git, or live-URL evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every file, element, selector, state, event, record, fixture, test input, error message, command, and deployment route is taught earlier, taught in current bounded Study, or supplied by the Build contract."
+      }
+    },
+    {
+      "weekId": "WEBD-R2-W07",
+      "title": "Campus Services Viewer guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-R2-B-W07-01"
+      },
+      "contract": {
+        "doing": "Create campus-services-viewer with index.html, styles.css, app.js, and the supplied local fixtures. A service record is exactly an object with non-empty string id, name, category, and description fields. The normal fixture contains three records; empty contains an empty array; malformed is invalid JSON; invalid-shape parses but violates the record contract; missing has no file and returns 404. Use the supplied Reviewer fixture controls to call the same loadServices function with each relative URL. Set Loading before fetch, disable only the active reload control, await fetch, reject a non-ok response before parsing, validate parsed records, and commit new cards only after full success. Empty is a successful explicit state. An HTTP, parse, or shape error reports a plain-language message, logs technical evidence, enables Retry, and leaves the last valid cards unchanged. Use createElement/textContent for records. Reproduce a singular service.json path, inspect Network and a Sources breakpoint, repair it to services.json, and rerun all cases. Do not use file://, an external API, package, framework, secret, innerHTML record rendering, or a hidden error state.",
+        "why": "Network-backed interfaces must communicate more than success. A learner who can distinguish HTTP failure, malformed JSON, invalid record shape, empty success, and rendering state can debug real browser behavior without blaming every failure on fetch or the server.",
+        "output": "A campus-services-viewer folder with owned fixtures, validated fetch behavior, six honest request states, preserved prior data, retry, breakpoint and Network evidence, a repaired relative path, and signed human review.",
+        "tools": "Windows, VS Code, the verified localhost preview route, a current browser, and browser development tools",
+        "estimatedMinutes": 195,
+        "prerequisites": "Previously completed competencies: WEBD-R2-C001, WEBD-R2-C005, WEBD-R2-C012, WEBD-R2-C013, WEBD-R2-C014, WEBD-R2-C015, WEBD-R2-C016, WEBD-R2-C017. New Week concepts are taught in Core Study before this Build.",
+        "finished": "Every required fixture is served from the project localhost origin; the viewer has no file://, external API, account, package, key, or remote availability dependency. loadServices uses async/await, checks response.ok before one response.json call, and validates every parsed record before committing replacement data. Each accepted service has a non-empty string id, name, category, and description; parsed but invalid-shaped JSON is rejected as data failure. Loading, three-record success, empty success, HTTP error, malformed JSON error, invalid-shape error, and Retry have distinct visible status text and control states. A failed replacement request preserves the last valid three cards and never relabels stale data as newly successful. Generated record text is created with DOM APIs and textContent, and one render boundary owns the cards region. The completed matrix records URL, HTTP status, response.ok, parse/shape result, visible state, retained-card count, Console result, and retry result for all fixtures. The singular-path defect is tied to the exact Network request, 404 status, initiator, breakpoint values, source repair, Retry, and clean full rerun. A human reviewer repeats normal, empty, one HTTP failure, malformed data, preserved cards, and repaired Retry and records pass or a specific revision.",
+        "submission": "Final source, fixture tree, localhost origin, and completed request-state matrix | Network status/ok/preview/initiator plus Sources breakpoint comparison for normal and missing | Evidence that HTTP, parse, and shape failures retain the last valid cards and report distinct results | Singular-path defect, first useful evidence, repaired relative URL, Retry, and full rerun | Reviewer identifier/date with named fixture, preserved-data, retry, and pass-or-revise verdicts"
+      },
+      "steps": [
+        "Create the exact folder tree and five fixture cases. Start localhost, confirm services.json returns HTTP 200 with application/json content, and record why the build cannot be tested through file://.",
+        "Implement isValidService and isValidServiceList for the exact four-string-field contract. Build one safe renderServices boundary plus explicit renderLoading, renderEmpty, renderError, and renderSuccessStatus responsibilities.",
+        "Implement async loadServices(url): set loading without deleting current cards, await fetch, inspect response.ok, parse once, validate the full list, then replace current records and render success or empty. Catch technical failures, retain the prior valid records, show the contracted message, log the error, and enable Retry for lastRequestedUrl.",
+        "Wire the supplied Reviewer fixture buttons and Retry to loadServices. Use Slow 3G once to observe Loading, then run normal 200/three cards, empty 200/explicit empty, missing 404/error, malformed 200/parse error, and invalid-shape 200/validation error. Load normal before each failure and prove that its three cards remain.",
+        "Place a Sources breakpoint immediately after fetch resolves. Record response.status and response.ok for normal and missing. Compare Network requested URL, status, response preview, and initiator with the user-facing and Console results.",
+        "Temporarily map Normal to ./data/service.json. Reproduce the 404, record the first useful Network and breakpoint evidence, restore ./data/services.json, use Retry, rerun every fixture and preserved-data case, and obtain human review."
+      ],
+      "checklist": [
+        "Every required fixture is served from the project localhost origin; the viewer has no file://, external API, account, package, key, or remote availability dependency.",
+        "loadServices uses async/await, checks response.ok before one response.json call, and validates every parsed record before committing replacement data.",
+        "Each accepted service has a non-empty string id, name, category, and description; parsed but invalid-shaped JSON is rejected as data failure.",
+        "Loading, three-record success, empty success, HTTP error, malformed JSON error, invalid-shape error, and Retry have distinct visible status text and control states.",
+        "A failed replacement request preserves the last valid three cards and never relabels stale data as newly successful.",
+        "Generated record text is created with DOM APIs and textContent, and one render boundary owns the cards region.",
+        "The completed matrix records URL, HTTP status, response.ok, parse/shape result, visible state, retained-card count, Console result, and retry result for all fixtures.",
+        "The singular-path defect is tied to the exact Network request, 404 status, initiator, breakpoint values, source repair, Retry, and clean full rerun.",
+        "A human reviewer repeats normal, empty, one HTTP failure, malformed data, preserved cards, and repaired Retry and records pass or a specific revision."
+      ],
+      "stuck": "Reproduce one failing case, return to the exact cited Core boundary, inspect the smallest relevant validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, reload, Git, or live-URL evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every file, element, selector, state, event, record, fixture, test input, error message, command, and deployment route is taught earlier, taught in current bounded Study, or supplied by the Build contract."
+      }
+    },
+    {
+      "weekId": "WEBD-R2-W08",
+      "title": "FreshStart Hub - Orientation Event Finder guided Build",
+      "placement": {
+        "stage": "build",
+        "buildId": "WEBD-R2-B-W08-01"
+      },
+      "contract": {
+        "doing": "Build freshstart-hub from the supplied tree, six fictional event records, semantic shell, CSS sections, application-state signature, safe storage helper contract, test matrix, README outline, and ignore file. The exact event shape is id, title, dateLabel, location, category, and summary, all non-empty strings; category is academic, community, or wellbeing. Fetch ./data/events.json, validate all records, and expose loading, success, no-match, empty, HTTP/data error, and Retry states. A labelled search form, category select, Saved only checkbox, Clear filters button, and generated Save buttons update one state object and one render boundary. Search trims and ignores case across title, location, and summary; category and saved filters combine. Save buttons use stable data-id and aria-pressed, and only the saved string-ID array persists under freshstart.savedIds.v1. Missing storage starts empty; malformed or non-array storage is preserved, blocks saves, and requires Reset saved data. Keep relative paths, responsive 320/768/1280 and 200-percent behavior, visible focus, status announcements, and safe generated text. Publish the sanitized source through GitHub Pages, deliberately expose and repair the supplied case-sensitive Events.json path, and verify every live asset. Exclude backend submission, authentication, account data, packages, framework, build step, API key, external API, service worker, date parsing, remote writes, and production claims.",
+        "why": "FreshStart Hub turns seven isolated proofs into one application another person can open, understand, operate, debug, and verify at a real HTTPS URL. Its fixed scope demonstrates integration without disguising untaught backend, framework, authentication, or build-tool work as beginner independence.",
+        "output": "A public FreshStart Hub repository and deployed HTTPS site with six validated events, accessible combined filters, durable and recoverable saved IDs, honest request states, complete local/live acceptance evidence, safe commit history, a repaired Pages path, and signed human review.",
+        "tools": "Windows, VS Code, the verified localhost preview route, a current browser and development tools, Git, and a free verified GitHub account",
+        "estimatedMinutes": 240,
+        "prerequisites": "Previously completed competencies: WEBD-R2-C001, WEBD-R2-C002, WEBD-R2-C003, WEBD-R2-C004, WEBD-R2-C005, WEBD-R2-C006, WEBD-R2-C007, WEBD-R2-C008, WEBD-R2-C009, WEBD-R2-C010, WEBD-R2-C011, WEBD-R2-C012, WEBD-R2-C013, WEBD-R2-C014, WEBD-R2-C015, WEBD-R2-C016, WEBD-R2-C017, WEBD-R2-C018, WEBD-R2-C019, WEBD-R2-C020, WEBD-R2-C021, WEBD-R2-C022, WEBD-R2-C023. New Week concepts are taught in Core Study before this Build.",
+        "finished": "The application uses the supplied static tree, six fictional event records, no dependency install/build step, and no backend, authentication, remote write, external API, key, secret, or personal record. Semantic landmarks, heading order, labelled controls, status/error regions, native keyboard behavior, visible focus, contrast, and safe text updates remain valid in generated and empty/error states. The mobile-first page has no horizontal page scroll, clipped control, overlap, or hidden essential content at 320, 768, 1280 CSS pixels or 200 percent zoom. Fetch checks response.ok, parses once, validates every six-field event and allowed category, commits only valid data, preserves the last valid list on failure, and offers a functioning Retry. One state object drives normalized search, category, Saved only, saved button state, result count, no-match output, and rendering; combined filters do not mutate the six fetched records. The spaced uppercase LIBRARY query returns only Library Starter Tour, Community returns exactly two records, and a no-match query shows the contracted message. Saving library-tour changes its button text and aria-pressed state, survives reload, and yields exactly one Saved only result. Malformed or non-array saved-ID storage remains unchanged and blocks saves until Reset saved data removes only freshstart.savedIds.v1 and restores normal operation. README documents purpose, prerequisites, exact localhost route, features, data/storage behavior, acceptance checks, deployment URL, known limits, and the fact that localhost storage does not migrate to the Pages origin. The repository contains intended source, fictional fixtures, TESTS, README, ignore rules, and meaningful commits; staged-path evidence shows no credential, environment file, log, editor cache, or private learner data. The repaired Pages deployment returns HTTP 200 for HTML, CSS, JavaScript, and events.json and passes live search, save/reload, keyboard, and 320-pixel checks. A human reviewer follows README from a fresh perspective, opens the deployed HTTPS URL, repeats Network, search, save/reload, keyboard, and narrow-view spot checks, and records pass or a specific revision.",
+        "submission": "GitHub repository URL, deployed Pages URL, and final reviewed commit identifier | Completed local and live acceptance matrix including search, combined filters, save/reload, no-match, network failure, storage corruption/reset, keyboard, and responsive checks | Staged-path inspection, supplied ignore rules, fictional-data confirmation, meaningful commit summary, and absence of secrets or private learner data | Case-sensitive Events.json live 404 evidence, lowercase relative-path repair commit, redeployment, and HTTP 200 results for HTML/CSS/JavaScript/JSON | Reviewer identifier/date with fresh README, live Network, search, save/reload, keyboard, narrow-view, and pass-or-revise verdicts"
+      },
+      "steps": [
+        "Copy the immutable record, UI, storage, error, repository, and evidence contracts into README and TESTS before coding. Create the exact tree and at least the four named milestone commits: semantic shell, responsive styles, state/data behavior, and documentation/deployment repair.",
+        "Build the semantic and mobile-first shell. Use one h1, meaningful regions/headings, labelled search and filter controls, result/status and error regions, a generated card region, visible focus, one-column base, and tested medium/wide enhancement without altering source order.",
+        "Implement event-shape validation, fetch loading/success/empty/error/Retry, and one state object with events, query, category, savedIds, savedOnly, requestStatus, and storageBlocked. Commit fetched events only after HTTP, parse, and shape success.",
+        "Implement normalized search, category and Saved only filters, Clear filters, a no-match result, delegated Save buttons by stable ID, aria-pressed and action text, live result count, and safe card creation through textContent.",
+        "Reuse the exact localStorage policy: missing saved IDs becomes an empty array; a valid string array loads; malformed/non-array data remains untouched, blocks Save, shows recovery, and Reset saved data removes only freshstart.savedIds.v1. Prove saved library-tour survives reload and localhost state is not expected to transfer to the separate Pages origin.",
+        "Run the complete local matrix: six clean records, spaced uppercase LIBRARY query gives one result, Community gives two, saved library-tour survives reload and Saved only gives one, no-match is explicit, missing event data preserves the last valid view with Retry, malformed storage blocks writes until explicit reset, keyboard route passes, and 320/768/1280/200-percent views have no horizontal page scroll.",
+        "Copy the supplied ignore file, keep all data fictional, run git status --short before and after git add ., inspect every staged path, unstage any secret/private/unrelated file before commit, push meaningful history, and configure the supplied GitHub Pages branch/folder route. Never put a credential or personal submission in the repository.",
+        "For the deliberate live-only defect, temporarily publish ./data/Events.json while the tracked file is data/events.json. Record localhost behavior on Windows and the live Pages 404/requested case. Repair to ./data/events.json, commit the focused fix, redeploy, verify HTML/CSS/JS/JSON all return 200, rerun search/save/reload/keyboard/narrow view at the HTTPS URL, and obtain fresh-perspective human review."
+      ],
+      "checklist": [
+        "The application uses the supplied static tree, six fictional event records, no dependency install/build step, and no backend, authentication, remote write, external API, key, secret, or personal record.",
+        "Semantic landmarks, heading order, labelled controls, status/error regions, native keyboard behavior, visible focus, contrast, and safe text updates remain valid in generated and empty/error states.",
+        "The mobile-first page has no horizontal page scroll, clipped control, overlap, or hidden essential content at 320, 768, 1280 CSS pixels or 200 percent zoom.",
+        "Fetch checks response.ok, parses once, validates every six-field event and allowed category, commits only valid data, preserves the last valid list on failure, and offers a functioning Retry.",
+        "One state object drives normalized search, category, Saved only, saved button state, result count, no-match output, and rendering; combined filters do not mutate the six fetched records.",
+        "The spaced uppercase LIBRARY query returns only Library Starter Tour, Community returns exactly two records, and a no-match query shows the contracted message.",
+        "Saving library-tour changes its button text and aria-pressed state, survives reload, and yields exactly one Saved only result.",
+        "Malformed or non-array saved-ID storage remains unchanged and blocks saves until Reset saved data removes only freshstart.savedIds.v1 and restores normal operation.",
+        "README documents purpose, prerequisites, exact localhost route, features, data/storage behavior, acceptance checks, deployment URL, known limits, and the fact that localhost storage does not migrate to the Pages origin.",
+        "The repository contains intended source, fictional fixtures, TESTS, README, ignore rules, and meaningful commits; staged-path evidence shows no credential, environment file, log, editor cache, or private learner data.",
+        "The repaired Pages deployment returns HTTP 200 for HTML, CSS, JavaScript, and events.json and passes live search, save/reload, keyboard, and 320-pixel checks.",
+        "A human reviewer follows README from a fresh perspective, opens the deployed HTTPS URL, repeats Network, search, save/reload, keyboard, and narrow-view spot checks, and records pass or a specific revision."
+      ],
+      "stuck": "Reproduce one failing case, return to the exact cited Core boundary, inspect the smallest relevant validator, Elements, Styles, Computed, Console, Application, Network, keyboard, viewport, reload, Git, or live-URL evidence, change one cause, and rerun the same case before continuing. Do not copy a complete solution.",
+      "prerequisiteReview": {
+        "unresolvedTerms": [],
+        "evidence": "Every file, element, selector, state, event, record, fixture, test input, error message, command, and deployment route is taught earlier, taught in current bounded Study, or supplied by the Build contract."
+      }
+    }
+  ]
+}

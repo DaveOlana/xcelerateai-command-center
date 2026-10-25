@@ -7,6 +7,7 @@ import javascriptProgrammingFoundationsRuntime from './published/javascriptProgr
 import productDesignRuntime from './published/productDesign.js';
 import pythonAgentEngineeringRuntime from './published/pythonAgentEngineering.js';
 import pythonProgrammingFoundationsRuntime from './published/pythonProgrammingFoundations.js';
+import webDevelopmentFoundationsRuntime from './published/webDevelopmentFoundations.js';
 import { createCatalogEntry, createCurriculumCatalog } from './publishCurriculum.js';
 
 export const curriculumCatalog = createCurriculumCatalog([
@@ -19,4 +20,5 @@ export const curriculumCatalog = createCurriculumCatalog([
   createCatalogEntry(productDesignRuntime, 'published'),
   createCatalogEntry(pythonAgentEngineeringRuntime, 'published'),
   createCatalogEntry(pythonProgrammingFoundationsRuntime, 'published'),
+  createCatalogEntry(webDevelopmentFoundationsRuntime, 'published'),
 ]);

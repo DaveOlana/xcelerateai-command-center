@@ -1,0 +1,56 @@
+{
+  "curriculumId": "WEBD",
+  "revision": 2,
+  "designPrinciple": "A beginner first receives bounded explanation or demonstration, then predicts and inspects a browser result, practices in a safe fixed context, passes a source-mapped Skill Check, builds a progressively less scaffolded artifact, repairs one reproducible defect, verifies exact cases, and records human-reviewable Proof.",
+  "targetLearner": "A tertiary fresher or independent beginner with basic computer literacy and no assumed coding experience",
+  "technologySequence": [
+    "Windows VS Code, current browser, DevTools, localhost preview, Git, and GitHub setup",
+    "HTML document metadata, landmarks, headings, links, local media, validation, and keyboard navigation",
+    "CSS cascade, inheritance, custom properties, box model, readable typography, contrast, and computed evidence",
+    "Flexbox, Grid, fluid media, mobile-first breakpoints, overflow, reflow, and zoom",
+    "browser JavaScript bindings, conditions, named functions, DOM selection/update, native controls, and events",
+    "arrays, record objects, canonical state, derived views, event delegation, JSON, and localStorage",
+    "semantic forms, native constraints, accessible errors/status, keyboard, focus, and manual checks",
+    "fetch, response.ok, JSON validation, request states, retry, Console, and Network diagnosis",
+    "integrated verification, Git, README, GitHub Pages, and live-path checks"
+  ],
+  "learningRhythm": [
+    "bounded external explanation or demonstration",
+    "active interaction, prediction, inspection, validation, or comparison",
+    "10-target shuffled Skill Check",
+    "required Build in sessions of at most two hours",
+    "human-reviewable Proof",
+    "specific reflection"
+  ],
+  "resourceRoleStrategy": {
+    "learn": "A short first explanation or visual demonstration.",
+    "practice": "An observable interaction, edit, prediction, inspection, validator, DevTools, or accessibility exercise.",
+    "reference": "A precise bounded web-platform or tool lookup beside immediate work, never an unscoped documentation dump."
+  },
+  "progressionPolicy": [
+    "Weeks 1-3 establish structure, styling, and responsive layout without a calculator or programming-first jump.",
+    "Weeks 4-7 add one browser behavior layer at a time: events, canonical state/storage, forms/accessibility, then HTTP data and failure states.",
+    "Week 8 introduces only bounded recovery and static publication while integrating already practiced application behavior."
+  ],
+  "workloadPrinciples": [
+    "Eight instructional Weeks at six hours each.",
+    "Setup is separate and skippable only through explicit verification.",
+    "No Build session exceeds two hours.",
+    "Most time is reserved for editing, previewing, inspecting, validating, debugging, testing, evidence, and explanation rather than passive consumption."
+  ],
+  "assessmentPolicy": "Each Week has ten independently authored, source-mapped questions; 7/10 passes; attempts are unlimited; option order reshuffles per attempt; browser competence is judged through Build and Proof, not quiz score alone.",
+  "projectArchitecture": [
+    {
+      "projectId": "WEBD-R2-PJ01",
+      "title": "Web Foundations Practice Portfolio",
+      "milestoneCount": 7,
+      "outcome": "Produce seven progressively stronger browser artifacts demonstrating semantic HTML, CSS systems, responsive layout, DOM events, canonical state, local persistence, accessible forms, fetch states, and evidence-led debugging."
+    },
+    {
+      "projectId": "WEBD-R2-PJ02",
+      "title": "FreshStart Hub",
+      "milestoneCount": 1,
+      "outcome": "Deliver a documented, responsive, accessible static orientation application with local JSON, filtering, saved events, honest request states, a verified test record, Git history, and a working GitHub Pages URL."
+    }
+  ]
+}

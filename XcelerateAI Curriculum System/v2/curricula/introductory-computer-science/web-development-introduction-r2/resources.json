@@ -1,0 +1,1673 @@
+[
+  {
+    "id": "WEBD-R2-SETUP-01",
+    "title": "Install Visual Studio Code on Windows",
+    "url": "https://code.visualstudio.com/docs/setup/windows",
+    "provider": "Microsoft VS Code",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “Install VS Code on Windows” and select the Windows User Setup route.",
+      "stop": "Stop when the Explorer pane shows the web-foundations folder; do not configure WSL, containers, Settings Sync, or unrelated extensions.",
+      "note": "Do: Download and run User Setup, launch VS Code, create Documents\\web-foundations, and open that exact folder with File > Open Folder.\n\nFinished when: VS Code launches and reopens Documents\\web-foundations as a folder rather than as one loose file.\n\nAccess: Free download; no Microsoft account, sign-in, certificate, or payment is required. Installation permission on the Windows user account is required.\n\nNext: Install and verify the approved localhost preview route."
+    },
+    "competencyIds": [
+      "WEBD-R2-C001"
+    ],
+    "whySelected": "The maintained official Windows guide gives the supported User Setup route and verifies the editor without introducing a paid IDE.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://code.visualstudio.com/docs/setup/windows",
+      "finalUrl": "https://code.visualstudio.com/docs/setup/windows",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-SETUP-02",
+    "title": "Install Live Preview and verify localhost",
+    "url": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server",
+    "provider": "Microsoft VS Code",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Open the Marketplace page for the Microsoft Live Preview extension and confirm that the publisher is Microsoft.",
+      "stop": "Stop after the saved heading appears in an external browser and a refresh shows one edited word; do not install a similarly named third-party server or expose the server to the public network.",
+      "note": "Do: Install the extension in desktop VS Code, create index.html in web-foundations, run “Live Preview: Show Preview (External Browser),” and record the exact http://127.0.0.1 or http://localhost URL.\n\nFinished when: A saved index.html loads through an HTTP localhost URL and visibly changes after save and refresh.\n\nAccess: The extension is free and requires no account or payment. Desktop VS Code and extension installation access are required.\n\nNext: Keep the project folder and verified preview route for Week 1."
+    },
+    "competencyIds": [
+      "WEBD-R2-C001",
+      "WEBD-R2-C002"
+    ],
+    "whySelected": "The Microsoft-maintained extension gives beginners one repeatable local HTTP preview without requiring Node.js, Python, or a paid service.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server",
+      "finalUrl": "https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-SETUP-03",
+    "title": "Create and verify a free GitHub account",
+    "url": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+    "provider": "GitHub Docs",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Begin at “About account creation” and continue to “Signing up for a new personal account.”",
+      "stop": "Stop when the account email is verified; do not create an organization, add billing details, publish personal data, or store a password or token in the course folder.",
+      "note": "Do: Create a personal account with a non-course password, complete the email verification step, choose the free plan, and record the username only.\n\nFinished when: The learner can sign in to a verified free personal account and state the public username without exposing credentials.\n\nAccess: A free personal GitHub account and access to its email inbox are required. No paid plan or payment method is required.\n\nNext: Install GitHub Desktop if it is not already available."
+    },
+    "competencyIds": [
+      "WEBD-R2-C001"
+    ],
+    "whySelected": "GitHub Pages publication in Week 8 needs a verified identity, and the official account guide avoids paid-plan or organization detours.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+      "finalUrl": "https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-SETUP-04",
+    "title": "Install GitHub Desktop on Windows",
+    "url": "https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop",
+    "provider": "GitHub Docs",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Open the Windows tab under “Installing GitHub Desktop.”",
+      "stop": "Stop when GitHub Desktop opens; do not create, clone, publish, or initialize the course repository during setup.",
+      "note": "Do: Download GitHub Desktop for Windows from the named link, run the installer, and launch the application once.\n\nFinished when: GitHub Desktop launches on Windows without creating or publishing a repository.\n\nAccess: The application is free. Windows 10 64-bit or later and installation access are required; sign-in is deferred to the next setup card.\n\nNext: Authenticate GitHub Desktop through the browser."
+    },
+    "competencyIds": [
+      "WEBD-R2-C001"
+    ],
+    "whySelected": "The official Windows installer supplies Git and a visible staged-file workflow suitable for a first safe publication.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop",
+      "finalUrl": "https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-SETUP-05",
+    "title": "Authenticate GitHub Desktop safely",
+    "url": "https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/authenticating-to-github-in-github-desktop",
+    "provider": "GitHub Docs",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Under “Authenticating an account on GitHub,” choose the Windows instructions and begin with File > Options.",
+      "stop": "Stop when the intended username or avatar appears in GitHub Desktop; do not create or publish a repository yet.",
+      "note": "Do: Choose Accounts > Sign Into GitHub.com > Continue With Browser, authorize GitHub Desktop, and return to the Accounts pane.\n\nFinished when: GitHub Desktop shows the intended personal account and no credential has been copied into the web-foundations folder.\n\nAccess: A verified free GitHub account, GitHub Desktop, and browser access are required. No token, SSH key, paid plan, or payment is required.\n\nNext: Begin Week 1; repository creation and publication remain a Week 8 action."
+    },
+    "competencyIds": [
+      "WEBD-R2-C001"
+    ],
+    "whySelected": "The official browser-based authentication flow avoids copying a reusable token into a beginner project.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "optional",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/authenticating-to-github-in-github-desktop",
+      "finalUrl": "https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/authenticating-to-github-in-github-desktop",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W01-01",
+    "title": "Build a first HTML page in VS Code",
+    "url": "https://learn.microsoft.com/en-us/training/modules/build-first-html-webpage/",
+    "provider": "Microsoft Learn",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Start at unit 2, “Understand the terminology.”",
+      "stop": "Stop before “Module assessment” and “Summary”; do not pursue a badge or add CSS or JavaScript yet.",
+      "note": "Do: Complete unit 2, the HTML overview in unit 3, both HTML file and page exercises, and “Exercise - Lists and links.” Make each change in the Week 1 index.html and view it through localhost.\n\nFinished when: index.html contains a doctype, language, head metadata, body, heading, paragraph, list, and usable link, and the served page reflects the saved source.\n\nAccess: Public and free; Microsoft sign-in is optional for progress tracking and is not required. Desktop VS Code and the verified localhost preview are required.\n\nNext: Replace generic containers with semantic landmarks and verify the reading order."
+    },
+    "competencyIds": [
+      "WEBD-R2-C001",
+      "WEBD-R2-C002",
+      "WEBD-R2-C003",
+      "WEBD-R2-C004"
+    ],
+    "whySelected": "This free beginner module pairs short explanations with concrete HTML edits and covers document structure, lists, and links without requiring a framework.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/training/modules/build-first-html-webpage/",
+      "finalUrl": "https://learn.microsoft.com/en-us/training/modules/build-first-html-webpage/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W01-02",
+    "title": "Structure a page with semantic landmarks",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents",
+    "provider": "MDN Web Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “Basic sections of a document.”",
+      "stop": "Stop before “Non-semantic wrappers”; do not add div or span merely to imitate the example layout.",
+      "note": "Do: Read “Basic sections of a document,” complete “HTML for structuring content,” inspect the supplied example, and read the definitions in “HTML layout elements in more detail.” Apply header, nav, main, section or article where justified, and footer to the local page.\n\nFinished when: The page has one main landmark, a logical heading order, meaningful regions, and content that remains understandable with CSS absent.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Inspect how the browser turned that source into a live DOM."
+    },
+    "competencyIds": [
+      "WEBD-R2-C003",
+      "WEBD-R2-C004"
+    ],
+    "whySelected": "The maintained lesson explains page regions from content meaning and includes a small structuring activity that fits the Week 1 page.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W01-03",
+    "title": "Inspect the live DOM with Chrome DevTools",
+    "url": "https://developer.chrome.com/docs/devtools/dom",
+    "provider": "Chrome for Developers",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Read the appendix “HTML versus the DOM,” then return to “View DOM nodes.”",
+      "stop": "Stop before “Edit node type”; refresh the local page once to prove the temporary DevTools text edit was not saved to index.html.",
+      "note": "Do: Complete “Inspect a node,” “Navigate the DOM Tree with a keyboard,” “Edit content,” and “Edit attributes” on the provided demo, then repeat one inspection and temporary text edit on the localhost Week 1 page.\n\nFinished when: The learner can identify one live DOM node, its matching source element, and why an Elements-panel edit disappears on refresh.\n\nAccess: Free; no account or payment is required. A current Chrome or Chromium-based browser and the localhost page are required.\n\nNext: Run the saved HTML through an independent validator."
+    },
+    "competencyIds": [
+      "WEBD-R2-C002",
+      "WEBD-R2-C005"
+    ],
+    "whySelected": "The official hands-on tutorial makes the source-versus-live-DOM distinction visible and teaches the exact inspection controls used throughout the course.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.chrome.com/docs/devtools/dom",
+      "finalUrl": "https://developer.chrome.com/docs/devtools/dom",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W01-04",
+    "title": "Validate HTML and repair errors",
+    "url": "https://validator.w3.org/nu/",
+    "provider": "W3C Nu Html Checker",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Open the checker, choose “text input” for a local-only page, and enable “show source” plus “outline.”",
+      "stop": "Stop after the checker reports no errors and the outline matches the intended heading order; warnings may be recorded but must not be hidden or blindly suppressed.",
+      "note": "Do: Paste the complete saved index.html, run Check, choose the first error by line, repair that source cause in VS Code, and rerun until no errors remain. Review the heading outline once.\n\nFinished when: The saved page returns zero HTML errors and the learner can name the source line and repair for at least one validator message.\n\nAccess: Public and free; no account, sign-in, installation, certificate, or payment is required. JavaScript must be enabled in the browser.\n\nNext: Save the clean Week 1 page, then begin CSS in Week 2."
+    },
+    "competencyIds": [
+      "WEBD-R2-C005"
+    ],
+    "whySelected": "The W3C checker gives line-specific parser evidence and an outline without requiring an account or installing another tool.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://validator.w3.org/nu/",
+      "finalUrl": "https://validator.w3.org/nu/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W02-01",
+    "title": "Add CSS with selectors and an external stylesheet",
+    "url": "https://learn.microsoft.com/en-us/training/modules/use-css-styles/",
+    "provider": "Microsoft Learn",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 30,
+    "location": {
+      "start": "Start at unit 2, the CSS concepts unit.",
+      "stop": "Stop before “Module assessment” and “Summary”; do not retain inline declarations or duplicate the same rule in three locations.",
+      "note": "Do: Complete unit 2 and the exercises for inline, internal, and external styles only to compare them, then complete “Exercise - Selectors.” Keep the final project version linked to one external styles.css file.\n\nFinished when: The page links styles.css and visibly demonstrates one element selector, one class selector, and one deliberately justified ID or attribute selector.\n\nAccess: Public and free; Microsoft sign-in is optional for progress tracking and no payment is required. VS Code and localhost are required.\n\nNext: Predict which rule wins when selectors conflict."
+    },
+    "competencyIds": [
+      "WEBD-R2-C006",
+      "WEBD-R2-C007"
+    ],
+    "whySelected": "This free module moves from CSS concepts to external styles and selector practice in small, beginner-sized exercises.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/training/modules/use-css-styles/",
+      "finalUrl": "https://learn.microsoft.com/en-us/training/modules/use-css-styles/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W02-02",
+    "title": "Resolve cascade and specificity conflicts",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts",
+    "provider": "MDN Web Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 18,
+    "location": {
+      "start": "Begin at “The cascade.”",
+      "stop": "Stop before “The effect of CSS location”; do not add cascade layers or use !important in the Week 2 project.",
+      "note": "Do: Read and run the examples in “Source order,” “Specificity,” “Inline styles,” and “!important.” Before each result, write which selector will win and why.\n\nFinished when: The learner correctly predicts three winners using source order and selector specificity and explains why !important is not the normal fix.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Apply the same prediction habit to box dimensions."
+    },
+    "competencyIds": [
+      "WEBD-R2-C006"
+    ],
+    "whySelected": "The lesson develops source order, specificity, and importance with inspectable examples at the point beginners first meet conflicting rules.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W02-03",
+    "title": "Make box dimensions predictable",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model",
+    "provider": "MDN Web Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “What is the CSS box model?”",
+      "stop": "Stop before “Margins, padding and borders”; do not add margin-collapsing or overflow rules yet.",
+      "note": "Do: Read “Block and inline boxes,” “What is the CSS box model?,” “The standard CSS box model,” and “The alternative CSS box model.” Complete “Playing with box models” and inspect one box diagram in DevTools.\n\nFinished when: The learner calculates the outer width of one content-box example and applies border-box so a project card stays within its intended width.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Inspect the actual winning and computed values in DevTools."
+    },
+    "competencyIds": [
+      "WEBD-R2-C007",
+      "WEBD-R2-C008"
+    ],
+    "whySelected": "This beginner lesson contrasts standard and alternative box models and immediately exposes both in a live exercise and DevTools.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W02-04",
+    "title": "Diagnose winning and overridden CSS in DevTools",
+    "url": "https://developer.chrome.com/docs/devtools/css",
+    "provider": "Chrome for Developers",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Begin at “View an element’s CSS.”",
+      "stop": "Stop before the color-picker and shadow sections; copy only the confirmed repair into styles.css and refresh once.",
+      "note": "Do: Complete “View an element’s CSS,” add one declaration, add one class, and toggle one pseudo-state. On the Week 2 page, locate a crossed-out declaration and trace the final value in Computed.\n\nFinished when: The learner records the losing declaration, winning selector, final computed value, and one source edit that fixes the intended cause.\n\nAccess: Free; no account or payment is required. A current Chrome or Chromium-based browser and the localhost Week 2 page are required.\n\nNext: Turn repeated visual values into a small token system."
+    },
+    "competencyIds": [
+      "WEBD-R2-C006",
+      "WEBD-R2-C008"
+    ],
+    "whySelected": "The official tutorial provides a deterministic inspect-edit-observe loop for matched, overridden, and computed CSS rather than encouraging random source changes.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.chrome.com/docs/devtools/css",
+      "finalUrl": "https://developer.chrome.com/docs/devtools/css",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W02-05",
+    "title": "Centralize design values with custom properties",
+    "url": "https://web.dev/learn/css/custom-properties",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 12,
+    "location": {
+      "start": "Begin at “Creating properties.”",
+      "stop": "Stop before advanced inheritance behavior and @property; do not create a large naming framework.",
+      "note": "Do: Read and run “Creating properties,” “Using properties,” and the fallback example. Define no more than six project tokens under :root and replace at least two repeated values.\n\nFinished when: The stylesheet uses a compact :root token set and a one-token change updates at least two visible declarations.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Test the main text and interface colors for contrast."
+    },
+    "competencyIds": [
+      "WEBD-R2-C007"
+    ],
+    "whySelected": "The focused article explains declaration, use, and fallback with runnable demos and avoids introducing a build system.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/css/custom-properties",
+      "finalUrl": "https://web.dev/learn/css/custom-properties",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W02-06",
+    "title": "Verify readable color contrast",
+    "url": "https://webaim.org/resources/contrastchecker/",
+    "provider": "WebAIM",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Open the checker and enter the exact hexadecimal foreground and background values used for normal body text.",
+      "stop": "Stop after saving one passing body-text pair and one passing focus-indicator pair; do not report that contrast alone proves accessibility.",
+      "note": "Do: Confirm WCAG AA normal text at 4.5:1 or better, test the focus-indicator pair against adjacent colors at 3:1 or better, and adjust the project tokens until both checks pass.\n\nFinished when: The learner records two exact color pairs, their ratios, and the updated CSS custom properties that pass the assigned thresholds.\n\nAccess: Public and free; no account, sign-in, installation, certificate, or payment is required. Browser JavaScript is required.\n\nNext: Save the Week 2 CSS evidence, then begin layout in Week 3."
+    },
+    "competencyIds": [
+      "WEBD-R2-C008"
+    ],
+    "whySelected": "The no-account checker gives immediate numeric evidence for normal text, large text, graphics, and focus indicators.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://webaim.org/resources/contrastchecker/",
+      "finalUrl": "https://webaim.org/resources/contrastchecker/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W03-01",
+    "title": "Arrange one-dimensional content with Flexbox",
+    "url": "https://web.dev/learn/css/flexbox",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “What can you do with a flex layout?”",
+      "stop": "Stop before ordering and accessibility; do not use order to make visual order disagree with DOM reading order.",
+      "note": "Do: Read and manipulate the demos for flex container behavior, direction, wrapping, sizing, alignment, and gap. Recreate one wrapping navigation row in the Week 3 page.\n\nFinished when: A navigation or card row wraps without overflow and the learner can identify its main axis, cross axis, gap, and alignment choice.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Use Grid for a genuinely two-dimensional region."
+    },
+    "competencyIds": [
+      "WEBD-R2-C009"
+    ],
+    "whySelected": "The visual demos connect main axis, cross axis, wrapping, gap, distribution, and alignment to realistic one-dimensional layouts.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/css/flexbox",
+      "finalUrl": "https://web.dev/learn/css/flexbox",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W03-02",
+    "title": "Build a two-dimensional Grid",
+    "url": "https://web.dev/learn/css/grid",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “Grid overview.”",
+      "stop": "Stop before advanced auto-placement and named grid areas; do not use absolute positioning to place cards.",
+      "note": "Do: Read the terminology, defining-a-grid, rows-and-columns, gap, repeat, and minmax portions and manipulate their demos. Build a project card grid with repeat and minmax.\n\nFinished when: The page has a two-dimensional grid with explicit tracks and gap, and cards do not overflow their tracks.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Make both layout systems respond from a narrow-screen baseline."
+    },
+    "competencyIds": [
+      "WEBD-R2-C010"
+    ],
+    "whySelected": "The article demonstrates tracks, gaps, repeat, minmax, placement, and intrinsic sizing with adjustable examples.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/css/grid",
+      "finalUrl": "https://web.dev/learn/css/grid",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W03-03",
+    "title": "Make the layout mobile-first and responsive",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+    "provider": "MDN Web Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at “Responsive design.”",
+      "stop": "Stop before “Responsive images”; do not copy a device-brand breakpoint or write desktop-first overrides.",
+      "note": "Do: Read flexible layout technologies, media queries, mobile first, and the viewport meta tag. Add the viewport tag, fluid media, narrow base rules, and one min-width breakpoint chosen by observed content pressure.\n\nFinished when: The layout has no horizontal page scroll at 320, 768, or 1440 CSS pixels and remains usable at 200 percent zoom.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Rehearse Flexbox axes in a bounded interactive game."
+    },
+    "competencyIds": [
+      "WEBD-R2-C011"
+    ],
+    "whySelected": "The lesson explains flexible layouts, media queries, mobile-first rules, and the viewport meta tag in one coherent beginner progression.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W03-04",
+    "title": "Practice Flexbox axes in Flexbox Froggy",
+    "url": "https://flexboxfroggy.com/",
+    "provider": "Codepip",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Open the game in English, keep the default beginner route, and begin at Level 1.",
+      "stop": "Stop immediately after Level 10; do not continue to later ordering or wrapping puzzles during Core study.",
+      "note": "Do: Complete Levels 1 through 10 in order and name whether each solution changes the main axis or cross axis.\n\nFinished when: Levels 1–10 are complete and the learner can explain justify-content versus align-items without guessing.\n\nAccess: Public and free; no account, sign-in, installation, certificate, or payment is required. Browser JavaScript is required and progress is stored locally.\n\nNext: Recreate one level as a small project navigation or control row, then practice Grid placement."
+    },
+    "competencyIds": [
+      "WEBD-R2-C009"
+    ],
+    "whySelected": "The free, accountless game gives rapid corrective feedback on justify-content, align-items, direction, and wrapping.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://flexboxfroggy.com/",
+      "finalUrl": "https://flexboxfroggy.com/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W03-05",
+    "title": "Practice Grid placement in Grid Garden",
+    "url": "https://cssgridgarden.com/",
+    "provider": "Codepip",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Open the game in English and begin at Level 1.",
+      "stop": "Stop immediately after Level 14; do not continue into implicit-track, order, or advanced shorthand puzzles during Core study.",
+      "note": "Do: Complete Levels 1 through 14 in order, writing down one example each of grid-column-start, grid-column-end, span, and grid-row.\n\nFinished when: Levels 1–14 are complete and the learner can place one project item across explicit grid lines without trial-and-error offsets.\n\nAccess: Public and free; no account, sign-in, installation, certificate, or payment is required. Browser JavaScript is required and progress is stored locally.\n\nNext: Apply one deliberate span in the Week 3 project and verify the three target viewport widths."
+    },
+    "competencyIds": [
+      "WEBD-R2-C010"
+    ],
+    "whySelected": "The free, accountless grid game makes line numbers, spans, and row/column placement visible with immediate feedback.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://cssgridgarden.com/",
+      "finalUrl": "https://cssgridgarden.com/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W04-01",
+    "title": "Add a browser interaction without a calculator",
+    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-with-web-development/5-javascript-basics",
+    "provider": "Microsoft Learn",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at the heading “JavaScript basics.”",
+      "stop": "Stop at “Check your work”; do not continue to the knowledge check, copy the full training project, or build a calculator.",
+      "note": "Do: Complete every code step in the unit through “Check your work.” Run the theme switcher, identify the selected button, listener, classList update, and textContent update, and make the interaction work on localhost.\n\nFinished when: A native button changes the page theme and visible label, and the learner traces the event, handler, DOM selection, and update in order.\n\nAccess: Public and free; Microsoft sign-in is optional for progress tracking and no payment is required. VS Code, localhost, and a browser Console are required.\n\nNext: Extract one focused named function from that interaction."
+    },
+    "competencyIds": [
+      "WEBD-R2-C012",
+      "WEBD-R2-C013",
+      "WEBD-R2-C014"
+    ],
+    "whySelected": "The bounded theme-switcher exercise introduces a binding, selector, click listener, class change, and text update in one visible non-calculator interaction.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/training/modules/get-started-with-web-development/5-javascript-basics",
+      "finalUrl": "https://learn.microsoft.com/en-us/training/modules/get-started-with-web-development/5-javascript-basics",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W04-02",
+    "title": "Write and call focused named functions",
+    "url": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-functions-38-of-51",
+    "provider": "Microsoft Learn",
+    "format": "video",
+    "cost": "free",
+    "estimatedMinutes": 8,
+    "location": {
+      "start": "Start the video at 00:00 with captions enabled.",
+      "stop": "Stop at 08:02 when the episode ends; do not continue through the 51-video series.",
+      "note": "Do: Watch the complete 08:02 episode. Pause before each call result, predict it, then write and call one named function that accepts the current mode and returns the label to display.\n\nFinished when: The learner writes, calls, and explains one focused function with a parameter and a deliberate returned value.\n\nAccess: Public, free, and captioned; no Microsoft account, sign-in, certificate, installation, or payment is required.\n\nNext: Use that function result in a safe DOM update."
+    },
+    "competencyIds": [
+      "WEBD-R2-C012"
+    ],
+    "whySelected": "The free captioned eight-minute demonstration visually connects function declaration, parameters, calls, and returned results without a long course detour.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "video was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-functions-38-of-51",
+      "finalUrl": "https://learn.microsoft.com/en-us/shows/beginners-series-to-javascript/demo-functions-38-of-51",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W04-03",
+    "title": "Select and update the live DOM safely",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting",
+    "provider": "MDN Web Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “The document object model.”",
+      "stop": "Stop before “Moving and removing elements”; do not use document.write or insert untrusted text with innerHTML.",
+      "note": "Do: Read “The document object model,” complete “Basic DOM manipulation,” and follow “Creating and placing new nodes.” Reproduce one textContent update and one createElement plus appendChild operation locally.\n\nFinished when: The learner selects an existing node, checks that it exists, changes its textContent, and creates and appends one new element.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Trigger the update from a browser event instead of page-load code."
+    },
+    "competencyIds": [
+      "WEBD-R2-C013"
+    ],
+    "whySelected": "The maintained lesson connects querySelector, textContent, attributes, createElement, and append operations to the already-taught live DOM.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/DOM_scripting",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W04-04",
+    "title": "Handle browser events predictably",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+    "provider": "MDN Web Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “What is an event?”",
+      "stop": "Stop before “Preventing default behavior”; do not place JavaScript in an HTML onclick attribute or call the handler while registering it.",
+      "note": "Do: Read through addEventListener and the event object examples. Recreate the click example, then add one input or change listener and log event.type plus the intended target value before updating the page.\n\nFinished when: A listener receives an event object, reads the intended target deliberately, changes one state value, and calls a render function once.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Complete one bounded event exercise without copying the answer."
+    },
+    "competencyIds": [
+      "WEBD-R2-C014"
+    ],
+    "whySelected": "The beginner lesson explains event objects and addEventListener with runnable examples and warns against obsolete inline handlers.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W04-05",
+    "title": "Practice a button event and observable DOM update",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Events",
+    "provider": "MDN Web Docs",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Open the page and begin only “Events 1.”",
+      "stop": "Stop when Events 1 passes; do not open Events 2 or Events 3, copy the downloadable solution, or start the canvas task.",
+      "note": "Do: Read the Events 1 requirement, predict the needed selection and event, complete it in the embedded Playground or local files, run it, and explain why the visible text changes only after the button event.\n\nFinished when: The first event task works and the learner can point to the registered function, event type, target control, and visible DOM update.\n\nAccess: Public and free; no MDN account, sign-in, certificate, installation, or payment is required. Browser JavaScript is required for the embedded Playground.\n\nNext: Adapt the pattern to the Week 4 notice, disclosure, or theme interaction and complete the Skill Check."
+    },
+    "competencyIds": [
+      "WEBD-R2-C013",
+      "WEBD-R2-C014"
+    ],
+    "whySelected": "The first skill task isolates listener registration and visible text change before later tasks introduce canvas and pointer complexity.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Events",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Test_your_skills/Events",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W05-01",
+    "title": "Build a state-to-render mental model",
+    "url": "https://gomakethings.com/articles/state-based-ui-with-vanilla-js/",
+    "provider": "Go Make Things",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “The approach.”",
+      "stop": "Stop before the localStorage section. Do not copy user-controlled values into innerHTML; the article is used for the state-and-render model, not as a secure rendering template.",
+      "note": "Do: Read the data object, template, render, initial render, and add-item sections. Draw the sequence state change > derive visible items > render. Recreate the sequence locally with createElement and textContent rather than copying the article template function.\n\nFinished when: The learner can explain one canonical state object, one derived visible list, and one render boundary, and safely renders an empty and non-empty state.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Use array methods to derive the visible collection without mutating the canonical list."
+    },
+    "competencyIds": [
+      "WEBD-R2-C015",
+      "WEBD-R2-C016"
+    ],
+    "whySelected": "This focused vanilla JavaScript article makes the data-to-template-to-render cycle explicit without requiring a framework.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://gomakethings.com/articles/state-based-ui-with-vanilla-js/",
+      "finalUrl": "https://gomakethings.com/articles/state-based-ui-with-vanilla-js/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W05-02",
+    "title": "Transform a collection with array methods",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+    "provider": "MDN Web Docs",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “What is an array?” and run its first array declaration example.",
+      "stop": "Stop before converting between strings and arrays; do not use the displayed array index as a permanent item ID.",
+      "note": "Do: Work through accessing items, finding array length, accessing every item, and the map and filter examples. Replace the sample strings with three objects containing id, title, and done, then derive completed and incomplete arrays without changing the original order.\n\nFinished when: The learner produces an array of stable record objects and two derived views using filter or map while the canonical array remains intact.\n\nAccess: Public and free; no MDN account or payment is required. The embedded Playground requires browser JavaScript; the same snippets may be run in the local Console.\n\nNext: Route clicks from generated controls through one stable ancestor listener."
+    },
+    "competencyIds": [
+      "WEBD-R2-C015"
+    ],
+    "whySelected": "The maintained beginner lesson combines indexed access, iteration, map, and filter with small editable examples suitable for record collections.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W05-03",
+    "title": "Route generated controls with event delegation",
+    "url": "https://javascript.info/event-delegation",
+    "provider": "The Modern JavaScript Tutorial",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 18,
+    "location": {
+      "start": "Begin at the introductory diagram and “The delegation algorithm.”",
+      "stop": "Stop before “The behavior pattern”; do not add inline onclick attributes or register item listeners inside the render loop.",
+      "note": "Do: Run the Ba-Gua table example, trace event.target and target.closest, then read “Delegation example: actions in markup.” Implement one list listener that reads a data-action and stable data-id from the nearest button.\n\nFinished when: One ancestor listener handles a generated toggle or remove button and identifies the record by stable data-id after repeated renders.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Serialize only the canonical non-sensitive state."
+    },
+    "competencyIds": [
+      "WEBD-R2-C014",
+      "WEBD-R2-C016"
+    ],
+    "whySelected": "The tutorial visualizes bubbling and demonstrates target.closest plus one parent handler for controls that exist after rendering.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://javascript.info/event-delegation",
+      "finalUrl": "https://javascript.info/event-delegation",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W05-04",
+    "title": "Persist structured state with localStorage and JSON",
+    "url": "https://javascript.info/localstorage",
+    "provider": "The Modern JavaScript Tutorial",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 22,
+    "location": {
+      "start": "Begin at “Web storage objects localStorage and sessionStorage.”",
+      "stop": "Stop before “sessionStorage” and the storage event; never store a password, token, private submission, or trusted HTML.",
+      "note": "Do: Read and run the localStorage methods demo, the key iteration guidance, the strings-only explanation, and “Storing objects.” Add JSON.stringify on save and a try/catch JSON.parse loader that confirms the result is the expected array before replacing defaults.\n\nFinished when: The collection survives reload, a missing key keeps defaults, and deliberately malformed stored text falls back without destroying known-good state.\n\nAccess: Public and free; no account or payment is required. A normal non-private browser context and localhost are required; storage can be disabled by browser policy.\n\nNext: Inspect the stored key and JSON independently in DevTools."
+    },
+    "competencyIds": [
+      "WEBD-R2-C017"
+    ],
+    "whySelected": "The focused tutorial demonstrates the storage methods, string-only boundary, iteration, and JSON serialization without framework setup.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://javascript.info/localstorage",
+      "finalUrl": "https://javascript.info/localstorage",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W05-05",
+    "title": "Inspect and repair localStorage in DevTools",
+    "url": "https://developer.chrome.com/docs/devtools/storage/localstorage",
+    "provider": "Chrome for Developers",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Begin at “View localStorage keys and values.”",
+      "stop": "Stop before “View extension storage”; do not clear unrelated origins or store sensitive data for the exercise.",
+      "note": "Do: Open Application > Storage > Local Storage for the localhost origin, locate the project key, compare its JSON to state, edit it to invalid JSON once, reload to verify fallback, then delete only that project key and restore valid data.\n\nFinished when: The learner captures the key/value before reload, demonstrates safe fallback after malformed JSON, and restores a valid persisted collection.\n\nAccess: Free; no account or payment is required. A current Chrome or Chromium-based browser, localhost, and an existing project storage key are required.\n\nNext: Complete the Week 5 Skill Check and collection Build."
+    },
+    "competencyIds": [
+      "WEBD-R2-C017"
+    ],
+    "whySelected": "The official hands-on page shows the exact Application panel workflow for viewing, editing, deleting, and clearing local storage.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.chrome.com/docs/devtools/storage/localstorage",
+      "finalUrl": "https://developer.chrome.com/docs/devtools/storage/localstorage",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W06-01",
+    "title": "Build semantic form controls and groups",
+    "url": "https://web.dev/learn/forms/form-fields",
+    "provider": "web.dev",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “What are form fields?”",
+      "stop": "Stop at “Resources”; do not use placeholder text as the only label or replace a native button or select with a generic div.",
+      "note": "Do: Read and run the examples for label, input, textarea, select, fieldset and legend, and submit button, then complete the knowledge checks. Build a local contact-and-preferences form with explicit for and id pairs.\n\nFinished when: The form has correctly paired labels, suitable input types, one grouped radio or checkbox set with fieldset and legend, and a native submit button.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Add field names and autocomplete tokens that communicate purpose."
+    },
+    "competencyIds": [
+      "WEBD-R2-C018",
+      "WEBD-R2-C020"
+    ],
+    "whySelected": "This structured lesson uses live demos and knowledge checks to connect native controls, labels, input types, fieldset, legend, and submit behavior.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/forms/form-fields",
+      "finalUrl": "https://web.dev/learn/forms/form-fields",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W06-02",
+    "title": "Help browsers identify and autofill form fields",
+    "url": "https://web.dev/learn/forms/auto",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at “Make the most of autofill.”",
+      "stop": "Stop at “Resources”; do not collect more personal data than the fictional form needs or save submissions to localStorage.",
+      "note": "Do: Read through the autocomplete examples and complete the knowledge check. Add deliberate name, id, type, and autocomplete values for given name, family name, and email in the local form.\n\nFinished when: Each personal-information control has a matching label, stable name and id, suitable input type, and standard autocomplete token.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Apply native constraint validation before writing custom JavaScript."
+    },
+    "competencyIds": [
+      "WEBD-R2-C018",
+      "WEBD-R2-C020"
+    ],
+    "whySelected": "The short lesson makes name, id, type, and autocomplete purpose visible with a runnable form and one knowledge check.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/forms/auto",
+      "finalUrl": "https://web.dev/learn/forms/auto",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W06-03",
+    "title": "Apply native form constraints before custom checks",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation",
+    "provider": "MDN Web Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at “What is form validation?”",
+      "stop": "Stop before “Validating forms using JavaScript”; do not invent an opaque regular expression or treat browser validation as server-side security.",
+      "note": "Do: Read through “Using built-in form validation,” run the required, type, minlength, maxlength, min, max, and pattern examples, and apply only the constraints justified by the local form.\n\nFinished when: Empty, malformed, boundary, and valid fixtures produce the expected native validity result, and success appears only for the valid fixture.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Make instructions, focus, and feedback usable without a mouse."
+    },
+    "competencyIds": [
+      "WEBD-R2-C019"
+    ],
+    "whySelected": "The maintained guide explains why validation matters and demonstrates required, type, length, range, and pattern constraints before JavaScript validation.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W06-04",
+    "title": "Make forms usable by keyboard and assistive technology",
+    "url": "https://web.dev/learn/forms/accessibility",
+    "provider": "web.dev",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at the introduction and “Use meaningful HTML elements.”",
+      "stop": "Stop at “Resources”; do not add positive tabindex values, remove focus outlines, or claim automated proof of full accessibility.",
+      "note": "Do: Work through labels, expected format, aria-describedby, errors and status, focus, navigation, and usability. Then use Tab, Shift+Tab, Space, Enter, and 200 percent zoom on the local form and record any failed step.\n\nFinished when: Controls follow a meaningful keyboard order, focus remains visible, native controls operate by keyboard, and the form reflows at 200 percent zoom.\n\nAccess: Public and free; no account or payment is required. A keyboard, current browser, localhost form, and browser zoom controls are required.\n\nNext: Connect specific invalid fields to clear inline and summary feedback."
+    },
+    "competencyIds": [
+      "WEBD-R2-C018",
+      "WEBD-R2-C020"
+    ],
+    "whySelected": "The lesson pairs native-HTML guidance with runnable form demos, accessible descriptions, error patterns, focus, navigation, and usability checks.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://web.dev/learn/forms/accessibility",
+      "finalUrl": "https://web.dev/learn/forms/accessibility",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W06-05",
+    "title": "Report errors and status accessibly",
+    "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+    "provider": "W3C Web Accessibility Initiative",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “Overview.”",
+      "stop": "Stop before “During typing” and scaled feedback; do not announce every keystroke or show a success message while any field is invalid.",
+      "note": "Do: Read “Listing errors,” “Inline feedback,” the after-submit example, and “Success notification,” including its focus or live-region guidance. Implement an error summary, field-linked message, first-invalid focus, and one success status for fictional data.\n\nFinished when: An invalid submission exposes a specific summary and associated field message, moves focus deliberately, and a valid submission announces one clear status.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Apply aria-invalid only at the correct point in that validation sequence."
+    },
+    "competencyIds": [
+      "WEBD-R2-C019",
+      "WEBD-R2-C020"
+    ],
+    "whySelected": "The WAI tutorial demonstrates error lists, inline feedback, aria-describedby, focus movement, and live status messages with accessible examples.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+      "finalUrl": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W06-06",
+    "title": "Use aria-invalid only after validation",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid",
+    "provider": "MDN Web Docs",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at “Description.”",
+      "stop": "Stop before “Associated interfaces”; do not set aria-invalid on untouched empty fields before the learner attempts submission.",
+      "note": "Do: Read “Description,” “Native HTML validation,” and the form validation example through the updateAlert function. Submit empty, invalid, corrected, and valid fixtures and inspect the attribute after each transition.\n\nFinished when: aria-invalid becomes true only after failed validation, returns to false or is removed after correction, and the error text remains associated with the control.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Complete the Week 6 Skill Check and keyboard-tested form Build."
+    },
+    "competencyIds": [
+      "WEBD-R2-C019",
+      "WEBD-R2-C020"
+    ],
+    "whySelected": "The focused reference states when aria-invalid should and should not be set and includes a form example tied to an alert.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-invalid",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W07-01",
+    "title": "Fetch JSON and render the response",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_requests",
+    "provider": "MDN Web Docs",
+    "format": "course",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at “What is the problem here?” and continue to the Fetch API exercise.",
+      "stop": "Stop before “XMLHttpRequest”; do not use a file:// page, a remote key-bearing API, or parsed JSON without a shape check.",
+      "note": "Do: Read the asynchronous-request explanation and complete the fetch exercise through rendered output. In the local project, use async and await with a project-relative JSON URL, check response.ok before response.json, and confirm the parsed value is the expected array before rendering.\n\nFinished when: A relative localhost request returns HTTP 200, valid records render, and malformed record shapes do not replace the last valid view.\n\nAccess: Public and free; no account or payment is required. A current browser, VS Code, localhost server, and a local JSON fixture are required.\n\nNext: Separate network rejection, non-OK HTTP response, and JSON parsing failure."
+    },
+    "competencyIds": [
+      "WEBD-R2-C021",
+      "WEBD-R2-C022"
+    ],
+    "whySelected": "The maintained beginner lesson motivates asynchronous requests and walks through a complete Fetch API exercise before introducing legacy APIs.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "course was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_requests",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Network_requests",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W07-02",
+    "title": "Handle network, HTTP, and parsing failures distinctly",
+    "url": "https://web.dev/articles/fetch-api-error-handling",
+    "provider": "web.dev",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at “Anticipate potential network errors.”",
+      "stop": "Stop before request cancellation and resumable uploads; do not clear valid content when a retry merely enters loading.",
+      "note": "Do: Read the unhappy-path scenarios, network-error catch example, HTTP status and response.ok example, and JSON parsing discussion. Write transitions for idle, loading, success, empty, HTTP error, network error, and malformed-data error, preserving the last valid records until replacement succeeds.\n\nFinished when: The interface produces distinct messages for a rejected request, HTTP 404 or 500, empty valid array, and invalid JSON, and offers a working retry.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Use the Network panel to prove which boundary failed."
+    },
+    "competencyIds": [
+      "WEBD-R2-C021",
+      "WEBD-R2-C022"
+    ],
+    "whySelected": "The article explicitly separates thrown network errors from non-OK HTTP responses and demonstrates user-facing loading, recovery, and retry concerns.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://web.dev/articles/fetch-api-error-handling",
+      "finalUrl": "https://web.dev/articles/fetch-api-error-handling",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W07-03",
+    "title": "Inspect fetch evidence in the Network panel",
+    "url": "https://developer.chrome.com/docs/devtools/network",
+    "provider": "Chrome for Developers",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 20,
+    "location": {
+      "start": "Begin at “When to use the Network panel.”",
+      "stop": "Stop before screenshots, throttling, and advanced request blocking; do not change source until the failed boundary is named from evidence.",
+      "note": "Do: Complete “Open the Network panel,” “Log network activity,” “Filter requests,” and “Inspect the details of the resource.” Reload the local page, filter Fetch/XHR, and record the JSON request URL, status, Headers, Preview, and Response.\n\nFinished when: The learner captures one successful request and one deliberate 404, then identifies the exact wrong path or response from Network evidence.\n\nAccess: Free; no account or payment is required. A current Chrome or Chromium-based browser, localhost, and the Week 7 fetch page are required.\n\nNext: Pause JavaScript at the state-to-render boundary and inspect the corresponding values."
+    },
+    "competencyIds": [
+      "WEBD-R2-C021",
+      "WEBD-R2-C023"
+    ],
+    "whySelected": "The official hands-on tutorial exposes the request URL, method, status, headers, timing, preview, and raw response needed to diagnose fetch failures.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.chrome.com/docs/devtools/network",
+      "finalUrl": "https://developer.chrome.com/docs/devtools/network",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W07-04",
+    "title": "Debug JavaScript with breakpoints and inspected values",
+    "url": "https://developer.chrome.com/docs/devtools/javascript",
+    "provider": "Chrome for Developers",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 25,
+    "location": {
+      "start": "Begin at “Step 1: Reproduce the bug.”",
+      "stop": "Stop at “Next steps”; do not treat the tutorial arithmetic demo as the course Build or install a debugger extension.",
+      "note": "Do: Complete the tutorial through the Sources panel, line breakpoint, step controls, Scope, Watch, Console, fix, and rerun. Then set a breakpoint immediately before the Week 7 render-state change and inspect response.ok, parsed data, current request state, and the selected DOM region.\n\nFinished when: The learner reproduces a failure, pauses on the intended line, records one unexpected value and stack location, repairs one cause, and reruns the same fixture successfully.\n\nAccess: Free; no account or payment is required. A current Chrome or Chromium-based browser and browser JavaScript are required.\n\nNext: Guarantee that loading controls are restored on both success and failure."
+    },
+    "competencyIds": [
+      "WEBD-R2-C023"
+    ],
+    "whySelected": "The official tutorial gives a complete reproduce-pause-step-inspect-fix-rerun workflow using breakpoints, scope, watches, and the Console.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.chrome.com/docs/devtools/javascript",
+      "finalUrl": "https://developer.chrome.com/docs/devtools/javascript",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W07-05",
+    "title": "Guarantee request cleanup with Promise.finally",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally",
+    "provider": "MDN Web Docs",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at “Description.”",
+      "stop": "Stop before specifications and browser compatibility tables; do not put the success message or error classification in finally.",
+      "note": "Do: Read “Description,” “Return value,” and “Examples.” In the local request function, enter loading before fetch, handle success and failure separately, and restore the disabled trigger plus loading indicator in finally. Exercise success, empty, HTTP error, malformed data, and retry transitions.\n\nFinished when: The trigger is disabled only while loading, is restored after every success or failure, and Retry re-enters loading without duplicating handlers.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Complete the Week 7 Skill Check and evidence-based fetch Build."
+    },
+    "competencyIds": [
+      "WEBD-R2-C022"
+    ],
+    "whySelected": "The focused reference explains why finally runs after fulfillment or rejection and shows cleanup without duplicating code paths.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W08-01",
+    "title": "Make deployed relative paths reliable",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links",
+    "provider": "MDN Web Docs",
+    "format": "article",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at “A quick primer on URLs and paths.”",
+      "stop": "Stop before “Link best practices”; do not convert working local assets to private machine paths or unrelated remote URLs.",
+      "note": "Do: Read the path examples through document fragments. Inspect every local link, stylesheet, script, image, fetch URL, and navigation href; remove Windows drive paths and leading-root slashes that would escape the repository subpath.\n\nFinished when: Every internal link and asset uses a deliberate relative path, works on localhost from the project folder, and is ready for a repository subpath.\n\nAccess: Public and free; no account, sign-in, certificate, installation, or payment is required for the assigned portion. A current browser and internet connection are required.\n\nNext: Turn project requirements into a risk-based verification matrix before deployment."
+    },
+    "competencyIds": [
+      "WEBD-R2-C004",
+      "WEBD-R2-C025"
+    ],
+    "whySelected": "The link lesson precisely distinguishes same-directory, subdirectory, parent-directory, root-relative, and fragment paths before deployment exposes base-path mistakes.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "article was selected because it is the smallest credible learn route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W08-06",
+    "title": "Turn requirements into a verification matrix",
+    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Testing_strategies",
+    "provider": "MDN Web Docs",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at “What are you going to test?”",
+      "stop": "Stop before “Putting together a testing lab”; do not install virtual machines, buy a testing service, or mark a row passed without an independently stated expected result.",
+      "note": "Do: Read only “What are you going to test?” and its criteria example. Create a matrix with Requirement, Action or fixture, Expected result, Actual result, and Evidence columns. Include at least one normal, boundary, invalid, 320-pixel, 200-percent-zoom, keyboard, storage-reload, network-failure, and live-URL path row. Add one cross-layer row that verifies an HTML id or data attribute still matches the JavaScript selector contract; if it fails, repair one side and rerun the same row.\n\nFinished when: The learner has a risk-based verification matrix with expected and actual results, evidence for each required category, and one rerun cross-layer integration repair.\n\nAccess: Public and free; no account, sign-in, installation, certificate, or payment is required. The local integrated project is required for the matrix exercise.\n\nNext: Publish only after the local matrix rows pass, then repeat path-sensitive rows at the live URL."
+    },
+    "competencyIds": [
+      "WEBD-R2-C024"
+    ],
+    "whySelected": "The current testing-strategies lesson explicitly starts from acceptance requirements and explains why written criteria become repeatable test steps.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Testing_strategies",
+      "finalUrl": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Testing_strategies",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W08-02",
+    "title": "Publish the static site with GitHub Pages",
+    "url": "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
+    "provider": "GitHub Docs",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 15,
+    "location": {
+      "start": "Begin at “Who can use this feature?” and the warning, then continue to “Creating a site for your repository.”",
+      "stop": "Stop before static site generators and custom domains; never publish credentials, personal form submissions, machine-specific files, or private fixtures. Allow up to ten minutes for the first deployment before diagnosing a failure.",
+      "note": "Do: Use a public repository on the free plan, inspect GitHub Desktop Changes for unexpected files or secrets, commit the reviewed source, push normally, configure Pages to deploy from the intended branch and root folder, and open the URL from “Viewing your published site.”\n\nFinished when: The repository contains only reviewed source and safe fixtures, Pages reports a successful deployment, and the HTTPS github.io URL loads the intended site.\n\nAccess: A verified free GitHub account, authenticated GitHub Desktop or browser access, network connection, and a public repository are required. GitHub Pages is publicly visible; no paid plan is required for this public route.\n\nNext: Repeat every path-sensitive matrix row at the live URL and record the deployment URL in the README."
+    },
+    "competencyIds": [
+      "WEBD-R2-C025"
+    ],
+    "whySelected": "The official procedure covers repository preparation, branch-based Pages configuration, publication status, and the live URL without requiring a framework.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
+      "finalUrl": "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W08-03",
+    "title": "Write a reproducible project README",
+    "url": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+    "provider": "GitHub Docs",
+    "format": "documentation",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at “About READMEs.”",
+      "stop": "Stop before Wikis and issue templates; do not claim production security, universal accessibility, or browser coverage that was not tested.",
+      "note": "Do: Read the recommended README contents and relative-link guidance. Write purpose, features, local preview steps, test fixtures, live URL, screenshot with useful alt text, tested browsers, known limits, and a statement that human review is still required.\n\nFinished when: A clean checkout can be previewed from the README steps, all README links open, and verified behavior is separated from known limits.\n\nAccess: Public and free to read; the verified GitHub account is required only to commit the README. No paid plan is required.\n\nNext: Run an automated audit as one input to the remaining human checks."
+    },
+    "competencyIds": [
+      "WEBD-R2-C024",
+      "WEBD-R2-C025"
+    ],
+    "whySelected": "The official guide defines README visibility, useful project information, and repository-relative links and images without requiring a template generator.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "documentation was selected because it is the smallest credible reference route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "finalUrl": "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W08-04",
+    "title": "Run and interpret a Lighthouse audit",
+    "url": "https://developer.chrome.com/docs/lighthouse/overview",
+    "provider": "Chrome for Developers",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 10,
+    "location": {
+      "start": "Begin at “Get started” and choose “Chrome DevTools.”",
+      "stop": "Stop before PageSpeed Insights, Node CLI, and CI installation; do not chase a perfect score or claim that Lighthouse proves complete accessibility, security, or performance.",
+      "note": "Do: Open the deployed page in a private window, run Lighthouse for Accessibility and Best Practices in Navigation mode, record one failed audit with its element or cause, repair that source cause, redeploy, and rerun the same categories.\n\nFinished when: The evidence records before and after results for one repaired audit while preserving separate human keyboard, zoom, and requirement checks.\n\nAccess: Free; no account or payment is required. A current desktop Chrome browser, public deployed URL, and DevTools are required.\n\nNext: Validate the deployed HTML independently of the browser rendering."
+    },
+    "competencyIds": [
+      "WEBD-R2-C020",
+      "WEBD-R2-C024"
+    ],
+    "whySelected": "The official overview gives a no-install DevTools route and explains category findings without making an automated score equivalent to human verification.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://developer.chrome.com/docs/lighthouse/overview",
+      "finalUrl": "https://developer.chrome.com/docs/lighthouse/overview",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  },
+  {
+    "id": "WEBD-R2-W08-05",
+    "title": "Validate the deployed HTML",
+    "url": "https://validator.w3.org/nu/",
+    "provider": "W3C Nu Html Checker",
+    "format": "exercise",
+    "cost": "free",
+    "estimatedMinutes": 5,
+    "location": {
+      "start": "Open the checker, choose “address,” enter the exact HTTPS GitHub Pages URL, and enable “show source” plus “outline.”",
+      "stop": "Stop when the deployed URL reports no HTML errors and the outline matches the intended structure; do not hide messages, validate only localhost, or assume validation proves usability.",
+      "note": "Do: Run Check, inspect the first error against the numbered deployed source, repair the matching local file, commit and redeploy, then rerun the public URL. Review the final heading outline and repeat until no errors remain.\n\nFinished when: The current live URL returns zero HTML errors, has the intended heading outline, and the verification matrix records the repair and rerun evidence.\n\nAccess: Public and free; no account, sign-in, installation, certificate, or payment is required. JavaScript and a publicly reachable deployed URL are required.\n\nNext: Finish the live smoke matrix, review repository contents once more, and submit the public URL plus honest evidence."
+    },
+    "competencyIds": [
+      "WEBD-R2-C005",
+      "WEBD-R2-C024"
+    ],
+    "whySelected": "The independent W3C checker can fetch the public result and expose parser errors that a visually successful deployment may hide.",
+    "accessStatus": "verified",
+    "checkedAt": "2026-10-24T00:00:00.000Z",
+    "selectionRole": "core",
+    "formatRationale": "exercise was selected because it is the smallest credible practice route for this exact point, not to meet a format quota.",
+    "availability": {
+      "checked": true,
+      "checkedAt": "2026-10-24T00:00:00.000Z",
+      "requestedUrl": "https://validator.w3.org/nu/",
+      "finalUrl": "https://validator.w3.org/nu/",
+      "finalDestinationStatus": "success",
+      "redirected": false,
+      "finalDestinationKind": "assigned-content",
+      "finalContentVerified": true,
+      "accessRestricted": false,
+      "verificationMethod": "live-web-content-inspection",
+      "notes": "The final page, public access, title, and assigned boundary were inspected during the 2026-10-24 production research pass."
+    }
+  }
+]

@@ -23,6 +23,8 @@
     "curriculum:v2:c:publish": "node scripts/build-v2-c-introduction.mjs --publish",
     "curriculum:v2:cpp": "node scripts/build-v2-cpp-introduction.mjs",
     "curriculum:v2:cpp:publish": "node scripts/build-v2-cpp-introduction.mjs --publish",
+    "curriculum:v2:web-development": "node scripts/build-v2-web-development-introduction.mjs",
+    "curriculum:v2:web-development:publish": "node scripts/build-v2-web-development-introduction.mjs --publish",
     "curriculum:v2:introductory:audit": "node scripts/audit-v2-introductory-portfolio.mjs",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

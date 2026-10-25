@@ -37,7 +37,7 @@ const mutationFor = (curriculumId: string, revision: number) => {
   const learnerState = emptyCloudState();
   learnerState.curriculumState.curriculumId = curriculumId;
   learnerState.curriculumState.lastSeenRevision = revision;
-  learnerState.curriculumState.activeWeekId = revision === 2 && ['CLNG', 'CPPL', 'JAVA', 'JSIN', 'PYIN'].includes(curriculumId)
+  learnerState.curriculumState.activeWeekId = revision === 2 && ['CLNG', 'CPPL', 'JAVA', 'JSIN', 'PYIN', 'WEBD'].includes(curriculumId)
     ? `${curriculumId}-R2-W01`
     : `${curriculumId}-W01`;
   return mutation({ curriculumRevision: revision, learnerState });
@@ -151,9 +151,9 @@ describe('deterministic progress hashing', () => {
 describe('V2 progress synchronization API', () => {
   test('enables only established production curricula and the approved introductory R2 replacements', () => {
     expect(CLOUD_ENABLED_CURRICULA).toEqual({
-      CLNG: { revision: 2 }, CPPL: { revision: 2 }, FEWE: { revision: 1 }, JAVA: { revision: 2 }, JSIN: { revision: 2 }, PDES: { revision: 1 }, PYAE: { revision: 3 }, PYIN: { revision: 2 },
+      CLNG: { revision: 2 }, CPPL: { revision: 2 }, FEWE: { revision: 1 }, JAVA: { revision: 2 }, JSIN: { revision: 2 }, PDES: { revision: 1 }, PYAE: { revision: 3 }, PYIN: { revision: 2 }, WEBD: { revision: 2 },
     });
-    for (const curriculumId of ['QBAS', 'WEBD']) {
+    for (const curriculumId of ['QBAS']) {
       expect(curriculumId in CLOUD_ENABLED_CURRICULA).toBe(false);
     }
   });
